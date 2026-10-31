@@ -1,0 +1,14 @@
+# 改行は LF にそろえ、バイナリは差分を取らない（Git の容量と事故を減らす）
+* text=auto eol=lf
+
+*.woff2 binary
+*.stpack binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.mp3 binary
+*.m4a binary
+*.ogg binary
+*.wav binary

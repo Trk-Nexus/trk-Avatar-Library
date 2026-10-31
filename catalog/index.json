@@ -1,0 +1,74 @@
+{
+  "format": "trk-avatar-library",
+  "version": 1,
+  "name": "trk-Avatar-Library",
+  "updatedAt": "2026-10-31T16:13:10.385Z",
+  "app": "trk! (trk-PWA)",
+  "howToInstall": "trk! の 設定 → 📦 カスタムパック → 📚 目録から入れる で、この目録（index.json）を選び、一覧から入れたい .stpack を選んでください。.stpack を画面にドラッグ＆ドロップしても入ります。",
+  "builtinSkins": {
+    "count": 53,
+    "typeSkins": 9,
+    "generatedAt": "2026-10-31T15:28:52.115Z",
+    "file": "catalog/skins.json"
+  },
+  "packs": [
+    {
+      "id": "明朝の本-見本-f33b9a1d",
+      "name": "明朝の本（見本）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "packs",
+      "file": "packs/sample-mincho.stpack",
+      "sha256": "f33b9a1d0f544b9f135f17091df3e16d6e00a93c4d495612a0ebc8601c27ba5d",
+      "bytes": 690,
+      "entries": 1,
+      "payloadBytes": 0,
+      "songs": 0,
+      "skin": {
+        "name": "明朝の本",
+        "colors": 5
+      },
+      "fonts": [],
+      "license": "GPL-3.0-or-later（このパックの作り）",
+      "description": "書体スキン「明朝の本」と同じ色を、パックの形にした見本です。アプリの棚に入れて、パックの使い方を確かめられます。",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "丸ゴのお茶目-書体パック-93a4bb2d",
+      "name": "丸ゴのお茶目（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/maru-go.stpack",
+      "sha256": "93a4bb2d07e41ddd73aa047d658f5e7cf998445475aef214ff0eadb8e4477488",
+      "bytes": 2935978,
+      "entries": 5,
+      "payloadBytes": 2928852,
+      "songs": 0,
+      "skin": {
+        "name": "丸ゴのお茶目",
+        "colors": 5
+      },
+      "fonts": [
+        {
+          "family": "TrkZenMaru",
+          "file": "fonts/ZenMaruGothic-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400
+        },
+        {
+          "family": "TrkZenMaru",
+          "file": "fonts/ZenMaruGothic-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）",
+      "description": "Zen Maru Gothic（400／700）を同梱した書体パックです。端末に丸ゴが無くても、桃色の夜の見た目で遊べます。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    }
+  ]
+}

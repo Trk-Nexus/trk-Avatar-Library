@@ -1,0 +1,48 @@
+※ これは 2026-10-31 の受け渡し時点のメモです（ZIP の展開は実行済み）。いまの手順は README.md を見てください。
+
+trk-Avatar-Library の土台（2026-10-31）
+================================================================
+
+このZIPは、新しい倉庫 `trk-Avatar-Library` の中身そのものです。
+（この環境からは、その倉庫に push できませんでした。GitHub の接続が trk-PWA だけに
+ 許可されているためです。次のどちらかで置いてください。）
+
+■ A. 手元で git から入れる（おすすめ）
+
+    cd <trk-Avatar-Library を clone したフォルダ>
+    unzip -o <このZIP> -d .
+    git add -A
+    git commit -m "ライブラリの土台：全スキン見本・目録・パック検査"
+    git push
+
+    （README.md は上書きされます。Initial commit の README は1行だけなので、
+      そのまま置き換えて問題ありません。）
+
+■ B. GitHub の画面から入れる
+
+    1. このZIPを展開する
+    2. GitHub の trk-Avatar-Library → Add file → Upload files で、展開した中身を全部ドロップ
+    3. Commit changes
+
+■ 入っているもの
+
+    README.md                   … 倉庫の説明（概念・使い方・パックの作り方・書体パックの設計）
+    NOTICE.md / LICENSE         … 権利とクレジット（GPL-3.0-or-later）
+    gallery/all-skins.html      … 全スキン見本（53種・1ファイル・外部参照0・オフラインOK）
+    catalog/skins.json          … 見本のもとデータ
+    catalog/index.json          … 配るパックの目録（sha256・バイト数・書体・ライセンス）
+    packs/sample-mincho.stpack  … 見本パック（書体スキン「明朝の本」の色だけ）
+    tools/                      … 見本の書き出し・パック検査・目録作成・自己検査
+    font-packs/README.md        … 書体を同梱するときの約束（アプリ対応は次の版）
+
+■ まず確かめるコマンド（Node 18 以降・trk-PWA のチェックアウトが隣にある前提）
+
+    node tools/selftest.mjs              … 10/10 合格するはず
+    node tools/build-catalog.mjs --check … 「目録は最新です」と出るはず
+
+    trk-PWA が隣に無いときは --trk=/path/to/trk-PWA を足してください。
+
+■ 見本を見る
+
+    gallery/all-skins.html をダブルクリック（ブラウザで開くだけ・オフラインOK）
+    53種を並べて、名前・説明・カテゴリの言葉で絞り込めます。
