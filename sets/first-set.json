@@ -2,7 +2,8 @@
   "name": "first-set",
   "title": "trk! はじめてセット",
   "date": "2026-11-01",
-  "tag": "first-set-2026-11-01",
+  "rev": "r2",
+  "tag": "first-set-2026-11-01-r2",
   "extension": "zip",
   "files": [
     "gallery/all-skins.html",
@@ -11,5 +12,5 @@
   ],
   "readme": "README-はじめに.txt",
   "record": "release/first-set.json",
-  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML と目録も同じ ZIP に入っています。"
+  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML・目録・書体パック（release 1.1.0）が入っています。"
 }

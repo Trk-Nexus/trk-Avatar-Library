@@ -13,14 +13,22 @@
    使い方：
      node tools/export-skin-gallery.mjs --trk=/path/to/trk-PWA
      node tools/export-skin-gallery.mjs --trk=. --out=gallery/all-skins.html --json=catalog/skins.json
+     node tools/export-skin-gallery.mjs --trk=… --check      … 書き出さずに、いまのファイルと合っているかだけ見る（CI 用）
 
    書き出すもの：
      gallery/all-skins.html … 単体で開ける見本（データを埋め込み・相対パス不要）
      catalog/skins.json     … 同じ中身の JSON（アプリや他の道具が読む用）
+
+   同梱の書体（L9・trk232 からのお願い）：
+     font-packs/ の .stpack が宣言している書体を「🔤 同梱の書体」の節に並べます。
+     ここでは @font-face を使わず、**家族名だけ**を指定します（端末に同じ家族名の書体が入っているときだけ
+     その書体で表示され、無ければ次の候補）。書体そのものは .stpack の中にあり、アプリに入れると本文に効きます。
+     → 「入れる前に、どんな書体か・どのライセンスか」が分かるようにするのが目的で、書体ファイルは配りません。
 */
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
+import { verifyPack } from "./verify-pack.mjs";
 
 const args = Object.fromEntries(process.argv.slice(2).map(a => {
   const m = /^--([^=]+)=(.*)$/.exec(a); return m ? [m[1], m[2]] : [a.replace(/^--/, ""), true];
@@ -31,6 +39,7 @@ if (args.help || args.h) {
 }
 const HERE = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const TRK = path.resolve(String(args.trk || ""));
+const checkOnly = !!args.check;
 const outHtml = path.resolve(HERE, String(args.out || "gallery/all-skins.html"));
 const outJson = path.resolve(HERE, String(args.json || "catalog/skins.json"));
 
@@ -81,6 +90,30 @@ const catCount = {};
 for (const s of skins) for (const c of s.cat) catCount[c] = (catCount[c] || 0) + 1;
 const typeCount = skins.filter(s => s.cat.includes("type")).length;
 
+/* --- 同梱の書体（font-packs/ と packs/ の .stpack が宣言しているもの） --- */
+const fontPacks = [];
+for (const dir of ["font-packs", "packs"]) {
+  const abs = path.join(HERE, dir);
+  if (!fs.existsSync(abs)) continue;
+  for (const n of fs.readdirSync(abs).filter(x => x.toLowerCase().endsWith(".stpack")).sort()) {
+    const file = path.posix.join(dir, n);
+    let r = null;
+    try { r = await verifyPack(path.join(abs, n), { trk: String(args.trk || "") }); } catch (_) { r = null; }
+    const fonts = (r && r.info.fonts) || [];
+    if (!fonts.length) continue;
+    fontPacks.push({
+      file,
+      name: (r.info && r.info.name) || n,
+      release: (r.info && r.info.release) || "",
+      skin: (r.info && r.info.skin && r.info.skin.name) || "",
+      colors: (r.info && r.info.colors) || null,
+      fonts: fonts.map(f => ({ family: f.family, file: f.file, license: f.license,
+        ...(Number.isInteger(f.weight) ? { weight: f.weight } : {}),
+        ...(f.licenseFile ? { licenseFile: f.licenseFile } : {}) })),
+    });
+  }
+}
+
 const catalog = {
   format: "trk-avatar-library-skins",
   version: 1,
@@ -90,9 +123,22 @@ const catalog = {
   typeSkins: typeCount,
   categories: catCount,
   skins,
+  fontPacks,
 };
-fs.mkdirSync(path.dirname(outJson), { recursive: true });
-fs.writeFileSync(outJson, JSON.stringify(catalog, null, 2) + "\n", "utf8");
+emit(outJson, JSON.stringify(catalog, null, 2) + "\n");
+
+/* 書き出す（--check のときは、いまのファイルと比べるだけ。generatedAt は比べない） */
+const drift = [];
+function emit(file, text) {
+  if (!checkOnly) {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.writeFileSync(file, text, "utf8");
+    return;
+  }
+  const norm = t => t.replace(/("generatedAt":\s*)"[^"]*"/g, '$1""');
+  const prev = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+  if (norm(prev) !== norm(text)) drift.push(path.relative(HERE, file));
+}
 
 /* --- 1ファイルで開ける見本（CSS も JS もデータも埋め込み） --- */
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
@@ -129,6 +175,17 @@ const html = `<!doctype html>
   .card small{opacity:.8;font-size:12px;line-height:1.35;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
   .card .meta{margin-top:auto;font-size:11px;color:var(--c-muted);font-family:ui-monospace,monospace}
   .empty{color:var(--muted);padding:20px 0}
+  /* 🔤 同梱の書体（@font-face は使いません。家族名だけで当てる見本） */
+  .fonts{max-width:1200px;margin:0 auto;padding:6px 20px 4px}
+  .fonts h2{font-size:16px;margin:18px 0 4px}
+  .fonts .hint{color:var(--muted);font-size:12px;margin:0 0 10px;line-height:1.5}
+  .fontGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+  .fontCard{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:12px 14px;color:var(--text)}
+  .fontCard .fam{font-size:13px;color:var(--muted);margin:0 0 6px;font-family:ui-monospace,monospace}
+  .fontCard .sample{font-size:26px;line-height:1.5;margin:2px 0 8px;letter-spacing:.02em}
+  .fontCard .sample b{font-weight:700}
+  .fontCard .rows{font-size:12px;color:var(--muted);line-height:1.6}
+  .fontCard .rows span{font-family:ui-monospace,monospace}
   footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px}
   a{color:var(--accent)}
 </style>
@@ -149,9 +206,28 @@ const html = `<!doctype html>
   <div class="chips" id="chips"></div>
   <p class="count" id="count"></p>
 </header>
+${fontPacks.length ? `<section class="fonts" id="fonts">
+  <h2>🔤 同梱の書体（${fontPacks.length} パック）</h2>
+  <p class="hint">書体パックに入っている書体の<b>名前</b>を並べた見本です。この見本は書体ファイルを読み込みません（@font-face なし）。
+    お使いの端末に同じ家族名の書体が入っているときだけ、その書体で表示されます（無ければ次の候補）。
+    書体そのものは <code>.stpack</code> に入っていて、trk! に入れて「使う」と本文の書体になります（trk232 以降）。</p>
+  <div class="fontGrid">
+${fontPacks.map(fp => `    <div class="fontCard">
+      <p class="fam">${esc(fp.file)}${fp.release ? ` · release ${esc(fp.release)}` : ""}</p>
+      <div class="sample" style="font-family:${esc([...new Set(fp.fonts.map(f => f.family))].map(f => `"${f}"`).join(","))},system-ui,sans-serif">
+        あア漢 Aa 12 <b>丸ゴ かな 漢字</b></div>
+      <div class="rows">${esc(fp.name)}${fp.skin && fp.skin !== fp.name.replace(/（[^）]*）$/, "") ? `（スキン「${esc(fp.skin)}」）` : ""}<br>
+        家族名 <span>${esc([...new Set(fp.fonts.map(f => f.family))].join(", "))}</span>／
+        太さ <span>${esc(fp.fonts.map(f => (f.weight === undefined ? "—" : f.weight)).join(" / "))}</span>／
+        ライセンス <span>${esc([...new Set(fp.fonts.map(f => f.license))].join(", "))}</span>${fp.fonts.some(f => f.licenseFile) ? `（全文 <span>${esc([...new Set(fp.fonts.map(f => f.licenseFile).filter(Boolean))].join(", "))}</span>）` : ""}
+      </div>
+    </div>`).join("\n")}
+  </div>
+</section>` : ""}
 <main><div class="grid" id="grid"></div><p class="empty" id="empty" hidden>見つかりませんでした。言葉を変えてください。</p></main>
 <footer>
   見本は trk-PWA の <code>js/data.js</code> から作りました（${skins.length}種・書体 ${typeCount} 種）。
+  「🔤 同梱の書体」は <code>font-packs/</code> の <code>.stpack</code> の宣言から作りました（書体ファイルは含みません）。
   本物の見た目は、アプリの 設定 → 🎨 見た目 → 🖼 スキンの棚 で確かめてください。GPL-3.0-or-later。
 </footer>
 <script id="catalog" type="application/json">${JSON_SAFE}</script>
@@ -241,9 +317,17 @@ const html = `<!doctype html>
 </body>
 </html>
 `;
-fs.mkdirSync(path.dirname(outHtml), { recursive: true });
-fs.writeFileSync(outHtml, html, "utf8");
+emit(outHtml, html);
 
-console.log(`✅ ${skins.length}種（書体 ${typeCount}種・カテゴリ ${Object.keys(catCount).length}）`);
+if (checkOnly) {
+  if (drift.length) {
+    console.error(`❌ 見本（${drift.join("・")}）が今の中身と合っていません。node tools/export-skin-gallery.mjs --trk=… で作り直してください`);
+    process.exit(1);
+  }
+  console.log(`✅ 見本は最新です（${skins.length}種＋同梱の書体 ${fontPacks.length} パック）`);
+  process.exit(0);
+}
+
+console.log(`✅ ${skins.length}種（書体 ${typeCount}種・カテゴリ ${Object.keys(catCount).length}）＋同梱の書体 ${fontPacks.length} パック`);
 console.log(`   ${path.relative(HERE, outHtml)}  ${fs.statSync(outHtml).size.toLocaleString()} B`);
 console.log(`   ${path.relative(HERE, outJson)}  ${fs.statSync(outJson).size.toLocaleString()} B`);

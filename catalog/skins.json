@@ -1,7 +1,7 @@
 {
   "format": "trk-avatar-library-skins",
   "version": 1,
-  "generatedAt": "2026-10-31T15:28:52.115Z",
+  "generatedAt": "2026-10-31T18:24:37.895Z",
   "source": "trk-PWA / js/data.js + js/characters/miku.js",
   "count": 53,
   "typeSkins": 9,
@@ -2351,6 +2351,34 @@
       ],
       "locked": false,
       "video": "grayscale(1) contrast(1.35) sepia(1) hue-rotate(280deg) saturate(1.5) brightness(.7)"
+    }
+  ],
+  "fontPacks": [
+    {
+      "file": "font-packs/maru-go.stpack",
+      "name": "丸ゴのお茶目（書体パック）",
+      "release": "1.1.0",
+      "skin": "丸ゴのお茶目",
+      "colors": {
+        "stage": "#241a2a",
+        "accent": "#ffb3d2"
+      },
+      "fonts": [
+        {
+          "family": "TrkZenMaru",
+          "file": "fonts/ZenMaruGothic-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt"
+        },
+        {
+          "family": "TrkZenMaru",
+          "file": "fonts/ZenMaruGothic-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt"
+        }
+      ]
     }
   ]
 }

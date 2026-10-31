@@ -1,0 +1,27 @@
+{
+  "name": "first-set",
+  "title": "trk! はじめてセット",
+  "date": "2026-11-01",
+  "tag": "first-set-2026-11-01",
+  "file": "trk-first-set-2026-11-01.zip",
+  "bytes": 2993307,
+  "sha256": "b9599930c9e5d1de126a5be73d5d11ed14d4f0f267cf597b45e54724af4229b5",
+  "files": [
+    {
+      "path": "gallery/all-skins.html",
+      "bytes": 51711,
+      "sha256": "1a35874d9ada279cc59db57ad66e430300f2abe87d5296a157c00b8cab2f0183"
+    },
+    {
+      "path": "catalog/index.json",
+      "bytes": 2795,
+      "sha256": "b3bee7f168ca10fc5c4a3fbe571e2d2307ff9ce031f2d4292ccf371e9161b28c"
+    },
+    {
+      "path": "font-packs/maru-go.stpack",
+      "bytes": 2935978,
+      "sha256": "93a4bb2d07e41ddd73aa047d658f5e7cf998445475aef214ff0eadb8e4477488"
+    }
+  ],
+  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML と目録も同じ ZIP に入っています。"
+}

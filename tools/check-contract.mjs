@@ -13,6 +13,7 @@
      ・全パックが sanitizeCatalog を通り、落とされる件数が 0
      ・name/author/version/file/sha256/bytes/fonts/license/description/url が、書いたとおりに残る
      ・file が実在し、sha256・bytes が実物と一致する
+     ・fonts[].licenseFile（任意・L7）の形が正しい（アプリが読めるのは trk233 以降。いまは落とされるだけ）
 
    使い方：
      node tools/check-contract.mjs
@@ -101,6 +102,21 @@ if (!cat) {
     const af = (a.fonts || []).map(f => `${f.family}|${f.file}|${f.license}`).join(",");
     const bf = (b.fonts || []).map(f => `${f.family}|${f.file}|${f.license}`).join(",");
     if (af !== bf) fail(`${where} の fonts が変わりました（目録 "${af}" → アプリ "${bf}"）`);
+    /* L7：licenseFile は任意項目。アプリは trk232 では持たない（trk233 以降で全文の表示に使う予定）なので、
+       形だけこちらで決めて、落とされても不合格にしません（載せること自体が契約違反にならないように） */
+    let dropped = 0;
+    for (const f of a.fonts || []) {
+      if (f.licenseFile === undefined) continue;
+      const p = String(f.licenseFile || "");
+      const ok = typeof f.licenseFile === "string" && /^[A-Za-z0-9_\-./]{1,120}$/.test(p)
+        && !p.includes("..") && !p.startsWith("/") && /\.(txt|md)$/i.test(p);
+      if (!ok) fail(`${where} の fonts[].licenseFile（"${p}"）は .txt か .md のパスにしてください`);
+      else dropped++;
+    }
+    if (dropped) {
+      const kept = (b.fonts || []).some(f => f.licenseFile);
+      notes.push(`${where} の fonts[].licenseFile を ${kept ? "アプリが読むようになりました（check-contract の見直しどきです）" : `アプリはまだ読みません（trk233 以降の予定。目録に載っていても読む件数は変わりません）`}`);
+    }
     /* L3：colors は任意項目。形だけこちらで決める（アプリの trk231 は無視する） */
     if (a.colors !== undefined) {
       const c = a.colors;

@@ -13,6 +13,7 @@ import os from "node:os";
 import path from "node:path";
 import crypto from "node:crypto";
 import { verifyPack } from "./verify-pack.mjs";
+import { checkFont } from "./check-fonts.mjs";
 import { loadZipIO } from "./lib/zip.mjs";
 
 const keep = process.argv.includes("--keep");
@@ -92,6 +93,34 @@ await expect("書体を入れてライセンス全文が無いと不合格",
     fonts: [{ family: "TrkTest", file: "fonts/test.woff2", weight: 400, license: "OFL-1.1" }] },
     "fonts/test.woff2": "wOF2" }), false, "ライセンス全文");
 
+/* L7：書体のライセンス全文（fonts[].licenseFile・任意） */
+const fontManifest = extra => ({ ...goodManifest(),
+  fonts: [{ family: "TrkTest", file: "fonts/test.woff2", weight: 400, license: "OFL-1.1", ...extra }] });
+
+await expect("licenseFile を書いても合格（実在する全文を指す）",
+  await makePack("font-licensefile-ok.stpack", { "pack.json": fontManifest({ licenseFile: "fonts/OFL.txt" }),
+    "fonts/test.woff2": "wOF2", "fonts/OFL.txt": "SIL OPEN FONT LICENSE Version 1.1 — " + "x".repeat(200) }), true);
+
+await expect("licenseFile が指すファイルが無いと不合格",
+  await makePack("font-licensefile-missing.stpack", { "pack.json": fontManifest({ licenseFile: "fonts/NOPE.txt" }),
+    "fonts/test.woff2": "wOF2", "OFL.txt": "SIL OPEN FONT LICENSE Version 1.1" }), false, "licenseFile");
+
+await expect("licenseFile が .txt／.md でないと不合格",
+  await makePack("font-licensefile-ext.stpack", { "pack.json": fontManifest({ licenseFile: "fonts/test.woff2" }),
+    "fonts/test.woff2": "wOF2", "OFL.txt": "SIL OPEN FONT LICENSE Version 1.1" }), false, "licenseFile");
+
+await expect("licenseFile のパスに .. があると不合格",
+  await makePack("font-licensefile-traversal.stpack", { "pack.json": fontManifest({ licenseFile: "../OFL.txt" }),
+    "fonts/test.woff2": "wOF2", "OFL.txt": "SIL OPEN FONT LICENSE Version 1.1" }), false, "licenseFile");
+
+/* L8：release を書いていないパックは「ℹ」で知らせる（合格は変えない） */
+{
+  const r = await verifyPack(await makePack("no-release.stpack", { "pack.json": goodManifest() }), { trk });
+  const ok = r.ok && (r.notes || []).some(n => n.includes("release"));
+  results.push({ label: "release が無いときは ℹ で知らせる（合格のまま）", ok, detail: ok ? "" : `ok=${r.ok} notes=${(r.notes || []).join(" / ")}` });
+  console.log(`${ok ? "✅" : "❌"} release が無いときは ℹ で知らせる（合格のまま）${ok ? "" : `  ← ok=${r.ok}`}`);
+}
+
 await expect("release の形が違うと不合格",
   await makePack("bad-release.stpack", { "pack.json": { ...goodManifest(), release: "新しい版" } }), false, "release");
 
@@ -107,6 +136,32 @@ await expect("release の形が違うと不合格",
   const ok = !r.ok;
   results.push({ label: "CRC を壊した ZIP は不合格", ok, detail: ok ? "" : "読めてしまった" });
   console.log(`${ok ? "✅" : "❌"} CRC を壊した ZIP は不合格${ok ? "" : "  ← 読めてしまった"}`);
+}
+
+/* L7：licenseFile が info.fonts に残る（目録に載せる値） */
+{
+  const file = await makePack("licensefile-info.stpack", { "pack.json": fontManifest({ licenseFile: "fonts/OFL.txt" }),
+    "fonts/test.woff2": "wOF2", "fonts/OFL.txt": "SIL OPEN FONT LICENSE Version 1.1 — " + "x".repeat(200) });
+  const r = await verifyPack(file, { trk });
+  const got = (r.info.fonts || []).map(f => f.licenseFile).join(",");
+  const ok = r.ok && got === "fonts/OFL.txt";
+  results.push({ label: "licenseFile が検査結果（目録に載せる値）に残る", ok, detail: ok ? "" : `ok=${r.ok} licenseFile=${got} ${r.errors.join(" / ")}` });
+  console.log(`${ok ? "✅" : "❌"} licenseFile が検査結果（目録に載せる値）に残る${ok ? "" : `  ← ${got}`}`);
+}
+
+/* L9：woff2 の中身（check-fonts）が「書体でないもの」を断るか */
+{
+  const cases = [
+    { label: "woff2 でない中身（ヘッダだけ）は不合格", buf: Buffer.alloc(64, 0), needle: "wOF2" },
+    { label: "woff2 の署名だけの空ファイルは不合格", buf: Buffer.from("wOF2"), needle: "" },
+  ];
+  for (const c of cases) {
+    const r = checkFont(c.buf);
+    const all = r.errors.join(" / ");
+    const ok = !r.ok && (!c.needle || all.includes(c.needle));
+    results.push({ label: c.label, ok, detail: ok ? "" : `ok=${r.ok} ${all}` });
+    console.log(`${ok ? "✅" : "❌"} ${c.label}${ok ? "" : `  ← ok=${r.ok} ${all}`}`);
+  }
 }
 
 /* 目録が今の中身と合っているか（--check と同じ見方） */
