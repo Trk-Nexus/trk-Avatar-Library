@@ -1,0 +1,59 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: この倉庫
+        uses: actions/checkout@v4
+        with:
+          path: trk-Avatar-Library
+
+      # tools は trk-PWA の js/zip-io.js・js/pack-catalog.js を「そのまま」読みます（写しを持たない）
+      - name: trk-PWA（となりのフォルダに取ってくる）
+        uses: actions/checkout@v4
+        with:
+          repository: TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA
+          path: trk-PWA
+
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 書体の取り置きを使い回す
+        uses: actions/cache@v4
+        with:
+          path: trk-Avatar-Library/.cache/font-packs
+          key: fontsource-zen-maru-gothic-5.3.1
+
+      - name: 道具の自己検査（14 項目）
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: node tools/selftest.mjs
+
+      - name: 目録が最新か
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: node tools/build-catalog.mjs --check
+
+      - name: 目録がアプリの読み取り規則を通るか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: node tools/check-contract.mjs
+
+      - name: 書体パックがフォルダと一致するか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: node tools/build-pack.mjs font-packs/maru-go --check --fetch

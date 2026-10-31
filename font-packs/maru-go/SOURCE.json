@@ -1,0 +1,21 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/maru-go --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/ZenMaruGothic-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/zen-maru-gothic/-/zen-maru-gothic-5.3.1.tgz",
+      "path": "package/files/zen-maru-gothic-japanese-400-normal.woff2",
+      "sha256": "58395f895293b2782f9ec7b10d702562b3b14e5349a13849dfafb8cfdb8f9e56",
+      "bytes": 1436276,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/zen-marugothic"
+    },
+    "fonts/ZenMaruGothic-Bold.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/zen-maru-gothic/-/zen-maru-gothic-5.3.1.tgz",
+      "path": "package/files/zen-maru-gothic-japanese-700-normal.woff2",
+      "sha256": "05b928e9fef5eea04626a399a49bf7d5f7ca8ff91e245883088d572b13800a49",
+      "bytes": 1492576,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/zen-marugothic"
+    }
+  }
+}

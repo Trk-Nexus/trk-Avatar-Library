@@ -1,0 +1,13 @@
+# 素材の取り置き（tools/build-pack.mjs --fetch が使う。パックには入らない）
+.cache/
+
+# 手元で作る見本（tools/preview-pack.mjs の出力）
+dist/
+
+# Node を触るときの置き場
+node_modules/
+npm-debug.log*
+
+# OS のゴミ
+.DS_Store
+Thumbs.db
