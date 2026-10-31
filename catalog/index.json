@@ -2,7 +2,7 @@
   "format": "trk-avatar-library",
   "version": 1,
   "name": "trk-Avatar-Library",
-  "updatedAt": "2026-10-31T19:48:23.106Z",
+  "updatedAt": "2026-10-31T20:25:54.184Z",
   "app": "trk! (trk-PWA)",
   "howToInstall": "trk! の 設定 → 📦 カスタムパック → 📚 目録から入れる で、この目録（index.json）を選び、一覧から入れたい .stpack を選んでください。.stpack を画面にドラッグ＆ドロップしても入ります。",
   "builtinSkins": {
@@ -65,8 +65,14 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 944356,
           "note": "極太のゴシック。ポスターのように強く出る",
-          "cmap": 6886
+          "cmap": 6886,
+          "tags": [
+            "極太",
+            "ポップ",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -102,8 +108,13 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 396312,
           "note": "ドット絵のような文字。レトロゲーム風に",
-          "cmap": 6884
+          "cmap": 6884,
+          "tags": [
+            "ドット",
+            "レトロ"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -139,8 +150,14 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1966028,
           "note": "まるっこい手書き文字。力を抜いた雰囲気に",
-          "cmap": 6873
+          "cmap": 6873,
+          "tags": [
+            "丸ゴ",
+            "手書き",
+            "かわいい"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -176,8 +193,13 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1747936,
           "note": "飾りのある明朝体。上品で華やかな雰囲気に",
-          "cmap": 6877
+          "cmap": 6877,
+          "tags": [
+            "明朝",
+            "かわいい"
+          ]
         },
         {
           "family": "TrkKaiseiDecol",
@@ -185,8 +207,14 @@
           "license": "OFL-1.1",
           "weight": 700,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1643844,
           "note": "飾り明朝の太字。題字やタイトルに",
-          "cmap": 6877
+          "cmap": 6877,
+          "tags": [
+            "明朝",
+            "かわいい",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -222,8 +250,14 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1891944,
           "note": "鉛筆と筆の間のような手ざわり。静かな本文に",
-          "cmap": 6887
+          "cmap": 6887,
+          "tags": [
+            "手書き",
+            "かすれ",
+            "本文"
+          ]
         },
         {
           "family": "TrkKleeOne",
@@ -231,8 +265,14 @@
           "license": "OFL-1.1",
           "weight": 600,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 2030396,
           "note": "手書き風の少し太いウェイト。題字や強調に",
-          "cmap": 6887
+          "cmap": 6887,
+          "tags": [
+            "手書き",
+            "かすれ",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -268,8 +308,13 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 901976,
           "note": "やわらかい丸ゴシック。親しみやすい雰囲気に",
-          "cmap": 5451
+          "cmap": 5451,
+          "tags": [
+            "丸ゴ",
+            "読みやすい"
+          ]
         },
         {
           "family": "TrkMPlusRounded",
@@ -277,8 +322,13 @@
           "license": "OFL-1.1",
           "weight": 700,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 992120,
           "note": "丸ゴの太字。やわらかいまま目立たせる",
-          "cmap": 5451
+          "cmap": 5451,
+          "tags": [
+            "丸ゴ",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -314,8 +364,13 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1436276,
           "note": "丸みのあるゴシック。長い文でもやわらかく読める",
-          "cmap": 6875
+          "cmap": 6875,
+          "tags": [
+            "丸ゴ",
+            "読みやすい"
+          ]
         },
         {
           "family": "TrkZenMaru",
@@ -323,8 +378,13 @@
           "license": "OFL-1.1",
           "weight": 700,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1492576,
           "note": "丸ゴの太字。見出しをやわらかく強調する",
-          "cmap": 6875
+          "cmap": 6875,
+          "tags": [
+            "丸ゴ",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）",
@@ -360,8 +420,14 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 992600,
           "note": "まるい太字のポップ体。もちっとした印象に",
-          "cmap": 6871
+          "cmap": 6871,
+          "tags": [
+            "ポップ",
+            "極太",
+            "かわいい"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -397,8 +463,14 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 2013516,
           "note": "看板のような太いポップ体。遠くからでも目立つ",
-          "cmap": 6883
+          "cmap": 6883,
+          "tags": [
+            "ポップ",
+            "極太",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -434,8 +506,14 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1570192,
           "note": "線で描いたような袋文字。ネオン風の見出しに",
-          "cmap": 6884
+          "cmap": 6884,
+          "tags": [
+            "ポップ",
+            "ネオン",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -471,8 +549,14 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 974452,
           "note": "手書きのロック風。元気な見出しに",
-          "cmap": 6884
+          "cmap": 6884,
+          "tags": [
+            "手書き",
+            "ポップ",
+            "元気"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -508,8 +592,13 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1385356,
           "note": "端正な明朝体。和風でも読みやすい本文に",
-          "cmap": 6881
+          "cmap": 6881,
+          "tags": [
+            "明朝",
+            "読みやすい"
+          ]
         },
         {
           "family": "TrkShipporiMincho",
@@ -517,8 +606,13 @@
           "license": "OFL-1.1",
           "weight": 700,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1456856,
           "note": "明朝の太字。落ち着いた見出しに",
-          "cmap": 6881
+          "cmap": 6881,
+          "tags": [
+            "明朝",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -554,8 +648,14 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 895852,
           "note": "筆文字のポップ体。にぎやかな見出しに合う",
-          "cmap": 6883
+          "cmap": 6883,
+          "tags": [
+            "手書き",
+            "ポップ",
+            "和風"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -591,8 +691,13 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 966336,
           "note": "すっきりした角ゴシック。いちばん読みやすい本文向け",
-          "cmap": 6872
+          "cmap": 6872,
+          "tags": [
+            "角ゴ",
+            "読みやすい"
+          ]
         },
         {
           "family": "TrkZenKaku",
@@ -600,8 +705,13 @@
           "license": "OFL-1.1",
           "weight": 700,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 995252,
           "note": "角ゴの太字。見出しをきりっと引き締める",
-          "cmap": 6872
+          "cmap": 6872,
+          "tags": [
+            "角ゴ",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
@@ -637,8 +747,13 @@
           "license": "OFL-1.1",
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 1860532,
           "note": "古風な明朝体。静かで落ち着いた本文に",
-          "cmap": 6876
+          "cmap": 6876,
+          "tags": [
+            "明朝",
+            "和風"
+          ]
         },
         {
           "family": "TrkZenOldMincho",
@@ -646,8 +761,14 @@
           "license": "OFL-1.1",
           "weight": 700,
           "licenseFile": "fonts/OFL.txt",
+          "bytes": 2030588,
           "note": "古明朝の太字。堂々とした見出しに",
-          "cmap": 6876
+          "cmap": 6876,
+          "tags": [
+            "明朝",
+            "和風",
+            "見出し"
+          ]
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",

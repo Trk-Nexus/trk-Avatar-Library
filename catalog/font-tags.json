@@ -1,0 +1,57 @@
+{
+  "note": "目録（catalog/index.json）の packs[].fonts[].tags に入れる「検索と絞り込みの語」です（L15・任意・8 個まで・各 16 文字まで）。パックの中身（pack.json）は変えず、この倉庫だけで足します（配った .stpack の sha256 を動かさないため）。語は gallery/fonts.html の絞り込みと検索にそのまま出ます。書き間違い（多すぎる・長すぎる・パックにない書体）は build-catalog が止めます。",
+  "packs": {
+    "font-packs/maru-go.stpack": {
+      "fonts/ZenMaruGothic-Regular.woff2": ["丸ゴ", "読みやすい"],
+      "fonts/ZenMaruGothic-Bold.woff2": ["丸ゴ", "見出し"]
+    },
+    "font-packs/zen-kaku.stpack": {
+      "fonts/ZenKakuGothicNew-Regular.woff2": ["角ゴ", "読みやすい"],
+      "fonts/ZenKakuGothicNew-Bold.woff2": ["角ゴ", "見出し"]
+    },
+    "font-packs/m-plus-rounded.stpack": {
+      "fonts/MPlusRounded1c-Regular.woff2": ["丸ゴ", "読みやすい"],
+      "fonts/MPlusRounded1c-Bold.woff2": ["丸ゴ", "見出し"]
+    },
+    "font-packs/klee-one.stpack": {
+      "fonts/KleeOne-Regular.woff2": ["手書き", "かすれ", "本文"],
+      "fonts/KleeOne-SemiBold.woff2": ["手書き", "かすれ", "見出し"]
+    },
+    "font-packs/yusei-magic.stpack": {
+      "fonts/YuseiMagic-Regular.woff2": ["手書き", "ポップ", "和風"]
+    },
+    "font-packs/hachi-maru-pop.stpack": {
+      "fonts/HachiMaruPop-Regular.woff2": ["丸ゴ", "手書き", "かわいい"]
+    },
+    "font-packs/dotgothic.stpack": {
+      "fonts/DotGothic16-Regular.woff2": ["ドット", "レトロ"]
+    },
+    "font-packs/shippori-mincho.stpack": {
+      "fonts/ShipporiMincho-Regular.woff2": ["明朝", "読みやすい"],
+      "fonts/ShipporiMincho-Bold.woff2": ["明朝", "見出し"]
+    },
+    "font-packs/zen-old-mincho.stpack": {
+      "fonts/ZenOldMincho-Regular.woff2": ["明朝", "和風"],
+      "fonts/ZenOldMincho-Bold.woff2": ["明朝", "和風", "見出し"]
+    },
+    "font-packs/dela-gothic.stpack": {
+      "fonts/DelaGothicOne-Regular.woff2": ["極太", "ポップ", "見出し"]
+    },
+    "font-packs/rampart-one.stpack": {
+      "fonts/RampartOne-Regular.woff2": ["ポップ", "ネオン", "見出し"]
+    },
+    "font-packs/rocknroll-one.stpack": {
+      "fonts/RocknRollOne-Regular.woff2": ["手書き", "ポップ", "元気"]
+    },
+    "font-packs/potta-one.stpack": {
+      "fonts/PottaOne-Regular.woff2": ["ポップ", "極太", "見出し"]
+    },
+    "font-packs/kaisei-decol.stpack": {
+      "fonts/KaiseiDecol-Regular.woff2": ["明朝", "かわいい"],
+      "fonts/KaiseiDecol-Bold.woff2": ["明朝", "かわいい", "見出し"]
+    },
+    "font-packs/mochiy-pop.stpack": {
+      "fonts/MochiyPopOne-Regular.woff2": ["ポップ", "極太", "かわいい"]
+    }
+  }
+}

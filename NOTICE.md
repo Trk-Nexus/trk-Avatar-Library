@@ -36,9 +36,12 @@
     Potta One／Kaisei Decol／Mochiy Pop One（すべて OFL-1.1・npm `@fontsource` の版を固定して取得）
 - **2026-11-01 に届いた 14 パックは、trk-PWA 側が作った `pack.json` をそのまま使っています**（書き換えていません）。
   そのため、向こうの `.stpack` とバイト単位で同じものになります（`SHA256SUMS` と一致）。
-  目録に足した「書体のひとこと」（`fonts[].note`・`catalog/font-notes.json`）は**パックの外**にあります。
+  目録に足した「書体のひとこと」（`fonts[].note`・`catalog/font-notes.json`）と「タグ」（`fonts[].tags`・`catalog/font-tags.json`）は**パックの外**にあります。
 - 「🔤 同梱の書体」の節（`gallery/all-skins.html`）は、パックの宣言から**書体の名前・ライセンス・ひとことを表示するだけ**で、
   書体ファイルを埋め込んでいません（@font-face を使わないので、表示は端末に入っている書体に従います）。
+- **書体の一覧と検索**（`gallery/fonts.html`・`catalog/fonts.json`）も同じ方針です。目録の項目（family・太さ・字数・大きさ・
+  ライセンス・ひとこと・タグ）を並べるだけで、**書体ファイルは 1 つも埋め込んでいません**。一覧から落とせるのは、各パックの
+  `.stpack`（＝権利表示と `fonts/OFL.txt` を含む配布物）です。
 
 ## 書体を同梱するとき（`font-packs/`）
 

@@ -18,6 +18,10 @@
      ・fonts[].note は任意（L10・trk233 からのお願い）。「どんな雰囲気の書体か」の一行（60 文字まで）。
        パックの中身（pack.json）は動かさず、この倉庫の catalog/font-notes.json で足す
      ・fonts[].cmap は任意（L11）。その書体が対応する字数（woff2 の cmap を数える）
+     ・fonts[].tags は任意（L15・8 個まで・各 16 文字）。catalog/font-tags.json で足す（検索と絞り込みの語）
+     ・fonts[].bytes は任意。パックの中の woff2 1 本の大きさ（見本ページが使う）
+     ・書体パックの受け入れ検査（L16）はこの道具が持ちます：OFL-1.1・family は Trk で始まる・
+       family＋weight が目録全体で重複しない・1 本 4 MiB 以下・cmap 1,000 字以上
      ・形が合っているかは tools/check-contract.mjs（アプリ自身の sanitizeCatalog）で確かめる
 */
 import fs from "node:fs";
@@ -60,8 +64,42 @@ const noteOf = (packFile, fontFile) => {
   return note;
 };
 
-/* L11：その書体が対応する字数（woff2 の cmap）。check-fonts と同じ読み方で数える */
-async function cmapSizes(buf, fonts) {
+/* L15：検索と絞り込みの語（packs[].fonts[].tags・任意・8 個まで・各 16 文字）。
+   アプリは trk236 以降で「書体で絞る」に使う。L10 の note と同じく、パックの外で足す */
+const TAGS_PATH = path.join(HERE, "catalog/font-tags.json");
+const TAGS = fs.existsSync(TAGS_PATH) ? JSON.parse(fs.readFileSync(TAGS_PATH, "utf8")) : {};
+const TAGS_BY_PACK = TAGS && typeof TAGS.packs === "object" && TAGS.packs ? TAGS.packs : {};
+const TAG_MAX_COUNT = 8, TAG_MAX_LEN = 16;
+const tagProblems = [];
+const tagUsed = new Set();
+const tagsOf = (packFile, fontFile) => {
+  const byFont = TAGS_BY_PACK[packFile];
+  if (!byFont || typeof byFont !== "object") return [];
+  const raw = byFont[fontFile];
+  if (raw === undefined || raw === null) return [];
+  tagUsed.add(`${packFile}|${fontFile}`);
+  if (!Array.isArray(raw)) {
+    tagProblems.push(`${packFile} の「${fontFile}」の tags が配列ではありません`);
+    return [];
+  }
+  const out = [];
+  for (const t of raw) {
+    const s = typeof t === "string" ? t.trim() : "";
+    if (!s) { tagProblems.push(`${packFile} の「${fontFile}」の tags に空の語があります`); continue; }
+    if ([...s].length > TAG_MAX_LEN) {
+      tagProblems.push(`${packFile} の「${fontFile}」のタグ「${s}」が ${[...s].length} 文字です（${TAG_MAX_LEN} 文字まで）`);
+      continue;
+    }
+    if (!out.includes(s)) out.push(s);
+  }
+  if (out.length > TAG_MAX_COUNT) {
+    tagProblems.push(`${packFile} の「${fontFile}」の tags が ${out.length} 個あります（${TAG_MAX_COUNT} 個まで）`);
+  }
+  return out.slice(0, TAG_MAX_COUNT);
+};
+
+/* L11：その書体が対応する字数（woff2 の cmap）と、その1本の大きさ。check-fonts と同じ読み方で数える */
+async function fontStats(buf, fonts) {
   const out = new Map();
   if (!fonts.length) return out;
   let zipped = null;
@@ -70,8 +108,10 @@ async function cmapSizes(buf, fonts) {
     try {
       const bytes = await zipped.read(f.file);
       if (!bytes) continue;
+      const stat = { bytes: bytes.length };
       const c = checkFont(Buffer.from(bytes), { family: f.family, file: f.file, weight: f.weight });
-      if (c && c.info && Number.isInteger(c.info.cmap) && c.info.cmap > 0) out.set(f.file, c.info.cmap);
+      if (c && c.info && Number.isInteger(c.info.cmap) && c.info.cmap > 0) stat.cmap = c.info.cmap;
+      out.set(f.file, stat);
     } catch (_) { /* 読めない書体は check-fonts が別に知らせる（目録は cmap 抜きで作る） */ }
   }
   return out;
@@ -93,7 +133,7 @@ for (const p of listPacks()) {
   const slug = (r.info.name || path.basename(p.file, ".stpack")).toLowerCase()
     .replace(/[^a-z0-9\u3040-\u30ff\u4e00-\u9fff]+/gi, "-").replace(/^-|-$/g, "").slice(0, 40) || "pack";
   const fontInfo = Array.isArray(r.info.fonts) ? r.info.fonts : [];
-  const cmaps = await cmapSizes(buf, fontInfo);
+  const stats = await fontStats(buf, fontInfo);
   packs.push({
     id: `${slug}-${sha256(buf).slice(0, 8)}`,
     name: r.info.name || path.basename(p.file, ".stpack"),
@@ -112,11 +152,15 @@ for (const p of listPacks()) {
     ...(r.info.colors ? { colors: r.info.colors } : {}),
     fonts: fontInfo.map(f => {
       const note = noteOf(p.file, f.file);
+      const tags = tagsOf(p.file, f.file);
+      const stat = stats.get(f.file) || {};
       return { family: f.family, file: f.file, license: f.license,
         ...(Number.isInteger(f.weight) ? { weight: f.weight } : {}),
         ...(f.licenseFile ? { licenseFile: f.licenseFile } : {}),
+        ...(stat.bytes ? { bytes: stat.bytes } : {}),
         ...(note ? { note } : {}),
-        ...(cmaps.has(f.file) ? { cmap: cmaps.get(f.file) } : {}) };
+        ...(stat.cmap ? { cmap: stat.cmap } : {}),
+        ...(tags.length ? { tags } : {}) };
     }),
     license: r.info.license || "",
     description: r.info.description || "",
@@ -141,6 +185,61 @@ for (const [packFile, byFont] of Object.entries(NOTES_BY_PACK)) {
 if (noteProblems.length) {
   console.error(`❌ catalog/font-notes.json に問題があります（${noteProblems.length} 件）`);
   for (const m of noteProblems) console.error(`   ❌ ${m}`);
+  process.exit(1);
+}
+
+/* catalog/font-tags.json の書き間違い（多すぎる・長すぎる・パックにない書体）も、黙って捨てずに止める */
+for (const [packFile, byFont] of Object.entries(TAGS_BY_PACK)) {
+  if (!packs.some(p => p.file === packFile)) {
+    tagProblems.push(`catalog/font-tags.json の「${packFile}」は目録にありません（file のつづりを確かめてください）`);
+    continue;
+  }
+  if (!byFont || typeof byFont !== "object") { tagProblems.push(`catalog/font-tags.json の「${packFile}」が入れ物ではありません`); continue; }
+  for (const fontFile of Object.keys(byFont)) {
+    if (!tagUsed.has(`${packFile}|${fontFile}`)) {
+      tagProblems.push(`catalog/font-tags.json の「${packFile}」の「${fontFile}」は、そのパックに入っていません`);
+    }
+  }
+}
+if (tagProblems.length) {
+  console.error(`❌ catalog/font-tags.json に問題があります（${tagProblems.length} 件）`);
+  for (const m of tagProblems) console.error(`   ❌ ${m}`);
+  process.exit(1);
+}
+
+/* L16：書体パックを増やすときの受け入れ検査（trk233 からのお願い）。
+   ここが赤いうちは「増やしても壊れない」とは言えないので、目録を作らずに止める。 */
+const policyProblems = [];
+const familyWeight = new Map();
+const MB = 1048576;
+for (const p of packs) {
+  if (!p.fonts.length) continue;
+  for (const f of p.fonts) {
+    const label = `${p.file} の「${f.family || f.file}」`;
+    if (String(f.license) !== "OFL-1.1") {
+      policyProblems.push(`${label}: 書体の license は OFL-1.1 にしてください（\"${f.license || "なし"}\"）`);
+    }
+    if (!/^Trk/.test(String(f.family))) {
+      policyProblems.push(`${label}: family は Trk で始めてください（OFL の予約名を避けるため）`);
+    }
+    const key = `${String(f.family).toLowerCase()}|${Number.isInteger(f.weight) ? f.weight : 400}`;
+    if (familyWeight.has(key)) {
+      policyProblems.push(`${label}: family＋太さが ${familyWeight.get(key)} と重複しています（目録全体で1つだけ）`);
+    } else familyWeight.set(key, p.file);
+    if (f.bytes && f.bytes > 4 * MB) {
+      policyProblems.push(`${label}: 1 本が ${(f.bytes / MB).toFixed(2)} MiB です（4 MiB 以下にしてください）`);
+    }
+    if (Number.isInteger(f.cmap) && f.cmap < 1000) {
+      policyProblems.push(`${label}: 対応する字が ${f.cmap} 字です（1,000 字以上にしてください）`);
+    }
+  }
+  if (!p.fonts.some(f => f.licenseFile)) {
+    policyProblems.push(`${p.file}: 書体のライセンス全文（fonts[].licenseFile）がありません（OFL は同梱が条件です）`);
+  }
+}
+if (policyProblems.length) {
+  console.error(`❌ L16：書体パックの受け入れ検査に通りません（${policyProblems.length} 件）`);
+  for (const m of policyProblems) console.error(`   ❌ ${m}`);
   process.exit(1);
 }
 
@@ -206,7 +305,8 @@ fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, text, "utf8");
 const noteCount = packs.reduce((n, p) => n + p.fonts.filter(f => f.note).length, 0);
 const cmapCount = packs.reduce((n, p) => n + p.fonts.filter(f => f.cmap).length, 0);
-console.log(`✅ ${packs.length} パック → catalog/index.json（${text.length.toLocaleString()} B・書体の note ${noteCount} / cmap ${cmapCount}）`);
+const tagCount = packs.reduce((n, p) => n + p.fonts.filter(f => f.tags && f.tags.length).length, 0);
+console.log(`✅ ${packs.length} パック → catalog/index.json（${text.length.toLocaleString()} B・書体の note ${noteCount} / cmap ${cmapCount} / tags ${tagCount}）`);
 for (const p of packs) console.log(`   ${p.ok ? "✅" : "❌"} ${p.file} — ${p.name}${p.fonts.length ? `／書体 ${p.fonts.length}` : ""}`);
 if (problems.length) {
   console.error("\n❌ 検査に通らないパックがあります（目録には載せましたが ok:false です）");

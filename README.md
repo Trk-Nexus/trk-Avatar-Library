@@ -15,7 +15,7 @@
 | | すること | 場所 |
 | --- | --- | --- |
 | ① | **見本を見る** — `gallery/all-skins.html` を落として開く（1ファイル・オフラインOK） | [`gallery/all-skins.html`](gallery/all-skins.html) |
-| ② | **目録とパックを落とす** — `catalog/index.json` と、`packs/` か `font-packs/` の `.stpack`（いま 16 個）。<br>まとめて落とすなら [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r3)（見本＋目録＋16 パックの1ファイル・約 29.4 MB） | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-目録とパックを落とす) |
+| ② | **目録とパックを落とす** — `catalog/index.json` と、`packs/` か `font-packs/` の `.stpack`（いま 16 個）。<br>まとめて落とすなら [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r4)（見本＋目録＋16 パックの1ファイル・約 29.4 MB。`.zip` と `.stlib` は**同じ中身**） | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-目録とパックを落とす) |
 | ③ | **trk! に入れる** — 設定 → 📦 カスタムパック → 📚 目録から入れる → **📥 まとめて入れる** で、目録とパックをまとめて選ぶ。<br>大きさと sha256 が合わないものは入りません | trk!（trk231 以降） |
 
 ## 1. いま入っているもの
@@ -23,14 +23,17 @@
 | 場所 | 中身 |
 | --- | --- |
 | `gallery/all-skins.html` | **全スキン見本**（trk! の見た目のスキン **53 種**）。1ファイルで、ダブルクリックだけで開けます。外部からは何も読みません（オフラインOK） |
+| `gallery/fonts.html` | **書体の一覧と検索**（15 パック・22 ウェイト）。対応字数・大きさ・太さ・ライセンス・ひとこと・雰囲気タグを並べ、**50 音順／大きさ順／字数順**に並べ替え、**雰囲気・ライセンス・太さ・大きさで絞り込み**、言葉で横断検索。1ファイル・外部参照 0。**行ごとに 1 本だけ落とせる**リンクつき（L13・L14） |
 | `catalog/skins.json` | 上の見本のもとデータ（機械が読む用・53 種・書体 9 種） |
+| `catalog/fonts.json` | 書体の一覧のもとデータ（機械が読む用・15 パック・22 ウェイト） |
 | `catalog/index.json` | **目録**。この倉庫で配るパックの一覧（名前・作者・版・sha256・バイト数・含まれる書体・ライセンス）。アプリ（trk230 以降）がそのまま読みます |
 | `catalog/font-notes.json` | 書体の**ひとこと**（「どんな雰囲気か」の1行・60 文字まで）。目録の `fonts[].note` に入ります（L10）。パックの中身は変えません |
+| `catalog/font-tags.json` | 書体の**検索と絞り込みの語**（「丸ゴ」「明朝」「見出し」など・8 個まで・各 16 文字）。目録の `fonts[].tags` と `gallery/fonts.html` の絞り込みに入ります（L15）。パックの中身は変えません |
 | `packs/` | 配る `.stpack`（trk! のカスタムパック）。いまは見本が1つ |
 | `font-packs/` | 書体を同梱した `.stpack` が **15 個**（14 種の日本語書体＋「丸ゴのお茶目」）。合計 **29.3 MB**（30,697,343 B）・20 ウェイト。一覧は §2-2、作り方は §4 |
 | `tools/` | 見本の書き出し・パックの組み立て／検査・目録の作成・**目録がアプリの読み取り規則を通るかの検査**・パックの見本作り（Node だけ） |
-| `sets/` | **はじめてセット**の定義（見本＋目録＋16 パックを1つのZIPにする）。作るのは `tools/build-set.mjs` |
-| `release/` | 配ったセットの記録（ファイル名・大きさ・sha256）。いまの記録（**r3**）と、過去の記録（r1 の `first-set-2026-11-01.json`。r2 の経緯は `release/README.md`） |
+| `sets/` | **はじめてセット**の定義（見本 2 枚＋目録＋16 パックを1つの ZIP／`.stlib` にする）。作るのは `tools/build-set.mjs` |
+| `release/` | 配ったセットの記録（ファイル名・大きさ・sha256）。いまの記録（**r4**）と、過去の記録（r1 の `first-set-2026-11-01.json`。r2・r3 の経緯は `release/README.md`） |
 | `docs/` | 受け渡しメモ（2026-10-31）。開発の引き継ぎは [`HANDOFF.md`](HANDOFF.md) |
 | `LICENSE` / `NOTICE.md` | GPL-3.0-or-later と、権利のまとめ |
 
@@ -46,6 +49,8 @@
 並べたもので、ここでも書体ファイルは読みません（@font-face なし）。端末に同じ家族名の書体が入っているときだけ、その書体で出ます。
 ひとことは目録の `fonts[].note` と同じ出どころ（`catalog/font-notes.json`）です。
 書体そのものは `.stpack` の中にあり、trk! に入れて「使う」と本文に効きます（trk232 以降）。
+**どの書体にするかを決めるとき**は [`gallery/fonts.html`](gallery/fonts.html)（書体の一覧と検索）を使ってください。
+対応字数・大きさ・太さ・雰囲気タグで絞れて、**1 本だけ落とすリンク**もあります。
 
 > アプリを起動しなくても、「気になるスキンがあるかどうか」を先に確かめられます。
 > 本物の見た目（背景・ノーツ・再生バーまで）は、trk! の 設定 → 🎨 見た目 → 🖼 スキンの棚 で。
@@ -81,6 +86,7 @@
 - 表のとおり、**目録（`catalog/index.json`）と、使いたい `.stpack`** を落とします
 - **まとめて落としたいとき**は [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r3)（見本 HTML＋目録＋16 パックを1つのZIPにしたもの・`release/first-set.json` に sha256）を落として、**ZIP を展開**してください
 - `catalog/index.json` の `sha256` と、落としたファイルのハッシュを比べれば、途中で壊れていないか確かめられます（アプリも入れる前に照合します）
+- **1 本だけ欲しいとき**は [`gallery/fonts.html`](gallery/fonts.html) の行の「⬇ .stpack」から、その 1 本だけ落とせます（目録と 1 本で入れられます）
 
 ### 2-3. trk! に入れる（③・trk231 以降）
 
@@ -284,7 +290,9 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 | はじめてセット（ZIP 1つ） | 見本＋目録＋書体パックを1つに。アプリの「📥 まとめて入れる」でそのまま選べる | **できました**（[Release `first-set-2026-11-01-r2`](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r2)・2,996,422 B・書体パック release 1.1.0） |
 | ライセンス全文をアプリで見る | 目録の `fonts[].licenseFile` を読み、アプリ内で全文を表示する | **trk! trk233 で実装済み**（パック一覧の「📄 ライセンス全文を読む」）。倉庫は 15 パックすべてで宣言済み |
 | 書体のひとこと・対応する字数 | 目録の `fonts[].note`（雰囲気の一行）と `fonts[].cmap`（字数）を、アプリの 🔎 中身に出す | **倉庫側は用意済み**（L10・L11）。アプリは次の段で読む予定 |
-| `.stlib`（セットを1ファイルに） | アプリ（trk234）が `.stlib` を読めるようになったら、同じ定義から `.stlib` で配る | 定義は流用できます（`sets/first-set.json` の `extension`）／アプリ待ち |
+| `.stlib`（セットを1ファイルに） | セットを **1 ファイル**で配る（trk235 以降はそのまま選ぶだけ・中身は ZIP と同じ） | **r4 から配っています**（`.zip` と `.stlib` は同じバイト列）。形の返事は `docs/2026-11-01-trk235への返事.md` |
+| 書体の一覧と検索（`gallery/fonts.html`） | 配る前に「どの書体にするか」を選べるようにする（名前・対応字数・大きさ・太さ・雰囲気タグ・ひとこと・1 本だけ落とす） | **できました**（L13・L14）。並べ替え 4 種・絞り込み 4 種・横断検索。1 ファイル・外部参照 0 |
+| 書体パックの受け入れ検査（L16） | 書体を増やしても壊れないように、OFL-1.1・`Trk` で始まる family・family＋太さの重複なし・1 本 4 MiB 以下・cmap 1,000 字以上を機械で見る | **できました**（`build-catalog` が目録を作る前に止まります） |
 | 全スキン入りビルド | 「全部入れて、見比べたい」人向けに、53 種＋書体パックを入れた trk! をこの倉庫の Release に置く | 未着手（見本 HTML で代替中） |
 | GitHub Pages で見本を開く | `gallery/all-skins.html` を Pages で開けるようにすると導線は最も楽。ただし**アプリのオリジンが増える**ので、CSP・Service Worker・共有の扱いをアプリ側と一緒に確認してから | 相談中（2026-11-01 の相手側からのお願い L6） |
 | 大きいファイルの置き場 | Git の1ファイル 100 MB 制限を避けるため、**1 パック 50 MB までを Git、それ以上は Release／Drive** | 方針だけ |
@@ -335,6 +343,7 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 | 項目 | 結果 |
 | --- | --- |
 | `tools/export-skin-gallery.mjs` | trk-PWA（main・b79fa3c／trk230）の `js/data.js` + `js/characters/miku.js` から **53 種（書体 9 種）**。いまの `catalog/skins.json` と**中身が一致**（生成し直しても同じ） |
+| `tools/export-font-gallery.mjs` | 目録（`catalog/index.json`）から **書体の一覧と検索**（`gallery/fonts.html`・27,863 B）と `catalog/fonts.json` を作る。並べ替え・絞り込み・検索は HTML の中の JS（外部参照 0）。`--check` で今のファイルと一致するかを見る |
 | 見本 HTML の外部参照 | **0 件**（`https?://` を含まない。フォントも画像も外部から読まない） |
 | `tools/verify-pack.mjs` | 見本パックと書体パックの 2 件で合格。**壊れた ZIP・pack.json なし・色の形式違い・指すファイルの欠落・`..` のパス・日本語の family・OFL.txt なし・release の形違い**で、それぞれ不合格になることを確認 |
 | `tools/build-pack.mjs` | `font-packs/maru-go` から **2,936,399 B** の `.stpack` を生成（5 ファイル・無圧縮で決定的）。`--check` でフォルダと一致することを確認 |
@@ -342,7 +351,7 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 | `tools/check-contract.mjs` | trk-PWA の **`js/pack-catalog.js` をそのまま読み込み**、目録 16 件が `sanitizeCatalog` を**1 件も落とされずに**通ることを確認（`name`/`file`/`sha256`/`bytes`/`fonts`/`license`/`description`/`url` が書いたとおりに残る） |
 | `tools/selftest.mjs` | **22 / 22 合格**（書体のパス・family・OFL.txt・release・`licenseFile` 3種・woff2 2種の検査を追加） |
 | `tools/preview-pack.mjs` | 書体パックから **1 ファイルの見本 HTML**（3.9 MB・woff2 2 本を base64 で埋め込み・外部参照 0）を生成 |
-| `tools/build-set.mjs` | **はじめてセット**（ZIP 1つ）を生成。2 回作っても同じ sha256（r2 = `71c9ce0b…`・**2,996,422 B**・4 ファイル／r3 = `1b381a1e…`・**30,799,039 B**・19 ファイル）。中身のファイル名は UTF-8 |
+| `tools/build-set.mjs` | **はじめてセット**を生成。2 回作っても同じ sha256（r3 = `1b381a1e…`・**30,799,039 B**・19 ファイル／r4 = `0d943e76…`・**30,832,151 B**・**21 ファイル**）。r4 から `set.json`（セットの名前と版）を中に入れ、`extensions` で **`.zip` と `.stlib` を同じバイト列**で書きます（sha256 も同じ） |
 | `tools/check-docs.mjs` | README の表と目録が一致・内部リンク 10 本（うち見出し `#…` 1 本）が実在・セットの記録と実物の sha256 が一致。**わざとずらすと落ちる**ことも確認（見出しリンクの規則は、GitHub が実際に付けた 20 個の id と一致することを確かめました） |
 | `tools/check-contract.mjs`（2026-11-01 追記） | 目録の `colors` を足しても、アプリ（trk231・`9bf22d7`）が 2 パックとも落とさずに読むことを確認。読んだ相手側の版も表示 |
 | `tools/check-contract.mjs`（trk232・`70fd921`） | 目録の `fonts[].licenseFile`（L7）を足しても、**2 パックとも 1 件も落とされずに**読めることを確認（アプリは trk233 まで、この項目を読まないだけ） |
@@ -352,7 +361,9 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 | 届いた 14 パック（2026-11-01・trk-PWA 側） | `font-packs-src.zip` の 14 フォルダから `build-pack --fetch` で組み立てた `.stpack` が、**届いた `SHA256SUMS` の 14 本とバイト単位で一致**（例：`zen-kaku.stpack` = `b12dc221636c…`・1,969,655 B）。woff2 は npm `@fontsource` から取り、`SOURCE.json` の sha256 と照合 |
 | `tools/check-fonts.mjs`（15 パック） | 20 書体すべて合格。TrueType・表 15〜19・**cmap 5,451〜6,887 字**・見本の字 7/7。いちばん少ないのは M PLUS Rounded 1c の 5,451 字 |
 | L10・L11（`note`・`cmap`） | 目録の 22 書体すべてに `note`（雰囲気の一行）と `cmap`（字数）が入りました。`note` は 60 文字を超えると `build-catalog` が止めます（わざと長くして確認）。アプリ（trk233）はまだ読みませんが、目録から落とされないことを `check-contract` で確認 |
-| 実機・実ブラウザでの見え方 | **未確認**（作業環境にブラウザも端末もない）。見本 HTML の並び、書体パック 15 個の見え方、パックを入れたときの棚（📚 目録が 16 行になったときの長さ）は、端末で見てください（手順は HANDOFF §4-1） |
+| 実機・実ブラウザでの見え方 | **未確認**（作業環境にブラウザも端末もない）。見本 HTML 2 枚（`all-skins.html`・`fonts.html`）の並び、書体パック 15 個の見え方、パックを入れたときの棚（📚 目録が 16 行になったときの長さ）は、端末で見てください（手順は HANDOFF §4-1） |
+| L13・L14（`gallery/fonts.html`） | 15 パック・22 ウェイト・タグ 16 種。並べ替え 4 種・絞り込み 4 種・横断検索を JS で実装。`--check` で目録と一致。**ブラウザでの操作は未確認**（ここにブラウザがありません） |
+| L15・L16（`tags`・受け入れ検査） | 目録の 22 書体に `tags`（8 個まで・各 16 文字）が入りました。`build-catalog` の L16 検査は、わざと family を `Trk` 以外・license を `MIT`・family＋太さを重複させたパックを置くと**止まる**ことを確認（3 件の指摘）。`tags` も 17 文字の語・パックにない書体を書くと止まります |
 | 書体が実際に画面に効くか | **未確認**（ブラウザが無い）。woff2 の中身（表・cmap）までは `check-fonts` で見ていますが、`FontFace` の読み込みと見た目は実機で見てください（§4-3） |
 | ライセンス全文の表示 | アプリ（trk233）が `licenseFile` を読むようになりました。**実画面での表示は未確認**（ブラウザが無い）。パックには `fonts/OFL.txt` が入っています |
 

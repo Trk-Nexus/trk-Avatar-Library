@@ -2,20 +2,37 @@
   "name": "first-set",
   "title": "trk! はじめてセット",
   "date": "2026-11-01",
-  "tag": "first-set-2026-11-01-r3",
-  "file": "trk-first-set-2026-11-01-r3.zip",
-  "bytes": 30799039,
-  "sha256": "1b381a1e7864889fdb7a8d3f9680984da51e93c94f44d331e6fa0cbdc3ab2ce8",
+  "tag": "first-set-2026-11-01-r4",
+  "file": "trk-first-set-2026-11-01-r4.zip",
+  "bytes": 30832151,
+  "sha256": "0d943e76e3ada1be855d40d662cafa4f770b9e5075a19a182fb4e13ff43fcdcc",
+  "files_out": [
+    {
+      "name": "trk-first-set-2026-11-01-r4.zip",
+      "bytes": 30832151,
+      "sha256": "0d943e76e3ada1be855d40d662cafa4f770b9e5075a19a182fb4e13ff43fcdcc"
+    },
+    {
+      "name": "trk-first-set-2026-11-01-r4.stlib",
+      "bytes": 30832151,
+      "sha256": "0d943e76e3ada1be855d40d662cafa4f770b9e5075a19a182fb4e13ff43fcdcc"
+    }
+  ],
   "files": [
     {
       "path": "gallery/all-skins.html",
-      "bytes": 70315,
-      "sha256": "3b3a5e3ce77b778a03c2b1cd553c381d3f7a8f70d2c07ed11b7cfe8724cf7310"
+      "bytes": 70449,
+      "sha256": "c06ecb988c72b59575f61e9a4b33cc72c9e673acc31d2a7a5124ab6255abb14c"
+    },
+    {
+      "path": "gallery/fonts.html",
+      "bytes": 27863,
+      "sha256": "3c794145c7018480c73fa5f45cc262292cecb474aa7df20207374af76c3992fc"
     },
     {
       "path": "catalog/index.json",
-      "bytes": 23434,
-      "sha256": "7ac7f8126598803b3acd3c5e7f8c1f965771f63dbe9e65c37750b4ee6c0dc94e"
+      "bytes": 26093,
+      "sha256": "b1edf83f5a9cdca9acfeb78794142006f398c278d454fe421c687c061d4c02a3"
     },
     {
       "path": "packs/sample-mincho.stpack",
@@ -98,5 +115,5 @@
       "sha256": "5269a4797cfcdcea5740734d4fd545274011aaf63ec782bcbe3ab55dca7b9e0e"
     }
   ],
-  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML・目録・パック 16 個（見本 1＋書体パック 15）が入っています。書体パックはどれも release 1.x で、入れて「使う」と本文の書体が変わります（trk232 以降）。"
+  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML（全スキン）・書体の一覧と検索（fonts.html）・目録・パック 16 個（見本 1＋書体パック 15）が入っています。書体パックはどれも release 1.0.0 で、入れて「使う」と本文の書体が変わります（trk232 以降）。trk235 以降は .stlib（中身は同じ 1 ファイル）をそのまま選ぶだけで入れられます。"
 }

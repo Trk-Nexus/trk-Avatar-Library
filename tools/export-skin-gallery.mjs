@@ -222,7 +222,8 @@ ${fontPacks.length ? `<section class="fonts" id="fonts">
   <h2>🔤 同梱の書体（${fontPacks.length} パック）</h2>
   <p class="hint">書体パックに入っている書体の<b>名前</b>を並べた見本です。この見本は書体ファイルを読み込みません（@font-face なし）。
     お使いの端末に同じ家族名の書体が入っているときだけ、その書体で表示されます（無ければ次の候補）。
-    書体そのものは <code>.stpack</code> に入っていて、trk! に入れて「使う」と本文の書体になります（trk232 以降）。</p>
+    書体そのものは <code>.stpack</code> に入っていて、trk! に入れて「使う」と本文の書体になります（trk232 以降）。
+    名前・対応字数・雰囲気で選ぶときは <a href="fonts.html">🔤 書体の一覧と検索（fonts.html）</a> へ。</p>
   <div class="fontGrid">
 ${fontPacks.map(fp => `    <div class="fontCard">
       <p class="fam">${esc(fp.file)}${fp.release ? ` · release ${esc(fp.release)}` : ""}</p>

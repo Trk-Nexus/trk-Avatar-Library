@@ -31,7 +31,13 @@
 `<slug>/` はそれぞれの**もと**（`pack.json`・`SOURCE.json`・`NOTICE.md`・`fonts/OFL.txt`）。woff2 は `--fetch` で取ります。
 
 **届いた 14 パックは `pack.json` を書き換えていません**（向こうで作った `.stpack` とバイト単位で同じになります）。
-目録に出す「書体のひとこと」（`fonts[].note`）は、パックの外の `catalog/font-notes.json` に書きます。
+目録に出す「書体のひとこと」（`fonts[].note`）はパックの外の `catalog/font-notes.json` に、
+「タグ」（`fonts[].tags`・検索と絞り込みの語）は `catalog/font-tags.json` に書きます。
+
+**どれを選ぶか**は [`gallery/fonts.html`](../gallery/fonts.html)（書体の一覧と検索・L13／L14）で決められます。
+対応字数・大きさ・太さ・ライセンス・雰囲気タグで絞れて、**1 本だけ落とす**こともできます。
+書体を増やすときの受け入れ検査（OFL-1.1・`Trk` で始まる family・family＋太さの重複なし・1 本 4 MiB 以下・cmap 1,000 字以上）は
+`node tools/build-catalog.mjs` が持ちます（L16）。
 
 ## 作り方（フォルダ → .stpack）
 
