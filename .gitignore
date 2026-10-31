@@ -14,3 +14,6 @@ npm-debug.log*
 # OS のゴミ
 .DS_Store
 Thumbs.db
+
+# Google Drive から落とした資料の置き場（倉庫には入れない）
+google_drive/
