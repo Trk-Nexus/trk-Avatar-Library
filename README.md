@@ -15,7 +15,7 @@
 | | すること | 場所 |
 | --- | --- | --- |
 | ① | **見本を見る** — `gallery/all-skins.html` を落として開く（1ファイル・オフラインOK） | [`gallery/all-skins.html`](gallery/all-skins.html) |
-| ② | **目録とパックを落とす** — `catalog/index.json` と、`packs/` か `font-packs/` の `.stpack`。<br>まとめて落とすなら [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01)（見本＋目録＋書体パックの1ファイル） | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-②-目録とパックを落とす) |
+| ② | **目録とパックを落とす** — `catalog/index.json` と、`packs/` か `font-packs/` の `.stpack`。<br>まとめて落とすなら [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01)（見本＋目録＋書体パックの1ファイル） | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-目録とパックを落とす) |
 | ③ | **trk! に入れる** — 設定 → 📦 カスタムパック → 📚 目録から入れる → **📥 まとめて入れる** で、目録とパックをまとめて選ぶ。<br>大きさと sha256 が合わないものは入りません | trk!（trk231 以降） |
 
 ## 1. いま入っているもの
@@ -35,7 +35,7 @@
 
 ## 2. 使い方（はじめての3手順の、くわしい版）
 
-### 2-1. ① 見本を見る
+### 2-1. 見本を見る（①）
 
 `gallery/all-skins.html` をダウンロードして開くだけです（ブラウザでダブルクリック）。
 53 種を並べて、**名前・説明・カテゴリの言葉で絞り込み**、名前順・暗い順に並べ替えられます。
@@ -44,7 +44,7 @@
 > アプリを起動しなくても、「気になるスキンがあるかどうか」を先に確かめられます。
 > 本物の見た目（背景・ノーツ・再生バーまで）は、trk! の 設定 → 🎨 見た目 → 🖼 スキンの棚 で。
 
-### 2-2. ② 目録とパックを落とす
+### 2-2. 目録とパックを落とす（②）
 
 **どのパックを落とすか**（いま配っているのは 2 つです）。
 
@@ -59,7 +59,7 @@
 - **まとめて落としたいとき**は [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01)（見本 HTML＋目録＋書体パックを1つのZIPにしたもの）を落として、**ZIP を展開**してください
 - `catalog/index.json` の `sha256` と、落としたファイルのハッシュを比べれば、途中で壊れていないか確かめられます（アプリも入れる前に照合します）
 
-### 2-3. ③ trk! に入れる（trk231 以降は「まとめて入れる」）
+### 2-3. trk! に入れる（③・trk231 以降）
 
 1. trk! を開いて、**設定 → 📦 カスタムパック → 📚 目録から入れる**
 2. **📥 まとめて入れる** を押し、**目録（`index.json`）と `.stpack` をまとめて選ぶ**（画面にまとめてドロップしても同じ）
@@ -143,7 +143,7 @@ node tools/build-catalog.mjs                        # 目録を作り直す（sh
 node tools/build-catalog.mjs --check                # 目録が今の中身と合っているかだけ見る
 node tools/check-contract.mjs                       # 目録が「アプリの読み取り規則」を通るか見る（trk-PWA が隣に要る）
 node tools/preview-pack.mjs font-packs/maru-go.stpack  # 入れる前に見る見本 HTML（dist/preview/）
-node tools/check-docs.mjs                           # README の表・リンク・セットの記録が今の中身と合っているか
+node tools/check-docs.mjs                           # README の表・リンク（見出しも）・セットの記録が今の中身と合っているか
 node tools/selftest.mjs                             # 道具そのものが「ちゃんと断る」かを確かめる（14項目）
 ```
 
@@ -266,7 +266,7 @@ node tools/preview-pack.mjs font-packs/maru-go.stpack  # 色と書体の見本 H
 | `tools/selftest.mjs` | **14 / 14 合格**（書体のパス・family・OFL.txt・release の検査を追加） |
 | `tools/preview-pack.mjs` | 書体パックから **1 ファイルの見本 HTML**（3.9 MB・woff2 2 本を base64 で埋め込み・外部参照 0）を生成 |
 | `tools/build-set.mjs` | **はじめてセット**（ZIP 1つ）を生成。2 回作っても同じ sha256（`b9599930…`・**2,993,307 B**・4 ファイル）。中身のファイル名は UTF-8 |
-| `tools/check-docs.mjs` | README の表と目録が一致・内部リンク 9 本が実在・セットの記録と実物の sha256 が一致。**わざとずらすと落ちる**ことも確認 |
+| `tools/check-docs.mjs` | README の表と目録が一致・内部リンク 10 本（うち見出し `#…` 1 本）が実在・セットの記録と実物の sha256 が一致。**わざとずらすと落ちる**ことも確認（見出しリンクの規則は、GitHub が実際に付けた 20 個の id と一致することを確かめました） |
 | `tools/check-contract.mjs`（2026-11-01 追記） | 目録の `colors` を足しても、アプリ（trk231・`9bf22d7`）が 2 パックとも落とさずに読むことを確認。読んだ相手側の版も表示 |
 | 実機・実ブラウザでの見え方 | **未確認**（作業環境にブラウザも端末もない）。見本 HTML の並び、書体パックの見え方、パックを入れたときの棚は、端末で見てください |
 | 書体のパック | **アプリ（trk230）はまだ読みません**（§4-3）。パックの形・OFL の同梱・目録の `fonts[]` までは用意済み |

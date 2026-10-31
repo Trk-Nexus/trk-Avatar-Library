@@ -70,7 +70,7 @@
 | 目録の検査 | `tools/check-contract.mjs` が **アプリ自身の `sanitizeCatalog`** で 2 件とも通ることを確認 |
 | はじめてセット | `sets/first-set.json` の定義から `tools/build-set.mjs` が **ZIP 1つ**（見本＋目録＋書体パック・約 2.9 MB。正確な大きさと sha256 は `release/first-set.json`）を作る。配ったものの sha256 は `release/first-set.json` に記録。GitHub Release `first-set-2026-11-01` に添付 |
 | CI | `.github/workflows/check.yml`。push／PR ごとに §1 の 6 本（trk-PWA を**固定した版**で clone して実行）＋週次で `main` も検査 |
-| 未確認 | **実ブラウザ・実機**（§4）。アプリ側の書体読み込みは trk-PWA の次の版 |
+| 未確認 | **実ブラウザ・実機**（§4）。セットのダウンロードと展開、アプリ側の書体読み込み（trk232） |
 | 大きさ | 倉庫は約 3.2 MB（`.git` を除く）。いちばん大きいのは書体パックの 2.8 MB（2,935,978 B） |
 
 ## 2. 目録とパックの契約（アプリとの取り決め）
@@ -134,7 +134,7 @@
 | `tools/build-catalog.mjs` | 全パックを検査し、`sha256`・`bytes`・書体・版・URL を目録へ。500 件上限 |
 | `tools/check-contract.mjs` | **アプリの `sanitizeCatalog` をそのまま読み込み**、1 件も落とされず値が変わらないか |
 | `tools/build-set.mjs` | はじめてセット（ZIP）を作る／`--check` で記録と一致するか（決定的） |
-| `tools/check-docs.mjs` | README の表と目録の一致・内部リンク・セットの記録 |
+| `tools/check-docs.mjs` | README の表と目録の一致・内部リンク（**見出しアンカーも**）・セットの記録 |
 | `tools/selftest.mjs` | 上の道具が、わざと壊した入力で**ちゃんと断る**か |
 
 ## 2.5 相手側（trk-PWA trk231）からのお願いへの回答（2026-11-01）
@@ -171,11 +171,14 @@ trk-PWA の `README-trk-Avatar-Library-へのお願い-2026-11-01.txt` と `docs
    - `gallery/all-skins.html` の並び・絞り込み・並べ替え
    - `dist/preview/maru-go.html` の書体（Zen Maru Gothic が実際に当たっているか）
    - trk! にパックを入れたときの棚・適用後の画面
-2. **アプリ側の書体読み込み**：trk230 は `pack.json` の `fonts` を使いません（目録に「書体n」と出すだけ）。
-   必要な作業は trk-PWA の `docs/LIBRARY-TRK230-2026-10-31.md` §5（`FontFace` 登録 → `--font` の先頭へ → 外したら片付ける）。
+2. **アプリ側の書体読み込み**：trk231 も `pack.json` の `fonts` を使いません（目録に「書体n」と出すだけ）。
+   予定は trk232（`FontFace` 登録 → `--font` の先頭へ → 外したら片付ける）。倉庫側は `TrkZenMaru` 400／700 で用意済み。
 3. **`file://` で開いたときの `crypto.subtle`**（アプリ側の既知の未確認。使えない環境では「照合せずに入れる」表示になる）
 4. **大きいパック**（数百 MB）を選んだときの sha256 計算の待ち時間（アプリ側。いまは `arrayBuffer()` で一括読み）
 5. **目録 500 件**を一覧にしたときの重さ（アプリ側）
+6. **はじめてセットの落として〜展開まで**：この作業環境からは `release-assets.githubusercontent.com` に届かないため、
+   アップロード（CI）と**大きさ・sha256 の一致**までを確認しています。ブラウザでのダウンロードと展開、
+   展開した中身を trk! の「📥 まとめて入れる」で選ぶところは、実機で一度見てください
 
 ## 5. 主なファイル
 
@@ -195,7 +198,7 @@ trk-PWA の `README-trk-Avatar-Library-へのお願い-2026-11-01.txt` と `docs
 | `tools/check-contract.mjs` | 目録がアプリの規則を通るか（trk-PWA 必須） |
 | `tools/preview-pack.mjs` | パックの色と書体を埋め込んだ見本 HTML（`dist/` は gitignore） |
 | `tools/build-set.mjs` | はじめてセット（ZIP）を作る（`--release` で記録・`--check` で照合） |
-| `tools/check-docs.mjs` | README の表と目録の一致・内部リンク・セットの記録 |
+| `tools/check-docs.mjs` | README の表と目録の一致・内部リンク（**見出しアンカーも**）・セットの記録 |
 | `sets/first-set.json` | はじめてセットの**定義**（どのファイルを入れるか・日付・記録先） |
 | `release/first-set.json` | 配ったセットの**記録**（ファイル名・bytes・sha256・中身の sha256） |
 | `tools/selftest.mjs` | 道具の自己検査（14 項目） |
@@ -215,7 +218,7 @@ node tools/verify-pack.mjs packs/*.stpack font-packs/*.stpack  # ✅ 2 件とも
 node tools/preview-pack.mjs font-packs/maru-go.stpack          # ✅ 3.9 MB・書体 2・外部参照 0
 node tools/export-skin-gallery.mjs --trk=../trk-PWA            # ✅ 53 種（書体 9 種）・skins.json と一致
 node tools/build-set.mjs sets/first-set.json --check           # ✅ 記録と一致（2,993,307 B・sha256 b9599930…）
-node tools/check-docs.mjs                                      # ✅ 文書は今の中身と合っています（2 パック・内部リンク 9 本）
+node tools/check-docs.mjs                                      # ✅ 文書は今の中身と合っています（2 パック・内部リンク 10 本）
 ```
 
 2026-11-01（trk231 対応）に足した確認：
@@ -225,6 +228,9 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 - はじめてセットは**2 回作っても同じ sha256**（`b9599930c9e5…`・2,993,307 B・4 ファイル）
 - セットの ZIP の中のファイル名は UTF-8（`README-はじめに.txt` も化けずに読める。`flag_bits & 0x800` を確認）
 - `check-docs` が、わざと大きさをずらした行・目録にない行・リンク切れ・記録の欠落で**落ちる**ことを確認
+- **見出しアンカー**も検査します。GitHub の id の作り方（小文字→約物を消す→空白を1つずつ `-`）を写し、
+  GitHub が実際に付けた README の 20 個の id と**全部一致**することを確かめてから入れました
+  （`#2-2-②-…` のような「人が読みやすいが実在しない」リンクを、CI が見つけられます）
 
 - わざと壊した入力（`..` のパス・日本語の family・`OFL.txt` なし・`release` の形違い・目録の偽エントリ・改変した `.stpack`）で、
   `verify-pack`／`build-catalog --check`／`build-pack --check`／`check-contract` が**それぞれ不合格になる**ことも確認
@@ -286,6 +292,8 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
   見本 HTML＋目録＋書体パック。作り直したら **タグを増やす**（`first-set-2026-11-01` を作り直さない）——
   `release/first-set.json` と README のリンクを新しい日付に合わせます。
   新しいセットは、`sets/<name>.json` と `release/<name>.json` を足して、タグ `first-set-YYYY-MM-DD` を push すれば CI が添付します
+  2026-11-01 に公開：タグ `first-set-2026-11-01`（`0801508`）・アセット **2,993,307 B**・sha256 `b9599930…`。
+  **CI で作り直したものと、記録の sha256 が一致**しました（別のマシンでも同じバイト列＝本当に決定的）。
 - 利用者の手順は README §2（はじめての3手順）：**①見本 ②目録とパックを落とす ③trk! の 📥 まとめて入れる**
 - 受け渡し用の ZIP を作るときは、`git archive` ではなく**このリポジトリの中身をそのまま**（`.cache/`・`dist/` を除く）
 

@@ -14,6 +14,7 @@
      ・README の先頭に「はじめての3手順」（①②③）がある
      ・README・HANDOFF・各 README・docs の**内部リンク**が実在する
      ・「はじめてセット」の記録（release/first-set.json）と実物の sha256 が一致する
+     ・見出しへのリンク（`#2-2-…`）が、その文書の見出しに実在する
 
    使い方：
      node tools/check-docs.mjs
@@ -78,7 +79,25 @@ for (const mark of ["①", "②", "③"]) {
 const head = readme.slice(0, readme.indexOf("## 1."));
 if (!head.includes("📥 まとめて入れる")) fail("「はじめての3手順」に「📥 まとめて入れる」への案内がありません");
 
-/* ---------- 3. 内部リンク ---------- */
+/* ---------- 3. 内部リンク（パスと見出し） ---------- */
+
+/* GitHub の見出しアンカーの作り方（2026-11-01 に、GitHub が実際に付けた 20 個の id と一致することを確認）：
+     小文字にする → 約物（記号・句読点・①②・・など）を消す → 空白を1つずつ「-」にする
+   空白をまとめないので「2-2. ② 目録」は「2-2--目録」ではなく「2-2-目録」…（② を消した跡に空白が2つ残ると「--」） */
+const PUNCT = /[\u2000-\u206F\u2460-\u24FF\u2E00-\u2E7F\u30FB\uFF01-\uFF0F\uFF1A-\uFF20\uFF3B-\uFF40\uFF5B-\uFF65!'"#$%&()*+,./:;<=>?@\[\\\]^`{|}~\u3000-\u303F]/g;
+const slug = h => h.trim().toLowerCase().replace(PUNCT, "").replace(/\s/g, "-");
+function anchorsOf(text) {
+  const seen = new Map();
+  const out = new Set();
+  for (const m of text.matchAll(/^#{1,6}\s+(.+)$/gm)) {
+    const base = slug(m[1].replace(/`|\*\*|\[([^\]]*)\]\([^)]*\)/g, "$1"));
+    const n = seen.get(base) || 0;
+    seen.set(base, n + 1);
+    out.add(n ? `${base}-${n}` : base);
+  }
+  return out;
+}
+
 const DOCS = fs.existsSync(path.join(HERE, "docs"))
   ? fs.readdirSync(path.join(HERE, "docs")).filter(n => /\.(md|txt)$/i.test(n)).map(n => path.join("docs", n)) : [];
 const files = ["README.md", "HANDOFF.md", "NOTICE.md", "packs/README.md", "font-packs/README.md", ...DOCS]
@@ -89,10 +108,15 @@ for (const f of files) {
   const text = read(path.join(HERE, f));
   for (const m of text.matchAll(LINK)) {
     const href = m[1];
-    if (/^(https?:|mailto:|#)/i.test(href)) continue;
+    if (/^(https?:|mailto:)/i.test(href)) continue;
     linkCount++;
-    const target = decodeURIComponent(href.split("#")[0]);
-    if (!target) continue;
+    const [rawPath, rawFrag] = href.split("#");
+    if (rawFrag) {
+      const frag = decodeURIComponent(rawFrag);
+      if (!anchorsOf(text).has(frag)) fail(`${f}: 見出しリンクが実在しません → ${href}`);
+    }
+    const target = decodeURIComponent(rawPath);
+    if (!target) continue;      /* 同じ文書の中の見出し（#…）だけのリンク */
     const abs = path.resolve(path.dirname(path.join(HERE, f)), target);
     if (!fs.existsSync(abs)) fail(`${f}: リンク先がありません → ${href}`);
   }
