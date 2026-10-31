@@ -6,10 +6,12 @@ GPL-3.0-or-later（リポジトリ直下の `LICENSE`）。クレジットとソ
 
 ## 同梱した書体
 
-| family | ファイル | 太さ | ライセンス |
-| --- | --- | --- | --- |
-| TrkZenMaru | `fonts/ZenMaruGothic-Regular.woff2` | 400 | OFL-1.1 |
-| TrkZenMaru | `fonts/ZenMaruGothic-Bold.woff2` | 700 | OFL-1.1 |
+| family | ファイル | 太さ | ライセンス | 全文 |
+| --- | --- | --- | --- | --- |
+| TrkZenMaru | `fonts/ZenMaruGothic-Regular.woff2` | 400 | OFL-1.1 | `fonts/OFL.txt` |
+| TrkZenMaru | `fonts/ZenMaruGothic-Bold.woff2` | 700 | OFL-1.1 | `fonts/OFL.txt` |
+
+`pack.json` の `fonts[].licenseFile` が `fonts/OFL.txt` を指しています（trk232 からのお願い L7・任意項目）。アプリがライセンス全文を表示できるのは trk233 以降です。それまでは、この `NOTICE.md` と `fonts/OFL.txt` がパックの中に残ります。
 
 - **書体**：Zen Maru Gothic
 - **著作権**：Copyright 2021 The Zen Maru Gothic Project Authors（https://github.com/googlefonts/zen-marugothic）

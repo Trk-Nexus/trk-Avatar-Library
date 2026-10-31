@@ -22,7 +22,7 @@ permissions:
   contents: write
 
 env:
-  TRK_PWA_REF: 9bf22d7a8751f0df2e9b2eca86273c2ed1df8fcb
+  TRK_PWA_REF: 70fd92193f43157faafebb01ba58477eaf7087df
 
 jobs:
   attach:

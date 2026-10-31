@@ -26,6 +26,9 @@
   woff2 2 本（400／700）を同梱しています。ライセンス全文はパックの中の `fonts/OFL.txt`、クレジットは `NOTICE.md` にあります。
   書体の入手元は npm `@fontsource/zen-maru-gothic@5.3.1` で、`font-packs/maru-go/SOURCE.json` に tarball と sha256 を書いています。
   パックの作り（`pack.json`・スキンの色）は GPL-3.0-or-later です。
+  `pack.json` の `fonts[].licenseFile` が `fonts/OFL.txt` を指しています（任意項目。アプリが全文を表示できるのは trk233 以降）。
+- 「🔤 同梱の書体」の節（`gallery/all-skins.html`）は、パックの宣言から**書体の名前とライセンスを表示するだけ**で、
+  書体ファイルを埋め込んでいません（@font-face を使わないので、表示は端末に入っている書体に従います）。
 
 ## 書体を同梱するとき（`font-packs/`）
 

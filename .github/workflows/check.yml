@@ -12,9 +12,9 @@ permissions:
   contents: read
 
 env:
-  # 相手側の版（commit）。上げるときは、この1行と docs の記録を一緒に変える
-  # （trk231 = 9bf22d7。trk-PWA の docs/LIBRARY-UX-PLAN-2026-11-01.md の版）
-  TRK_PWA_REF: 9bf22d7a8751f0df2e9b2eca86273c2ed1df8fcb
+  # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
+  # （trk232 = 70fd921。書体パックが本物になり、release で「更新あり」を出す版）
+  TRK_PWA_REF: 70fd92193f43157faafebb01ba58477eaf7087df
 
 jobs:
   check:
@@ -45,7 +45,7 @@ jobs:
           path: trk-Avatar-Library/.cache/font-packs
           key: fontsource-zen-maru-gothic-5.3.1
 
-      - name: 道具の自己検査（14 項目）
+      - name: 道具の自己検査（22 項目）
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
@@ -62,6 +62,18 @@ jobs:
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: node tools/check-contract.mjs
+
+      - name: 書体（woff2）が本当に読める形か
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: node tools/check-fonts.mjs
+
+      - name: 全スキン見本が今の中身と一致するか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: node tools/export-skin-gallery.mjs --trk="$TRK_PWA" --check
 
       - name: 書体パックがフォルダと一致するか
         working-directory: trk-Avatar-Library

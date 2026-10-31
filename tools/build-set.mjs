@@ -15,6 +15,7 @@
      font-packs/*.stpack    … パック（セットの中身は sets/*.json で決める）
 
    決定的：同じ中身なら同じ sha256（無圧縮で固定・README-はじめに.txt に時刻を入れない）。
+  同じ日にもう一度配るときは、定義に "rev": "r2" を足します（ファイル名とタグの後ろに付き、前のセットを上書きしません）。
    記録：--release で release/first-set.json（配ったものの sha256）を書く。--check はそれと比べる。
 
    使い方：
@@ -42,7 +43,7 @@ function usage() {
 function guideText(cfg, entries, records) {
   const packNames = records.filter(r => /\.stpack$/.test(r.path)).map(r => path.basename(r.path));
   return [
-    `${cfg.title || "trk! はじめてセット"}（${cfg.date}）`,
+    `${cfg.title || "trk! はじめてセット"}（${cfg.date}${cfg.rev ? ` ${cfg.rev}` : ""}）`,
     "=".repeat(60),
     "",
     "trk!（trk-PWA）の見た目を、まとめて持ち込むためのセットです。",
@@ -105,6 +106,7 @@ async function buildSet(cfgPath, opts) {
     .map(f => ({ path: f, bytes: fs.statSync(path.join(HERE, f)).size }))
     .map(r => ({ ...r, sha256: sha256(fs.readFileSync(path.join(HERE, r.path))) }));
 
+  const rev = cfg.rev ? String(cfg.rev).replace(/[^A-Za-z0-9._-]/g, "") : "";
   const guide = guideText(cfg, files, records);
   const entries = [
     { name: cfg.readme || "README-はじめに.txt", buf: Buffer.from(guide, "utf8") },
@@ -115,13 +117,13 @@ async function buildSet(cfgPath, opts) {
   const bytes = Buffer.from(await blob.arrayBuffer());
 
   const ext = String(cfg.extension || "zip");
-  const file = `trk-${cfg.name}-${cfg.date}.${ext}`;
+  const file = `trk-${cfg.name}-${cfg.date}${rev ? `-${rev}` : ""}.${ext}`;
   const out = path.join(path.resolve(opts.out || path.join(HERE, "dist")), file);
   const record = {
     name: cfg.name,
     title: cfg.title || "",
     date: cfg.date,
-    tag: cfg.tag || `first-set-${cfg.date}`,
+    tag: cfg.tag || `first-set-${cfg.date}${rev ? `-${rev}` : ""}`,
     file,
     bytes: bytes.length,
     sha256: sha256(bytes),

@@ -2,13 +2,13 @@
   "format": "trk-avatar-library",
   "version": 1,
   "name": "trk-Avatar-Library",
-  "updatedAt": "2026-10-31T17:09:48.594Z",
+  "updatedAt": "2026-10-31T18:24:47.763Z",
   "app": "trk! (trk-PWA)",
   "howToInstall": "trk! の 設定 → 📦 カスタムパック → 📚 目録から入れる で、この目録（index.json）を選び、一覧から入れたい .stpack を選んでください。.stpack を画面にドラッグ＆ドロップしても入ります。",
   "builtinSkins": {
     "count": 53,
     "typeSkins": 9,
-    "generatedAt": "2026-10-31T15:28:52.115Z",
+    "generatedAt": "2026-10-31T18:24:37.895Z",
     "file": "catalog/skins.json"
   },
   "packs": [
@@ -39,16 +39,16 @@
       "warnings": []
     },
     {
-      "id": "丸ゴのお茶目-書体パック-93a4bb2d",
+      "id": "丸ゴのお茶目-書体パック-db4dc011",
       "name": "丸ゴのお茶目（書体パック）",
       "author": "trk-Avatar-Library",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "folder": "font-packs",
       "file": "font-packs/maru-go.stpack",
-      "sha256": "93a4bb2d07e41ddd73aa047d658f5e7cf998445475aef214ff0eadb8e4477488",
-      "bytes": 2935978,
+      "sha256": "db4dc011c19d489f933eb26ca3dd185bf36f5dd5460209cbe2c04c9f378d560d",
+      "bytes": 2936399,
       "entries": 5,
-      "payloadBytes": 2928852,
+      "payloadBytes": 2937656,
       "songs": 0,
       "skin": {
         "name": "丸ゴのお茶目",
@@ -63,13 +63,15 @@
           "family": "TrkZenMaru",
           "file": "fonts/ZenMaruGothic-Regular.woff2",
           "license": "OFL-1.1",
-          "weight": 400
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt"
         },
         {
           "family": "TrkZenMaru",
           "file": "fonts/ZenMaruGothic-Bold.woff2",
           "license": "OFL-1.1",
-          "weight": 700
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt"
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）",

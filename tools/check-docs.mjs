@@ -128,7 +128,7 @@ if (!fs.existsSync(recordPath)) {
   fail("release/first-set.json がありません（node tools/build-set.mjs sets/first-set.json --release で作れます）");
 } else {
   const rec = JSON.parse(read(recordPath));
-  if (!/^trk-first-set-\d{4}-\d{2}-\d{2}\.zip$/.test(String(rec.file || ""))) fail(`release/first-set.json の file の形が違います（"${rec.file}"）`);
+  if (!/^trk-first-set-\d{4}-\d{2}-\d{2}(-r\d+)?\.zip$/.test(String(rec.file || ""))) fail(`release/first-set.json の file の形が違います（"${rec.file}"）`);
   if (!/^[0-9a-f]{64}$/.test(String(rec.sha256 || ""))) fail("release/first-set.json の sha256 の形が違います");
   if (!readme.includes(`releases/tag/${rec.tag || "first-set-" + String(rec.date || "")}`)) {
     fail(`README に はじめてセット のリリース（${rec.tag || rec.date}）へのリンクがありません`);

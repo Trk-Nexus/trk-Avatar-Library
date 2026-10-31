@@ -9,7 +9,8 @@
      ・スキンの色が #rrggbb の形をしている（アプリの sanitizeSkinDef と同じ見方）
      ・書体（fonts）は woff2・family は英数字と空白 40 文字まで・weight は 100〜900・license がある
      ・書体を入れるときは、ライセンス全文（OFL.txt など）がパックに入っている（OFL の条件なので不合格にする）
-     ・release（目録の packs[].version）と url（https だけ）の形  ※ アプリ側の書体対応は次の版
+     ・書体の licenseFile（任意・trk232 で追加）は、パックの中の .txt／.md を指し、実在する
+     ・release（目録の packs[].version）と url（https だけ）の形
 
    使い方：
      node tools/verify-pack.mjs packs/foo.stpack
@@ -31,23 +32,25 @@ const HEX = /^#[0-9a-f]{6}$/i;
 const FONT_PATH = /^[A-Za-z0-9_\-./]{1,120}$/;      /* js/custom.js の PATH_RE と同じ文字だけ */
 const FONT_FAMILY = /^[A-Za-z0-9][A-Za-z0-9 ._-]{0,39}$/;  /* 英数字と空白・. _ - の 40 文字まで */
 const RELEASE = /^[0-9A-Za-z._+-]{1,24}$/;          /* 目録の packs[].version に入る配布版 */
+/* 書体のライセンス全文（任意・fonts[].licenseFile）。アプリは trk233 以降で表示する予定 */
+const LICENSE_FILE_EXT = ["txt", "md"], MAX_LICENSE_FILE = 256 * 1024;
 const URL_RE = /^https:\/\/[^\s"'<>]+$/;            /* アプリは https だけを受け付ける */
 const extOf = p => (p.split(".").pop() || "").toLowerCase();
 
 export async function verifyPack(file, opts = {}) {
-  const errors = [], warnings = [], info = {};
+  const errors = [], warnings = [], notes = [], info = {};
   const bytes = fs.readFileSync(file);
   info.file = path.basename(file);
   info.bytes = bytes.length;
   if (bytes.length > MAX_ENTRY) errors.push(`大きすぎます（${(bytes.length / MB).toFixed(1)} MB・上限 500 MB）`);
   let zipped;
   try { zipped = await openZip(bytes, opts.trk); }
-  catch (e) { return { ok:false, errors:["ZIP として読めません（CRC 不一致・壊れた中央ディレクトリなど）"], warnings, info }; }
+  catch (e) { return { ok:false, errors:["ZIP として読めません（CRC 不一致・壊れた中央ディレクトリなど）"], warnings, notes, info }; }
 
   const names = zipped.names();
   info.entries = names.length;
   const manifests = names.filter(n => !n.startsWith("__MACOSX/") && /(^|\/)pack\.json$/.test(n));
-  if (manifests.length === 0) return { ok:false, errors:["pack.json がありません"], warnings, info };
+  if (manifests.length === 0) return { ok:false, errors:["pack.json がありません"], warnings, notes, info };
   if (manifests.length > 1) errors.push(`pack.json が ${manifests.length} 個あります（いちばん上に1つだけ置いてください）`);
   const mf = manifests.sort((a, b) => a.length - b.length)[0];
   const root = mf.slice(0, mf.length - "pack.json".length);
@@ -55,7 +58,7 @@ export async function verifyPack(file, opts = {}) {
   let man = null;
   try { man = await readJsonEntry(zipped, mf); }
   catch (e) { errors.push("pack.json を展開できません（CRC 不一致・壊れたデータ）"); }
-  if (!man || typeof man !== "object") return { ok:false, errors:["pack.json が JSON として読めません"], warnings, info };
+  if (!man || typeof man !== "object") return { ok:false, errors:["pack.json が JSON として読めません"], warnings, notes, info };
   if (man.format !== PACK_FORMAT) errors.push(`format が "${PACK_FORMAT}" ではありません（"${man.format}"）`);
   info.name = typeof man.name === "string" ? man.name : "";
   info.author = typeof man.author === "string" ? man.author : "";
@@ -66,8 +69,11 @@ export async function verifyPack(file, opts = {}) {
   if (!info.license) warnings.push("license がありません（配るなら書いてください）");
   if (info.description.length > 200) warnings.push("description が 200 文字を超えています（アプリは 200 文字で切ります）");
 
-  /* 目録（catalog/index.json）の packs[].version に入る「配布版」。省略すると 1.0.0 */
-  if (man.release !== undefined) {
+  /* 目録（catalog/index.json）の packs[].version に入る「配布版」。省略すると 1.0.0
+     （L8：アプリは pack.json の release と目録の version を比べて「更新あり」を出す。書いておく） */
+  if (man.release === undefined) {
+    notes.push("release がありません（目録の version は 1.0.0 になります。L8 のとおり、配るパックは書いておくと「更新あり」が効きます）");
+  } else {
     if (typeof man.release !== "string" || !RELEASE.test(man.release)) {
       errors.push(`release は英数字と . _ + - の 24 文字までにしてください（"${man.release}"）`);
     } else info.release = man.release;
@@ -140,6 +146,7 @@ export async function verifyPack(file, opts = {}) {
     const family = typeof f.family === "string" ? f.family.trim() : "";
     const license = typeof f.license === "string" ? f.license.trim() : "";
     const weight = f.weight;
+    const licenseFile = typeof f.licenseFile === "string" ? f.licenseFile.trim() : "";
     if (!file) { errors.push("fonts[] に file がない項目があります"); continue; }
     if (!FONT_PATH.test(file) || file.includes("..") || file.startsWith("/")) {
       errors.push(`書体「${file}」のパスが不正です（英数字と _ - . / の 120 文字まで・.. と先頭 / は不可）`);
@@ -155,10 +162,34 @@ export async function verifyPack(file, opts = {}) {
     if (weight !== undefined && !(Number.isInteger(weight) && weight >= 100 && weight <= 900)) {
       errors.push(`書体「${family || file}」の weight は 100〜900 の整数にしてください（"${weight}"）`);
     }
+    /* L7（trk232 からのお願い）：書体のライセンス全文を指す任意の licenseFile。
+       「アプリが全文を表示できる」ための宣言なので、実在と形だけを厳しく見ます */
+    let licenseFileInfo = "";
+    if (f.licenseFile !== undefined) {
+      if (typeof f.licenseFile !== "string" || !licenseFile) {
+        errors.push(`書体「${family || file}」の licenseFile は文字列にしてください（"${f.licenseFile}"）`);
+      } else if (!FONT_PATH.test(licenseFile) || licenseFile.includes("..") || licenseFile.startsWith("/")) {
+        errors.push(`書体「${family || file}」の licenseFile「${licenseFile}」のパスが不正です（英数字と _ - . / の 120 文字まで）`);
+      } else if (!LICENSE_FILE_EXT.includes(extOf(licenseFile))) {
+        errors.push(`書体「${family || file}」の licenseFile は .txt か .md にしてください（"${licenseFile}"）`);
+      } else {
+        const entryLicense = zipped.entry(root + licenseFile);
+        if (!entryLicense) {
+          errors.push(`書体「${family || file}」の licenseFile「${licenseFile}」が入っていません`);
+        } else if (entryLicense.usize > MAX_LICENSE_FILE) {
+          errors.push(`ライセンス全文「${licenseFile}」が大きすぎます（${(entryLicense.usize / 1024).toFixed(1)} KB・上限 256 KB）`);
+        } else if (entryLicense.usize < 100) {
+          warnings.push(`ライセンス全文「${licenseFile}」が ${entryLicense.usize} B しかありません（全文か確かめてください）`);
+        } else {
+          licenseFileInfo = licenseFile;
+          total += entryLicense.usize;
+        }
+      }
+    }
     const key = `${family.toLowerCase()}|${weight === undefined ? 400 : weight}`;
     if (fontKeys.has(key)) warnings.push(`書体「${family}」の weight ${weight === undefined ? 400 : weight} が重複しています`);
     fontKeys.add(key);
-    info.fonts.push({ family, file, license, weight });
+    info.fonts.push({ family, file, license, weight, ...(licenseFileInfo ? { licenseFile: licenseFileInfo } : {}) });
     if (entry) total += entry.usize;
   }
   info.payloadBytes = total;
@@ -168,7 +199,7 @@ export async function verifyPack(file, opts = {}) {
     if (!lic.length) errors.push("書体のライセンス全文（OFL.txt など）が入っていません（OFL は同梱が条件です）");
     else info.licenseFiles = lic;
   }
-  return { ok: errors.length === 0, errors, warnings, info };
+  return { ok: errors.length === 0, errors, warnings, notes, info };
 }
 
 /* --- コマンドとして動かす --- */
@@ -193,6 +224,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       if (r.info.fonts && r.info.fonts.length) console.log(`   書体: ${r.info.fonts.map(x => x.family).join(", ")}`);
       for (const e of r.errors) console.log(`   ❌ ${e}`);
       for (const w of r.warnings) console.log(`   ⚠ ${w}`);
+      for (const n of r.notes || []) console.log(`   ℹ ${n}`);
     }
   }
   if (asJson) console.log(JSON.stringify(out, null, 2));
