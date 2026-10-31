@@ -130,6 +130,9 @@ if (!fs.existsSync(recordPath)) {
   const rec = JSON.parse(read(recordPath));
   if (!/^trk-first-set-\d{4}-\d{2}-\d{2}(-r\d+)?\.zip$/.test(String(rec.file || ""))) fail(`release/first-set.json の file の形が違います（"${rec.file}"）`);
   if (!/^[0-9a-f]{64}$/.test(String(rec.sha256 || ""))) fail("release/first-set.json の sha256 の形が違います");
+  /* CI（release-set.yml）が Release を作るときに使う説明書き */
+  const notesPath = path.join(HERE, "release", `${rec.name || "first-set"}-notes.md`);
+  if (!fs.existsSync(notesPath)) fail(`release/${rec.name || "first-set"}-notes.md がありません（Release の説明書き。CI が使います）`);
   if (!readme.includes(`releases/tag/${rec.tag || "first-set-" + String(rec.date || "")}`)) {
     fail(`README に はじめてセット のリリース（${rec.tag || rec.date}）へのリンクがありません`);
   }

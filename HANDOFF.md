@@ -330,6 +330,7 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 - 目録には必ず `sha256` と `bytes` を書く（落とした人が確かめられるように）
 - **はじめてセット**（いまは **r2**：Release `first-set-2026-11-01-r2`・アセット `trk-first-set-2026-11-01-r2.zip`・2,996,422 B・sha256 `71c9ce0b…`）：
   添付は `.github/workflows/release-set.yml` が **CI で作り直してから**行います（記録と一致しないものは添付しません）。
+  **Release がまだ無ければ CI が作ります**（説明書きは `release/first-set-notes.md`。大きさと sha256 を足して添付）。
   手元で配る場合：
   見本 HTML＋目録＋書体パック。作り直したら **タグを増やす**（`first-set-2026-11-01` を作り直さない）——
   `release/first-set.json` と README のリンクを新しい日付に合わせます。
