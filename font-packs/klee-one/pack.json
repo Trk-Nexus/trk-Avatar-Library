@@ -1,0 +1,52 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "筆ペンの手紙（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "Klee One（400／600）を同梱した、鉛筆と筆の中間のような書体のパック。和紙の手ざわりの見た目で、静かな曲に向きます。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkKleeOne",
+      "file": "fonts/KleeOne-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkKleeOne",
+      "file": "fonts/KleeOne-SemiBold.woff2",
+      "weight": 600,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "筆ペンの手紙",
+    "colors": {
+      "bg": "#f4efe3",
+      "panel": "#fffdf7",
+      "text": "#2b2620",
+      "accent": "#b4552d",
+      "gold": "#8a6a2f"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#b4552d",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#8a6a2f",
+      "shape": "circle"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/dotgothic --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/DotGothic16-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/dotgothic16/-/dotgothic16-5.3.1.tgz",
+      "path": "package/files/dotgothic16-japanese-400-normal.woff2",
+      "sha256": "a042e37d1a36798f5a9dee9ab81d2fc4204950ae1729b856e4d22833a61997ee",
+      "bytes": 396312,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/lastrites-net/dotgothic"
+    }
+  }
+}

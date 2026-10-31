@@ -1,0 +1,52 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "飾り明朝のラベンダー（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "Kaisei Decol（400／700）を同梱した、すこし飾りのある明朝体の書体パック。ラベンダーの明るい見た目です。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkKaiseiDecol",
+      "file": "fonts/KaiseiDecol-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkKaiseiDecol",
+      "file": "fonts/KaiseiDecol-Bold.woff2",
+      "weight": 700,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "飾り明朝のラベンダー",
+    "colors": {
+      "bg": "#f6f1f7",
+      "panel": "#fffafd",
+      "text": "#2c2430",
+      "accent": "#9b5de5",
+      "gold": "#c98b3a"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#9b5de5",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#c98b3a",
+      "shape": "circle"
+    }
+  }
+}

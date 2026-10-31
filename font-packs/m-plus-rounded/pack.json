@@ -1,0 +1,52 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "まるゴのミルクティー（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "M PLUS Rounded 1c（400／700）を同梱した丸ゴシックの書体パック。ミルクティー色の、やわらかい夜の見た目です。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkMPlusRounded",
+      "file": "fonts/MPlusRounded1c-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkMPlusRounded",
+      "file": "fonts/MPlusRounded1c-Bold.woff2",
+      "weight": 700,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "まるゴのミルクティー",
+    "colors": {
+      "bg": "#201a17",
+      "panel": "#33291f",
+      "text": "#fff4e6",
+      "accent": "#ffb26b",
+      "gold": "#ffe0a3"
+    },
+    "glow": true,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "rounded",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#ffb26b",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#ffe0a3",
+      "shape": "circle"
+    }
+  }
+}

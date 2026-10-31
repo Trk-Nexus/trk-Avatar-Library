@@ -2,26 +2,101 @@
   "name": "first-set",
   "title": "trk! はじめてセット",
   "date": "2026-11-01",
-  "tag": "first-set-2026-11-01-r2",
-  "file": "trk-first-set-2026-11-01-r2.zip",
-  "bytes": 2996422,
-  "sha256": "71c9ce0bbd075a317f3384a3883c9858ad3de469f58c391dd17d19da6aa4671b",
+  "tag": "first-set-2026-11-01-r3",
+  "file": "trk-first-set-2026-11-01-r3.zip",
+  "bytes": 30799039,
+  "sha256": "1b381a1e7864889fdb7a8d3f9680984da51e93c94f44d331e6fa0cbdc3ab2ce8",
   "files": [
     {
       "path": "gallery/all-skins.html",
-      "bytes": 54318,
-      "sha256": "e221551b21c9c90a86ab2f903069c48aa5dfbbe44d7e9956eb480cf032dadeba"
+      "bytes": 70315,
+      "sha256": "3b3a5e3ce77b778a03c2b1cd553c381d3f7a8f70d2c07ed11b7cfe8724cf7310"
     },
     {
       "path": "catalog/index.json",
-      "bytes": 2879,
-      "sha256": "127331eb6894771d99a87653822510910e71ee967b742cd4b4da24d0cc423f55"
+      "bytes": 23434,
+      "sha256": "7ac7f8126598803b3acd3c5e7f8c1f965771f63dbe9e65c37750b4ee6c0dc94e"
+    },
+    {
+      "path": "packs/sample-mincho.stpack",
+      "bytes": 690,
+      "sha256": "f33b9a1d0f544b9f135f17091df3e16d6e00a93c4d495612a0ebc8601c27ba5d"
+    },
+    {
+      "path": "font-packs/dela-gothic.stpack",
+      "bytes": 951499,
+      "sha256": "8a183e3982c9cb7e6cccdf8474bc1d78c30f3fb70949828c07a4e573e20ebad9"
+    },
+    {
+      "path": "font-packs/dotgothic.stpack",
+      "bytes": 403458,
+      "sha256": "68fa7f0a5b4d34913a41def620a5ba14a596e4c038c5d1dbaf44b5ef5b2e5945"
+    },
+    {
+      "path": "font-packs/hachi-maru-pop.stpack",
+      "bytes": 1973189,
+      "sha256": "c7992ad1ffc7c98299f6b8f4d7a55e9b9acfa6ae72b7161fb54a34b2ad747893"
+    },
+    {
+      "path": "font-packs/kaisei-decol.stpack",
+      "bytes": 3399530,
+      "sha256": "7e2db0319f8d011421e3a8452d21cd14781632581aa12dcff3024417b8781f0f"
+    },
+    {
+      "path": "font-packs/klee-one.stpack",
+      "bytes": 3929934,
+      "sha256": "68cca8094cf2039169aeb00fe8f8f1ecaeafa4d6117f62b031637866a95c1ac8"
+    },
+    {
+      "path": "font-packs/m-plus-rounded.stpack",
+      "bytes": 1902101,
+      "sha256": "4bc6536e70595ab1b62fc7bcbaec6d22acde9882c1055b0897d8862503505d69"
     },
     {
       "path": "font-packs/maru-go.stpack",
       "bytes": 2936399,
       "sha256": "db4dc011c19d489f933eb26ca3dd185bf36f5dd5460209cbe2c04c9f378d560d"
+    },
+    {
+      "path": "font-packs/mochiy-pop.stpack",
+      "bytes": 999719,
+      "sha256": "1431c09a4b108f6fab18211cd013223a72c4e0769461cea224206bfb3537f732"
+    },
+    {
+      "path": "font-packs/potta-one.stpack",
+      "bytes": 2020608,
+      "sha256": "137c00a2cdf47c4b8c5d89b2bd4f04df07ee1d90e0aa464247354701373db30d"
+    },
+    {
+      "path": "font-packs/rampart-one.stpack",
+      "bytes": 1577304,
+      "sha256": "9a865737c7566f218835d5baebb8685f58a6ef1a1bea5bf8361b5658f27e3f4e"
+    },
+    {
+      "path": "font-packs/rocknroll-one.stpack",
+      "bytes": 981561,
+      "sha256": "bb2a5765fc90b7d5b37d36bbd82dc73fd2d0e99ccb1a54d2989ce9b1b988efe6"
+    },
+    {
+      "path": "font-packs/shippori-mincho.stpack",
+      "bytes": 2850282,
+      "sha256": "26dd978727ddedb6595927d8a91250f2b2856e50fa0b93587c7f58e4b5dfcc17"
+    },
+    {
+      "path": "font-packs/yusei-magic.stpack",
+      "bytes": 902975,
+      "sha256": "71ecd40d9057cbf52410e3849fb4f73ae9d5677f3502bdaaa104a040f378ead0"
+    },
+    {
+      "path": "font-packs/zen-kaku.stpack",
+      "bytes": 1969655,
+      "sha256": "b12dc221636c5e7d11c5ecb4f76302a5615a02ea6adc614fabfdd0904567937d"
+    },
+    {
+      "path": "font-packs/zen-old-mincho.stpack",
+      "bytes": 3899129,
+      "sha256": "5269a4797cfcdcea5740734d4fd545274011aaf63ec782bcbe3ab55dca7b9e0e"
     }
   ],
-  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML・目録・書体パック（release 1.1.0）が入っています。"
+  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML・目録・パック 16 個（見本 1＋書体パック 15）が入っています。書体パックはどれも release 1.x で、入れて「使う」と本文の書体が変わります（trk232 以降）。"
 }

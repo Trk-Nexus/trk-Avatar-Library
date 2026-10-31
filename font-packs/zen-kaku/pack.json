@@ -1,0 +1,52 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "角ゴのしらゆき（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "Zen Kaku Gothic New（400／700）を同梱した、すっきりした角ゴシックの書体パック。夜の白銀の見た目で、読みやすさを優先したいときに。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkZenKaku",
+      "file": "fonts/ZenKakuGothicNew-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkZenKaku",
+      "file": "fonts/ZenKakuGothicNew-Bold.woff2",
+      "weight": 700,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "角ゴのしらゆき",
+    "colors": {
+      "bg": "#0f1720",
+      "panel": "#1b2733",
+      "text": "#e8f1f8",
+      "accent": "#6fd3ff",
+      "gold": "#ffd166"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "default",
+    "video": "cool",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#6fd3ff",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#ffd166",
+      "shape": "circle"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/rocknroll-one --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/RocknRollOne-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/rocknroll-one/-/rocknroll-one-5.3.1.tgz",
+      "path": "package/files/rocknroll-one-japanese-400-normal.woff2",
+      "sha256": "52402ac0fd35ab041479c47acb9233788400b557cd1a5676dd5e82975d64d15a",
+      "bytes": 974452,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontdaso/rocknroll-one"
+    }
+  }
+}

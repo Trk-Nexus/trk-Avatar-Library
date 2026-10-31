@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/yusei-magic --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/YuseiMagic-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/yusei-magic/-/yusei-magic-5.3.0.tgz",
+      "path": "package/files/yusei-magic-japanese-400-normal.woff2",
+      "sha256": "5e39fe2752ba86c9e7e19635b49416ea05366c8bfe93e8a4e222508f915efa81",
+      "bytes": 895852,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/tanukifont/YuseiMagic"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/shippori-mincho --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/ShipporiMincho-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/shippori-mincho/-/shippori-mincho-5.3.0.tgz",
+      "path": "package/files/shippori-mincho-japanese-400-normal.woff2",
+      "sha256": "947587a33166398782aeecc3eb8fbdbd65a03fd29a7275719fcac098b52a88b9",
+      "bytes": 1385356,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontdaso/shippori-mincho"
+    },
+    "fonts/ShipporiMincho-Bold.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/shippori-mincho/-/shippori-mincho-5.3.0.tgz",
+      "path": "package/files/shippori-mincho-japanese-700-normal.woff2",
+      "sha256": "e50d568ef76f3bdbb756521a63d818e0f3076c6938ea47af812b96524e9e9a1c",
+      "bytes": 1456856,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontdaso/shippori-mincho"
+    }
+  }
+}

@@ -2,13 +2,13 @@
   "format": "trk-avatar-library",
   "version": 1,
   "name": "trk-Avatar-Library",
-  "updatedAt": "2026-10-31T18:24:47.763Z",
+  "updatedAt": "2026-10-31T19:48:23.106Z",
   "app": "trk! (trk-PWA)",
   "howToInstall": "trk! の 設定 → 📦 カスタムパック → 📚 目録から入れる で、この目録（index.json）を選び、一覧から入れたい .stpack を選んでください。.stpack を画面にドラッグ＆ドロップしても入ります。",
   "builtinSkins": {
     "count": 53,
     "typeSkins": 9,
-    "generatedAt": "2026-10-31T18:24:37.895Z",
+    "generatedAt": "2026-10-31T19:48:22.287Z",
     "file": "catalog/skins.json"
   },
   "packs": [
@@ -39,6 +39,255 @@
       "warnings": []
     },
     {
+      "id": "極太ポスター-書体パック-8a183e39",
+      "name": "極太ポスター（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/dela-gothic.stpack",
+      "sha256": "8a183e3982c9cb7e6cccdf8474bc1d78c30f3fb70949828c07a4e573e20ebad9",
+      "bytes": 951499,
+      "entries": 4,
+      "payloadBytes": 948746,
+      "songs": 0,
+      "skin": {
+        "name": "極太ポスター",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#101010",
+        "accent": "#ff2e2e"
+      },
+      "fonts": [
+        {
+          "family": "TrkDelaGothic",
+          "file": "fonts/DelaGothicOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "極太のゴシック。ポスターのように強く出る",
+          "cmap": 6886
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Dela Gothic One（400）を同梱した極太の書体パック。黒地に赤と黄のポスターのような見た目で、盛り上がる曲に。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "ドットの電子音-書体パック-68fa7f0a",
+      "name": "ドットの電子音（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/dotgothic.stpack",
+      "sha256": "68fa7f0a5b4d34913a41def620a5ba14a596e4c038c5d1dbaf44b5ef5b2e5945",
+      "bytes": 403458,
+      "entries": 4,
+      "payloadBytes": 400711,
+      "songs": 0,
+      "skin": {
+        "name": "ドットの電子音",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#06110d",
+        "accent": "#3ff08a"
+      },
+      "fonts": [
+        {
+          "family": "TrkDotGothic",
+          "file": "fonts/DotGothic16-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "ドット絵のような文字。レトロゲーム風に",
+          "cmap": 6884
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "DotGothic16（400）を同梱したドット文字の書体パック。走査線つきの電子基板のような見た目で、チップチューンに。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "まるぽっぷ-いちご-書体パック-c7992ad1",
+      "name": "まるぽっぷ いちご（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/hachi-maru-pop.stpack",
+      "sha256": "c7992ad1ffc7c98299f6b8f4d7a55e9b9acfa6ae72b7161fb54a34b2ad747893",
+      "bytes": 1973189,
+      "entries": 4,
+      "payloadBytes": 1970428,
+      "songs": 0,
+      "skin": {
+        "name": "まるぽっぷ いちご",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#2b1a24",
+        "accent": "#ff7fa8"
+      },
+      "fonts": [
+        {
+          "family": "TrkHachiMaru",
+          "file": "fonts/HachiMaruPop-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "まるっこい手書き文字。力を抜いた雰囲気に",
+          "cmap": 6873
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Hachi Maru Pop（400）を同梱した、まるっこい手書きポップの書体パック。いちごミルク色の見た目です。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "飾り明朝のラベンダー-書体パック-7e2db031",
+      "name": "飾り明朝のラベンダー（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/kaisei-decol.stpack",
+      "sha256": "7e2db0319f8d011421e3a8452d21cd14781632581aa12dcff3024417b8781f0f",
+      "bytes": 3399530,
+      "entries": 5,
+      "payloadBytes": 3400950,
+      "songs": 0,
+      "skin": {
+        "name": "飾り明朝のラベンダー",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#f6f1f7",
+        "accent": "#9b5de5"
+      },
+      "fonts": [
+        {
+          "family": "TrkKaiseiDecol",
+          "file": "fonts/KaiseiDecol-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "飾りのある明朝体。上品で華やかな雰囲気に",
+          "cmap": 6877
+        },
+        {
+          "family": "TrkKaiseiDecol",
+          "file": "fonts/KaiseiDecol-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "飾り明朝の太字。題字やタイトルに",
+          "cmap": 6877
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Kaisei Decol（400／700）を同梱した、すこし飾りのある明朝体の書体パック。ラベンダーの明るい見た目です。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "筆ペンの手紙-書体パック-68cca809",
+      "name": "筆ペンの手紙（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/klee-one.stpack",
+      "sha256": "68cca8094cf2039169aeb00fe8f8f1ecaeafa4d6117f62b031637866a95c1ac8",
+      "bytes": 3929934,
+      "entries": 5,
+      "payloadBytes": 3931316,
+      "songs": 0,
+      "skin": {
+        "name": "筆ペンの手紙",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#f4efe3",
+        "accent": "#b4552d"
+      },
+      "fonts": [
+        {
+          "family": "TrkKleeOne",
+          "file": "fonts/KleeOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "鉛筆と筆の間のような手ざわり。静かな本文に",
+          "cmap": 6887
+        },
+        {
+          "family": "TrkKleeOne",
+          "file": "fonts/KleeOne-SemiBold.woff2",
+          "license": "OFL-1.1",
+          "weight": 600,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "手書き風の少し太いウェイト。題字や強調に",
+          "cmap": 6887
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Klee One（400／600）を同梱した、鉛筆と筆の中間のような書体のパック。和紙の手ざわりの見た目で、静かな曲に向きます。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "まるゴのミルクティー-書体パック-4bc6536e",
+      "name": "まるゴのミルクティー（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/m-plus-rounded.stpack",
+      "sha256": "4bc6536e70595ab1b62fc7bcbaec6d22acde9882c1055b0897d8862503505d69",
+      "bytes": 1902101,
+      "entries": 5,
+      "payloadBytes": 1903682,
+      "songs": 0,
+      "skin": {
+        "name": "まるゴのミルクティー",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#201a17",
+        "accent": "#ffb26b"
+      },
+      "fonts": [
+        {
+          "family": "TrkMPlusRounded",
+          "file": "fonts/MPlusRounded1c-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "やわらかい丸ゴシック。親しみやすい雰囲気に",
+          "cmap": 5451
+        },
+        {
+          "family": "TrkMPlusRounded",
+          "file": "fonts/MPlusRounded1c-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "丸ゴの太字。やわらかいまま目立たせる",
+          "cmap": 5451
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "M PLUS Rounded 1c（400／700）を同梱した丸ゴシックの書体パック。ミルクティー色の、やわらかい夜の見た目です。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
       "id": "丸ゴのお茶目-書体パック-db4dc011",
       "name": "丸ゴのお茶目（書体パック）",
       "author": "trk-Avatar-Library",
@@ -64,19 +313,346 @@
           "file": "fonts/ZenMaruGothic-Regular.woff2",
           "license": "OFL-1.1",
           "weight": 400,
-          "licenseFile": "fonts/OFL.txt"
+          "licenseFile": "fonts/OFL.txt",
+          "note": "丸みのあるゴシック。長い文でもやわらかく読める",
+          "cmap": 6875
         },
         {
           "family": "TrkZenMaru",
           "file": "fonts/ZenMaruGothic-Bold.woff2",
           "license": "OFL-1.1",
           "weight": 700,
-          "licenseFile": "fonts/OFL.txt"
+          "licenseFile": "fonts/OFL.txt",
+          "note": "丸ゴの太字。見出しをやわらかく強調する",
+          "cmap": 6875
         }
       ],
       "license": "GPL-3.0-or-later（このパックの作り）",
       "description": "Zen Maru Gothic（400／700）を同梱した書体パックです。端末に丸ゴが無くても、桃色の夜の見た目で遊べます。",
       "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "もちもちポップ-書体パック-1431c09a",
+      "name": "もちもちポップ（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/mochiy-pop.stpack",
+      "sha256": "1431c09a4b108f6fab18211cd013223a72c4e0769461cea224206bfb3537f732",
+      "bytes": 999719,
+      "entries": 4,
+      "payloadBytes": 996987,
+      "songs": 0,
+      "skin": {
+        "name": "もちもちポップ",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#22103a",
+        "accent": "#ff9ce0"
+      },
+      "fonts": [
+        {
+          "family": "TrkMochiyPop",
+          "file": "fonts/MochiyPopOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "まるい太字のポップ体。もちっとした印象に",
+          "cmap": 6871
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Mochiy Pop One（400）を同梱した、まるい太字ポップの書体パック。夜紫に桃色が映える見た目です。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "看板のポップ-書体パック-137c00a2",
+      "name": "看板のポップ（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/potta-one.stpack",
+      "sha256": "137c00a2cdf47c4b8c5d89b2bd4f04df07ee1d90e0aa464247354701373db30d",
+      "bytes": 2020608,
+      "entries": 4,
+      "payloadBytes": 2017916,
+      "songs": 0,
+      "skin": {
+        "name": "看板のポップ",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#10232b",
+        "accent": "#ffd166"
+      },
+      "fonts": [
+        {
+          "family": "TrkPottaOne",
+          "file": "fonts/PottaOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "看板のような太いポップ体。遠くからでも目立つ",
+          "cmap": 6883
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Potta One（400）を同梱した看板風の太いポップ書体パック。深い青緑に黄色が映える見た目です。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "ラインのネオン-書体パック-9a865737",
+      "name": "ラインのネオン（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/rampart-one.stpack",
+      "sha256": "9a865737c7566f218835d5baebb8685f58a6ef1a1bea5bf8361b5658f27e3f4e",
+      "bytes": 1577304,
+      "entries": 4,
+      "payloadBytes": 1574583,
+      "songs": 0,
+      "skin": {
+        "name": "ラインのネオン",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#0a0620",
+        "accent": "#b14bff"
+      },
+      "fonts": [
+        {
+          "family": "TrkRampart",
+          "file": "fonts/RampartOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "線で描いたような袋文字。ネオン風の見出しに",
+          "cmap": 6884
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Rampart One（400）を同梱した、線で描いたような袋文字の書体パック。紫と水色のネオンの見た目です。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "ロックの夜-書体パック-bb2a5765",
+      "name": "ロックの夜（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/rocknroll-one.stpack",
+      "sha256": "bb2a5765fc90b7d5b37d36bbd82dc73fd2d0e99ccb1a54d2989ce9b1b988efe6",
+      "bytes": 981561,
+      "entries": 4,
+      "payloadBytes": 978846,
+      "songs": 0,
+      "skin": {
+        "name": "ロックの夜",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#1a1210",
+        "accent": "#ff7043"
+      },
+      "fonts": [
+        {
+          "family": "TrkRocknRoll",
+          "file": "fonts/RocknRollOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "手書きのロック風。元気な見出しに",
+          "cmap": 6884
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "RocknRoll One（400）を同梱した手書きロック風の書体パック。焚き火のような暖色の見た目です。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "墨と金の明朝-書体パック-26dd9787",
+      "name": "墨と金の明朝（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/shippori-mincho.stpack",
+      "sha256": "26dd978727ddedb6595927d8a91250f2b2856e50fa0b93587c7f58e4b5dfcc17",
+      "bytes": 2850282,
+      "entries": 5,
+      "payloadBytes": 2851998,
+      "songs": 0,
+      "skin": {
+        "name": "墨と金の明朝",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#171512",
+        "accent": "#c8a15a"
+      },
+      "fonts": [
+        {
+          "family": "TrkShipporiMincho",
+          "file": "fonts/ShipporiMincho-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "端正な明朝体。和風でも読みやすい本文に",
+          "cmap": 6881
+        },
+        {
+          "family": "TrkShipporiMincho",
+          "file": "fonts/ShipporiMincho-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "明朝の太字。落ち着いた見出しに",
+          "cmap": 6881
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Shippori Mincho（400／700）を同梱した明朝体の書体パック。墨と金の落ち着いた見た目で、和風の曲に。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "筆ポップの夜祭-書体パック-71ecd40d",
+      "name": "筆ポップの夜祭（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/yusei-magic.stpack",
+      "sha256": "71ecd40d9057cbf52410e3849fb4f73ae9d5677f3502bdaaa104a040f378ead0",
+      "bytes": 902975,
+      "entries": 4,
+      "payloadBytes": 900244,
+      "songs": 0,
+      "skin": {
+        "name": "筆ポップの夜祭",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#14100e",
+        "accent": "#ff5a3c"
+      },
+      "fonts": [
+        {
+          "family": "TrkYuseiMagic",
+          "file": "fonts/YuseiMagic-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "筆文字のポップ体。にぎやかな見出しに合う",
+          "cmap": 6883
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Yusei Magic（400）を同梱した筆文字ポップの書体パック。提灯と屋台の夜の見た目で、にぎやかな曲に。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "角ゴのしらゆき-書体パック-b12dc221",
+      "name": "角ゴのしらゆき（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/zen-kaku.stpack",
+      "sha256": "b12dc221636c5e7d11c5ecb4f76302a5615a02ea6adc614fabfdd0904567937d",
+      "bytes": 1969655,
+      "entries": 5,
+      "payloadBytes": 1971290,
+      "songs": 0,
+      "skin": {
+        "name": "角ゴのしらゆき",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#0f1720",
+        "accent": "#6fd3ff"
+      },
+      "fonts": [
+        {
+          "family": "TrkZenKaku",
+          "file": "fonts/ZenKakuGothicNew-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "すっきりした角ゴシック。いちばん読みやすい本文向け",
+          "cmap": 6872
+        },
+        {
+          "family": "TrkZenKaku",
+          "file": "fonts/ZenKakuGothicNew-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "角ゴの太字。見出しをきりっと引き締める",
+          "cmap": 6872
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Zen Kaku Gothic New（400／700）を同梱した、すっきりした角ゴシックの書体パック。夜の白銀の見た目で、読みやすさを優先したいときに。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "古明朝の藍-書体パック-5269a479",
+      "name": "古明朝の藍（書体パック）",
+      "author": "trk-PWA",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/zen-old-mincho.stpack",
+      "sha256": "5269a4797cfcdcea5740734d4fd545274011aaf63ec782bcbe3ab55dca7b9e0e",
+      "bytes": 3899129,
+      "entries": 5,
+      "payloadBytes": 3900892,
+      "songs": 0,
+      "skin": {
+        "name": "古明朝の藍",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#0f1a2b",
+        "accent": "#7aa2f7"
+      },
+      "fonts": [
+        {
+          "family": "TrkZenOldMincho",
+          "file": "fonts/ZenOldMincho-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "古風な明朝体。静かで落ち着いた本文に",
+          "cmap": 6876
+        },
+        {
+          "family": "TrkZenOldMincho",
+          "file": "fonts/ZenOldMincho-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "古明朝の太字。堂々とした見出しに",
+          "cmap": 6876
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Zen Old Mincho（400／700）を同梱した古風な明朝体の書体パック。藍色の静かな見た目です。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
       "ok": true,
       "warnings": []
     }

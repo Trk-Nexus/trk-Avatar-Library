@@ -1,0 +1,57 @@
+{
+  "note": "目録（catalog/index.json）の packs[].fonts[].note に入れる「書体の雰囲気」の一行です（L10・任意・60 文字まで）。パックの中身（pack.json）は変えず、この倉庫だけで足します（配った .stpack の sha256 を動かさないため）。キーは目録の file、その下がパックの中の書体ファイル。書き間違い（長すぎる・パックにない書体）は build-catalog が止めます。",
+  "packs": {
+    "font-packs/maru-go.stpack": {
+      "fonts/ZenMaruGothic-Regular.woff2": "丸みのあるゴシック。長い文でもやわらかく読める",
+      "fonts/ZenMaruGothic-Bold.woff2": "丸ゴの太字。見出しをやわらかく強調する"
+    },
+    "font-packs/zen-kaku.stpack": {
+      "fonts/ZenKakuGothicNew-Regular.woff2": "すっきりした角ゴシック。いちばん読みやすい本文向け",
+      "fonts/ZenKakuGothicNew-Bold.woff2": "角ゴの太字。見出しをきりっと引き締める"
+    },
+    "font-packs/m-plus-rounded.stpack": {
+      "fonts/MPlusRounded1c-Regular.woff2": "やわらかい丸ゴシック。親しみやすい雰囲気に",
+      "fonts/MPlusRounded1c-Bold.woff2": "丸ゴの太字。やわらかいまま目立たせる"
+    },
+    "font-packs/klee-one.stpack": {
+      "fonts/KleeOne-Regular.woff2": "鉛筆と筆の間のような手ざわり。静かな本文に",
+      "fonts/KleeOne-SemiBold.woff2": "手書き風の少し太いウェイト。題字や強調に"
+    },
+    "font-packs/yusei-magic.stpack": {
+      "fonts/YuseiMagic-Regular.woff2": "筆文字のポップ体。にぎやかな見出しに合う"
+    },
+    "font-packs/hachi-maru-pop.stpack": {
+      "fonts/HachiMaruPop-Regular.woff2": "まるっこい手書き文字。力を抜いた雰囲気に"
+    },
+    "font-packs/dotgothic.stpack": {
+      "fonts/DotGothic16-Regular.woff2": "ドット絵のような文字。レトロゲーム風に"
+    },
+    "font-packs/shippori-mincho.stpack": {
+      "fonts/ShipporiMincho-Regular.woff2": "端正な明朝体。和風でも読みやすい本文に",
+      "fonts/ShipporiMincho-Bold.woff2": "明朝の太字。落ち着いた見出しに"
+    },
+    "font-packs/zen-old-mincho.stpack": {
+      "fonts/ZenOldMincho-Regular.woff2": "古風な明朝体。静かで落ち着いた本文に",
+      "fonts/ZenOldMincho-Bold.woff2": "古明朝の太字。堂々とした見出しに"
+    },
+    "font-packs/dela-gothic.stpack": {
+      "fonts/DelaGothicOne-Regular.woff2": "極太のゴシック。ポスターのように強く出る"
+    },
+    "font-packs/rampart-one.stpack": {
+      "fonts/RampartOne-Regular.woff2": "線で描いたような袋文字。ネオン風の見出しに"
+    },
+    "font-packs/rocknroll-one.stpack": {
+      "fonts/RocknRollOne-Regular.woff2": "手書きのロック風。元気な見出しに"
+    },
+    "font-packs/potta-one.stpack": {
+      "fonts/PottaOne-Regular.woff2": "看板のような太いポップ体。遠くからでも目立つ"
+    },
+    "font-packs/kaisei-decol.stpack": {
+      "fonts/KaiseiDecol-Regular.woff2": "飾りのある明朝体。上品で華やかな雰囲気に",
+      "fonts/KaiseiDecol-Bold.woff2": "飾り明朝の太字。題字やタイトルに"
+    },
+    "font-packs/mochiy-pop.stpack": {
+      "fonts/MochiyPopOne-Regular.woff2": "まるい太字のポップ体。もちっとした印象に"
+    }
+  }
+}

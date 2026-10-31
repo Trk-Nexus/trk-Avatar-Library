@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "筆ポップの夜祭（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "Yusei Magic（400）を同梱した筆文字ポップの書体パック。提灯と屋台の夜の見た目で、にぎやかな曲に。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkYuseiMagic",
+      "file": "fonts/YuseiMagic-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "筆ポップの夜祭",
+    "colors": {
+      "bg": "#14100e",
+      "panel": "#241b14",
+      "text": "#ffeedd",
+      "accent": "#ff5a3c",
+      "gold": "#ffc93c"
+    },
+    "glow": true,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "rounded",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#ff5a3c",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#ffc93c",
+      "shape": "circle"
+    }
+  }
+}

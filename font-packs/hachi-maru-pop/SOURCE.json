@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/hachi-maru-pop --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/HachiMaruPop-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/hachi-maru-pop/-/hachi-maru-pop-5.3.0.tgz",
+      "path": "package/files/hachi-maru-pop-japanese-400-normal.woff2",
+      "sha256": "e5a1f037cdc022acdc7ff6ab46db4ed2092d6ed00447eb1cc17aa5b06149b75b",
+      "bytes": 1966028,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/noriokanisawa/HachiMaruPop"
+    }
+  }
+}

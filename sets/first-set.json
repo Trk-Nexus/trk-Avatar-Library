@@ -2,15 +2,30 @@
   "name": "first-set",
   "title": "trk! はじめてセット",
   "date": "2026-11-01",
-  "rev": "r2",
-  "tag": "first-set-2026-11-01-r2",
+  "rev": "r3",
+  "tag": "first-set-2026-11-01-r3",
   "extension": "zip",
   "files": [
     "gallery/all-skins.html",
     "catalog/index.json",
-    "font-packs/maru-go.stpack"
+    "packs/sample-mincho.stpack",
+    "font-packs/dela-gothic.stpack",
+    "font-packs/dotgothic.stpack",
+    "font-packs/hachi-maru-pop.stpack",
+    "font-packs/kaisei-decol.stpack",
+    "font-packs/klee-one.stpack",
+    "font-packs/m-plus-rounded.stpack",
+    "font-packs/maru-go.stpack",
+    "font-packs/mochiy-pop.stpack",
+    "font-packs/potta-one.stpack",
+    "font-packs/rampart-one.stpack",
+    "font-packs/rocknroll-one.stpack",
+    "font-packs/shippori-mincho.stpack",
+    "font-packs/yusei-magic.stpack",
+    "font-packs/zen-kaku.stpack",
+    "font-packs/zen-old-mincho.stpack"
   ],
   "readme": "README-はじめに.txt",
   "record": "release/first-set.json",
-  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML・目録・書体パック（release 1.1.0）が入っています。"
+  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML・目録・パック 16 個（見本 1＋書体パック 15）が入っています。書体パックはどれも release 1.x で、入れて「使う」と本文の書体が変わります（trk232 以降）。"
 }

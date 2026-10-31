@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "看板のポップ（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "Potta One（400）を同梱した看板風の太いポップ書体パック。深い青緑に黄色が映える見た目です。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkPottaOne",
+      "file": "fonts/PottaOne-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "看板のポップ",
+    "colors": {
+      "bg": "#10232b",
+      "panel": "#17323c",
+      "text": "#eafaff",
+      "accent": "#ffd166",
+      "gold": "#ff9f1c"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "rounded",
+    "video": "cool",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#ffd166",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#ff9f1c",
+      "shape": "circle"
+    }
+  }
+}
