@@ -25,6 +25,7 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import crypto from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const HERE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -59,8 +60,22 @@ if (!api || typeof api.sanitizeCatalog !== "function") {
   process.exit(2);
 }
 
+/* 相手側（trk-PWA）の版。CI の TRK_PWA_REF と突き合わせられるように、読めたら出す */
+function appRevision(dir) {
+  const tryGit = (...args) => {
+    try { return execFileSync("git", ["-C", dir, ...args], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim(); }
+    catch (_) { return ""; }
+  };
+  const sha = tryGit("rev-parse", "--short=7", "HEAD");
+  if (!sha) return "";
+  const tag = tryGit("describe", "--tags", "--always", "HEAD");
+  const date = tryGit("log", "-1", "--format=%cs", "HEAD");
+  return `${sha}${date ? `（${date}）` : ""}${tag && tag !== sha ? ` ${tag}` : ""}`;
+}
+
 const raw = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const fails = [];
+const notes = [];
 const fail = (msg) => fails.push(msg);
 
 if (raw.format !== api.CATALOG_FORMAT) fail(`format が "${api.CATALOG_FORMAT}" ではありません（"${raw.format}"）`);
@@ -86,6 +101,14 @@ if (!cat) {
     const af = (a.fonts || []).map(f => `${f.family}|${f.file}|${f.license}`).join(",");
     const bf = (b.fonts || []).map(f => `${f.family}|${f.file}|${f.license}`).join(",");
     if (af !== bf) fail(`${where} の fonts が変わりました（目録 "${af}" → アプリ "${bf}"）`);
+    /* L3：colors は任意項目。形だけこちらで決める（アプリの trk231 は無視する） */
+    if (a.colors !== undefined) {
+      const c = a.colors;
+      const ok = c && typeof c === "object" && !Array.isArray(c)
+        && /^#[0-9a-f]{6}$/i.test(String(c.stage)) && /^#[0-9a-f]{6}$/i.test(String(c.accent));
+      if (!ok) fail(`${where} の colors は { stage: "#rrggbb", accent: "#rrggbb" } にしてください`);
+      if (b.colors !== undefined) notes.push(`${where} の colors をアプリが読むようになりました（trk235 以降）。check-contract の見直しどきです`);
+    }
   }
 }
 
@@ -103,7 +126,10 @@ if (fails.length) {
   for (const f of fails) console.error(`   ❌ ${f}`);
   process.exit(1);
 }
+const rev = appRevision(path.resolve(trk));
 console.log(`✅ 目録はアプリ（trk-PWA/js/pack-catalog.js）の規則を通ります（${raw.packs.length} パック）`);
+if (rev) console.log(`   相手側 trk-PWA: ${rev}${process.env.TRK_PWA_REF ? `（CI の TRK_PWA_REF=${process.env.TRK_PWA_REF}）` : ""}`);
+for (const n of notes) console.log(`   ℹ ${n}`);
 for (const p of raw.packs) {
   console.log(`   ${p.file} — ${p.name}${p.fonts && p.fonts.length ? `／書体 ${p.fonts.length}` : ""}${p.bytes ? `（${p.bytes.toLocaleString()} B）` : ""}`);
 }

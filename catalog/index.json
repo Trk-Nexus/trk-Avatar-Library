@@ -2,7 +2,7 @@
   "format": "trk-avatar-library",
   "version": 1,
   "name": "trk-Avatar-Library",
-  "updatedAt": "2026-10-31T16:13:10.385Z",
+  "updatedAt": "2026-10-31T17:09:48.594Z",
   "app": "trk! (trk-PWA)",
   "howToInstall": "trk! の 設定 → 📦 カスタムパック → 📚 目録から入れる で、この目録（index.json）を選び、一覧から入れたい .stpack を選んでください。.stpack を画面にドラッグ＆ドロップしても入ります。",
   "builtinSkins": {
@@ -28,6 +28,10 @@
         "name": "明朝の本",
         "colors": 5
       },
+      "colors": {
+        "stage": "#f6f1e6",
+        "accent": "#8c2f39"
+      },
       "fonts": [],
       "license": "GPL-3.0-or-later（このパックの作り）",
       "description": "書体スキン「明朝の本」と同じ色を、パックの形にした見本です。アプリの棚に入れて、パックの使い方を確かめられます。",
@@ -49,6 +53,10 @@
       "skin": {
         "name": "丸ゴのお茶目",
         "colors": 5
+      },
+      "colors": {
+        "stage": "#241a2a",
+        "accent": "#ffb3d2"
       },
       "fonts": [
         {

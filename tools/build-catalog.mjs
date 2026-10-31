@@ -59,6 +59,8 @@ for (const p of listPacks()) {
     payloadBytes: r.info.payloadBytes,
     songs: r.info.songs,
     skin: r.info.skin ? { name: r.info.skin.name, colors: r.info.skin.colors } : null,
+    /* L3：一覧に出す見本の2色（任意項目。trk231 のアプリはまだ読まない） */
+    ...(r.info.colors ? { colors: r.info.colors } : {}),
     fonts: r.info.fonts && r.info.fonts.length
       ? r.info.fonts.map(f => ({ family: f.family, file: f.file, license: f.license,
           ...(Number.isInteger(f.weight) ? { weight: f.weight } : {}) })) : [],

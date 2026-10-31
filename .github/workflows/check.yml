@@ -3,9 +3,18 @@ name: check
 on:
   push:
   pull_request:
+  schedule:
+    # 相手側（trk-PWA）は日々変わります。こちらが触っていなくても、週に1回は契約を確かめます
+    - cron: "0 21 * * 0"   # 日曜 21:00 UTC（月曜 06:00 JST）
+  workflow_dispatch:
 
 permissions:
   contents: read
+
+env:
+  # 相手側の版（commit）。上げるときは、この1行と docs の記録を一緒に変える
+  # （trk231 = 9bf22d7。trk-PWA の docs/LIBRARY-UX-PLAN-2026-11-01.md の版）
+  TRK_PWA_REF: 9bf22d7a8751f0df2e9b2eca86273c2ed1df8fcb
 
 jobs:
   check:
@@ -17,11 +26,13 @@ jobs:
           path: trk-Avatar-Library
 
       # tools は trk-PWA の js/zip-io.js・js/pack-catalog.js を「そのまま」読みます（写しを持たない）
-      - name: trk-PWA（となりのフォルダに取ってくる）
+      - name: trk-PWA（相手側・バージョンを固定して取る）
         uses: actions/checkout@v4
         with:
           repository: TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA
+          ref: ${{ env.TRK_PWA_REF }}
           path: trk-PWA
+          fetch-depth: 0
 
       - name: Node 22
         uses: actions/setup-node@v4
@@ -46,7 +57,7 @@ jobs:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: node tools/build-catalog.mjs --check
 
-      - name: 目録がアプリの読み取り規則を通るか
+      - name: 目録がアプリ（固定した版）の読み取り規則を通るか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
@@ -57,3 +68,42 @@ jobs:
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: node tools/build-pack.mjs font-packs/maru-go --check --fetch
+
+      - name: はじめてセットが記録と一致するか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: node tools/build-set.mjs sets/first-set.json --check
+
+      - name: README の表・リンク・セットの記録
+        run: node trk-Avatar-Library/tools/check-docs.mjs
+
+  # 相手側の最新が、こちらの契約と合っているか（固定した版ではなく main）
+  upstream-main:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: この倉庫
+        uses: actions/checkout@v4
+        with:
+          path: trk-Avatar-Library
+
+      - name: trk-PWA（main・固定しない）
+        uses: actions/checkout@v4
+        with:
+          repository: TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA
+          ref: main
+          path: trk-PWA
+          fetch-depth: 0
+
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 目録がアプリの最新 main でも読めるか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: node tools/check-contract.mjs

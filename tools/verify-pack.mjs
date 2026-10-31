@@ -96,6 +96,10 @@ export async function verifyPack(file, opts = {}) {
       if (man.skin.font && !["default", "mono", "rounded", "serif"].includes(man.skin.font)) {
         warnings.push(`skin.font "${man.skin.font}" はアプリのプリセット（default/mono/rounded/serif）ではありません`);
       }
+      /* 目録の packs[].colors（L3・任意）に出す2色。アプリの trk231 はまだ読まない（trk235 以降で一覧に点を出す予定） */
+      if (HEX.test(String(c.bg)) && HEX.test(String(c.accent))) {
+        info.colors = { stage: String(c.bg).toLowerCase(), accent: String(c.accent).toLowerCase() };
+      }
     }
   }
   for (const k of ["don", "ka"]) {
