@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "ドットの電子音（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "DotGothic16（400）を同梱したドット文字の書体パック。走査線つきの電子基板のような見た目で、チップチューンに。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkDotGothic",
+      "file": "fonts/DotGothic16-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "ドットの電子音",
+    "colors": {
+      "bg": "#06110d",
+      "panel": "#0d2018",
+      "text": "#c8ffd9",
+      "accent": "#3ff08a",
+      "gold": "#b6ff5c"
+    },
+    "glow": true,
+    "scanlines": true,
+    "gradDir": "none",
+    "font": "mono",
+    "video": "mono",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#3ff08a",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#b6ff5c",
+      "shape": "circle"
+    }
+  }
+}

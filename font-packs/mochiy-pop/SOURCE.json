@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/mochiy-pop --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/MochiyPopOne-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/mochiy-pop-one/-/mochiy-pop-one-5.3.0.tgz",
+      "path": "package/files/mochiy-pop-one-japanese-400-normal.woff2",
+      "sha256": "f319ddf95355b5d4861510e7a3a345b58f52cdf41a7172cc3a315360353a030e",
+      "bytes": 992600,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontdaso/mochiy-pop"
+    }
+  }
+}

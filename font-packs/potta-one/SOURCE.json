@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/potta-one --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/PottaOne-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/potta-one/-/potta-one-5.3.0.tgz",
+      "path": "package/files/potta-one-japanese-400-normal.woff2",
+      "sha256": "8e9b412bc6e72f9889447c18723d64102f962c8fdf90527022f3cc2835470ff2",
+      "bytes": 2013516,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontdaso/potta-one"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/dela-gothic --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/DelaGothicOne-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/dela-gothic-one/-/dela-gothic-one-5.3.0.tgz",
+      "path": "package/files/dela-gothic-one-japanese-400-normal.woff2",
+      "sha256": "9794ea693a3f80e37c4e73c2186be9d8fac8161d2d38a3e95e22e3c9c4eb487d",
+      "bytes": 944356,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/artakana/delagothic"
+    }
+  }
+}

@@ -15,6 +15,9 @@
          { id, name, author, version, file, sha256, bytes, fonts:[{family,file,license,weight,licenseFile}], license, description, url } ] }
      ・version は pack.json の release（省略時 1.0.0）／url は https のときだけ載せる
      ・fonts[].licenseFile は任意（L7・trk232 からのお願い）。アプリは trk233 以降で全文の表示に使う
+     ・fonts[].note は任意（L10・trk233 からのお願い）。「どんな雰囲気の書体か」の一行（60 文字まで）。
+       パックの中身（pack.json）は動かさず、この倉庫の catalog/font-notes.json で足す
+     ・fonts[].cmap は任意（L11）。その書体が対応する字数（woff2 の cmap を数える）
      ・形が合っているかは tools/check-contract.mjs（アプリ自身の sanitizeCatalog）で確かめる
 */
 import fs from "node:fs";
@@ -22,6 +25,8 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { verifyPack } from "./verify-pack.mjs";
+import { openZip } from "./lib/zip.mjs";
+import { checkFont } from "./check-fonts.mjs";
 
 const HERE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -31,6 +36,47 @@ const DIRS = ["packs", "font-packs"];
 const OUT = path.join(HERE, "catalog/index.json");
 
 const sha256 = buf => crypto.createHash("sha256").update(buf).digest("hex");
+
+/* L10：書体の「雰囲気の一行」。パックの pack.json は変えず、この倉庫の catalog/font-notes.json で足す
+   （パックのバイト列＝配ったものの sha256 を動かさないため）。キーは目録の file、その下がパックの中の書体ファイル。 */
+const NOTES_PATH = path.join(HERE, "catalog/font-notes.json");
+const NOTES = fs.existsSync(NOTES_PATH) ? JSON.parse(fs.readFileSync(NOTES_PATH, "utf8")) : {};
+const NOTES_BY_PACK = NOTES && typeof NOTES.packs === "object" && NOTES.packs ? NOTES.packs : {};
+const NOTE_MAX = 60;
+const noteProblems = [];
+const noteUsed = new Set();
+const noteOf = (packFile, fontFile) => {
+  const byFont = NOTES_BY_PACK[packFile];
+  if (!byFont || typeof byFont !== "object") return "";
+  const raw = byFont[fontFile];
+  if (raw === undefined || raw === null) return "";
+  noteUsed.add(`${packFile}|${fontFile}`);
+  if (typeof raw !== "string" || !raw.trim()) { noteProblems.push(`${packFile} の「${fontFile}」の note が空です`); return ""; }
+  const note = raw.trim();
+  if ([...note].length > NOTE_MAX) {
+    noteProblems.push(`${packFile} の「${fontFile}」の note が ${[...note].length} 文字です（${NOTE_MAX} 文字まで）`);
+    return "";
+  }
+  return note;
+};
+
+/* L11：その書体が対応する字数（woff2 の cmap）。check-fonts と同じ読み方で数える */
+async function cmapSizes(buf, fonts) {
+  const out = new Map();
+  if (!fonts.length) return out;
+  let zipped = null;
+  try { zipped = await openZip(buf, trk); } catch (_) { return out; }
+  for (const f of fonts) {
+    try {
+      const bytes = await zipped.read(f.file);
+      if (!bytes) continue;
+      const c = checkFont(Buffer.from(bytes), { family: f.family, file: f.file, weight: f.weight });
+      if (c && c.info && Number.isInteger(c.info.cmap) && c.info.cmap > 0) out.set(f.file, c.info.cmap);
+    } catch (_) { /* 読めない書体は check-fonts が別に知らせる（目録は cmap 抜きで作る） */ }
+  }
+  return out;
+}
+
 const listPacks = () => DIRS.flatMap(dir => {
   const abs = path.join(HERE, dir);
   if (!fs.existsSync(abs)) return [];
@@ -46,6 +92,8 @@ for (const p of listPacks()) {
   if (!r.ok) problems.push({ file: p.file, errors: r.errors });
   const slug = (r.info.name || path.basename(p.file, ".stpack")).toLowerCase()
     .replace(/[^a-z0-9\u3040-\u30ff\u4e00-\u9fff]+/gi, "-").replace(/^-|-$/g, "").slice(0, 40) || "pack";
+  const fontInfo = Array.isArray(r.info.fonts) ? r.info.fonts : [];
+  const cmaps = await cmapSizes(buf, fontInfo);
   packs.push({
     id: `${slug}-${sha256(buf).slice(0, 8)}`,
     name: r.info.name || path.basename(p.file, ".stpack"),
@@ -62,10 +110,14 @@ for (const p of listPacks()) {
     skin: r.info.skin ? { name: r.info.skin.name, colors: r.info.skin.colors } : null,
     /* L3：一覧に出す見本の2色（任意項目。trk231 のアプリはまだ読まない） */
     ...(r.info.colors ? { colors: r.info.colors } : {}),
-    fonts: r.info.fonts && r.info.fonts.length
-      ? r.info.fonts.map(f => ({ family: f.family, file: f.file, license: f.license,
-          ...(Number.isInteger(f.weight) ? { weight: f.weight } : {}),
-          ...(f.licenseFile ? { licenseFile: f.licenseFile } : {}) })) : [],
+    fonts: fontInfo.map(f => {
+      const note = noteOf(p.file, f.file);
+      return { family: f.family, file: f.file, license: f.license,
+        ...(Number.isInteger(f.weight) ? { weight: f.weight } : {}),
+        ...(f.licenseFile ? { licenseFile: f.licenseFile } : {}),
+        ...(note ? { note } : {}),
+        ...(cmaps.has(f.file) ? { cmap: cmaps.get(f.file) } : {}) };
+    }),
     license: r.info.license || "",
     description: r.info.description || "",
     ...(r.info.url ? { url: r.info.url } : {}),
@@ -73,6 +125,25 @@ for (const p of listPacks()) {
     warnings: r.warnings,
   });
 }
+/* catalog/font-notes.json の書き間違い（長すぎる・パックにない書体・目録にないパック）は、黙って捨てずに止める */
+for (const [packFile, byFont] of Object.entries(NOTES_BY_PACK)) {
+  if (!packs.some(p => p.file === packFile)) {
+    noteProblems.push(`catalog/font-notes.json の「${packFile}」は目録にありません（file のつづりを確かめてください）`);
+    continue;
+  }
+  if (!byFont || typeof byFont !== "object") { noteProblems.push(`catalog/font-notes.json の「${packFile}」が入れ物ではありません`); continue; }
+  for (const fontFile of Object.keys(byFont)) {
+    if (!noteUsed.has(`${packFile}|${fontFile}`)) {
+      noteProblems.push(`catalog/font-notes.json の「${packFile}」の「${fontFile}」は、そのパックに入っていません`);
+    }
+  }
+}
+if (noteProblems.length) {
+  console.error(`❌ catalog/font-notes.json に問題があります（${noteProblems.length} 件）`);
+  for (const m of noteProblems) console.error(`   ❌ ${m}`);
+  process.exit(1);
+}
+
 /* アプリは目録を 500 件までしか読まない（それ以上は黙って捨てるので、こちらで断る） */
 const MAX_PACKS = 500;
 if (packs.length > MAX_PACKS) {
@@ -133,7 +204,9 @@ if (checkOnly) {
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, text, "utf8");
-console.log(`✅ ${packs.length} パック → catalog/index.json（${text.length.toLocaleString()} B）`);
+const noteCount = packs.reduce((n, p) => n + p.fonts.filter(f => f.note).length, 0);
+const cmapCount = packs.reduce((n, p) => n + p.fonts.filter(f => f.cmap).length, 0);
+console.log(`✅ ${packs.length} パック → catalog/index.json（${text.length.toLocaleString()} B・書体の note ${noteCount} / cmap ${cmapCount}）`);
 for (const p of packs) console.log(`   ${p.ok ? "✅" : "❌"} ${p.file} — ${p.name}${p.fonts.length ? `／書体 ${p.fonts.length}` : ""}`);
 if (problems.length) {
   console.error("\n❌ 検査に通らないパックがあります（目録には載せましたが ok:false です）");

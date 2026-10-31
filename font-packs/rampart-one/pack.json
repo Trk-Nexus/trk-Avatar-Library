@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "ラインのネオン（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "Rampart One（400）を同梱した、線で描いたような袋文字の書体パック。紫と水色のネオンの見た目です。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkRampart",
+      "file": "fonts/RampartOne-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "ラインのネオン",
+    "colors": {
+      "bg": "#0a0620",
+      "panel": "#150c33",
+      "text": "#e9e0ff",
+      "accent": "#b14bff",
+      "gold": "#35f0ff"
+    },
+    "glow": true,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "default",
+    "video": "cool",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#b14bff",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#35f0ff",
+      "shape": "circle"
+    }
+  }
+}

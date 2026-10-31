@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/rampart-one --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/RampartOne-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/rampart-one/-/rampart-one-5.3.1.tgz",
+      "path": "package/files/rampart-one-japanese-400-normal.woff2",
+      "sha256": "2b1cfb108e4d7e83fc7e9debec7934cce2b8f563a3174d5ae0bb0feb7af66393",
+      "bytes": 1570192,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontdaso/rampart-one"
+    }
+  }
+}

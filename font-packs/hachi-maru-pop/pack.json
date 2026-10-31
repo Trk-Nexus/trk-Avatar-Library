@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "まるぽっぷ いちご（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "Hachi Maru Pop（400）を同梱した、まるっこい手書きポップの書体パック。いちごミルク色の見た目です。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkHachiMaru",
+      "file": "fonts/HachiMaruPop-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "まるぽっぷ いちご",
+    "colors": {
+      "bg": "#2b1a24",
+      "panel": "#3d2634",
+      "text": "#ffeef5",
+      "accent": "#ff7fa8",
+      "gold": "#ffe08a"
+    },
+    "glow": true,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "rounded",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#ff7fa8",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#ffe08a",
+      "shape": "circle"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/m-plus-rounded --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/MPlusRounded1c-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/m-plus-rounded-1c/-/m-plus-rounded-1c-5.3.0.tgz",
+      "path": "package/files/m-plus-rounded-1c-japanese-400-normal.woff2",
+      "sha256": "8cc97679bf44b17a3e804d0c6bd3a4f22ae1b8b811ec625f2df8406751a9b01e",
+      "bytes": 901976,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/coz-m/MPLUS_FONTS"
+    },
+    "fonts/MPlusRounded1c-Bold.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/m-plus-rounded-1c/-/m-plus-rounded-1c-5.3.0.tgz",
+      "path": "package/files/m-plus-rounded-1c-japanese-700-normal.woff2",
+      "sha256": "b3f7f8ba6fb5e3b12d37141c70db101338a78b66561e018508e79dfc0da258e0",
+      "bytes": 992120,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/coz-m/MPLUS_FONTS"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/zen-old-mincho --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/ZenOldMincho-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/zen-old-mincho/-/zen-old-mincho-5.3.1.tgz",
+      "path": "package/files/zen-old-mincho-japanese-400-normal.woff2",
+      "sha256": "5adfe4b5c151385a9880ae70f6dd1a6c07fc6b43a0a26b02e755da81e4869f7f",
+      "bytes": 1860532,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/zen-oldmincho"
+    },
+    "fonts/ZenOldMincho-Bold.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/zen-old-mincho/-/zen-old-mincho-5.3.1.tgz",
+      "path": "package/files/zen-old-mincho-japanese-700-normal.woff2",
+      "sha256": "b3cffc30300c58adb5260e011a19f5ed8fa2bfd132ff19d52c617760c5e10852",
+      "bytes": 2030588,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/zen-oldmincho"
+    }
+  }
+}

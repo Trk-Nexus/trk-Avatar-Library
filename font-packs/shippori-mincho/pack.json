@@ -1,0 +1,52 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "墨と金の明朝（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "Shippori Mincho（400／700）を同梱した明朝体の書体パック。墨と金の落ち着いた見た目で、和風の曲に。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkShipporiMincho",
+      "file": "fonts/ShipporiMincho-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkShipporiMincho",
+      "file": "fonts/ShipporiMincho-Bold.woff2",
+      "weight": 700,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "墨と金の明朝",
+    "colors": {
+      "bg": "#171512",
+      "panel": "#241f1b",
+      "text": "#f2ebdd",
+      "accent": "#c8a15a",
+      "gold": "#e8c87a"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#c8a15a",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#e8c87a",
+      "shape": "circle"
+    }
+  }
+}

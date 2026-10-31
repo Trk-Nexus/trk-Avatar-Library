@@ -78,6 +78,8 @@ const raw = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const fails = [];
 const notes = [];
 const fail = (msg) => fails.push(msg);
+/* 任意項目を、アプリが読むかどうかの集計（L3・L7・L10・L11） */
+let licCount = 0, licKept = 0, noteCount = 0, cmapCount = 0, colorsKept = 0;
 
 if (raw.format !== api.CATALOG_FORMAT) fail(`format が "${api.CATALOG_FORMAT}" ではありません（"${raw.format}"）`);
 if (Number(raw.version) > api.CATALOG_VERSION) fail(`version ${raw.version} は、このアプリ（${api.CATALOG_VERSION} まで）では読めません`);
@@ -102,28 +104,41 @@ if (!cat) {
     const af = (a.fonts || []).map(f => `${f.family}|${f.file}|${f.license}`).join(",");
     const bf = (b.fonts || []).map(f => `${f.family}|${f.file}|${f.license}`).join(",");
     if (af !== bf) fail(`${where} の fonts が変わりました（目録 "${af}" → アプリ "${bf}"）`);
-    /* L7：licenseFile は任意項目。アプリは trk232 では持たない（trk233 以降で全文の表示に使う予定）なので、
-       形だけこちらで決めて、落とされても不合格にしません（載せること自体が契約違反にならないように） */
-    let dropped = 0;
+    /* L7・L10・L11：フォントの任意項目（licenseFile・note・cmap）は、形だけこちらで決めて、
+       アプリが落としても不合格にしません（載せること自体が契約違反にならないように）。
+       読むか読まないかは、下でまとめて1行にします（パックごとに出すと 16 行になって読みにくい）。 */
     for (const f of a.fonts || []) {
-      if (f.licenseFile === undefined) continue;
-      const p = String(f.licenseFile || "");
-      const ok = typeof f.licenseFile === "string" && /^[A-Za-z0-9_\-./]{1,120}$/.test(p)
-        && !p.includes("..") && !p.startsWith("/") && /\.(txt|md)$/i.test(p);
-      if (!ok) fail(`${where} の fonts[].licenseFile（"${p}"）は .txt か .md のパスにしてください`);
-      else dropped++;
+      if (f.licenseFile !== undefined) {
+        const p = String(f.licenseFile || "");
+        const ok = typeof f.licenseFile === "string" && /^[A-Za-z0-9_\-./]{1,120}$/.test(p)
+          && !p.includes("..") && !p.startsWith("/") && /\.(txt|md)$/i.test(p);
+        if (!ok) fail(`${where} の fonts[].licenseFile（"${p}"）は .txt か .md のパスにしてください`);
+        else {
+          licCount++;
+          if ((b.fonts || []).some(x => x.licenseFile)) licKept++;
+        }
+      }
+      /* L10：note は「雰囲気の一行」（60 文字まで） */
+      if (f.note !== undefined) {
+        const n = typeof f.note === "string" ? f.note.trim() : "";
+        if (!n || [...n].length > 60) fail(`${where} の fonts[].note は 1〜60 文字にしてください（"${f.note}"）`);
+        else noteCount++;
+      }
+      /* L11：cmap は対応する字数（正の整数） */
+      if (f.cmap !== undefined) {
+        if (!(Number.isInteger(f.cmap) && f.cmap > 0 && f.cmap <= 200000)) {
+          fail(`${where} の fonts[].cmap は正の整数（字数）にしてください（"${f.cmap}"）`);
+        } else cmapCount++;
+      }
     }
-    if (dropped) {
-      const kept = (b.fonts || []).some(f => f.licenseFile);
-      notes.push(`${where} の fonts[].licenseFile を ${kept ? "アプリが読むようになりました（check-contract の見直しどきです）" : `アプリはまだ読みません（trk233 以降の予定。目録に載っていても読む件数は変わりません）`}`);
-    }
+    if (a.colors !== undefined && b.colors !== undefined) colorsKept++;
     /* L3：colors は任意項目。形だけこちらで決める（アプリの trk231 は無視する） */
     if (a.colors !== undefined) {
       const c = a.colors;
       const ok = c && typeof c === "object" && !Array.isArray(c)
         && /^#[0-9a-f]{6}$/i.test(String(c.stage)) && /^#[0-9a-f]{6}$/i.test(String(c.accent));
       if (!ok) fail(`${where} の colors は { stage: "#rrggbb", accent: "#rrggbb" } にしてください`);
-      if (b.colors !== undefined) notes.push(`${where} の colors をアプリが読むようになりました（trk235 以降）。check-contract の見直しどきです`);
+
     }
   }
 }
@@ -136,6 +151,17 @@ for (const p of raw.packs) {
   if (sha256(buf) !== p.sha256) fail(`${p.file} の sha256 が目録と違います`);
   if (buf.length !== p.bytes) fail(`${p.file} の大きさが目録と違います（目録 ${p.bytes}／実際 ${buf.length}）`);
 }
+
+/* 任意項目の「読む／読まない」をまとめて出す（見直しどきの合図） */
+if (licCount) {
+  notes.push(licKept
+    ? `fonts[].licenseFile（L7）をアプリが読むようになりました（${licCount} 件・trk233 以降）。check-contract の見直しどきです`
+    : `fonts[].licenseFile（L7）を ${licCount} 件載せていますが、アプリはまだ読みません（trk233 以降の予定。読む件数は変わりません）`);
+}
+if (noteCount || cmapCount) {
+  notes.push(`fonts[].note（L10・${noteCount} 件）と cmap（L11・${cmapCount} 件）を載せています。アプリ（trk233）はまだ読みません（読む版になったら、ここが「読みました」に変わります）`);
+}
+if (colorsKept) notes.push(`packs[].colors をアプリが読むようになりました（trk235 以降）。check-contract の見直しどきです`);
 
 if (fails.length) {
   console.error(`❌ 目録がアプリの読み取り規則を通りません（${fails.length} 件）`);

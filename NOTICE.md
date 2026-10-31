@@ -27,7 +27,17 @@
   書体の入手元は npm `@fontsource/zen-maru-gothic@5.3.1` で、`font-packs/maru-go/SOURCE.json` に tarball と sha256 を書いています。
   パックの作り（`pack.json`・スキンの色）は GPL-3.0-or-later です。
   `pack.json` の `fonts[].licenseFile` が `fonts/OFL.txt` を指しています（任意項目。アプリが全文を表示できるのは trk233 以降）。
-- 「🔤 同梱の書体」の節（`gallery/all-skins.html`）は、パックの宣言から**書体の名前とライセンスを表示するだけ**で、
+- 書体パック **15 個**（`font-packs/*.stpack`）は、どれも **SIL Open Font License 1.1** の日本語書体を 1〜2 ウェイト同梱しています。
+  全文はパックの中の `fonts/OFL.txt`（`fonts[].licenseFile`）、著作権者・入手元・tarball・sha256 は
+  各パックの `NOTICE.md` と `SOURCE.json` に書いています。書体そのものの名前は変えていません
+  （`Trk…` はアプリの中で使う家族名で、OFL の予約名を避けるために付けています）。
+  - 同梱している書体：Zen Maru Gothic／Zen Kaku Gothic New／Zen Old Mincho／M PLUS Rounded 1c／Klee One／
+    Yusei Magic／Hachi Maru Pop／DotGothic16／Shippori Mincho／Dela Gothic One／Rampart One／RocknRoll One／
+    Potta One／Kaisei Decol／Mochiy Pop One（すべて OFL-1.1・npm `@fontsource` の版を固定して取得）
+- **2026-11-01 に届いた 14 パックは、trk-PWA 側が作った `pack.json` をそのまま使っています**（書き換えていません）。
+  そのため、向こうの `.stpack` とバイト単位で同じものになります（`SHA256SUMS` と一致）。
+  目録に足した「書体のひとこと」（`fonts[].note`・`catalog/font-notes.json`）は**パックの外**にあります。
+- 「🔤 同梱の書体」の節（`gallery/all-skins.html`）は、パックの宣言から**書体の名前・ライセンス・ひとことを表示するだけ**で、
   書体ファイルを埋め込んでいません（@font-face を使わないので、表示は端末に入っている書体に従います）。
 
 ## 書体を同梱するとき（`font-packs/`）

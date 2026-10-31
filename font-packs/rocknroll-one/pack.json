@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "ロックの夜（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "RocknRoll One（400）を同梱した手書きロック風の書体パック。焚き火のような暖色の見た目です。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkRocknRoll",
+      "file": "fonts/RocknRollOne-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "ロックの夜",
+    "colors": {
+      "bg": "#1a1210",
+      "panel": "#2a1c19",
+      "text": "#ffe9d6",
+      "accent": "#ff7043",
+      "gold": "#ffca28"
+    },
+    "glow": true,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "rounded",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#ff7043",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#ffca28",
+      "shape": "circle"
+    }
+  }
+}

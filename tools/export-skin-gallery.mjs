@@ -91,6 +91,16 @@ for (const s of skins) for (const c of s.cat) catCount[c] = (catCount[c] || 0) +
 const typeCount = skins.filter(s => s.cat.includes("type")).length;
 
 /* --- 同梱の書体（font-packs/ と packs/ の .stpack が宣言しているもの） --- */
+/* L10：書体の「雰囲気の一行」は catalog/font-notes.json（目録と同じ出どころ）から取る */
+const NOTES_PATH = path.join(HERE, "catalog/font-notes.json");
+const NOTES = fs.existsSync(NOTES_PATH) ? JSON.parse(fs.readFileSync(NOTES_PATH, "utf8")) : {};
+const NOTES_BY_PACK = NOTES && typeof NOTES.packs === "object" && NOTES.packs ? NOTES.packs : {};
+const noteOf = (packFile, fontFile) => {
+  const byFont = NOTES_BY_PACK[packFile];
+  if (!byFont || typeof byFont !== "object") return "";
+  const n = byFont[fontFile];
+  return typeof n === "string" ? n.trim() : "";
+};
 const fontPacks = [];
 for (const dir of ["font-packs", "packs"]) {
   const abs = path.join(HERE, dir);
@@ -109,7 +119,8 @@ for (const dir of ["font-packs", "packs"]) {
       colors: (r.info && r.info.colors) || null,
       fonts: fonts.map(f => ({ family: f.family, file: f.file, license: f.license,
         ...(Number.isInteger(f.weight) ? { weight: f.weight } : {}),
-        ...(f.licenseFile ? { licenseFile: f.licenseFile } : {}) })),
+        ...(f.licenseFile ? { licenseFile: f.licenseFile } : {}),
+        ...(noteOf(file, f.file) ? { note: noteOf(file, f.file) } : {}) })),
     });
   }
 }
@@ -184,6 +195,7 @@ const html = `<!doctype html>
   .fontCard .fam{font-size:13px;color:var(--muted);margin:0 0 6px;font-family:ui-monospace,monospace}
   .fontCard .sample{font-size:26px;line-height:1.5;margin:2px 0 8px;letter-spacing:.02em}
   .fontCard .sample b{font-weight:700}
+  .fontCard .note{font-size:13px;line-height:1.5;margin:0 0 8px;color:var(--text);opacity:.9}
   .fontCard .rows{font-size:12px;color:var(--muted);line-height:1.6}
   .fontCard .rows span{font-family:ui-monospace,monospace}
   footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px}
@@ -215,7 +227,8 @@ ${fontPacks.length ? `<section class="fonts" id="fonts">
 ${fontPacks.map(fp => `    <div class="fontCard">
       <p class="fam">${esc(fp.file)}${fp.release ? ` · release ${esc(fp.release)}` : ""}</p>
       <div class="sample" style="font-family:${esc([...new Set(fp.fonts.map(f => f.family))].map(f => `"${f}"`).join(","))},system-ui,sans-serif">
-        あア漢 Aa 12 <b>丸ゴ かな 漢字</b></div>
+        あア漢 Aa 12 <b>かな 漢字 いろは</b></div>
+      ${[...new Set(fp.fonts.map(f => f.note).filter(Boolean))].length ? `<p class="note">${esc([...new Set(fp.fonts.map(f => f.note).filter(Boolean))].join(" ／ "))}</p>` : ""}
       <div class="rows">${esc(fp.name)}${fp.skin && fp.skin !== fp.name.replace(/（[^）]*）$/, "") ? `（スキン「${esc(fp.skin)}」）` : ""}<br>
         家族名 <span>${esc([...new Set(fp.fonts.map(f => f.family))].join(", "))}</span>／
         太さ <span>${esc(fp.fonts.map(f => (f.weight === undefined ? "—" : f.weight)).join(" / "))}</span>／

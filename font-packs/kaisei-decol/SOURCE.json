@@ -1,0 +1,21 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/kaisei-decol --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/KaiseiDecol-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/kaisei-decol/-/kaisei-decol-5.3.1.tgz",
+      "path": "package/files/kaisei-decol-japanese-400-normal.woff2",
+      "sha256": "9862cdc020789ebfdad5664d569945dc1dadf9085756aa90bd391b6466e68fbe",
+      "bytes": 1747936,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontdaso/kaisei"
+    },
+    "fonts/KaiseiDecol-Bold.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/kaisei-decol/-/kaisei-decol-5.3.1.tgz",
+      "path": "package/files/kaisei-decol-japanese-700-normal.woff2",
+      "sha256": "2d99e15ed4e17f835903ae2cac17fb72ba695ec99f7fb25d8223a1e9208eb055",
+      "bytes": 1643844,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontdaso/kaisei"
+    }
+  }
+}

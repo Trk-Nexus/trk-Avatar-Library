@@ -4,6 +4,9 @@
 # 手元で作る見本（tools/preview-pack.mjs の出力）
 dist/
 
+# Google Drive から落としたものの置き場（受け取った資料。倉庫には入れない）
+google_drive/
+
 # Node を触るときの置き場
 node_modules/
 npm-debug.log*

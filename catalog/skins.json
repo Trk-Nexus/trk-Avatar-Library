@@ -1,7 +1,7 @@
 {
   "format": "trk-avatar-library-skins",
   "version": 1,
-  "generatedAt": "2026-10-31T18:24:37.895Z",
+  "generatedAt": "2026-10-31T19:48:22.287Z",
   "source": "trk-PWA / js/data.js + js/characters/miku.js",
   "count": 53,
   "typeSkins": 9,
@@ -2355,6 +2355,150 @@
   ],
   "fontPacks": [
     {
+      "file": "font-packs/dela-gothic.stpack",
+      "name": "極太ポスター（書体パック）",
+      "release": "1.0.0",
+      "skin": "極太ポスター",
+      "colors": {
+        "stage": "#101010",
+        "accent": "#ff2e2e"
+      },
+      "fonts": [
+        {
+          "family": "TrkDelaGothic",
+          "file": "fonts/DelaGothicOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "極太のゴシック。ポスターのように強く出る"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/dotgothic.stpack",
+      "name": "ドットの電子音（書体パック）",
+      "release": "1.0.0",
+      "skin": "ドットの電子音",
+      "colors": {
+        "stage": "#06110d",
+        "accent": "#3ff08a"
+      },
+      "fonts": [
+        {
+          "family": "TrkDotGothic",
+          "file": "fonts/DotGothic16-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "ドット絵のような文字。レトロゲーム風に"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/hachi-maru-pop.stpack",
+      "name": "まるぽっぷ いちご（書体パック）",
+      "release": "1.0.0",
+      "skin": "まるぽっぷ いちご",
+      "colors": {
+        "stage": "#2b1a24",
+        "accent": "#ff7fa8"
+      },
+      "fonts": [
+        {
+          "family": "TrkHachiMaru",
+          "file": "fonts/HachiMaruPop-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "まるっこい手書き文字。力を抜いた雰囲気に"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/kaisei-decol.stpack",
+      "name": "飾り明朝のラベンダー（書体パック）",
+      "release": "1.0.0",
+      "skin": "飾り明朝のラベンダー",
+      "colors": {
+        "stage": "#f6f1f7",
+        "accent": "#9b5de5"
+      },
+      "fonts": [
+        {
+          "family": "TrkKaiseiDecol",
+          "file": "fonts/KaiseiDecol-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "飾りのある明朝体。上品で華やかな雰囲気に"
+        },
+        {
+          "family": "TrkKaiseiDecol",
+          "file": "fonts/KaiseiDecol-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "飾り明朝の太字。題字やタイトルに"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/klee-one.stpack",
+      "name": "筆ペンの手紙（書体パック）",
+      "release": "1.0.0",
+      "skin": "筆ペンの手紙",
+      "colors": {
+        "stage": "#f4efe3",
+        "accent": "#b4552d"
+      },
+      "fonts": [
+        {
+          "family": "TrkKleeOne",
+          "file": "fonts/KleeOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "鉛筆と筆の間のような手ざわり。静かな本文に"
+        },
+        {
+          "family": "TrkKleeOne",
+          "file": "fonts/KleeOne-SemiBold.woff2",
+          "license": "OFL-1.1",
+          "weight": 600,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "手書き風の少し太いウェイト。題字や強調に"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/m-plus-rounded.stpack",
+      "name": "まるゴのミルクティー（書体パック）",
+      "release": "1.0.0",
+      "skin": "まるゴのミルクティー",
+      "colors": {
+        "stage": "#201a17",
+        "accent": "#ffb26b"
+      },
+      "fonts": [
+        {
+          "family": "TrkMPlusRounded",
+          "file": "fonts/MPlusRounded1c-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "やわらかい丸ゴシック。親しみやすい雰囲気に"
+        },
+        {
+          "family": "TrkMPlusRounded",
+          "file": "fonts/MPlusRounded1c-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "丸ゴの太字。やわらかいまま目立たせる"
+        }
+      ]
+    },
+    {
       "file": "font-packs/maru-go.stpack",
       "name": "丸ゴのお茶目（書体パック）",
       "release": "1.1.0",
@@ -2369,14 +2513,200 @@
           "file": "fonts/ZenMaruGothic-Regular.woff2",
           "license": "OFL-1.1",
           "weight": 400,
-          "licenseFile": "fonts/OFL.txt"
+          "licenseFile": "fonts/OFL.txt",
+          "note": "丸みのあるゴシック。長い文でもやわらかく読める"
         },
         {
           "family": "TrkZenMaru",
           "file": "fonts/ZenMaruGothic-Bold.woff2",
           "license": "OFL-1.1",
           "weight": 700,
-          "licenseFile": "fonts/OFL.txt"
+          "licenseFile": "fonts/OFL.txt",
+          "note": "丸ゴの太字。見出しをやわらかく強調する"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/mochiy-pop.stpack",
+      "name": "もちもちポップ（書体パック）",
+      "release": "1.0.0",
+      "skin": "もちもちポップ",
+      "colors": {
+        "stage": "#22103a",
+        "accent": "#ff9ce0"
+      },
+      "fonts": [
+        {
+          "family": "TrkMochiyPop",
+          "file": "fonts/MochiyPopOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "まるい太字のポップ体。もちっとした印象に"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/potta-one.stpack",
+      "name": "看板のポップ（書体パック）",
+      "release": "1.0.0",
+      "skin": "看板のポップ",
+      "colors": {
+        "stage": "#10232b",
+        "accent": "#ffd166"
+      },
+      "fonts": [
+        {
+          "family": "TrkPottaOne",
+          "file": "fonts/PottaOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "看板のような太いポップ体。遠くからでも目立つ"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/rampart-one.stpack",
+      "name": "ラインのネオン（書体パック）",
+      "release": "1.0.0",
+      "skin": "ラインのネオン",
+      "colors": {
+        "stage": "#0a0620",
+        "accent": "#b14bff"
+      },
+      "fonts": [
+        {
+          "family": "TrkRampart",
+          "file": "fonts/RampartOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "線で描いたような袋文字。ネオン風の見出しに"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/rocknroll-one.stpack",
+      "name": "ロックの夜（書体パック）",
+      "release": "1.0.0",
+      "skin": "ロックの夜",
+      "colors": {
+        "stage": "#1a1210",
+        "accent": "#ff7043"
+      },
+      "fonts": [
+        {
+          "family": "TrkRocknRoll",
+          "file": "fonts/RocknRollOne-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "手書きのロック風。元気な見出しに"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/shippori-mincho.stpack",
+      "name": "墨と金の明朝（書体パック）",
+      "release": "1.0.0",
+      "skin": "墨と金の明朝",
+      "colors": {
+        "stage": "#171512",
+        "accent": "#c8a15a"
+      },
+      "fonts": [
+        {
+          "family": "TrkShipporiMincho",
+          "file": "fonts/ShipporiMincho-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "端正な明朝体。和風でも読みやすい本文に"
+        },
+        {
+          "family": "TrkShipporiMincho",
+          "file": "fonts/ShipporiMincho-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "明朝の太字。落ち着いた見出しに"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/yusei-magic.stpack",
+      "name": "筆ポップの夜祭（書体パック）",
+      "release": "1.0.0",
+      "skin": "筆ポップの夜祭",
+      "colors": {
+        "stage": "#14100e",
+        "accent": "#ff5a3c"
+      },
+      "fonts": [
+        {
+          "family": "TrkYuseiMagic",
+          "file": "fonts/YuseiMagic-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "筆文字のポップ体。にぎやかな見出しに合う"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/zen-kaku.stpack",
+      "name": "角ゴのしらゆき（書体パック）",
+      "release": "1.0.0",
+      "skin": "角ゴのしらゆき",
+      "colors": {
+        "stage": "#0f1720",
+        "accent": "#6fd3ff"
+      },
+      "fonts": [
+        {
+          "family": "TrkZenKaku",
+          "file": "fonts/ZenKakuGothicNew-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "すっきりした角ゴシック。いちばん読みやすい本文向け"
+        },
+        {
+          "family": "TrkZenKaku",
+          "file": "fonts/ZenKakuGothicNew-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "角ゴの太字。見出しをきりっと引き締める"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/zen-old-mincho.stpack",
+      "name": "古明朝の藍（書体パック）",
+      "release": "1.0.0",
+      "skin": "古明朝の藍",
+      "colors": {
+        "stage": "#0f1a2b",
+        "accent": "#7aa2f7"
+      },
+      "fonts": [
+        {
+          "family": "TrkZenOldMincho",
+          "file": "fonts/ZenOldMincho-Regular.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "古風な明朝体。静かで落ち着いた本文に"
+        },
+        {
+          "family": "TrkZenOldMincho",
+          "file": "fonts/ZenOldMincho-Bold.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "古明朝の太字。堂々とした見出しに"
         }
       ]
     }

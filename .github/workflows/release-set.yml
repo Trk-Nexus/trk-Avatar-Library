@@ -22,7 +22,8 @@ permissions:
   contents: write
 
 env:
-  TRK_PWA_REF: 70fd92193f43157faafebb01ba58477eaf7087df
+  # trk233（8e15e67）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
+  TRK_PWA_REF: 8e15e6777736d5091ae63d8a490cba1934cbb379
 
 jobs:
   attach:

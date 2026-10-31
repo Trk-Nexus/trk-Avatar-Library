@@ -1,0 +1,52 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "古明朝の藍（書体パック）",
+  "author": "trk-PWA",
+  "release": "1.0.0",
+  "description": "Zen Old Mincho（400／700）を同梱した古風な明朝体の書体パック。藍色の静かな見た目です。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "fonts": [
+    {
+      "family": "TrkZenOldMincho",
+      "file": "fonts/ZenOldMincho-Regular.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkZenOldMincho",
+      "file": "fonts/ZenOldMincho-Bold.woff2",
+      "weight": 700,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "古明朝の藍",
+    "colors": {
+      "bg": "#0f1a2b",
+      "panel": "#17253a",
+      "text": "#e6eefc",
+      "accent": "#7aa2f7",
+      "gold": "#c9a227"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "cool",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#7aa2f7",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#c9a227",
+      "shape": "circle"
+    }
+  }
+}

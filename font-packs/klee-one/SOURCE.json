@@ -1,0 +1,21 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/klee-one --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/KleeOne-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/klee-one/-/klee-one-5.3.1.tgz",
+      "path": "package/files/klee-one-japanese-400-normal.woff2",
+      "sha256": "f8045573d24d3e48da3723a90272a652c92da05bf89e764b60fd0db40aa404ab",
+      "bytes": 1891944,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontworks-fonts/Klee"
+    },
+    "fonts/KleeOne-SemiBold.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/klee-one/-/klee-one-5.3.1.tgz",
+      "path": "package/files/klee-one-japanese-600-normal.woff2",
+      "sha256": "1d3656c40e56de0bc6c5878bbafb50e9da3af4b3900f5a21dc52ce93b2b9b71d",
+      "bytes": 2030396,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/fontworks-fonts/Klee"
+    }
+  }
+}

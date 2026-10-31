@@ -1,0 +1,21 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/zen-kaku --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/ZenKakuGothicNew-Regular.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/zen-kaku-gothic-new/-/zen-kaku-gothic-new-5.3.1.tgz",
+      "path": "package/files/zen-kaku-gothic-new-japanese-400-normal.woff2",
+      "sha256": "cf7d4ed21432a294e63fe2432d614e52068100b40b303d37b90e0bbadf976856",
+      "bytes": 966336,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/zen-kakugothic"
+    },
+    "fonts/ZenKakuGothicNew-Bold.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/zen-kaku-gothic-new/-/zen-kaku-gothic-new-5.3.1.tgz",
+      "path": "package/files/zen-kaku-gothic-new-japanese-700-normal.woff2",
+      "sha256": "e8704922327ccedfba5951cc75dc1fc17b9b760bbff9bc23999b2e76265bfd9a",
+      "bytes": 995252,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/zen-kakugothic"
+    }
+  }
+}
