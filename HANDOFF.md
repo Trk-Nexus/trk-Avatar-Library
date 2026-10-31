@@ -281,8 +281,11 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 - **Release か Drive に置く**：書体をたくさん束ねた ZIP・全スキン入りビルド（目録の `description` に「どこにあるか」を書く）
 - 目録には必ず `sha256` と `bytes` を書く（落とした人が確かめられるように）
 - **はじめてセット**（Release `first-set-2026-11-01`・アセット `trk-first-set-2026-11-01.zip`・2,993,307 B）：
+  添付は `.github/workflows/release-set.yml` が **CI で作り直してから**行います（記録と一致しないものは添付しません）。
+  手元で配る場合：
   見本 HTML＋目録＋書体パック。作り直したら **タグを増やす**（`first-set-2026-11-01` を作り直さない）——
-  `release/first-set.json` と README のリンクを新しい日付に合わせます
+  `release/first-set.json` と README のリンクを新しい日付に合わせます。
+  新しいセットは、`sets/<name>.json` と `release/<name>.json` を足して、タグ `first-set-YYYY-MM-DD` を push すれば CI が添付します
 - 利用者の手順は README §2（はじめての3手順）：**①見本 ②目録とパックを落とす ③trk! の 📥 まとめて入れる**
 - 受け渡し用の ZIP を作るときは、`git archive` ではなく**このリポジトリの中身をそのまま**（`.cache/`・`dist/` を除く）
 
