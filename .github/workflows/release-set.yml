@@ -1,0 +1,68 @@
+name: release-set
+
+# はじめてセット（ZIP）を作って、Release に添付する（2026-11-01）
+#
+# なぜ CI でやるか：
+#   セットは倉庫の中身から**決定的に**作れるので、手元で作った ZIP を配る代わりに
+#   CI で作り直して添付します。release/first-set.json と一致しないものは添付しません
+#   （＝配るファイルと記録がずれない）。
+
+on:
+  push:
+    tags:
+      - "first-set-*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "添付先の Release のタグ（例: first-set-2026-11-01）"
+        required: true
+        default: "first-set-2026-11-01"
+
+permissions:
+  contents: write
+
+env:
+  TRK_PWA_REF: 9bf22d7a8751f0df2e9b2eca86273c2ed1df8fcb
+
+jobs:
+  attach:
+    runs-on: ubuntu-latest
+    steps:
+      - name: この倉庫
+        uses: actions/checkout@v4
+        with:
+          path: trk-Avatar-Library
+
+      - name: trk-PWA（相手側・バージョンを固定して取る）
+        uses: actions/checkout@v4
+        with:
+          repository: TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA
+          ref: ${{ env.TRK_PWA_REF }}
+          path: trk-PWA
+
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: セットを作り直して、記録と一致するか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: |
+          node tools/build-set.mjs sets/first-set.json
+          node tools/build-set.mjs sets/first-set.json --check
+
+      - name: Release に添付
+        working-directory: trk-Avatar-Library
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ inputs.tag || github.ref_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          FILE=$(node -p "require('./release/first-set.json').file")
+          echo "添付するファイル: $FILE（$(stat -c %s "dist/$FILE") B）"
+          sha256sum "dist/$FILE"
+          gh release upload "$TAG" "dist/$FILE" --repo "$REPO" --clobber
+          gh release view "$TAG" --repo "$REPO" --json tagName,assets,isDraft \
+            --jq '"タグ: \(.tagName) / 下書き: \(.isDraft) / 添付: " + ([.assets[].name] | join(", "))'

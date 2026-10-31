@@ -1,0 +1,15 @@
+{
+  "name": "first-set",
+  "title": "trk! はじめてセット",
+  "date": "2026-11-01",
+  "tag": "first-set-2026-11-01",
+  "extension": "zip",
+  "files": [
+    "gallery/all-skins.html",
+    "catalog/index.json",
+    "font-packs/maru-go.stpack"
+  ],
+  "readme": "README-はじめに.txt",
+  "record": "release/first-set.json",
+  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML と目録も同じ ZIP に入っています。"
+}
