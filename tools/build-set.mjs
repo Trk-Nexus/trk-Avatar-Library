@@ -10,9 +10,16 @@
 
    作るもの（中身）：
      README-はじめに.txt    … 3手順・入っているもの・sha256（この道具が作る）
+     set.json               … セットの名前と版（trk-PWA の trk235 が表示にだけ使う・2026-11-01 追加）
      gallery/all-skins.html … 全スキン見本
+     gallery/fonts.html     … 書体の一覧と検索（L13／L14）
      catalog/index.json     … 目録
      font-packs/*.stpack    … パック（セットの中身は sets/*.json で決める）
+
+   2 つの名前で配る（2026-11-01・trk-PWA の trk235 からのお願い）：
+     定義に "extensions": ["zip", "stlib"] と書くと、**同じバイト列**を両方の名前で書きます。
+     .stlib は trk235 以降が「そのまま選ぶ」だけで入れられます（.zip は展開してから）。
+     中身が同じなので sha256 も同じです（記録にも files_out として両方残します）。
 
    決定的：同じ中身なら同じ sha256（無圧縮で固定・README-はじめに.txt に時刻を入れない）。
   同じ日にもう一度配るときは、定義に "rev": "r2" を足します（ファイル名とタグの後ろに付き、前のセットを上書きしません）。
@@ -40,7 +47,7 @@ function usage() {
 }
 
 /* セットの中の「はじめに」を組み立てる（時刻を入れない＝決定的） */
-function guideText(cfg, entries, records) {
+function guideText(cfg, entries, records, exts) {
   const packNames = records.filter(r => /\.stpack$/.test(r.path)).map(r => path.basename(r.path));
   return [
     `${cfg.title || "trk! はじめてセット"}（${cfg.date}${cfg.rev ? ` ${cfg.rev}` : ""}）`,
@@ -52,12 +59,14 @@ function guideText(cfg, entries, records) {
     "",
     "  ① 見本を見る",
     `     gallery/all-skins.html をダブルクリック（ブラウザで開くだけ。オフラインOK）`,
+    `     書体を選ぶときは gallery/fonts.html（名前・対応字数・大きさ・雰囲気で絞れます）`,
     "",
     "  ② 展開する",
-    `     このZIPを展開すると、この説明のほかに ${entries.length} 個（フォルダごと）が出てきます。`,
+    `     このZIPを展開すると、この説明のほかに ${entries.length + 1} 個（フォルダごと）が出てきます。`,
     ...entries.map(n => `       ${n}`),
+    "       set.json（セットの名前と版。trk235 以降のアプリが表示にだけ使います）",
     "     そのうちアプリに入れるのは catalog/index.json と .stpack です",
-    "     （gallery/all-skins.html は、ブラウザで見る見本です）",
+    "     （gallery/ の 2 つは、ブラウザで見る見本です。fonts.html は書体の一覧と検索）",
     "",
     "  ③ trk! に入れる（trk231 以降）",
     "     trk! を開いて 設定 → 📦 カスタムパック → 📚 目録から入れる → 📥 まとめて入れる",
@@ -70,9 +79,19 @@ function guideText(cfg, entries, records) {
     "",
     ...records.map(r => `  ${r.path}  ${fmt(r.bytes)}  sha256 ${r.sha256}`),
     "",
+    ...(exts && exts.length > 1 ? [
+      "■ 2 つの名前で配っています",
+      "",
+      `  同じ中身を ${exts.map(e => "." + e).join(" と ")} の 2 つの名前で置いています（中身は同じ・sha256 も同じ）。`,
+      "  trk235 以降のアプリは .stlib をそのまま選ぶだけで入れられます。",
+      "  それより前のアプリでは .zip を展開して、中の目録と .stpack を選んでください。",
+      "",
+    ] : []),
     "■ 書体について",
     "",
-    "  font-packs/ の書体パックは、OFL-1.1 などの書体（woff2）を同梱しています。",
+    "  font-packs/ の書体パックは、OFL-1.1 の書体（woff2）を同梱しています。",
+    "  どの書体を選ぶかは gallery/fonts.html（名前・対応字数・大きさ・雰囲気で絞れます）で決められます。",
+    "  1 本だけ欲しいときは、その 1 本の .stpack と catalog/index.json だけで入れられます。",
     "  ライセンス全文は、パックの中の fonts/OFL.txt にあります（目録の fonts[].licenseFile）。",
     "  書体が画面に効くのは trk! trk232 以降です（それまでは色とノーツの色だけが変わります）。",
     "  入れて「使う」を押すと本文の書体が変わり、外すと元に戻ります。",
@@ -85,7 +104,7 @@ function guideText(cfg, entries, records) {
     "■ 出どころ",
     "",
     "  https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
-    `  セットの名前: ${cfg.name}（アプリに入れるのは ${packNames.length} パック）`,
+    `  セットの名前: ${cfg.title || cfg.name}（アプリに入れるのは ${packNames.length} パック）`,
     "",
   ].join("\n");
 }
@@ -108,30 +127,47 @@ async function buildSet(cfgPath, opts) {
     .map(r => ({ ...r, sha256: sha256(fs.readFileSync(path.join(HERE, r.path))) }));
 
   const rev = cfg.rev ? String(cfg.rev).replace(/[^A-Za-z0-9._-]/g, "") : "";
-  const guide = guideText(cfg, files, records);
+  const exts = (Array.isArray(cfg.extensions) && cfg.extensions.length ? cfg.extensions : [cfg.extension || "zip"])
+    .map(e => String(e).replace(/[^A-Za-z0-9]/g, "").toLowerCase() || "zip");
+  const guide = guideText(cfg, files, records, exts);
+  /* set.json（任意・trk235 以降のアプリが表示にだけ使う。無くても動く）。
+     形式は trk-PWA の手紙（2026-11-01 §3-3）に合わせ、こちらが持っている「rev」も併記します。 */
+  const setJson = {
+    format: "trk-set",
+    version: 1,
+    name: cfg.title || "trk! はじめてセット",
+    release: rev,
+    rev,
+    packs,
+    note: cfg.note || "",
+  };
   const entries = [
     { name: cfg.readme || "README-はじめに.txt", buf: Buffer.from(guide, "utf8") },
+    { name: "set.json", buf: Buffer.from(JSON.stringify(setJson, null, 2) + "\n", "utf8") },
     ...files.map(f => ({ name: f, buf: fs.readFileSync(path.join(HERE, f)) })),
   ];
   const zipIO = loadZipIO(opts.trk);
   const blob = await zipIO.zipWrite(entries.map(e => ({ name: e.name, blob: new Blob([e.buf]) })));
   const bytes = Buffer.from(await blob.arrayBuffer());
 
-  const ext = String(cfg.extension || "zip");
-  const file = `trk-${cfg.name}-${cfg.date}${rev ? `-${rev}` : ""}.${ext}`;
-  const out = path.join(path.resolve(opts.out || path.join(HERE, "dist")), file);
+  const base = `trk-${cfg.name}-${cfg.date}${rev ? `-${rev}` : ""}`;
+  const outDir = path.resolve(opts.out || path.join(HERE, "dist"));
+  /* 同じバイト列を、拡張子だけ変えて複数の名前で書く（.stlib は trk235 以降がそのまま選べる） */
+  const outs = exts.map(ext => ({ ext, file: `${base}.${ext}`, out: path.join(outDir, `${base}.${ext}`) }));
+  const digest = sha256(bytes);
   const record = {
     name: cfg.name,
     title: cfg.title || "",
     date: cfg.date,
     tag: cfg.tag || `first-set-${cfg.date}${rev ? `-${rev}` : ""}`,
-    file,
+    file: outs[0].file,
     bytes: bytes.length,
-    sha256: sha256(bytes),
+    sha256: digest,
+    ...(outs.length > 1 ? { files_out: outs.map(o => ({ name: o.file, bytes: bytes.length, sha256: digest })) } : {}),
     files: records,
     note: cfg.note || "",
   };
-  return { out, bytes, record, records, cfg };
+  return { out: outs[0].out, outs, bytes, record, records, cfg };
 }
 
 async function main() {
@@ -161,22 +197,25 @@ async function main() {
       process.exit(1);
     }
     const rec = JSON.parse(fs.readFileSync(recordPath, "utf8"));
+    const sameOut = JSON.stringify(rec.files_out || null) === JSON.stringify(built.record.files_out || null);
     const same = rec.sha256 === built.record.sha256 && rec.bytes === built.record.bytes
-      && JSON.stringify(rec.files) === JSON.stringify(built.record.files);
+      && JSON.stringify(rec.files) === JSON.stringify(built.record.files) && sameOut;
     if (opts.json) console.log(JSON.stringify({ ok: same, record: rec, built: built.record }, null, 2));
     else if (same) console.log(`✅ ${built.record.file} は記録と合っています（${built.record.bytes.toLocaleString()} B・sha256 ${built.record.sha256.slice(0, 12)}…）`);
     else console.log(`❌ ${built.record.file} が記録と合っていません。node tools/build-set.mjs ${rel(cfgPath)} --release で作り直してください`);
     process.exit(same ? 0 : 1);
   }
 
-  fs.mkdirSync(path.dirname(built.out), { recursive: true });
-  fs.writeFileSync(built.out, built.bytes);
+  for (const o of built.outs) {
+    fs.mkdirSync(path.dirname(o.out), { recursive: true });
+    fs.writeFileSync(o.out, built.bytes);
+  }
   if (opts.release) {
     fs.mkdirSync(path.dirname(recordPath), { recursive: true });
     fs.writeFileSync(recordPath, JSON.stringify(built.record, null, 2) + "\n", "utf8");
   }
-  if (opts.json) { console.log(JSON.stringify({ ...built.record, out: rel(built.out) }, null, 2)); process.exit(0); }
-  console.log(`✅ ${rel(built.out)}（${built.record.bytes.toLocaleString()} B・${built.record.files.length + 1} ファイル・sha256 ${built.record.sha256}）`);
+  if (opts.json) { console.log(JSON.stringify({ ...built.record, out: rel(built.out), outs: built.outs.map(o => rel(o.out)) }, null, 2)); process.exit(0); }
+  console.log(`✅ ${built.outs.map(o => rel(o.out)).join(" / ")}（${built.record.bytes.toLocaleString()} B・${built.record.files.length + 2} ファイル・sha256 ${built.record.sha256}）`);
   for (const r of built.records) console.log(`   + ${r.path}  ${fmt(r.bytes)}`);
   if (opts.release) console.log(`   記録: ${rel(recordPath)}`);
   else console.log("   （配るなら --release を付けて、記録も書いてください）");

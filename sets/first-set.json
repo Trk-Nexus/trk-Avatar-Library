@@ -2,11 +2,12 @@
   "name": "first-set",
   "title": "trk! はじめてセット",
   "date": "2026-11-01",
-  "rev": "r3",
-  "tag": "first-set-2026-11-01-r3",
+  "rev": "r4",
+  "tag": "first-set-2026-11-01-r4",
   "extension": "zip",
   "files": [
     "gallery/all-skins.html",
+    "gallery/fonts.html",
     "catalog/index.json",
     "packs/sample-mincho.stpack",
     "font-packs/dela-gothic.stpack",
@@ -27,5 +28,9 @@
   ],
   "readme": "README-はじめに.txt",
   "record": "release/first-set.json",
-  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML・目録・パック 16 個（見本 1＋書体パック 15）が入っています。書体パックはどれも release 1.x で、入れて「使う」と本文の書体が変わります（trk232 以降）。"
+  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML（全スキン）・書体の一覧と検索（fonts.html）・目録・パック 16 個（見本 1＋書体パック 15）が入っています。書体パックはどれも release 1.0.0 で、入れて「使う」と本文の書体が変わります（trk232 以降）。trk235 以降は .stlib（中身は同じ 1 ファイル）をそのまま選ぶだけで入れられます。",
+  "extensions": [
+    "zip",
+    "stlib"
+  ]
 }

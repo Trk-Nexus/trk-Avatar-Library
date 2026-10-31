@@ -22,8 +22,8 @@ permissions:
   contents: write
 
 env:
-  # trk233（8e15e67）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
-  TRK_PWA_REF: 8e15e6777736d5091ae63d8a490cba1934cbb379
+  # trk234（9c4d80d）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
+  TRK_PWA_REF: 9c4d80d7dc8bee6d71d94a584622ebdf176b290d
 
 jobs:
   attach:
@@ -61,21 +61,21 @@ jobs:
           TAG: ${{ inputs.tag || github.ref_name }}
           REPO: ${{ github.repository }}
         run: |
-          FILE=$(node -p "require('./release/first-set.json').file")
+          # r4 から .zip と .stlib の 2 つ（同じバイト列）を添付します。記録の files_out を見ます
+          FILES=$(node -p "const r=require('./release/first-set.json'); (r.files_out && r.files_out.length ? r.files_out.map(x => 'dist/' + x.name) : ['dist/' + r.file]).join(' ')")
           TITLE=$(node -p "require('./release/first-set.json').title || 'trk! はじめてセット'")
           BYTES=$(node -p "require('./release/first-set.json').bytes")
           SHA=$(node -p "require('./release/first-set.json').sha256")
           NOTES="release/first-set-notes.md"
-          echo "添付するファイル: $FILE（$(stat -c %s "dist/$FILE") B）"
-          sha256sum "dist/$FILE"
+          for f in $FILES; do echo "添付するファイル: $f（$(stat -c %s "$f") B）"; sha256sum "$f"; done
           # 見出しに、記録の大きさと sha256 を足す（notes のファイルは倉庫のもの）
           { cat "$NOTES"; printf '\n---\n\n大きさ **%s B**・sha256 `%s`\n' "$BYTES" "$SHA"; } > /tmp/notes.md
           if gh release view "$TAG" --repo "$REPO" >/dev/null 2>&1; then
             echo "既にある Release に添付します（作り直しません）"
-            gh release upload "$TAG" "dist/$FILE" --repo "$REPO" --clobber
+            gh release upload "$TAG" $FILES --repo "$REPO" --clobber
           else
             echo "Release を作って添付します"
-            gh release create "$TAG" "dist/$FILE" --repo "$REPO" --verify-tag \
+            gh release create "$TAG" $FILES --repo "$REPO" --verify-tag \
               --title "$TITLE" --notes-file /tmp/notes.md
           fi
           gh release view "$TAG" --repo "$REPO" --json tagName,assets,isDraft \

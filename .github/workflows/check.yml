@@ -13,8 +13,8 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
-  # （trk233 = 8e15e67。fonts[].licenseFile を読んで「📄 ライセンス全文を読む」が出る版）
-  TRK_PWA_REF: 8e15e6777736d5091ae63d8a490cba1934cbb379
+  # （trk234 = 9c4d80d。容量の見える化・まとめて消すまで入った版）
+  TRK_PWA_REF: 9c4d80d7dc8bee6d71d94a584622ebdf176b290d
 
 jobs:
   check:
@@ -74,6 +74,9 @@ jobs:
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: node tools/export-skin-gallery.mjs --trk="$TRK_PWA" --check
+
+      - name: 書体の一覧と検索が目録と一致するか
+        run: node trk-Avatar-Library/tools/export-font-gallery.mjs --check
 
       - name: 書体パック（15 個）がフォルダと一致するか
         working-directory: trk-Avatar-Library
