@@ -230,8 +230,8 @@
     {
       "family": "TrkZenMaru",
       "weight": 400,
-      "chars": 18,
-      "bytes": 2856,
+      "chars": 21,
+      "bytes": 3252,
       "pack": "font-packs/maru-go.stpack",
       "file": "fonts/ZenMaruGothic-Regular.woff2"
     },
