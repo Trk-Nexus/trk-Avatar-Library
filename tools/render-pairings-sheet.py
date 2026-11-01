@@ -110,10 +110,45 @@ def load_fonts(tmpdir):
     return get
 
 
+NO_START = "、。，．・：；！？）］｝」』〉》〕ゝゞ々ーぁぃぅぇぉっゃゅょゎァィゥェォッャュョヮヵヶ"
+
+def split_two(text, measure, limit):
+    """本文を 2 行に分ける。句読点のすぐ後ろで、まんなかに近いところを選ぶ。
+    （そのままだと最後の 1〜2 字だけが 2 行目に落ちて、みっともなくなるため）
+    句読点が無いときは、幅で折る（行頭に句読点・小書きを置かない）。"""
+    n = len(text)
+    best = None
+    for i, ch in enumerate(text[:-1]):
+        if ch in "、。":
+            c = i + 1
+            a, b = text[:c], text[c:]
+            if measure(a) <= limit and measure(b) <= limit:
+                score = abs(c - n / 2)
+                if best is None or score < best[0]:
+                    best = (score, c)
+    if best:
+        c = best[1]
+        return [text[:c], text[c:]]
+    lines, buf = [], ""
+    for ch in text:
+        if buf and measure(buf + ch) > limit:
+            if ch in NO_START:          # 行頭に置けない字は、1 行目にぶら下げる
+                lines.append(buf + ch)
+                buf = ""
+                continue
+            lines.append(buf)
+            buf = ch
+        else:
+            buf += ch
+    if buf:
+        lines.append(buf)
+    return lines[:2]
+
+
 def main():
     ap = argparse.ArgumentParser()
     # 既定は docs/（配る 1 枚。セットにも入れて、実機で開けるようにしています）
-  ap.add_argument("--out", default=os.path.join(REPO, "docs/2026-11-01-組み合わせ縮刷版.png"))
+    ap.add_argument("--out", default=os.path.join(REPO, "docs/2026-11-01-組み合わせ縮刷版.png"))
     ap.add_argument("--cols", type=int, default=2)
     ap.add_argument("--width", type=int, default=1400)
     args = ap.parse_args()
@@ -172,20 +207,15 @@ def main():
         # 見出し
         hpx = max(14, min(24, int(round(16 * sc["sizes"]["heading"]))))
         text((x + 18, y + 62 + dpx + 10), s["heading"], head_s["family"], head_s["weight"], hpx, fill="#2a3342")
-        # 本文（幅で折り返す。2 行まで）
+        # 本文（2 行。句読点の後ろで分けるか、幅で折る）
+        # 1 行の長さはカード幅の 2/3 ほどに抑える（長い 1 行は読みにくく、注記との間も空くため）
         bpx = 16
         yy = y + 62 + dpx + 10 + hpx + 16
-        limit = colW - 36
-        buf, drawn = "", 0
-        for ch in s["body"]:
-            if d.textlength(buf + ch, font=get(body["family"], body["weight"], bpx)) > limit:
-                text((x + 18, yy + drawn * (bpx + 7)), buf, body["family"], body["weight"], bpx, fill="#1d2430")
-                buf, drawn = "", drawn + 1
-                if drawn >= 2:
-                    break
-            buf += ch
-        if buf and drawn < 2:
-            text((x + 18, yy + drawn * (bpx + 7)), buf, body["family"], body["weight"], bpx, fill="#1d2430")
+        limit = int((colW - 36) * 0.66)
+        bfont = get(body["family"], body["weight"], bpx)
+        measure = lambda t: d.textlength(t, font=bfont)
+        for i, ln in enumerate(split_two(s["body"], measure, limit)):
+            text((x + 18, yy + i * (bpx + 7)), ln, body["family"], body["weight"], bpx, fill="#1d2430")
         # 注記
         text((x + 18, y + CARD_H - 30), s["caption"], cap["family"], cap["weight"], 12, fill=muted)
 

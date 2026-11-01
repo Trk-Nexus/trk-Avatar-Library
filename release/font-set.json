@@ -2,20 +2,20 @@
   "name": "font-set",
   "title": "trk! 書体セット（全部）",
   "date": "2026-11-01",
-  "tag": "font-set-2026-11-01-r7",
-  "file": "trk-font-set-2026-11-01-r7.zip",
-  "bytes": 64052858,
-  "sha256": "08793cf82124ca25e507cae0d04145c5a4407b33c1b6af4fa5d75de52953b88f",
+  "tag": "font-set-2026-11-01-r8",
+  "file": "trk-font-set-2026-11-01-r8.zip",
+  "bytes": 64062199,
+  "sha256": "9fac174b36a983f27339e9cf7a346003e46a47da6e4e457464021554f6f9c310",
   "files_out": [
     {
-      "name": "trk-font-set-2026-11-01-r7.zip",
-      "bytes": 64052858,
-      "sha256": "08793cf82124ca25e507cae0d04145c5a4407b33c1b6af4fa5d75de52953b88f"
+      "name": "trk-font-set-2026-11-01-r8.zip",
+      "bytes": 64062199,
+      "sha256": "9fac174b36a983f27339e9cf7a346003e46a47da6e4e457464021554f6f9c310"
     },
     {
-      "name": "trk-font-set-2026-11-01-r7.stlib",
-      "bytes": 64052858,
-      "sha256": "08793cf82124ca25e507cae0d04145c5a4407b33c1b6af4fa5d75de52953b88f"
+      "name": "trk-font-set-2026-11-01-r8.stlib",
+      "bytes": 64062199,
+      "sha256": "9fac174b36a983f27339e9cf7a346003e46a47da6e4e457464021554f6f9c310"
     }
   ],
   "files": [
@@ -36,8 +36,8 @@
     },
     {
       "path": "gallery/pairings.html",
-      "bytes": 197869,
-      "sha256": "36764dee9fd62c7d7a293a9d434176a1084be9eaf0a556ef926adc849994a9dd"
+      "bytes": 198406,
+      "sha256": "17c8b7d7c89cebdf2f83f92f502ca1180727b57364890b5463de57acb9668772"
     },
     {
       "path": "catalog/index.json",
@@ -46,13 +46,13 @@
     },
     {
       "path": "catalog/typography-preview.json",
-      "bytes": 169305,
-      "sha256": "7ab096651c9aa134525b237b9870fda50c6f1b238187c6afd3c1414c337ac37a"
+      "bytes": 169842,
+      "sha256": "6e595cab8c033c146d961ec4bbf338554b79da62f1053b701c1a946fd81c641c"
     },
     {
       "path": "docs/2026-11-01-組み合わせ縮刷版.png",
-      "bytes": 346816,
-      "sha256": "801b76b03c7bf271c7c8aff8b0bf642876c976825ebbcb6bca8748952d4667a7"
+      "bytes": 355083,
+      "sha256": "ab254165da585a93c5d15e38ff75caee9af062a558279831da354352e9fa6843"
     },
     {
       "path": "packs/sample-mincho.stpack",
