@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/hina-mincho --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkHinaMincho400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/hina-mincho/-/hina-mincho-5.3.0.tgz",
+      "path": "package/files/hina-mincho-japanese-400-normal.woff2",
+      "sha256": "9e3fea123f3e7fc35fae3d12fd93954b50c16044b541969fbb71f062e6c04b81",
+      "bytes": 1424396,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/hina-mincho"
+    }
+  }
+}

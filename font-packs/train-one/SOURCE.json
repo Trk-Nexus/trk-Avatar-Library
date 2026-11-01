@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/train-one --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkTrainOne400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/train-one/-/train-one-5.3.1.tgz",
+      "path": "package/files/train-one-japanese-400-normal.woff2",
+      "sha256": "3185e862e6da12a6111139c5471fcdb51ade7c12dedc2cd495569a2dd9ce9e32",
+      "bytes": 888616,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/train-one"
+    }
+  }
+}

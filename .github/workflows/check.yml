@@ -79,6 +79,14 @@ jobs:
       - name: 書体の一覧と検索が目録と一致するか
         run: node trk-Avatar-Library/tools/export-font-gallery.mjs --check
 
+      # 組み合わせ（catalog/typography.json）——書体が目録に実在するか・役が 6 つそろっているか・
+      # ライセンスが配布できるものか。見た目は gallery/pairings.html で見ます
+      - name: 書体の組み合わせが目録と合っているか
+        run: node trk-Avatar-Library/tools/check-typography.mjs
+
+      - name: 組み合わせの見本（pairings.html）が今の中身と一致するか
+        run: node trk-Avatar-Library/tools/export-pairing-gallery.mjs --check
+
       - name: 書体パック（15 個）がフォルダと一致するか
         working-directory: trk-Avatar-Library
         env:

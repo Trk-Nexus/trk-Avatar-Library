@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/new-tegomin --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkNewTegomin400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/new-tegomin/-/new-tegomin-5.3.0.tgz",
+      "path": "package/files/new-tegomin-japanese-400-normal.woff2",
+      "sha256": "4317f906c490a581dc1690c95577c8a75aa463765b897b55869d5d814d827c69",
+      "bytes": 3728480,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/new-tegomin"
+    }
+  }
+}

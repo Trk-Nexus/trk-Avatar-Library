@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/sawarabi-mincho --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkSawarabiMincho400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/sawarabi-mincho/-/sawarabi-mincho-5.3.0.tgz",
+      "path": "package/files/sawarabi-mincho-japanese-400-normal.woff2",
+      "sha256": "dc95b568d4c3558b948cb079d4b04deca2f77adf1b27b706a05f7affb992632b",
+      "bytes": 1179848,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/sawarabi-mincho"
+    }
+  }
+}

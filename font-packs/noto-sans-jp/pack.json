@@ -1,0 +1,59 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "角ゴのみなもと（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Noto Sans JP（400／500／700）を同梱した、迷わない定番の角ゴシック。長い本文の基準になる書体パックです。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkNotoSansJP",
+      "file": "fonts/TrkNotoSansJP400.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkNotoSansJP",
+      "file": "fonts/TrkNotoSansJP500.woff2",
+      "weight": 500,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkNotoSansJP",
+      "file": "fonts/TrkNotoSansJP700.woff2",
+      "weight": 700,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "角ゴのみなもと",
+    "colors": {
+      "bg": "#11151b",
+      "panel": "#1c222c",
+      "text": "#eef2f8",
+      "accent": "#5b8def",
+      "gold": "#ffd166"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "default",
+    "video": "cool",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#5b8def",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#ffd166",
+      "shape": "circle"
+    }
+  }
+}

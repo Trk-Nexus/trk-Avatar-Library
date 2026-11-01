@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "ひなの明朝（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Hina Mincho を同梱した、やさしく細い明朝体。ひなまつりのような、上品で明るい紙面に。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkHinaMincho",
+      "file": "fonts/TrkHinaMincho400.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "ひなの明朝",
+    "colors": {
+      "bg": "#1a1418",
+      "panel": "#261e24",
+      "text": "#f7eef2",
+      "accent": "#d98aa8",
+      "gold": "#f0c7d8"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#d98aa8",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#f0c7d8",
+      "shape": "circle"
+    }
+  }
+}

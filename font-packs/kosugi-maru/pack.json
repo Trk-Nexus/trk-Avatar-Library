@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "こすぎの丸ゴ（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Kosugi Maru を同梱した、定番の丸ゴシック（Apache-2.0）。親しみやすく、長く読んでも疲れにくい書体です。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：Apache-2.0",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkKosugiMaru",
+      "file": "fonts/TrkKosugiMaru400.woff2",
+      "weight": 400,
+      "license": "Apache-2.0",
+      "licenseFile": "fonts/LICENSE.txt"
+    }
+  ],
+  "skin": {
+    "name": "こすぎの丸ゴ",
+    "colors": {
+      "bg": "#10201a",
+      "panel": "#1b2c24",
+      "text": "#eaf6ef",
+      "accent": "#63c48c",
+      "gold": "#ffd166"
+    },
+    "glow": true,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "rounded",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#63c48c",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#ffd166",
+      "shape": "circle"
+    }
+  }
+}

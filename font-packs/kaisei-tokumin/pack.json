@@ -1,0 +1,59 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "明朝の重み（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Kaisei Tokumin（400／500／700）を同梱した、横画に重みのある明朝体。落ち着いた紙面の雰囲気を作ります。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkKaiseiTokumin",
+      "file": "fonts/TrkKaiseiTokumin400.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkKaiseiTokumin",
+      "file": "fonts/TrkKaiseiTokumin500.woff2",
+      "weight": 500,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkKaiseiTokumin",
+      "file": "fonts/TrkKaiseiTokumin700.woff2",
+      "weight": 700,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "明朝の重み",
+    "colors": {
+      "bg": "#17130f",
+      "panel": "#241d17",
+      "text": "#f6f0e4",
+      "accent": "#c8905a",
+      "gold": "#e0c48a"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#c8905a",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#e0c48a",
+      "shape": "circle"
+    }
+  }
+}

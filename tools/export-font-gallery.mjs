@@ -167,10 +167,10 @@ const html = `<!doctype html>
 <body>
 <header>
   <h1>🔤 trk! 書体の一覧と検索 <span id="total"></span></h1>
-  <p class="lead">${packs.length} パック・${fontCount} ウェイトの書体を、<b>名前・対応字数・大きさ・雰囲気</b>で選べます。外部からは何も読みません（オフラインで開けます）。
+  <p class="lead">${packs.length} パック・${fontCount} ウェイトを<b>家族名（family）</b>と太さで並べています（アプリの 🔤 索引と同じ並び）。<b>対応字数・大きさ・雰囲気</b>でも選べます。外部からは何も読みません（オフラインで開けます）。
     書体そのものは各パックの <code>.stpack</code> に入っています。実際の見た目は、trk! に入れて「🔤 同梱の書体」と本文で確かめてください（このページは書体ファイルを読み込みません）。</p>
   <div class="tools">
-    <input id="q" type="search" placeholder="🔍 パック名・family・ひとこと・タグで絞る（例：明朝 / TrkZen / 見出し）" autocomplete="off">
+    <input id="q" type="search" placeholder="🔍 家族名・パック名・ひとこと・タグで絞る（例：明朝 / TrkZen / 見出し）" autocomplete="off">
     <select id="sort">
       <option value="name">パック名（50 音順）</option>
       <option value="size">大きさ順（小さい順）</option>
@@ -188,7 +188,7 @@ const html = `<!doctype html>
 <main>
   <table>
     <thead><tr>
-      <th>書体（family）</th><th>パック名</th><th>太さ</th><th class="hideSm">対応字数</th><th class="hideSm">大きさ</th>
+      <th>家族名（family）</th><th>パック名</th><th>太さ</th><th class="hideSm">対応字数</th><th class="hideSm">大きさ</th>
       <th class="hideSm">ライセンス</th><th>ひとこと</th><th class="hideSm">タグ</th><th>落とす</th>
     </tr></thead>
     <tbody id="rows"></tbody>

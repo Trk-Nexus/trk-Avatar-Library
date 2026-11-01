@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/yomogi --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkYomogi400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/yomogi/-/yomogi-5.3.0.tgz",
+      "path": "package/files/yomogi-japanese-400-normal.woff2",
+      "sha256": "97c32d082af3e1910576bfa16ade5fbc009ea73078b106dfd49f74c37660634e",
+      "bytes": 1577764,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/yomogi"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "format": "trk-avatar-library-skins",
   "version": 1,
-  "generatedAt": "2026-10-31T20:26:34.519Z",
+  "generatedAt": "2026-11-01T08:40:50.077Z",
   "source": "trk-PWA / js/data.js + js/characters/miku.js",
   "count": 53,
   "typeSkins": 9,
@@ -2415,6 +2415,26 @@
       ]
     },
     {
+      "file": "font-packs/hina-mincho.stpack",
+      "name": "ひなの明朝（書体パック）",
+      "release": "1.0.0",
+      "skin": "ひなの明朝",
+      "colors": {
+        "stage": "#1a1418",
+        "accent": "#d98aa8"
+      },
+      "fonts": [
+        {
+          "family": "TrkHinaMincho",
+          "file": "fonts/TrkHinaMincho400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "やさしく細い明朝。上品で明るい紙面に"
+        }
+      ]
+    },
+    {
       "file": "font-packs/kaisei-decol.stpack",
       "name": "飾り明朝のラベンダー（書体パック）",
       "release": "1.0.0",
@@ -2443,6 +2463,42 @@
       ]
     },
     {
+      "file": "font-packs/kaisei-tokumin.stpack",
+      "name": "明朝の重み（書体パック）",
+      "release": "1.0.0",
+      "skin": "明朝の重み",
+      "colors": {
+        "stage": "#17130f",
+        "accent": "#c8905a"
+      },
+      "fonts": [
+        {
+          "family": "TrkKaiseiTokumin",
+          "file": "fonts/TrkKaiseiTokumin400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "横画に重みのある明朝。落ち着いた紙面に"
+        },
+        {
+          "family": "TrkKaiseiTokumin",
+          "file": "fonts/TrkKaiseiTokumin500.woff2",
+          "license": "OFL-1.1",
+          "weight": 500,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "重みのある明朝の中庸。少し濃い本文に"
+        },
+        {
+          "family": "TrkKaiseiTokumin",
+          "file": "fonts/TrkKaiseiTokumin700.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "重みのある明朝の太字。堂々とした見出しに"
+        }
+      ]
+    },
+    {
       "file": "font-packs/klee-one.stpack",
       "name": "筆ペンの手紙（書体パック）",
       "release": "1.0.0",
@@ -2467,6 +2523,26 @@
           "weight": 600,
           "licenseFile": "fonts/OFL.txt",
           "note": "手書き風の少し太いウェイト。題字や強調に"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/kosugi-maru.stpack",
+      "name": "こすぎの丸ゴ（書体パック）",
+      "release": "1.0.0",
+      "skin": "こすぎの丸ゴ",
+      "colors": {
+        "stage": "#10201a",
+        "accent": "#63c48c"
+      },
+      "fonts": [
+        {
+          "family": "TrkKosugiMaru",
+          "file": "fonts/TrkKosugiMaru400.woff2",
+          "license": "Apache-2.0",
+          "weight": 400,
+          "licenseFile": "fonts/LICENSE.txt",
+          "note": "定番の丸ゴ。親しみやすく疲れにくい"
         }
       ]
     },
@@ -2547,6 +2623,98 @@
       ]
     },
     {
+      "file": "font-packs/new-tegomin.stpack",
+      "name": "てごみの便り（書体パック）",
+      "release": "1.0.0",
+      "skin": "てごみの便り",
+      "colors": {
+        "stage": "#1a1614",
+        "accent": "#c98b5e"
+      },
+      "fonts": [
+        {
+          "family": "TrkNewTegomin",
+          "file": "fonts/TrkNewTegomin400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "手書きの匂いの残る明朝。便箋のような文章に"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/noto-sans-jp.stpack",
+      "name": "角ゴのみなもと（書体パック）",
+      "release": "1.0.0",
+      "skin": "角ゴのみなもと",
+      "colors": {
+        "stage": "#11151b",
+        "accent": "#5b8def"
+      },
+      "fonts": [
+        {
+          "family": "TrkNotoSansJP",
+          "file": "fonts/TrkNotoSansJP400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "迷わない定番の角ゴ。長い本文の基準になる"
+        },
+        {
+          "family": "TrkNotoSansJP",
+          "file": "fonts/TrkNotoSansJP500.woff2",
+          "license": "OFL-1.1",
+          "weight": 500,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "定番の角ゴの中庸。少しだけ強く読みたい行に"
+        },
+        {
+          "family": "TrkNotoSansJP",
+          "file": "fonts/TrkNotoSansJP700.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "定番の角ゴの太字。見出しの基準になる"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/noto-serif-jp.stpack",
+      "name": "明朝のみなもと（書体パック）",
+      "release": "1.0.0",
+      "skin": "明朝のみなもと",
+      "colors": {
+        "stage": "#14110e",
+        "accent": "#d9a441"
+      },
+      "fonts": [
+        {
+          "family": "TrkNotoSerifJP",
+          "file": "fonts/TrkNotoSerifJP400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "定番の明朝。読ませる長文の本文に"
+        },
+        {
+          "family": "TrkNotoSerifJP",
+          "file": "fonts/TrkNotoSerifJP600.woff2",
+          "license": "OFL-1.1",
+          "weight": 600,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "明朝の中庸。本文より少し強く見せたい行に"
+        },
+        {
+          "family": "TrkNotoSerifJP",
+          "file": "fonts/TrkNotoSerifJP700.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "明朝の太字。静かに強く出る見出しに"
+        }
+      ]
+    },
+    {
       "file": "font-packs/potta-one.stpack",
       "name": "看板のポップ（書体パック）",
       "release": "1.0.0",
@@ -2607,6 +2775,46 @@
       ]
     },
     {
+      "file": "font-packs/sawarabi-mincho.stpack",
+      "name": "早蕨の明朝（書体パック）",
+      "release": "1.0.0",
+      "skin": "早蕨の明朝",
+      "colors": {
+        "stage": "#16130f",
+        "accent": "#a8b545"
+      },
+      "fonts": [
+        {
+          "family": "TrkSawarabiMincho",
+          "file": "fonts/TrkSawarabiMincho400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "細身の明朝。軽やかな和風の紙面に"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/shippori-antique.stpack",
+      "name": "余白のアンティーク（書体パック）",
+      "release": "1.0.0",
+      "skin": "余白のアンティーク",
+      "colors": {
+        "stage": "#14161a",
+        "accent": "#9aa7b8"
+      },
+      "fonts": [
+        {
+          "family": "TrkShipporiAntique",
+          "file": "fonts/TrkShipporiAntique400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "余白の似合う書体。静かな本文と見出しに"
+        }
+      ]
+    },
+    {
       "file": "font-packs/shippori-mincho.stpack",
       "name": "墨と金の明朝（書体パック）",
       "release": "1.0.0",
@@ -2635,6 +2843,86 @@
       ]
     },
     {
+      "file": "font-packs/stick.stpack",
+      "name": "細線のステッキ（書体パック）",
+      "release": "1.0.0",
+      "skin": "細線のステッキ",
+      "colors": {
+        "stage": "#101319",
+        "accent": "#8fa8d8"
+      },
+      "fonts": [
+        {
+          "family": "TrkStick",
+          "file": "fonts/TrkStick400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "線の細い直線書体。図面のような見出しに"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/train-one.stpack",
+      "name": "鉄道の極太（書体パック）",
+      "release": "1.0.0",
+      "skin": "鉄道の極太",
+      "colors": {
+        "stage": "#101418",
+        "accent": "#f0b429"
+      },
+      "fonts": [
+        {
+          "family": "TrkTrainOne",
+          "file": "fonts/TrkTrainOne400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "駅名標のような極太。遠くから読ませたい題字に"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/yomogi.stpack",
+      "name": "よもぎの便り（書体パック）",
+      "release": "1.0.0",
+      "skin": "よもぎの便り",
+      "colors": {
+        "stage": "#131a12",
+        "accent": "#8fc46b"
+      },
+      "fonts": [
+        {
+          "family": "TrkYomogi",
+          "file": "fonts/TrkYomogi400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "細いペン字。手紙やメモのような文章に"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/yuji-syuku.stpack",
+      "name": "毛筆の楷書（書体パック）",
+      "release": "1.0.0",
+      "skin": "毛筆の楷書",
+      "colors": {
+        "stage": "#16110d",
+        "accent": "#b5533c"
+      },
+      "fonts": [
+        {
+          "family": "TrkYujiSyuku",
+          "file": "fonts/TrkYujiSyuku400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "毛筆の楷書。軸の通った和風の題字に"
+        }
+      ]
+    },
+    {
       "file": "font-packs/yusei-magic.stpack",
       "name": "筆ポップの夜祭（書体パック）",
       "release": "1.0.0",
@@ -2651,6 +2939,26 @@
           "weight": 400,
           "licenseFile": "fonts/OFL.txt",
           "note": "筆文字のポップ体。にぎやかな見出しに合う"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/zen-antique.stpack",
+      "name": "古道具の明朝（書体パック）",
+      "release": "1.0.0",
+      "skin": "古道具の明朝",
+      "colors": {
+        "stage": "#1a1512",
+        "accent": "#b08968"
+      },
+      "fonts": [
+        {
+          "family": "TrkZenAntique",
+          "file": "fonts/TrkZenAntique400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "古い活字のような明朝。レトロな紙面に"
         }
       ]
     },
@@ -2679,6 +2987,26 @@
           "weight": 700,
           "licenseFile": "fonts/OFL.txt",
           "note": "角ゴの太字。見出しをきりっと引き締める"
+        }
+      ]
+    },
+    {
+      "file": "font-packs/zen-kurenaido.stpack",
+      "name": "くれないの筆（書体パック）",
+      "release": "1.0.0",
+      "skin": "くれないの筆",
+      "colors": {
+        "stage": "#1b1114",
+        "accent": "#d9536f"
+      },
+      "fonts": [
+        {
+          "family": "TrkZenKurenaido",
+          "file": "fonts/TrkZenKurenaido400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "note": "細い手書き風。やわらかく寂しげな雰囲気に"
         }
       ]
     },

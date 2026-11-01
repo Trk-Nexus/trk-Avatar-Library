@@ -2,56 +2,251 @@
   "note": "目録（catalog/index.json）の packs[].fonts[].tags に入れる「検索と絞り込みの語」です（L15・任意・8 個まで・各 16 文字まで）。パックの中身（pack.json）は変えず、この倉庫だけで足します（配った .stpack の sha256 を動かさないため）。語は gallery/fonts.html の絞り込みと検索にそのまま出ます。書き間違い（多すぎる・長すぎる・パックにない書体）は build-catalog が止めます。",
   "packs": {
     "font-packs/maru-go.stpack": {
-      "fonts/ZenMaruGothic-Regular.woff2": ["丸ゴ", "読みやすい"],
-      "fonts/ZenMaruGothic-Bold.woff2": ["丸ゴ", "見出し"]
+      "fonts/ZenMaruGothic-Regular.woff2": [
+        "丸ゴ",
+        "読みやすい"
+      ],
+      "fonts/ZenMaruGothic-Bold.woff2": [
+        "丸ゴ",
+        "見出し"
+      ]
     },
     "font-packs/zen-kaku.stpack": {
-      "fonts/ZenKakuGothicNew-Regular.woff2": ["角ゴ", "読みやすい"],
-      "fonts/ZenKakuGothicNew-Bold.woff2": ["角ゴ", "見出し"]
+      "fonts/ZenKakuGothicNew-Regular.woff2": [
+        "角ゴ",
+        "読みやすい"
+      ],
+      "fonts/ZenKakuGothicNew-Bold.woff2": [
+        "角ゴ",
+        "見出し"
+      ]
     },
     "font-packs/m-plus-rounded.stpack": {
-      "fonts/MPlusRounded1c-Regular.woff2": ["丸ゴ", "読みやすい"],
-      "fonts/MPlusRounded1c-Bold.woff2": ["丸ゴ", "見出し"]
+      "fonts/MPlusRounded1c-Regular.woff2": [
+        "丸ゴ",
+        "読みやすい"
+      ],
+      "fonts/MPlusRounded1c-Bold.woff2": [
+        "丸ゴ",
+        "見出し"
+      ]
     },
     "font-packs/klee-one.stpack": {
-      "fonts/KleeOne-Regular.woff2": ["手書き", "かすれ", "本文"],
-      "fonts/KleeOne-SemiBold.woff2": ["手書き", "かすれ", "見出し"]
+      "fonts/KleeOne-Regular.woff2": [
+        "手書き",
+        "かすれ",
+        "本文"
+      ],
+      "fonts/KleeOne-SemiBold.woff2": [
+        "手書き",
+        "かすれ",
+        "見出し"
+      ]
     },
     "font-packs/yusei-magic.stpack": {
-      "fonts/YuseiMagic-Regular.woff2": ["手書き", "ポップ", "和風"]
+      "fonts/YuseiMagic-Regular.woff2": [
+        "手書き",
+        "ポップ",
+        "和風"
+      ]
     },
     "font-packs/hachi-maru-pop.stpack": {
-      "fonts/HachiMaruPop-Regular.woff2": ["丸ゴ", "手書き", "かわいい"]
+      "fonts/HachiMaruPop-Regular.woff2": [
+        "丸ゴ",
+        "手書き",
+        "かわいい"
+      ]
     },
     "font-packs/dotgothic.stpack": {
-      "fonts/DotGothic16-Regular.woff2": ["ドット", "レトロ"]
+      "fonts/DotGothic16-Regular.woff2": [
+        "ドット",
+        "レトロ"
+      ]
     },
     "font-packs/shippori-mincho.stpack": {
-      "fonts/ShipporiMincho-Regular.woff2": ["明朝", "読みやすい"],
-      "fonts/ShipporiMincho-Bold.woff2": ["明朝", "見出し"]
+      "fonts/ShipporiMincho-Regular.woff2": [
+        "明朝",
+        "読みやすい"
+      ],
+      "fonts/ShipporiMincho-Bold.woff2": [
+        "明朝",
+        "見出し"
+      ]
     },
     "font-packs/zen-old-mincho.stpack": {
-      "fonts/ZenOldMincho-Regular.woff2": ["明朝", "和風"],
-      "fonts/ZenOldMincho-Bold.woff2": ["明朝", "和風", "見出し"]
+      "fonts/ZenOldMincho-Regular.woff2": [
+        "明朝",
+        "和風"
+      ],
+      "fonts/ZenOldMincho-Bold.woff2": [
+        "明朝",
+        "和風",
+        "見出し"
+      ]
     },
     "font-packs/dela-gothic.stpack": {
-      "fonts/DelaGothicOne-Regular.woff2": ["極太", "ポップ", "見出し"]
+      "fonts/DelaGothicOne-Regular.woff2": [
+        "極太",
+        "ポップ",
+        "見出し"
+      ]
     },
     "font-packs/rampart-one.stpack": {
-      "fonts/RampartOne-Regular.woff2": ["ポップ", "ネオン", "見出し"]
+      "fonts/RampartOne-Regular.woff2": [
+        "ポップ",
+        "ネオン",
+        "見出し"
+      ]
     },
     "font-packs/rocknroll-one.stpack": {
-      "fonts/RocknRollOne-Regular.woff2": ["手書き", "ポップ", "元気"]
+      "fonts/RocknRollOne-Regular.woff2": [
+        "手書き",
+        "ポップ",
+        "元気"
+      ]
     },
     "font-packs/potta-one.stpack": {
-      "fonts/PottaOne-Regular.woff2": ["ポップ", "極太", "見出し"]
+      "fonts/PottaOne-Regular.woff2": [
+        "ポップ",
+        "極太",
+        "見出し"
+      ]
     },
     "font-packs/kaisei-decol.stpack": {
-      "fonts/KaiseiDecol-Regular.woff2": ["明朝", "かわいい"],
-      "fonts/KaiseiDecol-Bold.woff2": ["明朝", "かわいい", "見出し"]
+      "fonts/KaiseiDecol-Regular.woff2": [
+        "明朝",
+        "かわいい"
+      ],
+      "fonts/KaiseiDecol-Bold.woff2": [
+        "明朝",
+        "かわいい",
+        "見出し"
+      ]
     },
     "font-packs/mochiy-pop.stpack": {
-      "fonts/MochiyPopOne-Regular.woff2": ["ポップ", "極太", "かわいい"]
+      "fonts/MochiyPopOne-Regular.woff2": [
+        "ポップ",
+        "極太",
+        "かわいい"
+      ]
+    },
+    "font-packs/noto-sans-jp.stpack": {
+      "fonts/TrkNotoSansJP400.woff2": [
+        "角ゴ",
+        "読みやすい",
+        "本文"
+      ],
+      "fonts/TrkNotoSansJP500.woff2": [
+        "角ゴ",
+        "本文"
+      ],
+      "fonts/TrkNotoSansJP700.woff2": [
+        "角ゴ",
+        "見出し",
+        "読みやすい"
+      ]
+    },
+    "font-packs/noto-serif-jp.stpack": {
+      "fonts/TrkNotoSerifJP400.woff2": [
+        "明朝",
+        "読みやすい",
+        "本文"
+      ],
+      "fonts/TrkNotoSerifJP600.woff2": [
+        "明朝",
+        "本文"
+      ],
+      "fonts/TrkNotoSerifJP700.woff2": [
+        "明朝",
+        "見出し"
+      ]
+    },
+    "font-packs/kaisei-tokumin.stpack": {
+      "fonts/TrkKaiseiTokumin400.woff2": [
+        "明朝",
+        "和風",
+        "本文"
+      ],
+      "fonts/TrkKaiseiTokumin500.woff2": [
+        "明朝",
+        "和風"
+      ],
+      "fonts/TrkKaiseiTokumin700.woff2": [
+        "明朝",
+        "見出し",
+        "和風"
+      ]
+    },
+    "font-packs/zen-antique.stpack": {
+      "fonts/TrkZenAntique400.woff2": [
+        "明朝",
+        "レトロ",
+        "和風"
+      ]
+    },
+    "font-packs/zen-kurenaido.stpack": {
+      "fonts/TrkZenKurenaido400.woff2": [
+        "手書き",
+        "かわいい"
+      ]
+    },
+    "font-packs/kosugi-maru.stpack": {
+      "fonts/TrkKosugiMaru400.woff2": [
+        "丸ゴ",
+        "読みやすい",
+        "本文"
+      ]
+    },
+    "font-packs/yomogi.stpack": {
+      "fonts/TrkYomogi400.woff2": [
+        "手書き",
+        "かわいい"
+      ]
+    },
+    "font-packs/stick.stpack": {
+      "fonts/TrkStick400.woff2": [
+        "角ゴ",
+        "見出し"
+      ]
+    },
+    "font-packs/train-one.stpack": {
+      "fonts/TrkTrainOne400.woff2": [
+        "見出し",
+        "元気"
+      ]
+    },
+    "font-packs/sawarabi-mincho.stpack": {
+      "fonts/TrkSawarabiMincho400.woff2": [
+        "明朝",
+        "和風",
+        "本文"
+      ]
+    },
+    "font-packs/new-tegomin.stpack": {
+      "fonts/TrkNewTegomin400.woff2": [
+        "明朝",
+        "手書き"
+      ]
+    },
+    "font-packs/hina-mincho.stpack": {
+      "fonts/TrkHinaMincho400.woff2": [
+        "明朝",
+        "かわいい"
+      ]
+    },
+    "font-packs/shippori-antique.stpack": {
+      "fonts/TrkShipporiAntique400.woff2": [
+        "明朝",
+        "読みやすい",
+        "本文"
+      ]
+    },
+    "font-packs/yuji-syuku.stpack": {
+      "fonts/TrkYujiSyuku400.woff2": [
+        "手書き",
+        "和風",
+        "見出し"
+      ]
     }
   }
 }

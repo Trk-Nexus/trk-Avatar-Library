@@ -1,0 +1,29 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/noto-sans-jp --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkNotoSansJP400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/noto-sans-jp/-/noto-sans-jp-5.3.1.tgz",
+      "path": "package/files/noto-sans-jp-japanese-400-normal.woff2",
+      "sha256": "5ae4b6b5f176a590babe96d6bb62ee8805f4ddf15877738eda807db1fa20f136",
+      "bytes": 1132964,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/notofonts/noto-cjk"
+    },
+    "fonts/TrkNotoSansJP500.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/noto-sans-jp/-/noto-sans-jp-5.3.1.tgz",
+      "path": "package/files/noto-sans-jp-japanese-500-normal.woff2",
+      "sha256": "13a429a82753cf699ca6e36ea7586fa9b91d3040c850c03398c884d63bb82fb0",
+      "bytes": 1146232,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/notofonts/noto-cjk"
+    },
+    "fonts/TrkNotoSansJP700.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/noto-sans-jp/-/noto-sans-jp-5.3.1.tgz",
+      "path": "package/files/noto-sans-jp-japanese-700-normal.woff2",
+      "sha256": "f16d3300de1ccbdb092d8872ab5ea4ab54af3265b6188699e3c215fedbbfbd11",
+      "bytes": 1158216,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/notofonts/noto-cjk"
+    }
+  }
+}
