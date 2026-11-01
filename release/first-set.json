@@ -2,20 +2,20 @@
   "name": "first-set",
   "title": "trk! はじめてセット",
   "date": "2026-11-01",
-  "tag": "first-set-2026-11-01-r4",
-  "file": "trk-first-set-2026-11-01-r4.zip",
-  "bytes": 30832151,
-  "sha256": "0d943e76e3ada1be855d40d662cafa4f770b9e5075a19a182fb4e13ff43fcdcc",
+  "tag": "first-set-2026-11-01-r5",
+  "file": "trk-first-set-2026-11-01-r5.zip",
+  "bytes": 30832734,
+  "sha256": "d2bea5a2182851143993e319b4a5b221978c1781f0b7b50f720baa3d5f948876",
   "files_out": [
     {
-      "name": "trk-first-set-2026-11-01-r4.zip",
-      "bytes": 30832151,
-      "sha256": "0d943e76e3ada1be855d40d662cafa4f770b9e5075a19a182fb4e13ff43fcdcc"
+      "name": "trk-first-set-2026-11-01-r5.zip",
+      "bytes": 30832734,
+      "sha256": "d2bea5a2182851143993e319b4a5b221978c1781f0b7b50f720baa3d5f948876"
     },
     {
-      "name": "trk-first-set-2026-11-01-r4.stlib",
-      "bytes": 30832151,
-      "sha256": "0d943e76e3ada1be855d40d662cafa4f770b9e5075a19a182fb4e13ff43fcdcc"
+      "name": "trk-first-set-2026-11-01-r5.stlib",
+      "bytes": 30832734,
+      "sha256": "d2bea5a2182851143993e319b4a5b221978c1781f0b7b50f720baa3d5f948876"
     }
   ],
   "files": [
@@ -115,5 +115,5 @@
       "sha256": "5269a4797cfcdcea5740734d4fd545274011aaf63ec782bcbe3ab55dca7b9e0e"
     }
   ],
-  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML（全スキン）・書体の一覧と検索（fonts.html）・目録・パック 16 個（見本 1＋書体パック 15）が入っています。書体パックはどれも release 1.0.0 で、入れて「使う」と本文の書体が変わります（trk232 以降）。trk235 以降は .stlib（中身は同じ 1 ファイル）をそのまま選ぶだけで入れられます。"
+  "note": "展開した中身を、trk! の「📥 まとめて入れる」でまとめて選べます（trk231 以降）。見本 HTML（全スキン）・書体の一覧と検索（fonts.html）・目録・パック 16 個（見本 1＋書体パック 15）が入っています。書体パックはどれも release 1.0.0 で、入れて「使う」と本文の書体が変わります（trk232 以降）。trk235 以降は、このセット（.stlib / .zip）を「📦 セットを選ぶ」でそのまま選ぶだけで、16 パックがまとめて入ります。"
 }

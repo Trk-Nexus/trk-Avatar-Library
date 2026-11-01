@@ -14,8 +14,10 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { verifyPack } from "./verify-pack.mjs";
 import { checkFont } from "./check-fonts.mjs";
+import { verifySet } from "./verify-set.mjs";
 import { loadZipIO } from "./lib/zip.mjs";
 
+const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const keep = process.argv.includes("--keep");
 const trk = (process.argv.find(a => a.startsWith("--trk=")) || "").slice(6) || undefined;
 const work = fs.mkdtempSync(path.join(os.tmpdir(), "trk-lib-selftest-"));
@@ -162,6 +164,86 @@ await expect("release の形が違うと不合格",
     results.push({ label: c.label, ok, detail: ok ? "" : `ok=${r.ok} ${all}` });
     console.log(`${ok ? "✅" : "❌"} ${c.label}${ok ? "" : `  ← ok=${r.ok} ${all}`}`);
   }
+}
+
+/* 📦 セット（.stlib / .zip）の受け入れ検査（trk235 の A1〜A6 と同じ手順・verify-set） */
+{
+  const sha = buf => crypto.createHash("sha256").update(buf).digest("hex");
+  const realPacks = ["packs/sample-mincho.stpack", "font-packs/potta-one.stpack"].map(f => ({
+    file: f, buf: fs.readFileSync(path.join(ROOT, f)),
+  }));
+  const catalogOf = packs => ({
+    format: "trk-avatar-library", version: 1, name: "試験用セット",
+    packs: packs.map(p => ({ name: p.file, file: p.file, version: "1.0.0", sha256: sha(p.buf), bytes: p.buf.length, fonts: [] })),
+  });
+  const setJson = packs => ({ format: "trk-set", version: 1, name: "試験セット", release: "t1", rev: "t1", packs: packs.map(p => p.file) });
+  const makeSet = async (opts = {}) => {
+    const packs = opts.packs || realPacks;
+    const entries = [
+      { name: "README-はじめに.txt", blob: new Blob(["試験用のセット（selftest）"]) },
+      ...(opts.noSetJson ? [] : [{ name: "set.json", blob: new Blob([typeof opts.setJson === "string" ? opts.setJson : JSON.stringify(opts.setJson || setJson(packs))]) }]),
+      { name: "catalog/index.json", blob: new Blob([typeof opts.catalog === "string" ? opts.catalog : JSON.stringify(opts.catalog || catalogOf(packs))]) },
+      ...packs.map(p => ({ name: p.file, blob: new Blob([p.buf]) })),
+      ...(opts.extra || []).map(e => ({ name: e.file, blob: new Blob([e.buf]) })),
+    ];
+    const blob = await zipIO.zipWrite(entries);
+    return Buffer.from(await blob.arrayBuffer());
+  };
+  const setCase = (label, r, want) => {
+    const c = (r.info && r.info.count) || {};
+    const diffs = [];
+    if (want.pass !== undefined && r.ok !== want.pass) diffs.push(`ok=${r.ok}`);
+    for (const k of ["ok", "mismatch", "missing", "stray"]) {
+      if (want[k] !== undefined && c[k] !== want[k]) diffs.push(`${k}=${c[k]}`);
+    }
+    const all = [...r.errors, ...r.warnings, ...r.notes, ...((r.info.results || []).map(x => x.reason || ""))].join(" / ");
+    if (want.needle && !all.includes(want.needle)) diffs.push(`メッセージに「${want.needle}」が無い`);
+    const ok = diffs.length === 0;
+    results.push({ label, ok, detail: ok ? "" : `${diffs.join("・")} ← ${all.slice(0, 160)}` });
+    console.log(`${ok ? "✅" : "❌"} ${label}${ok ? "" : `  ← ${diffs.join("・")} ← ${all.slice(0, 160)}`}`);
+  };
+
+  const good = await makeSet();
+  setCase("セット（.stlib）は目録の 2 本とも入る", await verifySet(good, { trk }), { pass: true, ok: 2, mismatch: 0, missing: 0, stray: 0 });
+  setCase("セット（同じ中身・.zip の名前）も中身で判断して通る", await verifySet(good, { trk, fileName: "x.zip" }), { pass: true, ok: 2 });
+  /* 目録は 2 本のまま、中の 1 本だけ差し替える（アプリと同じ「その 1 本だけ入れない」） */
+  setCase("中身を差し替えた 1 本は入れない（ほかは入る）",
+    await verifySet(await makeSet({ packs: [realPacks[0], { file: realPacks[1].file, buf: Buffer.from("not-a-zip") }],
+      catalog: catalogOf(realPacks) }), { trk }),
+    { pass: false, ok: 1, mismatch: 1, needle: "sha256" });
+  /* 目録は 2 本のまま、中の 1 本を抜く */
+  setCase("目録にあるのに中身が無い 1 本は「入っていない」",
+    await verifySet(await makeSet({ packs: [realPacks[0]], catalog: catalogOf(realPacks) }), { trk }),
+    { pass: false, ok: 1, missing: 1, needle: "セットに入っていません" });
+  setCase("目録にない .stpack は入れずに数える",
+    await verifySet(await makeSet({ extra: [{ file: "font-packs/extra.stpack", buf: realPacks[0].buf }] }), { trk }),
+    { pass: true, ok: 2, stray: 1 });
+  setCase("目録が壊れていると、何も入れずに止まる",
+    await verifySet(await makeSet({ catalog: '{ "format": "trk-avatar-library", "version": 1, "packs": [' }), { trk }),
+    { pass: false, ok: 0, needle: "目録" });
+  setCase("目録の format が違えば止まる",
+    await verifySet(await makeSet({ catalog: { format: "something", version: 1, packs: [] } }), { trk }),
+    { pass: false, needle: "format" });
+  setCase("set.json が壊れていても、目録だけで動く（警告だけ）",
+    await verifySet(await makeSet({ setJson: "{ 壊れています" }), { trk }),
+    { pass: true, ok: 2, needle: "set.json が読めません" });
+  setCase("set.json が無くても動く",
+    await verifySet(await makeSet({ noSetJson: true }), { trk }),
+    { pass: true, ok: 2, needle: "set.json がありません" });
+  setCase("PK で始まらないファイルは ZIP として開かない",
+    await verifySet(Buffer.from("not a zip at all"), { trk }),
+    { pass: false, needle: "PK" });
+}
+
+/* check-fonts は trk-PWA が見つからないとき、黙って合格にせず止まるか（2026-11-01・trk235 の指摘） */
+{
+  const { spawnSync } = await import("node:child_process");
+  const r = spawnSync(process.execPath, [path.join(ROOT, "tools/check-fonts.mjs")], {
+    encoding: "utf8", env: { ...process.env, TRK_PWA: path.join(work, "no-such-trk-pwa") },
+  });
+  const ok = r.status === 2 && /使い方/.test(String(r.stderr));
+  results.push({ label: "check-fonts は trk-PWA が無いと使い方を出して止まる（exit 2）", ok, detail: ok ? "" : `status=${r.status}` });
+  console.log(`${ok ? "✅" : "❌"} check-fonts は trk-PWA が無いと使い方を出して止まる（exit 2）${ok ? "" : `  ← status=${r.status}`}`);
 }
 
 /* 目録が今の中身と合っているか（--check と同じ見方） */

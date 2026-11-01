@@ -25,13 +25,17 @@
      node tools/check-fonts.mjs --json
      node tools/check-fonts.mjs --trk=/path/to/trk-PWA
 
-   終了コード：0＝全部読める形、1＝怪しいものがある、2＝使い方の誤り
+   **trk-PWA が要ります**（ZIP の読み書きは trk-PWA の js/zip-io.js をそのまま使うため）。
+   見つからないときは、何も見ずに「合格」に見えないよう、使い方を出して **exit 2** で止まります
+   （2026-11-01・trk235 からの指摘：付け忘れると何も出さず exit 0 だった）。
+
+   終了コード：0＝全部読める形、1＝怪しいものがある、2＝使い方の誤り（trk-PWA が見つからない）
 */
 import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
 import { fileURLToPath } from "node:url";
-import { openZip } from "./lib/zip.mjs";
+import { openZip, zipIOPath } from "./lib/zip.mjs";
 import { verifyPack } from "./verify-pack.mjs";
 
 const HERE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -215,6 +219,15 @@ export function checkFont(buf, meta = {}) {
 
 /* --- コマンドとして動かす --- */
 if (import.meta.url === `file://${process.argv[1]}`) {
+  /* trk-PWA が見つからないまま走ると「何も見ずに合格」になるので、先に止める（2026-11-01） */
+  try {
+    zipIOPath(trk);
+  } catch (e) {
+    console.error(`❌ ${e.message}`);
+    console.error("   使い方: node tools/check-fonts.mjs [--trk=/path/to/trk-PWA] [--json]");
+    console.error("   （trk-PWA の場所は --trk=… か 環境変数 TRK_PWA。既定は ../trk-PWA）");
+    process.exit(2);
+  }
   const packs = [];
   for (const dir of ["packs", "font-packs"]) {
     const abs = path.join(HERE, dir);
@@ -227,6 +240,11 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   for (const p of packs) {
     const r = await verifyPack(p.abs, { trk });
     const fonts = (r.info && r.info.fonts) || [];
+    /* パック自体が読めない（ZIP でない・pack.json が無い等）ときは、黙って飛ばさず不合格にする */
+    if (!r.ok && !fonts.length) {
+      out.push({ pack: p.file, ok: false, errors: r.errors, warnings: r.warnings, fonts: [] });
+      continue;
+    }
     if (!fonts.length) continue;
     let zipped;
     try { zipped = await openZip(fs.readFileSync(p.abs), trk); }
@@ -244,15 +262,25 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       if (dup && !c.warnings.some(w => w.includes("重複"))) c.warnings.push(`同じ family＋weight（${f.family} ${key.split("|")[1]}）が重複しています（アプリは1つにまとめます）`);
       rows.push({ ...f, ok: c.ok, errors: c.errors, warnings: c.warnings, info: c.info });
     }
-    out.push({ pack: p.file, errors: [], warnings: [], fonts: rows });
+    out.push({ pack: p.file, ok: true, errors: [], warnings: [], fonts: rows });
   }
 
-  const bad = out.filter(p => p.fonts.some(f => !f.ok)).length;
+  const fontTotal = out.reduce((n, p) => n + p.fonts.length, 0);
+  const bad = out.filter(p => !p.ok || p.fonts.some(f => !f.ok)).length;
+  if (!fontTotal) {
+    console.error("❌ 書体を持つパックが1つも見つかりませんでした（packs/ と font-packs/ を見ています）");
+    process.exit(1);
+  }
   if (asJson) console.log(JSON.stringify({ ok: bad === 0, packs: out }, null, 2));
   else {
     for (const p of out) {
       const n = p.fonts.length;
       const ng = p.fonts.filter(f => !f.ok).length;
+      if (!n) {
+        console.log(`❌ ${p.pack} — パックとして読めません`);
+        for (const e of p.errors || []) console.log(`      ❌ ${e}`);
+        continue;
+      }
       console.log(`${ng ? "❌" : "✅"} ${p.pack} — 書体 ${n} 件${ng ? `（${ng} 件が読めません）` : ""}`);
       for (const f of p.fonts) {
         const i = f.info || {};
@@ -263,5 +291,6 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       }
     }
   }
+  if (!asJson) console.log(`\n${bad ? "❌" : "✅"} ${out.length} パック・${fontTotal} 書体${bad ? `（${bad} パックに問題）` : "とも、読める形です"}`);
   process.exit(bad ? 1 : 0);
 }

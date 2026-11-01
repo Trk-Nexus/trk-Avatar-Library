@@ -13,8 +13,8 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
-  # （trk234 = 9c4d80d。容量の見える化・まとめて消すまで入った版）
-  TRK_PWA_REF: 9c4d80d7dc8bee6d71d94a584622ebdf176b290d
+  # （trk235 = cd00408。.stlib（セット）をそのまま選べる版）
+  TRK_PWA_REF: cd00408962059ef9f7ecd63ee517c21d040e523d
 
 jobs:
   check:
@@ -92,6 +92,19 @@ jobs:
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: node tools/build-set.mjs sets/first-set.json --check
+
+      # 記録と一致するだけでなく「trk235 が開いて中身を入れられる形か」を、アプリと同じ手順で見る
+      - name: セットがアプリ（trk235）の手順で開けるか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: |
+          node tools/build-set.mjs sets/first-set.json
+          # 記録に載っている名前（.zip と .stlib）だけを見る（dist/ に古い版が残っていても混ざらない）
+          FILES=$(node -p "const r=require('./release/first-set.json'); (r.files_out && r.files_out.length ? r.files_out : [{name:r.file}]).map(x=>'dist/'+x.name).join(' ')")
+          for f in $FILES; do
+            node tools/verify-set.mjs "$f" --record=release/first-set.json || exit 1
+          done
 
       - name: README の表・リンク・セットの記録
         run: node trk-Avatar-Library/tools/check-docs.mjs

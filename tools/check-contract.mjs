@@ -13,7 +13,8 @@
      ・全パックが sanitizeCatalog を通り、落とされる件数が 0
      ・name/author/version/file/sha256/bytes/fonts/license/description/url が、書いたとおりに残る
      ・file が実在し、sha256・bytes が実物と一致する
-     ・fonts[].licenseFile（任意・L7）の形が正しい（アプリが読めるのは trk233 以降。いまは落とされるだけ）
+     ・fonts[].licenseFile（任意・L7）・note（L10）・cmap（L11）・tags（L15）・bytes の形が正しい
+       （アプリが読むか読まないかは、1 行にまとめて出す。落とされても不合格にしない）
 
    使い方：
      node tools/check-contract.mjs
@@ -80,6 +81,7 @@ const notes = [];
 const fail = (msg) => fails.push(msg);
 /* 任意項目を、アプリが読むかどうかの集計（L3・L7・L10・L11） */
 let licCount = 0, licKept = 0, noteCount = 0, cmapCount = 0, colorsKept = 0;
+let tagCount = 0, tagKept = 0, fontBytesCount = 0, fontBytesKept = 0;
 
 if (raw.format !== api.CATALOG_FORMAT) fail(`format が "${api.CATALOG_FORMAT}" ではありません（"${raw.format}"）`);
 if (Number(raw.version) > api.CATALOG_VERSION) fail(`version ${raw.version} は、このアプリ（${api.CATALOG_VERSION} まで）では読めません`);
@@ -130,6 +132,26 @@ if (!cat) {
           fail(`${where} の fonts[].cmap は正の整数（字数）にしてください（"${f.cmap}"）`);
         } else cmapCount++;
       }
+      /* L15：tags は検索と絞り込みの語（8 個まで・各 16 文字） */
+      if (f.tags !== undefined) {
+        const t = f.tags;
+        const okShape = Array.isArray(t) && t.length > 0 && t.length <= 8
+          && t.every(x => typeof x === "string" && x.trim() && [...x.trim()].length <= 16);
+        if (!okShape) fail(`${where} の fonts[].tags は、1〜8 個の文字列（各 16 文字まで）にしてください`);
+        else {
+          tagCount++;
+          if ((b.fonts || []).some(x => Array.isArray(x.tags) && x.tags.length)) tagKept++;
+        }
+      }
+      /* 書体 1 本の大きさ（`gallery/fonts.html` の「大きさ」用。任意） */
+      if (f.bytes !== undefined) {
+        if (!(Number.isInteger(f.bytes) && f.bytes > 0 && f.bytes <= 16 * 1024 * 1024)) {
+          fail(`${where} の fonts[].bytes は正の整数（1 本の大きさ・16 MiB 以下）にしてください（"${f.bytes}"）`);
+        } else {
+          fontBytesCount++;
+          if ((b.fonts || []).some(x => Number.isInteger(x.bytes))) fontBytesKept++;
+        }
+      }
     }
     if (a.colors !== undefined && b.colors !== undefined) colorsKept++;
     /* L3：colors は任意項目。形だけこちらで決める（アプリの trk231 は無視する） */
@@ -156,10 +178,21 @@ for (const p of raw.packs) {
 if (licCount) {
   notes.push(licKept
     ? `fonts[].licenseFile（L7）をアプリが読むようになりました（${licCount} 件・trk233 以降）。check-contract の見直しどきです`
-    : `fonts[].licenseFile（L7）を ${licCount} 件載せていますが、アプリはまだ読みません（trk233 以降の予定。読む件数は変わりません）`);
+    : `fonts[].licenseFile（L7）を ${licCount} 件載せていますが、アプリはまだ読みません（trk233 以降の予定）`);
 }
 if (noteCount || cmapCount) {
-  notes.push(`fonts[].note（L10・${noteCount} 件）と cmap（L11・${cmapCount} 件）を載せています。アプリ（trk233）はまだ読みません（読む版になったら、ここが「読みました」に変わります）`);
+  notes.push(`fonts[].note（L10・${noteCount} 件）と cmap（L11・${cmapCount} 件）を載せています。`
+    + `アプリ（trk235）はまだ読みません（trk236 で読む予定。読む版になったら、ここが「読みました」に変わります）`);
+}
+if (tagCount) {
+  notes.push(tagKept
+    ? `fonts[].tags（L15）をアプリが読むようになりました（${tagCount} 件）。check-contract の見直しどきです`
+    : `fonts[].tags（L15）を ${tagCount} 件載せていますが、アプリはまだ読みません（trk237 の「書体で絞る」で使う予定）`);
+}
+if (fontBytesCount) {
+  notes.push(fontBytesKept
+    ? `fonts[].bytes（書体 1 本の大きさ）をアプリが読むようになりました（${fontBytesCount} 件）`
+    : `fonts[].bytes（書体 1 本の大きさ）を ${fontBytesCount} 件載せています。アプリは読まなくても構いません（一覧の表示用）`);
 }
 if (colorsKept) notes.push(`packs[].colors をアプリが読むようになりました（trk235 以降）。check-contract の見直しどきです`);
 
