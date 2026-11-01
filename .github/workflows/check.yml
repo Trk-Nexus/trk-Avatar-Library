@@ -30,7 +30,7 @@ jobs:
       - name: trk-PWA（相手側・バージョンを固定して取る）
         uses: actions/checkout@v4
         with:
-          repository: TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA
+          repository: Trk-Nexus/trk-PWA
           ref: ${{ env.TRK_PWA_REF }}
           path: trk-PWA
           fetch-depth: 0
@@ -182,7 +182,7 @@ jobs:
       - name: trk-PWA（main・固定しない）
         uses: actions/checkout@v4
         with:
-          repository: TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA
+          repository: Trk-Nexus/trk-PWA
           ref: main
           path: trk-PWA
           fetch-depth: 0
