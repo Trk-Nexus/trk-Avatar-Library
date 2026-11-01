@@ -13,8 +13,10 @@
      ・全パックが sanitizeCatalog を通り、落とされる件数が 0
      ・name/author/version/file/sha256/bytes/fonts/license/description/url が、書いたとおりに残る
      ・file が実在し、sha256・bytes が実物と一致する
-     ・fonts[].licenseFile（任意・L7）・note（L10）・cmap（L11）・tags（L15）・bytes の形が正しい
+     ・fonts[].licenseFile（任意・L7）・note（L10）・cmap（L11）・tags（L15）・bytes・weight の形が正しい
        （アプリが読むか読まないかは、1 行にまとめて出す。落とされても不合格にしない）
+     ・アプリが読む版に変わったら「読みました」に変わる（trk233 の licenseFile・trk236 の note／cmap／weight・
+       trk237 の tags・trk235 の colors）。値が化けていないかは、アプリが返した値と突き合わせる
 
    使い方：
      node tools/check-contract.mjs
@@ -79,9 +81,10 @@ const raw = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const fails = [];
 const notes = [];
 const fail = (msg) => fails.push(msg);
-/* 任意項目を、アプリが読むかどうかの集計（L3・L7・L10・L11） */
-let licCount = 0, licKept = 0, noteCount = 0, cmapCount = 0, colorsKept = 0;
-let tagCount = 0, tagKept = 0, fontBytesCount = 0, fontBytesKept = 0;
+/* 任意項目を、アプリが読むかどうかの集計（L3・L7・L10・L11・L15）
+   Kept は「アプリが返した値が、書いたとおりに残っている」数（形だけでなく中身を見る） */
+let licCount = 0, licKept = 0, noteCount = 0, noteKept = 0, cmapCount = 0, cmapKept = 0, colorsKept = 0;
+let tagCount = 0, tagKept = 0, fontBytesCount = 0, fontBytesKept = 0, weightCount = 0, weightKept = 0;
 
 if (raw.format !== api.CATALOG_FORMAT) fail(`format が "${api.CATALOG_FORMAT}" ではありません（"${raw.format}"）`);
 if (Number(raw.version) > api.CATALOG_VERSION) fail(`version ${raw.version} は、このアプリ（${api.CATALOG_VERSION} まで）では読めません`);
@@ -109,7 +112,8 @@ if (!cat) {
     /* L7・L10・L11：フォントの任意項目（licenseFile・note・cmap）は、形だけこちらで決めて、
        アプリが落としても不合格にしません（載せること自体が契約違反にならないように）。
        読むか読まないかは、下でまとめて1行にします（パックごとに出すと 16 行になって読みにくい）。 */
-    for (const f of a.fonts || []) {
+    for (const [fi, f] of (a.fonts || []).entries()) {
+      const bf = (b.fonts || [])[fi] || {};
       if (f.licenseFile !== undefined) {
         const p = String(f.licenseFile || "");
         const ok = typeof f.licenseFile === "string" && /^[A-Za-z0-9_\-./]{1,120}$/.test(p)
@@ -120,17 +124,23 @@ if (!cat) {
           if ((b.fonts || []).some(x => x.licenseFile)) licKept++;
         }
       }
-      /* L10：note は「雰囲気の一行」（60 文字まで） */
+      /* L10：note は「雰囲気の一行」（60 文字まで。1 行で読める長さがおすすめ） */
       if (f.note !== undefined) {
         const n = typeof f.note === "string" ? f.note.trim() : "";
         if (!n || [...n].length > 60) fail(`${where} の fonts[].note は 1〜60 文字にしてください（"${f.note}"）`);
-        else noteCount++;
+        else { noteCount++; if (bf.note === n) noteKept++; }
       }
       /* L11：cmap は対応する字数（正の整数） */
       if (f.cmap !== undefined) {
         if (!(Number.isInteger(f.cmap) && f.cmap > 0 && f.cmap <= 200000)) {
           fail(`${where} の fonts[].cmap は正の整数（字数）にしてください（"${f.cmap}"）`);
-        } else cmapCount++;
+        } else { cmapCount++; if (bf.cmap === f.cmap) cmapKept++; }
+      }
+      /* 太さ（trk236 からアプリが読む。索引のキー family|weight に使う） */
+      if (f.weight !== undefined) {
+        if (!(Number.isInteger(f.weight) && f.weight >= 100 && f.weight <= 900)) {
+          fail(`${where} の fonts[].weight は 100〜900 の整数にしてください（"${f.weight}"）`);
+        } else { weightCount++; if (bf.weight === f.weight) weightKept++; }
       }
       /* L15：tags は検索と絞り込みの語（8 個まで・各 16 文字） */
       if (f.tags !== undefined) {
@@ -140,7 +150,9 @@ if (!cat) {
         if (!okShape) fail(`${where} の fonts[].tags は、1〜8 個の文字列（各 16 文字まで）にしてください`);
         else {
           tagCount++;
-          if ((b.fonts || []).some(x => Array.isArray(x.tags) && x.tags.length)) tagKept++;
+          /* アプリは空と重複を落とすので、同じ並びで返ってきたかを見る */
+          const want = [...new Set(t.map(x => x.trim()))];
+          if (Array.isArray(bf.tags) && JSON.stringify(bf.tags) === JSON.stringify(want)) tagKept++;
         }
       }
       /* 書体 1 本の大きさ（`gallery/fonts.html` の「大きさ」用。任意） */
@@ -149,7 +161,7 @@ if (!cat) {
           fail(`${where} の fonts[].bytes は正の整数（1 本の大きさ・16 MiB 以下）にしてください（"${f.bytes}"）`);
         } else {
           fontBytesCount++;
-          if ((b.fonts || []).some(x => Number.isInteger(x.bytes))) fontBytesKept++;
+          if (bf.bytes === f.bytes) fontBytesKept++;
         }
       }
     }
@@ -181,8 +193,20 @@ if (licCount) {
     : `fonts[].licenseFile（L7）を ${licCount} 件載せていますが、アプリはまだ読みません（trk233 以降の予定）`);
 }
 if (noteCount || cmapCount) {
-  notes.push(`fonts[].note（L10・${noteCount} 件）と cmap（L11・${cmapCount} 件）を載せています。`
-    + `アプリ（trk235）はまだ読みません（trk236 で読む予定。読む版になったら、ここが「読みました」に変わります）`);
+  const allNote = noteCount > 0 && noteKept === noteCount;
+  const allCmap = cmapCount > 0 && cmapKept === cmapCount;
+  if (allNote && allCmap) {
+    notes.push(`fonts[].note（L10・${noteCount} 件）と cmap（L11・${cmapCount} 件）をアプリが読むようになりました（trk236 以降）。`
+      + `check-contract の見直しどきです（🔎 中身に 1 行で出るので、note は短いほど読みやすい）`);
+  } else {
+    notes.push(`fonts[].note（L10・${noteCount} 件・読まれた ${noteKept}）と cmap（L11・${cmapCount} 件・読まれた ${cmapKept}）を載せています。`
+      + `アプリはまだ一部しか読みません（trk236 で読む予定。読む版になったら、ここが「読みました」に変わります）`);
+  }
+}
+if (weightCount) {
+  notes.push(weightKept === weightCount
+    ? `fonts[].weight をアプリが読むようになりました（${weightCount} 件・trk236 以降。索引のキーは family|weight です）`
+    : `fonts[].weight を ${weightCount} 件載せています（アプリが読んだのは ${weightKept} 件）`);
 }
 if (tagCount) {
   notes.push(tagKept

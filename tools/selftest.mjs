@@ -289,6 +289,25 @@ await expect("release の形が違うと不合格",
   console.log(`${ok ? "✅" : "❌"} 目録の sha256 が実物と一致${ok ? "" : `  ← ${detail}`}`);
 }
 
+/* sets/*.json（セットの定義）が、いまの倉庫と合っているか（軽い見方・CI の --check はもっと強い） */
+{
+  const setsDir = path.join(ROOT, "sets");
+  const defs = fs.existsSync(setsDir) ? fs.readdirSync(setsDir).filter(f => f.endsWith(".json")) : [];
+  const problems = [];
+  for (const d of defs) {
+    const cfg = JSON.parse(fs.readFileSync(path.join(setsDir, d), "utf8"));
+    const files = Array.isArray(cfg.files) ? cfg.files : [];
+    if (!files.includes("catalog/index.json")) problems.push(`${d}: catalog/index.json が入っていません`);
+    if (!files.some(f => f.endsWith(".stpack"))) problems.push(`${d}: .stpack が 1 本も入っていません`);
+    for (const f of files) if (!fs.existsSync(path.join(ROOT, f))) problems.push(`${d}: ${f} がありません`);
+    if (!cfg.record) problems.push(`${d}: record（記録の置き場所）がありません`);
+  }
+  const ok = defs.length > 0 && problems.length === 0;
+  const detail = ok ? "" : (problems.length ? problems.slice(0, 3).join(" / ") : "sets/*.json がありません");
+  results.push({ label: `セットの定義（${defs.length} 件）が、いまの倉庫と合っている`, ok, detail });
+  console.log(`${ok ? "✅" : "❌"} セットの定義（${defs.length} 件）が、いまの倉庫と合っている${ok ? "" : `  ← ${detail}`}`);
+}
+
 /* パックの一覧（gallery/packs.html）が目録と合っているか（--check と同じ見方） */
 {
   const { spawnSync } = await import("node:child_process");

@@ -18,6 +18,17 @@
 説明書き（Release の本文）は `first-set-notes.md` です。`.github/workflows/release-set.yml` が、この記録の大きさと sha256 を
 足して Release を**作り**（すでにあれば添付だけ）、CI が作り直した ZIP を添付します。`check-docs` が説明書きの有無も見ます。
 r2・r3・r4・r5 はこのやり方で公開済みです（r4 からは `.zip` と `.stlib` の 2 つを添付します）。
+
+**r6 からは 2 つに分かれます**（2026-11-01・trk-PWA 側と合意）：
+
+| セット | 定義 | 記録 | Release の説明書き | タグ |
+| --- | --- | --- | --- | --- |
+| はじめてセット（軽い・書体 5 本） | `sets/first-set.json` | `release/first-set.json` | `release/first-set-notes.md` | `first-set-…r6` |
+| 書体セット（書体は全部） | `sets/font-set.json` | `release/font-set.json`（**r6 で作る**） | `release/font-set-notes.md` | `font-set-…r6` |
+
+- **セットの中の目録は、そのセットに入っているパックだけ**に絞ります（アプリは目録の `packs[]` を 1 本ずつ探すため）。
+  絞ったときは、記録の `files[]` に `scoped: true` と `source`（絞る前の sha256）が入ります
+- CI（`release-set.yml`）は**タグの頭で定義を選び**、記録の `tag` と違えば止まります（取り違え防止）
 r5 からは、添付の前に **`tools/verify-set.mjs`** で「trk235 が開いて中身を入れられる形か」を確かめます。
 
 ## なぜ 5 つあるか
@@ -34,7 +45,7 @@ r5 からは、添付の前に **`tools/verify-set.mjs`** で「trk235 が開い
 - **配ったタグは作り直しません**（配ったものを差し替えると、落とした人の `sha256` と合わなくなるため）
   - ただし、**まだ何も公開されていないタグ**なら指し直してかまいません（r2 の最初の push は、CI が Release を作れずに
     失敗し、アセットは 1 つも配られていませんでした。そこで `release-set.yml` を直したうえで、タグを `8329524` に付け直しました）
-- 同じ日にもう一度配るときは、`sets/first-set.json` に `"rev": "r5"` のように書きます（ファイル名とタグの後ろに付きます）
+- 同じ日にもう一度配るときは、`sets/<name>.json` に `"rev": "r6"` のように書きます（ファイル名とタグの後ろに付きます）
 - **過去の記録は、そのときのコミットで再現できます**：
   `git worktree add /tmp/r1 first-set-2026-11-01` → `node tools/build-set.mjs sets/first-set.json`
   （タグ `first-set-2026-11-01` は `0801508`。当時のパック 1.0.0 が入っています）

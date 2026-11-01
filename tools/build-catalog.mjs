@@ -48,7 +48,7 @@ const sha256 = buf => crypto.createHash("sha256").update(buf).digest("hex");
 const NOTES_PATH = path.join(HERE, "catalog/font-notes.json");
 const NOTES = fs.existsSync(NOTES_PATH) ? JSON.parse(fs.readFileSync(NOTES_PATH, "utf8")) : {};
 const NOTES_BY_PACK = NOTES && typeof NOTES.packs === "object" && NOTES.packs ? NOTES.packs : {};
-const NOTE_MAX = 60;
+const NOTE_MAX = 60, NOTE_SOFT = 30;   /* 60 が上限・30 くらいまでが 1 行で読みやすい（trk236 の返事） */
 const noteProblems = [];
 const noteUsed = new Set();
 const noteOf = (packFile, fontFile) => {
@@ -350,6 +350,15 @@ const noteCount = packs.reduce((n, p) => n + p.fonts.filter(f => f.note).length,
 const cmapCount = packs.reduce((n, p) => n + p.fonts.filter(f => f.cmap).length, 0);
 const tagCount = packs.reduce((n, p) => n + p.fonts.filter(f => f.tags && f.tags.length).length, 0);
 console.log(`✅ ${packs.length} パック → catalog/index.json（${text.length.toLocaleString()} B・書体の note ${noteCount} / cmap ${cmapCount} / tags ${tagCount}）`);
+/* 2026-11-01（trk236 の返事）：note はアプリの「🔎 中身」に 1 行で出る。60 文字まで書けるが、
+   狭い画面では 2 行になるので、30 文字を超えたら「短くできる」とだけ知らせる（止めはしない） */
+const longNotes = packs.flatMap(p => p.fonts
+  .filter(f => f.note && [...f.note].length > NOTE_SOFT)
+  .map(f => `${p.file} の「${f.family}」（${[...f.note].length} 文字）`));
+if (longNotes.length) {
+  console.log(`   ℹ note が ${NOTE_SOFT} 文字を超える書体が ${longNotes.length} 件あります（🔎 中身では 1 行で出ます。短いほうが読みやすい）`);
+  for (const m of longNotes) console.log(`     ・${m}`);
+}
 for (const p of packs) console.log(`   ${p.ok ? "✅" : "❌"} ${p.file} — ${p.name}${p.fonts.length ? `／書体 ${p.fonts.length}` : ""}`);
 if (problems.length) {
   console.error("\n❌ 検査に通らないパックがあります（目録には載せましたが ok:false です）");

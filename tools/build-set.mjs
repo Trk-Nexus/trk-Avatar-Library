@@ -21,6 +21,12 @@
      .stlib は trk235 以降が「そのまま選ぶ」だけで入れられます（.zip は展開してから）。
      中身が同じなので sha256 も同じです（記録にも files_out として両方残します）。
 
+   目録は「セットに入っているパック」だけに絞って入れます（2026-11-01・r6 の 2 分割のため）：
+     アプリ（trk235 以降）は目録の packs[] を 1 本ずつ探すので、入っていないパックが載っていると
+     「見つからない n 件」になります。セットは「そのセットで配るものの一覧」なので、目録も同じ範囲にします。
+     絞らなくてよいとき（全部入れるセット）は、倉庫の catalog/index.json をそのまま入れます（バイト列も同じ）。
+     `"scopeCatalog": false` で、この動きを止められます。
+
    決定的：同じ中身なら同じ sha256（無圧縮で固定・README-はじめに.txt に時刻を入れない）。
   同じ日にもう一度配るときは、定義に "rev": "r2" を足します（ファイル名とタグの後ろに付き、前のセットを上書きしません）。
    記録：--release で release/first-set.json（配ったものの sha256）を書く。--check はそれと比べる。
@@ -47,8 +53,9 @@ function usage() {
 }
 
 /* セットの中の「はじめに」を組み立てる（時刻を入れない＝決定的） */
-function guideText(cfg, entries, records, exts) {
+function guideText(cfg, entries, records, exts, scoped) {
   const packNames = records.filter(r => /\.stpack$/.test(r.path)).map(r => path.basename(r.path));
+  const galleries = entries.filter(f => /^gallery\//.test(f)).map(f => path.basename(f));
   return [
     `${cfg.title || "trk! はじめてセット"}（${cfg.date}${cfg.rev ? ` ${cfg.rev}` : ""}）`,
     "=".repeat(60),
@@ -66,7 +73,9 @@ function guideText(cfg, entries, records, exts) {
     ...entries.map(n => `       ${n}`),
     "       set.json（セットの名前と版。trk235 以降のアプリが表示にだけ使います）",
     "     そのうちアプリに入れるのは catalog/index.json と .stpack です",
-    "     （gallery/ の 2 つは、ブラウザで見る見本です。fonts.html は書体の一覧と検索）",
+    ...(galleries.includes("packs.html")
+      ? [`     （gallery/ の ${galleries.length} つは、ブラウザで見る見本です。fonts.html は書体の一覧と検索、packs.html はパックごとの中身）`]
+      : [`     （gallery/ の ${galleries.length} つは、ブラウザで見る見本です。fonts.html は書体の一覧と検索）`]),
     "",
     "  ③ trk! に入れる（trk231 以降）",
     "     trk235 以降：設定 → 📦 カスタムパック → 📚 目録から入れる → 📦 セット（.stlib / .zip）を選ぶ",
@@ -78,8 +87,14 @@ function guideText(cfg, entries, records, exts) {
     "  trk230 の場合は「📚 目録（index.json）を選ぶ」→ 一覧の行ごとに「この .stpack を選ぶ」で入ります。",
     "",
     "  アプリが読むのは catalog/index.json と、その packs[].file が指す .stpack だけです。",
-    "  gallery/（見本 2 枚）と set.json は読まなくても動きます（将来 gallery/ を増やしても、入れ方には影響しません）。",
+    `  gallery/（見本 ${galleries.length} 枚）と set.json は読まなくても動きます（将来 gallery/ を増やしても、入れ方には影響しません）。`,
     "",
+    ...(scoped ? [
+      `  目録（catalog/index.json）は、このセットに入っている ${scoped.count} パックだけを載せています`,
+      "  （アプリは目録の packs[] を 1 本ずつ探すので、入っていないパックが載っていると「見つからない」になります）。",
+      "  gallery/ の一覧には、セットに入っていない書体も載っています（1 本ずつ欲しいときは、書体セットか倉庫の font-packs/ から）。",
+      "",
+    ] : []),
     "■ 入っているもの",
     "",
     ...records.map(r => `  ${r.path}  ${fmt(r.bytes)}  sha256 ${r.sha256}`),
@@ -127,14 +142,36 @@ async function buildSet(cfgPath, opts) {
   const packs = files.filter(f => f.endsWith(".stpack"));
   if (!packs.length) throw new Error("パック（.stpack）が1つも入っていません");
 
+  /* 目録は「このセットに入っているパック」だけに絞る（理由は冒頭のコメント）。
+     絞る必要が無いときは、倉庫のファイルをそのまま使う（バイト列も変えない＝r5 までと同じ） */
+  const CATALOG = "catalog/index.json";
+  const packFiles = new Set(files.filter(f => f.endsWith(".stpack")));
+  let catalogBuf = null, scopedInfo = null;
+  const readFileBuf = f => fs.readFileSync(path.join(HERE, f));
+  if (files.includes(CATALOG) && cfg.scopeCatalog !== false) {
+    const original = readFileBuf(CATALOG);
+    const raw = JSON.parse(original.toString("utf8"));
+    const all = Array.isArray(raw.packs) ? raw.packs : [];
+    const kept = all.filter(p => packFiles.has(String(p.file || "")));
+    if (kept.length !== all.length) {
+      const text = JSON.stringify({ ...raw, packs: kept }, null, 2) + "\n";
+      catalogBuf = Buffer.from(text, "utf8");
+      scopedInfo = { count: kept.length, dropped: all.length - kept.length, source: { bytes: original.length, sha256: sha256(original) } };
+    }
+  }
+  const bufOf = f => (f === CATALOG && catalogBuf ? catalogBuf : readFileBuf(f));
+
   const records = files
-    .map(f => ({ path: f, bytes: fs.statSync(path.join(HERE, f)).size }))
-    .map(r => ({ ...r, sha256: sha256(fs.readFileSync(path.join(HERE, r.path))) }));
+    .map(f => {
+      const buf = bufOf(f);
+      return { path: f, bytes: buf.length, sha256: sha256(buf),
+        ...(f === CATALOG && scopedInfo ? { scoped: true, source: scopedInfo.source } : {}) };
+    });
 
   const rev = cfg.rev ? String(cfg.rev).replace(/[^A-Za-z0-9._-]/g, "") : "";
   const exts = (Array.isArray(cfg.extensions) && cfg.extensions.length ? cfg.extensions : [cfg.extension || "zip"])
     .map(e => String(e).replace(/[^A-Za-z0-9]/g, "").toLowerCase() || "zip");
-  const guide = guideText(cfg, files, records, exts);
+  const guide = guideText(cfg, files, records, exts, scopedInfo);
   /* set.json（任意・trk235 以降のアプリが表示にだけ使う。無くても動く）。
      形式は trk-PWA の手紙（2026-11-01 §3-3）に合わせ、こちらが持っている「rev」も併記します。 */
   const setJson = {
@@ -149,7 +186,7 @@ async function buildSet(cfgPath, opts) {
   const entries = [
     { name: cfg.readme || "README-はじめに.txt", buf: Buffer.from(guide, "utf8") },
     { name: "set.json", buf: Buffer.from(JSON.stringify(setJson, null, 2) + "\n", "utf8") },
-    ...files.map(f => ({ name: f, buf: fs.readFileSync(path.join(HERE, f)) })),
+    ...files.map(f => ({ name: f, buf: bufOf(f) })),
   ];
   const zipIO = loadZipIO(opts.trk);
   const blob = await zipIO.zipWrite(entries.map(e => ({ name: e.name, blob: new Blob([e.buf]) })));

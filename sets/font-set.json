@@ -1,0 +1,36 @@
+{
+  "name": "font-set",
+  "title": "trk! 書体セット（全部）",
+  "date": "2026-11-01",
+  "rev": "r6",
+  "tag": "font-set-2026-11-01-r6",
+  "extension": "zip",
+  "files": [
+    "gallery/all-skins.html",
+    "gallery/fonts.html",
+    "gallery/packs.html",
+    "catalog/index.json",
+    "font-packs/dela-gothic.stpack",
+    "font-packs/dotgothic.stpack",
+    "font-packs/hachi-maru-pop.stpack",
+    "font-packs/kaisei-decol.stpack",
+    "font-packs/klee-one.stpack",
+    "font-packs/m-plus-rounded.stpack",
+    "font-packs/maru-go.stpack",
+    "font-packs/mochiy-pop.stpack",
+    "font-packs/potta-one.stpack",
+    "font-packs/rampart-one.stpack",
+    "font-packs/rocknroll-one.stpack",
+    "font-packs/shippori-mincho.stpack",
+    "font-packs/yusei-magic.stpack",
+    "font-packs/zen-kaku.stpack",
+    "font-packs/zen-old-mincho.stpack"
+  ],
+  "readme": "README-はじめに.txt",
+  "record": "release/font-set.json",
+  "note": "書体パックを全部まとめたセットです（trk236〜238 以降の書体の一覧・索引つき）。はじめてセットに入っている書体も全部入っていますが、すでに入っているパックは trk235 以降が「導入済み」として飛ばすので、続けて選んでも確認は 1 回だけです。追加の書体が届いたら、この定義の files に足して作り直します（r7 以降）。",
+  "extensions": [
+    "zip",
+    "stlib"
+  ]
+}
