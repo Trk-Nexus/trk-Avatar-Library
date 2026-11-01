@@ -33,8 +33,8 @@
 | `packs/` | 配る `.stpack`（trk! のカスタムパック）。いまは見本が1つ |
 | `font-packs/` | 書体を同梱した `.stpack` が **15 個**（14 種の日本語書体＋「丸ゴのお茶目」）。合計 **29.3 MB**（30,697,343 B）・20 ウェイト。一覧は §2-2、作り方は §4 |
 | `tools/` | 見本の書き出し・パックの組み立て／検査・目録の作成・**目録がアプリの読み取り規則を通るかの検査**・パックの見本作り（Node だけ） |
-| `sets/` | **はじめてセット**の定義（見本 2 枚＋目録＋16 パックを1つの ZIP／`.stlib` にする）。作るのは `tools/build-set.mjs` |
-| `release/` | 配ったセットの記録（ファイル名・大きさ・sha256）。いまの記録（**r5**）と、過去の記録（r1 の `first-set-2026-11-01.json`。r2〜r4 の経緯は `release/README.md`） |
+| `sets/` | **セットの定義**。`first-set.json`（はじめてセット）と `font-set.json`（書体セット）。作るのは `tools/build-set.mjs`。**r6 から 2 つ**に分かれます（下の §2-5） |
+| `release/` | 配ったセットの記録（ファイル名・大きさ・sha256）。いまの記録（**r5**）と、過去の記録（r1 の `first-set-2026-11-01.json`。r2〜r4 の経緯は `release/README.md`）。`font-set.json`（書体セット）は **r6 で作ります**（`font-set-notes.md` は用意済み） |
 | `docs/` | 受け渡しメモ（2026-10-31）。開発の引き継ぎは [`HANDOFF.md`](HANDOFF.md) |
 | `LICENSE` / `NOTICE.md` | GPL-3.0-or-later と、権利のまとめ |
 
@@ -63,6 +63,7 @@
 
 - 書体パックは、どれも **日本語の書体（woff2）＋`fonts/OFL.txt`（ライセンス全文）＋スキン**の組です。入れて「使う」で本文の書体が変わります（trk232 以降）
 - 全部まとめてほしいときは、下の表のファイルを1つずつではなく **はじめてセット** を落としてください（16 個入り・約 29.4 MB）
+- **r6 からは 2 つ**になります：**はじめてセット**（約 7 MB・書体 5 本）と **書体セット**（書体は全部）。詳細は §2-5
 
 <!-- packs-table:start -->
 | 名前 | ファイル | 大きさ | 何が変わるか | 書体 | ライセンス |
@@ -126,6 +127,22 @@
 
 形の取り決めは trk-PWA の [`docs/LIBRARY-TRK230-2026-10-31.md`](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA/blob/main/docs/LIBRARY-TRK230-2026-10-31.md) §3 が正本です。
 この倉庫は、その形に合っているかを **アプリ自身の読み取り関数**で毎回確かめています（§3・§9）。
+
+### 2-5. セット（r6 から 2 つ）
+
+「全部入りは重い／まず試したい」の両方に応えるため、**r6 から 2 つ**に分けます（それまでは r5 の 1 つ）。
+
+| セット | 中身 | 大きさ（見込み） | タグ |
+| --- | --- | --- | --- |
+| **はじめてセット** | 見本 3 枚＋目録＋見本パック＋**書体 5 本**（角ゴ・ドット・手書き・ポップ・明朝） | 約 7 MB | `first-set-2026-11-01-r6` |
+| **書体セット（全部）** | 見本 3 枚＋目録＋**書体は全部** | 29.4 MB → 追加の 14 種で 55〜65 MB | `font-set-2026-11-01-r6` |
+
+- **はじめてセットの 5 本も、書体セットに入ります**（重なっても、すでに入っていて版も同じパックはアプリが飛ばします）
+- **セットの中の `catalog/index.json` は、そのセットに入っているパックだけ**を載せています
+  （アプリは目録の `packs[]` を 1 本ずつ探すので、入っていないパックが載っていると「見つからない n 件」になるため）。
+  絞る必要が無いセット（全部入り）では、倉庫の目録をそのまま入れます
+- 1 本だけ欲しい人は、これまでどおり [`gallery/fonts.html`](gallery/fonts.html)／[`gallery/packs.html`](gallery/packs.html) の「⬇ .stpack」から
+- 定義は `sets/first-set.json`・`sets/font-set.json`、記録は `release/*.json`、Release の説明書きは `release/*-notes.md`
 
 ## 3. 作者向け：パックを置く
 
@@ -200,7 +217,7 @@ node tools/selftest.mjs                             # 道具そのものが「�
 **パックを足したら、4か所を直します**（CI の `check-docs`・`build-catalog`・`export-pack-gallery --check` が教えてくれます）。
 
 1. README §2-2 の**表**（名前・ファイル・大きさ・何が変わるか・書体・ライセンス）
-2. `sets/first-set.json` の `files` に入れるか決めて、`node tools/build-set.mjs sets/first-set.json --release` で作り直す
+2. `sets/first-set.json`（軽いセット・書体は 5 本）と `sets/font-set.json`（書体は全部）の `files` に入れるか決めて、`node tools/build-set.mjs sets/<name>.json --release` で作り直す
 3. `node tools/export-pack-gallery.mjs` で **`gallery/packs.html`**（パックの一覧）を作り直す
 4. 書体パックなら `catalog/font-notes.json` に**ひとこと**（60 文字まで）を足す。書き間違い（長すぎる・パックにない書体）は
    `node tools/build-catalog.mjs` が止めます
@@ -364,7 +381,7 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 | `tools/check-contract.mjs` | trk-PWA の **`js/pack-catalog.js` をそのまま読み込み**、目録 16 件が `sanitizeCatalog` を**1 件も落とされずに**通ることを確認（`name`/`file`/`sha256`/`bytes`/`fonts`/`license`/`description`/`url` が書いたとおりに残る） |
 | `tools/selftest.mjs` | **22 / 22 合格**（書体のパス・family・OFL.txt・release・`licenseFile` 3種・woff2 2種の検査を追加） |
 | `tools/preview-pack.mjs` | 書体パックから **1 ファイルの見本 HTML**（3.9 MB・woff2 2 本を base64 で埋め込み・外部参照 0）を生成 |
-| `tools/build-set.mjs` | **はじめてセット**を生成。2 回作っても同じ sha256（r4 = `0d943e76…`・**30,832,151 B**／r5 = `d2bea5a2…`・**30,832,734 B**・**21 ファイル**）。r4 から `set.json`（セットの名前と版）を中に入れ、`extensions` で **`.zip` と `.stlib` を同じバイト列**で書きます（sha256 も同じ） |
+| `tools/build-set.mjs` | **セット**を生成（`sets/*.json`）。2 回作っても同じ sha256（r4 = `0d943e76…`・**30,832,151 B**／r5 = `d2bea5a2…`・**30,832,734 B**・**21 ファイル**）。`set.json`（名前と版）を中に入れ、`extensions` で **`.zip` と `.stlib` を同じバイト列**で書きます。**2026-11-01：目録を「そのセットに入っているパックだけ」に絞って入れる**（絞ったときは記録に `scoped` と `source`）。`"scopeCatalog": false` で止められます |
 | `tools/verify-set.mjs` | **セットがアプリ（trk235）の手順で開けるか**を、アプリと同じ決めごとで検査（拡張子ではなく中身で ZIP 判定・安全なパス・目録の形・`packs[].file` の実バイトで sha256 と大きさを照合・入れない／入っていない／目録にない の内訳・`set.json` は任意）。`--record` で記録とも比べる |
 | `tools/check-docs.mjs` | README の表と目録が一致・内部リンク 10 本（うち見出し `#…` 1 本）が実在・セットの記録と実物の sha256 が一致。**わざとずらすと落ちる**ことも確認（見出しリンクの規則は、GitHub が実際に付けた 20 個の id と一致することを確かめました） |
 | `tools/check-contract.mjs`（2026-11-01 追記） | 目録の `colors` を足しても、アプリ（trk231・`9bf22d7`）が 2 パックとも落とさずに読むことを確認。読んだ相手側の版も表示 |
@@ -394,7 +411,8 @@ node tools/check-contract.mjs        # 目録がアプリの読み取り規則�
 node tools/check-fonts.mjs           # 書体（woff2）が本当に読める形か・見本の字が入っているか
 node tools/export-skin-gallery.mjs --trk=… --check  # 全スキン見本が今の中身と一致するか
 node tools/build-pack.mjs font-packs/* --check --fetch        # 書体パック 15 個がフォルダと一致するか
-node tools/build-set.mjs sets/first-set.json --check          # はじめてセットが記録と一致するか
+node tools/build-set.mjs sets/first-set.json --check          # はじめてセットが記録と一致するか（--release で記録）
+node tools/build-set.mjs sets/font-set.json --check            # 書体セットも同じ（r6 で記録を作ります）
 node tools/check-docs.mjs            # README の表・リンク・セットの記録
 ```
 

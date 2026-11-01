@@ -1,29 +1,35 @@
 name: release-set
 
-# はじめてセット（ZIP）を作って、Release に添付する（2026-11-01）
+# セット（ZIP / .stlib）を作って、Release に添付する（2026-11-01）
 #
 # なぜ CI でやるか：
 #   セットは倉庫の中身から**決定的に**作れるので、手元で作った ZIP を配る代わりに
-#   CI で作り直して添付します。release/first-set.json と一致しないものは添付しません
+#   CI で作り直して添付します。release/<name>.json と一致しないものは添付しません
 #   （＝配るファイルと記録がずれない）。
+#
+# r6 からは 2 つに分かれます（タグの頭で、どの定義を使うか決まります）：
+#   first-set-*  … sets/first-set.json（見本＋目録＋書体 3〜5 本）
+#   font-set-*   … sets/font-set.json（見本＋目録＋書体は全部）
+#   どちらも、記録の tag と押したタグが一致していないと止まります（取り違え防止）。
 
 on:
   push:
     tags:
       - "first-set-*"
+      - "font-set-*"
   workflow_dispatch:
     inputs:
       tag:
-        description: "添付先の Release のタグ（例: first-set-2026-11-01）"
+        description: "添付先の Release のタグ（例: first-set-2026-11-01-r6 / font-set-2026-11-01-r6）"
         required: true
-        default: "first-set-2026-11-01"
+        default: "first-set-2026-11-01-r6"
 
 permissions:
   contents: write
 
 env:
-  # trk235（cd00408）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
-  TRK_PWA_REF: cd00408962059ef9f7ecd63ee517c21d040e523d
+  # trk238（36673dd）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
+  TRK_PWA_REF: 36673ddd5e8c66c039197d753edf5988c9ce26d6
 
 jobs:
   attach:
@@ -46,24 +52,51 @@ jobs:
         with:
           node-version: "22"
 
+      # タグの頭（first-set / font-set）で、使う定義と記録を決める。取り違えたまま添付しない
+      - name: どのセットを添付するか決める
+        working-directory: trk-Avatar-Library
+        env:
+          TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          case "$TAG" in
+            font-set-*) DEF=sets/font-set.json ;;
+            first-set-*) DEF=sets/first-set.json ;;
+            *) echo "❌ タグ $TAG に対応するセットの定義がありません（first-set-* / font-set-* のどちらかです）"; exit 1 ;;
+          esac
+          REC=$(node -p "require('./$DEF').record || ''")
+          if [ ! -f "$REC" ]; then
+            echo "❌ $REC がありません。先に node tools/build-set.mjs $DEF --release で記録を作ってください"
+            exit 1
+          fi
+          RECTAG=$(node -p "require('./$REC').tag || ''")
+          if [ "$RECTAG" != "$TAG" ]; then
+            echo "❌ タグ $TAG と、記録（$REC）のタグ $RECTAG が違います（取り違えを防ぐため止めます）"
+            exit 1
+          fi
+          echo "セットの定義: $DEF / 記録: $REC"
+          {
+            echo "SET_DEF=$DEF"
+            echo "SET_REC=$REC"
+          } >> "$GITHUB_ENV"
+
       - name: セットを作り直して、記録と一致するか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: |
-          node tools/build-set.mjs sets/first-set.json
-          node tools/build-set.mjs sets/first-set.json --check
+          node tools/build-set.mjs "$SET_DEF"
+          node tools/build-set.mjs "$SET_DEF" --check
 
-      # 添付する前に、アプリ（trk235）が開いて中身を入れられる形かを見る
-      - name: セットがアプリ（trk235）の手順で開けるか
+      # 添付する前に、アプリ（trk238）が開いて中身を入れられる形かを見る
+      - name: セットがアプリ（trk238）の手順で開けるか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: |
           # 記録に載っている名前（.zip と .stlib）だけを見る（dist/ に古い版が残っていても混ざらない）
-          FILES=$(node -p "const r=require('./release/first-set.json'); (r.files_out && r.files_out.length ? r.files_out : [{name:r.file}]).map(x=>'dist/'+x.name).join(' ')")
+          FILES=$(node -p "const r=require('./$SET_REC'); (r.files_out && r.files_out.length ? r.files_out : [{name:r.file}]).map(x=>'dist/'+x.name).join(' ')")
           for f in $FILES; do
-            node tools/verify-set.mjs "$f" --record=release/first-set.json || exit 1
+            node tools/verify-set.mjs "$f" --record="$SET_REC" || exit 1
           done
 
       - name: Release に添付（無ければ作る）
@@ -74,11 +107,13 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           # r4 から .zip と .stlib の 2 つ（同じバイト列）を添付します。記録の files_out を見ます
-          FILES=$(node -p "const r=require('./release/first-set.json'); (r.files_out && r.files_out.length ? r.files_out.map(x => 'dist/' + x.name) : ['dist/' + r.file]).join(' ')")
-          TITLE=$(node -p "require('./release/first-set.json').title || 'trk! はじめてセット'")
-          BYTES=$(node -p "require('./release/first-set.json').bytes")
-          SHA=$(node -p "require('./release/first-set.json').sha256")
-          NOTES="release/first-set-notes.md"
+          FILES=$(node -p "const r=require('./$SET_REC'); (r.files_out && r.files_out.length ? r.files_out.map(x => 'dist/' + x.name) : ['dist/' + r.file]).join(' ')")
+          TITLE=$(node -p "require('./$SET_REC').title || 'trk! のセット'")
+          BYTES=$(node -p "require('./$SET_REC').bytes")
+          SHA=$(node -p "require('./$SET_REC').sha256")
+          NAME=$(node -p "require('./$SET_REC').name || 'first-set'")
+          NOTES="release/${NAME}-notes.md"
+          if [ ! -f "$NOTES" ]; then echo "❌ Release の説明書き $NOTES がありません"; exit 1; fi
           for f in $FILES; do echo "添付するファイル: $f（$(stat -c %s "$f") B）"; sha256sum "$f"; done
           # 見出しに、記録の大きさと sha256 を足す（notes のファイルは倉庫のもの）
           { cat "$NOTES"; printf '\n---\n\n大きさ **%s B**・sha256 `%s`\n' "$BYTES" "$SHA"; } > /tmp/notes.md

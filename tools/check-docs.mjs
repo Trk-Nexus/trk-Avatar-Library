@@ -13,7 +13,8 @@
        （ファイル名と大きさが一致。目録にない行が残っていたら不合格）
      ・README の先頭に「はじめての3手順」（①②③）がある
      ・README・HANDOFF・各 README・docs の**内部リンク**が実在する
-     ・「はじめてセット」の記録（release/first-set.json）と実物の sha256 が一致する
+     ・配ったセットの記録（release/*.json。r6 からは はじめて／書体 の 2 つ）と実物の sha256 が一致する
+       （目録をセットの範囲に絞っているときは、記録の source と倉庫のファイルを比べる）
      ・見出しへのリンク（`#2-2-…`）が、その文書の見出しに実在する
 
    使い方：
@@ -122,32 +123,45 @@ for (const f of files) {
   }
 }
 
-/* ---------- 4. はじめてセット ---------- */
-const recordPath = path.join(HERE, "release/first-set.json");
-if (!fs.existsSync(recordPath)) {
-  fail("release/first-set.json がありません（node tools/build-set.mjs sets/first-set.json --release で作れます）");
-} else {
+/* ---------- 4. セット（r6 から 2 つ：はじめて・書体） ---------- */
+/* sets/*.json のうち、記録（release/<name>.json）があるものを検査する。
+   記録がまだ無い定義は「これから配るもの」なので飛ばす（CI と同じ扱い）。
+   目録をセットに入っているパックだけに絞っているとき（scoped）は、記録の source と倉庫のファイルを比べる */
+const setsDir = path.join(HERE, "sets");
+const setDefs = fs.existsSync(setsDir) ? fs.readdirSync(setsDir).filter(f => f.endsWith(".json")).sort() : [];
+let setChecked = 0, setDrafts = 0;
+for (const defName of setDefs) {
+  const cfg = JSON.parse(read(path.join(setsDir, defName)));
+  const recordPath = path.join(HERE, cfg.record || `release/${cfg.name}.json`);
+  if (!fs.existsSync(recordPath)) { setDrafts++; continue; }
+  setChecked++;
   const rec = JSON.parse(read(recordPath));
-  if (!/^trk-first-set-\d{4}-\d{2}-\d{2}(-r\d+)?\.zip$/.test(String(rec.file || ""))) fail(`release/first-set.json の file の形が違います（"${rec.file}"）`);
-  if (!/^[0-9a-f]{64}$/.test(String(rec.sha256 || ""))) fail("release/first-set.json の sha256 の形が違います");
+  const recRel = rel(recordPath);
+  if (!/^trk-(first-set|font-set)-\d{4}-\d{2}-\d{2}(-r\d+)?\.zip$/.test(String(rec.file || ""))) {
+    fail(`${recRel} の file の形が違います（"${rec.file}"）`);
+  }
+  if (!/^[0-9a-f]{64}$/.test(String(rec.sha256 || ""))) fail(`${recRel} の sha256 の形が違います`);
   /* CI（release-set.yml）が Release を作るときに使う説明書き */
-  const notesPath = path.join(HERE, "release", `${rec.name || "first-set"}-notes.md`);
-  if (!fs.existsSync(notesPath)) fail(`release/${rec.name || "first-set"}-notes.md がありません（Release の説明書き。CI が使います）`);
-  if (!readme.includes(`releases/tag/${rec.tag || "first-set-" + String(rec.date || "")}`)) {
-    fail(`README に はじめてセット のリリース（${rec.tag || rec.date}）へのリンクがありません`);
+  const notesPath = path.join(HERE, "release", `${rec.name || cfg.name}-notes.md`);
+  if (!fs.existsSync(notesPath)) fail(`release/${rec.name || cfg.name}-notes.md がありません（Release の説明書き。CI が使います）`);
+  if (rec.tag && !readme.includes(`releases/tag/${rec.tag}`)) {
+    fail(`README にセット（${cfg.name}）のリリース ${rec.tag} へのリンクがありません`);
   }
   for (const f of rec.files || []) {
     const abs = path.join(HERE, f.path);
-    if (!fs.existsSync(abs)) { fail(`はじめてセットに入れた ${f.path} がありません`); continue; }
-    const buf = fs.readFileSync(abs);
-    if (sha256(buf) !== f.sha256) fail(`はじめてセットの記録と ${f.path} の sha256 が違います（作り直してください）`);
+    if (!fs.existsSync(abs)) { fail(`${recRel} に入れた ${f.path} がありません`); continue; }
+    /* 目録は「セットに入っているパックだけ」に絞って入れることがある（build-set の scopeCatalog）。
+       そのときは、絞る前の倉庫のファイル（source）と比べる */
+    const want = f.scoped && f.source ? f.source.sha256 : f.sha256;
+    if (sha256(fs.readFileSync(abs)) !== want) fail(`${recRel} の記録と ${f.path} の sha256 が違います（作り直してください）`);
   }
 }
+if (!setChecked) fail("配ったセットの記録（release/*.json）がありません（node tools/build-set.mjs sets/first-set.json --release で作れます）");
 
 if (fails.length) {
   console.error(`❌ 文書が今の中身と合っていません（${fails.length} 件）`);
   for (const f of fails) console.error(`   ❌ ${f}`);
   process.exit(1);
 }
-console.log(`✅ 文書は今の中身と合っています（パック ${catalog.packs.length} 件・内部リンク ${linkCount} 本）`);
+console.log(`✅ 文書は今の中身と合っています（パック ${catalog.packs.length} 件・内部リンク ${linkCount} 本・セット ${setChecked} 件${setDrafts ? `・これから配る定義 ${setDrafts} 件` : ""}）`);
 for (const p of catalog.packs) console.log(`   ${p.file} — ${formatBytes(p.bytes)}`);

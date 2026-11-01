@@ -50,7 +50,8 @@
 <header>
   <h1>📦 trk! パックの一覧 <span id="total"></span></h1>
   <p class="lead">16 パック・書体 22 本・合計 29.3 MB。パックごとに <b>中に何が入っているか</b>（書体・雰囲気のタグ・大きさ・ライセンス）を見られます。
-    外部からは何も読みません（オフラインで開けます）。書体から探すときは <a href="fonts.html">🔤 書体の一覧と検索</a> へ。</p>
+    外部からは何も読みません（オフラインで開けます）。書体から探すときは <a href="fonts.html">🔤 書体の一覧と検索</a> へ
+    （アプリの「🔤 入れている書体」と同じ並び＝<b>家族名・太さ・パック名</b>で見られます）。</p>
   <div class="tools">
     <input id="q" type="search" placeholder="🔍 パック名・説明・family・ひとこと・タグで絞る（例：丸ゴ / TrkZen / 極太）" autocomplete="off">
     <select id="sort">
@@ -144,7 +145,7 @@
     if (p.fonts.length) {
       var t = el("table");
       var thead = el("thead"), hr = el("tr");
-      ["書体（family）", "太さ", "ひとこと", "タグ", "対応字数", "大きさ"].forEach(function (name, i) {
+      ["家族名（family）", "太さ", "ひとこと", "タグ", "対応字数", "大きさ"].forEach(function (name, i) {
         var th = el("th", i >= 4 ? "hideSm" : "", name);
         hr.appendChild(th);
       });
@@ -180,7 +181,7 @@
 
     var right = el("div");
     if (p.fonts.length) {
-      var fl = el("a", "", "🔤 書体から探す");
+      var fl = el("a", "", "🔤 書体から見る（家族名・太さ・パック名）");
       fl.href = "fonts.html";
       fl.style.marginRight = "12px";
       right.appendChild(fl);

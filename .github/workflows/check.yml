@@ -13,8 +13,8 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
-  # （trk235 = cd00408。.stlib（セット）をそのまま選べる版）
-  TRK_PWA_REF: cd00408962059ef9f7ecd63ee517c21d040e523d
+  # （trk238 = 36673dd。.stlib（セット）をそのまま選べる版で、書体の索引とタグの絞り込みまで入った版）
+  TRK_PWA_REF: 36673ddd5e8c66c039197d753edf5988c9ce26d6
 
 jobs:
   check:
@@ -87,23 +87,38 @@ jobs:
             node tools/build-pack.mjs "$d" --check --fetch || exit 1
           done
 
-      - name: はじめてセットが記録と一致するか
-        working-directory: trk-Avatar-Library
-        env:
-          TRK_PWA: ${{ github.workspace }}/trk-PWA
-        run: node tools/build-set.mjs sets/first-set.json --check
-
-      # 記録と一致するだけでなく「trk235 が開いて中身を入れられる形か」を、アプリと同じ手順で見る
-      - name: セットがアプリ（trk235）の手順で開けるか
+      # r6 からは 2 つ（first-set＝軽い／font-set＝書体は全部）。記録があるセットだけを検査する
+      # （記録がまだ無い定義は「これから配るもの」なので、作らずに飛ばす）
+      - name: セットが記録と一致するか（記録のあるセットだけ）
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: |
-          node tools/build-set.mjs sets/first-set.json
-          # 記録に載っている名前（.zip と .stlib）だけを見る（dist/ に古い版が残っていても混ざらない）
-          FILES=$(node -p "const r=require('./release/first-set.json'); (r.files_out && r.files_out.length ? r.files_out : [{name:r.file}]).map(x=>'dist/'+x.name).join(' ')")
-          for f in $FILES; do
-            node tools/verify-set.mjs "$f" --record=release/first-set.json || exit 1
+          for def in sets/*.json; do
+            rec=$(node -p "require('./$def').record || ''")
+            if [ -f "$rec" ]; then
+              echo "—— $def（記録: $rec）"
+              node tools/build-set.mjs "$def" --check || exit 1
+            else
+              echo "ℹ $def はまだ記録がありません（配る前に --release で記録を作ります）"
+            fi
+          done
+
+      # 記録と一致するだけでなく「アプリが開いて中身を入れられる形か」を、アプリと同じ手順で見る
+      - name: セットがアプリ（trk238）の手順で開けるか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: |
+          for def in sets/*.json; do
+            rec=$(node -p "require('./$def').record || ''")
+            [ -f "$rec" ] || continue
+            node tools/build-set.mjs "$def"
+            # 記録に載っている名前（.zip と .stlib）だけを見る（dist/ に古い版が残っていても混ざらない）
+            FILES=$(node -p "const r=require('./$rec'); (r.files_out && r.files_out.length ? r.files_out : [{name:r.file}]).map(x=>'dist/'+x.name).join(' ')")
+            for f in $FILES; do
+              node tools/verify-set.mjs "$f" --record="$rec" || exit 1
+            done
           done
 
       # パックの一覧（gallery/packs.html）が目録とずれていないか（selftest でも同じことを見ています）
