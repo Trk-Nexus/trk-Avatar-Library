@@ -220,6 +220,29 @@ if (fontBytesCount) {
 }
 if (colorsKept) notes.push(`packs[].colors をアプリが読むようになりました（trk235 以降）。check-contract の見直しどきです`);
 
+/* 📦 trk239：セットを 2 つ続けて入れたときの「これから入る分」を数える関数があるか。
+   2 分割（r6）で「確認の数が水増しされない」ことを、こちらからも見えるようにする */
+if (typeof api.setPending === "function") {
+  /* 目録の 2 件を「もう入っている」として渡し、残りだけが数えられるか（純粋関数なので画面は要らない） */
+  const sample = (raw.packs || []).slice(0, 3).map(p => ({ entry: p, zipEntry: { usize: Number(p.bytes) || 0 } }));
+  if (sample.length >= 2) {
+    /* setPending は { pending:[…], skip:[…], bytes } を返す（入る分だけの大きさ） */
+    const have = [{ name: sample[0].entry.name, author: sample[0].entry.author || "", release: sample[0].entry.version || "" }];
+    const pend = api.setPending({ packs: sample, missing: [], bytes: 0 }, have);
+    const nPend = Array.isArray(pend && pend.pending) ? pend.pending.length : -1;
+    const nSkip = Array.isArray(pend && pend.skip) ? pend.skip.length : -1;
+    const wantBytes = sample.slice(1).reduce((a, x) => a + (Number(x.entry.bytes) || 0), 0);
+    const ok = nPend === sample.length - 1 && nSkip === 1 && Number(pend.bytes) === wantBytes;
+    if (!ok) {
+      fail(`アプリの setPending（trk239）が、すでに入っている 1 本を飛ばして数えません（入る ${nPend}／飛ばす ${nSkip}／大きさ ${pend && pend.bytes}・期待 ${wantBytes}）`);
+    } else {
+      notes.push(`アプリは「これから入る分」だけを数えます（trk239 の setPending・試した ${sample.length} 本 → 飛ばす 1／入る ${nPend}・${api.formatBytes(pend.bytes)}）`);
+    }
+  }
+} else {
+  notes.push("アプリに setPending がありません（trk239 より前）。セットを 2 つ続けて入れると、確認の数が多めに出ます");
+}
+
 if (fails.length) {
   console.error(`❌ 目録がアプリの読み取り規則を通りません（${fails.length} 件）`);
   for (const f of fails) console.error(`   ❌ ${f}`);

@@ -211,7 +211,9 @@ node tools/check-docs.mjs                           # README の表・リンク�
 node tools/check-fonts.mjs                          # パックの書体（woff2）が本当に読める形か・見本の字が入っているか
 node tools/export-pack-gallery.mjs                  # gallery/packs.html（パックごとの一覧）を作り直す
 node tools/export-pack-gallery.mjs --check          # いまの一覧と合っているかだけ見る（CI 向け）
-node tools/selftest.mjs                             # 道具そのものが「ちゃんと断る」かを確かめる（36項目）
+node tools/check-set-app.mjs dist/trk-font-set-…r6.stlib --have=dist/trk-first-set-…r6.stlib
+                                                    # セットを「アプリ自身の判定」でも見る（相手側の tools/check-set.mjs を呼ぶ）
+node tools/selftest.mjs                             # 道具そのものが「ちゃんと断る」かを確かめる（38項目）
 ```
 
 **パックを足したら、4か所を直します**（CI の `check-docs`・`build-catalog`・`export-pack-gallery --check` が教えてくれます）。
@@ -382,7 +384,8 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 | `tools/selftest.mjs` | **22 / 22 合格**（書体のパス・family・OFL.txt・release・`licenseFile` 3種・woff2 2種の検査を追加） |
 | `tools/preview-pack.mjs` | 書体パックから **1 ファイルの見本 HTML**（3.9 MB・woff2 2 本を base64 で埋め込み・外部参照 0）を生成 |
 | `tools/build-set.mjs` | **セット**を生成（`sets/*.json`）。2 回作っても同じ sha256（r4 = `0d943e76…`・**30,832,151 B**／r5 = `d2bea5a2…`・**30,832,734 B**・**21 ファイル**）。`set.json`（名前と版）を中に入れ、`extensions` で **`.zip` と `.stlib` を同じバイト列**で書きます。**2026-11-01：目録を「そのセットに入っているパックだけ」に絞って入れる**（絞ったときは記録に `scoped` と `source`）。`"scopeCatalog": false` で止められます |
-| `tools/verify-set.mjs` | **セットがアプリ（trk235）の手順で開けるか**を、アプリと同じ決めごとで検査（拡張子ではなく中身で ZIP 判定・安全なパス・目録の形・`packs[].file` の実バイトで sha256 と大きさを照合・入れない／入っていない／目録にない の内訳・`set.json` は任意）。`--record` で記録とも比べる |
+| `tools/verify-set.mjs` | **セットがアプリの手順で開けるか**を、アプリと同じ決めごとで検査（拡張子ではなく中身で ZIP 判定・安全なパス・目録の形・`packs[].file` の実バイトで sha256 と大きさを照合・入れない／入っていない／目録にない の内訳・`set.json` は任意）。`--record` で記録とも比べる（**倉庫側の決めごと**） |
+| `tools/check-set-app.mjs` | 同じセットを**アプリ自身の判定**でも見る（相手側 trk239 の `tools/check-set.mjs` をそのまま呼ぶ）。`--have=<もう 1 つのセット>` で「2 つ続けて入れたときの、これから入る分／飛ばす分」も出る（2026-11-01） |
 | `tools/check-docs.mjs` | README の表と目録が一致・内部リンク 10 本（うち見出し `#…` 1 本）が実在・セットの記録と実物の sha256 が一致。**わざとずらすと落ちる**ことも確認（見出しリンクの規則は、GitHub が実際に付けた 20 個の id と一致することを確かめました） |
 | `tools/check-contract.mjs`（2026-11-01 追記） | 目録の `colors` を足しても、アプリ（trk231・`9bf22d7`）が 2 パックとも落とさずに読むことを確認。読んだ相手側の版も表示 |
 | `tools/check-contract.mjs`（trk232・`70fd921`） | 目録の `fonts[].licenseFile`（L7）を足しても、**2 パックとも 1 件も落とされずに**読めることを確認（アプリは trk233 まで、この項目を読まないだけ） |
