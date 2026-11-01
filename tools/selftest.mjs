@@ -115,6 +115,29 @@ await expect("licenseFile のパスに .. があると不合格",
   await makePack("font-licensefile-traversal.stpack", { "pack.json": fontManifest({ licenseFile: "../OFL.txt" }),
     "fonts/test.woff2": "wOF2", "OFL.txt": "SIL OPEN FONT LICENSE Version 1.1" }), false, "licenseFile");
 
+/* L10／L15：書体の「ひとこと」と「雰囲気のタグ」は、パック自身（pack.json）にも書ける（2026-11-01）
+   trk238 予定の「起動時にパックから索引を作る」ための下ごしらえ。目録の外（catalog/*.json）と二重に書いたら
+   build-catalog が止めるので、ここでは「読めること」と「行儀の悪い書き方は警告になること」だけ見る */
+{
+  const file = await makePack("font-note-tags.stpack", { "pack.json": fontManifest({ note: "丸くてやわらかい", tags: ["丸ゴ", "かわいい"] }),
+    "fonts/test.woff2": "wOF2", "OFL.txt": "SIL OPEN FONT LICENSE Version 1.1" });
+  const r = await verifyPack(file, { trk });
+  const f0 = (r.info.fonts || [])[0] || {};
+  const ok = r.ok && f0.note === "丸くてやわらかい" && (f0.tags || []).join(",") === "丸ゴ,かわいい";
+  results.push({ label: "pack.json の fonts[].note と tags を読む", ok, detail: ok ? "" : `ok=${r.ok} note=${f0.note} tags=${(f0.tags || []).join(",")} ${r.errors.join(" / ")}` });
+  console.log(`${ok ? "✅" : "❌"} pack.json の fonts[].note と tags を読む${ok ? "" : `  ← ok=${r.ok} note=${f0.note}`}`);
+}
+{
+  const file = await makePack("font-note-tags-long.stpack", { "pack.json": fontManifest({
+    note: "あ".repeat(61), tags: [...Array.from({ length: 9 }, (_, i) => `タグ${i}`), "と".repeat(17)] }),
+    "fonts/test.woff2": "wOF2", "OFL.txt": "SIL OPEN FONT LICENSE Version 1.1" });
+  const r = await verifyPack(file, { trk });
+  const all = [...r.errors, ...r.warnings].join(" / ");
+  const ok = r.ok && all.includes("note") && all.includes("タグ") && all.includes("個");
+  results.push({ label: "note が長すぎる／tags が多すぎると警告（合格は変えない）", ok, detail: ok ? "" : `ok=${r.ok} ${all}` });
+  console.log(`${ok ? "✅" : "❌"} note が長すぎる／tags が多すぎると警告（合格は変えない）${ok ? "" : `  ← ok=${r.ok} ${all.slice(0, 120)}`}`);
+}
+
 /* L8：release を書いていないパックは「ℹ」で知らせる（合格は変えない） */
 {
   const r = await verifyPack(await makePack("no-release.stpack", { "pack.json": goodManifest() }), { trk });
@@ -264,6 +287,16 @@ await expect("release の形が違うと不合格",
   }
   results.push({ label: "目録の sha256 が実物と一致", ok, detail });
   console.log(`${ok ? "✅" : "❌"} 目録の sha256 が実物と一致${ok ? "" : `  ← ${detail}`}`);
+}
+
+/* パックの一覧（gallery/packs.html）が目録と合っているか（--check と同じ見方） */
+{
+  const { spawnSync } = await import("node:child_process");
+  const r = spawnSync(process.execPath, [path.join(ROOT, "tools/export-pack-gallery.mjs"), "--check"], { encoding: "utf8" });
+  const ok = r.status === 0;
+  results.push({ label: "パックの一覧（gallery/packs.html）が目録と合っている", ok,
+    detail: ok ? "" : `${String(r.stderr || r.stdout).trim().slice(0, 160)}（node tools/export-pack-gallery.mjs で作り直す）` });
+  console.log(`${ok ? "✅" : "❌"} パックの一覧（gallery/packs.html）が目録と合っている${ok ? "" : "  ← 作り直してください"}`);
 }
 
 if (!keep) fs.rmSync(work, { recursive: true, force: true });
