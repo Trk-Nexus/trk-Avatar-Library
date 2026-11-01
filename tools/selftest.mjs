@@ -262,14 +262,57 @@ await expect("release の形が違うと不合格",
   const appRoot = path.resolve(trk || process.env.TRK_PWA || path.resolve(ROOT, "..", "trk-PWA"));
   const appTool = path.join(appRoot, "tools/check-set.mjs");
   if (fs.existsSync(appTool)) {
+    const { spawnSync } = await import("node:child_process");
     const goodFile = path.join(work, "app-check.stlib");
     fs.writeFileSync(goodFile, await makeSet());
-    const { spawnSync } = await import("node:child_process");
-    const run = spawnSync(process.execPath, [path.join(ROOT, "tools/check-set-app.mjs"), goodFile, `--trk=${appRoot}`], { encoding: "utf8" });
+    const runApp = (args) => spawnSync(process.execPath, [path.join(ROOT, "tools/check-set-app.mjs"), ...args, `--trk=${appRoot}`], { encoding: "utf8" });
+    const run = runApp([goodFile]);
     const ok = run.status === 0 && /そろっています/.test(String(run.stdout));
     results.push({ label: "アプリ自身の判定（相手側の check-set.mjs）でも通る", ok,
       detail: ok ? "" : `status=${run.status} ${String(run.stderr || run.stdout).trim().slice(0, 160)}` });
     console.log(`${ok ? "✅" : "❌"} アプリ自身の判定（相手側の check-set.mjs）でも通る${ok ? "" : `  ← status=${run.status}`}`);
+
+    /* ① 契約の見張り（返事9 §4-1）。向こうの道具に寄りかかっているので、終了コードと --json の形を毎回見る。
+       増えた項目では赤にしない（知らない項目は読み飛ばす）。減った・意味が変わったときだけ気づく */
+    {
+      const problems = [];
+      const missing = runApp([path.join(work, "no-such.stlib")]);
+      if (missing.status !== 2) problems.push(`無いファイルで ${missing.status}（2 のはず）`);
+      const notZip = path.join(work, "not-zip.stlib");
+      fs.writeFileSync(notZip, Buffer.from("not a zip"));
+      const rNotZip = runApp([notZip]);
+      if (rNotZip.status !== 2) problems.push(`ZIP でないファイルで ${rNotZip.status}（2 のはず）`);
+      const rJson = spawnSync(process.execPath, [appTool, goodFile, "--json"], { encoding: "utf8" });
+      const last = String(rJson.stdout || "").split("\n").map(x => x.trim()).filter(x => x.startsWith("{")).pop();
+      if (!last) {
+        console.log("ℹ 相手側の check-set.mjs は --json を知りません（trk240 より前）。終了コードと文で見ました");
+      } else {
+        try {
+          const j = JSON.parse(last);
+          for (const k of ["tool", "version", "ok", "problems", "packs", "missing", "pending"]) {
+            if (!(k in j)) problems.push(`--json に ${k} が無い（契約 ③）`);
+          }
+          if (j.tool !== "check-set") problems.push(`--json の tool が ${j.tool}（契約 ③）`);
+        } catch (_) { problems.push("--json が JSON として読めない（契約 ③）"); }
+      }
+      const ok2 = problems.length === 0;
+      results.push({ label: "受け入れの道具の契約（終了コード 0/1/2 と --json の形）が保たれている", ok: ok2, detail: problems.join("・") });
+      console.log(`${ok2 ? "✅" : "❌"} 受け入れの道具の契約（終了コード 0/1/2 と --json の形）が保たれている${ok2 ? "" : `  ← ${problems.join("・")}`}`);
+    }
+
+    /* ② 2 つ目を選んだとき「これから入る分」が出るか（--have）。出ないまま通ると、
+       CI の「2 つ続けて」が空振りするので、ここで見る */
+    {
+      const setA = path.join(work, "have-a.stlib");   /* 1 本だけ入ったセット（＝もう入っている側） */
+      fs.writeFileSync(setA, await makeSet({ packs: [realPacks[0]] }));
+      const setB = path.join(work, "have-b.stlib");   /* 2 本入ったセット（＝あとから選ぶ側） */
+      fs.writeFileSync(setB, await makeSet());
+      const r = runApp([setB, `--have=${setA}`]);
+      const ok2 = r.status === 0 && /これから入る 1 本/.test(String(r.stdout));
+      results.push({ label: "2 つ目を選ぶと「これから入る分」が出る（--have・飛ばす分と合わせて）", ok: ok2,
+        detail: ok2 ? "" : `status=${r.status} ${String(r.stdout || r.stderr).trim().slice(0, 160)}` });
+      console.log(`${ok2 ? "✅" : "❌"} 2 つ目を選ぶと「これから入る分」が出る（--have・飛ばす分と合わせて）${ok2 ? "" : `  ← status=${r.status}`}`);
+    }
   } else {
     console.log("ℹ 相手側に tools/check-set.mjs がありません（trk239 より前）。アプリ側の判定は飛ばしました");
   }
