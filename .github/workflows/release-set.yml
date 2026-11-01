@@ -22,8 +22,8 @@ permissions:
   contents: write
 
 env:
-  # trk234（9c4d80d）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
-  TRK_PWA_REF: 9c4d80d7dc8bee6d71d94a584622ebdf176b290d
+  # trk235（cd00408）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
+  TRK_PWA_REF: cd00408962059ef9f7ecd63ee517c21d040e523d
 
 jobs:
   attach:
@@ -53,6 +53,18 @@ jobs:
         run: |
           node tools/build-set.mjs sets/first-set.json
           node tools/build-set.mjs sets/first-set.json --check
+
+      # 添付する前に、アプリ（trk235）が開いて中身を入れられる形かを見る
+      - name: セットがアプリ（trk235）の手順で開けるか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: |
+          # 記録に載っている名前（.zip と .stlib）だけを見る（dist/ に古い版が残っていても混ざらない）
+          FILES=$(node -p "const r=require('./release/first-set.json'); (r.files_out && r.files_out.length ? r.files_out : [{name:r.file}]).map(x=>'dist/'+x.name).join(' ')")
+          for f in $FILES; do
+            node tools/verify-set.mjs "$f" --record=release/first-set.json || exit 1
+          done
 
       - name: Release に添付（無ければ作る）
         working-directory: trk-Avatar-Library
