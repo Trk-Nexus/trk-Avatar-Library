@@ -28,8 +28,8 @@ permissions:
   contents: write
 
 env:
-  # trk239（748ac03）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
-  TRK_PWA_REF: 748ac033c2fe89abd5a8da5321e536fde9194ef5
+  # trk240（7344111）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
+  TRK_PWA_REF: 734411154b4e442676c78fbe42cb9bc3beab7b95
 
 jobs:
   attach:
@@ -87,8 +87,8 @@ jobs:
           node tools/build-set.mjs "$SET_DEF"
           node tools/build-set.mjs "$SET_DEF" --check
 
-      # 添付する前に、アプリ（trk239）が開いて中身を入れられる形かを見る
-      - name: セットがアプリ（trk239）の手順で開けるか
+      # 添付する前に、アプリ（trk240）が開いて中身を入れられる形かを見る
+      - name: セットがアプリ（trk240）の手順で開けるか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
@@ -98,6 +98,31 @@ jobs:
           for f in $FILES; do
             node tools/verify-set.mjs "$f" --record="$SET_REC" || exit 1
           done
+
+      # 倉庫の決めごと（上）に加えて、**アプリ自身の判定**でも通す（trk240 の tools/check-set.mjs をそのまま呼ぶ）。
+      # もう 1 つのセットの記録があれば、その目録を「すでに入っている」として渡す（2 つ続けて入れる人の見え方）
+      - name: セットがアプリ（trk240）の判定でも通るか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: |
+          if [ ! -f "$TRK_PWA/tools/check-set.mjs" ]; then
+            echo "ℹ 相手側に tools/check-set.mjs がありません（trk239 より前）。この検査は飛ばします"
+            exit 0
+          fi
+          TARGET=$(node -p "const r=require('./$SET_REC'); 'dist/'+(r.files_out && r.files_out.length ? r.files_out[0].name : r.file)")
+          OTHER=""
+          for def in sets/*.json; do
+            if [ "$def" = "$SET_DEF" ]; then continue; fi
+            rec=$(node -p "require('./$def').record || ''")
+            if [ ! -f "$rec" ]; then continue; fi
+            OTHER=$(node -p "const r=require('./$rec'); 'dist/'+(r.files_out && r.files_out.length ? r.files_out[0].name : r.file)")
+          done
+          if [ -n "$OTHER" ] && [ -f "$OTHER" ]; then
+            node tools/check-set-app.mjs "$TARGET" --have="$OTHER"
+          else
+            node tools/check-set-app.mjs "$TARGET"
+          fi
 
       - name: Release に添付（無ければ作る）
         working-directory: trk-Avatar-Library

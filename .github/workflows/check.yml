@@ -13,9 +13,9 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
-  # （trk239 = 748ac03。セットをそのまま選べる版で、書体の索引・タグの絞り込み・
-  #   「これから入る分」だけを数える確認（setPending）と、アプリ側の受け入れ道具 tools/check-set.mjs まで入った版）
-  TRK_PWA_REF: 748ac033c2fe89abd5a8da5321e536fde9194ef5
+  # （trk240 = 7344111。アプリ側の受け入れ道具 tools/check-set.mjs に --json が入り、
+  #   呼び方・終了コード・--json の項目・--have の形が「契約」として書面に固定された版）
+  TRK_PWA_REF: 734411154b4e442676c78fbe42cb9bc3beab7b95
 
 jobs:
   check:
@@ -46,7 +46,7 @@ jobs:
           path: trk-Avatar-Library/.cache/font-packs
           key: fontsource-${{ hashFiles('trk-Avatar-Library/font-packs/*/SOURCE.json') }}
 
-      - name: 道具の自己検査（22 項目）
+      - name: 道具の自己検査（selftest）
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
@@ -122,14 +122,14 @@ jobs:
             done
           done
 
-      # 倉庫の決めごと（上）に加えて、**アプリ自身の判定**でも見る（trk239 の tools/check-set.mjs）。
-      # 2 つそろって記録があるときは、2 つ目を「はじめてセットを入れた後」として数えてもらう
-      - name: セットがアプリ（trk239）の判定でも通るか
+      # 倉庫の決めごと（上）に加えて、**アプリ自身の判定**でも見る（trk240 の tools/check-set.mjs）。
+      # trk240 からは --json があるので、日本語の文ではなく数字で判定する（無い版でもそのまま動く）
+      # 2 つそろって記録があるときは、**両方の順**で「これから入る分」を数えてもらう
+      - name: セットがアプリ（trk240）の判定でも通るか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: |
-          set -o pipefail
           if [ ! -f "$TRK_PWA/tools/check-set.mjs" ]; then
             echo "ℹ 相手側に tools/check-set.mjs がありません（trk239 より前）。この検査は飛ばします"
             exit 0
@@ -145,12 +145,12 @@ jobs:
               font-set) font="$target" ;;
             esac
             echo "—— $rec"
-            node tools/check-set-app.mjs "$target" | tail -3
+            node tools/check-set-app.mjs "$target"
           done
-          # 2 つそろっているとき：2 つ目を「はじめてセットを入れた後」として数えてもらう（trk239 の setPending）
+          # 2 つそろっているとき：両方の順で「これから入る分」を数えてもらう（trk240 の setPending）
+          # （書体セットを先に入れた人が、あとからはじめてセットを選ぶ場合も見る）
           if [ -n "$first" ] && [ -n "$font" ]; then
-            echo "—— 2 つ目を、1 つ目を入れた後として数える"
-            node tools/check-set-app.mjs "$font" --have="$first" | tail -4
+            node tools/check-set-app.mjs "$font" --have="$first" --both
           fi
 
       # パックの一覧（gallery/packs.html）が目録とずれていないか（selftest でも同じことを見ています）
