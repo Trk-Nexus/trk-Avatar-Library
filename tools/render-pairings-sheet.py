@@ -166,8 +166,8 @@ def main():
     gap = 22
     colW = (W - pad * 2 - gap * (cols - 1)) // cols
 
-    # 各カードの高さを先に測る（行数は固定：題字／見出し／本文 2 行／注記／メタ）
-    CARD_H = 250
+    # 各カードの高さを先に測る（行数は固定：題字／見出し／本文 2 行／数字・差し色／注記／メタ）
+    CARD_H = 300
     rows = (len(pairings) + cols - 1) // cols
     head = 128
     H = head + rows * (CARD_H + gap) + pad
@@ -181,7 +181,7 @@ def main():
 
     # 見出し（この紙）
     text((pad, 30), "trk! 書体の組み合わせ 14 組（縮刷版）", weight=700, px=28)
-    text((pad, 72), "題字・見出し・本文・注記を本物の書体で組んだもの。倍率は本文を 1 とした比。", px=15, fill=muted)
+    text((pad, 72), "題字・見出し・本文・数字・差し色・注記の 6 役を本物の書体で組んだもの。倍率は本文を 1 とした比。", px=15, fill=muted)
     text((pad, 96), "データ：catalog/typography.json ／ 書体：各パックの woff2 から見本の字だけを抜いたもの（catalog/preview/）", px=13, fill=muted)
 
     for i, p in enumerate(pairings):
@@ -196,28 +196,59 @@ def main():
         s = p["sample"]
 
         # メタ（左：名前と倍率／右：書体）
+        num, acc = sl["numeral"], sl["accent"]
+
+        def fam(slot):
+            """「NotoSerifJP 700」— 右肩に出す書体の名前（Trk は省く）"""
+            return f"{slot['family'].replace('Trk', '')} {slot['weight']}"
+
+        # 左：名前・倍率・trk! では（どんな曲・どのスキンに合うか）
         text((x + 18, y + 14), p["name"], weight=700, px=17)
-        text((x + 18, y + 40), f"倍率 {p['scale']}・{len({v['family'] for v in sl.values()})} 家族", px=12, fill=muted)
-        meta = f"題字 {disp['family'].replace('Trk', '')} {disp['weight']}／本文 {body['family'].replace('Trk', '')} {body['weight']}"
-        text((x + colW - 18 - d.textlength(meta, font=get("UI", 400, 12)), y + 18), meta, px=12, fill=muted)
+        text((x + 18, y + 44), f"倍率 {p['scale']}・{len({v['family'] for v in sl.values()})} 家族", px=12, fill=muted)
+        if p.get("trkUse"):
+            text((x + 18, y + 62), "trk! では：" + p["trkUse"], px=12, fill="#1d5fa8")
+
+        # 右：題字・見出し・本文の書体名（**見出しも出す**——説明とデータの食い違いに気づけるように）
+        mx = x + colW - 18
+        for k, (label, slot) in enumerate((("題字", disp), ("見出し", head_s), ("本文", body))):
+            t = f"{label} {fam(slot)}"
+            text((mx - d.textlength(t, font=get("UI", 400, 11)), y + 16 + k * 15), t, px=11, fill=muted)
+        t4 = f"数字 {fam(num)}／差し色 {fam(acc)}"
+        text((mx - d.textlength(t4, font=get("UI", 400, 11)), y + 62), t4, px=11, fill=muted)
 
         # 題字（倍率の display で。紙の上では 34px 前後に抑える）
         dpx = max(20, min(40, int(round(16 * sc["sizes"]["display"]))))
-        text((x + 18, y + 62), s["display"], disp["family"], disp["weight"], dpx)
+        dy = y + 88
+        text((x + 18, dy), s["display"], disp["family"], disp["weight"], dpx)
         # 見出し
         hpx = max(14, min(24, int(round(16 * sc["sizes"]["heading"]))))
-        text((x + 18, y + 62 + dpx + 10), s["heading"], head_s["family"], head_s["weight"], hpx, fill="#2a3342")
+        hy = dy + dpx + 6
+        text((x + 18, hy), s["heading"], head_s["family"], head_s["weight"], hpx, fill="#2a3342")
         # 本文（2 行。句読点の後ろで分けるか、幅で折る）
         # 1 行の長さはカード幅の 2/3 ほどに抑える（長い 1 行は読みにくく、注記との間も空くため）
         bpx = 16
-        yy = y + 62 + dpx + 10 + hpx + 16
+        by = hy + hpx + 12
         limit = int((colW - 36) * 0.66)
         bfont = get(body["family"], body["weight"], bpx)
         measure = lambda t: d.textlength(t, font=bfont)
-        for i, ln in enumerate(split_two(s["body"], measure, limit)):
-            text((x + 18, yy + i * (bpx + 7)), ln, body["family"], body["weight"], bpx, fill="#1d2430")
-        # 注記
-        text((x + 18, y + CARD_H - 30), s["caption"], cap["family"], cap["weight"], 12, fill=muted)
+        for k, ln in enumerate(split_two(s["body"], measure, limit)):
+            text((x + 18, by + k * (bpx + 7)), ln, body["family"], body["weight"], bpx, fill="#1d2430")
+
+        # 数字と差し色（6 役すべてを見比べられるように。役の名前は小さく添える）
+        ry = y + CARD_H - 54
+        text((x + 18, ry + 3), "数字", px=10, fill=muted)
+        nx = x + 18 + d.textlength("数字", font=get("UI", 400, 10)) + 6
+        text((nx, ry - 3), s["numeral"], num["family"], num["weight"], 15, fill="#1d2430")
+        nx += d.textlength(s["numeral"], font=get(num["family"], num["weight"], 15)) + 18
+        text((nx, ry + 3), "差し色", px=10, fill=muted)
+        nx += d.textlength("差し色", font=get("UI", 400, 10)) + 6
+        text((nx, ry - 3), s["accent"], acc["family"], acc["weight"], 15, fill="#8a5a00")
+
+        # 注記（右下に、本文とちがう書体のときだけ書体名を添える）
+        text((x + 18, y + CARD_H - 28), s["caption"], cap["family"], cap["weight"], 12, fill=muted)
+        if (cap["family"], cap["weight"]) != (body["family"], body["weight"]):
+            tc = f"注記 {fam(cap)}"
+            text((mx - d.textlength(tc, font=get("UI", 400, 10)), y + CARD_H - 26), tc, px=10, fill=muted)
 
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
     img.save(args.out, "PNG", optimize=True)

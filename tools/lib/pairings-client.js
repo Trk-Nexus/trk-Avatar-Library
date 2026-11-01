@@ -84,7 +84,8 @@
     var html = '<article class="card" id="c-' + p.id + '">' +
       '<header><h3>' + escapeHtml(p.name) + '<small>#' + (i + 1) + "・倍率 " + p.scale + "（" + scale.label + "）</small></h3>" +
       '<p class="why">' + escapeHtml(p.why) + "</p>" +
-      '<p class="use">どこで：' + escapeHtml(p.useFor) + "</p>" + tags + "</header>" +
+      '<p class="use">どこで：' + escapeHtml(p.useFor) + "</p>" +
+      (p.trkUse ? '<p class="trkuse">trk! では：' + escapeHtml(p.trkUse) + "</p>" : "") + tags + "</header>" +
       specimen(p) +
       '<details><summary>役ごとの設定（' + Object.keys(fams).length + " 家族）</summary><ul class=\"roles\">" + chips + "</ul>" +
       "<p class=\"packs\">パック：" + (p.packs || []).map(function (x) { return "<code>" + escapeHtml(x.replace("font-packs/", "").replace(".stpack", "")) + "</code>"; }).join(" ") + "</p></details>" +

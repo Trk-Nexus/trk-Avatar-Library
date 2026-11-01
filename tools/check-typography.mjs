@@ -26,6 +26,7 @@
      node tools/check-typography.mjs --json
      node tools/check-typography.mjs --strict   … 警告も失敗にする（CI 用）
 */
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -97,6 +98,9 @@ for (const p of pairings) {
   if (!p.name || [...String(p.name)].length > 20) E(`${at}: name は 1〜20 文字にしてください（${[...String(p.name || "")].length} 文字）`);
   if (!p.why || [...String(p.why)].length > 80) E(`${at}: why は 1〜80 文字にしてください（何が合うのか・なぜか）`);
   if (!p.useFor || [...String(p.useFor)].length > 40) E(`${at}: useFor は 1〜40 文字にしてください（どこで使うか）`);
+  /* trk! では：どんな曲・どのスキンに合うか（2026-11-02・レビュー B-3）。
+     役の定義はゲーム向けなので、「アプリで何に使うか」を 1 行だけ持たせます。 */
+  if (!p.trkUse || [...String(p.trkUse)].length > 34) E(`${at}: trkUse は 1〜34 文字にしてください（trk! では、どんな曲・どのスキンに合うか）`);
   if (!Array.isArray(p.tags) || p.tags.length > 3) E(`${at}: tags は 3 つまでにしてください`);
   for (const t of p.tags || []) if ([...String(t)].length > 8) E(`${at}: tags の「${t}」が 8 文字を超えています`);
   /* 組は段階を持たない（`preset` は利用者の設定。書いてあったら「使わない項目」なので知らせる） */
@@ -215,8 +219,12 @@ if (missingPreview.length) {
 /* 目録と突き合わせやすいように、家族名の一覧も出す（trk-PWA の返事13 §4 のお願い）。
    キーは**足すだけ**（消す・意味を変えるときは、先に書面で知らせます）。 */
 const familySet = new Set([...usedFonts].map(k => k.split("|")[0]));
+/* 相手側（trk-PWA）は 14 組の写しを持っています。写しが古くないかを**この 1 本で照合できる**ように、
+   typography.json の sha256 を出します（2026-11-02・レビュー C-3。キーは足すだけ）。 */
+const typoSha256 = crypto.createHash("sha256").update(fs.readFileSync(TYPO)).digest("hex");
 const summary = {
   tool: "check-typography", version: 1,
+  sha256: typoSha256,
   pairings: pairings.length,
   slots: slotIds.length,
   scales: scaleIds.size,

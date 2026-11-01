@@ -236,6 +236,7 @@
       "name": "新聞の顔",
       "why": "Noto Serif の太字を題字に、本文は Noto Sans。いちばん間違いの少ない組み合わせ",
       "useFor": "ニュース・お知らせ・説明の多い画面",
+      "trkUse": "オーソドックスな和風曲・演歌・バラード",
       "tags": [
         "定番",
         "明朝",
@@ -304,6 +305,7 @@
       "name": "まじめな仕事",
       "why": "Zen Kaku を軸に、太さだけで差をつける。迷ったらここへ戻る",
       "useFor": "設定画面・一覧・ふだん使い",
+      "trkUse": "どんな曲でも。迷ったときの既定",
       "tags": [
         "角ゴ",
         "定番",
@@ -372,6 +374,7 @@
       "name": "旅館のしおり",
       "why": "Shippori の太字題字に、Zen Old Mincho の本文。和風でも読める",
       "useFor": "和風の紹介・しおり・季節の挨拶",
+      "trkUse": "和風の曲・季節もの・旅情",
       "tags": [
         "和風",
         "明朝",
@@ -443,6 +446,7 @@
       "name": "喫茶とサロン",
       "why": "飾り明朝の題字に、丸ゴの本文。かわいくても読みやすい",
       "useFor": "カフェ・サロン・手づくり品の紹介",
+      "trkUse": "ジャズ・ボサノバ・カフェ系のスキン",
       "tags": [
         "かわいい",
         "丸ゴ",
@@ -513,6 +517,7 @@
       "name": "こどもとイベント",
       "why": "もちもちの題字に、丸ゴの本文。にぎやかでも崩れない",
       "useFor": "子ども向け・イベント・お祭り",
+      "trkUse": "童謡・アニメ曲・明るいポップ",
       "tags": [
         "ポップ",
         "丸ゴ",
@@ -583,6 +588,7 @@
       "name": "セールのポスター",
       "why": "Dela の極太を題字に。離れていても読める",
       "useFor": "セール・告知・LP の大見出し",
+      "trkUse": "盛り上がる曲・セール的なスキン",
       "tags": [
         "極太",
         "ポップ",
@@ -654,6 +660,7 @@
       "name": "夜のネオン",
       "why": "線の書体を題字に、本文はすっきり角ゴ。暗い画面で効く",
       "useFor": "夜のイベント・クラブ・ゲームの題字",
+      "trkUse": "EDM・夜の曲・サイバー系",
       "tags": [
         "ネオン",
         "見出し",
@@ -721,8 +728,9 @@
     {
       "id": "denshi",
       "name": "電子ゲーム",
-      "why": "ドットの書体を題字と数字に。本文だけ角ゴにして読ませる",
+      "why": "ドットの書体を題字と数字に。本文と注記は角ゴにして読ませる",
       "useFor": "レトロゲーム風・ドットの画面",
+      "trkUse": "チップチューン・8bit・レトロゲーム曲",
       "tags": [
         "ドット",
         "レトロ",
@@ -746,8 +754,8 @@
           "weight": 400
         },
         "caption": {
-          "pack": "font-packs/dotgothic.stpack",
-          "family": "TrkDotGothic",
+          "pack": "font-packs/zen-kaku.stpack",
+          "family": "TrkZenKaku",
           "weight": 400
         },
         "numeral": {
@@ -776,7 +784,7 @@
       "sample": {
         "display": "STAGE 3",
         "heading": "つぎの かんもん",
-        "body": "ドットの書体は小さいと崩れやすいので、注記は大きめに。",
+        "body": "こうげきは はやめに。ひかりの つぶを よけて。",
         "caption": "SCORE 120,400",
         "numeral": "1,024",
         "accent": "GAME OVER"
@@ -791,6 +799,7 @@
       "name": "手紙とエッセイ",
       "why": "Klee の本文に、Yomogi の注記。紙の上の文章の感じ",
       "useFor": "エッセイ・手紙・日記のような画面",
+      "trkUse": "アコースティック・しっとりした曲",
       "tags": [
         "手書き",
         "本文",
@@ -860,6 +869,7 @@
       "name": "昔話と怪談",
       "why": "毛筆の題字に、重みのある明朝。読み聞かせのように",
       "useFor": "読み聞かせ・怪談・和風の読み物",
+      "trkUse": "和風ホラー・民謡・語りもの",
       "tags": [
         "和風",
         "毛筆",
@@ -930,6 +940,7 @@
       "name": "駅と鉄道",
       "why": "駅名標の極太を題字に。数字も同じ書体で揃える",
       "useFor": "旅・路線・時刻表のような画面",
+      "trkUse": "鉄道もの・旅の曲・行進曲",
       "tags": [
         "見出し",
         "元気",
@@ -997,8 +1008,9 @@
     {
       "id": "kottou",
       "name": "古道具と活字",
-      "why": "古い活字の書体を題字に。余白の書体で本文を静かに",
+      "why": "古い活字の題字に、アンティーク体の本文。活版の紙面のように静かに",
       "useFor": "アンティーク・古本・記録のような画面",
+      "trkUse": "アンティーク・昭和の曲・落ち着いた曲",
       "tags": [
         "レトロ",
         "和風",
@@ -1069,6 +1081,7 @@
       "name": "雑誌の飾り",
       "why": "飾り明朝の題字に、ひな明朝の見出し。紙の雑誌の感じ",
       "useFor": "読み物・コラム・特集の見出し",
+      "trkUse": "ポップス・特集もののスキン",
       "tags": [
         "かわいい",
         "明朝",
@@ -1082,8 +1095,8 @@
           "weight": 700
         },
         "heading": {
-          "pack": "font-packs/kaisei-decol.stpack",
-          "family": "TrkKaiseiDecol",
+          "pack": "font-packs/hina-mincho.stpack",
+          "family": "TrkHinaMincho",
           "weight": 400
         },
         "body": {
@@ -1092,8 +1105,8 @@
           "weight": 400
         },
         "caption": {
-          "pack": "font-packs/yomogi.stpack",
-          "family": "TrkYomogi",
+          "pack": "font-packs/shippori-mincho.stpack",
+          "family": "TrkShipporiMincho",
           "weight": 400
         },
         "numeral": {
@@ -1129,16 +1142,17 @@
       },
       "packs": [
         "font-packs/hachi-maru-pop.stpack",
+        "font-packs/hina-mincho.stpack",
         "font-packs/kaisei-decol.stpack",
-        "font-packs/shippori-mincho.stpack",
-        "font-packs/yomogi.stpack"
+        "font-packs/shippori-mincho.stpack"
       ]
     },
     {
       "id": "shizuka",
       "name": "しずかな読み物",
-      "why": "余白の書体を題字に、Noto Serif の本文。長く読むための組み合わせ",
+      "why": "古い活字風のアンティーク体を題字に、Noto Serif の本文。長く読むための組み合わせ",
       "useFor": "長文・記録・落ち着いた読み物",
+      "trkUse": "長い曲・静かな曲・読ませる画面",
       "tags": [
         "読みやすい",
         "明朝",

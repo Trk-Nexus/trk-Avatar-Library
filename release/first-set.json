@@ -1,21 +1,21 @@
 {
   "name": "first-set",
   "title": "trk! はじめてセット",
-  "date": "2026-11-01",
-  "tag": "first-set-2026-11-01-r8",
-  "file": "trk-first-set-2026-11-01-r8.zip",
-  "bytes": 7981799,
-  "sha256": "4415c2e554d6d65385aae8fd53c21571342d489e5569422cf448085da249b847",
+  "date": "2026-11-02",
+  "tag": "first-set-2026-11-02-r9",
+  "file": "trk-first-set-2026-11-02-r9.zip",
+  "bytes": 8118400,
+  "sha256": "d07ac6e671c3002892e60e50418a374f6bea5cc51e5a8656b792f9b0005d5b54",
   "files_out": [
     {
-      "name": "trk-first-set-2026-11-01-r8.zip",
-      "bytes": 7981799,
-      "sha256": "4415c2e554d6d65385aae8fd53c21571342d489e5569422cf448085da249b847"
+      "name": "trk-first-set-2026-11-02-r9.zip",
+      "bytes": 8118400,
+      "sha256": "d07ac6e671c3002892e60e50418a374f6bea5cc51e5a8656b792f9b0005d5b54"
     },
     {
-      "name": "trk-first-set-2026-11-01-r8.stlib",
-      "bytes": 7981799,
-      "sha256": "4415c2e554d6d65385aae8fd53c21571342d489e5569422cf448085da249b847"
+      "name": "trk-first-set-2026-11-02-r9.stlib",
+      "bytes": 8118400,
+      "sha256": "d07ac6e671c3002892e60e50418a374f6bea5cc51e5a8656b792f9b0005d5b54"
     }
   ],
   "files": [
@@ -26,18 +26,18 @@
     },
     {
       "path": "gallery/fonts.html",
-      "bytes": 38804,
-      "sha256": "9b3a7764c919ab79dbb037e7de172d9a85d609bf727c8c95d32bbdd05f335784"
+      "bytes": 39568,
+      "sha256": "232abb47e15c73f5560f8c07e29ca18bfac3421ac0743ecb1a0e1a89f7016162"
     },
     {
       "path": "gallery/packs.html",
-      "bytes": 44433,
-      "sha256": "4afa88f19174ee6f422d206f66a3ec44050a8b7aa7615630b7312f13df1b6162"
+      "bytes": 45520,
+      "sha256": "2ab874397f904d47efbea047377abd2d88c50bf97e72429087d85e58cc8497b4"
     },
     {
       "path": "gallery/pairings.html",
-      "bytes": 198406,
-      "sha256": "17c8b7d7c89cebdf2f83f92f502ca1180727b57364890b5463de57acb9668772"
+      "bytes": 200166,
+      "sha256": "8aafacf0f903208ab7481381f694693e443e184a091ecc1d9f6418ca7d306f4a"
     },
     {
       "path": "catalog/index.json",
@@ -51,13 +51,13 @@
     },
     {
       "path": "catalog/typography-preview.json",
-      "bytes": 169842,
-      "sha256": "6e595cab8c033c146d961ec4bbf338554b79da62f1053b701c1a946fd81c641c"
+      "bytes": 171405,
+      "sha256": "8f97f6e835dcfe265de787ea0265da9566072cb7186799f25b19c0eeb427808b"
     },
     {
       "path": "docs/2026-11-01-組み合わせ縮刷版.png",
-      "bytes": 355083,
-      "sha256": "ab254165da585a93c5d15e38ff75caee9af062a558279831da354352e9fa6843"
+      "bytes": 486510,
+      "sha256": "74ca705419f62436cf50e37a22c3a7d4d91175022486a5d9a304b0d1ff54ed02"
     },
     {
       "path": "packs/sample-mincho.stpack",

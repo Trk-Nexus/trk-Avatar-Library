@@ -1,0 +1,94 @@
+{
+  "name": "first-set",
+  "title": "trk! はじめてセット",
+  "date": "2026-11-01",
+  "tag": "first-set-2026-11-01-r8",
+  "file": "trk-first-set-2026-11-01-r8.zip",
+  "bytes": 7981799,
+  "sha256": "4415c2e554d6d65385aae8fd53c21571342d489e5569422cf448085da249b847",
+  "files_out": [
+    {
+      "name": "trk-first-set-2026-11-01-r8.zip",
+      "bytes": 7981799,
+      "sha256": "4415c2e554d6d65385aae8fd53c21571342d489e5569422cf448085da249b847"
+    },
+    {
+      "name": "trk-first-set-2026-11-01-r8.stlib",
+      "bytes": 7981799,
+      "sha256": "4415c2e554d6d65385aae8fd53c21571342d489e5569422cf448085da249b847"
+    }
+  ],
+  "files": [
+    {
+      "path": "gallery/all-skins.html",
+      "bytes": 85852,
+      "sha256": "5aa870036b61d9621ff2026fb9dd62f3b63a5e7e1d5ea16dafa8971a2fc9ac91"
+    },
+    {
+      "path": "gallery/fonts.html",
+      "bytes": 38804,
+      "sha256": "9b3a7764c919ab79dbb037e7de172d9a85d609bf727c8c95d32bbdd05f335784"
+    },
+    {
+      "path": "gallery/packs.html",
+      "bytes": 44433,
+      "sha256": "4afa88f19174ee6f422d206f66a3ec44050a8b7aa7615630b7312f13df1b6162"
+    },
+    {
+      "path": "gallery/pairings.html",
+      "bytes": 198406,
+      "sha256": "17c8b7d7c89cebdf2f83f92f502ca1180727b57364890b5463de57acb9668772"
+    },
+    {
+      "path": "catalog/index.json",
+      "bytes": 9508,
+      "sha256": "631004a9dcdeff8c2217bbfad333caf20abe69b9c84c757c0766a0338e7875c2",
+      "scoped": true,
+      "source": {
+        "bytes": 48786,
+        "sha256": "7263d8489322fcc9bc8054d4c893ee5bd5cc434caee3d554c9bba0cbc9d095ed"
+      }
+    },
+    {
+      "path": "catalog/typography-preview.json",
+      "bytes": 169842,
+      "sha256": "6e595cab8c033c146d961ec4bbf338554b79da62f1053b701c1a946fd81c641c"
+    },
+    {
+      "path": "docs/2026-11-01-組み合わせ縮刷版.png",
+      "bytes": 355083,
+      "sha256": "ab254165da585a93c5d15e38ff75caee9af062a558279831da354352e9fa6843"
+    },
+    {
+      "path": "packs/sample-mincho.stpack",
+      "bytes": 690,
+      "sha256": "f33b9a1d0f544b9f135f17091df3e16d6e00a93c4d495612a0ebc8601c27ba5d"
+    },
+    {
+      "path": "font-packs/dela-gothic.stpack",
+      "bytes": 951499,
+      "sha256": "8a183e3982c9cb7e6cccdf8474bc1d78c30f3fb70949828c07a4e573e20ebad9"
+    },
+    {
+      "path": "font-packs/dotgothic.stpack",
+      "bytes": 403458,
+      "sha256": "68fa7f0a5b4d34913a41def620a5ba14a596e4c038c5d1dbaf44b5ef5b2e5945"
+    },
+    {
+      "path": "font-packs/shippori-mincho.stpack",
+      "bytes": 2850282,
+      "sha256": "26dd978727ddedb6595927d8a91250f2b2856e50fa0b93587c7f58e4b5dfcc17"
+    },
+    {
+      "path": "font-packs/train-one.stpack",
+      "bytes": 895671,
+      "sha256": "a8d553c01254ff09f588cd1452e51162493bf7643ad027786d5a01d4c69aa6f3"
+    },
+    {
+      "path": "font-packs/zen-kaku.stpack",
+      "bytes": 1969655,
+      "sha256": "b12dc221636c5e7d11c5ecb4f76302a5615a02ea6adc614fabfdd0904567937d"
+    }
+  ],
+  "note": "はじめての人のための軽いセットです。見本 4 枚（全スキン・書体の一覧・パックの一覧・組み合わせ）と目録、見本パックに、書体 5 本（極太のポスター・ドット・明朝・駅名標の極太・角ゴ）を入れています。どれも入れれば「使う」で本文の書体が変わります（trk232 以降）。足りない書体は書体セット（全部入り）か、gallery/fonts.html から 1 本ずつ落とせます。"
+}

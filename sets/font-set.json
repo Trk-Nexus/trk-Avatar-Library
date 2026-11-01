@@ -1,9 +1,9 @@
 {
   "name": "font-set",
   "title": "trk! 書体セット（全部）",
-  "date": "2026-11-01",
-  "rev": "r8",
-  "tag": "font-set-2026-11-01-r8",
+  "date": "2026-11-02",
+  "rev": "r9",
+  "tag": "font-set-2026-11-02-r9",
   "extension": "zip",
   "files": [
     "gallery/all-skins.html",

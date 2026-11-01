@@ -15,7 +15,7 @@ env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
   # （trk240 = 7344111。アプリ側の受け入れ道具 tools/check-set.mjs に --json が入り、
   #   呼び方・終了コード・--json の項目・--have の形が「契約」として書面に固定された版）
-  TRK_PWA_REF: 734411154b4e442676c78fbe42cb9bc3beab7b95
+  TRK_PWA_REF: d93d98bef270efeb26826d576ac3574b828cf119
 
 jobs:
   check:

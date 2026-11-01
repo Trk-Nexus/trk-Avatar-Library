@@ -100,6 +100,8 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;ba
 .card h3 small{display:block;color:var(--muted);font-size:11.5px;font-weight:400;margin-top:2px}
 .why{margin:0;font-size:13.5px;color:var(--text)}
 .use{margin:0;font-size:12.5px;color:var(--muted)}
+.trkuse{margin:0;font-size:12.5px;color:#1d5fa8}
+.trkuse{margin:0;font-size:12.5px;color:var(--accent)}
 .tag{display:inline-block;font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin:2px 4px 0 0}
 .spec{background:var(--panel2);border-radius:10px;padding:12px 13px;display:flex;flex-direction:column;gap:6px;min-height:150px}
 .spec p{margin:0;word-break:normal;overflow-wrap:anywhere}
