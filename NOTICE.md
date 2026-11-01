@@ -3,7 +3,7 @@
 ## このリポジトリ
 
 - ツール（`tools/`）・文書（`README.md`・各 README）・見本の生成物：**GPL-3.0-or-later**（`LICENSE`）。
-  trk-PWA（https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA）と同じライセンスです。
+  trk-PWA（https://github.com/Trk-Nexus/trk-PWA）と同じライセンスです。
 - `tools/lib/zip.mjs` は trk-PWA の `js/zip-io.js` を**読み込んで使う**だけで、写しは持ちません
   （使うときは trk-PWA のチェックアウトが要ります）。
 

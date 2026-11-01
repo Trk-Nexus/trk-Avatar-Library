@@ -1,8 +1,8 @@
 # trk-Avatar-Library 開発引き継ぎ
 
-> **最終更新：2026-11-01**（trk235 版＝**`.stlib` の通し**ができるようになり、**セットを選ぶだけ**で入る・**`tools/verify-set.mjs`** でアプリと同じ手順の受け入れ検査・`check-fonts` の「付け忘れると合格に見える」を修正・セット **r5**）。アプリ側は **trk!（trk-PWA）trk235**（`cd00408`）を前提にしています。
+> **最終更新：2026-11-02**（**組織を `Trk-Nexus` に移しました**（§9 の頭と `docs/2026-11-02-組織の引っ越し.md`）。セットは **r8** の 2 つ・組み合わせ 14 組・目録 30 パック）。CI が見る相手側の固定版は **trk!（trk-PWA）trk240**（`7344111`）です。
 > この倉庫は **配る側**（目録・見本・`.stpack` の置き場）で、**使う側**は trk-PWA です。
-> 目録の形の**正本**は trk-PWA の [`docs/LIBRARY-TRK230-2026-10-31.md`](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA/blob/main/docs/LIBRARY-TRK230-2026-10-31.md) §3。
+> 目録の形の**正本**は trk-PWA の [`docs/LIBRARY-TRK230-2026-10-31.md`](https://github.com/Trk-Nexus/trk-PWA/blob/main/docs/LIBRARY-TRK230-2026-10-31.md) §3。
 > 利用者向けの説明は [`README.md`](README.md)、権利は [`NOTICE.md`](NOTICE.md)。
 
 ## 0. この文書の使い方
@@ -25,6 +25,7 @@
 
 | 日付 | 中身（1行） |
 | --- | --- |
+| 2026-11-02 | **組織の引っ越し（Trk-Nexus）**：リポジトリが `Trk-Nexus/trk-Avatar-Library` に移りました（相手側は `Trk-Nexus/trk-PWA`）。**転送なので中身は無傷**——ブランチ・タグ 11 本・Release（r8 が Latest）・Actions の履歴・PR #1〜#18 がそのまま。**旧 URL は転送**されます。こちらでは CI 2 本の相手側の参照先と、README／HANDOFF／NOTICE のリンク 10 か所を新しい org に直しました。**パックの中の `url`（`pack.json` → 目録）とセットの `README-はじめに.txt` の URL は、`.stpack` のバイト列を変えないため意図的に旧 org のまま**（r9 でまとめて）。経緯は `docs/2026-11-02-組織の引っ越し.md` |
 | 2026-11-01 | **r8：縮刷版 1 枚・アプリ用の束・契約の確定（返事13 への返事）**：**`docs/2026-11-01-組み合わせ縮刷版.png`**（14 組を 1 枚・1400×2066・355,083 B・□ 0。`tools/render-pairings-sheet.py` が**パックの本物の書体**で描く）・**`catalog/typography-preview.json`**（アプリが 1 本で読める束・14 組＋見本 31 書体・169,841 B・`export-pairing-gallery` が作る）・**書き出しの形を合意形に**（`size` を落とす・`preset` は利用者の段階・組は `preset` を持たない・`pack` は任意）・`check-typography --json` に **`families`／`familyCount` を足すだけ**・`--json` の見本は**字数上限 `sampleLimits`**・**r8 の 2 セット**（はじめて 7,981,799 B・書体 64,062,199 B。両方に束と縮刷版が入る。r7 は見本文の折り返しを直す前だったので、公開したまま r8 で置き換え）・**r6／r7 の記録は `release/*-2026-11-01-r{6,7}.json` に保存** |
 | 2026-11-01 | **書体の組み合わせと、エディターの設定の細分化（返事11のあと・r6）**：届いた **14 書体を目録に入れて 30 パック・42 ウェイト**に・**Kosugi Maru の Apache-2.0 を L16 で許す**（`FONT_LICENSES`）・**`catalog/typography.json`**（6 役・5 倍率・4 段階・**組み合わせ 14 組**）・**`gallery/pairings.html`**（題字・見出し・本文・注記を本物の書体で・エディターの試作つき・204,572 B・外部参照 0）・`tools/check-typography.mjs`／`tools/build-preview-fonts.py`／`tools/export-pairing-gallery.mjs`・**r6 の 2 セット**（はじめて 7,462,400 B・書体 63,542,800 B）・設計の経緯は `docs/2026-11-01-書体の組み合わせとエディター設定.md` |
 | 2026-11-01 | **返事9（trk240）への対応**：相手の `check-set.mjs` に **`--json`（契約 version 2）**が入ったので、こちらの `check-set-app` を **数字で判定**する形に（日本語の文を読まない・trk239 でも動く）・**`--both`**（2 つを両方の順で数える）を追加し、**`release-set.yml` にもアプリの判定**を入れた・**selftest 38→40 項目**（契約 4 つの見張り＋`--have` が空振りしないこと）・**役割の書面**（書体・スキン・目録・セット・`gallery` はこちら／PWA 本体は向こう）を受け取って `TRK_PWA_REF` を **trk240（`7344111`）**に |
@@ -47,7 +48,7 @@
 - **ビルドはありません**。Node 18 以降だけで動きます（バンドラー・npm install 不要）。
 - 道具は trk-PWA の **`js/zip-io.js`／`js/pack-catalog.js` をそのまま読みます**（写しを持たない）。
   場所は `--trk=/path/to/trk-PWA` → 環境変数 `TRK_PWA` → 既定 `../trk-PWA` の順で探します。
-  隣に無いときは `git clone https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA.git ../trk-PWA`（読み取りだけ）。
+  隣に無いときは `git clone https://github.com/Trk-Nexus/trk-PWA.git ../trk-PWA`（読み取りだけ）。
 - 変更したら、最低でもこれを流します。
 
   ```sh
@@ -307,6 +308,7 @@ trk-PWA 側と「どこまで見たか」を揃えるための **4 点**です�
 | `docs/2026-11-01-trk235への返事.md` | 手紙（`.stlib` の Q1〜Q5・L13〜L16・重さの相談）への返事。Drive の同じフォルダにも置いた |
 | `docs/2026-11-01-trk235の通しへの返事.md` | 返事3（trk235 ができた・Q7／Q8・`check-fonts` の指摘）への返事。Drive の同じフォルダにも置いた |
 | `docs/2026-11-01-返事11への返事.md` | **返事12**（14 種の受け入れ・r6 の 2 セット・組み合わせ 14 組・設定の細分化の案） |
+| `docs/2026-11-02-組織の引っ越し.md` | **組織移行の記録**（Trk-Nexus・自動で付いてきたもの／直した 10 か所／**あえて直していないもの**とその理由／実測／そちらの判断待ち）。Drive の同じフォルダにも置いた |
 | `docs/2026-11-01-返事13への返事.md` | **返事14**（縮刷版 1 枚・所要時間は**未測**・`settings.typography` の**確定**・`--json` は足すだけ・r8 の 2 セット）。Drive の同じフォルダにも置いた |
 | `docs/2026-11-01-書体の組み合わせとエディター設定.md` | 組み合わせの調査メモ（出どころ・14 組の理由・4 段階・契約の案・こちらで決めなかったこと） |
 | `docs/2026-11-01-返事5への返事.md` | 返事5（trk236〜238・r6 の 2 分割・セットの目録の絞り込み）への返事。Drive の同じフォルダにも置いた |
@@ -602,6 +604,8 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
 
 ## 9. 配布（Git・Release・Drive）
 
+- **置き場所（2026-11-02〜）**：この倉庫は **`Trk-Nexus/trk-Avatar-Library`**（相手側は `Trk-Nexus/trk-PWA`）。旧 `TonbokiriRaikiriMuramasa-Taikoubou/…` の URL は**転送**されます。
+  パックの中の `url` と セットの `README-はじめに.txt` の URL は、**バイト列を変えないため旧 org のまま**（次にパックを作り直す r9 でそろえる。`docs/2026-11-02-組織の引っ越し.md` §3）
 - **Git に入れる**：パック（1 つ 50 MB まで）・見本 HTML・目録・道具
 - **Release か Drive に置く**：書体をたくさん束ねた ZIP・全スキン入りビルド（目録の `description` に「どこにあるか」を書く）
 - 目録には必ず `sha256` と `bytes` を書く（落とした人が確かめられるように）

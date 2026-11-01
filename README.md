@@ -15,7 +15,7 @@
 | | すること | 場所 |
 | --- | --- | --- |
 | ① | **見本を見る** — `gallery/all-skins.html` を落として開く（1ファイル・オフラインOK） | [`gallery/all-skins.html`](gallery/all-skins.html) |
-| ② | **目録とパックを落とす** — `catalog/index.json` と、`packs/` か `font-packs/` の `.stpack`（いま 30 個）。<br>まとめて落とすなら [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r8)（見本 4 枚＋目録＋6 パックの1ファイル・約 8.0 MB）か [**書体セット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/font-set-2026-11-01-r8)（29 本・約 61.1 MiB）。`.zip` と `.stlib` は**同じ中身** | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-目録とパックを落とす) |
+| ② | **目録とパックを落とす** — `catalog/index.json` と、`packs/` か `font-packs/` の `.stpack`（いま 30 個）。<br>まとめて落とすなら [**はじめてセット**](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r8)（見本 4 枚＋目録＋6 パックの1ファイル・約 8.0 MB）か [**書体セット**](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/font-set-2026-11-01-r8)（29 本・約 61.1 MiB）。`.zip` と `.stlib` は**同じ中身** | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-目録とパックを落とす) |
 | ③ | **trk! に入れる** — 設定 → 📦 カスタムパック → 📚 目録から入れる → **📥 まとめて入れる** で、目録とパックをまとめて選ぶ。<br>大きさと sha256 が合わないものは入りません | trk!（trk231 以降） |
 
 ## 1. いま入っているもの
@@ -103,7 +103,7 @@
 <!-- packs-table:end -->
 
 - 表のとおり、**目録（`catalog/index.json`）と、使いたい `.stpack`** を落とします
-- **まとめて落としたいとき**は [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r8)（見本 4 枚＋目録＋6 パックを1つのZIPにしたもの・`release/first-set.json` に sha256）を落として、**ZIP を展開**してください
+- **まとめて落としたいとき**は [**はじめてセット**](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r8)（見本 4 枚＋目録＋6 パックを1つのZIPにしたもの・`release/first-set.json` に sha256）を落として、**ZIP を展開**してください
 - `catalog/index.json` の `sha256` と、落としたファイルのハッシュを比べれば、途中で壊れていないか確かめられます（アプリも入れる前に照合します）
 - **1 本だけ欲しいとき**は [`gallery/fonts.html`](gallery/fonts.html) の行の「⬇ .stpack」から、その 1 本だけ落とせます（目録と 1 本で入れられます）
 
@@ -141,7 +141,7 @@
 - **`version` は `pack.json` の `release` と同じ**にします（アプリはこの2つを比べて「更新あり（1.0.0 → 1.1.0）」を出します）。
   `tools/build-catalog.mjs --check` が、ずれていたら止めます（L8）
 
-形の取り決めは trk-PWA の [`docs/LIBRARY-TRK230-2026-10-31.md`](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA/blob/main/docs/LIBRARY-TRK230-2026-10-31.md) §3 が正本です。
+形の取り決めは trk-PWA の [`docs/LIBRARY-TRK230-2026-10-31.md`](https://github.com/Trk-Nexus/trk-PWA/blob/main/docs/LIBRARY-TRK230-2026-10-31.md) §3 が正本です。
 この倉庫は、その形に合っているかを **アプリ自身の読み取り関数**で毎回確かめています（§3・§9）。
 
 ### 2-5. セット（r6 から 2 つ）
@@ -340,7 +340,7 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 | --- | --- | --- |
 | 書体パックの読み込み（trk! 側） | `pack.json` の `fonts` を `FontFace` で登録し、`--font` に足す。パックを外したら登録も外す | **trk! trk232（2026-11-01）で実装済み**。この倉庫の書体パックがそのまま効きます（§4-3） |
 | 目録からの取り込み | `catalog/index.json` を**ファイルとして選ぶ**と、一覧（名前・サイズ・書体・ライセンス）を出し、選んだ `.stpack` を入れる。**URL を自動で取りに行かない**（オフライン優先の方針を守る） | **trk! trk230 で実装済み**（2026-10-31）。この倉庫は目録の形をそれに合わせ、`tools/check-contract.mjs` で毎回確かめています |
-| はじめてセット（ZIP 1つ） | 見本＋目録＋書体パックを1つに。アプリの「📥 まとめて入れる」でそのまま選べる | **できました**（[Release `first-set-2026-11-01-r2`](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r2)・2,996,422 B・書体パック release 1.1.0） |
+| はじめてセット（ZIP 1つ） | 見本＋目録＋書体パックを1つに。アプリの「📥 まとめて入れる」でそのまま選べる | **できました**（[Release `first-set-2026-11-01-r2`](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r2)・2,996,422 B・書体パック release 1.1.0） |
 | ライセンス全文をアプリで見る | 目録の `fonts[].licenseFile` を読み、アプリ内で全文を表示する | **trk! trk233 で実装済み**（パック一覧の「📄 ライセンス全文を読む」）。倉庫は 15 パックすべてで宣言済み |
 | 書体のひとこと・対応する字数 | 目録の `fonts[].note`（雰囲気の一行）と `fonts[].cmap`（字数）を、アプリの 🔎 中身に出す | **倉庫側は用意済み**（L10・L11）。アプリは次の段で読む予定 |
 | `.stlib`（セットを1ファイルに） | セットを **1 ファイル**で配る（中身は ZIP と同じ） | **できました**。r4 から `.zip` と `.stlib` を同じバイト列で配り、**trk235 が「📦 セットを選ぶ」でそのまま読める**ことを相手側が確認（16 本とも照合一致・`tools/verify-set.mjs` でこちらも同じ手順を検査）。返事は `docs/2026-11-01-trk235への返事.md` |
