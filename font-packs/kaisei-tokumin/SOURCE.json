@@ -1,0 +1,29 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/kaisei-tokumin --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkKaiseiTokumin400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/kaisei-tokumin/-/kaisei-tokumin-5.3.1.tgz",
+      "path": "package/files/kaisei-tokumin-japanese-400-normal.woff2",
+      "sha256": "c2bc71cff6043360b827114c679827bfa1fb41c073808dc91141269f8935c082",
+      "bytes": 1755460,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/kaisei"
+    },
+    "fonts/TrkKaiseiTokumin500.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/kaisei-tokumin/-/kaisei-tokumin-5.3.1.tgz",
+      "path": "package/files/kaisei-tokumin-japanese-500-normal.woff2",
+      "sha256": "b83692995adf0f1135f921c53d458d8b66e2eeab8299f2283f1ffd445a62c06b",
+      "bytes": 1571568,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/kaisei"
+    },
+    "fonts/TrkKaiseiTokumin700.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/kaisei-tokumin/-/kaisei-tokumin-5.3.1.tgz",
+      "path": "package/files/kaisei-tokumin-japanese-700-normal.woff2",
+      "sha256": "dd57a195a6cd3e62d75d199b451f43eea34b14bf69a596a135f356f20a1660bb",
+      "bytes": 1656332,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/kaisei"
+    }
+  }
+}

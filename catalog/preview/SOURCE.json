@@ -1,0 +1,255 @@
+{
+  "generatedAt": "2026-11-01",
+  "chars": 344,
+  "about": "gallery/pairings.html に埋め込む見本用の woff2（各パックの書体から、見本に出す字だけを抜いたもの）",
+  "fonts": [
+    {
+      "family": "TrkDelaGothic",
+      "weight": 400,
+      "chars": 4,
+      "bytes": 964,
+      "pack": "font-packs/dela-gothic.stpack",
+      "file": "fonts/DelaGothicOne-Regular.woff2"
+    },
+    {
+      "family": "TrkDotGothic",
+      "weight": 400,
+      "chars": 24,
+      "bytes": 1464,
+      "pack": "font-packs/dotgothic.stpack",
+      "file": "fonts/DotGothic16-Regular.woff2"
+    },
+    {
+      "family": "TrkKaiseiDecol",
+      "weight": 400,
+      "chars": 13,
+      "bytes": 2864,
+      "pack": "font-packs/kaisei-decol.stpack",
+      "file": "fonts/KaiseiDecol-Regular.woff2"
+    },
+    {
+      "family": "TrkKaiseiDecol",
+      "weight": 700,
+      "chars": 18,
+      "bytes": 4352,
+      "pack": "font-packs/kaisei-decol.stpack",
+      "file": "fonts/KaiseiDecol-Bold.woff2"
+    },
+    {
+      "family": "TrkKaiseiTokumin",
+      "weight": 400,
+      "chars": 29,
+      "bytes": 7056,
+      "pack": "font-packs/kaisei-tokumin.stpack",
+      "file": "fonts/TrkKaiseiTokumin400.woff2"
+    },
+    {
+      "family": "TrkKaiseiTokumin",
+      "weight": 500,
+      "chars": 9,
+      "bytes": 3016,
+      "pack": "font-packs/kaisei-tokumin.stpack",
+      "file": "fonts/TrkKaiseiTokumin500.woff2"
+    },
+    {
+      "family": "TrkKleeOne",
+      "weight": 400,
+      "chars": 22,
+      "bytes": 5092,
+      "pack": "font-packs/klee-one.stpack",
+      "file": "fonts/KleeOne-Regular.woff2"
+    },
+    {
+      "family": "TrkKleeOne",
+      "weight": 600,
+      "chars": 11,
+      "bytes": 2556,
+      "pack": "font-packs/klee-one.stpack",
+      "file": "fonts/KleeOne-SemiBold.woff2"
+    },
+    {
+      "family": "TrkMPlusRounded",
+      "weight": 400,
+      "chars": 34,
+      "bytes": 4232,
+      "pack": "font-packs/m-plus-rounded.stpack",
+      "file": "fonts/MPlusRounded1c-Regular.woff2"
+    },
+    {
+      "family": "TrkMochiyPop",
+      "weight": 400,
+      "chars": 5,
+      "bytes": 1204,
+      "pack": "font-packs/mochiy-pop.stpack",
+      "file": "fonts/MochiyPopOne-Regular.woff2"
+    },
+    {
+      "family": "TrkNotoSansJP",
+      "weight": 400,
+      "chars": 41,
+      "bytes": 5836,
+      "pack": "font-packs/noto-sans-jp.stpack",
+      "file": "fonts/TrkNotoSansJP400.woff2"
+    },
+    {
+      "family": "TrkNotoSansJP",
+      "weight": 700,
+      "chars": 25,
+      "bytes": 3984,
+      "pack": "font-packs/noto-sans-jp.stpack",
+      "file": "fonts/TrkNotoSansJP700.woff2"
+    },
+    {
+      "family": "TrkNotoSerifJP",
+      "weight": 400,
+      "chars": 35,
+      "bytes": 7240,
+      "pack": "font-packs/noto-serif-jp.stpack",
+      "file": "fonts/TrkNotoSerifJP400.woff2"
+    },
+    {
+      "family": "TrkNotoSerifJP",
+      "weight": 700,
+      "chars": 10,
+      "bytes": 2756,
+      "pack": "font-packs/noto-serif-jp.stpack",
+      "file": "fonts/TrkNotoSerifJP700.woff2"
+    },
+    {
+      "family": "TrkPottaOne",
+      "weight": 400,
+      "chars": 16,
+      "bytes": 3536,
+      "pack": "font-packs/potta-one.stpack",
+      "file": "fonts/PottaOne-Regular.woff2"
+    },
+    {
+      "family": "TrkRampart",
+      "weight": 400,
+      "chars": 7,
+      "bytes": 1308,
+      "pack": "font-packs/rampart-one.stpack",
+      "file": "fonts/RampartOne-Regular.woff2"
+    },
+    {
+      "family": "TrkRocknRoll",
+      "weight": 400,
+      "chars": 8,
+      "bytes": 1440,
+      "pack": "font-packs/rocknroll-one.stpack",
+      "file": "fonts/RocknRollOne-Regular.woff2"
+    },
+    {
+      "family": "TrkSawarabiMincho",
+      "weight": 400,
+      "chars": 8,
+      "bytes": 3548,
+      "pack": "font-packs/sawarabi-mincho.stpack",
+      "file": "fonts/TrkSawarabiMincho400.woff2"
+    },
+    {
+      "family": "TrkShipporiAntique",
+      "weight": 400,
+      "chars": 32,
+      "bytes": 6496,
+      "pack": "font-packs/shippori-antique.stpack",
+      "file": "fonts/TrkShipporiAntique400.woff2"
+    },
+    {
+      "family": "TrkShipporiMincho",
+      "weight": 400,
+      "chars": 27,
+      "bytes": 5788,
+      "pack": "font-packs/shippori-mincho.stpack",
+      "file": "fonts/ShipporiMincho-Regular.woff2"
+    },
+    {
+      "family": "TrkShipporiMincho",
+      "weight": 700,
+      "chars": 3,
+      "bytes": 1196,
+      "pack": "font-packs/shippori-mincho.stpack",
+      "file": "fonts/ShipporiMincho-Bold.woff2"
+    },
+    {
+      "family": "TrkStick",
+      "weight": 400,
+      "chars": 11,
+      "bytes": 1796,
+      "pack": "font-packs/stick.stpack",
+      "file": "fonts/TrkStick400.woff2"
+    },
+    {
+      "family": "TrkTrainOne",
+      "weight": 400,
+      "chars": 4,
+      "bytes": 2016,
+      "pack": "font-packs/train-one.stpack",
+      "file": "fonts/TrkTrainOne400.woff2"
+    },
+    {
+      "family": "TrkYomogi",
+      "weight": 400,
+      "chars": 19,
+      "bytes": 3416,
+      "pack": "font-packs/yomogi.stpack",
+      "file": "fonts/TrkYomogi400.woff2"
+    },
+    {
+      "family": "TrkYujiSyuku",
+      "weight": 400,
+      "chars": 3,
+      "bytes": 1320,
+      "pack": "font-packs/yuji-syuku.stpack",
+      "file": "fonts/TrkYujiSyuku400.woff2"
+    },
+    {
+      "family": "TrkZenAntique",
+      "weight": 400,
+      "chars": 19,
+      "bytes": 5104,
+      "pack": "font-packs/zen-antique.stpack",
+      "file": "fonts/TrkZenAntique400.woff2"
+    },
+    {
+      "family": "TrkZenKaku",
+      "weight": 400,
+      "chars": 80,
+      "bytes": 9372,
+      "pack": "font-packs/zen-kaku.stpack",
+      "file": "fonts/ZenKakuGothicNew-Regular.woff2"
+    },
+    {
+      "family": "TrkZenKaku",
+      "weight": 700,
+      "chars": 13,
+      "bytes": 2356,
+      "pack": "font-packs/zen-kaku.stpack",
+      "file": "fonts/ZenKakuGothicNew-Bold.woff2"
+    },
+    {
+      "family": "TrkZenMaru",
+      "weight": 400,
+      "chars": 25,
+      "bytes": 4304,
+      "pack": "font-packs/maru-go.stpack",
+      "file": "fonts/ZenMaruGothic-Regular.woff2"
+    },
+    {
+      "family": "TrkZenOldMincho",
+      "weight": 400,
+      "chars": 28,
+      "bytes": 6024,
+      "pack": "font-packs/zen-old-mincho.stpack",
+      "file": "fonts/ZenOldMincho-Regular.woff2"
+    },
+    {
+      "family": "TrkZenOldMincho",
+      "weight": 700,
+      "chars": 10,
+      "bytes": 2904,
+      "pack": "font-packs/zen-old-mincho.stpack",
+      "file": "fonts/ZenOldMincho-Bold.woff2"
+    }
+  ]
+}

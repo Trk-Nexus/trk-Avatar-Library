@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "毛筆の楷書（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Yuji Syuku を同梱した、毛筆の楷書体。軸の通った筆致で、和風の題字や名場面の見出しに。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkYujiSyuku",
+      "file": "fonts/TrkYujiSyuku400.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "毛筆の楷書",
+    "colors": {
+      "bg": "#16110d",
+      "panel": "#221a14",
+      "text": "#f4ece2",
+      "accent": "#b5533c",
+      "gold": "#e0c9a6"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#b5533c",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#e0c9a6",
+      "shape": "circle"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "明朝のみなもと（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Noto Serif JP（400／600／700）を同梱した、定番の明朝体。読ませる長文と、静かな見出しの両方に使えます。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkNotoSerifJP",
+      "file": "fonts/TrkNotoSerifJP400.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkNotoSerifJP",
+      "file": "fonts/TrkNotoSerifJP600.woff2",
+      "weight": 600,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    },
+    {
+      "family": "TrkNotoSerifJP",
+      "file": "fonts/TrkNotoSerifJP700.woff2",
+      "weight": 700,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "明朝のみなもと",
+    "colors": {
+      "bg": "#14110e",
+      "panel": "#211c17",
+      "text": "#f4efe6",
+      "accent": "#d9a441",
+      "gold": "#8fb3c9"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#d9a441",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#8fb3c9",
+      "shape": "circle"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "くれないの筆（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Zen Kurenaido を同梱した、細い線の手書き風書体。やわらかく、少し寂しげな雰囲気を出したいときに。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkZenKurenaido",
+      "file": "fonts/TrkZenKurenaido400.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "くれないの筆",
+    "colors": {
+      "bg": "#1b1114",
+      "panel": "#281a1f",
+      "text": "#f7e9ec",
+      "accent": "#d9536f",
+      "gold": "#f2b3c0"
+    },
+    "glow": true,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "rounded",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#d9536f",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#f2b3c0",
+      "shape": "circle"
+    }
+  }
+}

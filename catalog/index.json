@@ -2,13 +2,13 @@
   "format": "trk-avatar-library",
   "version": 1,
   "name": "trk-Avatar-Library",
-  "updatedAt": "2026-10-31T20:25:54.184Z",
+  "updatedAt": "2026-11-01T08:40:33.916Z",
   "app": "trk! (trk-PWA)",
   "howToInstall": "trk! の 設定 → 📦 カスタムパック → 📚 目録から入れる で、この目録（index.json）を選び、一覧から入れたい .stpack を選んでください。.stpack を画面にドラッグ＆ドロップしても入ります。",
   "builtinSkins": {
     "count": 53,
     "typeSkins": 9,
-    "generatedAt": "2026-10-31T19:48:22.287Z",
+    "generatedAt": "2026-10-31T20:26:34.519Z",
     "file": "catalog/skins.json"
   },
   "packs": [
@@ -167,6 +167,48 @@
       "warnings": []
     },
     {
+      "id": "ひなの明朝-書体パック-a582537a",
+      "name": "ひなの明朝（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/hina-mincho.stpack",
+      "sha256": "a582537a3f1248f3696a9b864a2a1052f0f7fb2b416935cac00542640459154a",
+      "bytes": 1431466,
+      "entries": 4,
+      "payloadBytes": 1428788,
+      "songs": 0,
+      "skin": {
+        "name": "ひなの明朝",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#1a1418",
+        "accent": "#d98aa8"
+      },
+      "fonts": [
+        {
+          "family": "TrkHinaMincho",
+          "file": "fonts/TrkHinaMincho400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1424396,
+          "note": "やさしく細い明朝。上品で明るい紙面に",
+          "cmap": 6887,
+          "tags": [
+            "明朝",
+            "かわいい"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Hina Mincho を同梱した、やさしく細い明朝体。ひなまつりのような、上品で明るい紙面に。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
       "id": "飾り明朝のラベンダー-書体パック-7e2db031",
       "name": "飾り明朝のラベンダー（書体パック）",
       "author": "trk-PWA",
@@ -220,6 +262,78 @@
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
       "description": "Kaisei Decol（400／700）を同梱した、すこし飾りのある明朝体の書体パック。ラベンダーの明るい見た目です。",
       "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "明朝の重み-書体パック-b67de324",
+      "name": "明朝の重み（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/kaisei-tokumin.stpack",
+      "sha256": "b67de324aa9ea92c67347bc3bce418d109328eef6a548f92518ec4065cc7cf3e",
+      "bytes": 4991606,
+      "entries": 6,
+      "payloadBytes": 4997451,
+      "songs": 0,
+      "skin": {
+        "name": "明朝の重み",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#17130f",
+        "accent": "#c8905a"
+      },
+      "fonts": [
+        {
+          "family": "TrkKaiseiTokumin",
+          "file": "fonts/TrkKaiseiTokumin400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1755460,
+          "note": "横画に重みのある明朝。落ち着いた紙面に",
+          "cmap": 6877,
+          "tags": [
+            "明朝",
+            "和風",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkKaiseiTokumin",
+          "file": "fonts/TrkKaiseiTokumin500.woff2",
+          "license": "OFL-1.1",
+          "weight": 500,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1571568,
+          "note": "重みのある明朝の中庸。少し濃い本文に",
+          "cmap": 6877,
+          "tags": [
+            "明朝",
+            "和風"
+          ]
+        },
+        {
+          "family": "TrkKaiseiTokumin",
+          "file": "fonts/TrkKaiseiTokumin700.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1656332,
+          "note": "重みのある明朝の太字。堂々とした見出しに",
+          "cmap": 6877,
+          "tags": [
+            "明朝",
+            "見出し",
+            "和風"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Kaisei Tokumin（400／500／700）を同梱した、横画に重みのある明朝体。落ち着いた紙面の雰囲気を作ります。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
       "ok": true,
       "warnings": []
     },
@@ -278,6 +392,49 @@
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
       "description": "Klee One（400／600）を同梱した、鉛筆と筆の中間のような書体のパック。和紙の手ざわりの見た目で、静かな曲に向きます。",
       "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "こすぎの丸ゴ-書体パック-4fa61627",
+      "name": "こすぎの丸ゴ（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/kosugi-maru.stpack",
+      "sha256": "4fa61627cf6e5077e89e672267e2f512bbb7785cbc1bb0a4a0c6c75c809b9ab4",
+      "bytes": 1451745,
+      "entries": 4,
+      "payloadBytes": 1449009,
+      "songs": 0,
+      "skin": {
+        "name": "こすぎの丸ゴ",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#10201a",
+        "accent": "#63c48c"
+      },
+      "fonts": [
+        {
+          "family": "TrkKosugiMaru",
+          "file": "fonts/TrkKosugiMaru400.woff2",
+          "license": "Apache-2.0",
+          "weight": 400,
+          "licenseFile": "fonts/LICENSE.txt",
+          "bytes": 1437604,
+          "note": "定番の丸ゴ。親しみやすく疲れにくい",
+          "cmap": 6769,
+          "tags": [
+            "丸ゴ",
+            "読みやすい",
+            "本文"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：Apache-2.0",
+      "description": "Kosugi Maru を同梱した、定番の丸ゴシック（Apache-2.0）。親しみやすく、長く読んでも疲れにくい書体です。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
       "ok": true,
       "warnings": []
     },
@@ -437,6 +594,191 @@
       "warnings": []
     },
     {
+      "id": "てごみの便り-書体パック-cb38baa2",
+      "name": "てごみの便り（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/new-tegomin.stpack",
+      "sha256": "cb38baa2e4264817b685d6e3240d034e7387e158a356bc4125835651bf4249b4",
+      "bytes": 3735560,
+      "entries": 4,
+      "payloadBytes": 3732873,
+      "songs": 0,
+      "skin": {
+        "name": "てごみの便り",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#1a1614",
+        "accent": "#c98b5e"
+      },
+      "fonts": [
+        {
+          "family": "TrkNewTegomin",
+          "file": "fonts/TrkNewTegomin400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 3728480,
+          "note": "手書きの匂いの残る明朝。便箋のような文章に",
+          "cmap": 6871,
+          "tags": [
+            "明朝",
+            "手書き"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "New Tegomin を同梱した、手書きの匂いの残る明朝体。便箋や日記のような、私的な文章に。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "角ゴのみなもと-書体パック-ab017243",
+      "name": "角ゴのみなもと（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/noto-sans-jp.stpack",
+      "sha256": "ab017243f63751fa62769ec371e10e18ecf98a483d0fe9624d83122f9bba6ae0",
+      "bytes": 3445235,
+      "entries": 6,
+      "payloadBytes": 3450354,
+      "songs": 0,
+      "skin": {
+        "name": "角ゴのみなもと",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#11151b",
+        "accent": "#5b8def"
+      },
+      "fonts": [
+        {
+          "family": "TrkNotoSansJP",
+          "file": "fonts/TrkNotoSansJP400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1132964,
+          "note": "迷わない定番の角ゴ。長い本文の基準になる",
+          "cmap": 6886,
+          "tags": [
+            "角ゴ",
+            "読みやすい",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkNotoSansJP",
+          "file": "fonts/TrkNotoSansJP500.woff2",
+          "license": "OFL-1.1",
+          "weight": 500,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1146232,
+          "note": "定番の角ゴの中庸。少しだけ強く読みたい行に",
+          "cmap": 6886,
+          "tags": [
+            "角ゴ",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkNotoSansJP",
+          "file": "fonts/TrkNotoSansJP700.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1158216,
+          "note": "定番の角ゴの太字。見出しの基準になる",
+          "cmap": 6886,
+          "tags": [
+            "角ゴ",
+            "見出し",
+            "読みやすい"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Noto Sans JP（400／500／700）を同梱した、迷わない定番の角ゴシック。長い本文の基準になる書体パックです。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "明朝のみなもと-書体パック-b5435e13",
+      "name": "明朝のみなもと（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/noto-serif-jp.stpack",
+      "sha256": "b5435e137e120bb56e545891d035deaa88ac3fb8b97fa36187e3ae7fe5e8eaa6",
+      "bytes": 4665409,
+      "entries": 6,
+      "payloadBytes": 4670510,
+      "songs": 0,
+      "skin": {
+        "name": "明朝のみなもと",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#14110e",
+        "accent": "#d9a441"
+      },
+      "fonts": [
+        {
+          "family": "TrkNotoSerifJP",
+          "file": "fonts/TrkNotoSerifJP400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1530732,
+          "note": "定番の明朝。読ませる長文の本文に",
+          "cmap": 6886,
+          "tags": [
+            "明朝",
+            "読みやすい",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkNotoSerifJP",
+          "file": "fonts/TrkNotoSerifJP600.woff2",
+          "license": "OFL-1.1",
+          "weight": 600,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1551288,
+          "note": "明朝の中庸。本文より少し強く見せたい行に",
+          "cmap": 6886,
+          "tags": [
+            "明朝",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkNotoSerifJP",
+          "file": "fonts/TrkNotoSerifJP700.woff2",
+          "license": "OFL-1.1",
+          "weight": 700,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1575548,
+          "note": "明朝の太字。静かに強く出る見出しに",
+          "cmap": 6886,
+          "tags": [
+            "明朝",
+            "見出し"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Noto Serif JP（400／600／700）を同梱した、定番の明朝体。読ませる長文と、静かな見出しの両方に使えます。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
       "id": "看板のポップ-書体パック-137c00a2",
       "name": "看板のポップ（書体パック）",
       "author": "trk-PWA",
@@ -566,6 +908,92 @@
       "warnings": []
     },
     {
+      "id": "早蕨の明朝-書体パック-1beb7c43",
+      "name": "早蕨の明朝（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/sawarabi-mincho.stpack",
+      "sha256": "1beb7c436045ea72b8d73629c036e341727452293bf5e8246ebea2d5f550b59f",
+      "bytes": 1186961,
+      "entries": 4,
+      "payloadBytes": 1184250,
+      "songs": 0,
+      "skin": {
+        "name": "早蕨の明朝",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#16130f",
+        "accent": "#a8b545"
+      },
+      "fonts": [
+        {
+          "family": "TrkSawarabiMincho",
+          "file": "fonts/TrkSawarabiMincho400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1179848,
+          "note": "細身の明朝。軽やかな和風の紙面に",
+          "cmap": 3806,
+          "tags": [
+            "明朝",
+            "和風",
+            "本文"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Sawarabi Mincho を同梱した、若草色の似合う細身の明朝体。軽やかな和風の紙面に。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "余白のアンティーク-書体パック-467ddfee",
+      "name": "余白のアンティーク（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/shippori-antique.stpack",
+      "sha256": "467ddfeeee2ae967545a34831dae99ed6c28a4480531dea38f0c3ca74088d8ec",
+      "bytes": 1214407,
+      "entries": 4,
+      "payloadBytes": 1211624,
+      "songs": 0,
+      "skin": {
+        "name": "余白のアンティーク",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#14161a",
+        "accent": "#9aa7b8"
+      },
+      "fonts": [
+        {
+          "family": "TrkShipporiAntique",
+          "file": "fonts/TrkShipporiAntique400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1207224,
+          "note": "余白の似合う書体。静かな本文と見出しに",
+          "cmap": 6868,
+          "tags": [
+            "明朝",
+            "読みやすい",
+            "本文"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Shippori Antique を同梱した、余白の似合う低コントラストの書体。静かな本文と、品のある見出しに。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
       "id": "墨と金の明朝-書体パック-26dd9787",
       "name": "墨と金の明朝（書体パック）",
       "author": "trk-PWA",
@@ -622,6 +1050,175 @@
       "warnings": []
     },
     {
+      "id": "細線のステッキ-書体パック-3811c678",
+      "name": "細線のステッキ（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/stick.stpack",
+      "sha256": "3811c6780792db2091acb6cabd763f0a45000053d3aa4e15ef021c0d6a2e8a9b",
+      "bytes": 854518,
+      "entries": 4,
+      "payloadBytes": 851879,
+      "songs": 0,
+      "skin": {
+        "name": "細線のステッキ",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#101319",
+        "accent": "#8fa8d8"
+      },
+      "fonts": [
+        {
+          "family": "TrkStick",
+          "file": "fonts/TrkStick400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 847492,
+          "note": "線の細い直線書体。図面のような見出しに",
+          "cmap": 6884,
+          "tags": [
+            "角ゴ",
+            "見出し"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Stick を同梱した、線の細い直線的な書体。図面やラベルのような、きっちりした見出しに。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "鉄道の極太-書体パック-a8d553c0",
+      "name": "鉄道の極太（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/train-one.stpack",
+      "sha256": "a8d553c01254ff09f588cd1452e51162493bf7643ad027786d5a01d4c69aa6f3",
+      "bytes": 895671,
+      "entries": 4,
+      "payloadBytes": 893003,
+      "songs": 0,
+      "skin": {
+        "name": "鉄道の極太",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#101418",
+        "accent": "#f0b429"
+      },
+      "fonts": [
+        {
+          "family": "TrkTrainOne",
+          "file": "fonts/TrkTrainOne400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 888616,
+          "note": "駅名標のような極太。遠くから読ませたい題字に",
+          "cmap": 3494,
+          "tags": [
+            "見出し",
+            "元気"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Train One を同梱した、駅名標のような極太の書体。遠くからでも読ませたい題字やスコア表示に。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "よもぎの便り-書体パック-2ab5289c",
+      "name": "よもぎの便り（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/yomogi.stpack",
+      "sha256": "2ab5289cf720ab4d2572e3f4852a90033d7d853cfc0da217da562a07b0ebd430",
+      "bytes": 1584824,
+      "entries": 4,
+      "payloadBytes": 1582172,
+      "songs": 0,
+      "skin": {
+        "name": "よもぎの便り",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#131a12",
+        "accent": "#8fc46b"
+      },
+      "fonts": [
+        {
+          "family": "TrkYomogi",
+          "file": "fonts/TrkYomogi400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1577764,
+          "note": "細いペン字。手紙やメモのような文章に",
+          "cmap": 6885,
+          "tags": [
+            "手書き",
+            "かわいい"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Yomogi を同梱した、細いペン字の書体。手紙やメモのような、やわらかい書きことばに合います。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "毛筆の楷書-書体パック-0a798747",
+      "name": "毛筆の楷書（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/yuji-syuku.stpack",
+      "sha256": "0a798747cd8816eb85fc100cb26c7187cd0f484ef212aabeb14af6278764cc81",
+      "bytes": 3597067,
+      "entries": 4,
+      "payloadBytes": 3594398,
+      "songs": 0,
+      "skin": {
+        "name": "毛筆の楷書",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#16110d",
+        "accent": "#b5533c"
+      },
+      "fonts": [
+        {
+          "family": "TrkYujiSyuku",
+          "file": "fonts/TrkYujiSyuku400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 3590012,
+          "note": "毛筆の楷書。軸の通った和風の題字に",
+          "cmap": 6875,
+          "tags": [
+            "手書き",
+            "和風",
+            "見出し"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Yuji Syuku を同梱した、毛筆の楷書体。軸の通った筆致で、和風の題字や名場面の見出しに。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+      "ok": true,
+      "warnings": []
+    },
+    {
       "id": "筆ポップの夜祭-書体パック-71ecd40d",
       "name": "筆ポップの夜祭（書体パック）",
       "author": "trk-PWA",
@@ -661,6 +1258,49 @@
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
       "description": "Yusei Magic（400）を同梱した筆文字ポップの書体パック。提灯と屋台の夜の見た目で、にぎやかな曲に。",
       "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "古道具の明朝-書体パック-65b401f5",
+      "name": "古道具の明朝（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/zen-antique.stpack",
+      "sha256": "65b401f53c98581e650ac9a8a30b973bcf3ff5182f8ff834c4f4033caafaac36",
+      "bytes": 1991011,
+      "entries": 4,
+      "payloadBytes": 1988318,
+      "songs": 0,
+      "skin": {
+        "name": "古道具の明朝",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#1a1512",
+        "accent": "#b08968"
+      },
+      "fonts": [
+        {
+          "family": "TrkZenAntique",
+          "file": "fonts/TrkZenAntique400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1983924,
+          "note": "古い活字のような明朝。レトロな紙面に",
+          "cmap": 6876,
+          "tags": [
+            "明朝",
+            "レトロ",
+            "和風"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Zen Antique を同梱した、古い活字を思わせる明朝体。レトロな紙面や、静かな題字に向きます。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
       "ok": true,
       "warnings": []
     },
@@ -717,6 +1357,48 @@
       "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
       "description": "Zen Kaku Gothic New（400／700）を同梱した、すっきりした角ゴシックの書体パック。夜の白銀の見た目で、読みやすさを優先したいときに。",
       "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+      "ok": true,
+      "warnings": []
+    },
+    {
+      "id": "くれないの筆-書体パック-02041442",
+      "name": "くれないの筆（書体パック）",
+      "author": "trk-Avatar-Library",
+      "version": "1.0.0",
+      "folder": "font-packs",
+      "file": "font-packs/zen-kurenaido.stpack",
+      "sha256": "02041442402967bfc74cfb1a6d2a335ebe5bf5f47dd2d334f0179c26267e4fce",
+      "bytes": 1361577,
+      "entries": 4,
+      "payloadBytes": 1358850,
+      "songs": 0,
+      "skin": {
+        "name": "くれないの筆",
+        "colors": 5
+      },
+      "colors": {
+        "stage": "#1b1114",
+        "accent": "#d9536f"
+      },
+      "fonts": [
+        {
+          "family": "TrkZenKurenaido",
+          "file": "fonts/TrkZenKurenaido400.woff2",
+          "license": "OFL-1.1",
+          "weight": 400,
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1354452,
+          "note": "細い手書き風。やわらかく寂しげな雰囲気に",
+          "cmap": 6876,
+          "tags": [
+            "手書き",
+            "かわいい"
+          ]
+        }
+      ],
+      "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+      "description": "Zen Kurenaido を同梱した、細い線の手書き風書体。やわらかく、少し寂しげな雰囲気を出したいときに。",
+      "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
       "ok": true,
       "warnings": []
     },

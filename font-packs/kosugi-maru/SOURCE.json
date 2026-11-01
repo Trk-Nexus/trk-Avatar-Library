@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/kosugi-maru --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkKosugiMaru400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/kosugi-maru/-/kosugi-maru-5.3.0.tgz",
+      "path": "package/files/kosugi-maru-japanese-400-normal.woff2",
+      "sha256": "bd6a2bb201a5a9c691a78237f6df8e5de20e535489cdeb2875020fa89b7e2225",
+      "bytes": 1437604,
+      "license": "Apache-2.0",
+      "upstream": "https://github.com/googlefonts/kosugi-maru"
+    }
+  }
+}

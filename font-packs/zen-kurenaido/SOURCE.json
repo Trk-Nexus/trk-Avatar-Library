@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/zen-kurenaido --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkZenKurenaido400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/zen-kurenaido/-/zen-kurenaido-5.3.1.tgz",
+      "path": "package/files/zen-kurenaido-japanese-400-normal.woff2",
+      "sha256": "ac6e0cfdd374e0845384a9f666e48409803134d845b4a3099686bb6b7e4f9046",
+      "bytes": 1354452,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/zen-kurenaido"
+    }
+  }
+}

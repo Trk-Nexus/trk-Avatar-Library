@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "古道具の明朝（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Zen Antique を同梱した、古い活字を思わせる明朝体。レトロな紙面や、静かな題字に向きます。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkZenAntique",
+      "file": "fonts/TrkZenAntique400.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "古道具の明朝",
+    "colors": {
+      "bg": "#1a1512",
+      "panel": "#262019",
+      "text": "#f3ece1",
+      "accent": "#b08968",
+      "gold": "#d9c3a0"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "warm",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#b08968",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#d9c3a0",
+      "shape": "circle"
+    }
+  }
+}

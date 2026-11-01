@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/shippori-antique --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkShipporiAntique400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/shippori-antique/-/shippori-antique-5.3.0.tgz",
+      "path": "package/files/shippori-antique-japanese-400-normal.woff2",
+      "sha256": "7e9eaa823db9c8b6064864716c1bcac80577b21f5ad947c6efd1dbd6be5ede0a",
+      "bytes": 1207224,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/shippori-antique"
+    }
+  }
+}

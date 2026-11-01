@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/stick --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkStick400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/stick/-/stick-5.3.1.tgz",
+      "path": "package/files/stick-japanese-400-normal.woff2",
+      "sha256": "ca4ed1e197dd567e81624d0fee73961a80d37c60fd7b45a2f8fab07572739928",
+      "bytes": 847492,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/stick"
+    }
+  }
+}

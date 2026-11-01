@@ -25,6 +25,7 @@
 
 | 日付 | 中身（1行） |
 | --- | --- |
+| 2026-11-01 | **書体の組み合わせと、エディターの設定の細分化（返事11のあと・r6）**：届いた **14 書体を目録に入れて 30 パック・42 ウェイト**に・**Kosugi Maru の Apache-2.0 を L16 で許す**（`FONT_LICENSES`）・**`catalog/typography.json`**（6 役・5 倍率・4 段階・**組み合わせ 14 組**）・**`gallery/pairings.html`**（題字・見出し・本文・注記を本物の書体で・エディターの試作つき・204,572 B・外部参照 0）・`tools/check-typography.mjs`／`tools/build-preview-fonts.py`／`tools/export-pairing-gallery.mjs`・**r6 の 2 セット**（はじめて 7,462,400 B・書体 63,542,800 B）・設計の経緯は `docs/2026-11-01-書体の組み合わせとエディター設定.md` |
 | 2026-11-01 | **返事9（trk240）への対応**：相手の `check-set.mjs` に **`--json`（契約 version 2）**が入ったので、こちらの `check-set-app` を **数字で判定**する形に（日本語の文を読まない・trk239 でも動く）・**`--both`**（2 つを両方の順で数える）を追加し、**`release-set.yml` にもアプリの判定**を入れた・**selftest 38→40 項目**（契約 4 つの見張り＋`--have` が空振りしないこと）・**役割の書面**（書体・スキン・目録・セット・`gallery` はこちら／PWA 本体は向こう）を受け取って `TRK_PWA_REF` を **trk240（`7344111`）**に |
 | 2026-11-01 | **返事7（trk239）への対応**：**2 分割を試作して、相手側の `tools/check-set.mjs` で通した**（はじめて＝6.9 MB・6 本／書体＝29.4 MB・15 本 → 2 つ目は **これから入る 10 本・22.5 MB／飛ばす 5 本**）・**`tools/check-set-app.mjs`**（相手側の道具をそのまま呼ぶ・`--have` で 2 つ目を数える）を新設して **CI と selftest（37→38 項目）**に・`check-contract` が **`setPending` の数え方**まで見る・`TRK_PWA_REF` を **trk239（`748ac03`）**に |
 | 2026-11-01 | **trk236〜238 への対応（返事5）**：`check-contract` が **note／cmap／weight も「読みました」**に（値を突き合わせ）・`TRK_PWA_REF` を **trk238（`36673dd`）**に・**r6 の 2 分割**（はじめて＝書体 5 本・書体セット＝全部／**同じパックを両方に入れる**）・**セットの目録を「セットに入っているパックだけ」に絞る**（`build-set`・「見つからない n 件」を出さない）・CI が **first-set／font-set の 2 タグ**に対応（記録のタグと取り違えたら止まる）・`sets/font-set.json` と `release/font-set-notes.md` を用意（記録は r6 で）・`gallery/packs.html` を **家族名・太さ・パック名**にそろえる・`build-catalog` が note 30 文字超を ℹ |
@@ -73,15 +74,17 @@
 | --- | --- |
 | 目的 | trk! の見た目（スキン・書体）を**手元に並べて、見て、選んで、持ち込む**ための倉庫。GPL-3.0-or-later |
 | 配るもの | `catalog/index.json`（目録）と、`packs/`・`font-packs/` の `.stpack` |
-| パック | **16 件**。`packs/sample-mincho.stpack`（見本・690 B・release 1.0.0）と **書体パック 15 個**（`font-packs/*.stpack`・合計 30,697,343 B）。書体パックはどれも release 1.0.0（`maru-go` だけ 1.1.0・sha256 `db4dc011…`） |
-| 書体パック | 日本語書体（OFL-1.1）15 種・20 ウェイト。woff2＋`fonts/OFL.txt`＋`NOTICE.md`＋スキン（色とノーツの色）。`fonts[].licenseFile` が全文を指す（L7）。**trk232 から本文の書体として本当に効く**。**trk233 からは全文もアプリで読める** |
-| 見本 | `gallery/all-skins.html` = 全スキン **53 種（書体 9 種）**＋**「🔤 同梱の書体」の節（15 パック・ひとことつき）**・1 ファイル・外部参照 0・オフラインOK（70,449 B）。`catalog/skins.json` がもとデータ。`--check` でズレを見る |
-| 書体の一覧と検索 | `gallery/fonts.html` = **15 パック・22 ウェイト**を、family・太さ・対応字数・大きさ・ライセンス・ひとこと・タグ・パック名の**表**で並べる（L13）。並べ替え 4 種（50 音順／大きさ／字数／太さの数）・絞り込み 4 種（雰囲気タグ／ライセンス／2 ウェイト／大きさ）・横断検索（L14）・**行ごとに 1 本だけ落とすリンク**。1 ファイル・外部参照 0（27,863 B）。もとデータは `catalog/fonts.json` |
-| 道具 | `tools/` の 11 本（下記 §5）。`verify-pack` は書体の path／family／weight／license／`licenseFile` と **OFL.txt の同梱**まで、`check-fonts` は **woff2 の中身（表・cmap・見本の字）**まで見る。`build-catalog` は目録に **`note`（L10）・`cmap`（L11）・`tags`（L15）・`bytes`** を入れ、**書体パックの受け入れ検査（L16）**を通してから書く。`export-font-gallery` が `gallery/fonts.html` を作り、`verify-set` がセットをアプリと同じ手順で開く |
-| 目録の検査 | `tools/check-contract.mjs` が **アプリ自身の `sanitizeCatalog`** で 16 件とも通ることを確認。任意項目（`licenseFile`・`note`・`cmap`・`colors`）をアプリが読むかは**1 行に集計**して出す |
-| 書体のひとこと | `catalog/font-notes.json`（パックの外）に 22 書体ぶん。目録の `fonts[].note` と見本の「🔤」に出る。**パックの `pack.json` は書き換えない**（届いた `.stpack` とバイト単位で同じまま） |
-| 書体のタグ | `catalog/font-tags.json`（パックの外）に 22 書体ぶん・16 語（丸ゴ／角ゴ／明朝／手書き／ポップ／ドット／極太／かすれ／かわいい／レトロ／和風／ネオン／見出し／本文／読みやすい／元気）。目録の `fonts[].tags`（8 個まで・各 16 文字）と `gallery/fonts.html` の絞り込みに入る（L15） |
-| はじめてセット | `sets/first-set.json` の定義から `tools/build-set.mjs` が **1 つのセット**（見本 2 枚＋`set.json`＋目録＋**16 パック**・**30,832,734 B**・21 ファイル）を作る。定義の `extensions` で **`.zip` と `.stlib` を同じバイト列**（sha256 も同じ）で書く。記録は `release/first-set.json`、過去の記録は `release/first-set-2026-11-01.json`（r1）。いまは **r5**（`first-set-2026-11-01-r5`）。**trk235 がこれをそのまま選んで 16 本とも入る**ことを相手側が確認（`tools/verify-set.mjs` でこちらも同じ手順を検査） |
+| パック | **30 件**。`packs/sample-mincho.stpack`（見本・690 B・release 1.0.0）と **書体パック 29 個**（`font-packs/*.stpack`・合計 63,104,400 B）。書体パックはどれも release 1.0.0（`maru-go` だけ 1.1.0・sha256 `db4dc011…`） |
+| 書体パック | 日本語書体 **29 種・42 ウェイト**（OFL-1.1。**Kosugi Maru だけ Apache-2.0**）。woff2＋`fonts/OFL.txt`＋`NOTICE.md`＋スキン（色とノーツの色）。`fonts[].licenseFile` が全文を指す（L7）。**trk232 から本文の書体として本当に効く**。**trk233 からは全文もアプリで読める** |
+| 見本 | `gallery/all-skins.html` = 全スキン **53 種（書体 9 種）**＋**「🔤 同梱の書体」の節（29 パック・ひとことつき）**・1 ファイル・外部参照 0・オフラインOK（85,852 B）。`catalog/skins.json` がもとデータ。`--check` でズレを見る |
+| パックの一覧 | `gallery/packs.html` = **30 パック**を、中に入っている書体（family・太さ・ひとこと・タグ・対応字数・大きさ）・ライセンス・sha256 で並べる。横断検索・タグで絞り込み・パック名／大きさ／書体の数で並べ替え・**パックごとに「⬇ .stpack」**。1 ファイル・外部参照 0（44,433 B） |
+| **組み合わせと設定** | `gallery/pairings.html` = **組み合わせ 14 組**を題字・見出し・本文・注記は**本物の書体**で並べ、**役ごとの書体・字間・行間、全体の基本サイズ・倍率を変えられる試作**つき（設定を JSON で書き出す）。もとデータは `catalog/typography.json`（6 役・5 倍率・4 段階）。1 ファイル・外部参照 0（204,572 B・見本の woff2 31 本を base64 で埋め込み） |
+| 書体の一覧と検索 | `gallery/fonts.html` = **29 パック・42 ウェイト**を、family・太さ・対応字数・大きさ・ライセンス・ひとこと・タグ・パック名の**表**で並べる（L13）。並べ替え 4 種（50 音順／大きさ／字数／太さの数）・絞り込み 4 種（雰囲気タグ／ライセンス／2 ウェイト／大きさ）・横断検索（L14）・**行ごとに 1 本だけ落とすリンク**。1 ファイル・外部参照 0（38,804 B）。もとデータは `catalog/fonts.json` |
+| 道具 | `tools/` の 16 本（下記 §5）。**`check-typography`** は組み合わせが目録に実在するかを見て、**`export-pairing-gallery`** が `gallery/pairings.html` を作る（**`build-preview-fonts.py`** が見本用の woff2 を作る・Python）。`verify-pack` は書体の path／family／weight／license／`licenseFile` と **OFL.txt の同梱**まで、`check-fonts` は **woff2 の中身（表・cmap・見本の字）**まで見る。`build-catalog` は目録に **`note`（L10）・`cmap`（L11）・`tags`（L15）・`bytes`** を入れ、**書体パックの受け入れ検査（L16・書体の license は OFL-1.1 と Apache-2.0）**を通してから書く。`export-font-gallery` が `gallery/fonts.html` を作り、`verify-set` がセットをアプリと同じ手順で開く |
+| 目録の検査 | `tools/check-contract.mjs` が **アプリ自身の `sanitizeCatalog`** で 30 パックとも通ることを確認。任意項目（`licenseFile`・`note`・`cmap`・`colors`）をアプリが読むかは**1 行に集計**して出す |
+| 書体のひとこと | `catalog/font-notes.json`（パックの外）に 42 書体ぶん。目録の `fonts[].note` と見本の「🔤」に出る。**パックの `pack.json` は書き換えない**（届いた `.stpack` とバイト単位で同じまま） |
+| 書体のタグ | `catalog/font-tags.json`（パックの外）に 42 書体ぶん・16 語（丸ゴ／角ゴ／明朝／手書き／ポップ／ドット／極太／かすれ／かわいい／レトロ／和風／ネオン／見出し／本文／読みやすい／元気）。目録の `fonts[].tags`（8 個まで・各 16 文字）と `gallery/fonts.html` の絞り込みに入る（L15） |
+| はじめてセット | `sets/first-set.json` の定義から `tools/build-set.mjs` が **1 つのセット**（見本 4 枚＋`set.json`＋目録＋**6 パック**＝見本 1＋書体 5・**7,462,400 B**・13 ファイル）を作る。定義の `extensions` で **`.zip` と `.stlib` を同じバイト列**（sha256 も同じ）で書く。記録は `release/first-set.json`、過去の記録は `release/first-set-2026-11-01.json`（r1）。いまは **r6**（`first-set-2026-11-01-r6`）。r5（16 パック・30,832,734 B）は実機で通しを確認済み。r6 は `verify-set`・`check-set-app --both`（はじめて→書体＝入る 24・飛ばす 6／書体→はじめて＝入る 0・飛ばす 6）で検査 |
 | CI | `.github/workflows/check.yml`。push／PR ごとに §1 の 8 本（trk-PWA を**固定した版**で clone して実行）＋週次で `main` も検査 |
 | 分担（trk240 の書面） | **書体の製作・追加・ライセンス、スキンの製作、目録とセットの組み立て、`gallery/` の 3 枚はこちら**。**アプリ本体（PWA）・受け入れの道具は trk-PWA**。受け渡しの形（目録の項目・L16・セット・`check-set.mjs`）は**両方の共有財産**で、変えるときは先に書面で知らせる（`docs/2026-11-01-返事9への返事.md` §2 に写し） |
 | 未確認 | **実ブラウザ・実機**（§4）。セットのダウンロードと展開、`FontFace` で書体が当たったときの見え方、ライセンス全文の表示、16 行の一覧、**`gallery/fonts.html` の並べ替え・絞り込み・検索・1 本だけ落とす**、**r5 の `.stlib` を選んで最後まで入る通し**（相手側が 2026-11-01 に実機で確認中）。**手順は §4-1**（L12） |
@@ -160,6 +163,9 @@
 | `tools/export-skin-gallery.mjs` | 全スキン見本を作る／`--check` で今の中身と一致するか（`generatedAt` は無視） |
 | `tools/build-set.mjs` | はじめてセット（ZIP）を作る／`--check` で記録と一致するか（決定的・`rev` で同じ日の r2 も作れる） |
 | `tools/export-font-gallery.mjs` | 目録から書体の一覧と検索（`gallery/fonts.html`）と `catalog/fonts.json` を作る（`--check` で照合） |
+| `tools/check-typography.mjs` | **組み合わせ**（`catalog/typography.json`）が、目録に実在する書体だけを使っているか・6 役そろっているか・ライセンス・見本の文の長さ（`--json`・`--strict`） |
+| `tools/build-preview-fonts.py` | 見本用の woff2（各パックの書体から**見本の字だけ**）を `catalog/preview/` に作る（Python＋fontTools） |
+| `tools/export-pairing-gallery.mjs` | **`gallery/pairings.html`**（組み合わせ 14 組＋エディターの試作）を作る（`--check` で照合） |
 | `tools/verify-set.mjs` | セット（`.stlib` / `.zip`）をアプリ（trk235）と同じ手順で開いて確かめる |
 | `tools/check-docs.mjs` | README の表と目録の一致・内部リンク（**見出しアンカーも**）・セットの記録 |
 | `tools/selftest.mjs` | 上の道具が、わざと壊した入力で**ちゃんと断る**か |
@@ -246,6 +252,7 @@ trk-PWA 側と「どこまで見たか」を揃えるための **4 点**です�
 | 3 | **ライセンス全文の表示** | 「🔤 同梱の書体」→「📄 ライセンス全文を読む」 | `fonts/OFL.txt` の全文が枠の中でスクロールして読める。古い版で入れたパックは「入れ直すと入ります」 |
 | 4 | **16 行の一覧** | 📚 目録から入れる で `catalog/index.json` を選ぶ | 16 行がスクロールして選べる。名前・大きさ・書体・ライセンスが読める |
 | 5 | **書体の一覧と検索**（L13・L14） | セットの中の `gallery/fonts.html` を開き、並べ替え・「明朝」で絞る・`見出し` で検索・行の「⬇ .stpack」を押す | 表が 15 行。件数が変わる。「絞り込みを解除」で戻る。リンクが `font-packs/<slug>.stpack` を指す |
+| 7 | **r6 の 2 つを続けて**（2026-11-01） | ① はじめてセットの `.stlib` を選ぶ → 一覧が **6 パック**になる ② 書体セットの `.stlib` を選ぶ → 「これから入る **24 本**／飛ばす **6 本**」と出る ③ 逆順（書体 → はじめて）も試す | はじめて→書体＝入る 24・飛ばす 6／書体→はじめて＝入る 0・飛ばす 6（`check-set-app --both` と同じ数字）。**所要時間を 2 行ぶん測って書く**（こちらは実機を持っていないため未測定） |
 | 6 | **セット（`.stlib`）の通し**（trk235） | 設定 → 📦 カスタムパック → 📚 目録から入れる → **📦 セット（.stlib / .zip）を選ぶ** で、r5 の `.stlib` を選ぶ | 「trk! はじめてセット（r5）・16 パック・約 29.3 MB・見つからない 0」が出て、確認 1 回で 16 本入る。**自動では適用されない**（一覧の「使う」で選ぶ） |
 
 見た記録（日付・端末・結果）：
@@ -286,12 +293,17 @@ trk-PWA 側と「どこまで見たか」を揃えるための **4 点**です�
 | `catalog/font-tags.json` | 書体の**タグ**（8 個まで・各 16 文字・L15）。目録の `fonts[].tags` と一覧の絞り込みに入る |
 | `gallery/fonts.html` / `catalog/fonts.json` | 書体の一覧と検索（1 ファイル・外部参照 0）と、そのもとデータ |
 | `tools/check-docs.mjs` | README の表と目録の一致・内部リンク（**見出しアンカーも**）・セットの記録 |
-| `sets/first-set.json` | はじめてセットの**定義**（どのファイルを入れるか・日付・記録先・`extensions`）。いまは `rev: r5`・16 パック＋見本 2 枚・`.zip` と `.stlib`。**r6 で書体 5 本に減らす**（それまでは r5 のまま） |
-| `sets/font-set.json` | **書体セット（全部）の定義**（`rev: r6`）。いまは書体 15 本＋見本 3 枚＋目録。**記録（`release/font-set.json`）は r6 で作る**まで無い（CI は記録の無い定義を飛ばす） |
+| `sets/first-set.json` | はじめてセットの**定義**（どのファイルを入れるか・日付・記録先・`extensions`）。いまは `rev: r6`・6 パック（見本 1＋書体 5）＋見本 4 枚・`.zip` と `.stlib` |
+| `sets/font-set.json` | **書体セット（全部）の定義**（`rev: r6`）。いまは書体 29 本＋見本 1＋見本 4 枚＋目録。記録は `release/font-set.json`（r6 で作った） |
 | `release/font-set-notes.md` | 書体セットの **Release の説明書き**（CI が大きさと sha256 を足して添付） |
-| `release/first-set.json` | 配ったセットの**記録**（ファイル名・bytes・sha256・`files_out`（両方の名前）・中身の sha256）。いまは r5（30,832,734 B） |
+| `release/first-set.json` | 配ったセットの**記録**（ファイル名・bytes・sha256・`files_out`（両方の名前）・中身の sha256）。いまは **r6（7,462,400 B・13 ファイル）** |
+| `release/font-set.json` | **書体セットの記録**（r6・**63,542,800 B・37 ファイル**） |
+| `catalog/typography.json` | **組み合わせのデータ**（6 役・5 倍率・字間/行間の範囲・4 段階・14 組）。パックの中身は変えていません |
+| `gallery/pairings.html` | 組み合わせの見本＋エディターの試作（1 ファイル・外部参照 0・204,572 B）。`catalog/preview/*.woff2`（見本の字だけ・31 本・114,540 B）を埋め込み |
 | `docs/2026-11-01-trk235への返事.md` | 手紙（`.stlib` の Q1〜Q5・L13〜L16・重さの相談）への返事。Drive の同じフォルダにも置いた |
 | `docs/2026-11-01-trk235の通しへの返事.md` | 返事3（trk235 ができた・Q7／Q8・`check-fonts` の指摘）への返事。Drive の同じフォルダにも置いた |
+| `docs/2026-11-01-返事11への返事.md` | **返事12**（14 種の受け入れ・r6 の 2 セット・組み合わせ 14 組・設定の細分化の案） |
+| `docs/2026-11-01-書体の組み合わせとエディター設定.md` | 組み合わせの調査メモ（出どころ・14 組の理由・4 段階・契約の案・こちらで決めなかったこと） |
 | `docs/2026-11-01-返事5への返事.md` | 返事5（trk236〜238・r6 の 2 分割・セットの目録の絞り込み）への返事。Drive の同じフォルダにも置いた |
 | `docs/2026-11-01-返事7への返事.md` | 返事7（trk239 の `setPending`）への返事。**試作 2 つを相手側の `check-set.mjs` で通した記録**と、CI への組み込み。Drive の同じフォルダにも置いた |
 | `docs/2026-11-01-返事9への返事.md` | 返事9（trk240 の `--json` と役割の書面）への返事。**数字で判定する形**にしたこと・契約の見張り・`--both` の実測・これからの案。Drive の同じフォルダにも置いた |

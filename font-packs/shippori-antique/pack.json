@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "余白のアンティーク（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Shippori Antique を同梱した、余白の似合う低コントラストの書体。静かな本文と、品のある見出しに。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkShipporiAntique",
+      "file": "fonts/TrkShipporiAntique400.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "余白のアンティーク",
+    "colors": {
+      "bg": "#14161a",
+      "panel": "#1f232a",
+      "text": "#eef1f5",
+      "accent": "#9aa7b8",
+      "gold": "#d9c9a3"
+    },
+    "glow": false,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "serif",
+    "video": "cool",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#9aa7b8",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#d9c9a3",
+      "shape": "circle"
+    }
+  }
+}

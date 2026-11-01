@@ -15,7 +15,7 @@
 | | すること | 場所 |
 | --- | --- | --- |
 | ① | **見本を見る** — `gallery/all-skins.html` を落として開く（1ファイル・オフラインOK） | [`gallery/all-skins.html`](gallery/all-skins.html) |
-| ② | **目録とパックを落とす** — `catalog/index.json` と、`packs/` か `font-packs/` の `.stpack`（いま 16 個）。<br>まとめて落とすなら [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r5)（見本＋目録＋16 パックの1ファイル・約 29.4 MB。`.zip` と `.stlib` は**同じ中身**） | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-目録とパックを落とす) |
+| ② | **目録とパックを落とす** — `catalog/index.json` と、`packs/` か `font-packs/` の `.stpack`（いま 30 個）。<br>まとめて落とすなら [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r6)（見本 4 枚＋目録＋6 パックの1ファイル・約 7.5 MB）か [**書体セット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/font-set-2026-11-01-r6)（29 本・約 60.6 MiB）。`.zip` と `.stlib` は**同じ中身** | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-目録とパックを落とす) |
 | ③ | **trk! に入れる** — 設定 → 📦 カスタムパック → 📚 目録から入れる → **📥 まとめて入れる** で、目録とパックをまとめて選ぶ。<br>大きさと sha256 が合わないものは入りません | trk!（trk231 以降） |
 
 ## 1. いま入っているもの
@@ -23,18 +23,20 @@
 | 場所 | 中身 |
 | --- | --- |
 | `gallery/all-skins.html` | **全スキン見本**（trk! の見た目のスキン **53 種**）。1ファイルで、ダブルクリックだけで開けます。外部からは何も読みません（オフラインOK） |
-| `gallery/fonts.html` | **書体の一覧と検索**（15 パック・22 ウェイト）。対応字数・大きさ・太さ・ライセンス・ひとこと・雰囲気タグを並べ、**50 音順／大きさ順／字数順**に並べ替え、**雰囲気・ライセンス・太さ・大きさで絞り込み**、言葉で横断検索。1ファイル・外部参照 0。**行ごとに 1 本だけ落とせる**リンクつき（L13・L14） |
-| `gallery/packs.html` | **パックの一覧**（16 パック・書体 22 本）。パックごとに、中に入っている書体（family・太さ・ひとこと・タグ・対応字数・大きさ）・ライセンス・sha256 を並べ、**言葉で横断検索**・**雰囲気タグで絞り込み**・**パック名／大きさ／書体の数で並べ替え**。1ファイル・外部参照 0。**パックごとに「⬇ .stpack」**（「どのパックにどの書体が入っているか」をパックの側から見る） |
+| `gallery/fonts.html` | **書体の一覧と検索**（29 パック・42 ウェイト）。対応字数・大きさ・太さ・ライセンス・ひとこと・雰囲気タグを並べ、**50 音順／大きさ順／字数順**に並べ替え、**雰囲気・ライセンス・太さ・大きさで絞り込み**、言葉で横断検索。1ファイル・外部参照 0。**行ごとに 1 本だけ落とせる**リンクつき（L13・L14） |
+| `gallery/packs.html` | **パックの一覧**（30 パック・書体 42 本）。パックごとに、中に入っている書体（family・太さ・ひとこと・タグ・対応字数・大きさ）・ライセンス・sha256 を並べ、**言葉で横断検索**・**雰囲気タグで絞り込み**・**パック名／大きさ／書体の数で並べ替え**。1ファイル・外部参照 0。**パックごとに「⬇ .stpack」**（「どのパックにどの書体が入っているか」をパックの側から見る） |
 | `catalog/skins.json` | 上の見本のもとデータ（機械が読む用・53 種・書体 9 種） |
-| `catalog/fonts.json` | 書体の一覧のもとデータ（機械が読む用・15 パック・22 ウェイト） |
+| `gallery/pairings.html` | **書体の組み合わせ 14 組**の見本。題字・見出し・本文・注記は**本物の書体**で出て、**役ごとの書体・字間・行間、全体の倍率**をその場で変えられます（エディターの試作・設定を JSON で書き出し）。1ファイル・外部参照 0。もとデータは `catalog/typography.json` |
+| `catalog/fonts.json` | 書体の一覧のもとデータ（機械が読む用・29 パック・42 ウェイト） |
+| `catalog/typography.json` | 組み合わせのもとデータ（6 役・5 倍率・字間/行間の範囲・**4 段階の細分化**・14 組）。`tools/check-typography.mjs` が目録と突き合わせます |
 | `catalog/index.json` | **目録**。この倉庫で配るパックの一覧（名前・作者・版・sha256・バイト数・含まれる書体・ライセンス）。アプリ（trk230 以降）がそのまま読みます |
 | `catalog/font-notes.json` | 書体の**ひとこと**（「どんな雰囲気か」の1行・60 文字まで）。目録の `fonts[].note` に入ります（L10）。**パック自身の `pack.json`（`fonts[].note`）にも書けます**（2026-11-01）。両方に書くと `build-catalog` が止めます |
 | `catalog/font-tags.json` | 書体の**検索と絞り込みの語**（「丸ゴ」「明朝」「見出し」など・8 個まで・各 16 文字）。目録の `fonts[].tags` と `gallery/fonts.html`・`gallery/packs.html` の絞り込みに入ります（L15）。**`pack.json`（`fonts[].tags`）にも書けます**（2026-11-01・二重に書くと止まる） |
 | `packs/` | 配る `.stpack`（trk! のカスタムパック）。いまは見本が1つ |
-| `font-packs/` | 書体を同梱した `.stpack` が **15 個**（14 種の日本語書体＋「丸ゴのお茶目」）。合計 **29.3 MB**（30,697,343 B）・20 ウェイト。一覧は §2-2、作り方は §4 |
+| `font-packs/` | 書体を同梱した `.stpack` が **29 個**（28 種の日本語書体＋「丸ゴのお茶目」）。合計 **60.2 MB**（63,104,400 B）・**42 ウェイト**。一覧は §2-2、作り方は §4 |
 | `tools/` | 見本の書き出し・パックの組み立て／検査・目録の作成・**目録がアプリの読み取り規則を通るかの検査**・パックの見本作り（Node だけ） |
-| `sets/` | **セットの定義**。`first-set.json`（はじめてセット）と `font-set.json`（書体セット）。作るのは `tools/build-set.mjs`。**r6 から 2 つ**に分かれます（下の §2-5） |
-| `release/` | 配ったセットの記録（ファイル名・大きさ・sha256）。いまの記録（**r5**）と、過去の記録（r1 の `first-set-2026-11-01.json`。r2〜r4 の経緯は `release/README.md`）。`font-set.json`（書体セット）は **r6 で作ります**（`font-set-notes.md` は用意済み） |
+| `sets/` | **セットの定義**。`first-set.json`（はじめてセット・**r6**：見本 4 枚＋目録＋6 パック）と `font-set.json`（書体セット・**r6**：29 本）。作るのは `tools/build-set.mjs`（下の §2-5） |
+| `release/` | 配ったセットの記録（ファイル名・大きさ・sha256）。いまの記録は **r6 の 2 つ**（`first-set.json` 7,462,400 B・`font-set.json` 63,542,800 B）と、過去の記録（r1 の `first-set-2026-11-01.json`。r2〜r5 の経緯は `release/README.md`） |
 | `docs/` | 受け渡しメモ（2026-10-31）。開発の引き継ぎは [`HANDOFF.md`](HANDOFF.md) |
 | `LICENSE` / `NOTICE.md` | GPL-3.0-or-later と、権利のまとめ |
 
@@ -59,11 +61,11 @@
 
 ### 2-2. 目録とパックを落とす（②）
 
-**どのパックを落とすか**（いま配っているのは **16 個**：見本 1＋書体パック 15）。
+**どのパックを落とすか**（いま配っているのは **30 個**：見本 1＋書体パック 29）。
 
 - 書体パックは、どれも **日本語の書体（woff2）＋`fonts/OFL.txt`（ライセンス全文）＋スキン**の組です。入れて「使う」で本文の書体が変わります（trk232 以降）
-- 全部まとめてほしいときは、下の表のファイルを1つずつではなく **はじめてセット** を落としてください（16 個入り・約 29.4 MB）
-- **r6 からは 2 つ**になります：**はじめてセット**（約 7 MB・書体 5 本）と **書体セット**（書体は全部）。詳細は §2-5
+- 全部まとめてほしいときは、下の表のファイルを1つずつではなく **セット** を落としてください（**はじめて＝6 パック・約 7.5 MB**／**書体＝29 本・約 60.6 MiB**）
+- **r6 からは 2 つ**です：**はじめてセット**（7,462,400 B・書体 5 本）と **書体セット**（63,542,800 B・書体 29 本）。詳細は §2-5
 
 <!-- packs-table:start -->
 | 名前 | ファイル | 大きさ | 何が変わるか | 書体 | ライセンス |
@@ -72,22 +74,36 @@
 | 極太ポスター（書体パック） | `font-packs/dela-gothic.stpack` | 929.2 KB<br>（951,499 B） | 黒地に赤と黄のポスター風＋**極太** | Dela Gothic One 400<br>`TrkDelaGothic` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | ドットの電子音（書体パック） | `font-packs/dotgothic.stpack` | 394.0 KB<br>（403,458 B） | 走査線つき電子基板の見た目＋**ドット文字** | DotGothic16 400<br>`TrkDotGothic` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | まるぽっぷ いちご（書体パック） | `font-packs/hachi-maru-pop.stpack` | 1.9 MB<br>（1,973,189 B） | いちごミルク色の見た目＋**まる文字** | Hachi Maru Pop 400<br>`TrkHachiMaru` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| ひなの明朝（書体パック） | `font-packs/hina-mincho.stpack` | 1.4 MB<br>（1,431,466 B） | 桃と白の明るい見た目＋**やさしい明朝** | Hina Mincho 400<br>`TrkHinaMincho` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | 飾り明朝のラベンダー（書体パック） | `font-packs/kaisei-decol.stpack` | 3.2 MB<br>（3,399,530 B） | ラベンダーの明るい見た目＋**飾り明朝** | Kaisei Decol 400／700<br>`TrkKaiseiDecol` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| 明朝の重み（書体パック） | `font-packs/kaisei-tokumin.stpack` | 4.8 MB<br>（4,991,606 B） | 和紙の茶の見た目＋**重みのある明朝** | Kaisei Tokumin 400／500／700<br>`TrkKaiseiTokumin` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | 筆ペンの手紙（書体パック） | `font-packs/klee-one.stpack` | 3.7 MB<br>（3,929,934 B） | 和紙の手ざわりの見た目＋**手書き風** | Klee One 400／600<br>`TrkKleeOne` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| こすぎの丸ゴ（書体パック） | `font-packs/kosugi-maru.stpack` | 1.4 MB<br>（1,451,745 B） | 淡い桃色の見た目＋**定番の丸ゴ** | Kosugi Maru 400<br>`TrkKosugiMaru` | パックの作り：GPL-3.0-or-later／書体：Apache-2.0（release 1.0.0） |
 | まるゴのミルクティー（書体パック） | `font-packs/m-plus-rounded.stpack` | 1.8 MB<br>（1,902,101 B） | ミルクティー色の見た目＋**丸ゴシック** | M PLUS Rounded 1c 400／700<br>`TrkMPlusRounded` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | 丸ゴのお茶目（書体パック） | `font-packs/maru-go.stpack` | 2.8 MB<br>（2,936,399 B） | 桃色の夜の見た目＋**丸ゴシック** | Zen Maru Gothic 400／700<br>`TrkZenMaru` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.1.0） |
 | もちもちポップ（書体パック） | `font-packs/mochiy-pop.stpack` | 976.3 KB<br>（999,719 B） | 夜紫に桃色の見た目＋**まるい太字ポップ** | Mochiy Pop One 400<br>`TrkMochiyPop` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| てごみの便り（書体パック） | `font-packs/new-tegomin.stpack` | 3.6 MB<br>（3,735,560 B） | 便箋の生成りの見た目＋**手書きの明朝** | New Tegomin 400<br>`TrkNewTegomin` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| 角ゴのみなもと（書体パック） | `font-packs/noto-sans-jp.stpack` | 3.3 MB<br>（3,445,235 B） | 暗い青の落ち着いた見た目＋**定番の角ゴ** | Noto Sans JP 400／500／700<br>`TrkNotoSansJP` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| 明朝のみなもと（書体パック） | `font-packs/noto-serif-jp.stpack` | 4.4 MB<br>（4,665,409 B） | 墨色に金の見た目＋**定番の明朝** | Noto Serif JP 400／600／700<br>`TrkNotoSerifJP` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | 看板のポップ（書体パック） | `font-packs/potta-one.stpack` | 1.9 MB<br>（2,020,608 B） | 深い青緑に黄色の見た目＋**看板風ポップ** | Potta One 400<br>`TrkPottaOne` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | ラインのネオン（書体パック） | `font-packs/rampart-one.stpack` | 1.5 MB<br>（1,577,304 B） | 紫と水色のネオンの見た目＋**袋文字** | Rampart One 400<br>`TrkRampart` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | ロックの夜（書体パック） | `font-packs/rocknroll-one.stpack` | 958.6 KB<br>（981,561 B） | 焚き火のような暖色の見た目＋**手書きロック風** | RocknRoll One 400<br>`TrkRocknRoll` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| 早蕨の明朝（書体パック） | `font-packs/sawarabi-mincho.stpack` | 1.1 MB<br>（1,186,961 B） | 薄墨の見た目＋**細身の明朝** | Sawarabi Mincho 400<br>`TrkSawarabiMincho` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| 余白のアンティーク（書体パック） | `font-packs/shippori-antique.stpack` | 1.2 MB<br>（1,214,407 B） | 余白の白の見た目＋**すっきりした本文** | Shippori Antique 400<br>`TrkShipporiAntique` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | 墨と金の明朝（書体パック） | `font-packs/shippori-mincho.stpack` | 2.7 MB<br>（2,850,282 B） | 墨と金の落ち着いた見た目＋**明朝** | Shippori Mincho 400／700<br>`TrkShipporiMincho` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| 細線のステッキ（書体パック） | `font-packs/stick.stpack` | 834.5 KB<br>（854,518 B） | 白と黒の図面の見た目＋**細い直線** | Stick 400<br>`TrkStick` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| 鉄道の極太（書体パック） | `font-packs/train-one.stpack` | 874.7 KB<br>（895,671 B） | 駅名標の藍と白の見た目＋**極太** | Train One 400<br>`TrkTrainOne` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| よもぎの便り（書体パック） | `font-packs/yomogi.stpack` | 1.5 MB<br>（1,584,824 B） | 若草色の見た目＋**細いペン字** | Yomogi 400<br>`TrkYomogi` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| 毛筆の楷書（書体パック） | `font-packs/yuji-syuku.stpack` | 3.4 MB<br>（3,597,067 B） | 墨と朱の見た目＋**毛筆の楷書** | Yuji Syuku 400<br>`TrkYujiSyuku` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | 筆ポップの夜祭（書体パック） | `font-packs/yusei-magic.stpack` | 881.8 KB<br>（902,975 B） | 提灯と屋台の夜の見た目＋**筆文字ポップ** | Yusei Magic 400<br>`TrkYuseiMagic` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| 古道具の明朝（書体パック） | `font-packs/zen-antique.stpack` | 1.9 MB<br>（1,991,011 B） | 古びた紙の見た目＋**古活字の明朝** | Zen Antique 400<br>`TrkZenAntique` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | 角ゴのしらゆき（書体パック） | `font-packs/zen-kaku.stpack` | 1.9 MB<br>（1,969,655 B） | 夜の白銀の見た目＋**角ゴシック** | Zen Kaku Gothic New 400／700<br>`TrkZenKaku` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
+| くれないの筆（書体パック） | `font-packs/zen-kurenaido.stpack` | 1.3 MB<br>（1,361,577 B） | くれない色の静かな見た目＋**細い手書き** | Zen Kurenaido 400<br>`TrkZenKurenaido` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 | 古明朝の藍（書体パック） | `font-packs/zen-old-mincho.stpack` | 3.7 MB<br>（3,899,129 B） | 藍色の静かな見た目＋**古風な明朝** | Zen Old Mincho 400／700<br>`TrkZenOldMincho` | パックの作り：GPL-3.0-or-later／書体：OFL-1.1（release 1.0.0） |
 <!-- packs-table:end -->
 
 - 表のとおり、**目録（`catalog/index.json`）と、使いたい `.stpack`** を落とします
-- **まとめて落としたいとき**は [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r3)（見本 HTML＋目録＋16 パックを1つのZIPにしたもの・`release/first-set.json` に sha256）を落として、**ZIP を展開**してください
+- **まとめて落としたいとき**は [**はじめてセット**](https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r6)（見本 4 枚＋目録＋6 パックを1つのZIPにしたもの・`release/first-set.json` に sha256）を落として、**ZIP を展開**してください
 - `catalog/index.json` の `sha256` と、落としたファイルのハッシュを比べれば、途中で壊れていないか確かめられます（アプリも入れる前に照合します）
 - **1 本だけ欲しいとき**は [`gallery/fonts.html`](gallery/fonts.html) の行の「⬇ .stpack」から、その 1 本だけ落とせます（目録と 1 本で入れられます）
 
@@ -130,12 +146,12 @@
 
 ### 2-5. セット（r6 から 2 つ）
 
-「全部入りは重い／まず試したい」の両方に応えるため、**r6 から 2 つ**に分けます（それまでは r5 の 1 つ）。
+「全部入りは重い／まず試したい」の両方に応えるため、**r6 から 2 つ**に分けました（r5 までは 1 つ）。
 
-| セット | 中身 | 大きさ（見込み） | タグ |
+| セット | 中身 | 大きさ（実測） | タグ |
 | --- | --- | --- | --- |
-| **はじめてセット** | 見本 3 枚＋目録＋見本パック＋**書体 5 本**（角ゴ・ドット・手書き・ポップ・明朝） | 約 7 MB | `first-set-2026-11-01-r6` |
-| **書体セット（全部）** | 見本 3 枚＋目録＋**書体は全部** | 29.4 MB → 追加の 14 種で 55〜65 MB | `font-set-2026-11-01-r6` |
+| **はじめてセット** | 見本 4 枚＋目録＋見本パック＋**書体 5 本**（角ゴ・明朝・極太・ドット・駅名標） | **7,462,400 B**（13 ファイル） | `first-set-2026-11-01-r6` |
+| **書体セット（全部）** | 見本 4 枚＋目録＋**書体は全部（29 本・42 ウェイト）** | **63,542,800 B**（37 ファイル・約 60.6 MiB） | `font-set-2026-11-01-r6` |
 
 - **はじめてセットの 5 本も、書体セットに入ります**（重なっても、すでに入っていて版も同じパックはアプリが飛ばします）
 - **セットの中の `catalog/index.json` は、そのセットに入っているパックだけ**を載せています
@@ -211,6 +227,9 @@ node tools/check-docs.mjs                           # README の表・リンク�
 node tools/check-fonts.mjs                          # パックの書体（woff2）が本当に読める形か・見本の字が入っているか
 node tools/export-pack-gallery.mjs                  # gallery/packs.html（パックごとの一覧）を作り直す
 node tools/export-pack-gallery.mjs --check          # いまの一覧と合っているかだけ見る（CI 向け）
+node tools/check-typography.mjs                     # 書体の組み合わせ（catalog/typography.json）が目録と合っているか
+node tools/export-pairing-gallery.mjs               # gallery/pairings.html（組み合わせの見本＋エディターの試作）を作り直す
+node tools/export-pairing-gallery.mjs --check       # いまの見本と合っているかだけ見る（CI 向け）
 node tools/check-set-app.mjs dist/trk-font-set-…r6.stlib --have=dist/trk-first-set-…r6.stlib
                                                     # セットを「アプリ自身の判定」でも見る（相手側の tools/check-set.mjs を呼ぶ）
 node tools/check-set-app.mjs dist/trk-font-set-…r6.stlib --have=dist/trk-first-set-…r6.stlib --both
@@ -336,16 +355,16 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 - **Git に入れる**：パック（数十 MB まで）・見本 HTML・目録・ツール
 - **Release か Drive に置く**：書体をたくさん束ねた大きな ZIP、全スキン入りビルド
 - 目録には必ず `sha256` と `bytes` を書く（落とした人が確かめられるように）
-- いまのいちばん大きいもの：`font-packs/klee-one.stpack` の **3.7 MB**（3,929,934 B・woff2 2 本）。
-  書体パック 15 個で **29.3 MB**（30,697,343 B）。1 パック 50 MB の枠に余裕があり、Git のままで足ります
-- はじめてセット（16 パック入り）は **約 29.4 MB**。Release に置くので、Git には入れません（`dist/` は gitignore）
+- いまのいちばん大きいもの：`font-packs/noto-serif-jp.stpack` の **4.4 MB**（4,665,409 B・woff2 3 本）。
+  書体パック 29 個で **60.2 MB**（63,104,400 B）。1 パック 50 MB の枠に余裕があり、Git のままで足ります
+- セット（はじめて 7.5 MB・書体 60.6 MiB）は Release に置くので、Git には入れません（`dist/` は gitignore）
 
 ## 7. ライセンスとクレジット
 
 - この倉庫のツールと文書：**GPL-3.0-or-later**（trk-PWA と同じ）。クレジットとソースは保持してください
 - 各パック：`pack.json` の `license` を見てください（パックごとに違います）
 - 同梱した書体：**OFL などの全文**をパックの中に入れ、`NOTICE.md` にも追記します
-  - `font-packs/` の 15 パックは、いずれも **SIL Open Font License 1.1** の日本語書体を1〜2 ウェイト同梱しています。
+  - `font-packs/` の 29 パックは、日本語書体を 1〜3 ウェイト同梱しています。**OFL-1.1 が 28 本、Apache-2.0 が 1 本**（Kosugi Maru・`fonts/LICENSE.txt`）。
     全文は**パックの中の `fonts/OFL.txt`**（＝`fonts[].licenseFile`）、クレジットは各パックの `NOTICE.md`
     （パックの中と `font-packs/<slug>/NOTICE.md`）にあります。書体そのものの名前は変えていません
     （`Trk…` はアプリの中で使う家族名です）

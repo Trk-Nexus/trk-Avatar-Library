@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/yuji-syuku --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkYujiSyuku400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/yuji-syuku/-/yuji-syuku-5.3.1.tgz",
+      "path": "package/files/yuji-syuku-japanese-400-normal.woff2",
+      "sha256": "1fc61446c1fe4a997a8263e761f5ea87ec3f5857e29f3a70fcdf4c984af104f2",
+      "bytes": 3590012,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/yuji-syuku"
+    }
+  }
+}

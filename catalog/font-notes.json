@@ -52,6 +52,54 @@
     },
     "font-packs/mochiy-pop.stpack": {
       "fonts/MochiyPopOne-Regular.woff2": "まるい太字のポップ体。もちっとした印象に"
+    },
+    "font-packs/noto-sans-jp.stpack": {
+      "fonts/TrkNotoSansJP400.woff2": "迷わない定番の角ゴ。長い本文の基準になる",
+      "fonts/TrkNotoSansJP500.woff2": "定番の角ゴの中庸。少しだけ強く読みたい行に",
+      "fonts/TrkNotoSansJP700.woff2": "定番の角ゴの太字。見出しの基準になる"
+    },
+    "font-packs/noto-serif-jp.stpack": {
+      "fonts/TrkNotoSerifJP400.woff2": "定番の明朝。読ませる長文の本文に",
+      "fonts/TrkNotoSerifJP600.woff2": "明朝の中庸。本文より少し強く見せたい行に",
+      "fonts/TrkNotoSerifJP700.woff2": "明朝の太字。静かに強く出る見出しに"
+    },
+    "font-packs/kaisei-tokumin.stpack": {
+      "fonts/TrkKaiseiTokumin400.woff2": "横画に重みのある明朝。落ち着いた紙面に",
+      "fonts/TrkKaiseiTokumin500.woff2": "重みのある明朝の中庸。少し濃い本文に",
+      "fonts/TrkKaiseiTokumin700.woff2": "重みのある明朝の太字。堂々とした見出しに"
+    },
+    "font-packs/zen-antique.stpack": {
+      "fonts/TrkZenAntique400.woff2": "古い活字のような明朝。レトロな紙面に"
+    },
+    "font-packs/zen-kurenaido.stpack": {
+      "fonts/TrkZenKurenaido400.woff2": "細い手書き風。やわらかく寂しげな雰囲気に"
+    },
+    "font-packs/kosugi-maru.stpack": {
+      "fonts/TrkKosugiMaru400.woff2": "定番の丸ゴ。親しみやすく疲れにくい"
+    },
+    "font-packs/yomogi.stpack": {
+      "fonts/TrkYomogi400.woff2": "細いペン字。手紙やメモのような文章に"
+    },
+    "font-packs/stick.stpack": {
+      "fonts/TrkStick400.woff2": "線の細い直線書体。図面のような見出しに"
+    },
+    "font-packs/train-one.stpack": {
+      "fonts/TrkTrainOne400.woff2": "駅名標のような極太。遠くから読ませたい題字に"
+    },
+    "font-packs/sawarabi-mincho.stpack": {
+      "fonts/TrkSawarabiMincho400.woff2": "細身の明朝。軽やかな和風の紙面に"
+    },
+    "font-packs/new-tegomin.stpack": {
+      "fonts/TrkNewTegomin400.woff2": "手書きの匂いの残る明朝。便箋のような文章に"
+    },
+    "font-packs/hina-mincho.stpack": {
+      "fonts/TrkHinaMincho400.woff2": "やさしく細い明朝。上品で明るい紙面に"
+    },
+    "font-packs/shippori-antique.stpack": {
+      "fonts/TrkShipporiAntique400.woff2": "余白の似合う書体。静かな本文と見出しに"
+    },
+    "font-packs/yuji-syuku.stpack": {
+      "fonts/TrkYujiSyuku400.woff2": "毛筆の楷書。軸の通った和風の題字に"
     }
   }
 }

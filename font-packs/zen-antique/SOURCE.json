@@ -1,0 +1,13 @@
+{
+  "note": "同行の書体は npm の @fontsource から取ります。node tools/build-pack.mjs font-packs/zen-antique --fetch で取得し、sha256 を照合します。このファイルはパックには入りません。",
+  "files": {
+    "fonts/TrkZenAntique400.woff2": {
+      "tarball": "https://registry.npmjs.org/@fontsource/zen-antique/-/zen-antique-5.3.1.tgz",
+      "path": "package/files/zen-antique-japanese-400-normal.woff2",
+      "sha256": "9d1cd306a8c4add58e1e42080fea3dd1751bbfbe22e8632d7b6d920ea14fcbf1",
+      "bytes": 1983924,
+      "license": "OFL-1.1",
+      "upstream": "https://github.com/googlefonts/zen-antique"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "細線のステッキ（書体パック）",
+  "author": "trk-Avatar-Library",
+  "release": "1.0.0",
+  "description": "Stick を同梱した、線の細い直線的な書体。図面やラベルのような、きっちりした見出しに。",
+  "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
+  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "fonts": [
+    {
+      "family": "TrkStick",
+      "file": "fonts/TrkStick400.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/OFL.txt"
+    }
+  ],
+  "skin": {
+    "name": "細線のステッキ",
+    "colors": {
+      "bg": "#101319",
+      "panel": "#1b2030",
+      "text": "#e9eef7",
+      "accent": "#8fa8d8",
+      "gold": "#ffd166"
+    },
+    "glow": true,
+    "scanlines": false,
+    "gradDir": "none",
+    "font": "mono",
+    "video": "cool",
+    "mascot": "none"
+  },
+  "notes": {
+    "don": {
+      "color": "#8fa8d8",
+      "shape": "circle"
+    },
+    "ka": {
+      "color": "#ffd166",
+      "shape": "circle"
+    }
+  }
+}

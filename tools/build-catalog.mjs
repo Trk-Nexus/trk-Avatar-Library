@@ -255,12 +255,17 @@ if (tagProblems.length) {
 const policyProblems = [];
 const familyWeight = new Map();
 const MB = 1048576;
+/* 配布してよい書体ライセンス（2026-11-01 に 1 つ増やしました）。
+   ・OFL-1.1 … 全文（OFL.txt）の同梱が条件。予約名を避けるため family は Trk で始める
+   ・Apache-2.0 … 全文（LICENSE.txt）の同梱と、NOTICE へのクレジットが条件（Kosugi Maru）
+   増やすときは、ここと README §2-3・HANDOFF §2-3・NOTICE.md を一緒に直します */
+const FONT_LICENSES = new Set(["OFL-1.1", "Apache-2.0"]);
 for (const p of packs) {
   if (!p.fonts.length) continue;
   for (const f of p.fonts) {
     const label = `${p.file} の「${f.family || f.file}」`;
-    if (String(f.license) !== "OFL-1.1") {
-      policyProblems.push(`${label}: 書体の license は OFL-1.1 にしてください（\"${f.license || "なし"}\"）`);
+    if (!FONT_LICENSES.has(String(f.license))) {
+      policyProblems.push(`${label}: 書体の license は ${[...FONT_LICENSES].join(" / ")} にしてください（\"${f.license || "なし"}\"）`);
     }
     if (!/^Trk/.test(String(f.family))) {
       policyProblems.push(`${label}: family は Trk で始めてください（OFL の予約名を避けるため）`);

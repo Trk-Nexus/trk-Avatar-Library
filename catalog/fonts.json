@@ -1,28 +1,28 @@
 {
   "format": "trk-avatar-library-fonts",
   "version": 1,
-  "generatedAt": "2026-10-31T20:26:28.839Z",
+  "generatedAt": "2026-11-01T08:40:50.129Z",
   "source": "catalog/index.json",
-  "count": 15,
-  "fonts": 22,
-  "families": 15,
+  "count": 29,
+  "fonts": 42,
+  "families": 29,
   "tags": {
     "極太": 3,
     "ポップ": 6,
-    "見出し": 10,
+    "見出し": 16,
     "ドット": 1,
-    "レトロ": 1,
-    "丸ゴ": 5,
-    "手書き": 5,
-    "かわいい": 4,
-    "明朝": 6,
+    "レトロ": 2,
+    "丸ゴ": 6,
+    "手書き": 9,
+    "かわいい": 7,
+    "明朝": 17,
+    "和風": 9,
+    "本文": 9,
     "かすれ": 2,
-    "本文": 1,
-    "読みやすい": 4,
+    "読みやすい": 9,
+    "角ゴ": 6,
     "ネオン": 1,
-    "元気": 1,
-    "和風": 3,
-    "角ゴ": 2
+    "元気": 2
   },
   "packs": [
     {
@@ -115,6 +115,35 @@
       ]
     },
     {
+      "file": "font-packs/hina-mincho.stpack",
+      "name": "ひなの明朝（書体パック）",
+      "description": "Hina Mincho を同梱した、やさしく細い明朝体。ひなまつりのような、上品で明るい紙面に。",
+      "release": "1.0.0",
+      "bytes": 1431466,
+      "skin": "ひなの明朝",
+      "colors": {
+        "stage": "#1a1418",
+        "accent": "#d98aa8"
+      },
+      "download": "../font-packs/hina-mincho.stpack",
+      "fonts": [
+        {
+          "family": "TrkHinaMincho",
+          "file": "fonts/TrkHinaMincho400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1424396,
+          "note": "やさしく細い明朝。上品で明るい紙面に",
+          "cmap": 6887,
+          "tags": [
+            "明朝",
+            "かわいい"
+          ]
+        }
+      ]
+    },
+    {
       "file": "font-packs/kaisei-decol.stpack",
       "name": "飾り明朝のラベンダー（書体パック）",
       "description": "Kaisei Decol（400／700）を同梱した、すこし飾りのある明朝体の書体パック。ラベンダーの明るい見た目です。",
@@ -154,6 +183,65 @@
             "明朝",
             "かわいい",
             "見出し"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/kaisei-tokumin.stpack",
+      "name": "明朝の重み（書体パック）",
+      "description": "Kaisei Tokumin（400／500／700）を同梱した、横画に重みのある明朝体。落ち着いた紙面の雰囲気を作ります。",
+      "release": "1.0.0",
+      "bytes": 4991606,
+      "skin": "明朝の重み",
+      "colors": {
+        "stage": "#17130f",
+        "accent": "#c8905a"
+      },
+      "download": "../font-packs/kaisei-tokumin.stpack",
+      "fonts": [
+        {
+          "family": "TrkKaiseiTokumin",
+          "file": "fonts/TrkKaiseiTokumin400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1755460,
+          "note": "横画に重みのある明朝。落ち着いた紙面に",
+          "cmap": 6877,
+          "tags": [
+            "明朝",
+            "和風",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkKaiseiTokumin",
+          "file": "fonts/TrkKaiseiTokumin500.woff2",
+          "weight": 500,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1571568,
+          "note": "重みのある明朝の中庸。少し濃い本文に",
+          "cmap": 6877,
+          "tags": [
+            "明朝",
+            "和風"
+          ]
+        },
+        {
+          "family": "TrkKaiseiTokumin",
+          "file": "fonts/TrkKaiseiTokumin700.woff2",
+          "weight": 700,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1656332,
+          "note": "重みのある明朝の太字。堂々とした見出しに",
+          "cmap": 6877,
+          "tags": [
+            "明朝",
+            "見出し",
+            "和風"
           ]
         }
       ]
@@ -199,6 +287,36 @@
             "手書き",
             "かすれ",
             "見出し"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/kosugi-maru.stpack",
+      "name": "こすぎの丸ゴ（書体パック）",
+      "description": "Kosugi Maru を同梱した、定番の丸ゴシック（Apache-2.0）。親しみやすく、長く読んでも疲れにくい書体です。",
+      "release": "1.0.0",
+      "bytes": 1451745,
+      "skin": "こすぎの丸ゴ",
+      "colors": {
+        "stage": "#10201a",
+        "accent": "#63c48c"
+      },
+      "download": "../font-packs/kosugi-maru.stpack",
+      "fonts": [
+        {
+          "family": "TrkKosugiMaru",
+          "file": "fonts/TrkKosugiMaru400.woff2",
+          "weight": 400,
+          "license": "Apache-2.0",
+          "licenseFile": "fonts/LICENSE.txt",
+          "bytes": 1437604,
+          "note": "定番の丸ゴ。親しみやすく疲れにくい",
+          "cmap": 6769,
+          "tags": [
+            "丸ゴ",
+            "読みやすい",
+            "本文"
           ]
         }
       ]
@@ -320,6 +438,152 @@
       ]
     },
     {
+      "file": "font-packs/new-tegomin.stpack",
+      "name": "てごみの便り（書体パック）",
+      "description": "New Tegomin を同梱した、手書きの匂いの残る明朝体。便箋や日記のような、私的な文章に。",
+      "release": "1.0.0",
+      "bytes": 3735560,
+      "skin": "てごみの便り",
+      "colors": {
+        "stage": "#1a1614",
+        "accent": "#c98b5e"
+      },
+      "download": "../font-packs/new-tegomin.stpack",
+      "fonts": [
+        {
+          "family": "TrkNewTegomin",
+          "file": "fonts/TrkNewTegomin400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 3728480,
+          "note": "手書きの匂いの残る明朝。便箋のような文章に",
+          "cmap": 6871,
+          "tags": [
+            "明朝",
+            "手書き"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/noto-sans-jp.stpack",
+      "name": "角ゴのみなもと（書体パック）",
+      "description": "Noto Sans JP（400／500／700）を同梱した、迷わない定番の角ゴシック。長い本文の基準になる書体パックです。",
+      "release": "1.0.0",
+      "bytes": 3445235,
+      "skin": "角ゴのみなもと",
+      "colors": {
+        "stage": "#11151b",
+        "accent": "#5b8def"
+      },
+      "download": "../font-packs/noto-sans-jp.stpack",
+      "fonts": [
+        {
+          "family": "TrkNotoSansJP",
+          "file": "fonts/TrkNotoSansJP400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1132964,
+          "note": "迷わない定番の角ゴ。長い本文の基準になる",
+          "cmap": 6886,
+          "tags": [
+            "角ゴ",
+            "読みやすい",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkNotoSansJP",
+          "file": "fonts/TrkNotoSansJP500.woff2",
+          "weight": 500,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1146232,
+          "note": "定番の角ゴの中庸。少しだけ強く読みたい行に",
+          "cmap": 6886,
+          "tags": [
+            "角ゴ",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkNotoSansJP",
+          "file": "fonts/TrkNotoSansJP700.woff2",
+          "weight": 700,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1158216,
+          "note": "定番の角ゴの太字。見出しの基準になる",
+          "cmap": 6886,
+          "tags": [
+            "角ゴ",
+            "見出し",
+            "読みやすい"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/noto-serif-jp.stpack",
+      "name": "明朝のみなもと（書体パック）",
+      "description": "Noto Serif JP（400／600／700）を同梱した、定番の明朝体。読ませる長文と、静かな見出しの両方に使えます。",
+      "release": "1.0.0",
+      "bytes": 4665409,
+      "skin": "明朝のみなもと",
+      "colors": {
+        "stage": "#14110e",
+        "accent": "#d9a441"
+      },
+      "download": "../font-packs/noto-serif-jp.stpack",
+      "fonts": [
+        {
+          "family": "TrkNotoSerifJP",
+          "file": "fonts/TrkNotoSerifJP400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1530732,
+          "note": "定番の明朝。読ませる長文の本文に",
+          "cmap": 6886,
+          "tags": [
+            "明朝",
+            "読みやすい",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkNotoSerifJP",
+          "file": "fonts/TrkNotoSerifJP600.woff2",
+          "weight": 600,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1551288,
+          "note": "明朝の中庸。本文より少し強く見せたい行に",
+          "cmap": 6886,
+          "tags": [
+            "明朝",
+            "本文"
+          ]
+        },
+        {
+          "family": "TrkNotoSerifJP",
+          "file": "fonts/TrkNotoSerifJP700.woff2",
+          "weight": 700,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1575548,
+          "note": "明朝の太字。静かに強く出る見出しに",
+          "cmap": 6886,
+          "tags": [
+            "明朝",
+            "見出し"
+          ]
+        }
+      ]
+    },
+    {
       "file": "font-packs/potta-one.stpack",
       "name": "看板のポップ（書体パック）",
       "description": "Potta One（400）を同梱した看板風の太いポップ書体パック。深い青緑に黄色が映える見た目です。",
@@ -410,6 +674,66 @@
       ]
     },
     {
+      "file": "font-packs/sawarabi-mincho.stpack",
+      "name": "早蕨の明朝（書体パック）",
+      "description": "Sawarabi Mincho を同梱した、若草色の似合う細身の明朝体。軽やかな和風の紙面に。",
+      "release": "1.0.0",
+      "bytes": 1186961,
+      "skin": "早蕨の明朝",
+      "colors": {
+        "stage": "#16130f",
+        "accent": "#a8b545"
+      },
+      "download": "../font-packs/sawarabi-mincho.stpack",
+      "fonts": [
+        {
+          "family": "TrkSawarabiMincho",
+          "file": "fonts/TrkSawarabiMincho400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1179848,
+          "note": "細身の明朝。軽やかな和風の紙面に",
+          "cmap": 3806,
+          "tags": [
+            "明朝",
+            "和風",
+            "本文"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/shippori-antique.stpack",
+      "name": "余白のアンティーク（書体パック）",
+      "description": "Shippori Antique を同梱した、余白の似合う低コントラストの書体。静かな本文と、品のある見出しに。",
+      "release": "1.0.0",
+      "bytes": 1214407,
+      "skin": "余白のアンティーク",
+      "colors": {
+        "stage": "#14161a",
+        "accent": "#9aa7b8"
+      },
+      "download": "../font-packs/shippori-antique.stpack",
+      "fonts": [
+        {
+          "family": "TrkShipporiAntique",
+          "file": "fonts/TrkShipporiAntique400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1207224,
+          "note": "余白の似合う書体。静かな本文と見出しに",
+          "cmap": 6868,
+          "tags": [
+            "明朝",
+            "読みやすい",
+            "本文"
+          ]
+        }
+      ]
+    },
+    {
       "file": "font-packs/shippori-mincho.stpack",
       "name": "墨と金の明朝（書体パック）",
       "description": "Shippori Mincho（400／700）を同梱した明朝体の書体パック。墨と金の落ち着いた見た目で、和風の曲に。",
@@ -453,6 +777,123 @@
       ]
     },
     {
+      "file": "font-packs/stick.stpack",
+      "name": "細線のステッキ（書体パック）",
+      "description": "Stick を同梱した、線の細い直線的な書体。図面やラベルのような、きっちりした見出しに。",
+      "release": "1.0.0",
+      "bytes": 854518,
+      "skin": "細線のステッキ",
+      "colors": {
+        "stage": "#101319",
+        "accent": "#8fa8d8"
+      },
+      "download": "../font-packs/stick.stpack",
+      "fonts": [
+        {
+          "family": "TrkStick",
+          "file": "fonts/TrkStick400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 847492,
+          "note": "線の細い直線書体。図面のような見出しに",
+          "cmap": 6884,
+          "tags": [
+            "角ゴ",
+            "見出し"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/train-one.stpack",
+      "name": "鉄道の極太（書体パック）",
+      "description": "Train One を同梱した、駅名標のような極太の書体。遠くからでも読ませたい題字やスコア表示に。",
+      "release": "1.0.0",
+      "bytes": 895671,
+      "skin": "鉄道の極太",
+      "colors": {
+        "stage": "#101418",
+        "accent": "#f0b429"
+      },
+      "download": "../font-packs/train-one.stpack",
+      "fonts": [
+        {
+          "family": "TrkTrainOne",
+          "file": "fonts/TrkTrainOne400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 888616,
+          "note": "駅名標のような極太。遠くから読ませたい題字に",
+          "cmap": 3494,
+          "tags": [
+            "見出し",
+            "元気"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/yomogi.stpack",
+      "name": "よもぎの便り（書体パック）",
+      "description": "Yomogi を同梱した、細いペン字の書体。手紙やメモのような、やわらかい書きことばに合います。",
+      "release": "1.0.0",
+      "bytes": 1584824,
+      "skin": "よもぎの便り",
+      "colors": {
+        "stage": "#131a12",
+        "accent": "#8fc46b"
+      },
+      "download": "../font-packs/yomogi.stpack",
+      "fonts": [
+        {
+          "family": "TrkYomogi",
+          "file": "fonts/TrkYomogi400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1577764,
+          "note": "細いペン字。手紙やメモのような文章に",
+          "cmap": 6885,
+          "tags": [
+            "手書き",
+            "かわいい"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/yuji-syuku.stpack",
+      "name": "毛筆の楷書（書体パック）",
+      "description": "Yuji Syuku を同梱した、毛筆の楷書体。軸の通った筆致で、和風の題字や名場面の見出しに。",
+      "release": "1.0.0",
+      "bytes": 3597067,
+      "skin": "毛筆の楷書",
+      "colors": {
+        "stage": "#16110d",
+        "accent": "#b5533c"
+      },
+      "download": "../font-packs/yuji-syuku.stpack",
+      "fonts": [
+        {
+          "family": "TrkYujiSyuku",
+          "file": "fonts/TrkYujiSyuku400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 3590012,
+          "note": "毛筆の楷書。軸の通った和風の題字に",
+          "cmap": 6875,
+          "tags": [
+            "手書き",
+            "和風",
+            "見出し"
+          ]
+        }
+      ]
+    },
+    {
       "file": "font-packs/yusei-magic.stpack",
       "name": "筆ポップの夜祭（書体パック）",
       "description": "Yusei Magic（400）を同梱した筆文字ポップの書体パック。提灯と屋台の夜の見た目で、にぎやかな曲に。",
@@ -477,6 +918,36 @@
           "tags": [
             "手書き",
             "ポップ",
+            "和風"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/zen-antique.stpack",
+      "name": "古道具の明朝（書体パック）",
+      "description": "Zen Antique を同梱した、古い活字を思わせる明朝体。レトロな紙面や、静かな題字に向きます。",
+      "release": "1.0.0",
+      "bytes": 1991011,
+      "skin": "古道具の明朝",
+      "colors": {
+        "stage": "#1a1512",
+        "accent": "#b08968"
+      },
+      "download": "../font-packs/zen-antique.stpack",
+      "fonts": [
+        {
+          "family": "TrkZenAntique",
+          "file": "fonts/TrkZenAntique400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1983924,
+          "note": "古い活字のような明朝。レトロな紙面に",
+          "cmap": 6876,
+          "tags": [
+            "明朝",
+            "レトロ",
             "和風"
           ]
         }
@@ -521,6 +992,35 @@
           "tags": [
             "角ゴ",
             "見出し"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "font-packs/zen-kurenaido.stpack",
+      "name": "くれないの筆（書体パック）",
+      "description": "Zen Kurenaido を同梱した、細い線の手書き風書体。やわらかく、少し寂しげな雰囲気を出したいときに。",
+      "release": "1.0.0",
+      "bytes": 1361577,
+      "skin": "くれないの筆",
+      "colors": {
+        "stage": "#1b1114",
+        "accent": "#d9536f"
+      },
+      "download": "../font-packs/zen-kurenaido.stpack",
+      "fonts": [
+        {
+          "family": "TrkZenKurenaido",
+          "file": "fonts/TrkZenKurenaido400.woff2",
+          "weight": 400,
+          "license": "OFL-1.1",
+          "licenseFile": "fonts/OFL.txt",
+          "bytes": 1354452,
+          "note": "細い手書き風。やわらかく寂しげな雰囲気に",
+          "cmap": 6876,
+          "tags": [
+            "手書き",
+            "かわいい"
           ]
         }
       ]
