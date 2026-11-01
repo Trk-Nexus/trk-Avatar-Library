@@ -19,6 +19,7 @@
      ・1 組で使う家族は 3 つまで（4 つ以上は「ちらかる」ので警告）
      ・見本の文が役に収まる長さか（題字 12 字まで、など）
      ・見本用の woff2（catalog/preview/）があるか（無ければ作り方を出す・警告だけ）
+     ・**見本の文の字が、その書体に入っているか**（入っていないと □ になる。ここはエラー）
 
    使い方：
      node tools/check-typography.mjs
@@ -98,7 +99,8 @@ for (const p of pairings) {
   if (!p.useFor || [...String(p.useFor)].length > 40) E(`${at}: useFor は 1〜40 文字にしてください（どこで使うか）`);
   if (!Array.isArray(p.tags) || p.tags.length > 3) E(`${at}: tags は 3 つまでにしてください`);
   for (const t of p.tags || []) if ([...String(t)].length > 8) E(`${at}: tags の「${t}」が 8 文字を超えています`);
-  if (!presetIds.has(p.preset)) E(`${at}: preset「${p.preset}」が presets にありません`);
+  /* 組は段階を持たない（`preset` は利用者の設定。書いてあったら「使わない項目」なので知らせる） */
+  if (p.preset !== undefined) W(`${at}: 「preset」は組には書きません（段階は利用者の設定です）`);
   if (!scaleIds.has(String(p.scale))) E(`${at}: scale「${p.scale}」が scales にありません`);
 
   /* 6 役そろっているか・書体が実在するか */
@@ -156,6 +158,39 @@ for (const p of pairings) {
   }
 }
 
+const tofuCache = new Map();
+/* 2.5 見本の字が、見本用の woff2 に**全部入っているか**（入っていないと、ページと縮刷版に □ が出ます）
+   見るのは、見本を本物の書体で出す 4 役（display／heading／body／caption）だけ。 */
+import { readWoff2, cmapOf } from "./check-fonts.mjs";
+const LIMITS = typo.sampleLimits || { display: 14, heading: 20, body: 30, caption: 14 };
+for (const p of pairings) {
+  for (const id of Object.keys(LIMITS)) {
+    const s = (p.slots || {})[id];
+    const text = (p.sample || {})[id];
+    if (!s || !text) continue;
+    if ([...text].length > LIMITS[id]) {
+      E(`${p.id} の「${id}」の見本が ${[...text].length} 文字です（${LIMITS[id]} 文字まで。見本用 woff2 に入らない字は □ になります）`);
+      continue;
+    }
+    const file = path.join(PREVIEW, `${s.family}-${s.weight}.woff2`);
+    if (!fs.existsSync(file)) continue;                    /* 無いときは下の警告で言う */
+    const key = `${s.family}-${s.weight}`;
+    if (!tofuCache.has(key)) {
+      try {
+        const buf = fs.readFileSync(file);
+        const codes = cmapOf(buf, readWoff2(buf));
+        tofuCache.set(key, codes || new Set());
+      } catch (e) {
+        tofuCache.set(key, null);
+      }
+    }
+    const codes = tofuCache.get(key);
+    if (!codes) { W(`見本用の ${key} の cmap を読めませんでした（字の有無は未確認）`); continue; }
+    const lost = [...new Set([...text])].filter(ch => ch.trim() && !codes.has(ch.codePointAt(0)));
+    if (lost.length) E(`${p.id} の「${id}」の見本に、${s.family} ${s.weight} が持っていない字があります（${lost.join(" ")}）→ 見本の文を直すか、別の書体にしてください`);
+  }
+}
+
 /* 3. 見本用の woff2（無ければ警告。--strict では失敗）
    埋め込むのは**題字・見出し・本文・注記**の 4 役だけ（ページを軽くするため）。
    差し色と数字は、同じ家族があればそれを使い、無ければ端末の書体で出します（ページに「見本外」と出ます）。 */
@@ -177,12 +212,17 @@ if (missingPreview.length) {
 }
 
 /* 4. 報告 */
+/* 目録と突き合わせやすいように、家族名の一覧も出す（trk-PWA の返事13 §4 のお願い）。
+   キーは**足すだけ**（消す・意味を変えるときは、先に書面で知らせます）。 */
+const familySet = new Set([...usedFonts].map(k => k.split("|")[0]));
 const summary = {
   tool: "check-typography", version: 1,
   pairings: pairings.length,
   slots: slotIds.length,
   scales: scaleIds.size,
   presets: [...presetIds],
+  families: [...familySet].sort(),
+  familyCount: familySet.size,
   fonts: usedFonts.size,
 
   packs: new Set(pairings.flatMap(p => p.packs || [])).size,

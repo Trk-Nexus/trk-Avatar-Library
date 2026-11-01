@@ -2,20 +2,20 @@
   "name": "first-set",
   "title": "trk! はじめてセット",
   "date": "2026-11-01",
-  "tag": "first-set-2026-11-01-r6",
-  "file": "trk-first-set-2026-11-01-r6.zip",
-  "bytes": 7462400,
-  "sha256": "d4c38e7e0ae5805f396863eac6c494efa7dbad14beab40620f6aa6bb19ef3c44",
+  "tag": "first-set-2026-11-01-r7",
+  "file": "trk-first-set-2026-11-01-r7.zip",
+  "bytes": 7972458,
+  "sha256": "7a8e525127b1f49cd8af7e7ea7372be911d46459597b9b0cab712586abe0edb0",
   "files_out": [
     {
-      "name": "trk-first-set-2026-11-01-r6.zip",
-      "bytes": 7462400,
-      "sha256": "d4c38e7e0ae5805f396863eac6c494efa7dbad14beab40620f6aa6bb19ef3c44"
+      "name": "trk-first-set-2026-11-01-r7.zip",
+      "bytes": 7972458,
+      "sha256": "7a8e525127b1f49cd8af7e7ea7372be911d46459597b9b0cab712586abe0edb0"
     },
     {
-      "name": "trk-first-set-2026-11-01-r6.stlib",
-      "bytes": 7462400,
-      "sha256": "d4c38e7e0ae5805f396863eac6c494efa7dbad14beab40620f6aa6bb19ef3c44"
+      "name": "trk-first-set-2026-11-01-r7.stlib",
+      "bytes": 7972458,
+      "sha256": "7a8e525127b1f49cd8af7e7ea7372be911d46459597b9b0cab712586abe0edb0"
     }
   ],
   "files": [
@@ -36,8 +36,8 @@
     },
     {
       "path": "gallery/pairings.html",
-      "bytes": 204572,
-      "sha256": "0c92226f02aa7df0f9d716d0650d170db328cdd90d24fee2d3df7014dcc51fe5"
+      "bytes": 197869,
+      "sha256": "36764dee9fd62c7d7a293a9d434176a1084be9eaf0a556ef926adc849994a9dd"
     },
     {
       "path": "catalog/index.json",
@@ -48,6 +48,16 @@
         "bytes": 48786,
         "sha256": "7263d8489322fcc9bc8054d4c893ee5bd5cc434caee3d554c9bba0cbc9d095ed"
       }
+    },
+    {
+      "path": "catalog/typography-preview.json",
+      "bytes": 169305,
+      "sha256": "7ab096651c9aa134525b237b9870fda50c6f1b238187c6afd3c1414c337ac37a"
+    },
+    {
+      "path": "docs/2026-11-01-組み合わせ縮刷版.png",
+      "bytes": 346816,
+      "sha256": "801b76b03c7bf271c7c8aff8b0bf642876c976825ebbcb6bca8748952d4667a7"
     },
     {
       "path": "packs/sample-mincho.stpack",
