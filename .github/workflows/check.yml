@@ -13,8 +13,9 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
-  # （trk238 = 36673dd。.stlib（セット）をそのまま選べる版で、書体の索引とタグの絞り込みまで入った版）
-  TRK_PWA_REF: 36673ddd5e8c66c039197d753edf5988c9ce26d6
+  # （trk239 = 748ac03。セットをそのまま選べる版で、書体の索引・タグの絞り込み・
+  #   「これから入る分」だけを数える確認（setPending）と、アプリ側の受け入れ道具 tools/check-set.mjs まで入った版）
+  TRK_PWA_REF: 748ac033c2fe89abd5a8da5321e536fde9194ef5
 
 jobs:
   check:
@@ -105,7 +106,7 @@ jobs:
           done
 
       # 記録と一致するだけでなく「アプリが開いて中身を入れられる形か」を、アプリと同じ手順で見る
-      - name: セットがアプリ（trk238）の手順で開けるか
+      - name: セットがアプリ（trk239）の手順で開けるか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
@@ -120,6 +121,37 @@ jobs:
               node tools/verify-set.mjs "$f" --record="$rec" || exit 1
             done
           done
+
+      # 倉庫の決めごと（上）に加えて、**アプリ自身の判定**でも見る（trk239 の tools/check-set.mjs）。
+      # 2 つそろって記録があるときは、2 つ目を「はじめてセットを入れた後」として数えてもらう
+      - name: セットがアプリ（trk239）の判定でも通るか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: |
+          set -o pipefail
+          if [ ! -f "$TRK_PWA/tools/check-set.mjs" ]; then
+            echo "ℹ 相手側に tools/check-set.mjs がありません（trk239 より前）。この検査は飛ばします"
+            exit 0
+          fi
+          first=""; font=""
+          for def in sets/*.json; do
+            rec=$(node -p "require('./$def').record || ''")
+            [ -f "$rec" ] || continue
+            name=$(node -p "require('./$rec').name || ''")
+            target=$(node -p "const r=require('./$rec'); 'dist/'+(r.files_out && r.files_out.length ? r.files_out[0].name : r.file)")
+            case "$name" in
+              first-set) first="$target" ;;
+              font-set) font="$target" ;;
+            esac
+            echo "—— $rec"
+            node tools/check-set-app.mjs "$target" | tail -3
+          done
+          # 2 つそろっているとき：2 つ目を「はじめてセットを入れた後」として数えてもらう（trk239 の setPending）
+          if [ -n "$first" ] && [ -n "$font" ]; then
+            echo "—— 2 つ目を、1 つ目を入れた後として数える"
+            node tools/check-set-app.mjs "$font" --have="$first" | tail -4
+          fi
 
       # パックの一覧（gallery/packs.html）が目録とずれていないか（selftest でも同じことを見ています）
       - name: パックの一覧が目録と合っているか

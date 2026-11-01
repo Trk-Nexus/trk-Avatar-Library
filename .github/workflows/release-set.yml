@@ -28,8 +28,8 @@ permissions:
   contents: write
 
 env:
-  # trk238（36673dd）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
-  TRK_PWA_REF: 36673ddd5e8c66c039197d753edf5988c9ce26d6
+  # trk239（748ac03）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
+  TRK_PWA_REF: 748ac033c2fe89abd5a8da5321e536fde9194ef5
 
 jobs:
   attach:
@@ -87,8 +87,8 @@ jobs:
           node tools/build-set.mjs "$SET_DEF"
           node tools/build-set.mjs "$SET_DEF" --check
 
-      # 添付する前に、アプリ（trk238）が開いて中身を入れられる形かを見る
-      - name: セットがアプリ（trk238）の手順で開けるか
+      # 添付する前に、アプリ（trk239）が開いて中身を入れられる形かを見る
+      - name: セットがアプリ（trk239）の手順で開けるか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA

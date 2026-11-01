@@ -25,6 +25,7 @@
 
 | 日付 | 中身（1行） |
 | --- | --- |
+| 2026-11-01 | **返事7（trk239）への対応**：**2 分割を試作して、相手側の `tools/check-set.mjs` で通した**（はじめて＝6.9 MB・6 本／書体＝29.4 MB・15 本 → 2 つ目は **これから入る 10 本・22.5 MB／飛ばす 5 本**）・**`tools/check-set-app.mjs`**（相手側の道具をそのまま呼ぶ・`--have` で 2 つ目を数える）を新設して **CI と selftest（37→38 項目）**に・`check-contract` が **`setPending` の数え方**まで見る・`TRK_PWA_REF` を **trk239（`748ac03`）**に |
 | 2026-11-01 | **trk236〜238 への対応（返事5）**：`check-contract` が **note／cmap／weight も「読みました」**に（値を突き合わせ）・`TRK_PWA_REF` を **trk238（`36673dd`）**に・**r6 の 2 分割**（はじめて＝書体 5 本・書体セット＝全部／**同じパックを両方に入れる**）・**セットの目録を「セットに入っているパックだけ」に絞る**（`build-set`・「見つからない n 件」を出さない）・CI が **first-set／font-set の 2 タグ**に対応（記録のタグと取り違えたら止まる）・`sets/font-set.json` と `release/font-set-notes.md` を用意（記録は r6 で）・`gallery/packs.html` を **家族名・太さ・パック名**にそろえる・`build-catalog` が note 30 文字超を ℹ |
 | 2026-11-01 | **実機 OK・パックの一覧・起動時の索引の下ごしらえ**：**r5 の `.stlib` が実機で 16 パック入った**（§4-1 の 6 番が済み）・セットは **r6 から 2 つに分ける**と決定・**`gallery/packs.html`**（パックごとの一覧・「どのパックに何が入っているか」）・**`pack.json` の `fonts[].note`／`tags` を任意で書ける**ように（trk238 の「起動時にパックから索引を作る」の下ごしらえ）・trk238 への開発案 `docs/2026-11-01-実機OKと起動時の索引-開発案.md`・selftest **36 項目** |
 | 2026-11-01 | **trk235 への対応（返事3）**：**`.stlib` の通し**（trk235 が「📦 セットを選ぶ」だけで 16 パックを入れる）を受けて、**`tools/verify-set.mjs`**（アプリと同じ手順の受け入れ検査・selftest 11 項目・CI と Release の前に実行）・**`check-fonts` の付け忘れを exit 2 に**・セットの `README-はじめに.txt` に「アプリが読むのは目録と `.stpack` だけ」を追記（Q8）・セット **r5**（30,832,734 B・`d2bea5a2…`）・`TRK_PWA_REF` を trk235 に |
@@ -57,7 +58,7 @@
   node tools/check-docs.mjs            # README の表・内部リンク・セットの記録が今の中身と合っているか
   ```
 
-- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは trk233 = `8e15e6777736d5091ae63d8a490cba1934cbb379`）。
+- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk239 = `748ac033c2fe89abd5a8da5321e536fde9194ef5`**）。
   trk-PWA の版が上がったら、**この1行と §7 の記録を一緒に**変えます。固定した版と `main` の両方を見るため、
   週に1回（日曜 21:00 UTC）`upstream-main` ジョブが `main` でも契約を確かめます（失敗しても全体は赤にしません）。
 
@@ -277,7 +278,8 @@ trk-PWA 側と「どこまで見たか」を揃えるための **4 点**です�
 | `tools/export-font-gallery.mjs` | 目録から **`gallery/fonts.html`（書体の一覧と検索）** と `catalog/fonts.json` を作る（`--check` で照合・L13／L14） |
 | `tools/export-pack-gallery.mjs` | 目録から **`gallery/packs.html`（パックの一覧＝パックごとに中身）** を作る（`--check` で照合・2026-11-01） |
 | `gallery/packs.html` | パックの一覧（16 パック・書体 22 本）。**どのパックにどの書体が入っているか**をパックの側から見る（検索・タグ・並べ替え・1 本ずつの ⬇） |
-| `tools/verify-set.mjs` | **セット（`.stlib` / `.zip`）を、アプリ（trk235）と同じ手順で開いて確かめる**（拡張子ではなく中身で ZIP 判定・安全なパス・目録の形・実バイトで sha256／大きさを照合・内訳を出す・`--record` で記録とも比べる） |
+| `tools/check-set-app.mjs` | **アプリ自身の判定**でセットを見る（相手側 trk239 の `tools/check-set.mjs` をそのまま呼ぶ）。`--have=<もう 1 つのセット>` で「2 つ続けて入れたときの、これから入る分／飛ばす分」（2026-11-01） |
+| `tools/verify-set.mjs` | **セット（`.stlib` / `.zip`）を、アプリと同じ手順で開いて確かめる**（拡張子ではなく中身で ZIP 判定・安全なパス・目録の形・実バイトで sha256／大きさを照合・内訳を出す・`--record` で記録とも比べる） |
 | `catalog/font-notes.json` | 書体の**ひとこと**（60 文字まで・L10）。目録の `fonts[].note` に入る |
 | `catalog/font-tags.json` | 書体の**タグ**（8 個まで・各 16 文字・L15）。目録の `fonts[].tags` と一覧の絞り込みに入る |
 | `gallery/fonts.html` / `catalog/fonts.json` | 書体の一覧と検索（1 ファイル・外部参照 0）と、そのもとデータ |
@@ -288,10 +290,12 @@ trk-PWA 側と「どこまで見たか」を揃えるための **4 点**です�
 | `release/first-set.json` | 配ったセットの**記録**（ファイル名・bytes・sha256・`files_out`（両方の名前）・中身の sha256）。いまは r5（30,832,734 B） |
 | `docs/2026-11-01-trk235への返事.md` | 手紙（`.stlib` の Q1〜Q5・L13〜L16・重さの相談）への返事。Drive の同じフォルダにも置いた |
 | `docs/2026-11-01-trk235の通しへの返事.md` | 返事3（trk235 ができた・Q7／Q8・`check-fonts` の指摘）への返事。Drive の同じフォルダにも置いた |
+| `docs/2026-11-01-返事5への返事.md` | 返事5（trk236〜238・r6 の 2 分割・セットの目録の絞り込み）への返事。Drive の同じフォルダにも置いた |
+| `docs/2026-11-01-返事7への返事.md` | 返事7（trk239 の `setPending`）への返事。**試作 2 つを相手側の `check-set.mjs` で通した記録**と、CI への組み込み。Drive の同じフォルダにも置いた |
 | `docs/2026-11-01-実機OKと起動時の索引-開発案.md` | 実機の通し OK・**セットを 2 つに分ける**決定・**起動時にパックを全部読む索引**（trk238 案）の形と注意点。Drive の同じフォルダにも置いた |
 | `release/first-set-notes.md` | Release の本文（手順・中身の表・権利）。CI が大きさと sha256 を足して添付 |
 | `release/first-set-2026-11-01.json` | **過去**の記録（r1・2,993,307 B）。r2 の記録はタグ `first-set-2026-11-01-r2` の中。`release/README.md` に経緯 |
-| `tools/selftest.mjs` | 道具の自己検査（36 項目） |
+| `tools/selftest.mjs` | 道具の自己検査（38 項目） |
 | `tools/export-skin-gallery.mjs` | trk-PWA から見本を作り直す |
 | `tools/lib/zip.mjs` | trk-PWA の `js/zip-io.js` を読み込む小さな入口（写しを持たない） |
 | `.github/workflows/check.yml` | CI（selftest・目録・契約・書体パック） |
@@ -300,12 +304,15 @@ trk-PWA 側と「どこまで見たか」を揃えるための **4 点**です�
 ## 6. 直近の検証（2026-11-01・この環境）
 
 ```sh
-node tools/selftest.mjs                                        # ✅ 36 / 36 合格（セット 11・check-fonts 1・note／tags 2・パックの一覧 1 を追加）
+node tools/selftest.mjs                                        # ✅ 38 / 38 合格（セット 11・check-fonts 1・note／tags 2・
+                                                               #    パックの一覧 1・セットの定義 1・アプリ側の判定 1）
 node tools/build-catalog.mjs --check                           # ✅ 目録は最新です（16 パック・release と version も一致）
-node tools/check-contract.mjs                                  # ✅ アプリ（trk238・36673dd）の規則を通ります（16 パック）
+node tools/check-contract.mjs                                  # ✅ アプリ（trk239・748ac03）の規則を通ります（16 パック）
                                                                #    ℹ note／cmap／weight／tags／bytes とも「読みました」（trk236〜238）
 node tools/build-set.mjs sets/font-set.json --out=/tmp/trk-sets # ✅ 試作（30,860,910 B・書体 15 本・目録は 15 本に絞る）
 node tools/verify-set.mjs /tmp/trk-sets/…-r6.stlib              # ✅ 目録 15 本 → 入れる 15 本／入っていない 0（記録なし）
+node tools/check-set-app.mjs <試作のフォントセット> --have=<試作のはじめてセット>
+                                                               # ✅ これから入る 10 本（22.5 MB）／飛ばす 5 本（trk239 の setPending）
 node tools/check-fonts.mjs                                     # ✅ 15 パック・22 書体とも読める形（cmap 5,451〜6,887 字・見本 7/7）
 node tools/check-fonts.mjs --trk=/nope                         # ✅ exit 2（trk-PWA が無ければ使い方を出して止まる）
 node tools/export-skin-gallery.mjs --trk=../trk-PWA --check    # ✅ 見本は最新です（53 種＋書体 15 パック）
@@ -382,6 +389,25 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 - GitHub Actions（`check.yml`）は push／PR で **成功**（run 41218922745・13 秒）
 
 ## 7. 変更履歴（新しい順）
+
+### 2026-11-01 返事7（trk239）への対応 — 2 分割をアプリの判定で通す
+
+trk-PWA の `返事7-2分割の数え方を直しました-2026-11-01.md`（Drive）への対応。返事は `docs/2026-11-01-返事7への返事.md`。
+相手側は trk239 で **確認の窓の数（すでに入っている分を飛ばす）** を直し、**アプリのコードで受け入れる道具 `tools/check-set.mjs`** を足した。
+
+- **試作で 2 分割を通した**（定義は `/tmp`・倉庫は触らない）。はじめて＝見本 3＋目録＋見本パック＋書体 5 本 →
+  **7,271,866 B（6.9 MB）・12 ファイル・目録 6 本**／書体＝見本 3＋目録＋書体 15 本 → **30,860,910 B・21 ファイル・目録 15 本**
+  - 1 つ目：`check-set` ✅ 目録 6 本 → 入れる 6 本（6.8 MB）
+  - 2 つ目：`check-set --have`（1 つ目の目録）✅ **これから入る 10 本（22.5 MB）／飛ばす 5 本**
+- **`tools/check-set-app.mjs`（新規）**：相手側の `tools/check-set.mjs` をそのまま呼ぶ（写しを持たない）。
+  `--have=<もう 1 つのセット>` で、こちらのセットから `catalog/index.json` を取り出して渡す。**道具が無い版では exit 2**
+- **CI**：`check.yml` に「セットがアプリ（trk239）の判定でも通るか」を追加（記録のあるセットを 1 本ずつ＋2 つそろえば `--have`）。
+  `release-set.yml` のコメントも trk239 に。**相手側の道具が無ければ「飛ばす」**（古い版に固定しても赤にしない）
+- **`tools/selftest.mjs`**：**37 → 38 項目**（「アプリ自身の判定でも通る」・道具が無ければ ℹ で飛ばす）
+- **`tools/check-contract.mjs`**：アプリの **`setPending` を直接呼んで**、入る本数・飛ばす本数・入る分だけの大きさ（`bytes`）を突き合わせる。
+  無い版では ℹ で「確認の数が多めに出ます」
+- **`TRK_PWA_REF` を trk239（`748ac03`）** に（`check` と `release-set`）
+- `gallery/fonts.html` の「家族名」への統一は **r6 で**（r5 のバイト列を守るため）
 
 ### 2026-11-01 trk236〜238 への対応（返事5・r6 の 2 分割のしたく）
 
@@ -585,3 +611,5 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
 12. ~~trk238（索引）の相談~~ … **相手側が trk236〜238 として実装済み**（返事5）。こちらは `check-contract` で「読みました」を確認済み。
     次のパックから `pack.json` に `note`／`tags` を書いて出す
 13. **`gallery/fonts.html` の見出しを「家族名」に**（r6 で。r5 のセットに入っているので、いま変えると r5 の記録が合わなくなる）
+14. **r6 を出すときの順**：`verify-set` → `check-set-app`（2 つ目は `--have`）→ `--release` → タグ 2 つ
+    （`first-set-2026-11-01-r6`／`font-set-2026-11-01-r6`）。CI も同じ順で、**どちらかが落ちれば添付しない**

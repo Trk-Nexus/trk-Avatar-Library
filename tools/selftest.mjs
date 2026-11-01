@@ -256,6 +256,23 @@ await expect("release の形が違うと不合格",
   setCase("PK で始まらないファイルは ZIP として開かない",
     await verifySet(Buffer.from("not a zip at all"), { trk }),
     { pass: false, needle: "PK" });
+
+  /* アプリ自身の判定（trk239 の tools/check-set.mjs）でも、同じセットが通るか。
+     相手側に道具が無い（trk238 以前）ときは飛ばす＝古い版でも selftest は赤にしない */
+  const appRoot = path.resolve(trk || process.env.TRK_PWA || path.resolve(ROOT, "..", "trk-PWA"));
+  const appTool = path.join(appRoot, "tools/check-set.mjs");
+  if (fs.existsSync(appTool)) {
+    const goodFile = path.join(work, "app-check.stlib");
+    fs.writeFileSync(goodFile, await makeSet());
+    const { spawnSync } = await import("node:child_process");
+    const run = spawnSync(process.execPath, [path.join(ROOT, "tools/check-set-app.mjs"), goodFile, `--trk=${appRoot}`], { encoding: "utf8" });
+    const ok = run.status === 0 && /そろっています/.test(String(run.stdout));
+    results.push({ label: "アプリ自身の判定（相手側の check-set.mjs）でも通る", ok,
+      detail: ok ? "" : `status=${run.status} ${String(run.stderr || run.stdout).trim().slice(0, 160)}` });
+    console.log(`${ok ? "✅" : "❌"} アプリ自身の判定（相手側の check-set.mjs）でも通る${ok ? "" : `  ← status=${run.status}`}`);
+  } else {
+    console.log("ℹ 相手側に tools/check-set.mjs がありません（trk239 より前）。アプリ側の判定は飛ばしました");
+  }
 }
 
 /* check-fonts は trk-PWA が見つからないとき、黙って合格にせず止まるか（2026-11-01・trk235 の指摘） */
