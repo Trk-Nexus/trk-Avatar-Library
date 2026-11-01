@@ -106,7 +106,7 @@ jobs:
           done
 
       # 記録と一致するだけでなく「アプリが開いて中身を入れられる形か」を、アプリと同じ手順で見る
-      - name: セットがアプリ（trk239）の手順で開けるか
+      - name: セットがアプリ（trk240）の手順で開けるか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
