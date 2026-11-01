@@ -1,5 +1,9 @@
 # release/ — 配ったセットの記録
 
+**いまの記録は r9**（2026-11-02）：はじめて `release/first-set.json` **8,118,400 B**／書体 `release/font-set.json` **64,198,800 B**。
+r6〜r8 の記録は `release/first-set-2026-11-01-r6.json`・`-r7.json`・`-r8.json`（書体セットも同じ名前の形）に残しています。
+下の表は **r1〜r5 の経緯**です（当時の大きさのまま）。
+
 **はじめてセット**（見本 HTML＋目録＋パック）の、配ったときの記録です。
 ファイル名・大きさ・sha256・中身の sha256 が入っていて、`node tools/build-set.mjs sets/first-set.json --check`
 （CI でも実行）で、いまの倉庫から作り直したものと一致するかを確かめます。
@@ -7,7 +11,7 @@
 | 記録 | タグ（Release） | 大きさ | sha256 | 中身 |
 | --- | --- | --- | --- | --- |
 | `first-set-2026-11-01.json`（過去・r1） | `first-set-2026-11-01` | 2,993,307 B | `b9599930c9e5…` | 見本 51,711 B・目録 2,795 B・書体パック **1.0.0**（2,935,978 B） |
-| `first-set.json`（いま・r5） | `first-set-2026-11-01-r5` | 30,832,734 B | `d2bea5a21828…` | 見本 2 枚（全スキン 70,449 B＋**書体の一覧と検索 27,863 B**）・`set.json`・目録 26,093 B（16 パック・`note`／`cmap`／`tags` つき）・パック **16 個**（見本 1＋書体パック 15・合計 30,697,343 B）・**21 ファイル**。**`.zip` と `.stlib` を同じバイト列**で添付（`files_out`）。説明に「アプリが読むのは目録と `.stpack` だけ」と trk235 の入口を追記 |
+| `first-set.json`（当時・r5） | `first-set-2026-11-01-r5` | 30,832,734 B | `d2bea5a21828…` | 見本 2 枚（全スキン 70,449 B＋**書体の一覧と検索 27,863 B**）・`set.json`・目録 26,093 B（16 パック・`note`／`cmap`／`tags` つき）・パック **16 個**（見本 1＋書体パック 15・合計 30,697,343 B）・**21 ファイル**。**`.zip` と `.stlib` を同じバイト列**で添付（`files_out`）。説明に「アプリが読むのは目録と `.stpack` だけ」と trk235 の入口を追記 |
 | （過去・r4） | `first-set-2026-11-01-r4` | 30,832,151 B | `0d943e76e3ad…` | 見本 2 枚＋`set.json`＋目録＋パック 16 個・21 ファイル。**`.zip` と `.stlib` を同じバイト列**で初めて添付 |
 | （過去・r3） | `first-set-2026-11-01-r3` | 30,799,039 B | `1b381a1e7864…` | 見本 70,315 B（15 パックの「🔤 同梱の書体」＋ひとこと）・目録 23,434 B（16 パック・`note`／`cmap` つき）・パック **16 個** |
 
@@ -19,12 +23,12 @@
 足して Release を**作り**（すでにあれば添付だけ）、CI が作り直した ZIP を添付します。`check-docs` が説明書きの有無も見ます。
 r2・r3・r4・r5 はこのやり方で公開済みです（r4 からは `.zip` と `.stlib` の 2 つを添付します）。
 
-**r6 からは 2 つに分かれます**（2026-11-01・trk-PWA 側と合意）：
+**r6 からは 2 つに分かれています**（2026-11-01・trk-PWA 側と合意。いまは r9）：
 
 | セット | 定義 | 記録 | Release の説明書き | タグ |
 | --- | --- | --- | --- | --- |
-| はじめてセット（軽い・書体 5 本） | `sets/first-set.json` | `release/first-set.json` | `release/first-set-notes.md` | `first-set-…r6` |
-| 書体セット（書体は全部） | `sets/font-set.json` | `release/font-set.json`（**r6 で作る**） | `release/font-set-notes.md` | `font-set-…r6` |
+| はじめてセット（軽い・書体 5 本） | `sets/first-set.json` | `release/first-set.json` | `release/first-set-notes.md` | `first-set-…r9` |
+| 書体セット（書体は全部） | `sets/font-set.json` | `release/font-set.json` | `release/font-set-notes.md` | `font-set-…r9` |
 
 - **セットの中の目録は、そのセットに入っているパックだけ**に絞ります（アプリは目録の `packs[]` を 1 本ずつ探すため）。
   絞ったときは、記録の `files[]` に `scoped: true` と `source`（絞る前の sha256）が入ります
