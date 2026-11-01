@@ -147,21 +147,24 @@
     previewBox.innerHTML = specimen(currentPairing(), { base: edit.base });
   }
 
+  /* 書き出す形（trk-PWA の返事13 §3 で合意した形）。
+     ・`size` は入れない（大きさは base と scale から決める＝出どころを 1 つに）
+     ・`preset` は**利用者の段階**（one／pair／roles／digits）で、この試作はいちばん細かい roles
+     ・`pack` は覚え書き（無くても動く） */
   function renderOut() {
-    var sizes = (SCALE[String(edit.scale)] || RATIO).sizes;
     var slots = {};
     ROLES.forEach(function (r) {
       var s = edit.slots[r];
       slots[r] = {
-        pack: s.pack, family: s.family, weight: s.weight || 400,
-        size: sizes[r === "numeral" ? "heading" : (sizes[r] ? r : "body")] || 1,
+        family: s.family, weight: s.weight || 400,
         tracking: edit.tracking[r] !== undefined ? edit.tracking[r] : 0,
         leading: edit.leading[r] !== undefined ? edit.leading[r] : 1.6
       };
+      if (s.pack) slots[r].pack = s.pack;
     });
     var obj = {
       format: "trk-typography", version: 1,
-      pairing: edit.id, base: edit.base, scale: String(edit.scale), slots: slots
+      pairing: edit.id, preset: "roles", base: edit.base, scale: String(edit.scale), slots: slots
     };
     out.textContent = JSON.stringify(obj, null, 2);
   }

@@ -1,10 +1,10 @@
-# trk! 書体セット（全部・r6）
+# trk! 書体セット（全部・r7）
 
-**書体パックを、全部まとめて。** 見本 4 枚・目録・書体パック **29 本（42 ウェイト）**を 1 ファイルにした **約 60.6 MiB** のセットです。
+**書体パックを、全部まとめて。** 見本 4 枚・目録・書体パック **29 本（42 ウェイト）**を 1 ファイルにした **約 61.1 MiB** のセットです。
 **`.zip` と `.stlib` は中身が同じ**（同じバイト列・同じ sha256）です。**trk235（2026-11-01）以降は `.stlib` をそのまま選ぶだけ**で入ります。
 
 > r6 から、セットは **2 つ**に分かれました。
-> - **はじめてセット**（軽い・約 7.5 MB）… まず試す人向け。見本＋目録＋書体 5 本
+> - **はじめてセット**（軽い・約 8.0 MB）… まず試す人向け。見本＋目録＋書体 5 本
 > - **書体セット（このリリース）** … 書体を全部。はじめてセットの 5 本も入っています（重なっても、すでに入っているパックはアプリが飛ばします）
 >
 > 1 本だけ欲しいときは、このセットを落とさずに `gallery/fonts.html`／`gallery/packs.html` の「⬇ .stpack」からどうぞ。
@@ -78,9 +78,15 @@
 | `font-packs/train-one.stpack` | Train One 400 | OFL-1.1 |
 | `font-packs/dotgothic.stpack` | DotGothic16 400 | OFL-1.1 |
 
-ほかに `gallery/` 4 枚・`catalog/index.json`（このセットの 30 パック＝見本 1＋書体 29）・`packs/sample-mincho.stpack`（見本）・`set.json`・`README-はじめに.txt` が入っています。
+ほかに `gallery/` 4 枚・`catalog/index.json`（このセットの 30 パック＝見本 1＋書体 29）・`catalog/typography-preview.json`（組み合わせ 14 組の束）・`docs/2026-11-01-組み合わせ縮刷版.png`（1 枚の縮刷版）・`packs/sample-mincho.stpack`（見本）・`set.json`・`README-はじめに.txt` が入っています。
 
 ライセンス：パックの作りは GPL-3.0-or-later、書体は OFL-1.1（Kosugi Maru だけ Apache-2.0）。全文は各パックの `fonts/OFL.txt`／`fonts/LICENSE.txt` に同梱しています。
+
+## 前の版との違い（r6 → r7）
+
+- 組み合わせの束（`catalog/typography-preview.json`）と縮刷版（`docs/2026-11-01-組み合わせ縮刷版.png`）を足しました
+- `gallery/pairings.html` の見本の文から □ をなくしました（書体が持っている字だけに）
+- パック 30 本は r6 から 1 バイトも変わっていません（sha256 も同じ）
 
 ## 前の版との違い（r5 → r6）
 

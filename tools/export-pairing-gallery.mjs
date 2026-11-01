@@ -27,6 +27,7 @@ const HERE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
 const checkOnly = argv.includes("--check");
 const OUT = path.join(HERE, "gallery/pairings.html");
+const BUNDLE = path.join(HERE, "catalog/typography-preview.json");
 const CLIENT = path.join(HERE, "tools/lib/pairings-client.js");
 
 const read = p => fs.readFileSync(p, "utf8");
@@ -203,14 +204,16 @@ ${missingNote}
   </div>
 </div>
 
-<h2 id="contract">5. アプリ側へのお願い（案）</h2>
-<p class="lead">この倉庫が用意できるのは<b>データと見本</b>までです。アプリの設定画面を細分化するかは trk-PWA 側の判断なので、<b>足すだけ・無くても今までどおり動く</b>形の案にしました。</p>
+<h2 id="contract">5. アプリ側と合意した形（2026-11-01・返事13 §3）</h2>
+<p class="lead">この倉庫が用意できるのは<b>データと見本</b>までです。設定の形は trk-PWA と<b>合意しました</b>（下の「書き出す」JSON がそのまま <code>settings.typography</code> / <code>pack.json</code> の <code>skin.typography</code> になります）。<b>足すだけ・無くても今までどおり動く</b>形です。</p>
 <table><thead><tr><th>段階</th><th>設定の形</th><th>意味</th></tr></thead><tbody>${presetRows}</tbody></table>
 <p class="note" style="margin-top:12px">案の要点：</p>
 <ul class="note">
   <li><code>skin.font</code>（いまの 1 つ）は<b>そのまま残す</b>。細分化した設定があるときだけ、そちらを優先する</li>
   <li>パックの <code>skin.typography</code>（任意）と、利用者の設定（<code>settings.typography</code>）は<b>同じ形</b>にする（上の「書き出す」JSON）</li>
   <li>書体は <code>family</code>＋<code>weight</code> で指す（<code>pack</code> は「どのパックに入っているか」の覚え書き。無くても動く）</li>
+  <li>大きさ（<code>size</code>）は<b>持ちません</b>。<code>base</code> と <code>scale</code> から決めます（出どころを 1 つに）</li>
+  <li><code>preset</code> は<b>利用者の段階</b>（<code>one</code>／<code>pair</code>／<code>roles</code>／<code>digits</code>）。14 組そのものは段階を持ちません（どの段階でも使える）</li>
   <li>古いアプリは知らない項目を捨てるだけ（<code>sanitizeSkinDef</code> は今もそう）なので、<b>入れて壊れません</b></li>
   <li>段階は 4 つ：<b>ひとつだけ</b>（いま）→ <b>2 役</b> → <b>5 役</b> → <b>数字だけ別</b></li>
 </ul>
@@ -230,12 +233,44 @@ ${read(CLIENT)}
 </html>
 `;
 
+const bundleExpected = {
+  version: 1,
+  generatedAt: typo.generatedAt,
+  about: "組み合わせの見本に要る書体の見本（gallery/pairings.html と同じ中身）を、アプリがこれ 1 本で読めるようにしたもの。"
+    + "woff2 は見本の字だけの抜き出し（数千 B〜数十 KB）。書体の本物は各パック（.stpack）にあります。",
+  typography: {
+    version: typo.version, base: typo.base, slots: typo.slots, scales: typo.scales,
+    tracking: typo.tracking, leading: typo.leading, presets: typo.presets, pairings: typo.pairings,
+    generatedAt: typo.generatedAt, source: "catalog/typography.json",
+  },
+  previews,
+};
 if (checkOnly) {
   if (!fs.existsSync(OUT)) { console.error("❌ gallery/pairings.html がありません（node tools/export-pairing-gallery.mjs）"); process.exit(1); }
   if (read(OUT) !== HTML) { console.error("❌ gallery/pairings.html が古いです（node tools/export-pairing-gallery.mjs）"); process.exit(1); }
+  if (!fs.existsSync(BUNDLE) || read(BUNDLE) !== JSON.stringify(bundleExpected) + "\n") {
+    console.error("❌ catalog/typography-preview.json が古いです（node tools/export-pairing-gallery.mjs）"); process.exit(1);
+  }
   console.log(`✅ 組み合わせの見本は最新です（${typo.pairings.length} 組・${previews.length} 書体・${Buffer.byteLength(HTML).toLocaleString()} B）`);
   process.exit(0);
 }
 
 fs.writeFileSync(OUT, HTML);
+
+/* アプリ（trk247 以降）が 1 本で読める形。中身は同じ（woff2 は base64 のまま）。
+   「アプリに入っている書体と見本の書体を、同じ画面で見比べたい」というお願い（返事13 §5）に応えるため。 */
+const bundle = {
+  version: 1,
+  generatedAt: typo.generatedAt,
+  about: "組み合わせの見本に要る書体の見本（gallery/pairings.html と同じ中身）を、アプリがこれ 1 本で読めるようにしたもの。"
+    + "woff2 は見本の字だけの抜き出し（数千 B〜数十 KB）。書体の本物は各パック（.stpack）にあります。",
+  typography: {
+    version: typo.version, base: typo.base, slots: typo.slots, scales: typo.scales,
+    tracking: typo.tracking, leading: typo.leading, presets: typo.presets, pairings: typo.pairings,
+    generatedAt: typo.generatedAt, source: "catalog/typography.json",
+  },
+  previews,
+};
+fs.writeFileSync(BUNDLE, JSON.stringify(bundle) + "\n");
+console.log(`✅ ${path.relative(HERE, BUNDLE)} — ${typo.pairings.length} 組・見本 ${previews.length} 書体・${Buffer.byteLength(JSON.stringify(bundle)).toLocaleString()} B（アプリが 1 本で読める形）`);
 console.log(`✅ gallery/pairings.html — ${typo.pairings.length} 組・見本 ${previews.length} 書体・${Buffer.byteLength(HTML).toLocaleString()} B（外部参照 0）`);

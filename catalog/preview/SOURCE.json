@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-11-01",
-  "chars": 344,
+  "chars": 334,
   "about": "gallery/pairings.html に埋め込む見本用の woff2（各パックの書体から、見本に出す字だけを抜いたもの）",
   "fonts": [
     {
@@ -14,8 +14,8 @@
     {
       "family": "TrkDotGothic",
       "weight": 400,
-      "chars": 24,
-      "bytes": 1464,
+      "chars": 21,
+      "bytes": 1408,
       "pack": "font-packs/dotgothic.stpack",
       "file": "fonts/DotGothic16-Regular.woff2"
     },
@@ -38,8 +38,8 @@
     {
       "family": "TrkKaiseiTokumin",
       "weight": 400,
-      "chars": 29,
-      "bytes": 7056,
+      "chars": 27,
+      "bytes": 6564,
       "pack": "font-packs/kaisei-tokumin.stpack",
       "file": "fonts/TrkKaiseiTokumin400.woff2"
     },
@@ -54,8 +54,8 @@
     {
       "family": "TrkKleeOne",
       "weight": 400,
-      "chars": 22,
-      "bytes": 5092,
+      "chars": 21,
+      "bytes": 4624,
       "pack": "font-packs/klee-one.stpack",
       "file": "fonts/KleeOne-Regular.woff2"
     },
@@ -70,8 +70,8 @@
     {
       "family": "TrkMPlusRounded",
       "weight": 400,
-      "chars": 34,
-      "bytes": 4232,
+      "chars": 29,
+      "bytes": 3700,
       "pack": "font-packs/m-plus-rounded.stpack",
       "file": "fonts/MPlusRounded1c-Regular.woff2"
     },
@@ -86,8 +86,8 @@
     {
       "family": "TrkNotoSansJP",
       "weight": 400,
-      "chars": 41,
-      "bytes": 5836,
+      "chars": 42,
+      "bytes": 6032,
       "pack": "font-packs/noto-sans-jp.stpack",
       "file": "fonts/TrkNotoSansJP400.woff2"
     },
@@ -102,8 +102,8 @@
     {
       "family": "TrkNotoSerifJP",
       "weight": 400,
-      "chars": 35,
-      "bytes": 7240,
+      "chars": 30,
+      "bytes": 6228,
       "pack": "font-packs/noto-serif-jp.stpack",
       "file": "fonts/TrkNotoSerifJP400.woff2"
     },
@@ -142,24 +142,24 @@
     {
       "family": "TrkSawarabiMincho",
       "weight": 400,
-      "chars": 8,
-      "bytes": 3548,
+      "chars": 9,
+      "bytes": 3680,
       "pack": "font-packs/sawarabi-mincho.stpack",
       "file": "fonts/TrkSawarabiMincho400.woff2"
     },
     {
       "family": "TrkShipporiAntique",
       "weight": 400,
-      "chars": 32,
-      "bytes": 6496,
+      "chars": 31,
+      "bytes": 6220,
       "pack": "font-packs/shippori-antique.stpack",
       "file": "fonts/TrkShipporiAntique400.woff2"
     },
     {
       "family": "TrkShipporiMincho",
       "weight": 400,
-      "chars": 27,
-      "bytes": 5788,
+      "chars": 28,
+      "bytes": 6000,
       "pack": "font-packs/shippori-mincho.stpack",
       "file": "fonts/ShipporiMincho-Regular.woff2"
     },
@@ -190,8 +190,8 @@
     {
       "family": "TrkYomogi",
       "weight": 400,
-      "chars": 19,
-      "bytes": 3416,
+      "chars": 16,
+      "bytes": 2796,
       "pack": "font-packs/yomogi.stpack",
       "file": "fonts/TrkYomogi400.woff2"
     },
@@ -214,8 +214,8 @@
     {
       "family": "TrkZenKaku",
       "weight": 400,
-      "chars": 80,
-      "bytes": 9372,
+      "chars": 72,
+      "bytes": 8848,
       "pack": "font-packs/zen-kaku.stpack",
       "file": "fonts/ZenKakuGothicNew-Regular.woff2"
     },
@@ -230,16 +230,16 @@
     {
       "family": "TrkZenMaru",
       "weight": 400,
-      "chars": 25,
-      "bytes": 4304,
+      "chars": 18,
+      "bytes": 2856,
       "pack": "font-packs/maru-go.stpack",
       "file": "fonts/ZenMaruGothic-Regular.woff2"
     },
     {
       "family": "TrkZenOldMincho",
       "weight": 400,
-      "chars": 28,
-      "bytes": 6024,
+      "chars": 25,
+      "bytes": 5632,
       "pack": "font-packs/zen-old-mincho.stpack",
       "file": "fonts/ZenOldMincho-Regular.woff2"
     },

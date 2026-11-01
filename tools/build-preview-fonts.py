@@ -20,7 +20,8 @@ BASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 PUNCT = " .,:;!?'\"()[]{}<>/\\|-–—_+=*&%$#@~^`"
 JP_PUNCT = "、。・「」『』（）［］【】〈〉《》ー〜〜～！？：；…‥※→←↑↓★☆○●■□▲△▼▽◆◇"
 
-# 見本に出す文（長すぎると woff2 が大きくなるので、役ごとに切る）
+# 見本に出す文（長すぎると woff2 が大きくなるので、役ごとに切る）。
+# 上限は catalog/typography.json の sampleLimits（ページ・検査と同じ値を使う）
 SPECIMEN = {"display": 14, "heading": 20, "body": 30, "caption": 14}
 # 題字・見出し・本文・注記だけを本物の書体で出します（差し色と数字は、同じ家族があれば使い、無ければ端末の書体）
 
@@ -31,9 +32,10 @@ def sample_chars():
     chars = set(BASE + PUNCT + JP_PUNCT)
     if os.path.exists(path):
         data = json.load(open(path, encoding="utf-8"))
+        limits = data.get("sampleLimits") or SPECIMEN
         for p in data.get("pairings", []):
-            for slot, limit in SPECIMEN.items():
-                chars |= set((p.get("sample") or {}).get(slot, "")[:limit])
+            for slot in SPECIMEN:
+                chars |= set((p.get("sample") or {}).get(slot, "")[:limits.get(slot, SPECIMEN[slot])])
     return chars
 
 def subset(src, dst, chars):
@@ -73,13 +75,14 @@ def main():
             where[(f["family"], f.get("weight", 400))] = (p["file"], f["file"])
 
     # **その書体が見本で出す字だけ**を抜く（書体ごとに必要な字がちがう）
+    limits = typ.get("sampleLimits") or SPECIMEN
     need = {}
     for p in typ["pairings"]:
         for slot, f in p["slots"].items():
             if slot not in SPECIMEN:
                 continue
             key = (f["family"], f["weight"])
-            need.setdefault(key, set()).update((p.get("sample") or {}).get(slot, "")[:SPECIMEN[slot]])
+            need.setdefault(key, set()).update((p.get("sample") or {}).get(slot, "")[:limits.get(slot, SPECIMEN[slot])])
     if args.all:
         for key in where:
             need.setdefault(key, chars)
