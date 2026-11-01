@@ -34,6 +34,11 @@ const FONT_FAMILY = /^[A-Za-z0-9][A-Za-z0-9 ._-]{0,39}$/;  /* 英数字と空白
 const RELEASE = /^[0-9A-Za-z._+-]{1,24}$/;          /* 目録の packs[].version に入る配布版 */
 /* 書体のライセンス全文（任意・fonts[].licenseFile）。アプリは trk233 以降で表示する予定 */
 const LICENSE_FILE_EXT = ["txt", "md"], MAX_LICENSE_FILE = 256 * 1024;
+/* L10／L15（任意）：書体のひとこと（60 文字）と、雰囲気のタグ（8 個・各 16 文字）。
+   これまでは目録の外（catalog/font-notes.json・font-tags.json）で足していましたが、
+   パック自身にも書けるようにします（trk238 予定の「起動時にパックから索引を作る」に要る）。
+   長さなどは、目録を作るとき（build-catalog）と同じ決めごとで見ます */
+const NOTE_MAX = 60, TAG_MAX_COUNT = 8, TAG_MAX_LEN = 16;
 const URL_RE = /^https:\/\/[^\s"'<>]+$/;            /* アプリは https だけを受け付ける */
 const extOf = p => (p.split(".").pop() || "").toLowerCase();
 
@@ -186,10 +191,29 @@ export async function verifyPack(file, opts = {}) {
         }
       }
     }
+    /* L10／L15：パック自身に書かれた「ひとこと」と「タグ」（任意・目録側のファイルと二重に書いたら build-catalog が止める） */
+    const note = typeof f.note === "string" ? f.note.trim() : "";
+    if (note && [...note].length > NOTE_MAX) warnings.push(`書体「${family || file}」の note が ${[...note].length} 文字あります（${NOTE_MAX} 文字まで・目録は切りません）`);
+    const tags = [];
+    if (f.tags !== undefined) {
+      if (!Array.isArray(f.tags)) warnings.push(`書体「${family || file}」の tags が配列ではありません`);
+      else {
+        for (const t of f.tags) {
+          const tag = typeof t === "string" ? t.trim() : "";
+          if (!tag) { warnings.push(`書体「${family || file}」の tags に空の語があります`); continue; }
+          if ([...tag].length > TAG_MAX_LEN) { warnings.push(`書体「${family || file}」のタグ「${tag}」が ${[...tag].length} 文字あります（${TAG_MAX_LEN} 文字まで）`); continue; }
+          if (!tags.includes(tag)) tags.push(tag);
+        }
+        if (tags.length > TAG_MAX_COUNT) warnings.push(`書体「${family || file}」の tags が ${tags.length} 個あります（${TAG_MAX_COUNT} 個まで）`);
+      }
+    }
     const key = `${family.toLowerCase()}|${weight === undefined ? 400 : weight}`;
     if (fontKeys.has(key)) warnings.push(`書体「${family}」の weight ${weight === undefined ? 400 : weight} が重複しています`);
     fontKeys.add(key);
-    info.fonts.push({ family, file, license, weight, ...(licenseFileInfo ? { licenseFile: licenseFileInfo } : {}) });
+    info.fonts.push({ family, file, license, weight,
+      ...(licenseFileInfo ? { licenseFile: licenseFileInfo } : {}),
+      ...(note ? { note } : {}),
+      ...(tags.length ? { tags: tags.slice(0, TAG_MAX_COUNT) } : {}) });
     if (entry) total += entry.usize;
   }
   info.payloadBytes = total;

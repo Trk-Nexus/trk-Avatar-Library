@@ -20,6 +20,8 @@
      ・fonts[].cmap は任意（L11）。その書体が対応する字数（woff2 の cmap を数える）
      ・fonts[].tags は任意（L15・8 個まで・各 16 文字）。catalog/font-tags.json で足す（検索と絞り込みの語）
      ・fonts[].bytes は任意。パックの中の woff2 1 本の大きさ（見本ページが使う）
+     ・note と tags は、**パック自身（pack.json の fonts[]）にも書ける**（2026-11-01）。両方に書いたら止める
+       （trk238 予定の「起動時にパックから索引を作る」ために、パックを自己紹介できる形にしておく）
      ・書体パックの受け入れ検査（L16）はこの道具が持ちます：OFL-1.1・family は Trk で始まる・
        family＋weight が目録全体で重複しない・1 本 4 MiB 以下・cmap 1,000 字以上
      ・形が合っているかは tools/check-contract.mjs（アプリ自身の sanitizeCatalog）で確かめる
@@ -98,6 +100,47 @@ const tagsOf = (packFile, fontFile) => {
   return out.slice(0, TAG_MAX_COUNT);
 };
 
+/* L10／L15：パック自身（pack.json の fonts[]）に書かれた値と、目録の外（catalog/*.json）に書かれた値。
+   2026-11-01 からパックにも書けるようになったので、**どちらか一方だけ**を受け付けます。
+   二重に書くと、片方を直したときにもう片方が古いまま残る（＝目録とパックで違うことを言う）ので止めます。 */
+const noteFor = (packFile, f) => {
+  const fromPack = typeof f.note === "string" ? f.note.trim() : "";
+  const fromFile = noteOf(packFile, f.file);
+  if (fromPack && fromFile) {
+    noteProblems.push(`${packFile} の「${f.file}」の note が、pack.json と catalog/font-notes.json の両方にあります（どちらか 1 つにしてください）`);
+    return "";
+  }
+  if (!fromPack) return fromFile;
+  if ([...fromPack].length > NOTE_MAX) {
+    noteProblems.push(`${packFile} の「${f.file}」の note（pack.json）が ${[...fromPack].length} 文字です（${NOTE_MAX} 文字まで）`);
+    return "";
+  }
+  return fromPack;
+};
+const tagsFor = (packFile, f) => {
+  const fromFile = tagsOf(packFile, f.file);
+  const raw = Array.isArray(f.tags) ? f.tags : [];
+  if (raw.length && fromFile.length) {
+    tagProblems.push(`${packFile} の「${f.file}」の tags が、pack.json と catalog/font-tags.json の両方にあります（どちらか 1 つにしてください）`);
+    return [];
+  }
+  if (!raw.length) return fromFile;
+  const out = [];
+  for (const t of raw) {
+    const tag = typeof t === "string" ? t.trim() : "";
+    if (!tag) { tagProblems.push(`${packFile} の「${f.file}」の tags（pack.json）に空の語があります`); continue; }
+    if ([...tag].length > TAG_MAX_LEN) {
+      tagProblems.push(`${packFile} の「${f.file}」のタグ「${tag}」（pack.json）が ${[...tag].length} 文字です（${TAG_MAX_LEN} 文字まで）`);
+      continue;
+    }
+    if (!out.includes(tag)) out.push(tag);
+  }
+  if (out.length > TAG_MAX_COUNT) {
+    tagProblems.push(`${packFile} の「${f.file}」の tags（pack.json）が ${out.length} 個あります（${TAG_MAX_COUNT} 個まで）`);
+  }
+  return out.slice(0, TAG_MAX_COUNT);
+};
+
 /* L11：その書体が対応する字数（woff2 の cmap）と、その1本の大きさ。check-fonts と同じ読み方で数える */
 async function fontStats(buf, fonts) {
   const out = new Map();
@@ -151,8 +194,8 @@ for (const p of listPacks()) {
     /* L3：一覧に出す見本の2色（任意項目。trk231 のアプリはまだ読まない） */
     ...(r.info.colors ? { colors: r.info.colors } : {}),
     fonts: fontInfo.map(f => {
-      const note = noteOf(p.file, f.file);
-      const tags = tagsOf(p.file, f.file);
+      const note = noteFor(p.file, f);
+      const tags = tagsFor(p.file, f);
       const stat = stats.get(f.file) || {};
       return { family: f.family, file: f.file, license: f.license,
         ...(Number.isInteger(f.weight) ? { weight: f.weight } : {}),

@@ -106,6 +106,10 @@ jobs:
             node tools/verify-set.mjs "$f" --record=release/first-set.json || exit 1
           done
 
+      # パックの一覧（gallery/packs.html）が目録とずれていないか（selftest でも同じことを見ています）
+      - name: パックの一覧が目録と合っているか
+        run: node trk-Avatar-Library/tools/export-pack-gallery.mjs --check
+
       - name: README の表・リンク・セットの記録
         run: node trk-Avatar-Library/tools/check-docs.mjs
 

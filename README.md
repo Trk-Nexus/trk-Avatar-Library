@@ -24,11 +24,12 @@
 | --- | --- |
 | `gallery/all-skins.html` | **全スキン見本**（trk! の見た目のスキン **53 種**）。1ファイルで、ダブルクリックだけで開けます。外部からは何も読みません（オフラインOK） |
 | `gallery/fonts.html` | **書体の一覧と検索**（15 パック・22 ウェイト）。対応字数・大きさ・太さ・ライセンス・ひとこと・雰囲気タグを並べ、**50 音順／大きさ順／字数順**に並べ替え、**雰囲気・ライセンス・太さ・大きさで絞り込み**、言葉で横断検索。1ファイル・外部参照 0。**行ごとに 1 本だけ落とせる**リンクつき（L13・L14） |
+| `gallery/packs.html` | **パックの一覧**（16 パック・書体 22 本）。パックごとに、中に入っている書体（family・太さ・ひとこと・タグ・対応字数・大きさ）・ライセンス・sha256 を並べ、**言葉で横断検索**・**雰囲気タグで絞り込み**・**パック名／大きさ／書体の数で並べ替え**。1ファイル・外部参照 0。**パックごとに「⬇ .stpack」**（「どのパックにどの書体が入っているか」をパックの側から見る） |
 | `catalog/skins.json` | 上の見本のもとデータ（機械が読む用・53 種・書体 9 種） |
 | `catalog/fonts.json` | 書体の一覧のもとデータ（機械が読む用・15 パック・22 ウェイト） |
 | `catalog/index.json` | **目録**。この倉庫で配るパックの一覧（名前・作者・版・sha256・バイト数・含まれる書体・ライセンス）。アプリ（trk230 以降）がそのまま読みます |
-| `catalog/font-notes.json` | 書体の**ひとこと**（「どんな雰囲気か」の1行・60 文字まで）。目録の `fonts[].note` に入ります（L10）。パックの中身は変えません |
-| `catalog/font-tags.json` | 書体の**検索と絞り込みの語**（「丸ゴ」「明朝」「見出し」など・8 個まで・各 16 文字）。目録の `fonts[].tags` と `gallery/fonts.html` の絞り込みに入ります（L15）。パックの中身は変えません |
+| `catalog/font-notes.json` | 書体の**ひとこと**（「どんな雰囲気か」の1行・60 文字まで）。目録の `fonts[].note` に入ります（L10）。**パック自身の `pack.json`（`fonts[].note`）にも書けます**（2026-11-01）。両方に書くと `build-catalog` が止めます |
+| `catalog/font-tags.json` | 書体の**検索と絞り込みの語**（「丸ゴ」「明朝」「見出し」など・8 個まで・各 16 文字）。目録の `fonts[].tags` と `gallery/fonts.html`・`gallery/packs.html` の絞り込みに入ります（L15）。**`pack.json`（`fonts[].tags`）にも書けます**（2026-11-01・二重に書くと止まる） |
 | `packs/` | 配る `.stpack`（trk! のカスタムパック）。いまは見本が1つ |
 | `font-packs/` | 書体を同梱した `.stpack` が **15 個**（14 種の日本語書体＋「丸ゴのお茶目」）。合計 **29.3 MB**（30,697,343 B）・20 ウェイト。一覧は §2-2、作り方は §4 |
 | `tools/` | 見本の書き出し・パックの組み立て／検査・目録の作成・**目録がアプリの読み取り規則を通るかの検査**・パックの見本作り（Node だけ） |
@@ -50,6 +51,7 @@
 ひとことは目録の `fonts[].note` と同じ出どころ（`catalog/font-notes.json`）です。
 書体そのものは `.stpack` の中にあり、trk! に入れて「使う」と本文に効きます（trk232 以降）。
 **どの書体にするかを決めるとき**は [`gallery/fonts.html`](gallery/fonts.html)（書体の一覧と検索）を使ってください。
+**どのパックに何が入っているか**を見たいときは [`gallery/packs.html`](gallery/packs.html)（パックの一覧）です。
 対応字数・大きさ・太さ・雰囲気タグで絞れて、**1 本だけ落とすリンク**もあります。
 
 > アプリを起動しなくても、「気になるスキンがあるかどうか」を先に確かめられます。
@@ -190,14 +192,17 @@ node tools/check-contract.mjs                       # 目録が「アプリの�
 node tools/preview-pack.mjs font-packs/maru-go.stpack  # 入れる前に見る見本 HTML（dist/preview/）
 node tools/check-docs.mjs                           # README の表・リンク（見出しも）・セットの記録が今の中身と合っているか
 node tools/check-fonts.mjs                          # パックの書体（woff2）が本当に読める形か・見本の字が入っているか
-node tools/selftest.mjs                             # 道具そのものが「ちゃんと断る」かを確かめる（22項目）
+node tools/export-pack-gallery.mjs                  # gallery/packs.html（パックごとの一覧）を作り直す
+node tools/export-pack-gallery.mjs --check          # いまの一覧と合っているかだけ見る（CI 向け）
+node tools/selftest.mjs                             # 道具そのものが「ちゃんと断る」かを確かめる（36項目）
 ```
 
-**パックを足したら、3か所を直します**（CI の `check-docs` と `build-catalog` が教えてくれます）。
+**パックを足したら、4か所を直します**（CI の `check-docs`・`build-catalog`・`export-pack-gallery --check` が教えてくれます）。
 
 1. README §2-2 の**表**（名前・ファイル・大きさ・何が変わるか・書体・ライセンス）
 2. `sets/first-set.json` の `files` に入れるか決めて、`node tools/build-set.mjs sets/first-set.json --release` で作り直す
-3. 書体パックなら `catalog/font-notes.json` に**ひとこと**（60 文字まで）を足す。書き間違い（長すぎる・パックにない書体）は
+3. `node tools/export-pack-gallery.mjs` で **`gallery/packs.html`**（パックの一覧）を作り直す
+4. 書体パックなら `catalog/font-notes.json` に**ひとこと**（60 文字まで）を足す。書き間違い（長すぎる・パックにない書体）は
    `node tools/build-catalog.mjs` が止めます
 
 見本を作り直すときは（trk-PWA のチェックアウトが要ります）：
