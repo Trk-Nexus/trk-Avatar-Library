@@ -14,9 +14,9 @@
 
 | | すること | 場所 |
 | --- | --- | --- |
-| ① | **見本を見る** — `gallery/all-skins.html` を落として開く（1ファイル・オフラインOK） | [`gallery/all-skins.html`](gallery/all-skins.html) |
-| ② | **目録とパックを落とす** — `catalog/index.json` と、`packs/` か `font-packs/` の `.stpack`（いま 30 個）。<br>まとめて落とすなら [**はじめてセット**](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r8)（見本 4 枚＋目録＋6 パックの1ファイル・約 8.0 MB）か [**書体セット**](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/font-set-2026-11-01-r8)（29 本・約 61.1 MiB）。`.zip` と `.stlib` は**同じ中身** | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-目録とパックを落とす) |
-| ③ | **trk! に入れる** — 設定 → 📦 カスタムパック → 📚 目録から入れる → **📥 まとめて入れる** で、目録とパックをまとめて選ぶ。<br>大きさと sha256 が合わないものは入りません | trk!（trk231 以降） |
+| ① | **セットを落として、見本を開く** — [**はじめてセット**](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/first-set-2026-11-02-r9)を落として展開し、中の `gallery/all-skins.html` を開く（1ファイル・オフラインOK。セットには見本が 4 枚入っています） | [`gallery/all-skins.html`](gallery/all-skins.html) |
+| ② | **中身を確かめる** — `catalog/index.json`（目録）と、`packs/` か `font-packs/` の `.stpack`。はじめてセットは **6 パック**（8,118,400 B）、[書体セット](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/font-set-2026-11-02-r9)は **29 本**（64,198,800 B）。`.zip` と `.stlib` は**同じ中身** | [`catalog/index.json`](catalog/index.json)／[`.stpack` の表](#2-2-目録とパックを落とす) |
+| ③ | **trk! に入れる** — 設定 → 📦 カスタムパック → 📚 目録から入れる → **📦 セット（.stlib / .zip）を選ぶ** → 落としたセットを選ぶ（trk235 以降は `.stlib` をそのまま選ぶだけ）。<br>大きさと sha256 が合わないものは入りません。1 本ずつ入れたい人は §2-2 の「📥 まとめて入れる」へ | trk!（trk235 以降） |
 
 ## 1. いま入っているもの
 
@@ -35,8 +35,8 @@
 | `packs/` | 配る `.stpack`（trk! のカスタムパック）。いまは見本が1つ |
 | `font-packs/` | 書体を同梱した `.stpack` が **29 個**（28 種の日本語書体＋「丸ゴのお茶目」）。合計 **60.2 MB**（63,104,400 B）・**42 ウェイト**。一覧は §2-2、作り方は §4 |
 | `tools/` | 見本の書き出し・パックの組み立て／検査・目録の作成・**目録がアプリの読み取り規則を通るかの検査**・パックの見本作り（Node だけ） |
-| `sets/` | **セットの定義**。`first-set.json`（はじめてセット・**r8**：見本 4 枚＋目録＋6 パック＋組み合わせの束と縮刷版）と `font-set.json`（書体セット・**r8**：29 本＋同じ 2 つ）。作るのは `tools/build-set.mjs`（下の §2-5） |
-| `release/` | 配ったセットの記録（ファイル名・大きさ・sha256）。いまの記録は **r8 の 2 つ**（`first-set.json` 7,981,799 B・`font-set.json` 64,062,199 B）と、過去の記録（`first-set-2026-11-01-r6.json`／`-r7.json`・`font-set-2026-11-01-r6.json`／`-r7.json`・r1 の `first-set-2026-11-01.json`。r2〜r5 の経緯は `release/README.md`） |
+| `sets/` | **セットの定義**。`first-set.json`（はじめてセット・**r9**：見本 4 枚＋目録＋6 パック＋組み合わせの束と縮刷版）と `font-set.json`（書体セット・**r9**：29 本＋同じ 2 つ）。作るのは `tools/build-set.mjs`（下の §2-5） |
+| `release/` | 配ったセットの記録（ファイル名・大きさ・sha256）。いまの記録は **r9 の 2 つ**（`first-set.json` 8,118,400 B・`font-set.json` 64,198,800 B）と、過去の記録（`first-set-2026-11-01-r6.json`／`-r7.json`／`-r8.json`・`font-set-2026-11-01-r6.json`／`-r7.json`／`-r8.json`・r1 の `first-set-2026-11-01.json`。r2〜r5 の経緯は `release/README.md`） |
 | `docs/` | 受け渡しメモ（2026-10-31）。開発の引き継ぎは [`HANDOFF.md`](HANDOFF.md) |
 | `LICENSE` / `NOTICE.md` | GPL-3.0-or-later と、権利のまとめ |
 
@@ -64,8 +64,8 @@
 **どのパックを落とすか**（いま配っているのは **30 個**：見本 1＋書体パック 29）。
 
 - 書体パックは、どれも **日本語の書体（woff2）＋`fonts/OFL.txt`（ライセンス全文）＋スキン**の組です。入れて「使う」で本文の書体が変わります（trk232 以降）
-- 全部まとめてほしいときは、下の表のファイルを1つずつではなく **セット** を落としてください（**はじめて＝6 パック・約 7.5 MB**／**書体＝29 本・約 60.6 MiB**）
-- **r6 からは 2 つ**です（いまは r8）：**はじめてセット**（7,981,799 B・書体 5 本）と **書体セット**（64,062,199 B・書体 29 本）。どちらにも**組み合わせの束**（`catalog/typography-preview.json`）と**縮刷版**（`docs/2026-11-01-組み合わせ縮刷版.png`）が入っています。詳細は §2-5
+- 全部まとめてほしいときは、下の表のファイルを1つずつではなく **セット** を落としてください（**はじめて＝6 パック・8.12 MB**／**書体＝29 本・64.20 MB**）。ここに書くのは**ファイルの大きさ**で、アプリが「これから入る分」として出す数字（はじめて→書体で 53.4 MB）とは別のものです
+- **r6 からは 2 つ**です（いまは r9）：**はじめてセット**（8,118,400 B・書体 5 本）と **書体セット**（64,198,800 B・書体 29 本）。どちらにも**組み合わせの束**（`catalog/typography-preview.json`）と**縮刷版**（`docs/2026-11-01-組み合わせ縮刷版.png`）が入っています。詳細は §2-5
 
 <!-- packs-table:start -->
 | 名前 | ファイル | 大きさ | 何が変わるか | 書体 | ライセンス |
@@ -103,7 +103,7 @@
 <!-- packs-table:end -->
 
 - 表のとおり、**目録（`catalog/index.json`）と、使いたい `.stpack`** を落とします
-- **まとめて落としたいとき**は [**はじめてセット**](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r8)（見本 4 枚＋目録＋6 パックを1つのZIPにしたもの・`release/first-set.json` に sha256）を落として、**ZIP を展開**してください
+- **まとめて落としたいとき**は [**はじめてセット**](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/first-set-2026-11-02-r9)（見本 4 枚＋目録＋6 パックを1つのZIPにしたもの・`release/first-set.json` に sha256）を落として、**ZIP を展開**してください
 - `catalog/index.json` の `sha256` と、落としたファイルのハッシュを比べれば、途中で壊れていないか確かめられます（アプリも入れる前に照合します）
 - **1 本だけ欲しいとき**は [`gallery/fonts.html`](gallery/fonts.html) の行の「⬇ .stpack」から、その 1 本だけ落とせます（目録と 1 本で入れられます）
 
@@ -150,8 +150,8 @@
 
 | セット | 中身 | 大きさ（実測） | タグ |
 | --- | --- | --- | --- |
-| **はじめてセット** | 見本 4 枚＋目録＋見本パック＋**書体 5 本**（角ゴ・明朝・極太・ドット・駅名標）＋組み合わせの束＋縮刷版 | **7,981,799 B**（15 ファイル） | `first-set-2026-11-01-r8` |
-| **書体セット（全部）** | 見本 4 枚＋目録＋**書体は全部（29 本・42 ウェイト）**＋組み合わせの束＋縮刷版 | **64,062,199 B**（39 ファイル・約 61.1 MiB） | `font-set-2026-11-01-r8` |
+| **はじめてセット** | 見本 4 枚＋目録＋見本パック＋**書体 5 本**（角ゴ・明朝・極太・ドット・駅名標）＋組み合わせの束＋縮刷版 | **8,118,400 B**（15 ファイル） | `first-set-2026-11-02-r9` |
+| **書体セット（全部）** | 見本 4 枚＋目録＋**書体は全部（29 本・42 ウェイト）**＋組み合わせの束＋縮刷版 | **64,198,800 B**（39 ファイル・64.20 MB） | `font-set-2026-11-02-r9` |
 
 - **はじめてセットの 5 本も、書体セットに入ります**（重なっても、すでに入っていて版も同じパックはアプリが飛ばします）
 - **セットの中の `catalog/index.json` は、そのセットに入っているパックだけ**を載せています
@@ -230,9 +230,9 @@ node tools/export-pack-gallery.mjs --check          # いまの一覧と合っ�
 node tools/check-typography.mjs                     # 書体の組み合わせ（catalog/typography.json）が目録と合っているか
 node tools/export-pairing-gallery.mjs               # gallery/pairings.html（組み合わせの見本＋エディターの試作）を作り直す
 node tools/export-pairing-gallery.mjs --check       # いまの見本と合っているかだけ見る（CI 向け）
-node tools/check-set-app.mjs dist/trk-font-set-…r8.stlib --have=dist/trk-first-set-…r8.stlib
+node tools/check-set-app.mjs dist/trk-font-set-…r9.stlib --have=dist/trk-first-set-…r9.stlib
                                                     # セットを「アプリ自身の判定」でも見る（相手側の tools/check-set.mjs を呼ぶ）
-node tools/check-set-app.mjs dist/trk-font-set-…r8.stlib --have=dist/trk-first-set-…r8.stlib --both
+node tools/check-set-app.mjs dist/trk-font-set-…r9.stlib --have=dist/trk-first-set-…r9.stlib --both
                                                     # 2 つを両方の順で（どちらを先に入れても、これから入る分が出るか）
 node tools/selftest.mjs                             # 道具そのものが「ちゃんと断る」かを確かめる（40項目）
 ```
@@ -357,7 +357,7 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 - 目録には必ず `sha256` と `bytes` を書く（落とした人が確かめられるように）
 - いまのいちばん大きいもの：`font-packs/noto-serif-jp.stpack` の **4.4 MB**（4,665,409 B・woff2 3 本）。
   書体パック 29 個で **60.2 MB**（63,104,400 B）。1 パック 50 MB の枠に余裕があり、Git のままで足ります
-- セット（はじめて 7.5 MB・書体 60.6 MiB）は Release に置くので、Git には入れません（`dist/` は gitignore）
+- セット（はじめて 8.12 MB・書体 64.20 MB）は Release に置くので、Git には入れません（`dist/` は gitignore）
 
 ## 7. ライセンスとクレジット
 
@@ -436,11 +436,11 @@ node tools/check-fonts.mjs           # 書体（woff2）が本当に読める形
 node tools/export-skin-gallery.mjs --trk=… --check  # 全スキン見本が今の中身と一致するか
 node tools/build-pack.mjs font-packs/* --check --fetch        # 書体パック 15 個がフォルダと一致するか
 node tools/build-set.mjs sets/first-set.json --check          # はじめてセットが記録と一致するか（--release で記録）
-node tools/build-set.mjs sets/font-set.json --check            # 書体セットも同じ（r8 で記録を作ります）
+node tools/build-set.mjs sets/font-set.json --check            # 書体セットも同じ（r9 で記録を作ります）
 node tools/check-docs.mjs            # README の表・リンク・セットの記録
 ```
 
-- 相手側（trk-PWA）は **`TRK_PWA_REF` で版を固定**して取ってきます（trk233 = `8e15e67…`）。
+- 相手側（trk-PWA）は **`TRK_PWA_REF` で版を固定**して取ってきます（いまは trk-PWA の `d93d98b`＝trk252 まで）。
   上げるときは `.github/workflows/check.yml` の `env` の1行を変えます
 - 週に1回（日曜 21:00 UTC）、**固定しない `main`** でも同じ契約検査を回します（`upstream-main`）。
   相手側が先に進んでも、こちらが静かに壊れないようにするためです

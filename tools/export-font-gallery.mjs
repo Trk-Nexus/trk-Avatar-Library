@@ -251,6 +251,15 @@ const html = `<!doctype html>
     });
   }
 
+  /* 検索のことばの言い換え（2026-11-02・レビュー B-7）。 */
+  var SYNONYMS = {
+    "丸ゴシック": ["丸ゴ"], "まるごしっく": ["丸ゴ"],
+    "角ゴシック": ["角ゴ"], "かくごしっく": ["角ゴ"],
+    "ゴシック": ["角ゴ"], "ゴシック体": ["角ゴ"],
+    "明朝体": ["明朝"], "みんちょう": ["明朝"],
+    "ドット絵": ["ドット"], "ポップ体": ["ポップ"],
+    "手書き風": ["手書き"], "てがき": ["手書き"]
+  };
   function matches(p) {
     if (state.tag && p._tags.indexOf(state.tag) < 0) return false;
     if (state.license && !p.fonts.some(function (f) { return f.license === state.license; })) return false;
@@ -258,7 +267,13 @@ const html = `<!doctype html>
     if (state.weights === "2" && p._fw.length < 2) return false;
     if (state.size && !(p.bytes > 0 && p.bytes <= state.size)) return false;
     var words = state.q.trim().toLowerCase().split(/\\s+/).filter(Boolean);
-    for (var i = 0; i < words.length; i++) { if (p._h.indexOf(words[i]) < 0) return false; }
+    for (var i = 0; i < words.length; i++) {
+      /* 言い換え（丸ゴシック→丸ゴ など）のどれかが当たれば通す */
+      var alts = [words[i]].concat(SYNONYMS[words[i]] || []);
+      var hit = false;
+      for (var k = 0; k < alts.length; k++) { if (p._h.indexOf(alts[k]) >= 0) { hit = true; break; } }
+      if (!hit) return false;
+    }
     return true;
   }
 

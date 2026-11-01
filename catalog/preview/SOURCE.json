@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-11-01",
-  "chars": 334,
+  "chars": 329,
   "about": "gallery/pairings.html に埋め込む見本用の woff2（各パックの書体から、見本に出す字だけを抜いたもの）",
   "fonts": [
     {
@@ -14,16 +14,24 @@
     {
       "family": "TrkDotGothic",
       "weight": 400,
-      "chars": 21,
-      "bytes": 1408,
+      "chars": 13,
+      "bytes": 1212,
       "pack": "font-packs/dotgothic.stpack",
       "file": "fonts/DotGothic16-Regular.woff2"
     },
     {
+      "family": "TrkHinaMincho",
+      "weight": 400,
+      "chars": 7,
+      "bytes": 2352,
+      "pack": "font-packs/hina-mincho.stpack",
+      "file": "fonts/TrkHinaMincho400.woff2"
+    },
+    {
       "family": "TrkKaiseiDecol",
       "weight": 400,
-      "chars": 13,
-      "bytes": 2864,
+      "chars": 6,
+      "bytes": 1496,
       "pack": "font-packs/kaisei-decol.stpack",
       "file": "fonts/KaiseiDecol-Regular.woff2"
     },
@@ -158,8 +166,8 @@
     {
       "family": "TrkShipporiMincho",
       "weight": 400,
-      "chars": 28,
-      "bytes": 6000,
+      "chars": 35,
+      "bytes": 7120,
       "pack": "font-packs/shippori-mincho.stpack",
       "file": "fonts/ShipporiMincho-Regular.woff2"
     },
@@ -190,8 +198,8 @@
     {
       "family": "TrkYomogi",
       "weight": 400,
-      "chars": 16,
-      "bytes": 2796,
+      "chars": 5,
+      "bytes": 1124,
       "pack": "font-packs/yomogi.stpack",
       "file": "fonts/TrkYomogi400.woff2"
     },
@@ -214,8 +222,8 @@
     {
       "family": "TrkZenKaku",
       "weight": 400,
-      "chars": 72,
-      "bytes": 8848,
+      "chars": 77,
+      "bytes": 9112,
       "pack": "font-packs/zen-kaku.stpack",
       "file": "fonts/ZenKakuGothicNew-Regular.woff2"
     },
