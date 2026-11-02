@@ -728,3 +728,7 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
     `whiskey`（ウイスキー）・`wine-red`（ワインレッド）・`champagne`（シャンパン）・`espresso-martini`（エスプレッソマティーニ）・`mojito`（モヒート）・`sake`（日本酒）・`matcha-latte`（抹茶ラテ）・`hot-cocoa`（ホットココア）・`energy-drink`（エナジードリンク）・`soda-pop`（ソーダポップ）・`beer-foam`（ビールフォーム）・`absinthe`（アブシント）・`tequila-sunrise`（テキーラサンライズ）・`old-fashioned`（オールドファッション）・`negroni`（ネグローニ）・`kir-royale`（キールロワイヤル）。
     フォントは飲み物・カフェテーマに合わせて推敲（Playfair Display / Caslon / Didot / Oswald / Montserrat / Garamond / Trajan Pro / Futura / Papyrus / Caveat / Hiragino Mincho ProN など）。プレビューは `gallery/skins-drinks.html`。
     生成スクリプトは `tools/generate-skins-vol9-drinks.py`。
+25. **スキン vol.10 を制作**（`catalog/skins.json` に16種追加、総数197→213種）：テーマ「建築・都市・インテリア」。建築の質感と都市の雰囲気を重視した配色。
+    `art-deco`（アールデコ）・`brutalist`（ブルータリズム）・`gothic-cathedral`（ゴシック大聖堂）・`zen-temple`（禅寺）・`tokyo-night`（東京ナイト）・`paris-cafe`（パリカフェ）・`new-york-subway`（ニューヨーク地下鉄）・`venice-canal`（ヴェネチア運河）・`kyoto-machiya`（京都町家）・`desert-mosque`（砂漠モスク）・`ice-hotel`（アイスホテル）・`tree-house`（ツリーハウス）・`lighthouse`（灯台）・`windmill`（風車）・`clock-tower`（時計塔）・`bamboo-forest`（竹林）。
+    フォントは建築・都市テーマに合わせて推敲（Trajan Pro / Oswald / Hiragino Mincho ProN / Impact / Garamond / Montserrat / Caslon / Playfair Display / Rajdhani / Caveat など）。プレビューは `gallery/skins-architecture.html`。
+    生成スクリプトは `tools/generate-skins-vol10-architecture.py`。
