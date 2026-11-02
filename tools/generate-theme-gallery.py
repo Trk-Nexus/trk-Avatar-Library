@@ -19,9 +19,10 @@ CAT = {
     "type": "書体",
     "miku": "ミク",
     "glitch": "グリッチ/実験",
+    "wizard": "ウィザード/オカルト",
 }
 
-ORDER = ["all", "basic", "type", "miku", "dark", "light", "grad", "fun", "access", "life", "glitch"]
+ORDER = ["all", "basic", "type", "miku", "dark", "light", "grad", "fun", "access", "life", "glitch", "wizard"]
 
 
 def main():

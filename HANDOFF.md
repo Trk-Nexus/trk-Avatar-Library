@@ -736,3 +736,7 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
     `glitch-core`（グリッチコア）・`pixel-8bit`（ピクセル8ビット）・`matrix-rain`（マトリックス・レイン）・`motherboard`（マザーボード）・`cyberpunk`（サイバーパンク）・`datamosh`（データモッシュ）・`scanline`（スキャンライン）・`vaporwave`（ヴェイパーウェイブ）・`lofi-crt`（ローファイCRT）・`hacker`（ハッカー・ターミナル）・`synthwave`（シンセウェイブ）・`corrupted`（コラプテッド）・`crypto`（クリプト）・`pixel-art`（ピクセルアート）・`glitch-text`（グリッチテキスト）・`neon-grid`（ネオングリッド）。
     フォントはOrbitron / Press Start 2P / Courier New / Rajdhani など等幅・デジタルフォントを推敲。プレビューは `gallery/skins-glitch.html`。`tools/generate-theme-gallery.py` にカテゴリ `glitch`（グリッチ/実験）を追加。
     生成スクリプトは `tools/generate-skins-glitch.py`。
+27. **スキン カテゴリ「wizard」を新設・実験スキン16種を制作**（`catalog/skins.json` に16種追加、総数229→245種）：テーマ「Wizard / オカルト・神秘・呪術」。geek/hacker側ではなくWizard側の視野から、CLI・ターミナル、呪文、魔導書、ルーン文字、錬金術、タロット、水晶占い、ヴォイド、エルドリッチ、ヘルメティック、ネクロマンサーなど、汎用性を超えた自由度と実験的なUXを誇る。vol枠に収まらず、カテゴリ `wizard` を個別に持つ。
+    `wizard-cli`（ウィザードCLI）・`wizard-spell`（スペルキャスト）・`wizard-grimoire`（魔導書）・`wizard-rune`（ルーン文字）・`wizard-alchemy`（錬金術）・`wizard-terminal`（魔導ターミナル）・`wizard-cauldron`（大釜）・`wizard-crystal`（クリスタルボール）・`wizard-tarot`（タロット）・`wizard-void`（ヴォイド）・`wizard-arcane`（アーケイン）・`wizard-eldritch`（エルドリッチ）・`wizard-seance`（降霊術）・`wizard-ouija`（ウィジャ板）・`wizard-hermetic`（ヘルメティック）・`wizard-necromancer`（ネクロマンサー）。
+    フォントはTrajan Pro / Cinzel / Garamond / Caslon / Courier New など神秘的・等幅フォントを推敲。プレビューは `gallery/skins-wizard.html`。`tools/generate-theme-gallery.py` にカテゴリ `wizard`（ウィザード/オカルト）を追加。
+    生成スクリプトは `tools/generate-skins-wizard.py`。
