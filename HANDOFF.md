@@ -716,3 +716,7 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
     `platinum`（プラチナ・純白）・`ancient-bronze`（古銅・緑青）・`chrome-steel`（クロムスチール・鏡面メッキ）。
     フォントも各金属の質感に合わせて推敲（Inter / Playfair Display / Montserrat / Garamond / Oswald / Trajan Pro / Futura / Rajdhani / MedievalSharp / Caveat / Didot / Orbitron など）。プレビューは `gallery/skins-metal.html`。
     生成スクリプトは `tools/generate-skins-vol6-metal.py`。
+22. **スキン vol.7 を制作**（`catalog/skins.json` に16種追加、総数149→165種）：テーマ「カジノ・スロットマシーン・ラグジュアリー」（ユーザーアイディア）。ラグジュアリーな輝きと、賭博が抱えるダークなテーマを混在。スロットのジャックポット、ルーレット、ポーカー、ブラックジャック、ハイローラー、VIPラウンジ、ネオンベガスなどをモチーフ。
+    `casino-royale`（カジノロワイヤル）・`jackpot-777`（ジャックポット777）・`slot-machine`（スロットマシーン）・`roulette-wheel`（ルーレットホイール）・`poker-face`（ポーカーフェイス）・`blackjack-21`（ブラックジャック21）・`high-roller`（ハイローラー）・`vip-lounge`（VIPラウンジ）・`neon-vegas`（ネオンベガス）・`gold-chip`（金チップ）・`diamond-club`（ダイアモンドクラブ）・`midnight-casino`（ミッドナイトカジノ）・`velvet-ropes`（ベルベットロープ）・`champagne-gold`（シャンパンゴールド）・`neon-sign`（ネオンサイン）・`house-edge`（ハウスエッジ・カジノの暗い面）。
+    フォントはカジノ・ラグジュアリーに合わせて推敲（Playfair Display / Orbitron / Rajdhani / Impact / Trajan Pro / Caslon / Oswald / Didot / Montserrat / Garamond / Papyrus / Caveat など）。プレビューは `gallery/skins-casino.html`。
+    生成スクリプトは `tools/generate-skins-vol7-casino.py`。
