@@ -29,7 +29,7 @@ permissions:
 
 env:
   # trk240（7344111）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
-  TRK_PWA_REF: d93d98bef270efeb26826d576ac3574b828cf119
+  TRK_PWA_REF: f80e1de085658d5ce0efc1caabfd8a61d2e982cc
 
 jobs:
   attach:

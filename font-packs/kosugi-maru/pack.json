@@ -3,10 +3,10 @@
   "version": 1,
   "name": "こすぎの丸ゴ（書体パック）",
   "author": "trk-Avatar-Library",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Kosugi Maru を同梱した、定番の丸ゴシック（Apache-2.0）。親しみやすく、長く読んでも疲れにくい書体です。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：Apache-2.0",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "url": "https://github.com/Trk-Nexus/trk-Avatar-Library",
   "fonts": [
     {
       "family": "TrkKosugiMaru",

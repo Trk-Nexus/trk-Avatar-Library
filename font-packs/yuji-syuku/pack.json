@@ -3,10 +3,10 @@
   "version": 1,
   "name": "毛筆の楷書（書体パック）",
   "author": "trk-Avatar-Library",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Yuji Syuku を同梱した、毛筆の楷書体。軸の通った筆致で、和風の題字や名場面の見出しに。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "url": "https://github.com/Trk-Nexus/trk-Avatar-Library",
   "fonts": [
     {
       "family": "TrkYujiSyuku",

@@ -3,10 +3,10 @@
   "version": 1,
   "name": "てごみの便り（書体パック）",
   "author": "trk-Avatar-Library",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "New Tegomin を同梱した、手書きの匂いの残る明朝体。便箋や日記のような、私的な文章に。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "url": "https://github.com/Trk-Nexus/trk-Avatar-Library",
   "fonts": [
     {
       "family": "TrkNewTegomin",

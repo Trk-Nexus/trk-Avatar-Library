@@ -3,10 +3,10 @@
   "version": 1,
   "name": "看板のポップ（書体パック）",
   "author": "trk-PWA",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Potta One（400）を同梱した看板風の太いポップ書体パック。深い青緑に黄色が映える見た目です。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "url": "https://github.com/Trk-Nexus/trk-PWA",
   "fonts": [
     {
       "family": "TrkPottaOne",

@@ -2,37 +2,37 @@
   "name": "first-set",
   "title": "trk! はじめてセット",
   "date": "2026-11-02",
-  "tag": "first-set-2026-11-02-r9",
-  "file": "trk-first-set-2026-11-02-r9.zip",
-  "bytes": 8118400,
-  "sha256": "d07ac6e671c3002892e60e50418a374f6bea5cc51e5a8656b792f9b0005d5b54",
+  "tag": "first-set-2026-11-02-r10",
+  "file": "trk-first-set-2026-11-02-r10.zip",
+  "bytes": 8118128,
+  "sha256": "1c1cae353a192d608b3118f16e973ed1386b42c5def62190e28095b4ad68e3b5",
   "files_out": [
     {
-      "name": "trk-first-set-2026-11-02-r9.zip",
-      "bytes": 8118400,
-      "sha256": "d07ac6e671c3002892e60e50418a374f6bea5cc51e5a8656b792f9b0005d5b54"
+      "name": "trk-first-set-2026-11-02-r10.zip",
+      "bytes": 8118128,
+      "sha256": "1c1cae353a192d608b3118f16e973ed1386b42c5def62190e28095b4ad68e3b5"
     },
     {
-      "name": "trk-first-set-2026-11-02-r9.stlib",
-      "bytes": 8118400,
-      "sha256": "d07ac6e671c3002892e60e50418a374f6bea5cc51e5a8656b792f9b0005d5b54"
+      "name": "trk-first-set-2026-11-02-r10.stlib",
+      "bytes": 8118128,
+      "sha256": "1c1cae353a192d608b3118f16e973ed1386b42c5def62190e28095b4ad68e3b5"
     }
   ],
   "files": [
     {
       "path": "gallery/all-skins.html",
       "bytes": 85852,
-      "sha256": "5aa870036b61d9621ff2026fb9dd62f3b63a5e7e1d5ea16dafa8971a2fc9ac91"
+      "sha256": "9b2356900fbb932944749956b27e1844ec20b224821232d65188cce81872b45f"
     },
     {
       "path": "gallery/fonts.html",
       "bytes": 39568,
-      "sha256": "232abb47e15c73f5560f8c07e29ca18bfac3421ac0743ecb1a0e1a89f7016162"
+      "sha256": "fcabcd32d8977ce4ba5f318d815ed7e055912ae7668affbba3dd5417645ec051"
     },
     {
       "path": "gallery/packs.html",
       "bytes": 45520,
-      "sha256": "2ab874397f904d47efbea047377abd2d88c50bf97e72429087d85e58cc8497b4"
+      "sha256": "289621f57df846ae8ee9604b6c15f2527930655b8ca3c37c4be318dd4b1b2e14"
     },
     {
       "path": "gallery/pairings.html",
@@ -41,12 +41,12 @@
     },
     {
       "path": "catalog/index.json",
-      "bytes": 9508,
-      "sha256": "631004a9dcdeff8c2217bbfad333caf20abe69b9c84c757c0766a0338e7875c2",
+      "bytes": 9383,
+      "sha256": "862f0cd088b540aa37315fe4394cceea50f3c8f89913510e0b35123c8519509d",
       "scoped": true,
       "source": {
-        "bytes": 48786,
-        "sha256": "7263d8489322fcc9bc8054d4c893ee5bd5cc434caee3d554c9bba0cbc9d095ed"
+        "bytes": 48061,
+        "sha256": "a1dad24534687b21c52f84fdfe93b11e9ee17fe3d0003026569590b46e9bfab9"
       }
     },
     {
@@ -66,28 +66,28 @@
     },
     {
       "path": "font-packs/dela-gothic.stpack",
-      "bytes": 951499,
-      "sha256": "8a183e3982c9cb7e6cccdf8474bc1d78c30f3fb70949828c07a4e573e20ebad9"
+      "bytes": 951474,
+      "sha256": "079650168c639777a672579e71773138284a3be8b7b4237aff8661a3242ec419"
     },
     {
       "path": "font-packs/dotgothic.stpack",
-      "bytes": 403458,
-      "sha256": "68fa7f0a5b4d34913a41def620a5ba14a596e4c038c5d1dbaf44b5ef5b2e5945"
+      "bytes": 403433,
+      "sha256": "fb06c427232cdba238ff7806d79a410b9630e582e74ee5ce8473a78cc7cc6860"
     },
     {
       "path": "font-packs/shippori-mincho.stpack",
-      "bytes": 2850282,
-      "sha256": "26dd978727ddedb6595927d8a91250f2b2856e50fa0b93587c7f58e4b5dfcc17"
+      "bytes": 2850257,
+      "sha256": "f85eb2e5507469687b49526d37fe84a9977ecd88ff8bde798d3e4acb396b3f0d"
     },
     {
       "path": "font-packs/train-one.stpack",
-      "bytes": 895671,
-      "sha256": "a8d553c01254ff09f588cd1452e51162493bf7643ad027786d5a01d4c69aa6f3"
+      "bytes": 895646,
+      "sha256": "b1aa472b1bbe58989afdbf5d90ba97dd7c394c1094d9fdd949b1dc0209659053"
     },
     {
       "path": "font-packs/zen-kaku.stpack",
-      "bytes": 1969655,
-      "sha256": "b12dc221636c5e7d11c5ecb4f76302a5615a02ea6adc614fabfdd0904567937d"
+      "bytes": 1969630,
+      "sha256": "ba215bda550dc9ccca92891f29839a0e181dc2c68d6be6557aca1176f245eeef"
     }
   ],
   "note": "はじめての人のための軽いセットです。見本 4 枚（全スキン・書体の一覧・パックの一覧・組み合わせ）と目録、見本パックに、書体 5 本（極太のポスター・ドット・明朝・駅名標の極太・角ゴ）を入れています。どれも入れれば「使う」で本文の書体が変わります（trk232 以降）。足りない書体は書体セット（全部入り）か、gallery/fonts.html から 1 本ずつ落とせます。"

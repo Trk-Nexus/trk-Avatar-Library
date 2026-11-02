@@ -1,7 +1,7 @@
 # release/ — 配ったセットの記録
 
-**いまの記録は r9**（2026-11-02）：はじめて `release/first-set.json` **8,118,400 B**／書体 `release/font-set.json` **64,198,800 B**。
-r6〜r8 の記録は `release/first-set-2026-11-01-r6.json`・`-r7.json`・`-r8.json`（書体セットも同じ名前の形）に残しています。
+**いまの記録は r10**（2026-11-02・パックの URL を新 org に付け替えた版）：はじめて `release/first-set.json` **8,118,128 B**／書体 `release/font-set.json` **64,197,328 B**。
+r6〜r9 の記録は `release/first-set-2026-11-01-r6.json`・`-r7.json`・`-r8.json`・`-2026-11-02-r9.json`（書体セットも同じ名前の形）に残しています。
 下の表は **r1〜r5 の経緯**です（当時の大きさのまま）。
 
 **はじめてセット**（見本 HTML＋目録＋パック）の、配ったときの記録です。
@@ -23,12 +23,12 @@ r6〜r8 の記録は `release/first-set-2026-11-01-r6.json`・`-r7.json`・`-r8.
 足して Release を**作り**（すでにあれば添付だけ）、CI が作り直した ZIP を添付します。`check-docs` が説明書きの有無も見ます。
 r2・r3・r4・r5 はこのやり方で公開済みです（r4 からは `.zip` と `.stlib` の 2 つを添付します）。
 
-**r6 からは 2 つに分かれています**（2026-11-01・trk-PWA 側と合意。いまは r9）：
+**r6 からは 2 つに分かれています**（2026-11-01・trk-PWA 側と合意。いまは r10）：
 
 | セット | 定義 | 記録 | Release の説明書き | タグ |
 | --- | --- | --- | --- | --- |
-| はじめてセット（軽い・書体 5 本） | `sets/first-set.json` | `release/first-set.json` | `release/first-set-notes.md` | `first-set-…r9` |
-| 書体セット（書体は全部） | `sets/font-set.json` | `release/font-set.json` | `release/font-set-notes.md` | `font-set-…r9` |
+| はじめてセット（軽い・書体 5 本） | `sets/first-set.json` | `release/first-set.json` | `release/first-set-notes.md` | `first-set-…r10` |
+| 書体セット（書体は全部） | `sets/font-set.json` | `release/font-set.json` | `release/font-set-notes.md` | `font-set-…r10` |
 
 - **セットの中の目録は、そのセットに入っているパックだけ**に絞ります（アプリは目録の `packs[]` を 1 本ずつ探すため）。
   絞ったときは、記録の `files[]` に `scoped: true` と `source`（絞る前の sha256）が入ります

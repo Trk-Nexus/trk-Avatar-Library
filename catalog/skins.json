@@ -1,7 +1,7 @@
 {
   "format": "trk-avatar-library-skins",
   "version": 1,
-  "generatedAt": "2026-11-01T08:40:50.077Z",
+  "generatedAt": "2026-11-02T02:34:11.110Z",
   "source": "trk-PWA / js/data.js + js/characters/miku.js",
   "count": 53,
   "typeSkins": 9,
@@ -2357,7 +2357,7 @@
     {
       "file": "font-packs/dela-gothic.stpack",
       "name": "極太ポスター（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "極太ポスター",
       "colors": {
         "stage": "#101010",
@@ -2377,7 +2377,7 @@
     {
       "file": "font-packs/dotgothic.stpack",
       "name": "ドットの電子音（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "ドットの電子音",
       "colors": {
         "stage": "#06110d",
@@ -2397,7 +2397,7 @@
     {
       "file": "font-packs/hachi-maru-pop.stpack",
       "name": "まるぽっぷ いちご（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "まるぽっぷ いちご",
       "colors": {
         "stage": "#2b1a24",
@@ -2417,7 +2417,7 @@
     {
       "file": "font-packs/hina-mincho.stpack",
       "name": "ひなの明朝（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "ひなの明朝",
       "colors": {
         "stage": "#1a1418",
@@ -2437,7 +2437,7 @@
     {
       "file": "font-packs/kaisei-decol.stpack",
       "name": "飾り明朝のラベンダー（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "飾り明朝のラベンダー",
       "colors": {
         "stage": "#f6f1f7",
@@ -2465,7 +2465,7 @@
     {
       "file": "font-packs/kaisei-tokumin.stpack",
       "name": "明朝の重み（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "明朝の重み",
       "colors": {
         "stage": "#17130f",
@@ -2501,7 +2501,7 @@
     {
       "file": "font-packs/klee-one.stpack",
       "name": "筆ペンの手紙（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "筆ペンの手紙",
       "colors": {
         "stage": "#f4efe3",
@@ -2529,7 +2529,7 @@
     {
       "file": "font-packs/kosugi-maru.stpack",
       "name": "こすぎの丸ゴ（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "こすぎの丸ゴ",
       "colors": {
         "stage": "#10201a",
@@ -2549,7 +2549,7 @@
     {
       "file": "font-packs/m-plus-rounded.stpack",
       "name": "まるゴのミルクティー（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "まるゴのミルクティー",
       "colors": {
         "stage": "#201a17",
@@ -2577,7 +2577,7 @@
     {
       "file": "font-packs/maru-go.stpack",
       "name": "丸ゴのお茶目（書体パック）",
-      "release": "1.1.0",
+      "release": "1.1.1",
       "skin": "丸ゴのお茶目",
       "colors": {
         "stage": "#241a2a",
@@ -2605,7 +2605,7 @@
     {
       "file": "font-packs/mochiy-pop.stpack",
       "name": "もちもちポップ（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "もちもちポップ",
       "colors": {
         "stage": "#22103a",
@@ -2625,7 +2625,7 @@
     {
       "file": "font-packs/new-tegomin.stpack",
       "name": "てごみの便り（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "てごみの便り",
       "colors": {
         "stage": "#1a1614",
@@ -2645,7 +2645,7 @@
     {
       "file": "font-packs/noto-sans-jp.stpack",
       "name": "角ゴのみなもと（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "角ゴのみなもと",
       "colors": {
         "stage": "#11151b",
@@ -2681,7 +2681,7 @@
     {
       "file": "font-packs/noto-serif-jp.stpack",
       "name": "明朝のみなもと（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "明朝のみなもと",
       "colors": {
         "stage": "#14110e",
@@ -2717,7 +2717,7 @@
     {
       "file": "font-packs/potta-one.stpack",
       "name": "看板のポップ（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "看板のポップ",
       "colors": {
         "stage": "#10232b",
@@ -2737,7 +2737,7 @@
     {
       "file": "font-packs/rampart-one.stpack",
       "name": "ラインのネオン（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "ラインのネオン",
       "colors": {
         "stage": "#0a0620",
@@ -2757,7 +2757,7 @@
     {
       "file": "font-packs/rocknroll-one.stpack",
       "name": "ロックの夜（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "ロックの夜",
       "colors": {
         "stage": "#1a1210",
@@ -2777,7 +2777,7 @@
     {
       "file": "font-packs/sawarabi-mincho.stpack",
       "name": "早蕨の明朝（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "早蕨の明朝",
       "colors": {
         "stage": "#16130f",
@@ -2797,7 +2797,7 @@
     {
       "file": "font-packs/shippori-antique.stpack",
       "name": "余白のアンティーク（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "余白のアンティーク",
       "colors": {
         "stage": "#14161a",
@@ -2817,7 +2817,7 @@
     {
       "file": "font-packs/shippori-mincho.stpack",
       "name": "墨と金の明朝（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "墨と金の明朝",
       "colors": {
         "stage": "#171512",
@@ -2845,7 +2845,7 @@
     {
       "file": "font-packs/stick.stpack",
       "name": "細線のステッキ（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "細線のステッキ",
       "colors": {
         "stage": "#101319",
@@ -2865,7 +2865,7 @@
     {
       "file": "font-packs/train-one.stpack",
       "name": "鉄道の極太（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "鉄道の極太",
       "colors": {
         "stage": "#101418",
@@ -2885,7 +2885,7 @@
     {
       "file": "font-packs/yomogi.stpack",
       "name": "よもぎの便り（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "よもぎの便り",
       "colors": {
         "stage": "#131a12",
@@ -2905,7 +2905,7 @@
     {
       "file": "font-packs/yuji-syuku.stpack",
       "name": "毛筆の楷書（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "毛筆の楷書",
       "colors": {
         "stage": "#16110d",
@@ -2925,7 +2925,7 @@
     {
       "file": "font-packs/yusei-magic.stpack",
       "name": "筆ポップの夜祭（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "筆ポップの夜祭",
       "colors": {
         "stage": "#14100e",
@@ -2945,7 +2945,7 @@
     {
       "file": "font-packs/zen-antique.stpack",
       "name": "古道具の明朝（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "古道具の明朝",
       "colors": {
         "stage": "#1a1512",
@@ -2965,7 +2965,7 @@
     {
       "file": "font-packs/zen-kaku.stpack",
       "name": "角ゴのしらゆき（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "角ゴのしらゆき",
       "colors": {
         "stage": "#0f1720",
@@ -2993,7 +2993,7 @@
     {
       "file": "font-packs/zen-kurenaido.stpack",
       "name": "くれないの筆（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "くれないの筆",
       "colors": {
         "stage": "#1b1114",
@@ -3013,7 +3013,7 @@
     {
       "file": "font-packs/zen-old-mincho.stpack",
       "name": "古明朝の藍（書体パック）",
-      "release": "1.0.0",
+      "release": "1.0.1",
       "skin": "古明朝の藍",
       "colors": {
         "stage": "#0f1a2b",

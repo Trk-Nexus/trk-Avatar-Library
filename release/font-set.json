@@ -2,37 +2,37 @@
   "name": "font-set",
   "title": "trk! 書体セット（全部）",
   "date": "2026-11-02",
-  "tag": "font-set-2026-11-02-r9",
-  "file": "trk-font-set-2026-11-02-r9.zip",
-  "bytes": 64198800,
-  "sha256": "899b4904fce9c036cc62862ff4e4c6fa1ee162ec5902c1d4c717e10104abe15f",
+  "tag": "font-set-2026-11-02-r10",
+  "file": "trk-font-set-2026-11-02-r10.zip",
+  "bytes": 64197328,
+  "sha256": "e1e2d6c480ad90ece9aeba59a25a830098e7fff8c5338e6f05e324c72f6ac0d2",
   "files_out": [
     {
-      "name": "trk-font-set-2026-11-02-r9.zip",
-      "bytes": 64198800,
-      "sha256": "899b4904fce9c036cc62862ff4e4c6fa1ee162ec5902c1d4c717e10104abe15f"
+      "name": "trk-font-set-2026-11-02-r10.zip",
+      "bytes": 64197328,
+      "sha256": "e1e2d6c480ad90ece9aeba59a25a830098e7fff8c5338e6f05e324c72f6ac0d2"
     },
     {
-      "name": "trk-font-set-2026-11-02-r9.stlib",
-      "bytes": 64198800,
-      "sha256": "899b4904fce9c036cc62862ff4e4c6fa1ee162ec5902c1d4c717e10104abe15f"
+      "name": "trk-font-set-2026-11-02-r10.stlib",
+      "bytes": 64197328,
+      "sha256": "e1e2d6c480ad90ece9aeba59a25a830098e7fff8c5338e6f05e324c72f6ac0d2"
     }
   ],
   "files": [
     {
       "path": "gallery/all-skins.html",
       "bytes": 85852,
-      "sha256": "5aa870036b61d9621ff2026fb9dd62f3b63a5e7e1d5ea16dafa8971a2fc9ac91"
+      "sha256": "9b2356900fbb932944749956b27e1844ec20b224821232d65188cce81872b45f"
     },
     {
       "path": "gallery/fonts.html",
       "bytes": 39568,
-      "sha256": "232abb47e15c73f5560f8c07e29ca18bfac3421ac0743ecb1a0e1a89f7016162"
+      "sha256": "fcabcd32d8977ce4ba5f318d815ed7e055912ae7668affbba3dd5417645ec051"
     },
     {
       "path": "gallery/packs.html",
       "bytes": 45520,
-      "sha256": "2ab874397f904d47efbea047377abd2d88c50bf97e72429087d85e58cc8497b4"
+      "sha256": "289621f57df846ae8ee9604b6c15f2527930655b8ca3c37c4be318dd4b1b2e14"
     },
     {
       "path": "gallery/pairings.html",
@@ -41,8 +41,8 @@
     },
     {
       "path": "catalog/index.json",
-      "bytes": 48786,
-      "sha256": "7263d8489322fcc9bc8054d4c893ee5bd5cc434caee3d554c9bba0cbc9d095ed"
+      "bytes": 48061,
+      "sha256": "a1dad24534687b21c52f84fdfe93b11e9ee17fe3d0003026569590b46e9bfab9"
     },
     {
       "path": "catalog/typography-preview.json",
@@ -61,148 +61,148 @@
     },
     {
       "path": "font-packs/dela-gothic.stpack",
-      "bytes": 951499,
-      "sha256": "8a183e3982c9cb7e6cccdf8474bc1d78c30f3fb70949828c07a4e573e20ebad9"
+      "bytes": 951474,
+      "sha256": "079650168c639777a672579e71773138284a3be8b7b4237aff8661a3242ec419"
     },
     {
       "path": "font-packs/dotgothic.stpack",
-      "bytes": 403458,
-      "sha256": "68fa7f0a5b4d34913a41def620a5ba14a596e4c038c5d1dbaf44b5ef5b2e5945"
+      "bytes": 403433,
+      "sha256": "fb06c427232cdba238ff7806d79a410b9630e582e74ee5ce8473a78cc7cc6860"
     },
     {
       "path": "font-packs/hachi-maru-pop.stpack",
-      "bytes": 1973189,
-      "sha256": "c7992ad1ffc7c98299f6b8f4d7a55e9b9acfa6ae72b7161fb54a34b2ad747893"
+      "bytes": 1973164,
+      "sha256": "be5fdaefedcc136f7a2426b7587cc378c58c2a8545bed00ca3f898a61ab0dc68"
     },
     {
       "path": "font-packs/hina-mincho.stpack",
-      "bytes": 1431466,
-      "sha256": "a582537a3f1248f3696a9b864a2a1052f0f7fb2b416935cac00542640459154a"
+      "bytes": 1431441,
+      "sha256": "22226e1177c53b8b296f796757e52c53614dd7e65411ee14da51b05ee1acb4f3"
     },
     {
       "path": "font-packs/kaisei-decol.stpack",
-      "bytes": 3399530,
-      "sha256": "7e2db0319f8d011421e3a8452d21cd14781632581aa12dcff3024417b8781f0f"
+      "bytes": 3399505,
+      "sha256": "dc23476fb9bb6a81ee5a2d850a56da61215f96152c6cb7cce5a080bdf82e631b"
     },
     {
       "path": "font-packs/kaisei-tokumin.stpack",
-      "bytes": 4991606,
-      "sha256": "b67de324aa9ea92c67347bc3bce418d109328eef6a548f92518ec4065cc7cf3e"
+      "bytes": 4991581,
+      "sha256": "d87bcc85b33a7e2d67aa31d9766310cef5cfb456b64ccd813cd479b5ff4196e4"
     },
     {
       "path": "font-packs/klee-one.stpack",
-      "bytes": 3929934,
-      "sha256": "68cca8094cf2039169aeb00fe8f8f1ecaeafa4d6117f62b031637866a95c1ac8"
+      "bytes": 3929909,
+      "sha256": "6500e6cdb3700c4d3d4d7575adb9de326ca4ccaee8220abb067ff234eb308376"
     },
     {
       "path": "font-packs/kosugi-maru.stpack",
-      "bytes": 1451745,
-      "sha256": "4fa61627cf6e5077e89e672267e2f512bbb7785cbc1bb0a4a0c6c75c809b9ab4"
+      "bytes": 1451720,
+      "sha256": "778f2290f89f53a4295f12a929a7531f38e958a4682089e4b1bc1d8bf920473c"
     },
     {
       "path": "font-packs/m-plus-rounded.stpack",
-      "bytes": 1902101,
-      "sha256": "4bc6536e70595ab1b62fc7bcbaec6d22acde9882c1055b0897d8862503505d69"
+      "bytes": 1902076,
+      "sha256": "530be9388ee4a7353cee7116b23f9a3139da840c10ad3311be20182554c69daf"
     },
     {
       "path": "font-packs/maru-go.stpack",
-      "bytes": 2936399,
-      "sha256": "db4dc011c19d489f933eb26ca3dd185bf36f5dd5460209cbe2c04c9f378d560d"
+      "bytes": 2936374,
+      "sha256": "dcf0486b3b9942d7099b2ab9f70012d73f6f91f9c1ce55521add663cffa46b87"
     },
     {
       "path": "font-packs/mochiy-pop.stpack",
-      "bytes": 999719,
-      "sha256": "1431c09a4b108f6fab18211cd013223a72c4e0769461cea224206bfb3537f732"
+      "bytes": 999694,
+      "sha256": "4da3f834485a312e2f2dc70a674082daa5f30b4db3e40ff580e9e0e5d5a4eb15"
     },
     {
       "path": "font-packs/new-tegomin.stpack",
-      "bytes": 3735560,
-      "sha256": "cb38baa2e4264817b685d6e3240d034e7387e158a356bc4125835651bf4249b4"
+      "bytes": 3735535,
+      "sha256": "097e8950462b69d0a1801f03ceb8e64ff302def41ab1c83fbaf8c8d4ff0ad221"
     },
     {
       "path": "font-packs/noto-sans-jp.stpack",
-      "bytes": 3445235,
-      "sha256": "ab017243f63751fa62769ec371e10e18ecf98a483d0fe9624d83122f9bba6ae0"
+      "bytes": 3445210,
+      "sha256": "554d92282d6d46d7744198a1a4d9546e4aa6283c4b94656eb8c8ce791ef3f2a2"
     },
     {
       "path": "font-packs/noto-serif-jp.stpack",
-      "bytes": 4665409,
-      "sha256": "b5435e137e120bb56e545891d035deaa88ac3fb8b97fa36187e3ae7fe5e8eaa6"
+      "bytes": 4665384,
+      "sha256": "be111af5013c2e224c0694fd76d4c480dc031878bcbbd1620e6e18390126ef54"
     },
     {
       "path": "font-packs/potta-one.stpack",
-      "bytes": 2020608,
-      "sha256": "137c00a2cdf47c4b8c5d89b2bd4f04df07ee1d90e0aa464247354701373db30d"
+      "bytes": 2020583,
+      "sha256": "d02c91efa99fcc9b5966f31fa24a3920549965a0ba37f14baae85ae6ba1c8c7a"
     },
     {
       "path": "font-packs/rampart-one.stpack",
-      "bytes": 1577304,
-      "sha256": "9a865737c7566f218835d5baebb8685f58a6ef1a1bea5bf8361b5658f27e3f4e"
+      "bytes": 1577279,
+      "sha256": "6448a6628f45d41fc814f8795ccc9a81e76a3e8973fedda80e910ed1a21a7005"
     },
     {
       "path": "font-packs/rocknroll-one.stpack",
-      "bytes": 981561,
-      "sha256": "bb2a5765fc90b7d5b37d36bbd82dc73fd2d0e99ccb1a54d2989ce9b1b988efe6"
+      "bytes": 981536,
+      "sha256": "65bd7ea48ccc5d2c3df81213f9ed5689d523cf64894628b596c9c772c7fa41eb"
     },
     {
       "path": "font-packs/sawarabi-mincho.stpack",
-      "bytes": 1186961,
-      "sha256": "1beb7c436045ea72b8d73629c036e341727452293bf5e8246ebea2d5f550b59f"
+      "bytes": 1186936,
+      "sha256": "e50d702849b1f8ee0a317f253dad7683e55449e704f9385bd0d6b294528ca9e6"
     },
     {
       "path": "font-packs/shippori-antique.stpack",
-      "bytes": 1214407,
-      "sha256": "467ddfeeee2ae967545a34831dae99ed6c28a4480531dea38f0c3ca74088d8ec"
+      "bytes": 1214382,
+      "sha256": "d4bfa9d91ba9ea1ba14c529b8d18fabe5fa2b80eb2674baffbad561b6fe2ee00"
     },
     {
       "path": "font-packs/shippori-mincho.stpack",
-      "bytes": 2850282,
-      "sha256": "26dd978727ddedb6595927d8a91250f2b2856e50fa0b93587c7f58e4b5dfcc17"
+      "bytes": 2850257,
+      "sha256": "f85eb2e5507469687b49526d37fe84a9977ecd88ff8bde798d3e4acb396b3f0d"
     },
     {
       "path": "font-packs/stick.stpack",
-      "bytes": 854518,
-      "sha256": "3811c6780792db2091acb6cabd763f0a45000053d3aa4e15ef021c0d6a2e8a9b"
+      "bytes": 854493,
+      "sha256": "9613ae45effb9ab57d6b295b45ee70a51864a00ec9207f8ceaf0fd4f2a5167dc"
     },
     {
       "path": "font-packs/train-one.stpack",
-      "bytes": 895671,
-      "sha256": "a8d553c01254ff09f588cd1452e51162493bf7643ad027786d5a01d4c69aa6f3"
+      "bytes": 895646,
+      "sha256": "b1aa472b1bbe58989afdbf5d90ba97dd7c394c1094d9fdd949b1dc0209659053"
     },
     {
       "path": "font-packs/yomogi.stpack",
-      "bytes": 1584824,
-      "sha256": "2ab5289cf720ab4d2572e3f4852a90033d7d853cfc0da217da562a07b0ebd430"
+      "bytes": 1584799,
+      "sha256": "120ef8f8dd9ada30e07db5b22f9431ade103fd186e7a1e22340294f055730de2"
     },
     {
       "path": "font-packs/yuji-syuku.stpack",
-      "bytes": 3597067,
-      "sha256": "0a798747cd8816eb85fc100cb26c7187cd0f484ef212aabeb14af6278764cc81"
+      "bytes": 3597042,
+      "sha256": "86b48047eb9840f4423a066a369482fb6420ab96e6e1b6df37f91d07c3f6a231"
     },
     {
       "path": "font-packs/yusei-magic.stpack",
-      "bytes": 902975,
-      "sha256": "71ecd40d9057cbf52410e3849fb4f73ae9d5677f3502bdaaa104a040f378ead0"
+      "bytes": 902950,
+      "sha256": "f600955da3d94969e825c7aad3f851b22d1ee9ce301fc72b610d3192c7ec2462"
     },
     {
       "path": "font-packs/zen-antique.stpack",
-      "bytes": 1991011,
-      "sha256": "65b401f53c98581e650ac9a8a30b973bcf3ff5182f8ff834c4f4033caafaac36"
+      "bytes": 1990986,
+      "sha256": "314c225f0d74f8873438abd7ef2d2d84c274a662947592126f077fc073547b47"
     },
     {
       "path": "font-packs/zen-kaku.stpack",
-      "bytes": 1969655,
-      "sha256": "b12dc221636c5e7d11c5ecb4f76302a5615a02ea6adc614fabfdd0904567937d"
+      "bytes": 1969630,
+      "sha256": "ba215bda550dc9ccca92891f29839a0e181dc2c68d6be6557aca1176f245eeef"
     },
     {
       "path": "font-packs/zen-kurenaido.stpack",
-      "bytes": 1361577,
-      "sha256": "02041442402967bfc74cfb1a6d2a335ebe5bf5f47dd2d334f0179c26267e4fce"
+      "bytes": 1361552,
+      "sha256": "18fc91887aec748a3ddc8b0cb0635decc29bbd1b8289526c85dacc9a591198c0"
     },
     {
       "path": "font-packs/zen-old-mincho.stpack",
-      "bytes": 3899129,
-      "sha256": "5269a4797cfcdcea5740734d4fd545274011aaf63ec782bcbe3ab55dca7b9e0e"
+      "bytes": 3899104,
+      "sha256": "84d77ad5c4a8aa28207d7f2aa82a520dd7f154a6d4a643629869a4d4e9d25972"
     }
   ],
   "note": "書体パックを全部（29 本・42 ウェイト）まとめたセットです。見本 4 枚と目録も入っています。はじめてセットに入っている 5 本も全部入っていますが、すでに入っているパックは trk235 以降が「導入済み」として飛ばすので、続けて選んでも確認は 1 回だけです。追加の書体が届いたら、この定義の files に足して作り直します（r7 以降）。"

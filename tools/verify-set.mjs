@@ -224,7 +224,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   console.log(`${r.ok ? "✅" : "❌"} ${shown}（${i.bytes.toLocaleString()} B${i.entries !== undefined ? `・${i.entries} ファイル` : ""}）`);
   if (i.set) console.log(`   セット名: 「${i.set.name || "（名前なし）"}」${i.set.release ? `（${i.set.release}）` : ""}`);
   if (c) {
-    console.log(`   目録 ${c.total} 本 → 入れる ${c.ok} 本（合計 ${i.totalBytes.toLocaleString()} B）／入れない ${c.mismatch + c.bad} 本／入っていない ${c.missing} 本／目録にない ${c.stray} 本`);
+    console.log(`   目録 ${c.total} 本 → 入れる ${c.ok} 本（合計 ${(i.totalBytes || 0).toLocaleString()} B）／入れない ${c.mismatch + c.bad} 本／入っていない ${c.missing} 本／目録にない ${c.stray} 本`);
     if (i.guide) console.log("   README-はじめに.txt: あり");
     for (const x of i.results.filter(y => y.state !== "ok")) console.log(`     ❌ ${x.file} — ${x.reason}`);
     for (const s of i.stray.slice(0, 3)) console.log(`     ℹ 目録にない: ${s}`);

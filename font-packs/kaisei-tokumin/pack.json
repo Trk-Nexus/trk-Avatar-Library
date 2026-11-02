@@ -3,10 +3,10 @@
   "version": 1,
   "name": "明朝の重み（書体パック）",
   "author": "trk-Avatar-Library",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Kaisei Tokumin（400／500／700）を同梱した、横画に重みのある明朝体。落ち着いた紙面の雰囲気を作ります。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "url": "https://github.com/Trk-Nexus/trk-Avatar-Library",
   "fonts": [
     {
       "family": "TrkKaiseiTokumin",

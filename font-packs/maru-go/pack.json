@@ -3,10 +3,10 @@
   "version": 1,
   "name": "丸ゴのお茶目（書体パック）",
   "author": "trk-Avatar-Library",
-  "release": "1.1.0",
+  "release": "1.1.1",
   "description": "Zen Maru Gothic（400／700）を同梱した書体パックです。端末に丸ゴが無くても、桃色の夜の見た目で遊べます。",
   "license": "GPL-3.0-or-later（このパックの作り）",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "url": "https://github.com/Trk-Nexus/trk-Avatar-Library",
   "fonts": [
     { "family": "TrkZenMaru", "file": "fonts/ZenMaruGothic-Regular.woff2", "weight": 400, "license": "OFL-1.1", "licenseFile": "fonts/OFL.txt" },
     { "family": "TrkZenMaru", "file": "fonts/ZenMaruGothic-Bold.woff2", "weight": 700, "license": "OFL-1.1", "licenseFile": "fonts/OFL.txt" }

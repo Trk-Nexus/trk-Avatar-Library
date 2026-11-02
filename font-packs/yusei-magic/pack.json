@@ -3,10 +3,10 @@
   "version": 1,
   "name": "筆ポップの夜祭（書体パック）",
   "author": "trk-PWA",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Yusei Magic（400）を同梱した筆文字ポップの書体パック。提灯と屋台の夜の見た目で、にぎやかな曲に。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "url": "https://github.com/Trk-Nexus/trk-PWA",
   "fonts": [
     {
       "family": "TrkYuseiMagic",

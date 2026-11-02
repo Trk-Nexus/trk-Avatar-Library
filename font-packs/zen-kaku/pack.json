@@ -3,10 +3,10 @@
   "version": 1,
   "name": "角ゴのしらゆき（書体パック）",
   "author": "trk-PWA",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Zen Kaku Gothic New（400／700）を同梱した、すっきりした角ゴシックの書体パック。夜の白銀の見た目で、読みやすさを優先したいときに。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "url": "https://github.com/Trk-Nexus/trk-PWA",
   "fonts": [
     {
       "family": "TrkZenKaku",
