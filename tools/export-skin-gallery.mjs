@@ -136,10 +136,10 @@ const catalog = {
   skins,
   fontPacks,
 };
-emit(outJson, JSON.stringify(catalog, null, 2) + "\n");
-
 /* 書き出す（--check のときは、いまのファイルと比べるだけ。generatedAt は比べない） */
 const drift = [];
+
+emit(outJson, JSON.stringify(catalog, null, 2) + "\n");
 function emit(file, text) {
   if (!checkOnly) {
     fs.mkdirSync(path.dirname(file), { recursive: true });

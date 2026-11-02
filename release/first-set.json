@@ -5,24 +5,24 @@
   "tag": "first-set-2026-11-02-r10",
   "file": "trk-first-set-2026-11-02-r10.zip",
   "bytes": 8118128,
-  "sha256": "f38e92f72383441ceb456b93eb78a97a6bd156603805a882fc34ae6432999cf0",
+  "sha256": "1c1cae353a192d608b3118f16e973ed1386b42c5def62190e28095b4ad68e3b5",
   "files_out": [
     {
       "name": "trk-first-set-2026-11-02-r10.zip",
       "bytes": 8118128,
-      "sha256": "f38e92f72383441ceb456b93eb78a97a6bd156603805a882fc34ae6432999cf0"
+      "sha256": "1c1cae353a192d608b3118f16e973ed1386b42c5def62190e28095b4ad68e3b5"
     },
     {
       "name": "trk-first-set-2026-11-02-r10.stlib",
       "bytes": 8118128,
-      "sha256": "f38e92f72383441ceb456b93eb78a97a6bd156603805a882fc34ae6432999cf0"
+      "sha256": "1c1cae353a192d608b3118f16e973ed1386b42c5def62190e28095b4ad68e3b5"
     }
   ],
   "files": [
     {
       "path": "gallery/all-skins.html",
       "bytes": 85852,
-      "sha256": "5aa870036b61d9621ff2026fb9dd62f3b63a5e7e1d5ea16dafa8971a2fc9ac91"
+      "sha256": "9b2356900fbb932944749956b27e1844ec20b224821232d65188cce81872b45f"
     },
     {
       "path": "gallery/fonts.html",

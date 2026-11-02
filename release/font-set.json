@@ -5,24 +5,24 @@
   "tag": "font-set-2026-11-02-r10",
   "file": "trk-font-set-2026-11-02-r10.zip",
   "bytes": 64197328,
-  "sha256": "42695b968acd11fa8d37ba74de62a778a90b00a77c07eff09cdc54dcf52fe935",
+  "sha256": "e1e2d6c480ad90ece9aeba59a25a830098e7fff8c5338e6f05e324c72f6ac0d2",
   "files_out": [
     {
       "name": "trk-font-set-2026-11-02-r10.zip",
       "bytes": 64197328,
-      "sha256": "42695b968acd11fa8d37ba74de62a778a90b00a77c07eff09cdc54dcf52fe935"
+      "sha256": "e1e2d6c480ad90ece9aeba59a25a830098e7fff8c5338e6f05e324c72f6ac0d2"
     },
     {
       "name": "trk-font-set-2026-11-02-r10.stlib",
       "bytes": 64197328,
-      "sha256": "42695b968acd11fa8d37ba74de62a778a90b00a77c07eff09cdc54dcf52fe935"
+      "sha256": "e1e2d6c480ad90ece9aeba59a25a830098e7fff8c5338e6f05e324c72f6ac0d2"
     }
   ],
   "files": [
     {
       "path": "gallery/all-skins.html",
       "bytes": 85852,
-      "sha256": "5aa870036b61d9621ff2026fb9dd62f3b63a5e7e1d5ea16dafa8971a2fc9ac91"
+      "sha256": "9b2356900fbb932944749956b27e1844ec20b224821232d65188cce81872b45f"
     },
     {
       "path": "gallery/fonts.html",

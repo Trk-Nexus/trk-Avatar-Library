@@ -31,6 +31,8 @@ import { openZip, readJsonEntry } from "./lib/zip.mjs";
 
 const HERE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 /* 見るのは「リンクとしての旧 URL」。org の名前だけを歴史として書くのは構わない */
+/* この道具自身は、下の OLD を持つので対象から外します（SELF） */
+const SELF = "tools/check-urls.mjs";
 const OLD = "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou";
 const NEW_PREFIX = "https://github.com/Trk-Nexus/";
 
@@ -58,7 +60,7 @@ const allow = new Set(ALLOW);
 const files = tracked();
 let scanned = 0;
 for (const rel of files) {
-  if (allow.has(rel)) continue;
+  if (allow.has(rel) || rel === SELF) continue;   /* SELF は下の OLD を自分で持っている */
   if (rel.endsWith(".stpack") || rel.endsWith(".png") || rel.endsWith(".woff2") || rel.endsWith(".zip")) continue;
   const abs = path.join(HERE, rel);
   let text = "";
