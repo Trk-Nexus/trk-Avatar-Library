@@ -1,19 +1,19 @@
 {
   "format": "trk-avatar-library-skins",
   "version": 1,
-  "generatedAt": "2026-11-02T02:34:11.110Z",
+  "generatedAt": "2026-11-02T16:14:47.202902+00:00",
   "source": "trk-PWA / js/data.js + js/characters/miku.js",
-  "count": 53,
-  "typeSkins": 9,
+  "count": 133,
+  "typeSkins": 42,
   "categories": {
-    "basic": 9,
-    "light": 17,
-    "grad": 14,
-    "fun": 12,
-    "dark": 16,
-    "access": 3,
-    "life": 6,
-    "type": 9,
+    "basic": 17,
+    "light": 59,
+    "grad": 51,
+    "fun": 42,
+    "dark": 36,
+    "access": 8,
+    "life": 15,
+    "type": 42,
     "miku": 4
   },
   "skins": [
@@ -2351,6 +2351,3736 @@
       ],
       "locked": false,
       "video": "grayscale(1) contrast(1.35) sepia(1) hue-rotate(280deg) saturate(1.5) brightness(.7)"
+    },
+    {
+      "id": "lanternAlley",
+      "label": {
+        "ja": "提灯横丁",
+        "en": "Lantern Alley",
+        "zh": "提灯横丁",
+        "ko": "등불 골목"
+      },
+      "desc": {
+        "ja": "暖かな提灯の光が並ぶ祭りの夜道",
+        "en": "A festival night street lined with warm lantern lights",
+        "zh": "暖暖提灯光排列的祭夜街道",
+        "ko": "따뜻한 등불이 늘어선 축제 밤길"
+      },
+      "cat": [
+        "life",
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#2a1810,#0f0703)",
+        "ink": "#fff4e6",
+        "don": "#ff5a2e",
+        "ka": "#46c2cb",
+        "text": "#fff4e6",
+        "muted": "#c9ad96",
+        "bg": "linear-gradient(180deg,#0f0703,#060301)",
+        "panel": "rgba(26,10,5,.95)",
+        "field": "#1a0a05",
+        "button": "#2a1810",
+        "accent": "#ff5a2e",
+        "onAccent": "#fff4e6",
+        "gold": "#ffc861",
+        "border": "rgba(255,90,46,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.5) saturate(1.3) hue-rotate(-15deg) brightness(.7) contrast(1.2)"
+    },
+    {
+      "id": "moonlitTerrace",
+      "label": {
+        "ja": "月光テラス",
+        "en": "Moonlit Terrace",
+        "zh": "月光露台",
+        "ko": "달빛 테라스"
+      },
+      "desc": {
+        "ja": "静かな月明かりの下、銀色に染まるテラス",
+        "en": "A terrace dyed silver under quiet moonlight",
+        "zh": "安静月光下，染成银色的露台",
+        "ko": "조용한 달빛 아래 은빛으로 물든 테라스"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#0d1b2a",
+        "ink": "#e0e7ff",
+        "don": "#ff8abf",
+        "ka": "#7fd3c4",
+        "text": "#e0e7ff",
+        "muted": "#a8b8d0",
+        "bg": "#0a1422",
+        "panel": "rgba(10,20,34,.95)",
+        "field": "#0d1b2a",
+        "button": "#15263a",
+        "accent": "#7fd3c4",
+        "onAccent": "#050c14",
+        "gold": "#c89bff",
+        "border": "rgba(127,211,196,.25)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "grayscale(.3) hue-rotate(180deg) saturate(.8) brightness(.8) contrast(1.1)"
+    },
+    {
+      "id": "fireflyValley",
+      "label": {
+        "ja": "蛍の谷",
+        "en": "Firefly Valley",
+        "zh": "萤火谷",
+        "ko": "반딧불 계곡"
+      },
+      "desc": {
+        "ja": "暗闇に浮かぶ緑と黄色の蛍の光",
+        "en": "Green and yellow firefly lights floating in the dark",
+        "zh": "黑暗中漂浮的绿色和黄色萤火虫光",
+        "ko": "어둠에 떠 있는 초록과 노랑 반딧불 빛"
+      },
+      "cat": [
+        "dark",
+        "grad",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#050805,#000000)",
+        "ink": "#d4f5c4",
+        "don": "#ffd93d",
+        "ka": "#6eff6e",
+        "text": "#d4f5c4",
+        "muted": "#8fb88f",
+        "bg": "linear-gradient(180deg,#000000,#050805)",
+        "panel": "rgba(0,8,0,.96)",
+        "field": "#050805",
+        "button": "#0a1c0a",
+        "accent": "#6eff6e",
+        "onAccent": "#000000",
+        "gold": "#ffd93d",
+        "border": "rgba(110,255,110,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "grayscale(.4) hue-rotate(100deg) saturate(1.5) brightness(.5) contrast(1.3)"
+    },
+    {
+      "id": "midnightCafe",
+      "label": {
+        "ja": "深夜喫茶",
+        "en": "Midnight Cafe",
+        "zh": "深夜咖啡厅",
+        "ko": "심야 찻집"
+      },
+      "desc": {
+        "ja": "コーヒーの香りと、ブラウンのやさしい夜",
+        "en": "Coffee aroma and gentle brown night",
+        "zh": "咖啡香气与温柔棕色之夜",
+        "ko": "커피 향과 부드러운 브라운 밤"
+      },
+      "cat": [
+        "life",
+        "light"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#3e2723",
+        "ink": "#efebe9",
+        "don": "#ff7043",
+        "ka": "#8d6e63",
+        "text": "#efebe9",
+        "muted": "#a1887f",
+        "bg": "#4e342e",
+        "panel": "rgba(62,39,35,.96)",
+        "field": "#3e2723",
+        "button": "#5d4037",
+        "accent": "#ff7043",
+        "onAccent": "#3e2723",
+        "gold": "#d7ccc8",
+        "border": "rgba(255,112,67,.28)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.4) saturate(1.1) brightness(.85) contrast(1.05)"
+    },
+    {
+      "id": "snowyShrine",
+      "label": {
+        "ja": "雪の神社",
+        "en": "Snowy Shrine",
+        "zh": "雪之神社",
+        "ko": "눈 신사"
+      },
+      "desc": {
+        "ja": "白い雪に包まれた神社と、朱色の鳥居",
+        "en": "A shrine wrapped in white snow, with a vermilion torii gate",
+        "zh": "白雪包裹的神社与朱红鸟居",
+        "ko": "흰 눈에 싸인 신사와 주홍색 도리이"
+      },
+      "cat": [
+        "dark",
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#0f1a2e,#080d1a)",
+        "ink": "#f3f4f6",
+        "don": "#c73e3a",
+        "ka": "#2c5f7c",
+        "text": "#f3f4f6",
+        "muted": "#a8b8c8",
+        "bg": "linear-gradient(180deg,#080d1a,#04060d)",
+        "panel": "rgba(15,26,46,.95)",
+        "field": "#0f1a2e",
+        "button": "#1c2a46",
+        "accent": "#c73e3a",
+        "onAccent": "#ffffff",
+        "gold": "#f0c987",
+        "border": "rgba(255,255,255,.20)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "grayscale(.5) contrast(1.15) brightness(.75)"
+    },
+    {
+      "id": "autumnMaple",
+      "label": {
+        "ja": "紅葉の夜",
+        "en": "Autumn Maple Night",
+        "zh": "红叶之夜",
+        "ko": "단풍밤"
+      },
+      "desc": {
+        "ja": "赤と橙と黄色、夜に舞う紅葉のグラデ",
+        "en": "Red, orange, and yellow autumn maple gradient dancing at night",
+        "zh": "红、橙、黄，夜晚飞舞的红叶渐变",
+        "ko": "빨강과 주황과 노랑, 밤에 춤추는 단풍 그라데이션"
+      },
+      "cat": [
+        "grad",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#4a1515,#1a0a05)",
+        "ink": "#fff1e0",
+        "don": "#e0568a",
+        "ka": "#a8b545",
+        "text": "#fff1e0",
+        "muted": "#8c6a5a",
+        "bg": "linear-gradient(180deg,#1a0a05,#0d0502)",
+        "panel": "rgba(74,21,21,.95)",
+        "field": "#4a1515",
+        "button": "#6b2a2a",
+        "accent": "#e0568a",
+        "onAccent": "#fff1e0",
+        "gold": "#d9782a",
+        "border": "rgba(224,86,120,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.3) saturate(1.25) hue-rotate(-20deg) brightness(.7) contrast(1.2)"
+    },
+    {
+      "id": "summerNight",
+      "label": {
+        "ja": "夏の夜風",
+        "en": "Summer Night Breeze",
+        "zh": "夏夜之风",
+        "ko": "여름 밤바람"
+      },
+      "desc": {
+        "ja": "打ち上げ花火と、ネオンのきらめく夜",
+        "en": "Fireworks and neon glittering at night",
+        "zh": "烟花与闪烁的霓虹之夜",
+        "ko": "불꽃놀이와 반짝이는 네온 밤"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#050810,#000000)",
+        "ink": "#ffffff",
+        "don": "#ff3df0",
+        "ka": "#3df0ff",
+        "text": "#ffffff",
+        "muted": "#8fa8bb",
+        "bg": "linear-gradient(180deg,#000000,#050810)",
+        "panel": "rgba(8,14,24,.95)",
+        "field": "#060e18",
+        "button": "#0b1826",
+        "accent": "#3df0ff",
+        "onAccent": "#032027",
+        "gold": "#ff3df0",
+        "border": "rgba(61,240,255,.28)"
+      },
+      "shapes": [
+        "circle",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.2) hue-rotate(180deg) saturate(1.6) brightness(.65) contrast(1.3)"
+    },
+    {
+      "id": "zenStone",
+      "label": {
+        "ja": "禅の石庭",
+        "en": "Zen Stone Garden",
+        "zh": "禅石庭",
+        "ko": "선 돌정원"
+      },
+      "desc": {
+        "ja": "白砂と黒石、静謐な禅の情景",
+        "en": "White sand and black stones, a quiet Zen scene",
+        "zh": "白沙与黑石，静谧的禅之情景",
+        "ko": "白 모래와 검은 돌, 정적인 선 장면"
+      },
+      "cat": [
+        "light",
+        "access"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#e8e8e8",
+        "ink": "#1c1c1c",
+        "don": "#262626",
+        "ka": "#8c8c8c",
+        "text": "#1c1c1c",
+        "muted": "#5c5c5c",
+        "bg": "#ececec",
+        "panel": "rgba(250,250,250,.97)",
+        "field": "#f8f8f8",
+        "button": "#e2e2e2",
+        "accent": "#1c1c1c",
+        "onAccent": "#ffffff",
+        "gold": "#6e6e6e",
+        "border": "rgba(40,40,40,.24)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(1) contrast(1.1) brightness(1.05)"
+    },
+    {
+      "id": "inkWash",
+      "label": {
+        "ja": "墨流し",
+        "en": "Ink Wash Flow",
+        "zh": "墨流し",
+        "ko": "먹 흘림"
+      },
+      "desc": {
+        "ja": "和紙に墨の濃淡、朱の判子だけの差し色",
+        "en": "Ink wash on washi paper, with only a red seal as accent",
+        "zh": "宣纸上的墨色浓淡，仅以朱印点缀",
+        "ko": "한지 위의 먹 농담, 주인 한 점만 더한 색"
+      },
+      "cat": [
+        "light",
+        "type"
+      ],
+      "font": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",\"Noto Serif CJK JP\",\"Noto Serif SC\",\"Noto Serif KR\",serif",
+      "type": {
+        "title": "",
+        "weight": "400",
+        "lh": "1.75",
+        "titleWeight": "600",
+        "titleSpace": ".1em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f3efe6",
+        "ink": "#1b1b1b",
+        "don": "#1d1d1d",
+        "ka": "#7d7a72",
+        "text": "#1b1b1b",
+        "muted": "#56534c",
+        "bg": "#f3efe6",
+        "panel": "#fbf8f1",
+        "field": "#ffffff",
+        "button": "#e7e1d3",
+        "accent": "#b3261e",
+        "onAccent": "#ffffff",
+        "gold": "#8f3500",
+        "border": "rgba(27,27,27,.25)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "grayscale(.6) contrast(1.05)"
+    },
+    {
+      "id": "paperMoon",
+      "label": {
+        "ja": "紙月の夜",
+        "en": "Paper Moon Night",
+        "zh": "纸月之夜",
+        "ko": "종이 달밤"
+      },
+      "desc": {
+        "ja": "和紙の灯りと、やわらかな月の光",
+        "en": "Washi paper light and soft moonlight",
+        "zh": "和纸灯与柔和的月光",
+        "ko": "와시 종이 불빛과 부드러운 달빛"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#f4eee0",
+        "ink": "#2b2620",
+        "don": "#b5533c",
+        "ka": "#5f7f8f",
+        "text": "#2b2620",
+        "muted": "#60584e",
+        "bg": "#efe9dc",
+        "panel": "#fbf8f1",
+        "field": "#fffdf8",
+        "button": "#e6dfd0",
+        "accent": "#b5533c",
+        "onAccent": "#fff8f0",
+        "gold": "#a67c2e",
+        "border": "rgba(60,45,30,.25)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.2) brightness(1.1) contrast(.95)"
+    },
+    {
+      "id": "copperHour",
+      "label": {
+        "ja": "銅色の時",
+        "en": "Copper Hour",
+        "zh": "铜色时刻",
+        "ko": "구리색 시간"
+      },
+      "desc": {
+        "ja": "夕日に染まる銅色の空と、街の灯り",
+        "en": "Copper-colored sky dyed by sunset and city lights",
+        "zh": "夕阳染成的铜色天空与城市灯火",
+        "ko": "노을로 물든 구리색 하늘과 도시 불빛"
+      },
+      "cat": [
+        "grad",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#b87333,#4a1e1e)",
+        "ink": "#fff7e0",
+        "don": "#ff7043",
+        "ka": "#8d6e63",
+        "text": "#fff7e0",
+        "muted": "#a1887f",
+        "bg": "linear-gradient(180deg,#4a1e1e,#2a0f0f)",
+        "panel": "rgba(184,115,51,.95)",
+        "field": "#b87333",
+        "button": "#8d4e2a",
+        "accent": "#ff7043",
+        "onAccent": "#2a0f0f",
+        "gold": "#ffc861",
+        "border": "rgba(255,112,67,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.4) saturate(1.2) hue-rotate(-10deg) brightness(.8) contrast(1.1)"
+    },
+    {
+      "id": "lavenderHill",
+      "label": {
+        "ja": "ラベンダーの丘",
+        "en": "Lavender Hill",
+        "zh": "薰衣草之丘",
+        "ko": "라벤더 언덕"
+      },
+      "desc": {
+        "ja": "紫色に包まれた丘と、静寂な夜",
+        "en": "A hill wrapped in purple and a quiet night",
+        "zh": "紫色包裹的山丘与寂静之夜",
+        "ko": "보라색에 싸인 언덕과 고요한 밤"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#e6e6fa,#d8bfd8)",
+        "ink": "#4a4060",
+        "don": "#c17ad8",
+        "ka": "#9fd8ff",
+        "text": "#4a4060",
+        "muted": "#8a80a0",
+        "bg": "linear-gradient(180deg,#f0e6ff,#e0d0e8)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#e8e0f0",
+        "accent": "#c17ad8",
+        "onAccent": "#4a4060",
+        "gold": "#d8bfd8",
+        "border": "rgba(193,122,216,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.05) brightness(1.05)"
+    },
+    {
+      "id": "emeraldNight",
+      "label": {
+        "ja": "エメラルドの夜",
+        "en": "Emerald Night",
+        "zh": "翡翠之夜",
+        "ko": "에메랄드 밤"
+      },
+      "desc": {
+        "ja": "深い緑の宝石色、夜の海の底",
+        "en": "Deep green jewel color, the bottom of the night sea",
+        "zh": "深绿宝石色，夜海之底",
+        "ko": "깊은 녹색 보석색, 밤바다 바닥"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#052028,#000609)",
+        "ink": "#e6fbff",
+        "don": "#ff7a6b",
+        "ka": "#3ee6c8",
+        "text": "#e6fbff",
+        "muted": "#8fb8c1",
+        "bg": "linear-gradient(180deg,#062a33,#010a10)",
+        "panel": "rgba(6,32,40,.95)",
+        "field": "#052028",
+        "button": "#0a3540",
+        "accent": "#3ee6c8",
+        "onAccent": "#032a24",
+        "gold": "#ffd166",
+        "border": "rgba(64,220,220,.28)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "grayscale(.7) hue-rotate(160deg) saturate(1.3) brightness(.55) contrast(1.2)"
+    },
+    {
+      "id": "cherrySnow",
+      "label": {
+        "ja": "桜吹雪の夜",
+        "en": "Cherry Blossom Snow Night",
+        "zh": "樱花飘雪之夜",
+        "ko": "벚꽃 눈비 밤"
+      },
+      "desc": {
+        "ja": "桜の花びらが舞う、淡いピンクの夜",
+        "en": "A pale pink night with cherry blossom petals dancing",
+        "zh": "樱花花瓣飞舞的淡粉色之夜",
+        "ko": "벚꽃 꽃잎이舞는 연분홍색 밤"
+      },
+      "cat": [
+        "light",
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffeef3,#ffd1dc)",
+        "ink": "#3a2330",
+        "don": "#e0568a",
+        "ka": "#5aa9e6",
+        "text": "#3a2330",
+        "muted": "#7c5968",
+        "bg": "linear-gradient(180deg,#fff0f4,#ffe6f0)",
+        "panel": "rgba(255,250,252,.97)",
+        "field": "#ffffff",
+        "button": "#ffe6ee",
+        "accent": "#e0568a",
+        "onAccent": "#000000",
+        "gold": "#d9782a",
+        "border": "rgba(214,77,128,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.25) saturate(1.15) brightness(1.06)"
+    },
+    {
+      "id": "ironMorning",
+      "label": {
+        "ja": "鉄の朝",
+        "en": "Iron Morning",
+        "zh": "铁之晨",
+        "ko": "철의 아침"
+      },
+      "desc": {
+        "ja": "工場地帯の朝、鉄とコンクリートの灰色",
+        "en": "Industrial district morning, gray of iron and concrete",
+        "zh": "工业区的早晨，铁与混凝土的灰色",
+        "ko": "공업 지대의 아침, 철과 콘크리트의 회색"
+      },
+      "cat": [
+        "dark",
+        "access"
+      ],
+      "font": "\"Courier New\",Courier,\"Cascadia Mono\",Consolas,\"Noto Sans Mono\",monospace",
+      "type": null,
+      "colors": {
+        "stage": "#2a2a2a",
+        "ink": "#e0e0e0",
+        "don": "#ffff00",
+        "ka": "#00e5ff",
+        "text": "#e0e0e0",
+        "muted": "#808080",
+        "bg": "#1a1a1a",
+        "panel": "rgba(42,42,42,.98)",
+        "field": "#2a2a2a",
+        "button": "#3a3a3a",
+        "accent": "#ffff00",
+        "onAccent": "#000000",
+        "gold": "#ffff00",
+        "border": "#ffffff"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(1) brightness(.6) contrast(1.4)"
+    },
+    {
+      "id": "goldLeafNight",
+      "label": {
+        "ja": "金箔の夜",
+        "en": "Gold Leaf Night",
+        "zh": "金箔之夜",
+        "ko": "금박 밤"
+      },
+      "desc": {
+        "ja": "黒地に輝く金箔、豪華で気高い夜",
+        "en": "Gold leaf shining on black, a luxurious and noble night",
+        "zh": "黑地上闪耀的金箔，豪华高贵之夜",
+        "ko": "검은 배경에 빛나는 금박, 호화롭고 기품 있는 밤"
+      },
+      "cat": [
+        "dark",
+        "grad",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#1a1510,#0a0500)",
+        "ink": "#fdf6e3",
+        "don": "#ffd166",
+        "ka": "#b8912e",
+        "text": "#fdf6e3",
+        "muted": "#cabfe0",
+        "bg": "linear-gradient(180deg,#0a0500,#050200)",
+        "panel": "rgba(26,21,16,.96)",
+        "field": "#1a1510",
+        "button": "#2a2018",
+        "accent": "#ffd166",
+        "onAccent": "#1a1000",
+        "gold": "#ffe9a8",
+        "border": "rgba(255,209,102,.34)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "grayscale(1) contrast(1.5) sepia(1) hue-rotate(18deg) saturate(1.4) brightness(.55)"
+    },
+    {
+      "id": "ruby",
+      "label": {
+        "ja": "ルビー",
+        "en": "Ruby",
+        "zh": "红宝石",
+        "ko": "루비"
+      },
+      "desc": {
+        "ja": "深紅の宝石、情熱と勇気の赤",
+        "en": "Deep red jewel, passion and courage in red",
+        "zh": "深红宝石，激情与勇气的红",
+        "ko": "깊은 붉은 보석, 열정과 용기의 빨강"
+      },
+      "cat": [
+        "grad",
+        "fun",
+        "dark"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#4a0e0e,#1a0303)",
+        "ink": "#ffe6e6",
+        "don": "#ff1a1a",
+        "ka": "#4da6ff",
+        "text": "#ffe6e6",
+        "muted": "#b37070",
+        "bg": "linear-gradient(180deg,#1a0303,#0a0101)",
+        "panel": "rgba(26,3,3,.95)",
+        "field": "#2a0e0e",
+        "button": "#4a0e0e",
+        "accent": "#ff1a1a",
+        "onAccent": "#ffffff",
+        "gold": "#ffcccc",
+        "border": "rgba(255,26,26,.32)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.3) saturate(1.4) hue-rotate(-10deg) brightness(.75) contrast(1.25)"
+    },
+    {
+      "id": "sapphire",
+      "label": {
+        "ja": "サファイア",
+        "en": "Sapphire",
+        "zh": "蓝宝石",
+        "ko": "사파이어"
+      },
+      "desc": {
+        "ja": "深藍の宝石、誠実と知恵の青",
+        "en": "Deep blue jewel, sincerity and wisdom in blue",
+        "zh": "深蓝宝石，诚实与智慧的蓝",
+        "ko": "깊은 파란 보석, 성실과 지혜의 파랑"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#0a2a4a,#030a1a)",
+        "ink": "#e6f2ff",
+        "don": "#ff6b6b",
+        "ka": "#4da6ff",
+        "text": "#e6f2ff",
+        "muted": "#709fb3",
+        "bg": "linear-gradient(180deg,#030a1a,#01050d)",
+        "panel": "rgba(10,42,74,.95)",
+        "field": "#0a2a4a",
+        "button": "#1a3a5a",
+        "accent": "#4da6ff",
+        "onAccent": "#030a1a",
+        "gold": "#cce6ff",
+        "border": "rgba(77,166,255,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "grayscale(.2) hue-rotate(190deg) saturate(1.3) brightness(.8) contrast(1.2)"
+    },
+    {
+      "id": "emerald",
+      "label": {
+        "ja": "エメラルド",
+        "en": "Emerald",
+        "zh": "绿宝石",
+        "ko": "에메랄드"
+      },
+      "desc": {
+        "ja": "深緑の宝石、成長と希望の緑",
+        "en": "Deep green jewel, growth and hope in green",
+        "zh": "深绿宝石，成长与希望的绿",
+        "ko": "깊은 초록 보석, 성장과 희망의 초록"
+      },
+      "cat": [
+        "grad",
+        "light"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#0e3b2e,#031a0f)",
+        "ink": "#e6ffe6",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#e6ffe6",
+        "muted": "#70b38f",
+        "bg": "linear-gradient(180deg,#031a0f,#010d07)",
+        "panel": "rgba(14,59,46,.95)",
+        "field": "#0e3b2e",
+        "button": "#1e4b3e",
+        "accent": "#4ecdc4",
+        "onAccent": "#031a0f",
+        "gold": "#ccffe6",
+        "border": "rgba(78,205,196,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "grayscale(.3) hue-rotate(120deg) saturate(1.4) brightness(.85) contrast(1.15)"
+    },
+    {
+      "id": "diamond",
+      "label": {
+        "ja": "ダイヤモンド",
+        "en": "Diamond",
+        "zh": "钻石",
+        "ko": "다이아몬드"
+      },
+      "desc": {
+        "ja": "無色透明の宝石、純粋と永遠の輝き",
+        "en": "Colorless transparent jewel, purity and eternity shining",
+        "zh": "无色透明宝石，纯粹与永恒的光芒",
+        "ko": "무색 투명 보석, 순수와 영원의 반짝임"
+      },
+      "cat": [
+        "light",
+        "grad",
+        "access"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#f0f0f0",
+        "ink": "#262626",
+        "don": "#ff4757",
+        "ka": "#747d8c",
+        "text": "#262626",
+        "muted": "#999999",
+        "bg": "#e0e0e0",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#d0d0d0",
+        "accent": "#747d8c",
+        "onAccent": "#ffffff",
+        "gold": "#ffd700",
+        "border": "rgba(100,100,100,.25)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.1) contrast(1.1) brightness(1.05)"
+    },
+    {
+      "id": "amber",
+      "label": {
+        "ja": "アンバー",
+        "en": "Amber",
+        "zh": "琥珀",
+        "ko": "호박"
+      },
+      "desc": {
+        "ja": "黄金色の樹脂、温もりと記憶の琥珀",
+        "en": "Golden resin, warmth and memory in amber",
+        "zh": "金色树脂，温暖与记忆的琥珀",
+        "ko": "금색 수지, 온기와 기억의 호박"
+      },
+      "cat": [
+        "grad",
+        "fun",
+        "light"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#b8860b,#4a370b)",
+        "ink": "#fff4e6",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#fff4e6",
+        "muted": "#b39370",
+        "bg": "linear-gradient(180deg,#4a370b,#2a1d05)",
+        "panel": "rgba(184,134,11,.95)",
+        "field": "#b8860b",
+        "button": "#8a6a0b",
+        "accent": "#ff6b6b",
+        "onAccent": "#2a1d05",
+        "gold": "#ffe0b3",
+        "border": "rgba(255,107,87,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.5) saturate(1.2) hue-rotate(-20deg) brightness(.85) contrast(1.1)"
+    },
+    {
+      "id": "amethyst",
+      "label": {
+        "ja": "アメジスト",
+        "en": "Amethyst",
+        "zh": "紫水晶",
+        "ko": "자수정"
+      },
+      "desc": {
+        "ja": "高貴な紫の宝石、平和と癒やしの紫",
+        "en": "Noble purple jewel, peace and healing in purple",
+        "zh": "高贵紫色宝石，平和与治愈的紫",
+        "ko": "고귀한 보라색 보석, 평화와 치유의 보라"
+      },
+      "cat": [
+        "dark",
+        "grad",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#3b1a5a,#1a0633)",
+        "ink": "#f0e6ff",
+        "don": "#ff6b9d",
+        "ka": "#a29bfe",
+        "text": "#f0e6ff",
+        "muted": "#b38fc9",
+        "bg": "linear-gradient(180deg,#1a0633,#0d031a)",
+        "panel": "rgba(59,26,90,.95)",
+        "field": "#3b1a5a",
+        "button": "#5b2a7a",
+        "accent": "#a29bfe",
+        "onAccent": "#1a0633",
+        "gold": "#e6ccff",
+        "border": "rgba(162,155,254,.30)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "grayscale(.4) hue-rotate(240deg) saturate(1.3) brightness(.8) contrast(1.2)"
+    },
+    {
+      "id": "topaz",
+      "label": {
+        "ja": "トパーズ",
+        "en": "Topaz",
+        "zh": "黄玉",
+        "ko": "토파즈"
+      },
+      "desc": {
+        "ja": "黄金色の宝石、友情と誠実の黄",
+        "en": "Golden yellow jewel, friendship and sincerity in yellow",
+        "zh": "金黄色宝石，友情与真诚的黄",
+        "ko": "금빛 보석, 우정과 성실의 노랑"
+      },
+      "cat": [
+        "grad",
+        "light",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffc107,#b8860b)",
+        "ink": "#3e2723",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#3e2723",
+        "muted": "#8d6e63",
+        "bg": "linear-gradient(180deg,#b8860b,#6b4a0b)",
+        "panel": "rgba(255,193,7,.95)",
+        "field": "#fff9c4",
+        "button": "#ffe082",
+        "accent": "#ff6b6b",
+        "onAccent": "#3e2723",
+        "gold": "#fff176",
+        "border": "rgba(255,107,87,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.2) saturate(1.15) brightness(1.05)"
+    },
+    {
+      "id": "opal",
+      "label": {
+        "ja": "オパール",
+        "en": "Opal",
+        "zh": "欧泊",
+        "ko": "오팔"
+      },
+      "desc": {
+        "ja": "虹色に輝く宝石、創造と想像の虹色",
+        "en": "Rainbow-shining jewel, creativity and imagination in rainbow",
+        "zh": "彩虹色闪耀宝石，创造与想象的彩虹",
+        "ko": "무지개빛으로 빛나는 보석, 창의와 상상의 무지개"
+      },
+      "cat": [
+        "grad",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(90deg,#1a0f2e,#0e2233,#0e2e22,#2e2a0c,#33101f)",
+        "ink": "#f4f2ff",
+        "don": "#ff6b9d",
+        "ka": "#a29bfe",
+        "text": "#f4f2ff",
+        "muted": "#b0aecb",
+        "bg": "linear-gradient(90deg,#241539,#123041,#153829,#38300f,#3b1526)",
+        "panel": "rgba(18,16,32,.94)",
+        "field": "#151126",
+        "button": "#201a35",
+        "accent": "#f0eeff",
+        "onAccent": "#241a3a",
+        "gold": "#ffd166",
+        "border": "rgba(255,255,255,.22)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "saturate(1.4) contrast(1.2) brightness(.75) hue-rotate(30deg)"
+    },
+    {
+      "id": "quartz",
+      "label": {
+        "ja": "クォーツ",
+        "en": "Quartz",
+        "zh": "石英",
+        "ko": "쿼츠"
+      },
+      "desc": {
+        "ja": "透明な結晶、調和と浄化の白",
+        "en": "Transparent crystal, harmony and purification in white",
+        "zh": "透明水晶，和谐与净化的白",
+        "ko": "투명한 결정, 조화와 정화의 하양"
+      },
+      "cat": [
+        "light",
+        "access"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#f8f9fa",
+        "ink": "#495057",
+        "don": "#e83e8c",
+        "ka": "#6c757d",
+        "text": "#495057",
+        "muted": "#adb5bd",
+        "bg": "#e9ecef",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#dee2e6",
+        "accent": "#6c757d",
+        "onAccent": "#ffffff",
+        "gold": "#ffc107",
+        "border": "rgba(100,100,100,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.1) brightness(1.05) contrast(1.02)"
+    },
+    {
+      "id": "onyx",
+      "label": {
+        "ja": "オニキス",
+        "en": "Onyx",
+        "zh": "玛瑙",
+        "ko": "오닉스"
+      },
+      "desc": {
+        "ja": "漆黒の宝石、強さと守護の黒",
+        "en": "Jet black jewel, strength and protection in black",
+        "zh": "漆黑宝石，强壮与守护的黑",
+        "ko": "칠흑 보석, 강함과 보호의 검정"
+      },
+      "cat": [
+        "dark",
+        "access"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#e0e0e0",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#e0e0e0",
+        "muted": "#666666",
+        "bg": "#000000",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#4ecdc4",
+        "onAccent": "#000000",
+        "gold": "#ffd700",
+        "border": "#ffffff"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(1) brightness(.6) contrast(1.4)"
+    },
+    {
+      "id": "jade",
+      "label": {
+        "ja": "ジェイド",
+        "en": "Jade",
+        "zh": "翡翠",
+        "ko": "제이드"
+      },
+      "desc": {
+        "ja": "優しい緑の宝石、安定と調和の緑",
+        "en": "Gentle green jewel, stability and harmony in green",
+        "zh": "温柔绿色宝石，稳定与和谐的绿",
+        "ko": "부드러운 초록 보석, 안정과 조화의 초록"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#52b788",
+        "ink": "#1e272e",
+        "don": "#e74c3c",
+        "ka": "#2ecc71",
+        "text": "#1e272e",
+        "muted": "#748c79",
+        "bg": "#d1f2eb",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#abebc6",
+        "accent": "#2ecc71",
+        "onAccent": "#1e272e",
+        "gold": "#f9e79f",
+        "border": "rgba(46,204,113,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.1) brightness(1.05)"
+    },
+    {
+      "id": "pearl",
+      "label": {
+        "ja": "パール",
+        "en": "Pearl",
+        "zh": "珍珠",
+        "ko": "진주"
+      },
+      "desc": {
+        "ja": "乳白色の宝石、純真と慈愛の白",
+        "en": "Creamy white jewel, purity and compassion in white",
+        "zh": "乳白色宝石，纯真与慈爱的白",
+        "ko": "크림색 하양 보석, 순수와 연민의 하양"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#fdfefe",
+        "ink": "#2d3436",
+        "don": "#e17055",
+        "ka": "#74b9ff",
+        "text": "#2d3436",
+        "muted": "#b2bec3",
+        "bg": "#dfe6e9",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#e5e7e9",
+        "accent": "#74b9ff",
+        "onAccent": "#2d3436",
+        "gold": "#fdcb6e",
+        "border": "rgba(178,190,195,.20)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.05) brightness(1.08) contrast(.98)"
+    },
+    {
+      "id": "garnet",
+      "label": {
+        "ja": "ガーネット",
+        "en": "Garnet",
+        "zh": "石榴石",
+        "ko": "가넷"
+      },
+      "desc": {
+        "ja": "深紅褐色の宝石、友愛と忠実の赤褐",
+        "en": "Deep red-brown jewel, friendship and loyalty in red-brown",
+        "zh": "深红褐色宝石，友谊与忠诚的红褐",
+        "ko": "깊은 붉은 갈색 보석, 우정과 충실의 빨간 갈색"
+      },
+      "cat": [
+        "grad",
+        "dark"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#5d2e2e,#1a0a0a)",
+        "ink": "#ffe6e6",
+        "don": "#d63031",
+        "ka": "#74b9ff",
+        "text": "#ffe6e6",
+        "muted": "#a06e6e",
+        "bg": "linear-gradient(180deg,#1a0a0a,#0d0505)",
+        "panel": "rgba(93,46,46,.95)",
+        "field": "#3d1e1e",
+        "button": "#5d2e2e",
+        "accent": "#d63031",
+        "onAccent": "#ffffff",
+        "gold": "#fab1a0",
+        "border": "rgba(214,48,49,.30)"
+      },
+      "shapes": [
+        "circle",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.4) saturate(1.25) hue-rotate(-15deg) brightness(.75) contrast(1.2)"
+    },
+    {
+      "id": "citrine",
+      "label": {
+        "ja": "シトリン",
+        "en": "Citrine",
+        "zh": "黄水晶",
+        "ko": "시트린"
+      },
+      "desc": {
+        "ja": "鮮やかな黄色の宝石、富と繁栄の黄",
+        "en": "Vivid yellow jewel, wealth and prosperity in yellow",
+        "zh": "鲜艳黄色宝石，富与繁荣的黄",
+        "ko": "선명한 노란색 보석, 부와 번영의 노랑"
+      },
+      "cat": [
+        "grad",
+        "fun",
+        "light"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#f1c40f,#b7950b)",
+        "ink": "#2d3436",
+        "don": "#e17055",
+        "ka": "#00b894",
+        "text": "#2d3436",
+        "muted": "#8b854a",
+        "bg": "linear-gradient(180deg,#b7950b,#6b5605)",
+        "panel": "rgba(241,196,15,.95)",
+        "field": "#ffeaa7",
+        "button": "#fdcb6e",
+        "accent": "#e17055",
+        "onAccent": "#2d3436",
+        "gold": "#ffeaa7",
+        "border": "rgba(225,112,85,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.15) saturate(1.25) brightness(1.1) contrast(1.05)"
+    },
+    {
+      "id": "turquoise",
+      "label": {
+        "ja": "ターコイズ",
+        "en": "Turquoise",
+        "zh": "青金石",
+        "ko": "터콰이즈"
+      },
+      "desc": {
+        "ja": "空色の宝石、癒やしと保護の青緑",
+        "en": "Sky blue jewel, healing and protection in teal",
+        "zh": "天蓝色宝石，治愈与保护的青绿",
+        "ko": "하늘색 보석, 치유와 보호의 청록"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#00cec9",
+        "ink": "#2d3436",
+        "don": "#e17055",
+        "ka": "#0984e3",
+        "text": "#2d3436",
+        "muted": "#6cabac",
+        "bg": "#81ecec",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#55efc4",
+        "accent": "#00b894",
+        "onAccent": "#ffffff",
+        "gold": "#ffeaa7",
+        "border": "rgba(0,206,201,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.15) brightness(1.05) contrast(1.02)"
+    },
+    {
+      "id": "obsidian",
+      "label": {
+        "ja": "オブシディアン",
+        "en": "Obsidian",
+        "zh": "黒曜石",
+        "ko": "흑요석"
+      },
+      "desc": {
+        "ja": "火山ガラスの黒、真実と洞察の黒",
+        "en": "Volcanic glass black, truth and insight in black",
+        "zh": "火山玻璃黑，真理与洞察的黑",
+        "ko": "화산 유리 검정, 진실과 통찰의 검정"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#1a1a1a,#000000)",
+        "ink": "#dfe6e9",
+        "don": "#e17055",
+        "ka": "#0984e3",
+        "text": "#dfe6e9",
+        "muted": "#636e72",
+        "bg": "linear-gradient(180deg,#000000,#0d0d0d)",
+        "panel": "rgba(26,26,26,.96)",
+        "field": "#1a1a1a",
+        "button": "#2d2d2d",
+        "accent": "#00b894",
+        "onAccent": "#ffffff",
+        "gold": "#fdcb6e",
+        "border": "rgba(223,230,233,.20)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.7) contrast(1.15) brightness(.7)"
+    },
+    {
+      "id": "helvetica",
+      "label": {
+        "ja": "ヘルベチカ",
+        "en": "Helvetica",
+        "zh": "黑体",
+        "ko": "헤르베티카"
+      },
+      "desc": {
+        "ja": "中立的な書体、明快で機能的なニュートラル",
+        "en": "Neutral typeface, clear and functional",
+        "zh": "中性字体，清晰且功能性强",
+        "ko": "중립적인 서체, 명확하고 기능적"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "",
+      "type": {
+        "title": "system-ui,-apple-system,\"Segoe UI\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "700",
+        "titleSpace": "-.01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f7fafc",
+        "ink": "#2d3748",
+        "don": "#e53e3e",
+        "ka": "#3182ce",
+        "text": "#2d3748",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#edf2f7",
+        "accent": "#3182ce",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(45,55,72,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "brightness(1.02) contrast(1.01)"
+    },
+    {
+      "id": "garamond",
+      "label": {
+        "ja": "ガラモン",
+        "en": "Garamond",
+        "zh": "加拉蒙",
+        "ko": "가라몽"
+      },
+      "desc": {
+        "ja": "クラシックな明朝、上品で落ち着いた書体",
+        "en": "Classic serif, elegant and composed",
+        "zh": "经典衬线体，优雅而沉稳",
+        "ko": "클래식한 명조체, 우아하고 차분한 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",\"Noto Serif CJK JP\",serif",
+      "type": {
+        "title": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",serif",
+        "weight": "400",
+        "lh": "1.8",
+        "titleWeight": "600",
+        "titleSpace": ".04em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#faf5ee",
+        "ink": "#3e2723",
+        "don": "#8d6e63",
+        "ka": "#5d4037",
+        "text": "#3e2723",
+        "muted": "#a1887f",
+        "bg": "#fff8e1",
+        "panel": "rgba(255,248,225,.97)",
+        "field": "#fffef5",
+        "button": "#efe4cc",
+        "accent": "#8d6e63",
+        "onAccent": "#fff8e1",
+        "gold": "#d7ccc8",
+        "border": "rgba(62,39,35,.15)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.12) brightness(1.02)"
+    },
+    {
+      "id": "futura",
+      "label": {
+        "ja": "フューチュラ",
+        "en": "Futura",
+        "zh": "未来体",
+        "ko": "퓨투라"
+      },
+      "desc": {
+        "ja": "幾何学的なゴシック、近未来的でシャープ",
+        "en": "Geometric sans, sharp and near-futuristic",
+        "zh": "几何学无衬线体，锐利且近未来感",
+        "ko": "기하학적 고딕, 근미래적이고 샤프함"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Futura\",\"Avant Garde\",\"ITC AvantGarde Gothic\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Futura\",\"Avant Garde\",sans-serif",
+        "weight": "700",
+        "lh": "1.3",
+        "titleWeight": "900",
+        "titleSpace": "-.04em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#fafafa",
+        "don": "#ff0055",
+        "ka": "#00ffcc",
+        "text": "#fafafa",
+        "muted": "#666666",
+        "bg": "#000000",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#00ffcc",
+        "onAccent": "#000000",
+        "gold": "#ffd700",
+        "border": "rgba(255,255,255,.15)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.15) saturate(1.1) brightness(.9)"
+    },
+    {
+      "id": "bodoni",
+      "label": {
+        "ja": "ボドーニ",
+        "en": "Bodoni",
+        "zh": "博多尼",
+        "ko": "보도니"
+      },
+      "desc": {
+        "ja": "コントラストの強い近代明朝、華やかで気高い",
+        "en": "High-contrast modern serif, gorgeous and noble",
+        "zh": "高对比度现代衬线体，华丽而高贵",
+        "ko": "높은 대비를 가진 현대 명조체, 화려하고 기품 있음"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Didot\",\"Bodoni MT\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Didot\",\"Bodoni MT\",serif",
+        "weight": "300",
+        "lh": "1.6",
+        "titleWeight": "800",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#fafafa",
+        "don": "#c0392b",
+        "ka": "#f1c40f",
+        "text": "#fafafa",
+        "muted": "#bdc3c7",
+        "bg": "#000000",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#c0392b",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(255,255,255,.12)"
+      },
+      "shapes": [
+        "square",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "contrast(1.25) saturate(1.05) brightness(.85)"
+    },
+    {
+      "id": "caslon",
+      "label": {
+        "ja": "キャスロン",
+        "en": "Caslon",
+        "zh": "卡斯隆",
+        "ko": "캐슬론"
+      },
+      "desc": {
+        "ja": "オールドスタイルの衬线、伝統と信頼の書体",
+        "en": "Old-style serif, tradition and reliability",
+        "zh": "旧式衬线体，传统与可靠",
+        "ko": "올드스타일 서체, 전통과 신뢰성"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"ITC Caslon\",\"Caslon\",serif",
+      "type": {
+        "title": "\"ITC Caslon\",\"Caslon\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "600",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f4f1ea",
+        "ink": "#2c241d",
+        "don": "#a5522e",
+        "ka": "#4a5d6a",
+        "text": "#2c241d",
+        "muted": "#8c8074",
+        "bg": "#faf7f2",
+        "panel": "rgba(255,254,248,.97)",
+        "field": "#ffffff",
+        "button": "#eae4d9",
+        "accent": "#a5522e",
+        "onAccent": "#f4f1ea",
+        "gold": "#b8860b",
+        "border": "rgba(44,36,29,.15)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.18) brightness(1.01)"
+    },
+    {
+      "id": "baskerville",
+      "label": {
+        "ja": "バスカービル",
+        "en": "Baskerville",
+        "zh": "巴斯克维尔",
+        "ko": "바스커빌"
+      },
+      "desc": {
+        "ja": "移行期の衬线、均整のとれた美しい書体",
+        "en": "Transitional serif, balanced and beautiful",
+        "zh": "过渡期衬线体，均衡而美丽",
+        "ko": "전이 시기 서체, 균형 잡힌 아름다운 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Baskerville\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Baskerville\",\"Noto Serif JP\",serif",
+        "weight": "400",
+        "lh": "1.65",
+        "titleWeight": "600",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f5f5f0",
+        "ink": "#1a202c",
+        "don": "#c53030",
+        "ka": "#2b6cb0",
+        "text": "#1a202c",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#edf2f7",
+        "accent": "#2b6cb0",
+        "onAccent": "#ffffff",
+        "gold": "#d69e2e",
+        "border": "rgba(26,32,44,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.05) brightness(1.01)"
+    },
+    {
+      "id": "gill-sans",
+      "label": {
+        "ja": "ギルサンド",
+        "en": "Gill Sans",
+        "zh": "吉尔桑",
+        "ko": "길 산스"
+      },
+      "desc": {
+        "ja": "ヒューマニスト・ゴシック、人間味あふれる書体",
+        "en": "Humanist sans, warm and human",
+        "zh": "人本主义无衬线体，温暖且亲切",
+        "ko": "휴먼체 고딕, 따뜻하고 인간미 넘치는 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Gill Sans\",\"Gill Sans MT\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Gill Sans\",sans-serif",
+        "weight": "400",
+        "lh": "1.55",
+        "titleWeight": "700",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#e3f2fd",
+        "ink": "#1a237e",
+        "don": "#d32f2f",
+        "ka": "#0288d1",
+        "text": "#1a237e",
+        "muted": "#5c6bc0",
+        "bg": "#bbdefb",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#c5cae9",
+        "accent": "#0288d1",
+        "onAccent": "#ffffff",
+        "gold": "#fff176",
+        "border": "rgba(26,35,126,.15)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "brightness(1.03) saturate(.95)"
+    },
+    {
+      "id": "din",
+      "label": {
+        "ja": "DIN",
+        "en": "DIN",
+        "zh": "DIN体",
+        "ko": "DIN체"
+      },
+      "desc": {
+        "ja": "工業的なゴシック、機能的で無駄のない書体",
+        "en": "Industrial sans, functional and waste-free",
+        "zh": "工业无衬线体，功能性强且简洁",
+        "ko": "산업용 고딕, 기능적이고 낭비 없는 서체"
+      },
+      "cat": [
+        "type",
+        "dark"
+      ],
+      "font": "\"DIN Alternate\",\"DIN\",system-ui,sans-serif",
+      "type": {
+        "title": "\"DIN Alternate\",\"DIN\",sans-serif",
+        "weight": "700",
+        "lh": "1.4",
+        "titleWeight": "800",
+        "titleSpace": "-.02em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a202c",
+        "ink": "#fafafa",
+        "don": "#f56565",
+        "ka": "#4299e1",
+        "text": "#fafafa",
+        "muted": "#a0aec0",
+        "bg": "#2d3748",
+        "panel": "rgba(45,55,72,.96)",
+        "field": "#1a202c",
+        "button": "#2d3748",
+        "accent": "#4299e1",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(255,255,255,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.1) brightness(.9)"
+    },
+    {
+      "id": "univers",
+      "label": {
+        "ja": "ユニバース",
+        "en": "Univers",
+        "zh": "宇宙体",
+        "ko": "유니버스"
+      },
+      "desc": {
+        "ja": "新グロテスク、調和のとれたモダンな書体",
+        "en": "Neo-grotesque sans, harmonious and modern",
+        "zh": "新怪诞体，和谐而现代",
+        "ko": "신그로테스크, 조화롭고 현대적인 서체"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "system-ui,-apple-system,sans-serif",
+      "type": {
+        "title": "system-ui,-apple-system,sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#edf2f7",
+        "ink": "#2d3748",
+        "don": "#e53e3e",
+        "ka": "#3182ce",
+        "text": "#2d3748",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#e2e8f0",
+        "accent": "#3182ce",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(45,55,72,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.02) brightness(1.01)"
+    },
+    {
+      "id": "frutiger",
+      "label": {
+        "ja": "フルティガ",
+        "en": "Frutiger",
+        "zh": "佛鲁迪杰",
+        "ko": "루티거"
+      },
+      "desc": {
+        "ja": "看板用のヒューマニスト、視認性と開放感",
+        "en": "Humanist sans, legibility and openness",
+        "zh": "人本主义无衬线体，可读性和开放感",
+        "ko": "간판용 휴먼체, 가독성과 개방감"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Frutiger\",\"Frutiger LT\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Frutiger\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#e6fffa",
+        "ink": "#1a202c",
+        "don": "#fc8181",
+        "ka": "#4299e1",
+        "text": "#1a202c",
+        "muted": "#718096",
+        "bg": "#c3e6e6",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#bee3e8",
+        "accent": "#4299e1",
+        "onAccent": "#ffffff",
+        "gold": "#faf089",
+        "border": "rgba(26,32,44,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "brightness(1.04) contrast(.98)"
+    },
+    {
+      "id": "optima",
+      "label": {
+        "ja": "オプティマ",
+        "en": "Optima",
+        "zh": "奥普蒂玛",
+        "ko": "옵티마"
+      },
+      "desc": {
+        "ja": "セリフとサンセリフの間、柔らかな書体",
+        "en": "Between serif and sans, soft and balanced",
+        "zh": "介于衬线与无衬线之间，柔和平衡",
+        "ko": "세리프와 산세리프 사이, 부드럽고 균형 잡힌 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Optima\",\"URW Palladio\",serif",
+      "type": {
+        "title": "\"Optima\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "600",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fafafa",
+        "ink": "#2d3436",
+        "don": "#d63031",
+        "ka": "#0984e3",
+        "text": "#2d3436",
+        "muted": "#636e72",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#dfe6e9",
+        "accent": "#0984e3",
+        "onAccent": "#ffffff",
+        "gold": "#fdcb6e",
+        "border": "rgba(45,52,54,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.03) brightness(1.01)"
+    },
+    {
+      "id": "rockwell",
+      "label": {
+        "ja": "ロックウェル",
+        "en": "Rockwell",
+        "zh": "ロックウェル",
+        "ko": "록웰"
+      },
+      "desc": {
+        "ja": "スラブセリフ、力強く重厚な書体",
+        "en": "Slab serif, powerful and substantial",
+        "zh": "方体衬线体，有力且厚重",
+        "ko": "슬래브 세리프, 강력하고 중후한 서체"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Rockwell\",\"Courier New\",monospace",
+      "type": {
+        "title": "\"Rockwell\",serif",
+        "weight": "700",
+        "lh": "1.45",
+        "titleWeight": "800",
+        "titleSpace": "-.02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a202c",
+        "ink": "#fafafa",
+        "don": "#fc8181",
+        "ka": "#63b3ed",
+        "text": "#fafafa",
+        "muted": "#a0aec0",
+        "bg": "#2d3748",
+        "panel": "rgba(45,55,72,.96)",
+        "field": "#1a202c",
+        "button": "#2d3748",
+        "accent": "#fc8181",
+        "onAccent": "#1a202c",
+        "gold": "#f6e05e",
+        "border": "rgba(255,255,255,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.15) saturate(1.05) brightness(.9)"
+    },
+    {
+      "id": "copperplate",
+      "label": {
+        "ja": "カッパープレート",
+        "en": "Copperplate",
+        "zh": "铜版印刷",
+        "ko": "코퍼플레이트"
+      },
+      "desc": {
+        "ja": "銅版彫刻のような大文字、格調高い書体",
+        "en": "Engraved capitals, distinguished and formal",
+        "zh": "铜版雕刻风格的大写，高雅而正式",
+        "ko": "구리판 조각 같은 대문자, 고상하고 정중한 서체"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Copperplate\",\"Papyrus\",fantasy",
+      "type": {
+        "title": "\"Copperplate\",fantasy",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".05em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a1a1a",
+        "ink": "#d4c5a8",
+        "don": "#d65a31",
+        "ka": "#8c9eac",
+        "text": "#d4c5a8",
+        "muted": "#8c8272",
+        "bg": "#121212",
+        "panel": "rgba(18,18,18,.97)",
+        "field": "#1a1a1a",
+        "button": "#2a2a2a",
+        "accent": "#d65a31",
+        "onAccent": "#121212",
+        "gold": "#e3c089",
+        "border": "rgba(212,197,168,.25)"
+      },
+      "shapes": [
+        "square",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "sepia(.3) contrast(1.1) brightness(.85)"
+    },
+    {
+      "id": "didot",
+      "label": {
+        "ja": "ディドー",
+        "en": "Didot",
+        "zh": "迪多",
+        "ko": "디도"
+      },
+      "desc": {
+        "ja": "モダン・ロマンの衬线、シャープで洗練された書体",
+        "en": "Modern romantic serif, sharp and refined",
+        "zh": "现代浪漫衬线体，锐利而精致",
+        "ko": "모던 로맨틱 세리프, 샤프하고 정교한 서체"
+      },
+      "cat": [
+        "type",
+        "dark"
+      ],
+      "font": "\"Didot\",\"Bodoni MT\",serif",
+      "type": {
+        "title": "\"Didot\",serif",
+        "weight": "300",
+        "lh": "1.6",
+        "titleWeight": "800",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#fafafa",
+        "don": "#e84393",
+        "ka": "#00cec9",
+        "text": "#fafafa",
+        "muted": "#b2bec3",
+        "bg": "#000000",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#e84393",
+        "onAccent": "#ffffff",
+        "gold": "#fd79a8",
+        "border": "rgba(255,255,255,.12)"
+      },
+      "shapes": [
+        "square",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "contrast(1.3) saturate(1.1) brightness(.8)"
+    },
+    {
+      "id": "akzidenz",
+      "label": {
+        "ja": "アクシデンツ",
+        "en": "Akzidenz",
+        "zh": "阿克齐登茨",
+        "ko": "악시덴츠"
+      },
+      "desc": {
+        "ja": "グロテスク、無骨で実用的な書体",
+        "en": "Grotesque sans, rugged and practical",
+        "zh": "粗犷无衬线体，粗犷且实用",
+        "ko": "그로테스크, 거칠고 실용적인 서체"
+      },
+      "cat": [
+        "type",
+        "dark"
+      ],
+      "font": "\"Akzidenz-Grotesk\",\"Alternate Gothic\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Akzidenz-Grotesk\",sans-serif",
+        "weight": "400",
+        "lh": "1.45",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a1a1a",
+        "ink": "#e0e0e0",
+        "don": "#ff7675",
+        "ka": "#74b9ff",
+        "text": "#e0e0e0",
+        "muted": "#636e72",
+        "bg": "#0d0d0d",
+        "panel": "rgba(26,26,26,.97)",
+        "field": "#1a1a1a",
+        "button": "#2d2d2d",
+        "accent": "#74b9ff",
+        "onAccent": "#0d0d0d",
+        "gold": "#fdcb6e",
+        "border": "rgba(224,224,224,.15)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.08) brightness(.88)"
+    },
+    {
+      "id": "letterpress",
+      "label": {
+        "ja": "レタープレス",
+        "en": "Letterpress",
+        "zh": "活版印刷",
+        "ko": "레터프레스"
+      },
+      "desc": {
+        "ja": "活版印刷のインク、レトロで温かみのある書体",
+        "en": "Letterpress ink, retro and warm",
+        "zh": "活版印刷油墨，复古而温暖",
+        "ko": "활판 인쇄 잉크, 레트로하고 따뜻한 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Courier New\",\"Courier\",monospace",
+      "type": {
+        "title": "\"Courier New\",monospace",
+        "weight": "400",
+        "lh": "1.75",
+        "titleWeight": "700",
+        "titleSpace": ".1em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#efe6d4",
+        "ink": "#4a3728",
+        "don": "#8d4e2a",
+        "ka": "#5d6d7e",
+        "text": "#4a3728",
+        "muted": "#8c7a63",
+        "bg": "#e3d5c4",
+        "panel": "rgba(255,250,240,.96)",
+        "field": "#fffaf0",
+        "button": "#d7cbbd",
+        "accent": "#8d4e2a",
+        "onAccent": "#efe6d4",
+        "gold": "#b8860b",
+        "border": "rgba(74,55,40,.20)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.35) contrast(1.05) brightness(1.02)"
+    },
+    {
+      "id": "montserrat",
+      "label": {
+        "ja": "モントセラート",
+        "en": "Montserrat",
+        "zh": "蒙特塞拉特",
+        "ko": "몬트세라트"
+      },
+      "desc": {
+        "ja": "幾何学的なゴシック、モダンでクリーンな書体",
+        "en": "Geometric sans, modern and clean",
+        "zh": "几何学无衬线体，现代且简洁",
+        "ko": "기하학적 고딕, 모던하고 깨끗한 서체"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Montserrat\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Montserrat\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "700",
+        "titleSpace": "-.02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f8f9fa",
+        "ink": "#212529",
+        "don": "#e74c3c",
+        "ka": "#3498db",
+        "text": "#212529",
+        "muted": "#7f8c8d",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#ecf0f1",
+        "accent": "#3498db",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(33,37,41,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "brightness(1.02) contrast(1.01)"
+    },
+    {
+      "id": "opensans",
+      "label": {
+        "ja": "オープンサンス",
+        "en": "Open Sans",
+        "zh": "开放无衬线",
+        "ko": "오픈 산스"
+      },
+      "desc": {
+        "ja": "人間的なゴシック、読みやすさと親しみやすさ",
+        "en": "Humanist sans, legibility and friendliness",
+        "zh": "人本主义无衬线体，可读性和亲和力",
+        "ko": "휴먼체 고딕, 가독성과 친근함"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Open Sans\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Open Sans\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#eef2f3",
+        "ink": "#34495e",
+        "don": "#e74c3c",
+        "ka": "#2ecc71",
+        "text": "#34495e",
+        "muted": "#95a5a6",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#d5dbdb",
+        "accent": "#2ecc71",
+        "onAccent": "#ffffff",
+        "gold": "#f39c12",
+        "border": "rgba(52,73,94,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.03) contrast(.99)"
+    },
+    {
+      "id": "noto-sans-jp",
+      "label": {
+        "ja": "ノトサンスJP",
+        "en": "Noto Sans JP",
+        "zh": "思源黑体 JP",
+        "ko": "노토 산스 JP"
+      },
+      "desc": {
+        "ja": "日本語ウェブの定番、バランスの取れた角ゴシック",
+        "en": "Japanese web standard, balanced gothic",
+        "zh": "日语网页标准，均衡的角ゴシック",
+        "ko": "일본어 웹 표준, 균형 잡힌 고딕"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Noto Sans JP\",\"Noto Sans CJK JP\",sans-serif",
+      "type": {
+        "title": "\"Noto Sans JP\",sans-serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "700",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fafafa",
+        "ink": "#1a1a1a",
+        "don": "#d32f2f",
+        "ka": "#1976d2",
+        "text": "#1a1a1a",
+        "muted": "#757575",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#eeeeee",
+        "accent": "#1976d2",
+        "onAccent": "#ffffff",
+        "gold": "#ffa000",
+        "border": "rgba(26,26,26,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.02) brightness(1.01)"
+    },
+    {
+      "id": "hiragino-kaku",
+      "label": {
+        "ja": "ヒラギノ角ゴ",
+        "en": "Hiragino Kaku Gothic",
+        "zh": "椿圆角ゴシック",
+        "ko": "히라기노 각 고딕"
+      },
+      "desc": {
+        "ja": "macOS の定番、丸みを帯びた上品な角ゴシック",
+        "en": "macOS standard, rounded elegant gothic",
+        "zh": "macOS 标准，圆润优雅的角ゴシック",
+        "ko": "macOS 표준, 둥글고 우아한 각 고딕"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Hiragino Kaku Gothic ProN\",\"Hiragino Sans\",sans-serif",
+      "type": {
+        "title": "\"Hiragino Kaku Gothic ProN\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fbfcfc",
+        "ink": "#2c3e50",
+        "don": "#c0392b",
+        "ka": "#2980b9",
+        "text": "#2c3e50",
+        "muted": "#7f8c8d",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#ecf0f1",
+        "accent": "#2980b9",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(44,62,80,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.01) contrast(1.01)"
+    },
+    {
+      "id": "avenir",
+      "label": {
+        "ja": "アヴェニール",
+        "en": "Avenir",
+        "zh": "未来体",
+        "ko": "아베니르"
+      },
+      "desc": {
+        "ja": "フランス生まれの幾何学ゴシック、洗練された書体",
+        "en": "French geometric sans, refined and elegant",
+        "zh": "法国几何学无衬线体，精致优雅",
+        "ko": "프랑스 기하학적 고딕, 세련되고 우아한 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Avenir\",\"Avenir Next\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Avenir\",sans-serif",
+        "weight": "400",
+        "lh": "1.55",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#eceff1",
+        "ink": "#37474f",
+        "don": "#d32f2f",
+        "ka": "#0288d1",
+        "text": "#37474f",
+        "muted": "#78909c",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#cfd8dc",
+        "accent": "#0288d1",
+        "onAccent": "#ffffff",
+        "gold": "#ffb300",
+        "border": "rgba(55,71,79,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.03) brightness(1.01)"
+    },
+    {
+      "id": "proxima-nova",
+      "label": {
+        "ja": "プロキシマノヴァ",
+        "en": "Proxima Nova",
+        "zh": "近星新星",
+        "ko": "프록시노바"
+      },
+      "desc": {
+        "ja": "ウェブで人気の幾何学ゴシック、柔軟でモダン",
+        "en": "Popular web geometric sans, flexible and modern",
+        "zh": "流行网页几何学无衬线体，灵活且现代",
+        "ko": "웹 인기 기하학적 고딕, 유연하고 현대적"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Proxima Nova\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Proxima Nova\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": "-.01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f5f5f5",
+        "ink": "#263238",
+        "don": "#c62828",
+        "ka": "#1565c0",
+        "text": "#263238",
+        "muted": "#607d8b",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#eceff1",
+        "accent": "#1565c0",
+        "onAccent": "#ffffff",
+        "gold": "#ff9800",
+        "border": "rgba(38,50,56,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.02) brightness(1.01)"
+    },
+    {
+      "id": "lato",
+      "label": {
+        "ja": "ラト",
+        "en": "Lato",
+        "zh": "拉托",
+        "ko": "라토"
+      },
+      "desc": {
+        "ja": "夏の意味を持つ、温かみのあるサンセリフ",
+        "en": "Warm sans-serif meaning summer",
+        "zh": "意为夏天的温暖无衬线体",
+        "ko": "여름을 의미하는 따뜻한 산세리프"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Lato\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Lato\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "700",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#e8f5e9",
+        "ink": "#1b5e20",
+        "don": "#c62828",
+        "ka": "#1e88e5",
+        "text": "#1b5e20",
+        "muted": "#4caf50",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#c8e6c9",
+        "accent": "#1e88e5",
+        "onAccent": "#ffffff",
+        "gold": "#ffb300",
+        "border": "rgba(27,94,32,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.05) brightness(1.02)"
+    },
+    {
+      "id": "roboto",
+      "label": {
+        "ja": "ロボト",
+        "en": "Roboto",
+        "zh": "机器人",
+        "ko": "로보토"
+      },
+      "desc": {
+        "ja": "Material Design の定番、機械的で読みやすい書体",
+        "en": "Material Design standard, mechanical and legible",
+        "zh": "Material Design 标准，机械且易读",
+        "ko": "머티리얼 디자인 표준, 기계적이고 읽기 쉬운 서체"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Roboto\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Roboto\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "500",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#eceff1",
+        "ink": "#212121",
+        "don": "#f44336",
+        "ka": "#2196f3",
+        "text": "#212121",
+        "muted": "#757575",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#cfd8dc",
+        "accent": "#2196f3",
+        "onAccent": "#ffffff",
+        "gold": "#ffc107",
+        "border": "rgba(33,33,33,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.01) brightness(1.01)"
+    },
+    {
+      "id": "source-sans-pro",
+      "label": {
+        "ja": "ソースサンスプロ",
+        "en": "Source Sans Pro",
+        "zh": "源泉无衬线",
+        "ko": "소스 산스 프로"
+      },
+      "desc": {
+        "ja": "Adobe 製のオープンソースゴシック、UI に最適",
+        "en": "Adobe open source sans, ideal for UI",
+        "zh": "Adobe 开源无衬线体，适合 UI",
+        "ko": "Adobe 오픈 소스 고딕, UI 에 적합"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Source Sans Pro\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Source Sans Pro\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f4f6f8",
+        "ink": "#2c3e50",
+        "don": "#e74c3c",
+        "ka": "#3498db",
+        "text": "#2c3e50",
+        "muted": "#7f8c8d",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#dfe6e9",
+        "accent": "#3498db",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(44,62,80,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.02) brightness(1.01)"
+    },
+    {
+      "id": "ubuntu",
+      "label": {
+        "ja": "ウブントゥ",
+        "en": "Ubuntu",
+        "zh": "乌班图",
+        "ko": "우분투"
+      },
+      "desc": {
+        "ja": "Linux ディストリビューションの定番、丸みのある書体",
+        "en": "Linux distribution standard, rounded typeface",
+        "zh": "Linux 发行版标准，圆润字体",
+        "ko": "리눅스 배포판 표준, 둥근 서체"
+      },
+      "cat": [
+        "type",
+        "fun",
+        "light"
+      ],
+      "font": "\"Ubuntu\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Ubuntu\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "700",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#e3f2fd",
+        "ink": "#1a237e",
+        "don": "#dd2c00",
+        "ka": "#0288d1",
+        "text": "#1a237e",
+        "muted": "#5c6bc0",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#bbdefb",
+        "accent": "#dd2c00",
+        "onAccent": "#ffffff",
+        "gold": "#ffd54f",
+        "border": "rgba(26,35,126,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.03) saturate(1.05)"
+    },
+    {
+      "id": "playfair-display",
+      "label": {
+        "ja": "プレイフェアディスプレイ",
+        "en": "Playfair Display",
+        "zh": "博尼塔展示体",
+        "ko": "플레이페어 디스플레이"
+      },
+      "desc": {
+        "ja": "エレガントな明朝、雑誌の見出しに最適",
+        "en": "Elegant serif, ideal for magazine headlines",
+        "zh": "优雅衬线体，适合杂志标题",
+        "ko": "우아한 명조체, 잡지 제목에 적합"
+      },
+      "cat": [
+        "type",
+        "light",
+        "fun"
+      ],
+      "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Playfair Display\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "700",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fdfcf0",
+        "ink": "#2c241d",
+        "don": "#a5522e",
+        "ka": "#4a5d6a",
+        "text": "#2c241d",
+        "muted": "#8c8074",
+        "bg": "#fffef5",
+        "panel": "rgba(255,255,245,.97)",
+        "field": "#ffffff",
+        "button": "#eae4d9",
+        "accent": "#a5522e",
+        "onAccent": "#fdfcf0",
+        "gold": "#b8860b",
+        "border": "rgba(44,36,29,.15)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.15) brightness(1.01)"
+    },
+    {
+      "id": "merriweather",
+      "label": {
+        "ja": "メリウェザー",
+        "en": "Merriweather",
+        "zh": "梅里韦瑟",
+        "ko": "메리웨더"
+      },
+      "desc": {
+        "ja": "画面読みやすさ重視の明朝、落ち着いた書体",
+        "en": "Screen-optimized serif, calm and readable",
+        "zh": "屏幕优化衬线体，平静且易读",
+        "ko": "화면 읽기 쉬운 명조체, 차분하고 읽기 쉬움"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Merriweather\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Merriweather\",serif",
+        "weight": "400",
+        "lh": "1.75",
+        "titleWeight": "700",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f5f5f0",
+        "ink": "#1a202c",
+        "don": "#c53030",
+        "ka": "#2b6cb0",
+        "text": "#1a202c",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#edf2f7",
+        "accent": "#2b6cb0",
+        "onAccent": "#ffffff",
+        "gold": "#d69e2e",
+        "border": "rgba(26,32,44,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.04) brightness(1.01)"
+    },
+    {
+      "id": "oswald",
+      "label": {
+        "ja": "オズワルド",
+        "en": "Oswald",
+        "zh": "奥斯瓦尔德",
+        "ko": "오스왈드"
+      },
+      "desc": {
+        "ja": "圧縮されたゴシック、見出しに強い書体",
+        "en": "Condensed sans, strong for headlines",
+        "zh": "压缩无衬线体，标题有力",
+        "ko": "압축된 고딕, 제목에 강한 서체"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Oswald\",\"Impact\",sans-serif",
+      "type": {
+        "title": "\"Oswald\",sans-serif",
+        "weight": "400",
+        "lh": "1.3",
+        "titleWeight": "700",
+        "titleSpace": "-.03em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a202c",
+        "ink": "#fafafa",
+        "don": "#fc8181",
+        "ka": "#4299e1",
+        "text": "#fafafa",
+        "muted": "#a0aec0",
+        "bg": "#2d3748",
+        "panel": "rgba(45,55,72,.96)",
+        "field": "#1a202c",
+        "button": "#2d3748",
+        "accent": "#4299e1",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(255,255,255,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.15) brightness(.9)"
+    },
+    {
+      "id": "raleway",
+      "label": {
+        "ja": "ラレーウェイ",
+        "en": "Raleway",
+        "zh": "拉雷维",
+        "ko": "랄레웨이"
+      },
+      "desc": {
+        "ja": "エレガントなゴシック、細身で洗練された書体",
+        "en": "Elegant sans, slim and refined",
+        "zh": "优雅无衬线体，纤细精致",
+        "ko": "우아한 고딕, 날렵하고 정교한 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Raleway\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Raleway\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fafafa",
+        "ink": "#2d3436",
+        "don": "#d63031",
+        "ka": "#0984e3",
+        "text": "#2d3436",
+        "muted": "#636e72",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#dfe6e9",
+        "accent": "#0984e3",
+        "onAccent": "#ffffff",
+        "gold": "#fdcb6e",
+        "border": "rgba(45,52,54,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.03) brightness(1.01)"
+    },
+    {
+      "id": "poppins",
+      "label": {
+        "ja": "ポピンズ",
+        "en": "Poppins",
+        "zh": "波平斯",
+        "ko": "포핀스"
+      },
+      "desc": {
+        "ja": "インド発の幾何学ゴシック、丸みがかわいい書体",
+        "en": "Indian geometric sans, round and cute",
+        "zh": "印度几何学无衬线体，圆润可爱",
+        "ko": "인도 기하학적 고딕, 둥글고 귀여운 서체"
+      },
+      "cat": [
+        "type",
+        "fun",
+        "light"
+      ],
+      "font": "\"Poppins\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Poppins\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fff0f5",
+        "ink": "#2d3436",
+        "don": "#e84393",
+        "ka": "#00cec9",
+        "text": "#2d3436",
+        "muted": "#b2bec3",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#ffe5f0",
+        "accent": "#e84393",
+        "onAccent": "#ffffff",
+        "gold": "#fd79a8",
+        "border": "rgba(45,52,54,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.04) saturate(1.05)"
+    },
+    {
+      "id": "inter",
+      "label": {
+        "ja": "インタ",
+        "en": "Inter",
+        "zh": "间体",
+        "ko": "인터"
+      },
+      "desc": {
+        "ja": "UI/UX デザインの定番、画面に最適化された書体",
+        "en": "UI/UX design standard, screen-optimized",
+        "zh": "UI/UX 设计标准，屏幕优化",
+        "ko": "UI/UX 디자인 표준, 화면 최적화된 서체"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Inter\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Inter\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f8f9fa",
+        "ink": "#1a202c",
+        "don": "#e53e3e",
+        "ka": "#3182ce",
+        "text": "#1a202c",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#edf2f7",
+        "accent": "#3182ce",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(26,32,44,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.01) brightness(1.01)"
+    },
+    {
+      "id": "matcha",
+      "label": {
+        "ja": "抹茶",
+        "en": "Matcha",
+        "zh": "抹茶",
+        "ko": "말차"
+      },
+      "desc": {
+        "ja": "和スイーツの定番、落ち着いた緑色",
+        "en": "Japanese sweet standard, calm green",
+        "zh": "日式甜点标准，平静的绿色",
+        "ko": "일본 디저트 표준, 차분한 초록색"
+      },
+      "cat": [
+        "light",
+        "grad",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#81c784,#2e7d32)",
+        "ink": "#1b5e20",
+        "don": "#ffab91",
+        "ka": "#a5d6a7",
+        "text": "#1b5e20",
+        "muted": "#81c784",
+        "bg": "linear-gradient(180deg,#c8e6c9,#a5d6a7)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#c8e6c9",
+        "accent": "#4caf50",
+        "onAccent": "#ffffff",
+        "gold": "#d4e157",
+        "border": "rgba(46,125,50,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.1) brightness(1.02)"
+    },
+    {
+      "id": "chocolate",
+      "label": {
+        "ja": "ショコラ",
+        "en": "Chocolate",
+        "zh": "巧克力",
+        "ko": "초콜릿"
+      },
+      "desc": {
+        "ja": "濃厚なチョコレート、大人っぽい茶色",
+        "en": "Rich chocolate, adult brown",
+        "zh": "浓郁巧克力，成人色调的棕色",
+        "ko": "진한 초콜릿, 어른스러운 갈색"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#8d6e63,#4e342e)",
+        "ink": "#efebe9",
+        "don": "#ffab91",
+        "ka": "#bcaaa4",
+        "text": "#efebe9",
+        "muted": "#a1887f",
+        "bg": "linear-gradient(180deg,#d7ccc8,#bcaaa4)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#bcaaa4",
+        "accent": "#8d6e63",
+        "onAccent": "#efebe9",
+        "gold": "#ffe0b2",
+        "border": "rgba(141,110,99,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.3) saturate(1.05) brightness(.95)"
+    },
+    {
+      "id": "strawberry-cake",
+      "label": {
+        "ja": "ストロベリーケーキ",
+        "en": "Strawberry Cake",
+        "zh": "草莓蛋糕",
+        "ko": "딸기 케이크"
+      },
+      "desc": {
+        "ja": "苺のショートケーキ、甘くて華やかなピンク",
+        "en": "Strawberry shortcake, sweet and gorgeous pink",
+        "zh": "草莓蛋糕，甜美华丽的粉色",
+        "ko": "딸기 쇼트케이크, 달콤하고 화려한 핑크"
+      },
+      "cat": [
+        "light",
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#fce4ec,#f8bbd0)",
+        "ink": "#880e4f",
+        "don": "#ec407a",
+        "ka": "#f48fb1",
+        "text": "#880e4f",
+        "muted": "#ad1457",
+        "bg": "linear-gradient(180deg,#f8bbd0,#f48fb1)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#f8bbd0",
+        "accent": "#ec407a",
+        "onAccent": "#ffffff",
+        "gold": "#ffcdd2",
+        "border": "rgba(236,64,122,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.1) saturate(1.15) brightness(1.03)"
+    },
+    {
+      "id": "macaron",
+      "label": {
+        "ja": "マカロン",
+        "en": "Macaron",
+        "zh": "马卡龙",
+        "ko": "마카롱"
+      },
+      "desc": {
+        "ja": "パステルカラーのフランス菓子、かわいらしい色合い",
+        "en": "Pastel French confectionery, cute colors",
+        "zh": "淡色法国点心，可爱色调",
+        "ko": "파스텔 컬러 프랑스 과자, 귀여운 색감"
+      },
+      "cat": [
+        "light",
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#f3e5f5,#e1bee7)",
+        "ink": "#4a148c",
+        "don": "#ce93d8",
+        "ka": "#b39ddb",
+        "text": "#4a148c",
+        "muted": "#9c27b0",
+        "bg": "linear-gradient(180deg,#e1bee7,#ce93d8)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#e1bee7",
+        "accent": "#ab47bc",
+        "onAccent": "#ffffff",
+        "gold": "#f3e5f5",
+        "border": "rgba(171,71,188,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.1) brightness(1.05)"
+    },
+    {
+      "id": "croissant",
+      "label": {
+        "ja": "クロワッサン",
+        "en": "Croissant",
+        "zh": "可颂",
+        "ko": "크루아상"
+      },
+      "desc": {
+        "ja": "朝のカフェ、バターの香るゴールド",
+        "en": "Morning cafe, buttery gold",
+        "zh": "早 morning 咖啡厅，黄油香的金色",
+        "ko": "아침 카페, 버터 향의 골드"
+      },
+      "cat": [
+        "light",
+        "grad",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffe082,#ffcc80)",
+        "ink": "#bf360c",
+        "don": "#ffcc80",
+        "ka": "#ffe0b2",
+        "text": "#bf360c",
+        "muted": "#ef6c00",
+        "bg": "linear-gradient(180deg,#ffecb3,#ffe0b2)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffecb3",
+        "accent": "#fb8c00",
+        "onAccent": "#ffffff",
+        "gold": "#ffe082",
+        "border": "rgba(251,140,0,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.15) saturate(1.1) brightness(1.04)"
+    },
+    {
+      "id": "espresso",
+      "label": {
+        "ja": "エスプレッソ",
+        "en": "Espresso",
+        "zh": "浓缩咖啡",
+        "ko": "에스프레소"
+      },
+      "desc": {
+        "ja": "濃いコーヒー、ダークでシックな夜",
+        "en": "Strong coffee, dark and chic night",
+        "zh": "浓缩咖啡，深色时尚之夜",
+        "ko": "진한 커피, 다크하고 시크한 밤"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#3e2723,#212121)",
+        "ink": "#ffebee",
+        "don": "#ffccbc",
+        "ka": "#8d6e63",
+        "text": "#ffebee",
+        "muted": "#795548",
+        "bg": "linear-gradient(180deg,#212121,#121212)",
+        "panel": "rgba(33,33,33,.96)",
+        "field": "#3e2723",
+        "button": "#4e342e",
+        "accent": "#8d6e63",
+        "onAccent": "#212121",
+        "gold": "#d7ccc8",
+        "border": "rgba(121,85,72,.24)"
+      },
+      "shapes": [
+        "circle",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.5) contrast(1.15) brightness(.85)"
+    },
+    {
+      "id": "crepe",
+      "label": {
+        "ja": "クレープ",
+        "en": "Crepe",
+        "zh": "薄煎饼",
+        "ko": "크레페"
+      },
+      "desc": {
+        "ja": "フランスの屋台、やわらかな肌色",
+        "en": "French street crepe, soft skin tone",
+        "zh": "法式路边煎饼，柔和肤色",
+        "ko": "프랑스 노점, 부드러운 살색"
+      },
+      "cat": [
+        "light",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#ffe0b2",
+        "ink": "#4e342e",
+        "don": "#ff7043",
+        "ka": "#ffccbc",
+        "text": "#4e342e",
+        "muted": "#a1887f",
+        "bg": "#ffe0b2",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffccbc",
+        "accent": "#ff7043",
+        "onAccent": "#4e342e",
+        "gold": "#ffd54f",
+        "border": "rgba(78,52,46,.20)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.2) brightness(1.03)"
+    },
+    {
+      "id": "donut",
+      "label": {
+        "ja": "ドーナツ",
+        "en": "Donut",
+        "zh": "甜甜圈",
+        "ko": "도넛"
+      },
+      "desc": {
+        "ja": "カラフルな glazed ドーナツ、遊び心たっぷり",
+        "en": "Colorful glazed donut, full of playfulness",
+        "zh": "彩色糖霜甜甜圈，充满童心",
+        "ko": "컬러풀한 글레이즈 도넛, 재미가득"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ff9ce0,#ff6b9d)",
+        "ink": "#2d3436",
+        "don": "#fd79a8",
+        "ka": "#a29bfe",
+        "text": "#2d3436",
+        "muted": "#b2bec3",
+        "bg": "linear-gradient(180deg,#ff79a8,#fd79a8)",
+        "panel": "rgba(255,255,255,.95)",
+        "field": "#ffffff",
+        "button": "#ffc8dd",
+        "accent": "#fd79a8",
+        "onAccent": "#2d3436",
+        "gold": "#ffeaa7",
+        "border": "rgba(253,121,168,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.2) brightness(1.05)"
+    },
+    {
+      "id": "parfait",
+      "label": {
+        "ja": "パフェ",
+        "en": "Parfait",
+        "zh": "圣代",
+        "ko": "파르페"
+      },
+      "desc": {
+        "ja": "層になったアイスパフェ、色とりどり",
+        "en": "Layered ice parfait, colorful",
+        "zh": "分层冰淇淋圣代，色彩缤纷",
+        "ko": "층을 이룬 아이스 파르페, 색색깔"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ff9a9e,#fecfef,#ff9a9e)",
+        "ink": "#2d3436",
+        "don": "#fd79a8",
+        "ka": "#a29bfe",
+        "text": "#2d3436",
+        "muted": "#b2bec3",
+        "bg": "linear-gradient(180deg,#ffc3a1,#afd9fe)",
+        "panel": "rgba(255,255,255,.95)",
+        "field": "#ffffff",
+        "button": "#ffc8dd",
+        "accent": "#e17055",
+        "onAccent": "#2d3436",
+        "gold": "#ffeaa7",
+        "border": "rgba(225,112,85,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.15) brightness(1.04)"
+    },
+    {
+      "id": "mochi",
+      "label": {
+        "ja": "餅",
+        "en": "Mochi",
+        "zh": "糯米饼",
+        "ko": "떡"
+      },
+      "desc": {
+        "ja": "和菓子の餅、柔らかく白い食感",
+        "en": "Japanese mochi, soft and white texture",
+        "zh": "日式年糕，柔软白色",
+        "ko": "일본 떡, 부드럽고 하얀 식감"
+      },
+      "cat": [
+        "light",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#fdfdfd",
+        "ink": "#4a4a4a",
+        "don": "#d1c4e9",
+        "ka": "#ffccbc",
+        "text": "#4a4a4a",
+        "muted": "#9e9e9e",
+        "bg": "#f5f5f5",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#eeeeee",
+        "accent": "#d1c4e9",
+        "onAccent": "#4a4a4a",
+        "gold": "#fff59d",
+        "border": "rgba(74,74,74,.18)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.05) brightness(1.06) contrast(.95)"
+    },
+    {
+      "id": "dango",
+      "label": {
+        "ja": "だんご",
+        "en": "Dango",
+        "zh": "团子",
+        "ko": "단고"
+      },
+      "desc": {
+        "ja": "三色団子、祭りの屋台をイメージ",
+        "en": "Three-color dango, festival street food",
+        "zh": "三色团子，节日摊位风格",
+        "ko": "삼색 단고, 축제 노점 이미지"
+      },
+      "cat": [
+        "fun",
+        "grad",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#dce775",
+        "ink": "#33691e",
+        "don": "#f48fb1",
+        "ka": "#4db6ac",
+        "text": "#33691e",
+        "muted": "#827717",
+        "bg": "#fff176",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#fff59d",
+        "accent": "#f48fb1",
+        "onAccent": "#33691e",
+        "gold": "#fff176",
+        "border": "rgba(51,105,30,.20)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.2) brightness(1.03)"
+    },
+    {
+      "id": "melon-pan",
+      "label": {
+        "ja": "メロンパン",
+        "en": "Melon Pan",
+        "zh": "瓜面包",
+        "ko": "멜론빵"
+      },
+      "zh": "瓜面包",
+      "ko": "멜론빵",
+      "desc": {
+        "ja": "日本の菓子パン、クッキー生地のグリッド",
+        "en": "Japanese sweet bread, cookie dough grid",
+        "zh": "日本甜面包，饼干面团网格",
+        "ko": "일본 과자빵, 쿠키 반죽 그리드"
+      },
+      "cat": [
+        "life",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#fff9c4",
+        "ink": "#f57f17",
+        "don": "#ffcc80",
+        "ka": "#ffe0b2",
+        "text": "#f57f17",
+        "muted": "#ff6f00",
+        "bg": "#ffe082",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffecb3",
+        "accent": "#ffa000",
+        "onAccent": "#fff9c4",
+        "gold": "#ffd54f",
+        "border": "rgba(245,127,23,.22)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.1) saturate(1.1) brightness(1.02)"
+    },
+    {
+      "id": "taiyaki",
+      "label": {
+        "ja": "たい焼き",
+        "en": "Taiyaki",
+        "zh": "鱼形烤饼",
+        "ko": "타이야키"
+      },
+      "desc": {
+        "ja": "和菓子のたい焼き、焦げ茶色の温かさ",
+        "en": "Japanese taiyaki, warm burnt brown",
+        "zh": "日式太阳烧，温暖焦茶色",
+        "ko": "일본 붕어빵, 따뜻한 구운 갈색"
+      },
+      "cat": [
+        "life",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#bf360c",
+        "ink": "#ffebee",
+        "don": "#ffab91",
+        "ka": "#d7ccc8",
+        "text": "#ffebee",
+        "muted": "#e65100",
+        "bg": "#d84315",
+        "panel": "rgba(216,67,21,.96)",
+        "field": "#bf360c",
+        "button": "#e64a19",
+        "accent": "#ffab91",
+        "onAccent": "#3e2723",
+        "gold": "#ffccbc",
+        "border": "rgba(230,81,0,.22)"
+      },
+      "shapes": [
+        "circle",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.4) contrast(1.1) brightness(.9)"
+    },
+    {
+      "id": "creme-brulee",
+      "label": {
+        "ja": "クレームブリュレ",
+        "en": "Creme Brulee",
+        "zh": "焦糖布丁",
+        "ko": "크렘 브륄레"
+      },
+      "desc": {
+        "ja": "カラメルの表面、ゴールドの輝き",
+        "en": "Caramel surface, golden shine",
+        "zh": "焦糖表面，金色光泽",
+        "ko": "캐러멜 표면, 골드 빛깔"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffe082,#ffb74d)",
+        "ink": "#e65100",
+        "don": "#ffd54f",
+        "ka": "#ffe082",
+        "text": "#e65100",
+        "muted": "#ff6f00",
+        "bg": "linear-gradient(180deg,#ffecb3,#ffe082)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffecb3",
+        "accent": "#ffa000",
+        "onAccent": "#fff9c4",
+        "gold": "#ffd54f",
+        "border": "rgba(230,81,0,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.15) saturate(1.1) brightness(1.02)"
+    },
+    {
+      "id": "tart",
+      "label": {
+        "ja": "タルト",
+        "en": "Tart",
+        "zh": "塔",
+        "ko": "타르트"
+      },
+      "desc": {
+        "ja": "フルーツタルト、色とりどりのフルーツ",
+        "en": "Fruit tart, colorful fruits",
+        "zh": "水果塔，色彩缤纷水果",
+        "ko": "과일 타르트, 색색깔 과일"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#ff8a80",
+        "ink": "#bf360c",
+        "don": "#ff5252",
+        "ka": "#aed581",
+        "text": "#bf360c",
+        "muted": "#d32f2f",
+        "bg": "#ffab91",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ff8a80",
+        "accent": "#ff5252",
+        "onAccent": "#ffffff",
+        "gold": "#ffd54f",
+        "border": "rgba(191,54,12,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.25) brightness(1.03)"
+    },
+    {
+      "id": "pancake",
+      "label": {
+        "ja": "パンケーキ",
+        "en": "Pancake",
+        "zh": "松饼",
+        "ko": "팬케이크"
+      },
+      "desc": {
+        "ja": "朝食のパンケーキ、バターのイエロー",
+        "en": "Breakfast pancake, buttery yellow",
+        "zh": "早餐松饼，黄油黄色",
+        "ko": "아침 팬케이크, 버터 노란색"
+      },
+      "cat": [
+        "light",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#fff176",
+        "ink": "#f57f17",
+        "don": "#ffd54f",
+        "ka": "#ffe082",
+        "text": "#f57f17",
+        "muted": "#ff6f00",
+        "bg": "#fff59d",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffe082",
+        "accent": "#ffa000",
+        "onAccent": "#fff9c4",
+        "gold": "#ffeb3b",
+        "border": "rgba(245,127,23,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.05) saturate(1.05)"
     }
   ],
   "fontPacks": [

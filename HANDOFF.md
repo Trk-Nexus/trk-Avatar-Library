@@ -677,3 +677,35 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
 15. **書体を足したら `sets/font-set.json` の `files` に足し忘れていないか**（いまは手で列挙している）。
     29 本になると抜けやすいので、r6 のあとに「目録と `font-packs/` にあって、どのセットにも入っていない書体パック」を
     ℹ で知らせる検査を足すか検討（返事9 への返事 §4 の案 1）
+16. **スキン vol.1 を制作**（`catalog/skins.json` に16種追加、総数53→69種）：テーマ「夜の情景と光の色彩」。
+    `lanternAlley`（提灯横丁）・`moonlitTerrace`（月光テラス）・`fireflyValley`（蛍の谷）・`midnightCafe`（深夜喫茶）・
+    `snowyShrine`（雪の神社）・`autumnMaple`（紅葉の夜）・`summerNight`（夏の夜風）・`zenStone`（禅の石庭）・
+    `inkWash`（墨流し・書体スキン）・`paperMoon`（紙月の夜）・`copperHour`（銅色の時）・`lavenderHill`（ラベンダーの丘）・
+    `emeraldNight`（エメラルドの夜）・`cherrySnow`（桜吹雪の夜）・`ironMorning`（鉄の朝）・`goldLeafNight`（金箔の夜）。
+    プレビューは `gallery/skins-vol1.html`。生成スクリプトは `tools/generate-skins-vol1.py`・`tools/generate-vol1-gallery.py`。
+17. **スキン vol.2 を制作**（`catalog/skins.json` に16種追加、総数69→85種）：テーマ「宝石・鉱石」。
+    `ruby`（ルビー）・`sapphire`（サファイア）・`emerald`（エメラルド）・`diamond`（ダイヤモンド）・
+    `amber`（アンバー）・`amethyst`（アメジスト）・`topaz`（トパーズ）・`opal`（オパール）・
+    `quartz`（クォーツ）・`onyx`（オニキス）・`jade`（ジェイド）・`pearl`（パール）・
+    `garnet`（ガーネット）・`citrine`（シトリン）・`turquoise`（ターコイズ）・`obsidian`（オブシディアン）。
+    プレビューは `gallery/skins-jewel.html`。生成スクリプトは `tools/generate-skins-vol2-vol3.py`・`tools/generate-theme-gallery.py`。
+18. **スキン vol.3 を制作**（`catalog/skins.json` に16種追加、総数85→101種）：テーマ「タイポグラフィ・フォントデザイン」。
+    `helvetica`（ヘルベチカ）・`garamond`（ガラモン）・`futura`（フューチュラ）・`bodoni`（ボドーニ）・
+    `caslon`（キャスロン）・`baskerville`（バスカービル）・`gill-sans`（ギルサンド）・`din`（DIN）・
+    `univers`（ユニバース）・`frutiger`（フルティガ）・`optima`（オプティマ）・`rockwell`（ロックウェル）・
+    `copperplate`（カッパープレート）・`didot`（ディドー）・`akzidenz`（アクシデンツ）・`letterpress`（レタープレス）。
+    type フィールドで各書体の特徴（タイトルフォント・太さ・行間・字間・変形）を設計。プレビューは `gallery/skins-typography.html`。
+    vol2・vol3 も随時制作予定。
+19. **スキン vol.4 を制作**（`catalog/skins.json` に16種追加、総数101→117種）：テーマ「人気フォント・ウェブデザイン」（vol.3と重複しない定番フォント）。
+    `montserrat`（モントセラート）・`opensans`（オープンサンス）・`noto-sans-jp`（ノトサンスJP）・`hiragino-kaku`（ヒラギノ角ゴ）・
+    `avenir`（アヴェニール）・`proxima-nova`（プロキシマノヴァ）・`lato`（ラト）・`roboto`（ロボト）・
+    `source-sans-pro`（ソースサンスプロ）・`ubuntu`（ウブントゥ）・`playfair-display`（プレイフェアディスプレイ）・`merriweather`（メリウェザー）・
+    `oswald`（オズワルド）・`raleway`（ラレーウェイ）・`poppins`（ポピンズ）・`inter`（インタ）。
+    ウェブ・UIで広く使われる人気フォントを彷彿とさせるスキン。プレビューは `gallery/skins-fonts-vol4.html`。
+20. **スキン vol.5 を制作**（`catalog/skins.json` に16種追加、総数117→133種）：テーマ「スイーツ・カフェ」。
+    `matcha`（抹茶）・`chocolate`（ショコラ）・`strawberry-cake`（ストロベリーケーキ）・`macaron`（マカロン）・
+    `croissant`（クロワッサン）・`espresso`（エスプレッソ）・`crepe`（クレープ）・`donut`（ドーナツ）・
+    `parfait`（パフェ）・`mochi`（餅）・`dango`（だんご）・`melon-pan`（メロンパン）・`taiyaki`（たい焼き）・
+    `creme-brulee`（クレームブリュレ）・`tart`（タルト）・`pancake`（パンケーキ）。
+    食べ物・スイーツをモチーフにしたカラフルで遊び心のあるスキン。プレビューは `gallery/skins-sweets.html`。
+    vol6 は「金属系」（ユーザーアイディア）を取っておく。
