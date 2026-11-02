@@ -13,9 +13,10 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
+  # （2026-11-02 から trk256 = f80e1de。r10 で上げました）
   # （trk240 = 7344111。アプリ側の受け入れ道具 tools/check-set.mjs に --json が入り、
   #   呼び方・終了コード・--json の項目・--have の形が「契約」として書面に固定された版）
-  TRK_PWA_REF: d93d98bef270efeb26826d576ac3574b828cf119
+  TRK_PWA_REF: f80e1de085658d5ce0efc1caabfd8a61d2e982cc
 
 jobs:
   check:
@@ -96,6 +97,14 @@ jobs:
             node tools/build-pack.mjs "$d" --check --fetch || exit 1
           done
 
+      # r10：配るもの（パック・目録・セットの README）に旧 org の URL が残っていないか。
+      # 引っ越しの記録として旧 URL を残す文書だけは、道具の中で例外にしています
+      - name: 配るものが新 org（Trk-Nexus）を指しているか
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: node tools/check-urls.mjs
+
       # r6 からは 2 つ（first-set＝軽い／font-set＝書体は全部）。記録があるセットだけを検査する
       # （記録がまだ無い定義は「これから配るもの」なので、作らずに飛ばす）
       - name: セットが記録と一致するか（記録のあるセットだけ）
@@ -114,7 +123,7 @@ jobs:
           done
 
       # 記録と一致するだけでなく「アプリが開いて中身を入れられる形か」を、アプリと同じ手順で見る
-      - name: セットがアプリ（trk240）の手順で開けるか
+      - name: セットがアプリ（trk240 以降）の手順で開けるか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
@@ -130,10 +139,10 @@ jobs:
             done
           done
 
-      # 倉庫の決めごと（上）に加えて、**アプリ自身の判定**でも見る（trk240 の tools/check-set.mjs）。
+      # 倉庫の決めごと（上）に加えて、**アプリ自身の判定**でも見る（trk240 以降の tools/check-set.mjs）。
       # trk240 からは --json があるので、日本語の文ではなく数字で判定する（無い版でもそのまま動く）
       # 2 つそろって記録があるときは、**両方の順**で「これから入る分」を数えてもらう
-      - name: セットがアプリ（trk240）の判定でも通るか
+      - name: セットがアプリ（trk240 以降）の判定でも通るか
         working-directory: trk-Avatar-Library
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA

@@ -3,10 +3,10 @@
   "version": 1,
   "name": "鉄道の極太（書体パック）",
   "author": "trk-Avatar-Library",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Train One を同梱した、駅名標のような極太の書体。遠くからでも読ませたい題字やスコア表示に。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "url": "https://github.com/Trk-Nexus/trk-Avatar-Library",
   "fonts": [
     {
       "family": "TrkTrainOne",

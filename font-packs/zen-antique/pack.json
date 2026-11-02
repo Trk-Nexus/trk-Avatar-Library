@@ -3,10 +3,10 @@
   "version": 1,
   "name": "古道具の明朝（書体パック）",
   "author": "trk-Avatar-Library",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Zen Antique を同梱した、古い活字を思わせる明朝体。レトロな紙面や、静かな題字に向きます。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "url": "https://github.com/Trk-Nexus/trk-Avatar-Library",
   "fonts": [
     {
       "family": "TrkZenAntique",

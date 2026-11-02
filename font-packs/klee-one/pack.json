@@ -3,10 +3,10 @@
   "version": 1,
   "name": "筆ペンの手紙（書体パック）",
   "author": "trk-PWA",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Klee One（400／600）を同梱した、鉛筆と筆の中間のような書体のパック。和紙の手ざわりの見た目で、静かな曲に向きます。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "url": "https://github.com/Trk-Nexus/trk-PWA",
   "fonts": [
     {
       "family": "TrkKleeOne",

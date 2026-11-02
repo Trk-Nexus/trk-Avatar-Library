@@ -123,7 +123,7 @@ function guideText(cfg, entries, records, exts, scoped) {
     "",
     "■ 出どころ",
     "",
-    "  https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+    "  https://github.com/Trk-Nexus/trk-Avatar-Library",
     `  セットの名前: ${cfg.title || cfg.name}（アプリに入れるのは ${packNames.length} パック）`,
     "",
   ].join("\n");

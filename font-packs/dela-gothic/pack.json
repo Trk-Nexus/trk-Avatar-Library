@@ -3,10 +3,10 @@
   "version": 1,
   "name": "極太ポスター（書体パック）",
   "author": "trk-PWA",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Dela Gothic One（400）を同梱した極太の書体パック。黒地に赤と黄のポスターのような見た目で、盛り上がる曲に。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-PWA",
+  "url": "https://github.com/Trk-Nexus/trk-PWA",
   "fonts": [
     {
       "family": "TrkDelaGothic",

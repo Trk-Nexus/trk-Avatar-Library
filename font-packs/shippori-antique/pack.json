@@ -3,10 +3,10 @@
   "version": 1,
   "name": "余白のアンティーク（書体パック）",
   "author": "trk-Avatar-Library",
-  "release": "1.0.0",
+  "release": "1.0.1",
   "description": "Shippori Antique を同梱した、余白の似合う低コントラストの書体。静かな本文と、品のある見出しに。",
   "license": "GPL-3.0-or-later（このパックの作り）／書体：OFL-1.1",
-  "url": "https://github.com/TonbokiriRaikiriMuramasa-Taikoubou/trk-Avatar-Library",
+  "url": "https://github.com/Trk-Nexus/trk-Avatar-Library",
   "fonts": [
     {
       "family": "TrkShipporiAntique",
