@@ -66,7 +66,7 @@
   node tools/check-docs.mjs            # README の表・内部リンク・セットの記録が今の中身と合っているか
   ```
 
-- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `d93d98b`**＝2026-11-02・trk252 まで）。
+- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `f80e1de`**＝2026-11-02・trk256 まで）。
   trk-PWA の版が上がったら、**この1行と §7 の記録を一緒に**変えます。固定した版と `main` の両方を見るため、
   週に1回（日曜 21:00 UTC）`upstream-main` ジョブが `main` でも契約を確かめます（失敗しても全体は赤にしません）。
 
