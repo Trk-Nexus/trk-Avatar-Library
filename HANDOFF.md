@@ -708,4 +708,11 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
     `parfait`（パフェ）・`mochi`（餅）・`dango`（だんご）・`melon-pan`（メロンパン）・`taiyaki`（たい焼き）・
     `creme-brulee`（クレームブリュレ）・`tart`（タルト）・`pancake`（パンケーキ）。
     食べ物・スイーツをモチーフにしたカラフルで遊び心のあるスキン。プレビューは `gallery/skins-sweets.html`。
-    vol6 は「金属系」（ユーザーアイディア）を取っておく。
+21. **スキン vol.6 を制作**（`catalog/skins.json` に16種追加、総数133→149種）：テーマ「金属系・神話合金」（ユーザーアイディア）。質感として「金属体験」を重視し、メタリックなグラデーション・鋭いコントラスト・輝きを意識した配色。
+    `silver`（白銀）・`gold`（王家の黄金）・`titanium`（チタン）・`mithril`（ミスリル・ファンタジー軽銀）・
+    `adamantium`（アダマンチウム・不壊黒）・`orichalcum`（オリハルコン・神聖橙金）・`vibranium`（ヴィブラニウム・虚空紫）・
+    `starmetal`（スターメタル・宇宙鋼）・`voidsteel`（ボイドスチール・虚空黒）・`celestial-bronze`（天鋼ブロンズ・半神）・
+    `draconic-iron`（ドラゴンアイアン・炎竜）・`runic-iron`（ルーンアイアン・北欧刻印）・`quicksilver`（水銀・液体銀）・
+    `platinum`（プラチナ・純白）・`ancient-bronze`（古銅・緑青）・`chrome-steel`（クロムスチール・鏡面メッキ）。
+    フォントも各金属の質感に合わせて推敲（Inter / Playfair Display / Montserrat / Garamond / Oswald / Trajan Pro / Futura / Rajdhani / MedievalSharp / Caveat / Didot / Orbitron など）。プレビューは `gallery/skins-metal.html`。
+    生成スクリプトは `tools/generate-skins-vol6-metal.py`。

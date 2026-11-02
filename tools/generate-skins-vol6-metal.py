@@ -1,0 +1,791 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
+# trk-Avatar-Library スキン vol.6 一括生成スクリプト
+#
+# vol.6: 金属系 (Metals & Mythic Alloys) — 16種
+#   銀・金・チタン・プラチナなどの実在金属に加え、
+#   ミスリル・オリハルコン・アダマンチウム・ヴィブラニウムなどの
+#   ゲーム・小説・神話からの架空物質を含む。
+#   質感として「金属体験」を重視し、メタリックなグラデーション、
+#   鋭いコントラスト、輝きを意識した配色に設計。
+#   フォントも各金属の質感に合わせて推敲。
+#
+# catalog/skins.json にマージして使用します。
+
+import json
+from datetime import datetime, timezone
+
+VOL6_IDS = [
+    "silver", "gold", "titanium", "mithril",
+    "adamantium", "orichalcum", "vibranium", "starmetal",
+    "voidsteel", "celestial-bronze", "draconic-iron", "runic-iron",
+    "quicksilver", "platinum", "ancient-bronze", "chrome-steel",
+]
+
+VOL6_SKINS = [
+    {
+        "id": "silver",
+        "label": {
+            "ja": "白銀",
+            "en": "Silver",
+            "zh": "白银",
+            "ko": "은"
+        },
+        "desc": {
+            "ja": "清涼で清純な銀の輝き、月のような静寂",
+            "en": "Cool and pure silver shine, moon-like silence",
+            "zh": "清凉纯净的银光，月光般的静谧",
+            "ko": "시원하고 순수한 은빛, 달빛 같은 정적"
+        },
+        "cat": ["light", "access", "basic"],
+        "font": "\"Inter\",system-ui,sans-serif",
+        "type": {
+            "title": "\"Inter\",sans-serif",
+            "weight": "400",
+            "lh": "1.55",
+            "titleWeight": "600",
+            "titleSpace": ".01em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#e8eaed",
+            "ink": "#2c3e50",
+            "don": "#bdc3c7",
+            "ka": "#7f8c8d",
+            "text": "#2c3e50",
+            "muted": "#95a5a6",
+            "bg": "#f4f6f7",
+            "panel": "rgba(255,255,255,.98)",
+            "field": "#ffffff",
+            "button": "#d5dbdb",
+            "accent": "#bdc3c7",
+            "onAccent": "#2c3e50",
+            "gold": "#ecf0f1",
+            "border": "rgba(44,62,80,.12)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "grayscale(.2) contrast(1.05) brightness(1.02)"
+    },
+    {
+        "id": "gold",
+        "label": {
+            "ja": "王家の黄金",
+            "en": "Royal Gold",
+            "zh": "王室黄金",
+            "ko": "왕실의 금"
+        },
+        "desc": {
+            "ja": "豪華で気高い黄金、王冠と王座の輝き",
+            "en": "Luxurious and noble gold, crown and throne shining",
+            "zh": "豪华高贵的黄金，王冠和王座的光芒",
+            "ko": "호화롭고 기품 있는 금, 왕관과 왕좌의 빛"
+        },
+        "cat": ["grad", "fun", "light"],
+        "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+        "type": {
+            "title": "\"Playfair Display\",serif",
+            "weight": "400",
+            "lh": "1.7",
+            "titleWeight": "700",
+            "titleSpace": ".03em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "linear-gradient(180deg,#ffd700,#b8860b)",
+            "ink": "#1a1a1a",
+            "don": "#d4af37",
+            "ka": "#ffd700",
+            "text": "#1a1a1a",
+            "muted": "#8a6d3b",
+            "bg": "linear-gradient(180deg,#b8860b,#6b4a0b)",
+            "panel": "rgba(255,215,0,.96)",
+            "field": "#fffdf0",
+            "button": "#ffe082",
+            "accent": "#d4af37",
+            "onAccent": "#1a1a1a",
+            "gold": "#ffe082",
+            "border": "rgba(212,175,55,.32)"
+        },
+        "shapes": ["circle", "diamond"],
+        "locked": False,
+        "video": "sepia(.15) saturate(1.3) brightness(1.08) contrast(1.1)"
+    },
+    {
+        "id": "titanium",
+        "label": {
+            "ja": "チタン",
+            "en": "Titanium",
+            "zh": "钛",
+            "ko": "티타늄"
+        },
+        "desc": {
+            "ja": "現代的で強靭なチタン、機械的な無機質感",
+            "en": "Modern and strong titanium, mechanical inorganic texture",
+            "zh": "现代而强韧的钛，机械性的无机质感",
+            "ko": "현대적이고 강인한 티타늄, 기계적인 무미건조한 질감"
+        },
+        "cat": ["dark", "access", "basic"],
+        "font": "\"Montserrat\",system-ui,sans-serif",
+        "type": {
+            "title": "\"Montserrat\",sans-serif",
+            "weight": "500",
+            "lh": "1.45",
+            "titleWeight": "700",
+            "titleSpace": "-.02em",
+            "titleTransform": "uppercase",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#5d6d7e",
+            "ink": "#ecf0f1",
+            "don": "#95a5a6",
+            "ka": "#3498db",
+            "text": "#ecf0f1",
+            "muted": "#7f8c8d",
+            "bg": "#34495e",
+            "panel": "rgba(52,73,94,.96)",
+            "field": "#5d6d7e",
+            "button": "#2c3e50",
+            "accent": "#3498db",
+            "onAccent": "#ffffff",
+            "gold": "#bdc3c7",
+            "border": "rgba(52,152,219,.24)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "grayscale(.4) contrast(1.15) brightness(.9)"
+    },
+    {
+        "id": "mithril",
+        "label": {
+            "ja": "ミスリル",
+            "en": "Mithril",
+            "zh": "秘银",
+            "ko": "미스릴"
+        },
+        "desc": {
+            "ja": "ファンタジーの軽銀、妖精と王族が愛した金属",
+            "en": "Fantasy light-silver, metal loved by fairies and royalty",
+            "zh": "奇幻的轻银，精灵和王族喜爱的金属",
+            "ko": "판타지의 경은, 요정과 왕족이 사랑한 금속"
+        },
+        "cat": ["light", "grad", "fun"],
+        "font": "\"Garamond\",\"Noto Serif JP\",serif",
+        "type": {
+            "title": "\"Garamond\",serif",
+            "weight": "300",
+            "lh": "1.75",
+            "titleWeight": "600",
+            "titleSpace": ".04em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "linear-gradient(180deg,#d4e6f1,#7f8fa6)",
+            "ink": "#2c3e50",
+            "don": "#aed6f1",
+            "ka": "#3498db",
+            "text": "#2c3e50",
+            "muted": "#7f8c8d",
+            "bg": "linear-gradient(180deg,#7f8fa6,#5d6d7e)",
+            "panel": "rgba(255,255,255,.97)",
+            "field": "#ffffff",
+            "button": "#d5dbdb",
+            "accent": "#3498db",
+            "onAccent": "#ffffff",
+            "gold": "#d4e6f1",
+            "border": "rgba(52,152,219,.22)"
+        },
+        "shapes": ["circle", "circle"],
+        "locked": False,
+        "video": "saturate(1.1) brightness(1.05) contrast(1.02)"
+    },
+    {
+        "id": "adamantium",
+        "label": {
+            "ja": "アダマンチウム",
+            "en": "Adamantium",
+            "zh": "亚当合金",
+            "ko": "아다만티움"
+        },
+        "desc": {
+            "ja": "不壊の金属、ダークで重厚な鋼鉄の質感",
+            "en": "Indestructible metal, dark and heavy steel texture",
+            "zh": "不可破坏的金属，深色厚重的钢铁质感",
+            "ko": "불가파괴 금속, 다크하고 무거운 강철 질감"
+        },
+        "cat": ["dark", "access", "fun"],
+        "font": "\"Oswald\",\"Impact\",sans-serif",
+        "type": {
+            "title": "\"Oswald\",sans-serif",
+            "weight": "700",
+            "lh": "1.3",
+            "titleWeight": "800",
+            "titleSpace": "-.04em",
+            "titleTransform": "uppercase",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#1a1a1a",
+            "ink": "#e0e0e0",
+            "don": "#d4af37",
+            "ka": "#95a5a6",
+            "text": "#e0e0e0",
+            "muted": "#666666",
+            "bg": "#0d0d0d",
+            "panel": "rgba(26,26,26,.98)",
+            "field": "#1a1a1a",
+            "button": "#2d2d2d",
+            "accent": "#d4af37",
+            "onAccent": "#0d0d0d",
+            "gold": "#ffd700",
+            "border": "rgba(224,224,224,.20)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "grayscale(.7) contrast(1.25) brightness(.75)"
+    },
+    {
+        "id": "orichalcum",
+        "label": {
+            "ja": "オリハルコン",
+            "en": "Orichalcum",
+            "zh": "奥尔哈尔库姆",
+            "ko": "오리HAL콘"
+        },
+        "desc": {
+            "ja": "古代ギリシャの神聖金属、山吹色の輝き",
+            "en": "Ancient Greek sacred metal, golden-yellow shine",
+            "zh": "古希腊神圣金属，山吹色光泽",
+            "ko": "고대 그리스의 신성한 금속, 산죽색 광채"
+        },
+        "cat": ["grad", "fun", "light"],
+        "font": "\"Trajan Pro\",\"Papyrus\",fantasy",
+        "type": {
+            "title": "\"Trajan Pro\",fantasy",
+            "weight": "400",
+            "lh": "1.6",
+            "titleWeight": "600",
+            "titleSpace": ".05em",
+            "titleTransform": "uppercase",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "linear-gradient(180deg,#daa520,#8b4513)",
+            "ink": "#fffdf0",
+            "don": "#ffd700",
+            "ka": "#b8860b",
+            "text": "#fffdf0",
+            "muted": "#b8860b",
+            "bg": "linear-gradient(180deg,#8b4513,#4a2505)",
+            "panel": "rgba(218,165,32,.96)",
+            "field": "#fffdf0",
+            "button": "#daa520",
+            "accent": "#ffd700",
+            "onAccent": "#4a2505",
+            "gold": "#ffe082",
+            "border": "rgba(255,215,0,.30)"
+        },
+        "shapes": ["circle", "diamond"],
+        "locked": False,
+        "video": "sepia(.3) saturate(1.25) brightness(1.05) contrast(1.1)"
+    },
+    {
+        "id": "vibranium",
+        "label": {
+            "ja": "ヴィブラニウム",
+            "en": "Vibranium",
+            "zh": "振金",
+            "ko": "비브라늄"
+        },
+        "desc": {
+            "ja": "衝撃を吸収する紫金属、ダークで神秘的",
+            "en": "Impact-absorbing purple metal, dark and mysterious",
+            "zh": "吸收冲击的紫色金属，深色神秘",
+            "ko": "충격을 흡수하는 보라색 금속, 다크하고 신비로운"
+        },
+        "cat": ["dark", "grad", "fun"],
+        "font": "\"Futura\",\"Avant Garde\",sans-serif",
+        "type": {
+            "title": "\"Futura\",sans-serif",
+            "weight": "700",
+            "lh": "1.3",
+            "titleWeight": "900",
+            "titleSpace": "-.05em",
+            "titleTransform": "uppercase",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "linear-gradient(180deg,#2e1a47,#0d0b1e)",
+            "ink": "#e0e7ff",
+            "don": "#bb86fc",
+            "ka": "#03dac6",
+            "text": "#e0e7ff",
+            "muted": "#a8a8b8",
+            "bg": "linear-gradient(180deg,#0d0b1e,#000000)",
+            "panel": "rgba(13,11,30,.97)",
+            "field": "#2e1a47",
+            "button": "#3a2a5a",
+            "accent": "#bb86fc",
+            "onAccent": "#130b1e",
+            "gold": "#03dac6",
+            "border": "rgba(187,134,252,.30)"
+        },
+        "shapes": ["circle", "square"],
+        "locked": False,
+        "video": "hue-rotate(270deg) saturate(1.4) brightness(.8) contrast(1.2)"
+    },
+    {
+        "id": "starmetal",
+        "label": {
+            "ja": "スターメタル",
+            "en": "Starmetal",
+            "zh": "星铁",
+            "ko": "스타메탈"
+        },
+        "desc": {
+            "ja": "星から降り注ぐ金属、深宇宙のコバルトブルー",
+            "en": "Metal raining from stars, deep space cobalt blue",
+            "zh": "从星星降落的金属，深空钴蓝",
+            "ko": "별에서 내리는 금속, 심우주의 코발트 블루"
+        },
+        "cat": ["dark", "grad"],
+        "font": "\"Orbitron\",\"Rajdhani\",system-ui,sans-serif",
+        "type": {
+            "title": "\"Orbitron\",sans-serif",
+            "weight": "400",
+            "lh": "1.4",
+            "titleWeight": "700",
+            "titleSpace": ".02em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "linear-gradient(180deg,#0a192f,#071a33)",
+            "ink": "#ccd6f6",
+            "don": "#64ffda",
+            "ka": "#8892b0",
+            "text": "#ccd6f6",
+            "muted": "#4f5b7a",
+            "bg": "linear-gradient(180deg,#071a33,#050c17)",
+            "panel": "rgba(10,25,47,.96)",
+            "field": "#0a192f",
+            "button": "#16213e",
+            "accent": "#64ffda",
+            "onAccent": "#050c17",
+            "gold": "#ccd6f6",
+            "border": "rgba(100,255,218,.28)"
+        },
+        "shapes": ["circle", "circle"],
+        "locked": False,
+        "video": "hue-rotate(200deg) saturate(1.2) brightness(.85) contrast(1.15)"
+    },
+    {
+        "id": "voidsteel",
+        "label": {
+            "ja": "ボイドスチール",
+            "en": "Void Steel",
+            "zh": "虚空钢",
+            "ko": "보이드 스틸"
+        },
+        "desc": {
+            "ja": "虚空の黒鋼、光を吸い込む究極のダーク",
+            "en": "Void black steel, ultimate dark absorbing light",
+            "zh": "虚空黑钢，吸收光的究极深色",
+            "ko": "공허의 검은 강철, 빛을 흡수하는究极 다크"
+        },
+        "cat": ["dark", "access"],
+        "font": "\"Rajdhani\",\"Oswald\",sans-serif",
+        "type": {
+            "title": "\"Rajdhani\",sans-serif",
+            "weight": "400",
+            "lh": "1.4",
+            "titleWeight": "600",
+            "titleSpace": ".01em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#050505",
+            "ink": "#e0e0e0",
+            "don": "#ff0040",
+            "ka": "#00ff88",
+            "text": "#e0e0e0",
+            "muted": "#404040",
+            "bg": "#000000",
+            "panel": "rgba(5,5,5,.99)",
+            "field": "#050505",
+            "button": "#101010",
+            "accent": "#00ff88",
+            "onAccent": "#000000",
+            "gold": "#ff0040",
+            "border": "#ffffff"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "grayscale(1) brightness(.55) contrast(1.5)"
+    },
+    {
+        "id": "celestial-bronze",
+        "label": {
+            "ja": "天鋼ブロンズ",
+            "en": "Celestial Bronze",
+            "zh": "天青铜",
+            "ko": "천강 청동"
+        },
+        "desc": {
+            "ja": "ギリシャ神話の半神のための金属、古代の緑青",
+            "en": "Metal for Greek demigods, ancient verdigris",
+            "zh": "希腊半神的金属，古代铜绿",
+            "ko": "그리스 반신반인을 위한 금속, 고대의 청동 녹청"
+        },
+        "cat": ["life", "grad"],
+        "font": "\"Caslon\",\"Garamond\",serif",
+        "type": {
+            "title": "\"Caslon\",serif",
+            "weight": "400",
+            "lh": "1.7",
+            "titleWeight": "600",
+            "titleSpace": ".03em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#8b4513",
+            "ink": "#fffdf0",
+            "don": "#d4af37",
+            "ka": "#b8860b",
+            "text": "#fffdf0",
+            "muted": "#a0522d",
+            "bg": "#5c4033",
+            "panel": "rgba(139,69,19,.96)",
+            "field": "#8b4513",
+            "button": "#a0522d",
+            "accent": "#d4af37",
+            "onAccent": "#5c4033",
+            "gold": "#ffe082",
+            "border": "rgba(160,82,45,.24)"
+        },
+        "shapes": ["circle", "circle"],
+        "locked": False,
+        "video": "sepia(.4) contrast(1.1) brightness(.95)"
+    },
+    {
+        "id": "draconic-iron",
+        "label": {
+            "ja": "ドラゴンアイアン",
+            "en": "Draconic Iron",
+            "zh": "龙铁",
+            "ko": "드래곤 아이언"
+        },
+        "desc": {
+            "ja": "竜の鱗を思わせる赤黒い鉄、炎の質感",
+            "en": "Red-black iron like dragon scales, flame texture",
+            "zh": "像龙鳞的红黑铁，火焰质感",
+            "ko": "용 비늘을 연상시키는 붉은 검은 철, 불꽃 질감"
+        },
+        "cat": ["fun", "grad", "dark"],
+        "font": "\"Papyrus\",\"Papyrus Custom\",fantasy",
+        "type": {
+            "title": "\"Papyrus\",fantasy",
+            "weight": "400",
+            "lh": "1.5",
+            "titleWeight": "700",
+            "titleSpace": ".04em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "linear-gradient(180deg,#4a0e0e,#1a0303)",
+            "ink": "#ffe6e6",
+            "don": "#ff6b6b",
+            "ka": "#46c2cb",
+            "text": "#ffe6e6",
+            "muted": "#c9ad96",
+            "bg": "linear-gradient(180deg,#1a0303,#0a0101)",
+            "panel": "rgba(74,14,14,.95)",
+            "field": "#2a0e0e",
+            "button": "#4a0e0e",
+            "accent": "#ff6b6b",
+            "onAccent": "#ffffff",
+            "gold": "#ffc861",
+            "border": "rgba(255,107,107,.32)"
+        },
+        "shapes": ["circle", "diamond"],
+        "locked": False,
+        "video": "sepia(.5) saturate(1.3) hue-rotate(-10deg) brightness(.8) contrast(1.25)"
+    },
+    {
+        "id": "runic-iron",
+        "label": {
+            "ja": "ルーンアイアン",
+            "en": "Runic Iron",
+            "zh": "符文铁",
+            "ko": "룬 아이언"
+        },
+        "desc": {
+            "ja": "北欧神話のルーン文字、古き鉄の重み",
+            "en": "Norse rune letters, weight of ancient iron",
+            "zh": "北欧神话的符文文字，古老铁的重量",
+            "ko": "북유럽 신화의 룬 문자, 고대 철의 무게"
+        },
+        "cat": ["dark", "type"],
+        "font": "\"MedievalSharp\",\"Papyrus\",fantasy",
+        "type": {
+            "title": "\"MedievalSharp\",fantasy",
+            "weight": "400",
+            "lh": "1.6",
+            "titleWeight": "600",
+            "titleSpace": ".08em",
+            "titleTransform": "uppercase",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#2c241d",
+            "ink": "#d4c5a8",
+            "don": "#d65a31",
+            "ka": "#8c9eac",
+            "text": "#d4c5a8",
+            "muted": "#8c8272",
+            "bg": "#1a1510",
+            "panel": "rgba(44,36,29,.97)",
+            "field": "#2c241d",
+            "button": "#3a3028",
+            "accent": "#d65a31",
+            "onAccent": "#1a1510",
+            "gold": "#e3c089",
+            "border": "rgba(212,197,168,.25)"
+        },
+        "shapes": ["square", "diamond"],
+        "locked": False,
+        "video": "sepia(.35) contrast(1.1) brightness(.85)"
+    },
+    {
+        "id": "quicksilver",
+        "label": {
+            "ja": "水銀",
+            "en": "Quicksilver",
+            "zh": "水银",
+            "ko": "수은"
+        },
+        "desc": {
+            "ja": "流動する銀、液体金属のような変幻自在な質感",
+            "en": "Flowing silver, liquid metal ever-changing texture",
+            "zh": "流动的银，液态金属般的变幻莫测质感",
+            "ko": "흐르는 은, 액체 금속 같은 변화무쌍한 질감"
+        },
+        "cat": ["grad", "fun", "light"],
+        "font": "\"Caveat\",\"Komodo Axis\",cursive",
+        "type": {
+            "title": "\"Caveat\",cursive",
+            "weight": "400",
+            "lh": "1.5",
+            "titleWeight": "600",
+            "titleSpace": ".02em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "linear-gradient(180deg,#bdc3c7,#7f8c8d)",
+            "ink": "#2c3e50",
+            "don": "#3498db",
+            "ka": "#e74c3c",
+            "text": "#2c3e50",
+            "muted": "#95a5a6",
+            "bg": "linear-gradient(180deg,#7f8c8d,#5d6d7e)",
+            "panel": "rgba(255,255,255,.96)",
+            "field": "#ffffff",
+            "button": "#ecf0f1",
+            "accent": "#3498db",
+            "onAccent": "#ffffff",
+            "gold": "#bdc3c7",
+            "border": "rgba(52,152,219,.24)"
+        },
+        "shapes": ["circle", "circle"],
+        "locked": False,
+        "video": "saturate(1.15) contrast(1.08) brightness(1.04)"
+    },
+    {
+        "id": "platinum",
+        "label": {
+            "ja": "プラチナ",
+            "en": "Platinum",
+            "zh": "铂金",
+            "ko": "백금"
+        },
+        "desc": {
+            "ja": "純白の高貴な金属、気高く清らかな輝き",
+            "en": "Pure white noble metal, noble and pure shine",
+            "zh": "纯白高贵金属，高贵清澈的光泽",
+            "ko": "순백의 고귀한 금속, 기품 있고 깨끗한 광채"
+        },
+        "cat": ["light", "access"],
+        "font": "\"Didot\",\"Bodoni MT\",serif",
+        "type": {
+            "title": "\"Didot\",serif",
+            "weight": "300",
+            "lh": "1.65",
+            "titleWeight": "800",
+            "titleSpace": ".02em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#f5f5f5",
+            "ink": "#262626",
+            "don": "#d4af37",
+            "ka": "#7f8c8d",
+            "text": "#262626",
+            "muted": "#8c8c8c",
+            "bg": "#ffffff",
+            "panel": "rgba(255,255,255,.98)",
+            "field": "#ffffff",
+            "button": "#eaeaea",
+            "accent": "#d4af37",
+            "onAccent": "#ffffff",
+            "gold": "#fffdf0",
+            "border": "rgba(38,38,38,.12)"
+        },
+        "shapes": ["circle", "circle"],
+        "locked": False,
+        "video": "contrast(1.08) brightness(1.03)"
+    },
+    {
+        "id": "ancient-bronze",
+        "label": {
+            "ja": "古銅",
+            "en": "Ancient Bronze",
+            "zh": "古铜",
+            "ko": "고대 청동"
+        },
+        "desc": {
+            "ja": "緑青の古銅、歴史と時の重みを纏う",
+            "en": "Verdigris ancient bronze, wearing history and time",
+            "zh": "铜绿古铜，披着历史与时间的重量",
+            "ko": "녹청 고대 청동, 역사와 시간의 무게를 두른"
+        },
+        "cat": ["life", "grad"],
+        "font": "\"Trajan Pro\",\"Garamond\",serif",
+        "type": {
+            "title": "\"Trajan Pro\",serif",
+            "weight": "400",
+            "lh": "1.65",
+            "titleWeight": "600",
+            "titleSpace": ".04em",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#8b4513",
+            "ink": "#f5deb3",
+            "don": "#d4af37",
+            "ka": "#b8860b",
+            "text": "#f5deb3",
+            "muted": "#a0522d",
+            "bg": "#5c4033",
+            "panel": "rgba(139,69,19,.96)",
+            "field": "#f5deb3",
+            "button": "#8b4513",
+            "accent": "#d4af37",
+            "onAccent": "#5c4033",
+            "gold": "#ffe082",
+            "border": "rgba(160,82,45,.24)"
+        },
+        "shapes": ["circle", "circle"],
+        "locked": False,
+        "video": "sepia(.5) contrast(1.15) brightness(.9)"
+    },
+    {
+        "id": "chrome-steel",
+        "label": {
+            "ja": "クロムスチール",
+            "en": "Chrome Steel",
+            "zh": "铬钢",
+            "ko": "크롬 스틸"
+        },
+        "desc": {
+            "ja": "鏡面メッキの鋼、現代的でスタイリッシュな輝き",
+            "en": "Mirror-plated steel, modern and stylish shine",
+            "zh": "镜面镀铬钢，现代时尚的光泽",
+            "ko": "거울면 도금 강철, 현대적이고 세련된 광채"
+        },
+        "cat": ["dark", "fun", "access"],
+        "font": "\"Orbitron\",\"Rajdhani\",system-ui,sans-serif",
+        "type": {
+            "title": "\"Orbitron\",sans-serif",
+            "weight": "400",
+            "lh": "1.35",
+            "titleWeight": "700",
+            "titleSpace": "-.02em",
+            "titleTransform": "uppercase",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#1a1a1a",
+            "ink": "#fafafa",
+            "don": "#00ffff",
+            "ka": "#bdc3c7",
+            "text": "#fafafa",
+            "muted": "#666666",
+            "bg": "#0a0a0a",
+            "panel": "rgba(26,26,26,.97)",
+            "field": "#1a1a1a",
+            "button": "#2d2d2d",
+            "accent": "#00ffff",
+            "onAccent": "#000000",
+            "gold": "#ffffff",
+            "border": "rgba(255,255,255,.18)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "contrast(1.3) saturate(1.1) brightness(.85)"
+    },
+]
+
+def main():
+    path = "catalog/skins.json"
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+
+    existing_ids = {s["id"] for s in data["skins"]}
+
+    new_ids = []
+    for skin in VOL6_SKINS:
+        if skin["id"] in existing_ids:
+            print(f"スキップ（重複）: {skin['id']}")
+            continue
+        data["skins"].append(skin)
+        existing_ids.add(skin["id"])
+        new_ids.append(skin["id"])
+
+    # カテゴリカウントを再計算
+    cat_count = {}
+    type_count = 0
+    for s in data["skins"]:
+        for c in s["cat"]:
+            cat_count[c] = cat_count.get(c, 0) + 1
+        if "type" in s["cat"]:
+            type_count += 1
+
+    data["count"] = len(data["skins"])
+    data["typeSkins"] = type_count
+    data["categories"] = cat_count
+    data["generatedAt"] = datetime.now(timezone.utc).isoformat()
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+    print(f"追加 vol.6: {new_ids}")
+    print(f"追加数: {len(new_ids)}")
+    print(f"総スキン数: {data['count']}")
+    print(f"カテゴリ: {data['categories']}")
+    print(f"タイプスキン: {data['typeSkins']}")
+
+    return new_ids
+
+if __name__ == "__main__":
+    main()
