@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+title>trk! スキン見本 wizard — ウィザード・オカルト・呪術実験 vol.wizard（16種）— trk-Avatar-Library</title>
+<style>
+  :root{--bg:#0b0c10;--panel:#14161d;--line:#2a2e3a;--text:#f2f3f7;--muted:#a9adbd;--accent:#ff3b55;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif}
+  header{padding:22px 20px 10px;max-width:1200px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}
+  .theme-chip{display:inline-block;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.05em;margin-bottom:10px}
+  .lead{color:var(--muted);font-size:13px;margin:0 0 14px}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 8px}
+  .tools input{flex:1 1 240px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);font:inherit}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}
+  .chip{padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:13px;font-weight:700;cursor:pointer}
+  .chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .count{color:var(--muted);font-size:13px;margin:6px 0 0}
+  main{max-width:1200px;margin:0 auto;padding:14px 20px 60px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .card{border-radius:16px;padding:14px 16px;border:2px solid var(--c-border);background:var(--c-bg);color:var(--c-text);
+    display:flex;flex-direction:column;gap:8px;min-height:200px;position:relative;overflow:hidden;font-family:var(--c-font,inherit)}
+  .card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 40%,rgba(0,0,0,.08) 60%);pointer-events:none}
+  .card .meta{position:absolute;top:10px;right:10px;font-size:10px;font-family:ui-monospace,monospace;color:var(--c-muted);letter-spacing:.05em}
+  .card .dots{display:flex;gap:6px;margin-bottom:4px}
+  .card .dot{width:12px;height:12px;border-radius:50%}
+  .card b{font-size:17px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal)}
+  .card .spec{font-size:18px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal);text-transform:var(--c-transform,none)}
+  .card small{opacity:.85;font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+  .card .cat{margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.08em}
+  .empty{color:var(--muted);padding:40px 0;text-align:center}
+  footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:30px}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <div class="theme-chip">🎨 wizard</div>
+  <h1>trk! スキン見本 wizard <span id="total"></span></h1>
+  <p class="lead">ウィザード・オカルト・呪術実験 vol.wizard（16種）。ブラウザでそのまま開いて見比べられます。</p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="🔍 名前・説明・カテゴリで絞る" autocomplete="off">
+  </div>
+  <div class="chips" id="chips"></div>
+  <p class="count" id="count"></p>
+</header>
+<main><div class="grid" id="grid"></div><p class="empty" id="empty" hidden>見つかりませんでした。言葉を変えてください。</p></main>
+<footer>
+  trk-Avatar-Library スキン wizard（16種）。カタログ: <code>catalog/skins.json</code>。GPL-3.0-or-later。
+</footer>
+<script>
+(function () {
+  const SKINS = [
+  {
+    "id": "wizard-cli",
+    "label": {
+      "ja": "ウィザードCLI",
+      "en": "Wizard CLI",
+      "zh": "巫师命令行",
+      "ko": "마법사 CLI"
+    },
+    "desc": {
+      "ja": "黒い端末に白い呪文、コマンドライン魔術",
+      "en": "Black terminal with white spells, command line wizardry",
+      "zh": "黑色终端上的白色咒语，命令行巫术",
+      "ko": "검은 터미널의 하얀 주문, 명령줄 마법"
+    },
+    "cat": [
+      "wizard",
+      "dark",
+      "access"
+    ],
+    "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+    "type": {
+      "title": "\\\"Courier New\\\",monospace",
+      "weight": "600",
+      "lh": "1.3",
+      "titleWeight": "700",
+      "titleSpace": ".03em",
+      "titleTransform": "",
+      "mark": "> cast spell"
+    },
+    "colors": {
+      "stage": "#0a0a0a",
+      "ink": "#e0e0e0",
+      "don": "#d4af37",
+      "ka": "#666666",
+      "text": "#e0e0e0",
+      "muted": "#333333",
+      "bg": "#050505",
+      "panel": "rgba(5,5,5,.98)",
+      "field": "#0a0a0a",
+      "button": "#1a1a1a",
+      "accent": "#d4af37",
+      "onAccent": "#000000",
+      "gold": "#ffffff",
+      "border": "rgba(212,175,55,.30)"
+    },
+    "shapes": [
+      "square",
+      "square"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-spell",
+    "label": {
+      "ja": "スペルキャスト",
+      "en": "Spell Cast",
+      "zh": "施法",
+      "ko": "주문 시전"
+    },
+    "desc": {
+      "ja": "呪文の発動エフェクト、光の粒子と轟音",
+      "en": "Spell activation effect, particles of light and roar",
+      "zh": "咒语发动效果，光之粒子与轰鸣",
+      "ko": "주문 발동 이펙트, 빛의 입자와 굉음"
+    },
+    "cat": [
+      "wizard",
+      "fun",
+      "grad"
+    ],
+    "font": "\\\"Trajan Pro\\\",\\\"Papyrus\\\",fantasy",
+    "type": {
+      "title": "\\\"Trajan Pro\\\",fantasy",
+      "weight": "400",
+      "lh": "1.6",
+      "titleWeight": "700",
+      "titleSpace": ".08em",
+      "titleTransform": "uppercase",
+      "mark": "✦ CAST ✦"
+    },
+    "colors": {
+      "stage": "#1a0a2e",
+      "ink": "#ffd700",
+      "don": "#bb86fc",
+      "ka": "#74b9ff",
+      "text": "#ffd700",
+      "muted": "#4a2a6a",
+      "bg": "#0f051a",
+      "panel": "rgba(15,5,26,.97)",
+      "field": "#1a0a2e",
+      "button": "#2a1a3e",
+      "accent": "#bb86fc",
+      "onAccent": "#000000",
+      "gold": "#ffe082",
+      "border": "rgba(187,134,252,.35)"
+    },
+    "shapes": [
+      "circle",
+      "diamond"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-grimoire",
+    "label": {
+      "ja": "魔導書",
+      "en": "Grimoire",
+      "zh": "魔导书",
+      "ko": "마도서"
+    },
+    "desc": {
+      "ja": "古びた魔導書、革製表紙と金箔文字",
+      "en": "Ancient grimoire, leather cover and gold foil lettering",
+      "zh": "古旧魔导书，皮革封面与金箔文字",
+      "ko": "낡은 마도서, 가죽 표지와 금박 글씨"
+    },
+    "cat": [
+      "wizard",
+      "life",
+      "grad"
+    ],
+    "font": "\\\"Trajan Pro\\\",\\\"Garamond\\\",\\\"Noto Serif JP\\\",serif",
+    "type": {
+      "title": "\\\"Trajan Pro\\\",serif",
+      "weight": "400",
+      "lh": "1.75",
+      "titleWeight": "600",
+      "titleSpace": ".05em",
+      "titleTransform": "",
+      "mark": "あア漢 Aa 12"
+    },
+    "colors": {
+      "stage": "#3e2723",
+      "ink": "#f5f5f5",
+      "don": "#d4af37",
+      "ka": "#8d6e63",
+      "text": "#f5f5f5",
+      "muted": "#795548",
+      "bg": "#261411",
+      "panel": "rgba(38,20,17,.97)",
+      "field": "#3e2723",
+      "button": "#5d4037",
+      "accent": "#d4af37",
+      "onAccent": "#000000",
+      "gold": "#ffe082",
+      "border": "rgba(212,175,55,.35)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-rune",
+    "label": {
+      "ja": "ルーン文字",
+      "en": "Rune",
+      "zh": "卢恩文字",
+      "ko": "룬 문자"
+    },
+    "desc": {
+      "ja": "北欧ルーン刻印、石板と氷の青",
+      "en": "Nordic rune carving, stone tablet and ice blue",
+      "zh": "北欧卢恩刻印，石板与冰蓝",
+      "ko": "노르드 룬 문자 새김, 돌판과 얼음 파랑"
+    },
+    "cat": [
+      "wizard",
+      "dark",
+      "access"
+    ],
+    "font": "\\\"Cinzel\\\",\\\"Trajan Pro\\\",serif",
+    "type": {
+      "title": "\\\"Cinzel\\\",serif",
+      "weight": "700",
+      "lh": "1.4",
+      "titleWeight": "800",
+      "titleSpace": ".15em",
+      "titleTransform": "uppercase",
+      "mark": "ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ"
+    },
+    "colors": {
+      "stage": "#0f172a",
+      "ink": "#e2e8f0",
+      "don": "#cbd5e1",
+      "ka": "#64748b",
+      "text": "#e2e8f0",
+      "muted": "#475569",
+      "bg": "#020617",
+      "panel": "rgba(2,6,23,.98)",
+      "field": "#0f172a",
+      "button": "#1e293b",
+      "accent": "#cbd5e1",
+      "onAccent": "#000000",
+      "gold": "#f8fafc",
+      "border": "rgba(203,213,225,.30)"
+    },
+    "shapes": [
+      "square",
+      "diamond"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-alchemy",
+    "label": {
+      "ja": "錬金術",
+      "en": "Alchemy",
+      "zh": "炼金术",
+      "ko": "연금술"
+    },
+    "desc": {
+      "ja": "賢者の石、鉛から金への変容、錬金実験",
+      "en": "Philosopher's stone, transmutation of lead to gold, alchemical experiment",
+      "zh": "贤者之石，铅转化为金，炼金实验",
+      "ko": "현자의 돌, 납에서 금으로의 변환, 연금술 실험"
+    },
+    "cat": [
+      "wizard",
+      "fun",
+      "grad"
+    ],
+    "font": "\\\"Caslon\\\",\\\"Garamond\\\",serif",
+    "type": {
+      "title": "\\\"Caslon\\\",serif",
+      "weight": "400",
+      "lh": "1.6",
+      "titleWeight": "600",
+      "titleSpace": ".03em",
+      "titleTransform": "",
+      "mark": "☿ ☽ ♀"
+    },
+    "colors": {
+      "stage": "#4a2c2a",
+      "ink": "#d4af37",
+      "don": "#ffd700",
+      "ka": "#8b4513",
+      "text": "#d4af37",
+      "muted": "#795548",
+      "bg": "#2a1a15",
+      "panel": "rgba(42,26,21,.97)",
+      "field": "#4a2c2a",
+      "button": "#5d4037",
+      "accent": "#ffd700",
+      "onAccent": "#000000",
+      "gold": "#ffe082",
+      "border": "rgba(212,175,55,.35)"
+    },
+    "shapes": [
+      "circle",
+      "square"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-terminal",
+    "label": {
+      "ja": "魔導ターミナル",
+      "en": "Wizard Terminal",
+      "zh": "巫师终端",
+      "ko": "마법사 터미널"
+    },
+    "desc": {
+      "ja": "琥珀色モノクロCRT、呪文のプロンプト",
+      "en": "Amber monochrome CRT, spell prompt",
+      "zh": "琥珀色单色CRT，咒语提示符",
+      "ko": "호박색 단색 CRT, 주문 프롬프트"
+    },
+    "cat": [
+      "wizard",
+      "dark",
+      "life"
+    ],
+    "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+    "type": {
+      "title": "\\\"Courier New\\\",monospace",
+      "weight": "500",
+      "lh": "1.4",
+      "titleWeight": "700",
+      "titleSpace": "0",
+      "titleTransform": "",
+      "mark": "grimoire> _"
+    },
+    "colors": {
+      "stage": "#1a1a00",
+      "ink": "#ffbf00",
+      "don": "#ccaa00",
+      "ka": "#4a4a00",
+      "text": "#ffbf00",
+      "muted": "#554400",
+      "bg": "#0a0a00",
+      "panel": "rgba(10,10,0,.98)",
+      "field": "#1a1a00",
+      "button": "#2a2a00",
+      "accent": "#ffbf00",
+      "onAccent": "#000000",
+      "gold": "#ffff99",
+      "border": "rgba(255,191,0,.30)"
+    },
+    "shapes": [
+      "square",
+      "square"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-cauldron",
+    "label": {
+      "ja": "大釜",
+      "en": "Cauldron",
+      "zh": "大锅",
+      "ko": "대솥"
+    },
+    "desc": {
+      "ja": "魔女の大釜、泡立つ緑のポーション",
+      "en": "Witch's cauldron, bubbling green potion",
+      "zh": "女巫的大锅，冒泡的绿色药水",
+      "ko": "마녀의 대솥, 끓는 녹색 포션"
+    },
+    "cat": [
+      "wizard",
+      "fun",
+      "dark"
+    ],
+    "font": "\\\"Comic Sans MS\\\",\\\"Cursive\\\",fantasy",
+    "type": {
+      "title": "\\\"Comic Sans MS\\\",cursive",
+      "weight": "400",
+      "lh": "1.6",
+      "titleWeight": "600",
+      "titleSpace": ".04em",
+      "titleTransform": "",
+      "mark": "🧪 BUBBLE"
+    },
+    "colors": {
+      "stage": "#1b5e20",
+      "ink": "#a5d6a7",
+      "don": "#81c784",
+      "ka": "#388e3c",
+      "text": "#a5d6a7",
+      "muted": "#66bb6a",
+      "bg": "#0d3b0d",
+      "panel": "rgba(13,59,13,.97)",
+      "field": "#1b5e20",
+      "button": "#2e7d32",
+      "accent": "#81c784",
+      "onAccent": "#000000",
+      "gold": "#c8e6c9",
+      "border": "rgba(129,199,132,.35)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-crystal",
+    "label": {
+      "ja": "クリスタルボール",
+      "en": "Crystal Ball",
+      "zh": "水晶球",
+      "ko": "크리스털 볼"
+    },
+    "desc": {
+      "ja": "水晶占い、未来を映す球体と紫の霧",
+      "en": "Crystal gazing, sphere reflecting the future and purple mist",
+      "zh": "水晶占卜，映照未来的球体与紫色薄雾",
+      "ko": "수정 구 점술, 미래를 비추는 구체와 보라색 안개"
+    },
+    "cat": [
+      "wizard",
+      "grad",
+      "light"
+    ],
+    "font": "\\\"Playfair Display\\\",\\\"Noto Serif JP\\\",serif",
+    "type": {
+      "title": "\\\"Playfair Display\\\",serif",
+      "weight": "400",
+      "lh": "1.7",
+      "titleWeight": "600",
+      "titleSpace": ".03em",
+      "titleTransform": "",
+      "mark": "あア漢 Aa"
+    },
+    "colors": {
+      "stage": "#4a148c",
+      "ink": "#e1bee7",
+      "don": "#ce93d8",
+      "ka": "#ba68c8",
+      "text": "#e1bee7",
+      "muted": "#8e24aa",
+      "bg": "#311b92",
+      "panel": "rgba(49,27,146,.96)",
+      "field": "#4a148c",
+      "button": "#7b1fa2",
+      "accent": "#ce93d8",
+      "onAccent": "#000000",
+      "gold": "#f3e5f5",
+      "border": "rgba(206,147,216,.35)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-tarot",
+    "label": {
+      "ja": "タロット",
+      "en": "Tarot",
+      "zh": "塔罗牌",
+      "ko": "타로"
+    },
+    "desc": {
+      "ja": "タロットカード、運命のカードリーディング",
+      "en": "Tarot cards, card reading of fate",
+      "zh": "塔罗牌，命运的卡片占卜",
+      "ko": "타로 카드, 운명의 카드 리딩"
+    },
+    "cat": [
+      "wizard",
+      "fun",
+      "dark"
+    ],
+    "font": "\\\"Trajan Pro\\\",\\\"Garamond\\\",serif",
+    "type": {
+      "title": "\\\"Trajan Pro\\\",serif",
+      "weight": "400",
+      "lh": "1.65",
+      "titleWeight": "600",
+      "titleSpace": ".04em",
+      "titleTransform": "",
+      "mark": "♰"
+    },
+    "colors": {
+      "stage": "#1a1a2e",
+      "ink": "#e0d8f0",
+      "don": "#bb86fc",
+      "ka": "#74b9ff",
+      "text": "#e0d8f0",
+      "muted": "#4a4a6a",
+      "bg": "#0f0b1e",
+      "panel": "rgba(15,11,30,.97)",
+      "field": "#1a1a2e",
+      "button": "#2a163e",
+      "accent": "#bb86fc",
+      "onAccent": "#0d0b1e",
+      "gold": "#ccd6f6",
+      "border": "rgba(187,134,252,.35)"
+    },
+    "shapes": [
+      "diamond",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-void",
+    "label": {
+      "ja": "ヴォイド",
+      "en": "Void",
+      "zh": "虚空",
+      "ko": "보이드"
+    },
+    "desc": {
+      "ja": "虚無の空間、すべてを飲み込む黒",
+      "en": "Void space, black that swallows everything",
+      "zh": "虚空，吞噬一切的黑",
+      "ko": "공허 공간, 모든 것을 삼키는 검정"
+    },
+    "cat": [
+      "wizard",
+      "dark",
+      "access"
+    ],
+    "font": "\\\"Rajdhani\\\",\\\"Oswald\\\",sans-serif",
+    "type": {
+      "title": "\\\"Rajdhani\\\",sans-serif",
+      "weight": "700",
+      "lh": "1.1",
+      "titleWeight": "900",
+      "titleSpace": "-.04em",
+      "titleTransform": "uppercase",
+      "mark": "Ø"
+    },
+    "colors": {
+      "stage": "#000000",
+      "ink": "#000000",
+      "don": "#111111",
+      "ka": "#0a0a0a",
+      "text": "#000000",
+      "muted": "#1a1a1a",
+      "bg": "#000000",
+      "panel": "rgba(0,0,0,.99)",
+      "field": "#000000",
+      "button": "#050505",
+      "accent": "#1a1a1a",
+      "onAccent": "#000000",
+      "gold": "#2a2a2a",
+      "border": "rgba(26,26,26,.20)"
+    },
+    "shapes": [
+      "square",
+      "square"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-arcane",
+    "label": {
+      "ja": "アーケイン",
+      "en": "Arcane",
+      "zh": "奥秘",
+      "ko": "신비"
+    },
+    "desc": {
+      "ja": "神秘の魔法陣、発光する古代文字",
+      "en": "Mystic magic circle, glowing ancient script",
+      "zh": "神秘魔法阵，发光的古代文字",
+      "ko": "신비한 마법 진, 빛나는 고대 문자"
+    },
+    "cat": [
+      "wizard",
+      "fun",
+      "grad"
+    ],
+    "font": "\\\"Cinzel\\\",\\\"Trajan Pro\\\",serif",
+    "type": {
+      "title": "\\\"Cinzel\\\",serif",
+      "weight": "700",
+      "lh": "1.5",
+      "titleWeight": "800",
+      "titleSpace": ".1em",
+      "titleTransform": "uppercase",
+      "mark": "✧ ARCANE ✧"
+    },
+    "colors": {
+      "stage": "#2d0a3e",
+      "ink": "#00ffff",
+      "don": "#ff00ff",
+      "ka": "#74b9ff",
+      "text": "#00ffff",
+      "muted": "#4a2a6a",
+      "bg": "#1a052e",
+      "panel": "rgba(26,5,46,.97)",
+      "field": "#2d0a3e",
+      "button": "#3d154e",
+      "accent": "#ff00ff",
+      "onAccent": "#000000",
+      "gold": "#00ffff",
+      "border": "rgba(255,0,255,.35)"
+    },
+    "shapes": [
+      "circle",
+      "diamond"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-eldritch",
+    "label": {
+      "ja": "エルドリッチ",
+      "en": "Eldritch",
+      "zh": "异形",
+      "ko": "엘드리트치"
+    },
+    "desc": {
+      "ja": "クトゥルフ的異形、不可視の恐怖と深淵の緑",
+      "en": "Eldritch abomination, invisible terror and abyssal green",
+      "zh": "克苏鲁式异形，无形的恐怖与深渊之绿",
+      "ko": "크툴루식 이형체, 불가시의 공포와 심연의 녹색"
+    },
+    "cat": [
+      "wizard",
+      "dark",
+      "fun"
+    ],
+    "font": "\\\"Cinzel\\\",\\\"Trajan Pro\\\",serif",
+    "type": {
+      "title": "\\\"Cinzel\\\",serif",
+      "weight": "700",
+      "lh": "1.4",
+      "titleWeight": "800",
+      "titleSpace": ".12em",
+      "titleTransform": "uppercase",
+      "mark": "∿"
+    },
+    "colors": {
+      "stage": "#0d2a2a",
+      "ink": "#4ecdc4",
+      "don": "#45b7aa",
+      "ka": "#2c7873",
+      "text": "#4ecdc4",
+      "muted": "#3a6b6b",
+      "bg": "#061a1a",
+      "panel": "rgba(6,26,26,.98)",
+      "field": "#0d2a2a",
+      "button": "#1d3a3a",
+      "accent": "#4ecdc4",
+      "onAccent": "#000000",
+      "gold": "#a8e6cf",
+      "border": "rgba(78,205,196,.35)"
+    },
+    "shapes": [
+      "diamond",
+      "square"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-seance",
+    "label": {
+      "ja": "降霊術",
+      "en": "Seance",
+      "zh": "降灵术",
+      "ko": "강령술"
+    },
+    "desc": {
+      "ja": "ろうそくの灯りと霊媒、あの世との対話",
+      "en": "Candlelight and medium, dialogue with the other world",
+      "zh": "蜡烛之光与降灵师，与另一个世界的对话",
+      "ko": "초불과 영매, 저세상과의 대화"
+    },
+    "cat": [
+      "wizard",
+      "life",
+      "dark"
+    ],
+    "font": "\\\"Garamond\\\",\\\"Noto Serif JP\\\",serif",
+    "type": {
+      "title": "\\\"Garamond\\\",serif",
+      "weight": "400",
+      "lh": "1.75",
+      "titleWeight": "600",
+      "titleSpace": ".05em",
+      "titleTransform": "",
+      "mark": "🕯️"
+    },
+    "colors": {
+      "stage": "#4a2c2a",
+      "ink": "#ffe082",
+      "don": "#d4af37",
+      "ka": "#8d6e63",
+      "text": "#ffe082",
+      "muted": "#795548",
+      "bg": "#2a1a15",
+      "panel": "rgba(42,26,21,.96)",
+      "field": "#4a2c2a",
+      "button": "#5d4037",
+      "accent": "#ffe082",
+      "onAccent": "#000000",
+      "gold": "#ffecb3",
+      "border": "rgba(212,175,55,.30)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-ouija",
+    "label": {
+      "ja": "ウィジャ板",
+      "en": "Ouija",
+      "zh": "灵派",
+      "ko": "위자 보드"
+    },
+    "desc": {
+      "ja": "ウィジャ盤面、文字と数字の円周配置",
+      "en": "Ouija board, letters and numbers in circular layout",
+      "zh": "灵派板面，字母和数字的圆周布置",
+      "ko": "위자 보드, 알파벳과 숫자의 원형 배치"
+    },
+    "cat": [
+      "wizard",
+      "fun",
+      "dark"
+    ],
+    "font": "\\\"Trajan Pro\\\",\\\"Papyrus\\\",fantasy",
+    "type": {
+      "title": "\\\"Trajan Pro\\\",fantasy",
+      "weight": "400",
+      "lh": "1.5",
+      "titleWeight": "600",
+      "titleSpace": ".06em",
+      "titleTransform": "uppercase",
+      "mark": "YES NO"
+    },
+    "colors": {
+      "stage": "#1a1a1a",
+      "ink": "#f5f5f5",
+      "don": "#e0e0e0",
+      "ka": "#666666",
+      "text": "#f5f5f5",
+      "muted": "#333333",
+      "bg": "#0f0f0f",
+      "panel": "rgba(15,15,15,.97)",
+      "field": "#1a1a1a",
+      "button": "#2a2a2a",
+      "accent": "#e0e0e0",
+      "onAccent": "#000000",
+      "gold": "#ffffff",
+      "border": "rgba(224,224,224,.25)"
+    },
+    "shapes": [
+      "circle",
+      "square"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-hermetic",
+    "label": {
+      "ja": "ヘルメティック",
+      "en": "Hermetic",
+      "zh": "赫密斯",
+      "ko": "헤르메스"
+    },
+    "desc": {
+      "ja": "ヘルメス主義、黄金の黄昏と秘教幾何学",
+      "en": "Hermeticism, golden twilight and occult geometry",
+      "zh": "赫密斯主义，金色黄昏与秘教几何",
+      "ko": "헤르메스주의, 황금 황혼과 비밀 기하학"
+    },
+    "cat": [
+      "wizard",
+      "grad",
+      "light"
+    ],
+    "font": "\\\"Trajan Pro\\\",\\\"Caslon\\\",serif",
+    "type": {
+      "title": "\\\"Trajan Pro\\\",serif",
+      "weight": "400",
+      "lh": "1.7",
+      "titleWeight": "600",
+      "titleSpace": ".04em",
+      "titleTransform": "",
+      "mark": "☿"
+    },
+    "colors": {
+      "stage": "#b8860b",
+      "ink": "#fffdf0",
+      "don": "#ffd700",
+      "ka": "#d4af37",
+      "text": "#fffdf0",
+      "muted": "#a08c5a",
+      "bg": "#5c4033",
+      "panel": "rgba(92,64,51,.96)",
+      "field": "#b8860b",
+      "button": "#8b6508",
+      "accent": "#ffd700",
+      "onAccent": "#000000",
+      "gold": "#ffe082",
+      "border": "rgba(212,175,55,.35)"
+    },
+    "shapes": [
+      "square",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "wizard-necromancer",
+    "label": {
+      "ja": "ネクロマンサー",
+      "en": "Necromancer",
+      "zh": "死灵法师",
+      "ko": "네크로맨서"
+    },
+    "desc": {
+      "ja": "死霊術、墓場の土と腐敗の紫",
+      "en": "Necromancy, graveyard soil and decayed purple",
+      "zh": "死灵法术，墓地土壤与腐败紫",
+      "ko": "네크로맨시, 묘지 토양과 부패한 보라색"
+    },
+    "cat": [
+      "wizard",
+      "dark",
+      "fun"
+    ],
+    "font": "\\\"Cinzel\\\",\\\"Trajan Pro\\\",serif",
+    "type": {
+      "title": "\\\"Cinzel\\\",serif",
+      "weight": "700",
+      "lh": "1.35",
+      "titleWeight": "800",
+      "titleSpace": ".08em",
+      "titleTransform": "uppercase",
+      "mark": "☠"
+    },
+    "colors": {
+      "stage": "#1a1a1a",
+      "ink": "#bb86fc",
+      "don": "#d4af37",
+      "ka": "#4a4a4a",
+      "text": "#bb86fc",
+      "muted": "#333333",
+      "bg": "#0a0a0a",
+      "panel": "rgba(10,10,10,.98)",
+      "field": "#1a1a1a",
+      "button": "#2a2a2a",
+      "accent": "#bb86fc",
+      "onAccent": "#000000",
+      "gold": "#ffe082",
+      "border": "rgba(187,134,252,.35)"
+    },
+    "shapes": [
+      "square",
+      "diamond"
+    ],
+    "locked": false
+  }
+];
+  const CAT = {"all": "すべて", "basic": "定番", "light": "ライト", "grad": "グラデーション", "fun": "遊び心", "dark": "ダーク", "access": "見やすさ", "life": "生活", "type": "書体", "miku": "ミク", "glitch": "グリッチ/実験", "wizard": "ウィザード/オカルト"};
+  const ORDER = ["all", "basic", "type", "miku", "dark", "light", "grad", "fun", "access", "life", "glitch", "wizard"];
+  let state = { q:"", cat:"all" };
+
+  function textOf(s) {
+    return [s.label.ja, s.label.en, s.label.zh, s.label.ko, s.desc.ja, s.desc.en, s.desc.zh, s.desc.ko, s.id, s.cat.join(" ")].join(" ").toLowerCase();
+  }
+  function matches(s) {
+    const words = state.q.trim().toLowerCase(/\s+/g, " ").split(/\s+/).filter(Boolean);
+    if (!words.length) return true;
+    const t = textOf(s);
+    return words.every(w => t.indexOf(w) >= 0);
+  }
+  function render() {
+    const grid = document.getElementById("grid");
+    const list = SKINS.filter(s => {
+      if (state.cat !== "all" && s.cat.indexOf(state.cat) < 0) return false;
+      return matches(s);
+    });
+    grid.textContent = "";
+    document.getElementById("empty").hidden = list.length > 0;
+    document.getElementById("count").textContent = list.length === SKINS.length ? "（16種）" : "（" + list.length + "／16種）";
+    list.forEach(s => {
+      const c = s.colors;
+      const el = document.createElement("div");
+      el.className = "card";
+      el.style.setProperty("--c-bg", c.stage);
+      el.style.setProperty("--c-text", c.text);
+      el.style.setProperty("--c-border", c.border);
+      el.style.setProperty("--c-muted", c.muted);
+      if (s.font) el.style.setProperty("--c-font", s.font);
+      if (s.type) {
+        if (s.type.title) el.style.setProperty("--c-title", s.type.title);
+        if (s.type.titleWeight) el.style.setProperty("--c-weight", s.type.titleWeight);
+        if (s.type.titleSpace) el.style.setProperty("--c-space", s.type.titleSpace);
+        if (s.type.titleTransform) el.style.setProperty("--c-transform", s.type.titleTransform);
+      }
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = s.id + " · " + s.cat.join("/");
+      const dots = document.createElement("div");
+      dots.className = "dots";
+      [c.accent, c.gold, c.text].forEach(col => {
+        const d = document.createElement("div");
+        d.className = "dot";
+        d.style.background = col;
+        dots.appendChild(d);
+      });
+      const name = document.createElement("b");
+      name.textContent = (s.locked ? "🔒 " : "") + s.label.ja;
+      const nameEn = document.createElement("div");
+      nameEn.style.fontSize = "12px";
+      nameEn.style.opacity = ".75";
+      nameEn.style.marginBottom = "6px";
+      nameEn.textContent = s.label.en;
+      const spec = document.createElement("div");
+      spec.className = "spec";
+      spec.textContent = s.type && s.type.mark ? s.type.mark : "あア漢 Aa 12";
+      const desc = document.createElement("small");
+      desc.textContent = s.desc.ja || "";
+      const catDiv = document.createElement("div");
+      catDiv.className = "cat";
+      catDiv.textContent = s.cat.map(x => CAT[x] || x).join("  ");
+      el.append(meta, dots, name, nameEn, spec, desc, catDiv);
+      grid.appendChild(el);
+    };
+  }
+  const chips = document.getElementById("chips");
+  ORDER.forEach(k => {
+    const b = document.createElement("button");
+    b.className = "chip" + (k === "all" ? " on" : "");
+    b.type = "button";
+    b.textContent = CAT[k] || k;
+    b.addEventListener("click", () => {
+      state.cat = k;
+      [...chips.children].forEach(x => x.classList.toggle("on", x === b));
+      render();
+    });
+    chips.appendChild(b);
+  });
+  document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+  document.getElementById("total").textContent = "（16種）";
+  render();
+})();
+</script>
+</body>
+</html>

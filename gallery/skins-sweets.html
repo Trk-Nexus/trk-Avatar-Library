@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+title>trk! スキン見本 sweets — スイーツ・カフェ vol.5（16種）— trk-Avatar-Library</title>
+<style>
+  :root{--bg:#0b0c10;--panel:#14161d;--line:#2a2e3a;--text:#f2f3f7;--muted:#a9adbd;--accent:#ff3b55;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif}
+  header{padding:22px 20px 10px;max-width:1200px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}
+  .theme-chip{display:inline-block;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.05em;margin-bottom:10px}
+  .lead{color:var(--muted);font-size:13px;margin:0 0 14px}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 8px}
+  .tools input{flex:1 1 240px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);font:inherit}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}
+  .chip{padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:13px;font-weight:700;cursor:pointer}
+  .chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .count{color:var(--muted);font-size:13px;margin:6px 0 0}
+  main{max-width:1200px;margin:0 auto;padding:14px 20px 60px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .card{border-radius:16px;padding:14px 16px;border:2px solid var(--c-border);background:var(--c-bg);color:var(--c-text);
+    display:flex;flex-direction:column;gap:8px;min-height:200px;position:relative;overflow:hidden;font-family:var(--c-font,inherit)}
+  .card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 40%,rgba(0,0,0,.08) 60%);pointer-events:none}
+  .card .meta{position:absolute;top:10px;right:10px;font-size:10px;font-family:ui-monospace,monospace;color:var(--c-muted);letter-spacing:.05em}
+  .card .dots{display:flex;gap:6px;margin-bottom:4px}
+  .card .dot{width:12px;height:12px;border-radius:50%}
+  .card b{font-size:17px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal)}
+  .card .spec{font-size:18px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal);text-transform:var(--c-transform,none)}
+  .card small{opacity:.85;font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+  .card .cat{margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.08em}
+  .empty{color:var(--muted);padding:40px 0;text-align:center}
+  footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:30px}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <div class="theme-chip">🎨 sweets</div>
+  <h1>trk! スキン見本 sweets <span id="total"></span></h1>
+  <p class="lead">スイーツ・カフェ vol.5（16種）。ブラウザでそのまま開いて見比べられます。</p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="🔍 名前・説明・カテゴリで絞る" autocomplete="off">
+  </div>
+  <div class="chips" id="chips"></div>
+  <p class="count" id="count"></p>
+</header>
+<main><div class="grid" id="grid"></div><p class="empty" id="empty" hidden>見つかりませんでした。言葉を変えてください。</p></main>
+<footer>
+  trk-Avatar-Library スキン sweets（16種）。カタログ: <code>catalog/skins.json</code>。GPL-3.0-or-later。
+</footer>
+<script>
+(function () {
+  const SKINS = [
+  {
+    "id": "matcha",
+    "label": {
+      "ja": "抹茶",
+      "en": "Matcha",
+      "zh": "抹茶",
+      "ko": "말차"
+    },
+    "desc": {
+      "ja": "和スイーツの定番、落ち着いた緑色",
+      "en": "Japanese sweet standard, calm green",
+      "zh": "日式甜点标准，平静的绿色",
+      "ko": "일본 디저트 표준, 차분한 초록색"
+    },
+    "cat": [
+      "light",
+      "grad",
+      "life"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "linear-gradient(180deg,#81c784,#2e7d32)",
+      "ink": "#1b5e20",
+      "don": "#ffab91",
+      "ka": "#a5d6a7",
+      "text": "#1b5e20",
+      "muted": "#81c784",
+      "bg": "linear-gradient(180deg,#c8e6c9,#a5d6a7)",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#c8e6c9",
+      "accent": "#4caf50",
+      "onAccent": "#ffffff",
+      "gold": "#d4e157",
+      "border": "rgba(46,125,50,.22)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "chocolate",
+    "label": {
+      "ja": "ショコラ",
+      "en": "Chocolate",
+      "zh": "巧克力",
+      "ko": "초콜릿"
+    },
+    "desc": {
+      "ja": "濃厚なチョコレート、大人っぽい茶色",
+      "en": "Rich chocolate, adult brown",
+      "zh": "浓郁巧克力，成人色调的棕色",
+      "ko": "진한 초콜릿, 어른스러운 갈색"
+    },
+    "cat": [
+      "light",
+      "grad"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "linear-gradient(180deg,#8d6e63,#4e342e)",
+      "ink": "#efebe9",
+      "don": "#ffab91",
+      "ka": "#bcaaa4",
+      "text": "#efebe9",
+      "muted": "#a1887f",
+      "bg": "linear-gradient(180deg,#d7ccc8,#bcaaa4)",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#bcaaa4",
+      "accent": "#8d6e63",
+      "onAccent": "#efebe9",
+      "gold": "#ffe0b2",
+      "border": "rgba(141,110,99,.24)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "strawberry-cake",
+    "label": {
+      "ja": "ストロベリーケーキ",
+      "en": "Strawberry Cake",
+      "zh": "草莓蛋糕",
+      "ko": "딸기 케이크"
+    },
+    "desc": {
+      "ja": "苺のショートケーキ、甘くて華やかなピンク",
+      "en": "Strawberry shortcake, sweet and gorgeous pink",
+      "zh": "草莓蛋糕，甜美华丽的粉色",
+      "ko": "딸기 쇼트케이크, 달콤하고 화려한 핑크"
+    },
+    "cat": [
+      "light",
+      "fun",
+      "grad"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "linear-gradient(180deg,#fce4ec,#f8bbd0)",
+      "ink": "#880e4f",
+      "don": "#ec407a",
+      "ka": "#f48fb1",
+      "text": "#880e4f",
+      "muted": "#ad1457",
+      "bg": "linear-gradient(180deg,#f8bbd0,#f48fb1)",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#f8bbd0",
+      "accent": "#ec407a",
+      "onAccent": "#ffffff",
+      "gold": "#ffcdd2",
+      "border": "rgba(236,64,122,.24)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "macaron",
+    "label": {
+      "ja": "マカロン",
+      "en": "Macaron",
+      "zh": "马卡龙",
+      "ko": "마카롱"
+    },
+    "desc": {
+      "ja": "パステルカラーのフランス菓子、かわいらしい色合い",
+      "en": "Pastel French confectionery, cute colors",
+      "zh": "淡色法国点心，可爱色调",
+      "ko": "파스텔 컬러 프랑스 과자, 귀여운 색감"
+    },
+    "cat": [
+      "light",
+      "fun",
+      "grad"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "linear-gradient(180deg,#f3e5f5,#e1bee7)",
+      "ink": "#4a148c",
+      "don": "#ce93d8",
+      "ka": "#b39ddb",
+      "text": "#4a148c",
+      "muted": "#9c27b0",
+      "bg": "linear-gradient(180deg,#e1bee7,#ce93d8)",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#e1bee7",
+      "accent": "#ab47bc",
+      "onAccent": "#ffffff",
+      "gold": "#f3e5f5",
+      "border": "rgba(171,71,188,.22)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "croissant",
+    "label": {
+      "ja": "クロワッサン",
+      "en": "Croissant",
+      "zh": "可颂",
+      "ko": "크루아상"
+    },
+    "desc": {
+      "ja": "朝のカフェ、バターの香るゴールド",
+      "en": "Morning cafe, buttery gold",
+      "zh": "早 morning 咖啡厅，黄油香的金色",
+      "ko": "아침 카페, 버터 향의 골드"
+    },
+    "cat": [
+      "light",
+      "grad",
+      "life"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "linear-gradient(180deg,#ffe082,#ffcc80)",
+      "ink": "#bf360c",
+      "don": "#ffcc80",
+      "ka": "#ffe0b2",
+      "text": "#bf360c",
+      "muted": "#ef6c00",
+      "bg": "linear-gradient(180deg,#ffecb3,#ffe0b2)",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#ffecb3",
+      "accent": "#fb8c00",
+      "onAccent": "#ffffff",
+      "gold": "#ffe082",
+      "border": "rgba(251,140,0,.22)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "espresso",
+    "label": {
+      "ja": "エスプレッソ",
+      "en": "Espresso",
+      "zh": "浓缩咖啡",
+      "ko": "에스프레소"
+    },
+    "desc": {
+      "ja": "濃いコーヒー、ダークでシックな夜",
+      "en": "Strong coffee, dark and chic night",
+      "zh": "浓缩咖啡，深色时尚之夜",
+      "ko": "진한 커피, 다크하고 시크한 밤"
+    },
+    "cat": [
+      "dark",
+      "grad"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "linear-gradient(180deg,#3e2723,#212121)",
+      "ink": "#ffebee",
+      "don": "#ffccbc",
+      "ka": "#8d6e63",
+      "text": "#ffebee",
+      "muted": "#795548",
+      "bg": "linear-gradient(180deg,#212121,#121212)",
+      "panel": "rgba(33,33,33,.96)",
+      "field": "#3e2723",
+      "button": "#4e342e",
+      "accent": "#8d6e63",
+      "onAccent": "#212121",
+      "gold": "#d7ccc8",
+      "border": "rgba(121,85,72,.24)"
+    },
+    "shapes": [
+      "circle",
+      "square"
+    ],
+    "locked": false
+  },
+  {
+    "id": "crepe",
+    "label": {
+      "ja": "クレープ",
+      "en": "Crepe",
+      "zh": "薄煎饼",
+      "ko": "크레페"
+    },
+    "desc": {
+      "ja": "フランスの屋台、やわらかな肌色",
+      "en": "French street crepe, soft skin tone",
+      "zh": "法式路边煎饼，柔和肤色",
+      "ko": "프랑스 노점, 부드러운 살색"
+    },
+    "cat": [
+      "light",
+      "fun"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "#ffe0b2",
+      "ink": "#4e342e",
+      "don": "#ff7043",
+      "ka": "#ffccbc",
+      "text": "#4e342e",
+      "muted": "#a1887f",
+      "bg": "#ffe0b2",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#ffccbc",
+      "accent": "#ff7043",
+      "onAccent": "#4e342e",
+      "gold": "#ffd54f",
+      "border": "rgba(78,52,46,.20)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "donut",
+    "label": {
+      "ja": "ドーナツ",
+      "en": "Donut",
+      "zh": "甜甜圈",
+      "ko": "도넛"
+    },
+    "desc": {
+      "ja": "カラフルな glazed ドーナツ、遊び心たっぷり",
+      "en": "Colorful glazed donut, full of playfulness",
+      "zh": "彩色糖霜甜甜圈，充满童心",
+      "ko": "컬러풀한 글레이즈 도넛, 재미가득"
+    },
+    "cat": [
+      "fun",
+      "grad"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "linear-gradient(180deg,#ff9ce0,#ff6b9d)",
+      "ink": "#2d3436",
+      "don": "#fd79a8",
+      "ka": "#a29bfe",
+      "text": "#2d3436",
+      "muted": "#b2bec3",
+      "bg": "linear-gradient(180deg,#ff79a8,#fd79a8)",
+      "panel": "rgba(255,255,255,.95)",
+      "field": "#ffffff",
+      "button": "#ffc8dd",
+      "accent": "#fd79a8",
+      "onAccent": "#2d3436",
+      "gold": "#ffeaa7",
+      "border": "rgba(253,121,168,.24)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "parfait",
+    "label": {
+      "ja": "パフェ",
+      "en": "Parfait",
+      "zh": "圣代",
+      "ko": "파르페"
+    },
+    "desc": {
+      "ja": "層になったアイスパフェ、色とりどり",
+      "en": "Layered ice parfait, colorful",
+      "zh": "分层冰淇淋圣代，色彩缤纷",
+      "ko": "층을 이룬 아이스 파르페, 색색깔"
+    },
+    "cat": [
+      "fun",
+      "grad"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "linear-gradient(180deg,#ff9a9e,#fecfef,#ff9a9e)",
+      "ink": "#2d3436",
+      "don": "#fd79a8",
+      "ka": "#a29bfe",
+      "text": "#2d3436",
+      "muted": "#b2bec3",
+      "bg": "linear-gradient(180deg,#ffc3a1,#afd9fe)",
+      "panel": "rgba(255,255,255,.95)",
+      "field": "#ffffff",
+      "button": "#ffc8dd",
+      "accent": "#e17055",
+      "onAccent": "#2d3436",
+      "gold": "#ffeaa7",
+      "border": "rgba(225,112,85,.24)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "mochi",
+    "label": {
+      "ja": "餅",
+      "en": "Mochi",
+      "zh": "糯米饼",
+      "ko": "떡"
+    },
+    "desc": {
+      "ja": "和菓子の餅、柔らかく白い食感",
+      "en": "Japanese mochi, soft and white texture",
+      "zh": "日式年糕，柔软白色",
+      "ko": "일본 떡, 부드럽고 하얀 식감"
+    },
+    "cat": [
+      "light",
+      "life"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "#fdfdfd",
+      "ink": "#4a4a4a",
+      "don": "#d1c4e9",
+      "ka": "#ffccbc",
+      "text": "#4a4a4a",
+      "muted": "#9e9e9e",
+      "bg": "#f5f5f5",
+      "panel": "rgba(255,255,255,.97)",
+      "field": "#ffffff",
+      "button": "#eeeeee",
+      "accent": "#d1c4e9",
+      "onAccent": "#4a4a4a",
+      "gold": "#fff59d",
+      "border": "rgba(74,74,74,.18)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "dango",
+    "label": {
+      "ja": "だんご",
+      "en": "Dango",
+      "zh": "团子",
+      "ko": "단고"
+    },
+    "desc": {
+      "ja": "三色団子、祭りの屋台をイメージ",
+      "en": "Three-color dango, festival street food",
+      "zh": "三色团子，节日摊位风格",
+      "ko": "삼색 단고, 축제 노점 이미지"
+    },
+    "cat": [
+      "fun",
+      "grad",
+      "life"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "#dce775",
+      "ink": "#33691e",
+      "don": "#f48fb1",
+      "ka": "#4db6ac",
+      "text": "#33691e",
+      "muted": "#827717",
+      "bg": "#fff176",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#fff59d",
+      "accent": "#f48fb1",
+      "onAccent": "#33691e",
+      "gold": "#fff176",
+      "border": "rgba(51,105,30,.20)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "melon-pan",
+    "label": {
+      "ja": "メロンパン",
+      "en": "Melon Pan",
+      "zh": "瓜面包",
+      "ko": "멜론빵"
+    },
+    "desc": {
+      "ja": "日本の菓子パン、クッキー生地のグリッド",
+      "en": "Japanese sweet bread, cookie dough grid",
+      "zh": "日本甜面包，饼干面团网格",
+      "ko": "일본 과자빵, 쿠키 반죽 그리드"
+    },
+    "cat": [
+      "life",
+      "fun"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "#fff9c4",
+      "ink": "#f57f17",
+      "don": "#ffcc80",
+      "ka": "#ffe0b2",
+      "text": "#f57f17",
+      "muted": "#ff6f00",
+      "bg": "#ffe082",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#ffecb3",
+      "accent": "#ffa000",
+      "onAccent": "#fff9c4",
+      "gold": "#ffd54f",
+      "border": "rgba(245,127,23,.22)"
+    },
+    "shapes": [
+      "square",
+      "square"
+    ],
+    "locked": false
+  },
+  {
+    "id": "taiyaki",
+    "label": {
+      "ja": "たい焼き",
+      "en": "Taiyaki",
+      "zh": "鱼形烤饼",
+      "ko": "타이야키"
+    },
+    "desc": {
+      "ja": "和菓子のたい焼き、焦げ茶色の温かさ",
+      "en": "Japanese taiyaki, warm burnt brown",
+      "zh": "日式太阳烧，温暖焦茶色",
+      "ko": "일본 붕어빵, 따뜻한 구운 갈색"
+    },
+    "cat": [
+      "life",
+      "fun"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "#bf360c",
+      "ink": "#ffebee",
+      "don": "#ffab91",
+      "ka": "#d7ccc8",
+      "text": "#ffebee",
+      "muted": "#e65100",
+      "bg": "#d84315",
+      "panel": "rgba(216,67,21,.96)",
+      "field": "#bf360c",
+      "button": "#e64a19",
+      "accent": "#ffab91",
+      "onAccent": "#3e2723",
+      "gold": "#ffccbc",
+      "border": "rgba(230,81,0,.22)"
+    },
+    "shapes": [
+      "circle",
+      "square"
+    ],
+    "locked": false
+  },
+  {
+    "id": "creme-brulee",
+    "label": {
+      "ja": "クレームブリュレ",
+      "en": "Creme Brulee",
+      "zh": "焦糖布丁",
+      "ko": "크렘 브륄레"
+    },
+    "desc": {
+      "ja": "カラメルの表面、ゴールドの輝き",
+      "en": "Caramel surface, golden shine",
+      "zh": "焦糖表面，金色光泽",
+      "ko": "캐러멜 표면, 골드 빛깔"
+    },
+    "cat": [
+      "light",
+      "grad"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "linear-gradient(180deg,#ffe082,#ffb74d)",
+      "ink": "#e65100",
+      "don": "#ffd54f",
+      "ka": "#ffe082",
+      "text": "#e65100",
+      "muted": "#ff6f00",
+      "bg": "linear-gradient(180deg,#ffecb3,#ffe082)",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#ffecb3",
+      "accent": "#ffa000",
+      "onAccent": "#fff9c4",
+      "gold": "#ffd54f",
+      "border": "rgba(230,81,0,.24)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "tart",
+    "label": {
+      "ja": "タルト",
+      "en": "Tart",
+      "zh": "塔",
+      "ko": "타르트"
+    },
+    "desc": {
+      "ja": "フルーツタルト、色とりどりのフルーツ",
+      "en": "Fruit tart, colorful fruits",
+      "zh": "水果塔，色彩缤纷水果",
+      "ko": "과일 타르트, 색색깔 과일"
+    },
+    "cat": [
+      "fun",
+      "grad"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "#ff8a80",
+      "ink": "#bf360c",
+      "don": "#ff5252",
+      "ka": "#aed581",
+      "text": "#bf360c",
+      "muted": "#d32f2f",
+      "bg": "#ffab91",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#ff8a80",
+      "accent": "#ff5252",
+      "onAccent": "#ffffff",
+      "gold": "#ffd54f",
+      "border": "rgba(191,54,12,.22)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  },
+  {
+    "id": "pancake",
+    "label": {
+      "ja": "パンケーキ",
+      "en": "Pancake",
+      "zh": "松饼",
+      "ko": "팬케이크"
+    },
+    "desc": {
+      "ja": "朝食のパンケーキ、バターのイエロー",
+      "en": "Breakfast pancake, buttery yellow",
+      "zh": "早餐松饼，黄油黄色",
+      "ko": "아침 팬케이크, 버터 노란색"
+    },
+    "cat": [
+      "light",
+      "life"
+    ],
+    "font": "",
+    "type": null,
+    "colors": {
+      "stage": "#fff176",
+      "ink": "#f57f17",
+      "don": "#ffd54f",
+      "ka": "#ffe082",
+      "text": "#f57f17",
+      "muted": "#ff6f00",
+      "bg": "#fff59d",
+      "panel": "rgba(255,255,255,.96)",
+      "field": "#ffffff",
+      "button": "#ffe082",
+      "accent": "#ffa000",
+      "onAccent": "#fff9c4",
+      "gold": "#ffeb3b",
+      "border": "rgba(245,127,23,.22)"
+    },
+    "shapes": [
+      "circle",
+      "circle"
+    ],
+    "locked": false
+  }
+];
+  const CAT = {"all": "すべて", "basic": "定番", "light": "ライト", "grad": "グラデーション", "fun": "遊び心", "dark": "ダーク", "access": "見やすさ", "life": "生活", "type": "書体", "miku": "ミク"};
+  const ORDER = ["all", "basic", "type", "miku", "dark", "light", "grad", "fun", "access", "life"];
+  let state = { q:"", cat:"all" };
+
+  function textOf(s) {
+    return [s.label.ja, s.label.en, s.label.zh, s.label.ko, s.desc.ja, s.desc.en, s.desc.zh, s.desc.ko, s.id, s.cat.join(" ")].join(" ").toLowerCase();
+  }
+  function matches(s) {
+    const words = state.q.trim().toLowerCase(/\s+/g, " ").split(/\s+/).filter(Boolean);
+    if (!words.length) return true;
+    const t = textOf(s);
+    return words.every(w => t.indexOf(w) >= 0);
+  }
+  function render() {
+    const grid = document.getElementById("grid");
+    const list = SKINS.filter(s => {
+      if (state.cat !== "all" && s.cat.indexOf(state.cat) < 0) return false;
+      return matches(s);
+    });
+    grid.textContent = "";
+    document.getElementById("empty").hidden = list.length > 0;
+    document.getElementById("count").textContent = list.length === SKINS.length ? "（16種）" : "（" + list.length + "／16種）";
+    list.forEach(s => {
+      const c = s.colors;
+      const el = document.createElement("div");
+      el.className = "card";
+      el.style.setProperty("--c-bg", c.stage);
+      el.style.setProperty("--c-text", c.text);
+      el.style.setProperty("--c-border", c.border);
+      el.style.setProperty("--c-muted", c.muted);
+      if (s.font) el.style.setProperty("--c-font", s.font);
+      if (s.type) {
+        if (s.type.title) el.style.setProperty("--c-title", s.type.title);
+        if (s.type.titleWeight) el.style.setProperty("--c-weight", s.type.titleWeight);
+        if (s.type.titleSpace) el.style.setProperty("--c-space", s.type.titleSpace);
+        if (s.type.titleTransform) el.style.setProperty("--c-transform", s.type.titleTransform);
+      }
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = s.id + " · " + s.cat.join("/");
+      const dots = document.createElement("div");
+      dots.className = "dots";
+      [c.accent, c.gold, c.text].forEach(col => {
+        const d = document.createElement("div");
+        d.className = "dot";
+        d.style.background = col;
+        dots.appendChild(d);
+      });
+      const name = document.createElement("b");
+      name.textContent = (s.locked ? "🔒 " : "") + s.label.ja;
+      const nameEn = document.createElement("div");
+      nameEn.style.fontSize = "12px";
+      nameEn.style.opacity = ".75";
+      nameEn.style.marginBottom = "6px";
+      nameEn.textContent = s.label.en;
+      const spec = document.createElement("div");
+      spec.className = "spec";
+      spec.textContent = s.type && s.type.mark ? s.type.mark : "あア漢 Aa 12";
+      const desc = document.createElement("small");
+      desc.textContent = s.desc.ja || "";
+      const catDiv = document.createElement("div");
+      catDiv.className = "cat";
+      catDiv.textContent = s.cat.map(x => CAT[x] || x).join("  ");
+      el.append(meta, dots, name, nameEn, spec, desc, catDiv);
+      grid.appendChild(el);
+    };
+  }
+  const chips = document.getElementById("chips");
+  ORDER.forEach(k => {
+    const b = document.createElement("button");
+    b.className = "chip" + (k === "all" ? " on" : "");
+    b.type = "button";
+    b.textContent = CAT[k] || k;
+    b.addEventListener("click", () => {
+      state.cat = k;
+      [...chips.children].forEach(x => x.classList.toggle("on", x === b));
+      render();
+    });
+    chips.appendChild(b);
+  });
+  document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+  document.getElementById("total").textContent = "（16種）";
+  render();
+})();
+</script>
+</body>
+</html>

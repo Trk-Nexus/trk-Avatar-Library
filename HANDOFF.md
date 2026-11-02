@@ -677,3 +677,67 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
 15. **書体を足したら `sets/font-set.json` の `files` に足し忘れていないか**（いまは手で列挙している）。
     29 本になると抜けやすいので、r6 のあとに「目録と `font-packs/` にあって、どのセットにも入っていない書体パック」を
     ℹ で知らせる検査を足すか検討（返事9 への返事 §4 の案 1）
+16. **スキン vol.1 を制作**（`catalog/skins.json` に16種追加、総数53→69種）：テーマ「夜の情景と光の色彩」。
+    `lanternAlley`（提灯横丁）・`moonlitTerrace`（月光テラス）・`fireflyValley`（蛍の谷）・`midnightCafe`（深夜喫茶）・
+    `snowyShrine`（雪の神社）・`autumnMaple`（紅葉の夜）・`summerNight`（夏の夜風）・`zenStone`（禅の石庭）・
+    `inkWash`（墨流し・書体スキン）・`paperMoon`（紙月の夜）・`copperHour`（銅色の時）・`lavenderHill`（ラベンダーの丘）・
+    `emeraldNight`（エメラルドの夜）・`cherrySnow`（桜吹雪の夜）・`ironMorning`（鉄の朝）・`goldLeafNight`（金箔の夜）。
+    プレビューは `gallery/skins-vol1.html`。生成スクリプトは `tools/generate-skins-vol1.py`・`tools/generate-vol1-gallery.py`。
+17. **スキン vol.2 を制作**（`catalog/skins.json` に16種追加、総数69→85種）：テーマ「宝石・鉱石」。
+    `ruby`（ルビー）・`sapphire`（サファイア）・`emerald`（エメラルド）・`diamond`（ダイヤモンド）・
+    `amber`（アンバー）・`amethyst`（アメジスト）・`topaz`（トパーズ）・`opal`（オパール）・
+    `quartz`（クォーツ）・`onyx`（オニキス）・`jade`（ジェイド）・`pearl`（パール）・
+    `garnet`（ガーネット）・`citrine`（シトリン）・`turquoise`（ターコイズ）・`obsidian`（オブシディアン）。
+    プレビューは `gallery/skins-jewel.html`。生成スクリプトは `tools/generate-skins-vol2-vol3.py`・`tools/generate-theme-gallery.py`。
+18. **スキン vol.3 を制作**（`catalog/skins.json` に16種追加、総数85→101種）：テーマ「タイポグラフィ・フォントデザイン」。
+    `helvetica`（ヘルベチカ）・`garamond`（ガラモン）・`futura`（フューチュラ）・`bodoni`（ボドーニ）・
+    `caslon`（キャスロン）・`baskerville`（バスカービル）・`gill-sans`（ギルサンド）・`din`（DIN）・
+    `univers`（ユニバース）・`frutiger`（フルティガ）・`optima`（オプティマ）・`rockwell`（ロックウェル）・
+    `copperplate`（カッパープレート）・`didot`（ディドー）・`akzidenz`（アクシデンツ）・`letterpress`（レタープレス）。
+    type フィールドで各書体の特徴（タイトルフォント・太さ・行間・字間・変形）を設計。プレビューは `gallery/skins-typography.html`。
+    vol2・vol3 も随時制作予定。
+19. **スキン vol.4 を制作**（`catalog/skins.json` に16種追加、総数101→117種）：テーマ「人気フォント・ウェブデザイン」（vol.3と重複しない定番フォント）。
+    `montserrat`（モントセラート）・`opensans`（オープンサンス）・`noto-sans-jp`（ノトサンスJP）・`hiragino-kaku`（ヒラギノ角ゴ）・
+    `avenir`（アヴェニール）・`proxima-nova`（プロキシマノヴァ）・`lato`（ラト）・`roboto`（ロボト）・
+    `source-sans-pro`（ソースサンスプロ）・`ubuntu`（ウブントゥ）・`playfair-display`（プレイフェアディスプレイ）・`merriweather`（メリウェザー）・
+    `oswald`（オズワルド）・`raleway`（ラレーウェイ）・`poppins`（ポピンズ）・`inter`（インタ）。
+    ウェブ・UIで広く使われる人気フォントを彷彿とさせるスキン。プレビューは `gallery/skins-fonts-vol4.html`。
+20. **スキン vol.5 を制作**（`catalog/skins.json` に16種追加、総数117→133種）：テーマ「スイーツ・カフェ」。
+    `matcha`（抹茶）・`chocolate`（ショコラ）・`strawberry-cake`（ストロベリーケーキ）・`macaron`（マカロン）・
+    `croissant`（クロワッサン）・`espresso`（エスプレッソ）・`crepe`（クレープ）・`donut`（ドーナツ）・
+    `parfait`（パフェ）・`mochi`（餅）・`dango`（だんご）・`melon-pan`（メロンパン）・`taiyaki`（たい焼き）・
+    `creme-brulee`（クレームブリュレ）・`tart`（タルト）・`pancake`（パンケーキ）。
+    食べ物・スイーツをモチーフにしたカラフルで遊び心のあるスキン。プレビューは `gallery/skins-sweets.html`。
+21. **スキン vol.6 を制作**（`catalog/skins.json` に16種追加、総数133→149種）：テーマ「金属系・神話合金」（ユーザーアイディア）。質感として「金属体験」を重視し、メタリックなグラデーション・鋭いコントラスト・輝きを意識した配色。
+    `silver`（白銀）・`gold`（王家の黄金）・`titanium`（チタン）・`mithril`（ミスリル・ファンタジー軽銀）・
+    `adamantium`（アダマンチウム・不壊黒）・`orichalcum`（オリハルコン・神聖橙金）・`vibranium`（ヴィブラニウム・虚空紫）・
+    `starmetal`（スターメタル・宇宙鋼）・`voidsteel`（ボイドスチール・虚空黒）・`celestial-bronze`（天鋼ブロンズ・半神）・
+    `draconic-iron`（ドラゴンアイアン・炎竜）・`runic-iron`（ルーンアイアン・北欧刻印）・`quicksilver`（水銀・液体銀）・
+    `platinum`（プラチナ・純白）・`ancient-bronze`（古銅・緑青）・`chrome-steel`（クロムスチール・鏡面メッキ）。
+    フォントも各金属の質感に合わせて推敲（Inter / Playfair Display / Montserrat / Garamond / Oswald / Trajan Pro / Futura / Rajdhani / MedievalSharp / Caveat / Didot / Orbitron など）。プレビューは `gallery/skins-metal.html`。
+    生成スクリプトは `tools/generate-skins-vol6-metal.py`。
+22. **スキン vol.7 を制作**（`catalog/skins.json` に16種追加、総数149→165種）：テーマ「カジノ・スロットマシーン・ラグジュアリー」（ユーザーアイディア）。ラグジュアリーな輝きと、賭博が抱えるダークなテーマを混在。スロットのジャックポット、ルーレット、ポーカー、ブラックジャック、ハイローラー、VIPラウンジ、ネオンベガスなどをモチーフ。
+    `casino-royale`（カジノロワイヤル）・`jackpot-777`（ジャックポット777）・`slot-machine`（スロットマシーン）・`roulette-wheel`（ルーレットホイール）・`poker-face`（ポーカーフェイス）・`blackjack-21`（ブラックジャック21）・`high-roller`（ハイローラー）・`vip-lounge`（VIPラウンジ）・`neon-vegas`（ネオンベガス）・`gold-chip`（金チップ）・`diamond-club`（ダイアモンドクラブ）・`midnight-casino`（ミッドナイトカジノ）・`velvet-ropes`（ベルベットロープ）・`champagne-gold`（シャンパンゴールド）・`neon-sign`（ネオンサイン）・`house-edge`（ハウスエッジ・カジノの暗い面）。
+    フォントはカジノ・ラグジュアリーに合わせて推敲（Playfair Display / Orbitron / Rajdhani / Impact / Trajan Pro / Caslon / Oswald / Didot / Montserrat / Garamond / Papyrus / Caveat など）。プレビューは `gallery/skins-casino.html`。
+    生成スクリプトは `tools/generate-skins-vol7-casino.py`。
+23. **スキン vol.8 を制作**（`catalog/skins.json` に16種追加、総数165→181種）：テーマ「宇宙・惑星・星雲」（vol8からブレインストリーミング開始）。星雲、ブラックホール、超新星、パルサー、クエーサーなどの宇宙現象をモチーフ。ダークな宇宙空間と星々の輝き、星雲のカラフルなグラデーションを判定色に落とし込んだ設計。
+    `nebula`（星雲）・`black-hole`（ブラックホール）・`supernova`（超新星）・`pulsar`（パルサー）・`quasar`（クエーサー）・`event-horizon`（事象の地平線）・`dark-matter`（ダークマター）・`wormhole`（ワームホール）・`exoplanet`（系外惑星）・`asteroid-belt`（小惑星帯）・`solar-flare`（太陽フレア）・`lunar-surface`（月面）・`martian-red`（火星赤）・`venus-clouds`（金星雲）・`mercury-core`（水星コア）・`cosmic-dust`（宇宙塵）。
+    フォントは宇宙テーマに合わせて推敲（Orbitron / Rajdhani / Trajan Pro / Impact / Futura / Caslon / Garamond / Inter / Oswald / Caveat など）。プレビューは `gallery/skins-cosmos.html`。
+    生成スクリプトは `tools/generate-skins-vol8-cosmos.py`。
+24. **スキン vol.9 を制作**（`catalog/skins.json` に16種追加、総数181→197種）：テーマ「飲み物・お酒・カフェ」。飲み物の色合いと質感を重視した配色。
+    `whiskey`（ウイスキー）・`wine-red`（ワインレッド）・`champagne`（シャンパン）・`espresso-martini`（エスプレッソマティーニ）・`mojito`（モヒート）・`sake`（日本酒）・`matcha-latte`（抹茶ラテ）・`hot-cocoa`（ホットココア）・`energy-drink`（エナジードリンク）・`soda-pop`（ソーダポップ）・`beer-foam`（ビールフォーム）・`absinthe`（アブシント）・`tequila-sunrise`（テキーラサンライズ）・`old-fashioned`（オールドファッション）・`negroni`（ネグローニ）・`kir-royale`（キールロワイヤル）。
+    フォントは飲み物・カフェテーマに合わせて推敲（Playfair Display / Caslon / Didot / Oswald / Montserrat / Garamond / Trajan Pro / Futura / Papyrus / Caveat / Hiragino Mincho ProN など）。プレビューは `gallery/skins-drinks.html`。
+    生成スクリプトは `tools/generate-skins-vol9-drinks.py`。
+25. **スキン vol.10 を制作**（`catalog/skins.json` に16種追加、総数197→213種）：テーマ「建築・都市・インテリア」。建築の質感と都市の雰囲気を重視した配色。
+    `art-deco`（アールデコ）・`brutalist`（ブルータリズム）・`gothic-cathedral`（ゴシック大聖堂）・`zen-temple`（禅寺）・`tokyo-night`（東京ナイト）・`paris-cafe`（パリカフェ）・`new-york-subway`（ニューヨーク地下鉄）・`venice-canal`（ヴェネチア運河）・`kyoto-machiya`（京都町家）・`desert-mosque`（砂漠モスク）・`ice-hotel`（アイスホテル）・`tree-house`（ツリーハウス）・`lighthouse`（灯台）・`windmill`（風車）・`clock-tower`（時計塔）・`bamboo-forest`（竹林）。
+    フォントは建築・都市テーマに合わせて推敲（Trajan Pro / Oswald / Hiragino Mincho ProN / Impact / Garamond / Montserrat / Caslon / Playfair Display / Rajdhani / Caveat など）。プレビューは `gallery/skins-architecture.html`。
+    生成スクリプトは `tools/generate-skins-vol10-architecture.py`。
+26. **スキン カテゴリ「glitch」を新設・実験スキン16種を制作**（`catalog/skins.json` に16種追加、総数213→229種）：テーマ「glitch-art / pixel-art / デジタル実験」。geek / motherbound / matrix 系などスキンをいじる層に刺さる実験的配色と質感を重視。vol枠に収まらず、カテゴリ `glitch` を個別に持つ。
+    `glitch-core`（グリッチコア）・`pixel-8bit`（ピクセル8ビット）・`matrix-rain`（マトリックス・レイン）・`motherboard`（マザーボード）・`cyberpunk`（サイバーパンク）・`datamosh`（データモッシュ）・`scanline`（スキャンライン）・`vaporwave`（ヴェイパーウェイブ）・`lofi-crt`（ローファイCRT）・`hacker`（ハッカー・ターミナル）・`synthwave`（シンセウェイブ）・`corrupted`（コラプテッド）・`crypto`（クリプト）・`pixel-art`（ピクセルアート）・`glitch-text`（グリッチテキスト）・`neon-grid`（ネオングリッド）。
+    フォントはOrbitron / Press Start 2P / Courier New / Rajdhani など等幅・デジタルフォントを推敲。プレビューは `gallery/skins-glitch.html`。`tools/generate-theme-gallery.py` にカテゴリ `glitch`（グリッチ/実験）を追加。
+    生成スクリプトは `tools/generate-skins-glitch.py`。
+27. **スキン カテゴリ「wizard」を新設・実験スキン16種を制作**（`catalog/skins.json` に16種追加、総数229→245種）：テーマ「Wizard / オカルト・神秘・呪術」。geek/hacker側ではなくWizard側の視野から、CLI・ターミナル、呪文、魔導書、ルーン文字、錬金術、タロット、水晶占い、ヴォイド、エルドリッチ、ヘルメティック、ネクロマンサーなど、汎用性を超えた自由度と実験的なUXを誇る。vol枠に収まらず、カテゴリ `wizard` を個別に持つ。
+    `wizard-cli`（ウィザードCLI）・`wizard-spell`（スペルキャスト）・`wizard-grimoire`（魔導書）・`wizard-rune`（ルーン文字）・`wizard-alchemy`（錬金術）・`wizard-terminal`（魔導ターミナル）・`wizard-cauldron`（大釜）・`wizard-crystal`（クリスタルボール）・`wizard-tarot`（タロット）・`wizard-void`（ヴォイド）・`wizard-arcane`（アーケイン）・`wizard-eldritch`（エルドリッチ）・`wizard-seance`（降霊術）・`wizard-ouija`（ウィジャ板）・`wizard-hermetic`（ヘルメティック）・`wizard-necromancer`（ネクロマンサー）。
+    フォントはTrajan Pro / Cinzel / Garamond / Caslon / Courier New など神秘的・等幅フォントを推敲。プレビューは `gallery/skins-wizard.html`。`tools/generate-theme-gallery.py` にカテゴリ `wizard`（ウィザード/オカルト）を追加。
+    生成スクリプトは `tools/generate-skins-wizard.py`。
+28. **trk CLI 設計書を作成・Google Drive で共有**（`docs/trk-cli-設計.md`）：テーマ「trk CLI / コンソールライク再生操作」。geek/hacker側ではなくWizard側の視野から、`play <track-id>` / `list` / `skin <skin-id>` / `volume` / `seek` / `spell <macro-id>` / `grimoire` などのCLIコマンドを定義。曲や登録ファイルを直で叩く体験は、メディアプレイヤーよりもコンソールを叩く感覚になり、Wizardのようで面白い。スキン側だけでは完結しないため、機能を作った後に導入を再生プレイヤー側に適応する形で開発。実装フェーズは A.設計・構想固め（このリポジトリ＋Google Drive）→ B.スキン側準備（CLI連携強化スキン追加）→ C.trk! 本体実装（CLIパーサー・コマンド実行・設定保存）。Google Drive ファイルID `1gSPdwjz9p-6u7e2aodMvlzh-Zq5-QLN1`（リンク共有・閲覧可能）。
