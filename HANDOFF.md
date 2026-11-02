@@ -724,3 +724,7 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
     `nebula`（星雲）・`black-hole`（ブラックホール）・`supernova`（超新星）・`pulsar`（パルサー）・`quasar`（クエーサー）・`event-horizon`（事象の地平線）・`dark-matter`（ダークマター）・`wormhole`（ワームホール）・`exoplanet`（系外惑星）・`asteroid-belt`（小惑星帯）・`solar-flare`（太陽フレア）・`lunar-surface`（月面）・`martian-red`（火星赤）・`venus-clouds`（金星雲）・`mercury-core`（水星コア）・`cosmic-dust`（宇宙塵）。
     フォントは宇宙テーマに合わせて推敲（Orbitron / Rajdhani / Trajan Pro / Impact / Futura / Caslon / Garamond / Inter / Oswald / Caveat など）。プレビューは `gallery/skins-cosmos.html`。
     生成スクリプトは `tools/generate-skins-vol8-cosmos.py`。
+24. **スキン vol.9 を制作**（`catalog/skins.json` に16種追加、総数181→197種）：テーマ「飲み物・お酒・カフェ」。飲み物の色合いと質感を重視した配色。
+    `whiskey`（ウイスキー）・`wine-red`（ワインレッド）・`champagne`（シャンパン）・`espresso-martini`（エスプレッソマティーニ）・`mojito`（モヒート）・`sake`（日本酒）・`matcha-latte`（抹茶ラテ）・`hot-cocoa`（ホットココア）・`energy-drink`（エナジードリンク）・`soda-pop`（ソーダポップ）・`beer-foam`（ビールフォーム）・`absinthe`（アブシント）・`tequila-sunrise`（テキーラサンライズ）・`old-fashioned`（オールドファッション）・`negroni`（ネグローニ）・`kir-royale`（キールロワイヤル）。
+    フォントは飲み物・カフェテーマに合わせて推敲（Playfair Display / Caslon / Didot / Oswald / Montserrat / Garamond / Trajan Pro / Futura / Papyrus / Caveat / Hiragino Mincho ProN など）。プレビューは `gallery/skins-drinks.html`。
+    生成スクリプトは `tools/generate-skins-vol9-drinks.py`。
