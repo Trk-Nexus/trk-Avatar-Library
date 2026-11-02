@@ -720,3 +720,7 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
     `casino-royale`（カジノロワイヤル）・`jackpot-777`（ジャックポット777）・`slot-machine`（スロットマシーン）・`roulette-wheel`（ルーレットホイール）・`poker-face`（ポーカーフェイス）・`blackjack-21`（ブラックジャック21）・`high-roller`（ハイローラー）・`vip-lounge`（VIPラウンジ）・`neon-vegas`（ネオンベガス）・`gold-chip`（金チップ）・`diamond-club`（ダイアモンドクラブ）・`midnight-casino`（ミッドナイトカジノ）・`velvet-ropes`（ベルベットロープ）・`champagne-gold`（シャンパンゴールド）・`neon-sign`（ネオンサイン）・`house-edge`（ハウスエッジ・カジノの暗い面）。
     フォントはカジノ・ラグジュアリーに合わせて推敲（Playfair Display / Orbitron / Rajdhani / Impact / Trajan Pro / Caslon / Oswald / Didot / Montserrat / Garamond / Papyrus / Caveat など）。プレビューは `gallery/skins-casino.html`。
     生成スクリプトは `tools/generate-skins-vol7-casino.py`。
+23. **スキン vol.8 を制作**（`catalog/skins.json` に16種追加、総数165→181種）：テーマ「宇宙・惑星・星雲」（vol8からブレインストリーミング開始）。星雲、ブラックホール、超新星、パルサー、クエーサーなどの宇宙現象をモチーフ。ダークな宇宙空間と星々の輝き、星雲のカラフルなグラデーションを判定色に落とし込んだ設計。
+    `nebula`（星雲）・`black-hole`（ブラックホール）・`supernova`（超新星）・`pulsar`（パルサー）・`quasar`（クエーサー）・`event-horizon`（事象の地平線）・`dark-matter`（ダークマター）・`wormhole`（ワームホール）・`exoplanet`（系外惑星）・`asteroid-belt`（小惑星帯）・`solar-flare`（太陽フレア）・`lunar-surface`（月面）・`martian-red`（火星赤）・`venus-clouds`（金星雲）・`mercury-core`（水星コア）・`cosmic-dust`（宇宙塵）。
+    フォントは宇宙テーマに合わせて推敲（Orbitron / Rajdhani / Trajan Pro / Impact / Futura / Caslon / Garamond / Inter / Oswald / Caveat など）。プレビューは `gallery/skins-cosmos.html`。
+    生成スクリプトは `tools/generate-skins-vol8-cosmos.py`。
