@@ -16,7 +16,7 @@ env:
   # （2026-11-02 から trk256 = f80e1de。r10 で上げました）
   # （trk240 = 7344111。アプリ側の受け入れ道具 tools/check-set.mjs に --json が入り、
   #   呼び方・終了コード・--json の項目・--have の形が「契約」として書面に固定された版）
-  TRK_PWA_REF: f80e1de085658d5ce0efc1caabfd8a61d2e982cc
+  TRK_PWA_REF: 722409a04de3fd72526f19d87e78c25c97983226
 
 jobs:
   check:
