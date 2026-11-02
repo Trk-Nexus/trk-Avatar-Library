@@ -1,0 +1,792 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
+# trk-Avatar-Library 実験スキン カテゴリ「glitch」一括生成スクリプト
+#
+# テーマ: 「glitch-art / pixel-art / デジタル実験」
+#   glitch-art、ピクセルアート、マトリックス、マザーボード、
+#   サイバーパンク、データモッシュ、CRT、ヴェイパーウェイブ、
+#   ハッカーターミナルなど、スキンをいじる人々（geek / motherbound / matrix
+#   系）に刺さる実験的な配色と質感を重視。
+#
+# 既存vol枠（vol.1〜vol.10）に収まらない実験スキンとして、volを跨いで
+# カテゴリ「glitch」を個別に持つ。16種を1セットとする。
+#
+# catalog/skins.json にマージして使用します。
+
+import json
+from datetime import datetime, timezone
+
+GLITCH_IDS = [
+    "glitch-core", "pixel-8bit", "matrix-rain", "motherboard",
+    "cyberpunk", "datamosh", "scanline", "vaporwave",
+    "lofi-crt", "hacker", "synthwave", "corrupted",
+    "crypto", "pixel-art", "glitch-text", "neon-grid",
+]
+
+GLITCH_SKINS = [
+    {
+        "id": "glitch-core",
+        "label": {
+            "ja": "グリッチコア",
+            "en": "Glitch Core",
+            "zh": "故障核心",
+            "ko": "글리치 코어"
+        },
+        "desc": {
+            "ja": "RGB分解とデータ破壊の美学、デジタルノイズ",
+            "en": "RGB decomposition and data destruction aesthetics, digital noise",
+            "zh": "RGB分解与数据破坏美学，数字噪声",
+            "ko": "RGB 분해와 데이터 파괴 미학, 디지털 노이즈"
+        },
+        "cat": ["glitch", "fun", "dark"],
+        "font": "\\\"Orbitron\\\",\\\"Courier New\\\",\\\"Courier\\\",monospace",
+        "type": {
+            "title": "\\\"Orbitron\\\",monospace",
+            "weight": "700",
+            "lh": "1.15",
+            "titleWeight": "900",
+            "titleSpace": "-.03em",
+            "titleTransform": "uppercase",
+            "mark": "GLITCH 01"
+        },
+        "colors": {
+            "stage": "#0a0a0a",
+            "ink": "#00ffff",
+            "don": "#ff00ff",
+            "ka": "#ffff00",
+            "text": "#00ffff",
+            "muted": "#333333",
+            "bg": "#050505",
+            "panel": "rgba(10,10,10,.96)",
+            "field": "#0a0a0a",
+            "button": "#1a1a1a",
+            "accent": "#ff00ff",
+            "onAccent": "#ffffff",
+            "gold": "#ffff00",
+            "border": "rgba(255,0,255,.35)"
+        },
+        "shapes": ["square", "diamond"],
+        "locked": False,
+        "video": "hue-rotate(0deg) saturate(1.8) contrast(1.4) brightness(.85)"
+    },
+    {
+        "id": "pixel-8bit",
+        "label": {
+            "ja": "ピクセル8ビット",
+            "en": "Pixel 8-bit",
+            "zh": "8位元像素",
+            "ko": "8비트 픽셀"
+        },
+        "desc": {
+            "ja": "8ビット低解像度ドット絵、限定パレット",
+            "en": "8-bit low-resolution pixel art, limited palette",
+            "zh": "8位元低分辨率像素画，有限调色板",
+            "ko": "8비트 저해상도 도트아트, 제한된 팔레트"
+        },
+        "cat": ["glitch", "fun", "light"],
+        "font": "\\\"Press Start 2P\\\",\\\"Courier New\\\",monospace",
+        "type": {
+            "title": "\\\"Press Start 2P\\\",monospace",
+            "weight": "400",
+            "lh": "1.2",
+            "titleWeight": "600",
+            "titleSpace": ".05em",
+            "titleTransform": "uppercase",
+            "mark": "8BIT"
+        },
+        "colors": {
+            "stage": "#2a2a2a",
+            "ink": "#ffffff",
+            "don": "#ff0000",
+            "ka": "#00ff00",
+            "text": "#ffffff",
+            "muted": "#555555",
+            "bg": "#1a1a1a",
+            "panel": "rgba(26,26,26,.97)",
+            "field": "#2a2a2a",
+            "button": "#3a3a3a",
+            "accent": "#00ff00",
+            "onAccent": "#000000",
+            "gold": "#ffff00",
+            "border": "rgba(0,255,0,.30)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "saturate(1.4) contrast(1.25) brightness(.95)"
+    },
+    {
+        "id": "matrix-rain",
+        "label": {
+            "ja": "マトリックス・レイン",
+            "en": "Matrix Rain",
+            "zh": "黑客帝国数字雨",
+            "ko": "매트릭스 비"
+        },
+        "desc": {
+            "ja": "デジタルの緑の雨、落ちゆくコード",
+            "en": "Digital green rain, falling code",
+            "zh": "数字的绿色雨，坠落的代码",
+            "ko": "디지털 녹색 비, 떨어지는 코드"
+        },
+        "cat": ["glitch", "dark", "fun"],
+        "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+        "type": {
+            "title": "\\\"Courier New\\\",monospace",
+            "weight": "700",
+            "lh": "1.1",
+            "titleWeight": "800",
+            "titleSpace": "0",
+            "titleTransform": "",
+            "mark": "01"
+        },
+        "colors": {
+            "stage": "#000000",
+            "ink": "#00ff00",
+            "don": "#00cc00",
+            "ka": "#33ff33",
+            "text": "#00ff00",
+            "muted": "#004400",
+            "bg": "#000000",
+            "panel": "rgba(0,0,0,.98)",
+            "field": "#000000",
+            "button": "#0a0a0a",
+            "accent": "#00ff00",
+            "onAccent": "#000000",
+            "gold": "#66ff66",
+            "border": "rgba(0,255,0,.25)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "hue-rotate(120deg) saturate(1.6) brightness(.7) contrast(1.3)"
+    },
+    {
+        "id": "motherboard",
+        "label": {
+            "ja": "マザーボード",
+            "en": "Motherboard",
+            "zh": "主板",
+            "ko": "마더보드"
+        },
+        "desc": {
+            "ja": "回路基板と電子回路、基板緑と金属パッド",
+            "en": "Circuit board and electronic circuits, PCB green and metal pads",
+            "zh": "电路板和电子线路，PCB绿与金属焊盘",
+            "ko": "회로 기판과 전자 회로, PCB 녹색과 금속 패드"
+        },
+        "cat": ["glitch", "dark", "access"],
+        "font": "\\\"Rajdhani\\\",\\\"Oswald\\\",sans-serif",
+        "type": {
+            "title": "\\\"Rajdhani\\\",sans-serif",
+            "weight": "600",
+            "lh": "1.3",
+            "titleWeight": "800",
+            "titleSpace": "-.01em",
+            "titleTransform": "uppercase",
+            "mark": "M/B"
+        },
+        "colors": {
+            "stage": "#1e3a1e",
+            "ink": "#00ff41",
+            "don": "#b8860b",
+            "ka": "#4a4a4a",
+            "text": "#00ff41",
+            "muted": "#2a4a2a",
+            "bg": "#142214",
+            "panel": "rgba(20,34,20,.97)",
+            "field": "#1e3a1e",
+            "button": "#2a4a2a",
+            "accent": "#00ff41",
+            "onAccent": "#000000",
+            "gold": "#b8860b",
+            "border": "rgba(0,255,65,.30)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "hue-rotate(100deg) saturate(1.4) brightness(.85) contrast(1.15)"
+    },
+    {
+        "id": "cyberpunk",
+        "label": {
+            "ja": "サイバーパンク",
+            "en": "Cyberpunk",
+            "zh": "赛博朋克",
+            "ko": "사이버펑크"
+        },
+        "desc": {
+            "ja": "ネオンと雨の近未来、 magenta×cyan のコントラスト",
+            "en": "Neon and rainy near-future, magenta×cyan contrast",
+            "zh": "霓虹和雨的近未来，品红×青色对比",
+            "ko": "네온과 비의 근미래, 마젠타×시안 대비"
+        },
+        "cat": ["glitch", "fun", "grad"],
+        "font": "\\\"Orbitron\\\",\\\"Futura\\\",system-ui,sans-serif",
+        "type": {
+            "title": "\\\"Orbitron\\\",sans-serif",
+            "weight": "800",
+            "lh": "1.05",
+            "titleWeight": "900",
+            "titleSpace": "-.06em",
+            "titleTransform": "uppercase",
+            "mark": "NEON"
+        },
+        "colors": {
+            "stage": "#050510",
+            "ink": "#00ffff",
+            "don": "#ff00ff",
+            "ka": "#ff0040",
+            "text": "#00ffff",
+            "muted": "#2a1a4a",
+            "bg": "#00000a",
+            "panel": "rgba(5,5,16,.98)",
+            "field": "#050510",
+            "button": "#15152a",
+            "accent": "#ff00ff",
+            "onAccent": "#000000",
+            "gold": "#ffff00",
+            "border": "rgba(0,255,255,.35)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "hue-rotate(200deg) saturate(1.7) brightness(.75) contrast(1.4)"
+    },
+    {
+        "id": "datamosh",
+        "label": {
+            "ja": "データモッシュ",
+            "en": "Datamosh",
+            "zh": "数据压缩",
+            "ko": "데이터 모시"
+        },
+        "desc": {
+            "ja": "動画データ破壊アート、ブロックノイズと色ズレ",
+            "en": "Video data destruction art, block noise and color shift",
+            "zh": "视频数据破坏艺术，块状噪声和色偏",
+            "ko": "동영상 데이터 파괴 예술, 블록 노이즈와 색 이동"
+        },
+        "cat": ["glitch", "fun", "dark"],
+        "font": "\\\"Courier New\\\",monospace",
+        "type": {
+            "title": "\\\"Courier New\\\",monospace",
+            "weight": "700",
+            "lh": "1.2",
+            "titleWeight": "800",
+            "titleSpace": "0",
+            "titleTransform": "",
+            "mark": "MOSH"
+        },
+        "colors": {
+            "stage": "#1a1a2e",
+            "ink": "#ff00ff",
+            "don": "#00ffff",
+            "ka": "#ff0040",
+            "text": "#ff00ff",
+            "muted": "#4a4a6a",
+            "bg": "#0f0f1a",
+            "panel": "rgba(26,26,46,.97)",
+            "field": "#1a1a2e",
+            "button": "#2a2a3e",
+            "accent": "#00ffff",
+            "onAccent": "#000000",
+            "gold": "#ffff00",
+            "border": "rgba(0,255,255,.30)"
+        },
+        "shapes": ["diamond", "square"],
+        "locked": False,
+        "video": "hue-rotate(280deg) saturate(1.5) contrast(1.3) brightness(.8)"
+    },
+    {
+        "id": "scanline",
+        "label": {
+            "ja": "スキャンライン",
+            "en": "Scanline",
+            "zh": "扫描线",
+            "ko": "스캔라인"
+        },
+        "desc": {
+            "ja": "CRTモニターの横縞、レトロゲーム筐体",
+            "en": "CRT monitor horizontal lines, retro game cabinet",
+            "zh": "CRT显示器横线，复古游戏机柜",
+            "ko": "CRT 모니터 가로선, 레트로 게임 캐비닛"
+        },
+        "cat": ["glitch", "dark", "life"],
+        "font": "\\\"Press Start 2P\\\",\\\"Courier New\\\",monospace",
+        "type": {
+            "title": "\\\"Press Start 2P\\\",monospace",
+            "weight": "500",
+            "lh": "1.25",
+            "titleWeight": "700",
+            "titleSpace": ".02em",
+            "titleTransform": "uppercase",
+            "mark": "SCAN"
+        },
+        "colors": {
+            "stage": "#0d0d0d",
+            "ink": "#00ff00",
+            "don": "#cccccc",
+            "ka": "#666666",
+            "text": "#00ff00",
+            "muted": "#2a2a2a",
+            "bg": "#050505",
+            "panel": "rgba(5,5,5,.98)",
+            "field": "#0d0d0d",
+            "button": "#1a1a1a",
+            "accent": "#00ff00",
+            "onAccent": "#000000",
+            "gold": "#ffffff",
+            "border": "rgba(0,255,0,.20)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "grayscale(.2) saturate(1.5) contrast(1.2) brightness(.8)"
+    },
+    {
+        "id": "vaporwave",
+        "label": {
+            "ja": "ヴェイパーウェイブ",
+            "en": "Vaporwave",
+            "zh": "蒸汽波",
+            "ko": "베이퍼웨이브"
+        },
+        "desc": {
+            "ja": "90年代レトロ未来主義、ピンク×パープル×水色",
+            "en": "90s retro futurism, pink×purple×cyan",
+            "zh": "90年代复古未来主义，粉色×紫色×青色",
+            "ko": "90년대 레트로 미래주의, 핑크×퍼플×시안"
+        },
+        "cat": ["glitch", "fun", "light"],
+        "font": "\\\"Trajan Pro\\\",\\\"Papyrus\\\",fantasy",
+        "type": {
+            "title": "\\\"Trajan Pro\\\",fantasy",
+            "weight": "400",
+            "lh": "1.5",
+            "titleWeight": "800",
+            "titleSpace": ".12em",
+            "titleTransform": "uppercase",
+            "mark": "あア漢 Aa"
+        },
+        "colors": {
+            "stage": "#f0a0e0",
+            "ink": "#2a1a4a",
+            "don": "#ff69b4",
+            "ka": "#87ceeb",
+            "text": "#2a1a4a",
+            "muted": "#c080d0",
+            "bg": "#e0b0ff",
+            "panel": "rgba(224,176,255,.96)",
+            "field": "#f0d0ff",
+            "button": "#d090ff",
+            "accent": "#ff69b4",
+            "onAccent": "#ffffff",
+            "gold": "#ffe0ff",
+            "border": "rgba(255,105,180,.35)"
+        },
+        "shapes": ["circle", "circle"],
+        "locked": False,
+        "video": "sepia(.2) saturate(1.3) brightness(1.05)"
+    },
+    {
+        "id": "lofi-crt",
+        "label": {
+            "ja": "ローファイCRT",
+            "en": "Lo-fi CRT",
+            "zh": "低保真CRT",
+            "ko": "로파이 CRT"
+        },
+        "desc": {
+            "ja": "低解像度ブラウン管、ざらついたアナログ感",
+            "en": "Low-resolution CRT, grainy analog feel",
+            "zh": "低分辨率CRT，粗糙的模拟感",
+            "ko": "저해상도 CRT, 거친 아날로그 느낌"
+        },
+        "cat": ["glitch", "dark", "life"],
+        "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+        "type": {
+            "title": "\\\"Courier New\\\",monospace",
+            "weight": "400",
+            "lh": "1.4",
+            "titleWeight": "600",
+            "titleSpace": "0",
+            "titleTransform": "",
+            "mark": "あア漢 Aa 12"
+        },
+        "colors": {
+            "stage": "#1a1a1a",
+            "ink": "#e0e0e0",
+            "don": "#aaaaaa",
+            "ka": "#666666",
+            "text": "#e0e0e0",
+            "muted": "#4a4a4a",
+            "bg": "#0f0f0f",
+            "panel": "rgba(15,15,15,.97)",
+            "field": "#1a1a1a",
+            "button": "#2a2a2a",
+            "accent": "#aaaaaa",
+            "onAccent": "#000000",
+            "gold": "#ffffff",
+            "border": "rgba(170,170,170,.20)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "grayscale(.6) contrast(1.15) brightness(.85)"
+    },
+    {
+        "id": "hacker",
+        "label": {
+            "ja": "ハッカー・ターミナル",
+            "en": "Hacker Terminal",
+            "zh": "黑客终端",
+            "ko": "해커 터미널"
+        },
+        "desc": {
+            "ja": "黒背景緑文字の端末、コマンドライン美学",
+            "en": "Black background green text terminal, command line aesthetics",
+            "zh": "黑色背景绿色文字终端，命令行美学",
+            "ko": "검은 배경 녹색 문자 터미널, 명령줄 미학"
+        },
+        "cat": ["glitch", "dark", "access"],
+        "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+        "type": {
+            "title": "\\\"Courier New\\\",monospace",
+            "weight": "600",
+            "lh": "1.3",
+            "titleWeight": "700",
+            "titleSpace": ".03em",
+            "titleTransform": "",
+            "mark": "root@trk:~#"
+        },
+        "colors": {
+            "stage": "#000000",
+            "ink": "#00ff00",
+            "don": "#00cc00",
+            "ka": "#333333",
+            "text": "#00ff00",
+            "muted": "#005500",
+            "bg": "#000000",
+            "panel": "rgba(0,0,0,.98)",
+            "field": "#000000",
+            "button": "#0a0a0a",
+            "accent": "#00ff00",
+            "onAccent": "#000000",
+            "gold": "#66ff66",
+            "border": "rgba(0,255,0,.25)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "hue-rotate(110deg) saturate(1.4) brightness(.75) contrast(1.25)"
+    },
+    {
+        "id": "synthwave",
+        "label": {
+            "ja": "シンセウェイブ",
+            "en": "Synthwave",
+            "zh": "合成波",
+            "ko": "신스웨이브"
+        },
+        "desc": {
+            "ja": "80年代レトログリッド、夕焼けと太陽",
+            "en": "80s retro grid, sunset and sun",
+            "zh": "80年代复古网格，日落和太阳",
+            "ko": "80년대 레트로 그리드, 일몰과 태양"
+        },
+        "cat": ["glitch", "fun", "grad"],
+        "font": "\\\"Orbitron\\\",\\\"Futura\\\",sans-serif",
+        "type": {
+            "title": "\\\"Orbitron\\\",sans-serif",
+            "weight": "700",
+            "lh": "1.15",
+            "titleWeight": "800",
+            "titleSpace": "-.04em",
+            "titleTransform": "uppercase",
+            "mark": "80s"
+        },
+        "colors": {
+            "stage": "#1a0a2e",
+            "ink": "#ff00ff",
+            "don": "#ffd700",
+            "ka": "#4ecdc4",
+            "text": "#ff00ff",
+            "muted": "#4a2a6a",
+            "bg": "#0f051a",
+            "panel": "rgba(15,5,26,.98)",
+            "field": "#1a0a2e",
+            "button": "#2a1a3e",
+            "accent": "#ff00ff",
+            "onAccent": "#000000",
+            "gold": "#ffd700",
+            "border": "rgba(255,0,255,.35)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "hue-rotate(260deg) saturate(1.5) brightness(.8) contrast(1.25)"
+    },
+    {
+        "id": "corrupted",
+        "label": {
+            "ja": "コラプテッド",
+            "en": "Corrupted",
+            "zh": "损坏",
+            "ko": "손상됨"
+        },
+        "desc": {
+            "ja": "壊れたファイルの美学、断片化と色破綻",
+            "en": "Corrupted file aesthetics, fragmentation and color breakdown",
+            "zh": "损坏文件美学，碎片化和色彩崩溃",
+            "ko": "손상된 파일 미학, 단편화와 색상 붕괴"
+        },
+        "cat": ["glitch", "fun", "dark"],
+        "font": "\\\"Courier New\\\",monospace",
+        "type": {
+            "title": "\\\"Courier New\\\",monospace",
+            "weight": "700",
+            "lh": "1.2",
+            "titleWeight": "800",
+            "titleSpace": "0",
+            "titleTransform": "",
+            "mark": "ERR"
+        },
+        "colors": {
+            "stage": "#1a1a1a",
+            "ink": "#ff0040",
+            "don": "#00ffff",
+            "ka": "#4a4a4a",
+            "text": "#ff0040",
+            "muted": "#333333",
+            "bg": "#0f0f0f",
+            "panel": "rgba(15,15,15,.97)",
+            "field": "#1a1a1a",
+            "button": "#2a2a2a",
+            "accent": "#ff0040",
+            "onAccent": "#ffffff",
+            "gold": "#00ffff",
+            "border": "rgba(255,0,64,.35)"
+        },
+        "shapes": ["diamond", "square"],
+        "locked": False,
+        "video": "hue-rotate(0deg) saturate(1.6) contrast(1.35) brightness(.8)"
+    },
+    {
+        "id": "crypto",
+        "label": {
+            "ja": "クリプト",
+            "en": "Crypto",
+            "zh": "加密",
+            "ko": "크립토"
+        },
+        "desc": {
+            "ja": "ブロックチェーンと暗号通貨、デジタルゴールド",
+            "en": "Blockchain and cryptocurrency, digital gold",
+            "zh": "区块链和加密货币，数字黄金",
+            "ko": "블록체인과 암호화폐, 디지털 골드"
+        },
+        "cat": ["glitch", "fun", "grad"],
+        "font": "\\\"Rajdhani\\\",\\\"Oswald\\\",sans-serif",
+        "type": {
+            "title": "\\\"Rajdhani\\\",sans-serif",
+            "weight": "700",
+            "lh": "1.2",
+            "titleWeight": "800",
+            "titleSpace": "-.02em",
+            "titleTransform": "uppercase",
+            "mark": "₿"
+        },
+        "colors": {
+            "stage": "#0a0a1a",
+            "ink": "#f7931a",
+            "don": "#ffd700",
+            "ka": "#4a4a6a",
+            "text": "#f7931a",
+            "muted": "#2a2a4a",
+            "bg": "#050510",
+            "panel": "rgba(5,5,16,.98)",
+            "field": "#0a0a1a",
+            "button": "#1a1a2a",
+            "accent": "#f7931a",
+            "onAccent": "#000000",
+            "gold": "#ffd700",
+            "border": "rgba(247,147,26,.35)"
+        },
+        "shapes": ["square", "circle"],
+        "locked": False,
+        "video": "saturate(1.3) contrast(1.2) brightness(.9)"
+    },
+    {
+        "id": "pixel-art",
+        "label": {
+            "ja": "ピクセルアート",
+            "en": "Pixel Art",
+            "zh": "像素艺术",
+            "ko": "픽셀 아트"
+        },
+        "desc": {
+            "ja": "ドット絵キャラ、クラシックゲーム画面",
+            "en": "Dot art characters, classic game screen",
+            "zh": "点阵画角色，经典游戏画面",
+            "ko": "도트 아트 캐릭터, 클래식 게임 화면"
+        },
+        "cat": ["glitch", "fun", "light"],
+        "font": "\\\"Press Start 2P\\\",\\\"Courier New\\\",monospace",
+        "type": {
+            "title": "\\\"Press Start 2P\\\",monospace",
+            "weight": "400",
+            "lh": "1.25",
+            "titleWeight": "700",
+            "titleSpace": ".04em",
+            "titleTransform": "uppercase",
+            "mark": "PX"
+        },
+        "colors": {
+            "stage": "#f0f0f0",
+            "ink": "#1a1a1a",
+            "don": "#ff0000",
+            "ka": "#888888",
+            "text": "#1a1a1a",
+            "muted": "#cccccc",
+            "bg": "#ffffff",
+            "panel": "rgba(255,255,255,.97)",
+            "field": "#ffffff",
+            "button": "#e0e0e0",
+            "accent": "#ff0000",
+            "onAccent": "#ffffff",
+            "gold": "#ffd700",
+            "border": "rgba(255,0,0,.20)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "saturate(1.2) contrast(1.15) brightness(1.02)"
+    },
+    {
+        "id": "glitch-text",
+        "label": {
+            "ja": "グリッチテキスト",
+            "en": "Glitch Text",
+            "zh": "故障文字",
+            "ko": "글리치 텍스트"
+        },
+        "desc": {
+            "ja": "文字のデジタル変形、色ずれと断片",
+            "en": "Digital text deformation, color shift and fragments",
+            "zh": "文字的数字变形，色偏和碎片",
+            "ko": "문자의 디지털 변형, 색 이동과 파편"
+        },
+        "cat": ["glitch", "fun", "dark"],
+        "font": "\\\"Orbitron\\\",\\\"Courier New\\\",monospace",
+        "type": {
+            "title": "\\\"Orbitron\\\",monospace",
+            "weight": "800",
+            "lh": "1.0",
+            "titleWeight": "900",
+            "titleSpace": "-.05em",
+            "titleTransform": "uppercase",
+            "mark": "TEXT"
+        },
+        "colors": {
+            "stage": "#050505",
+            "ink": "#ff00ff",
+            "don": "#00ffff",
+            "ka": "#ffff00",
+            "text": "#ff00ff",
+            "muted": "#222222",
+            "bg": "#000000",
+            "panel": "rgba(0,0,0,.98)",
+            "field": "#050505",
+            "button": "#151515",
+            "accent": "#00ffff",
+            "onAccent": "#000000",
+            "gold": "#ffff00",
+            "border": "rgba(255,0,255,.35)"
+        },
+        "shapes": ["square", "diamond"],
+        "locked": False,
+        "video": "hue-rotate(180deg) saturate(1.8) contrast(1.5) brightness(.8)"
+    },
+    {
+        "id": "neon-grid",
+        "label": {
+            "ja": "ネオングリッド",
+            "en": "Neon Grid",
+            "zh": "霓虹网格",
+            "ko": "네온 그리드"
+        },
+        "desc": {
+            "ja": "発光する格子、ワイヤーフレーム空間",
+            "en": "Glowing grid, wireframe space",
+            "zh": "发光的网格，线框空间",
+            "ko": "발광하는 그리드, 와이어프레임 공간"
+        },
+        "cat": ["glitch", "grad", "fun"],
+        "font": "\\\"Rajdhani\\\",\\\"Oswald\\\",sans-serif",
+        "type": {
+            "title": "\\\"Rajdhani\\\",sans-serif",
+            "weight": "600",
+            "lh": "1.25",
+            "titleWeight": "700",
+            "titleSpace": "-.01em",
+            "titleTransform": "",
+            "mark": "GRID"
+        },
+        "colors": {
+            "stage": "#0a0a1a",
+            "ink": "#00ffff",
+            "don": "#ff00ff",
+            "ka": "#4a4a6a",
+            "text": "#00ffff",
+            "muted": "#1a1a3a",
+            "bg": "#05050a",
+            "panel": "rgba(10,10,26,.98)",
+            "field": "#0a0a1a",
+            "button": "#1a1a2a",
+            "accent": "#00ffff",
+            "onAccent": "#000000",
+            "gold": "#ff00ff",
+            "border": "rgba(0,255,255,.35)"
+        },
+        "shapes": ["square", "square"],
+        "locked": False,
+        "video": "hue-rotate(200deg) saturate(1.6) brightness(.75) contrast(1.3)"
+    },
+]
+
+def main():
+    path = "catalog/skins.json"
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+
+    existing_ids = {s["id"] for s in data["skins"]}
+
+    new_ids = []
+    for skin in GLITCH_SKINS:
+        if skin["id"] in existing_ids:
+            print(f"スキップ（重複）: {skin['id']}")
+            continue
+        data["skins"].append(skin)
+        existing_ids.add(skin["id"])
+        new_ids.append(skin["id"])
+
+    # カテゴリカウントを再計算
+    cat_count = {}
+    type_count = 0
+    for s in data["skins"]:
+        for c in s["cat"]:
+            cat_count[c] = cat_count.get(c, 0) + 1
+        if "type" in s["cat"]:
+            type_count += 1
+
+    data["count"] = len(data["skins"])
+    data["typeSkins"] = type_count
+    data["categories"] = cat_count
+    data["generatedAt"] = datetime.now(timezone.utc).isoformat()
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+    print(f"追加 glitch: {new_ids}")
+    print(f"追加数: {len(new_ids)}")
+    print(f"総スキン数: {data['count']}")
+    print(f"カテゴリ: {data['categories']}")
+    print(f"タイプスキン: {data['typeSkins']}")
+
+    return new_ids
+
+if __name__ == "__main__":
+    main()

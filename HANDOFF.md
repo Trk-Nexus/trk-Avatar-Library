@@ -732,3 +732,7 @@ trk-PWA の手紙 `手紙-trk235と書体の検索-2026-11-01.txt`（`.stlib` �
     `art-deco`（アールデコ）・`brutalist`（ブルータリズム）・`gothic-cathedral`（ゴシック大聖堂）・`zen-temple`（禅寺）・`tokyo-night`（東京ナイト）・`paris-cafe`（パリカフェ）・`new-york-subway`（ニューヨーク地下鉄）・`venice-canal`（ヴェネチア運河）・`kyoto-machiya`（京都町家）・`desert-mosque`（砂漠モスク）・`ice-hotel`（アイスホテル）・`tree-house`（ツリーハウス）・`lighthouse`（灯台）・`windmill`（風車）・`clock-tower`（時計塔）・`bamboo-forest`（竹林）。
     フォントは建築・都市テーマに合わせて推敲（Trajan Pro / Oswald / Hiragino Mincho ProN / Impact / Garamond / Montserrat / Caslon / Playfair Display / Rajdhani / Caveat など）。プレビューは `gallery/skins-architecture.html`。
     生成スクリプトは `tools/generate-skins-vol10-architecture.py`。
+26. **スキン カテゴリ「glitch」を新設・実験スキン16種を制作**（`catalog/skins.json` に16種追加、総数213→229種）：テーマ「glitch-art / pixel-art / デジタル実験」。geek / motherbound / matrix 系などスキンをいじる層に刺さる実験的配色と質感を重視。vol枠に収まらず、カテゴリ `glitch` を個別に持つ。
+    `glitch-core`（グリッチコア）・`pixel-8bit`（ピクセル8ビット）・`matrix-rain`（マトリックス・レイン）・`motherboard`（マザーボード）・`cyberpunk`（サイバーパンク）・`datamosh`（データモッシュ）・`scanline`（スキャンライン）・`vaporwave`（ヴェイパーウェイブ）・`lofi-crt`（ローファイCRT）・`hacker`（ハッカー・ターミナル）・`synthwave`（シンセウェイブ）・`corrupted`（コラプテッド）・`crypto`（クリプト）・`pixel-art`（ピクセルアート）・`glitch-text`（グリッチテキスト）・`neon-grid`（ネオングリッド）。
+    フォントはOrbitron / Press Start 2P / Courier New / Rajdhani など等幅・デジタルフォントを推敲。プレビューは `gallery/skins-glitch.html`。`tools/generate-theme-gallery.py` にカテゴリ `glitch`（グリッチ/実験）を追加。
+    生成スクリプトは `tools/generate-skins-glitch.py`。
