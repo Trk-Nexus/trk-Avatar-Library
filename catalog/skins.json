@@ -11050,22 +11050,28 @@
         "don": "#d4af37",
         "ka": "#666666",
         "text": "#e0e0e0",
-        "muted": "#333333",
+        "muted": "#8fd79a",
         "bg": "#050505",
-        "panel": "rgba(5,5,5,.98)",
+        "panel": "#031406",
         "field": "#0a0a0a",
         "button": "#1a1a1a",
         "accent": "#d4af37",
         "onAccent": "#000000",
         "gold": "#ffffff",
-        "border": "rgba(212,175,55,.30)"
+        "border": "#d4af37"
       },
       "shapes": [
         "square",
         "square"
       ],
       "locked": false,
-      "video": "contrast(1.2) brightness(.85)"
+      "video": "contrast(1.2) brightness(.85)",
+      "cli": {
+        "font": "Cascadia Mono, Consolas, monospace",
+        "prompt": "λ",
+        "caret": "#39ff14",
+        "scan": 0.12
+      }
     },
     {
       "id": "wizard-spell",
