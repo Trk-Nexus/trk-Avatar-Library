@@ -21,6 +21,44 @@ export const CLI_DEFAULTS = {
   bell: true,
 };
 
+// wizard 辞書・設定の localStorage キー
+export const WIZARD_STORAGE_KEY = "trk-wizard-data";
+
+// wizard データの初期値
+export const WIZARD_DEFAULTS = {
+  dictionary: {},
+  settings: {
+    theme: "dark",
+    fontSize: "medium",
+    scanLine: 0.15,
+    bell: true,
+  },
+};
+
+// wizard データを localStorage から読み込み
+export function loadWizardData() {
+  try {
+    const raw = localStorage.getItem(WIZARD_STORAGE_KEY);
+    if (!raw) return { ...WIZARD_DEFAULTS };
+    const parsed = JSON.parse(raw);
+    return {
+      dictionary: parsed.dictionary || {},
+      settings: { ...WIZARD_DEFAULTS.settings, ...(parsed.settings || {}) },
+    };
+  } catch (e) {
+    return { ...WIZARD_DEFAULTS };
+  }
+}
+
+// wizard データを localStorage に保存
+export function saveWizardData(data) {
+  try {
+    localStorage.setItem(WIZARD_STORAGE_KEY, JSON.stringify(data));
+  } catch (e) {
+    // localStorage 使用不可時は無視
+  }
+}
+
 // コマンド履歴
 export class CliHistory {
   constructor(max = 50) {
@@ -105,6 +143,7 @@ export class CliCommands {
     this.skinManager = skinManager;
     this.history = new CliHistory(CLI_DEFAULTS.history);
     this.bell = new CliBell(CLI_DEFAULTS.bell);
+    this.wizardData = loadWizardData();
   }
 
   setHistoryMax(n) {
@@ -158,7 +197,7 @@ export class CliCommands {
         return this.cmdGrep(args, stdin);
       case "man":
       case "help":
-        return this.cmdMan();
+        return this.cmdMan(args);
       case "history":
         return this.cmdHistory(args);
       case "clear":
@@ -167,6 +206,8 @@ export class CliCommands {
         return args;
       case "bell":
         return this.cmdBell(args);
+      case "wizard":
+        return this.cmdWizard(args);
       default:
         return `コマンドが見つかりません: ${name}`;
     }
@@ -214,7 +255,14 @@ export class CliCommands {
     return lines.length > 0 ? lines.join("\n") : "(一致なし)";
   }
 
-  cmdMan() {
+  cmdMan(args = "") {
+    const lower = args.trim().toLowerCase();
+    if (lower === "-wizard" || lower === "--wizard") {
+      return this.cmdWizardHelp();
+    }
+    if (lower === "--tutorial") {
+      return this.cmdTutorial();
+    }
     return `trk CLI 定番コマンド:
   pwd        カレントパスを表示
   ls / list / dir  ファイル一覧
@@ -222,11 +270,153 @@ export class CliCommands {
   cat <#>    曲情報を表示
   grep <語句>  テキストを検索
   man / help  このヘルプを表示
+  help -wizard  wizard機能一覧を表示
+  help --tutorial  初心者向けチュートリアルを表示
   history    コマンド履歴
   clear      画面をクリア
   echo <text>  テキストを表示
   bell on|off  ベル音を切替
+  wizard     wizard辞書・設定を管理
   ;  |        コマンドをつなぐ`;
+  }
+
+  cmdWizardHelp() {
+    return `wizard機能一覧（Special UX Experiences）:
+
+  wizard            現在のwizard設定と辞書を表示
+  wizard <単語> rec  単語をwizard辞書に登録
+  wizard rec <単語>  単語をwizard辞書に登録（同上）
+  wizard dict        登録済み辞書一覧を表示
+  wizard export      設定をJSON形式でエクスポート
+  wizard import      エクスポート済み設定をインポート
+  wizard reset       辞書と設定をリセット
+
+  特殊体験スキン:
+  wizard-aura-caster     マウス追従オーラ＋グラデーションアニメーション
+  wizard-glitch-sorcerer  グリッチ・色ずれ・走査線エフェクト
+  wizard-crystal-gazer   ガラスモーフィズム＋backdrop-filterぼかし
+  wizard-void-walker     発光テキスト＋星屑ドリフトエフェクト
+  wizard-view-transition-master  View Transitions API スムーズ遷移
+  wizard-anchor-positioner  Anchor Positioning アンカー固定
+  wizard-scroll-driven-visionary  Scroll-driven Animations スクロール連動
+  wizard-container-query-responder  Container Queries コンテナ連動レイアウト
+  wizard-reduce-motion-accessor  prefers-reduced-motion モーション制御
+  wizard-focus-ring-navigator  :focus-visible キーボード完全操作`;
+  }
+
+  cmdTutorial() {
+    return `🎓 trk Wizard チュートリアル—最初の体験:
+
+1. スキンを変更してみる
+   cd wizard-cli        黒端末ウィザードCLIを適用
+   cd wizard-aura-caster オーラキャスター（発光オーラ体験）
+
+2. 辞書に単語を登録する
+   wizard 魔導書 rec    「魔導書」を辞書登録
+   wizard rec 呪文      「呪文」を辞書登録（別形式）
+   wizard dict          登録済み一覧を表示
+
+3. 設定をエクスポートして持ち運ぶ
+   wizard export        現在の設定をJSONで出力
+   （出力内容をコピーし、別環境で wizard import で復元）
+
+4. キーボードショートカット
+   Ctrl+K / Cmd+K  設定パネルを開閉
+   Esc             パネル・ポップオーバーを閉じる
+   ?               ショートカットヘルプを表示
+   ↓ / ↑           スキン一覧をナビゲート
+   Enter / Space   スキンを適用
+
+まずは「cd wizard-aura-caster」でオーラキャスターを試してみてください！`;
+  }
+
+  cmdWizard(args = "") {
+    const parts = args.trim().split(/\s+/).filter(Boolean);
+    if (parts.length === 0) {
+      // 引数なし: 現在の設定と辞書数を表示
+      const dictCount = Object.keys(this.wizardData.dictionary).length;
+      return `wizard設定:
+  テーマ: ${this.wizardData.settings.theme}
+  フォントサイズ: ${this.wizardData.settings.fontSize}
+  スキャンライン: ${this.wizardData.settings.scanLine}
+  ベル音: ${this.wizardData.settings.bell ? "on" : "off"}
+  辞書登録数: ${dictCount} 語
+
+  使用方法:
+  wizard <単語> rec    単語を辞書登録
+  wizard rec <単語>    同上（別形式）
+  wizard dict          辞書一覧表示
+  wizard export        設定をエクスポート
+  wizard import        設定をインポート
+  wizard reset         リセット`;
+    }
+
+    const first = parts[0].toLowerCase();
+
+    // wizard export / import / reset / dict
+    if (first === "export") {
+      const json = JSON.stringify(this.wizardData, null, 2);
+      return `wizard設定エクスポート:\n${json}`;
+    }
+    if (first === "import") {
+      // import の引数はスペースを含むJSONを考慮し、args から "import " を除いた残りをそのまま使う
+      const jsonStr = args.trim().replace(/^import\s+/i, "").trim();
+      if (!jsonStr) {
+        return "wizard import <JSON文字列>  でインポートしてください。\n例: wizard import '{\"dictionary\":{\"魔導書\":\"魔導書\"},\"settings\":{\"theme\":\"dark\"}}'";
+      }
+      try {
+        const parsed = JSON.parse(jsonStr);
+        if (parsed.dictionary) this.wizardData.dictionary = { ...this.wizardData.dictionary, ...parsed.dictionary };
+        if (parsed.settings) this.wizardData.settings = { ...this.wizardData.settings, ...parsed.settings };
+        saveWizardData(this.wizardData);
+        return "wizard設定をインポートしました。";
+      } catch (e) {
+        return "エラー: JSONの解析に失敗しました。正しいJSON形式で入力してください。";
+      }
+    }
+    if (first === "reset") {
+      this.wizardData = { ...WIZARD_DEFAULTS };
+      saveWizardData(this.wizardData);
+      return "wizard設定と辞書をリセットしました。";
+    }
+    if (first === "dict" || first === "list") {
+      const dict = this.wizardData.dictionary;
+      const keys = Object.keys(dict);
+      if (keys.length === 0) return "辞書に登録された単語はありません。";
+      return `wizard辞書（${keys.length}語）:\n` + keys.map((k) => `  ${k} → ${dict[k]}`).join("\n");
+    }
+
+    // wizard <単語> rec または wizard rec <単語>
+    let targetWord = null;
+    if (parts.length >= 2 && parts[1] === "rec") {
+      targetWord = parts[0];
+    } else if (first === "rec" && parts.length >= 2) {
+      targetWord = parts.slice(1).join(" ");
+    } else if (parts.length >= 2 && parts[parts.length - 1] === "rec") {
+      targetWord = parts.slice(0, -1).join(" ");
+    }
+
+    if (targetWord) {
+      // セキュリティチェック
+      if (isForbiddenPath(targetWord)) {
+        return "エラー: 使用禁止文字が含まれています";
+      }
+      if (targetWord.length > 50) {
+        return "エラー: 単語は50文字以内で入力してください";
+      }
+      // 登録（値は自分自身、またはユーザーが後に追加できる）
+      this.wizardData.dictionary[targetWord] = targetWord;
+      saveWizardData(this.wizardData);
+      return `wizard辞書に登録しました: "${targetWord}"`;
+    }
+
+    return `使用方法:
+  wizard <単語> rec    単語を辞書登録
+  wizard rec <単語>    同上（別形式）
+  wizard dict          辞書一覧表示
+  wizard export        設定をエクスポート
+  wizard import <json> 設定をインポート
+  wizard reset         リセット`;
   }
 
   cmdHistory(args) {
