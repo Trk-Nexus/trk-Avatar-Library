@@ -1,22 +1,22 @@
 {
   "format": "trk-avatar-library-skins",
   "version": 1,
-  "generatedAt": "2026-11-02T20:11:05.213800+00:00",
+  "generatedAt": "2026-11-03T00:05:57.576627+00:00",
   "source": "trk-PWA / js/data.js + js/characters/miku.js",
-  "count": 245,
+  "count": 246,
   "typeSkins": 43,
   "categories": {
     "basic": 22,
     "light": 98,
     "grad": 114,
-    "fun": 93,
-    "dark": 86,
+    "fun": 94,
+    "dark": 87,
     "access": 27,
     "life": 30,
     "type": 43,
     "miku": 4,
     "glitch": 16,
-    "wizard": 16
+    "wizard": 17
   },
   "skins": [
     {
@@ -11160,7 +11160,7 @@
         "don": "#d4af37",
         "ka": "#8d6e63",
         "text": "#f5f5f5",
-        "muted": "#795548",
+        "muted": "#cbb6ac",
         "bg": "#261411",
         "panel": "rgba(38,20,17,.97)",
         "field": "#3e2723",
@@ -11175,7 +11175,13 @@
         "circle"
       ],
       "locked": false,
-      "video": "sepia(.35) contrast(1.15) brightness(.9)"
+      "video": "sepia(.35) contrast(1.15) brightness(.9)",
+      "cli": {
+        "font": "Trajan Pro, Garamond, serif",
+        "prompt": ">",
+        "caret": "#d4af37",
+        "scan": 0.08
+      }
     },
     {
       "id": "wizard-rune",
@@ -11316,7 +11322,7 @@
         "don": "#ccaa00",
         "ka": "#4a4a00",
         "text": "#ffbf00",
-        "muted": "#554400",
+        "muted": "#aa8800",
         "bg": "#0a0a00",
         "panel": "rgba(10,10,0,.98)",
         "field": "#1a1a00",
@@ -11331,7 +11337,13 @@
         "square"
       ],
       "locked": false,
-      "video": "sepia(.5) contrast(1.15) brightness(.85)"
+      "video": "sepia(.5) contrast(1.15) brightness(.85)",
+      "cli": {
+        "font": "Courier New, Courier, monospace",
+        "prompt": ">",
+        "caret": "#ffbf00",
+        "scan": 0.15
+      }
     },
     {
       "id": "wizard-cauldron",
@@ -11576,7 +11588,7 @@
         "don": "#ff00ff",
         "ka": "#74b9ff",
         "text": "#00ffff",
-        "muted": "#4a2a6a",
+        "muted": "#b39ddb",
         "bg": "#1a052e",
         "panel": "rgba(26,5,46,.97)",
         "field": "#2d0a3e",
@@ -11591,7 +11603,13 @@
         "diamond"
       ],
       "locked": false,
-      "video": "hue-rotate(280deg) saturate(1.6) brightness(.8) contrast(1.3)"
+      "video": "hue-rotate(280deg) saturate(1.6) brightness(.8) contrast(1.3)",
+      "cli": {
+        "font": "Cinzel, Trajan Pro, serif",
+        "prompt": "✦",
+        "caret": "#ff00ff",
+        "scan": 0.18
+      }
     },
     {
       "id": "wizard-eldritch",
@@ -11852,6 +11870,64 @@
       ],
       "locked": false,
       "video": "hue-rotate(260deg) saturate(1.3) contrast(1.25) brightness(.8)"
+    },
+    {
+      "id": "wizard-console",
+      "label": {
+        "ja": "ウィザードコンソール",
+        "en": "Wizard Console",
+        "zh": "巫师控制台",
+        "ko": "마법사 콘솔"
+      },
+      "desc": {
+        "ja": "打鍵感を重視したコンソール、CRTのざらつきと魔法の輝き",
+        "en": "Console emphasizing keystroke feel, CRT grain and magical glow",
+        "zh": "强调敲击感的控制台，CRT颗粒感与魔法光芒",
+        "ko": "타건감을 중시한 콘솔, CRT의 거친 느낌과 마법의 광채"
+      },
+      "cat": [
+        "wizard",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Press Start 2P\",\"Courier New\",monospace",
+      "type": {
+        "title": "\"Press Start 2P\",monospace",
+        "weight": "400",
+        "lh": "1.25",
+        "titleWeight": "700",
+        "titleSpace": ".04em",
+        "titleTransform": "uppercase",
+        "mark": "KEYPRESS"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#00ff00",
+        "don": "#39ff14",
+        "ka": "#00cc00",
+        "text": "#00ff00",
+        "muted": "#66ff66",
+        "bg": "#050505",
+        "panel": "#031406",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#39ff14",
+        "onAccent": "#000000",
+        "gold": "#66ff66",
+        "border": "rgba(57,255,20,.30)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "saturate(1.6) contrast(1.3) brightness(.85) hue-rotate(110deg)",
+      "cli": {
+        "font": "\"Courier New\",\"Courier\",monospace",
+        "prompt": "λ",
+        "caret": "#39ff14",
+        "scan": 0.2
+      }
     }
   ],
   "fontPacks": [
