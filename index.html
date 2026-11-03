@@ -371,6 +371,25 @@ function playBell() {
           </label>
           <p class="settings-section-desc">hidden="until-found" で隠しヒントをマークアップし、ブラウザ検索で表示可能に（guides/ui-components/accordion）</p>
         </div>
+
+        <!-- パフォーマンス・PWA設定（Phase 10 パフォーマンス・PWA） -->
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-top-layer" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-top-layer">
+            <strong>トップレイヤー UI の永続化</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">設定パネルをトップレイヤー（popover / dialog）として固定し、DOM 移動後も表示を維持（Modern Web Guidance user-experience）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-pwa-prompt" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-pwa-prompt">
+            <strong>PWA インストールプロンプト制御</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">PWA インストールプロンプトの表示タイミングや頻度を制御（guides/pwa）</p>
+        </div>
       </div>
     </details>
 
@@ -970,6 +989,8 @@ function playBell() {
   const advanceContrastMode = document.getElementById("settings-advance-contrast-mode");
   const advanceValidationStyle = document.getElementById("settings-advance-validation-style");
   const advanceHiddenHints = document.getElementById("settings-advance-hidden-hints");
+  const advanceTopLayer = document.getElementById("settings-advance-top-layer");
+  const advancePwaPrompt = document.getElementById("settings-advance-pwa-prompt");
 
   let currentAdvanceAnimEnabled = localStorage.getItem("trk-advance-anim-enabled") !== "false";
   let currentAdvanceReduceMotion = localStorage.getItem("trk-advance-reduce-motion") === "true";
@@ -988,6 +1009,8 @@ function playBell() {
   let currentAdvanceContrastMode = localStorage.getItem("trk-advance-contrast-mode") === "true";
   let currentAdvanceValidationStyle = localStorage.getItem("trk-advance-validation-style") === "true";
   let currentAdvanceHiddenHints = localStorage.getItem("trk-advance-hidden-hints") === "true";
+  let currentAdvanceTopLayer = localStorage.getItem("trk-advance-top-layer") === "true";
+  let currentAdvancePwaPrompt = localStorage.getItem("trk-advance-pwa-prompt") === "true";
 
   // UI 初期化
   advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
@@ -1007,6 +1030,8 @@ function playBell() {
   advanceContrastMode.checked = currentAdvanceContrastMode;
   advanceValidationStyle.checked = currentAdvanceValidationStyle;
   advanceHiddenHints.checked = currentAdvanceHiddenHints;
+  advanceTopLayer.checked = currentAdvanceTopLayer;
+  advancePwaPrompt.checked = currentAdvancePwaPrompt;
   advanceCursorAnim.checked = currentAdvanceCursorAnim;
 
   // 設定パネル開閉アニメーションの有効/無効を適用
@@ -1162,6 +1187,25 @@ function playBell() {
     }
   }
 
+  // トップレイヤー UI の永続化を適用
+  function applyAdvanceTopLayer() {
+    const panel = document.getElementById("settings-panel");
+    if (currentAdvanceTopLayer) {
+      panel.classList.add("top-layer-persistent");
+    } else {
+      panel.classList.remove("top-layer-persistent");
+    }
+  }
+
+  // PWA インストールプロンプト制御を適用
+  function applyAdvancePwaPrompt() {
+    if (currentAdvancePwaPrompt) {
+      root.classList.add("pwa-prompt-enabled");
+    } else {
+      root.classList.remove("pwa-prompt-enabled");
+    }
+  }
+
   // 全設定を適用
   function applyAllAdvanceSettings() {
     applyAdvanceAnimEnabled();
@@ -1181,6 +1225,8 @@ function playBell() {
     applyAdvanceContrastMode();
     applyAdvanceValidationStyle();
     applyAdvanceHiddenHints();
+    applyAdvanceTopLayer();
+    applyAdvancePwaPrompt();
   }
 
   applyAllAdvanceSettings();
@@ -1305,6 +1351,20 @@ function playBell() {
     announce(currentAdvanceHiddenHints ? "隠しヒントのページ内検索表示を有効にしました" : "隠しヒントのページ内検索表示を無効にしました");
   });
 
+  advanceTopLayer.addEventListener("change", (e) => {
+    currentAdvanceTopLayer = e.target.checked;
+    localStorage.setItem("trk-advance-top-layer", currentAdvanceTopLayer);
+    applyAdvanceTopLayer();
+    announce(currentAdvanceTopLayer ? "トップレイヤー UI の永続化を有効にしました" : "トップレイヤー UI の永続化を無効にしました");
+  });
+
+  advancePwaPrompt.addEventListener("change", (e) => {
+    currentAdvancePwaPrompt = e.target.checked;
+    localStorage.setItem("trk-advance-pwa-prompt", currentAdvancePwaPrompt);
+    applyAdvancePwaPrompt();
+    announce(currentAdvancePwaPrompt ? "PWA インストールプロンプト制御を有効にしました" : "PWA インストールプロンプト制御を無効にしました");
+  });
+
   // wizard 辞書のリセット時に advance wizard 設定もリセットする対応
   wizardDictReset.addEventListener("click", () => {
     currentAdvanceAnimEnabled = true;
@@ -1324,6 +1384,8 @@ function playBell() {
     currentAdvanceContrastMode = false;
     currentAdvanceValidationStyle = false;
     currentAdvanceHiddenHints = false;
+    currentAdvanceTopLayer = false;
+    currentAdvancePwaPrompt = false;
     localStorage.setItem("trk-advance-anim-enabled", currentAdvanceAnimEnabled);
     localStorage.setItem("trk-advance-reduce-motion", currentAdvanceReduceMotion);
     localStorage.setItem("trk-advance-component-color-scheme", currentAdvanceComponentColorScheme);
@@ -1341,6 +1403,8 @@ function playBell() {
     localStorage.setItem("trk-advance-contrast-mode", currentAdvanceContrastMode);
     localStorage.setItem("trk-advance-validation-style", currentAdvanceValidationStyle);
     localStorage.setItem("trk-advance-hidden-hints", currentAdvanceHiddenHints);
+    localStorage.setItem("trk-advance-top-layer", currentAdvanceTopLayer);
+    localStorage.setItem("trk-advance-pwa-prompt", currentAdvancePwaPrompt);
     advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
     advanceReduceMotion.checked = currentAdvanceReduceMotion;
     advanceComponentColorScheme.checked = currentAdvanceComponentColorScheme;
@@ -1358,6 +1422,8 @@ function playBell() {
     advanceContrastMode.checked = currentAdvanceContrastMode;
     advanceValidationStyle.checked = currentAdvanceValidationStyle;
     advanceHiddenHints.checked = currentAdvanceHiddenHints;
+    advanceTopLayer.checked = currentAdvanceTopLayer;
+    advancePwaPrompt.checked = currentAdvancePwaPrompt;
     applyAllAdvanceSettings();
     announce("advance wizard 設定もデフォルトに戻しました");
   });

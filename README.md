@@ -528,6 +528,13 @@ node tools/check-docs.mjs            # README の表・リンク・セットの�
 | バリデーションスタイル（ユーザー操作後のみ） | `wizard.a11y.validationStyle` | オフ | `:user-valid` / `:user-invalid` で操作後のフィールドバリデーションのみをスタイリング | guides/visual-design/browser-ui-theming |
 | 隠しヒントの「ページ内検索」表示 | `wizard.a11y.hiddenHints` | オフ | `hidden="until-found"` で隠しヒントをマークアップし、ブラウザ検索で表示可能に | guides/ui-components/accordion |
 
+#### パフォーマンス・PWA
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| トップレイヤー UI の永続化 | `wizard.perf.topLayer` | オフ | 設定パネルをトップレイヤー（popover / dialog）として固定し、DOM 移動後も表示を維持 | Modern Web Guidance user-experience |
+| PWA インストールプロンプト制御 | `wizard.pwa.installPrompt` | オフ | PWA インストールプロンプトの表示タイミングや頻度を制御 | guides/pwa |
+
 #### アコーディオン構造
 
 - 各設定セクションは `details`/`summary` でラップされ、個別に開閉可能
