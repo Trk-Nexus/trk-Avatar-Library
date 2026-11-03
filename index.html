@@ -80,6 +80,39 @@
       <div class="skin-preview-grid" id="skin-preview-grid"></div>
     </div>
 
+    <div class="settings-section">
+      <h3 class="settings-section-title">ターミナル表示</h3>
+      <div class="settings-item">
+        <label class="settings-item-label" for="settings-scan">スキャンライン強度:</label>
+        <input type="range" id="settings-scan" class="settings-range" min="0" max="0.6" step="0.05" value="0.1" aria-label="スキャンライン強度">
+        <span class="settings-range-value" id="settings-scan-value">0.10</span>
+      </div>
+      <div class="settings-item">
+        <label class="settings-item-label" for="settings-blink">カーソル点滅速度:</label>
+        <select id="settings-blink" class="custom-select">
+          <option value="normal">通常</option>
+          <option value="fast">速い</option>
+          <option value="slow">遅い</option>
+        </select>
+      </div>
+      <div class="settings-item">
+        <label class="settings-item-label" for="settings-font-size">フォントサイズ:</label>
+        <select id="settings-font-size" class="custom-select">
+          <option value="medium">中</option>
+          <option value="small">小</option>
+          <option value="large">大</option>
+        </select>
+      </div>
+      <div class="settings-item settings-item-checkbox">
+        <input type="checkbox" id="settings-reduce-motion" class="settings-checkbox" aria-label="アニメーションを減らす">
+        <label class="settings-checkbox-label" for="settings-reduce-motion">アニメーションを減らす（アクセシビリティ）</label>
+      </div>
+      <div class="settings-item settings-item-checkbox">
+        <input type="checkbox" id="settings-bell" class="settings-checkbox" checked aria-label="ベル音">
+        <label class="settings-checkbox-label" for="settings-bell">ベル音を有効にする</label>
+      </div>
+    </div>
+
     <div class="settings-panel-footer">
       <p class="settings-hint">ショートカット: <kbd>Ctrl</kbd> + <kbd>K</kbd> または <kbd>⌘</kbd> + <kbd>K</kbd> で設定を開く / <kbd>Esc</kbd> で閉じる</p>
     </div>
@@ -192,6 +225,92 @@
   themeToggle.addEventListener("click", () => {
     const next = currentTheme === "dark" ? "light" : "dark";
     applyTheme(next);
+  });
+
+  // --- ターミナル表示設定 ---
+  const scanInput = document.getElementById("settings-scan");
+  const scanValue = document.getElementById("settings-scan-value");
+  const blinkSelect = document.getElementById("settings-blink");
+  const fontSizeSelect = document.getElementById("settings-font-size");
+  const reduceMotionCheckbox = document.getElementById("settings-reduce-motion");
+  const bellCheckbox = document.getElementById("settings-bell");
+
+  let currentScan = parseFloat(localStorage.getItem("trk-scan")) || 0.1;
+  let currentBlink = localStorage.getItem("trk-blink") || "normal";
+  let currentFontSize = localStorage.getItem("trk-font-size") || "medium";
+  let currentReduceMotion = localStorage.getItem("trk-reduce-motion") === "true";
+  let currentBell = localStorage.getItem("trk-bell") !== "false";
+
+  // UI 初期化
+  scanInput.value = currentScan;
+  scanValue.textContent = currentScan.toFixed(2);
+  blinkSelect.value = currentBlink;
+  fontSizeSelect.value = currentFontSize;
+  reduceMotionCheckbox.checked = currentReduceMotion;
+  bellCheckbox.checked = currentBell;
+
+  // CSS カスタムプロパティを適用
+  function applyTerminalSettings() {
+    root.style.setProperty("--cli-scan", currentScan);
+    root.style.setProperty("--cli-blink-speed", currentBlink === "fast" ? "0.5s" : currentBlink === "slow" ? "2s" : "1s");
+
+    const fontSizeMap = { small: "0.875rem", medium: "1rem", large: "1.125rem" };
+    root.style.setProperty("--cli-font-size", fontSizeMap[currentFontSize] || "1rem");
+
+    if (currentReduceMotion) {
+      root.classList.add("reduce-motion");
+    } else {
+      root.classList.remove("reduce-motion");
+    }
+
+    // cliBell の有効/無効は CliCommands 側で制御（bellCheckbox 値は cli.run で参照）
+  }
+
+  applyTerminalSettings();
+
+  // スキャンライン強度変更
+  scanInput.addEventListener("input", (e) => {
+    currentScan = parseFloat(e.target.value);
+    scanValue.textContent = currentScan.toFixed(2);
+    root.style.setProperty("--cli-scan", currentScan);
+    localStorage.setItem("trk-scan", currentScan);
+    announce(`スキャンライン強度を${currentScan.toFixed(2)}に変更しました`);
+  });
+
+  // カーソル点滅速度変更
+  blinkSelect.addEventListener("change", (e) => {
+    currentBlink = e.target.value;
+    root.style.setProperty("--cli-blink-speed", currentBlink === "fast" ? "0.5s" : currentBlink === "slow" ? "2s" : "1s");
+    localStorage.setItem("trk-blink", currentBlink);
+    announce(`カーソル点滅速度を${currentBlink}に変更しました`);
+  });
+
+  // フォントサイズ変更
+  fontSizeSelect.addEventListener("change", (e) => {
+    currentFontSize = e.target.value;
+    const fontSizeMap = { small: "0.875rem", medium: "1rem", large: "1.125rem" };
+    root.style.setProperty("--cli-font-size", fontSizeMap[currentFontSize] || "1rem");
+    localStorage.setItem("trk-font-size", currentFontSize);
+    announce(`フォントサイズを${currentFontSize}に変更しました`);
+  });
+
+  // アニメーション減らす切替
+  reduceMotionCheckbox.addEventListener("change", (e) => {
+    currentReduceMotion = e.target.checked;
+    if (currentReduceMotion) {
+      root.classList.add("reduce-motion");
+    } else {
+      root.classList.remove("reduce-motion");
+    }
+    localStorage.setItem("trk-reduce-motion", currentReduceMotion);
+    announce(currentReduceMotion ? "アニメーションを減らしました" : "アニメーションを通常に戻しました");
+  });
+
+  // ベル音切替
+  bellCheckbox.addEventListener("change", (e) => {
+    currentBell = e.target.checked;
+    localStorage.setItem("trk-bell", currentBell);
+    announce(currentBell ? "ベル音を有効にしました" : "ベル音を無効にしました");
   });
 
   // --- スキン選択ポップオーバー ---
@@ -398,6 +517,9 @@
   };
 
   const cli = new CliCommands(skinManager);
+
+  // ベル音設定を反映
+  cli.bell.enabled = currentBell;
 
   // --- CLI キーボードショートカット ---
   input.addEventListener("keydown", (e) => {

@@ -386,6 +386,7 @@
   border-radius: 8px;
   min-height: 200px;
   overflow-y: auto;
+  font-size: var(--cli-font-size, 1rem);
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
@@ -408,13 +409,13 @@
   width: 0.75em;
 }
 
-/* カーソル形状 */
+/* カーソル形状（点滅速度は --cli-blink-speed で制御） */
 .cli-cursor.block {
   display: inline-block;
   width: 0.75em;
   height: 1em;
   background: var(--cli-caret);
-  animation: cli-blink 1s step-end infinite;
+  animation: cli-blink var(--cli-blink-speed, 1s) step-end infinite;
 }
 
 .cli-cursor.underline {
@@ -422,7 +423,7 @@
   width: 0.75em;
   height: 2px;
   background: var(--cli-caret);
-  animation: cli-blink 1s step-end infinite;
+  animation: cli-blink var(--cli-blink-speed, 1s) step-end infinite;
 }
 
 .cli-cursor.bar {
@@ -430,13 +431,38 @@
   width: 2px;
   height: 1em;
   background: var(--cli-caret);
-  animation: cli-blink 1s step-end infinite;
+  animation: cli-blink var(--cli-blink-speed, 1s) step-end infinite;
 }
 
 @keyframes cli-blink {
   50% {
     opacity: 0;
   }
+}
+
+/* アニメーション減らすモード（アクセシビリティ） */
+.reduce-motion .cli-cursor.block,
+.reduce-motion .cli-cursor.underline,
+.reduce-motion .cli-cursor.bar {
+  animation: none;
+  opacity: 1;
+}
+
+.reduce-motion .cli-scan::after {
+  animation: none;
+}
+
+.reduce-motion .skin-preview-card:hover {
+  transform: none;
+}
+
+.reduce-motion .theme-toggle:hover,
+.reduce-motion .settings-toggle:hover,
+.reduce-motion .settings-close:hover,
+.reduce-motion .skin-picker-toggle:hover,
+.reduce-motion .skin-picker-item:hover,
+.reduce-motion .skin-preview-card-apply:hover {
+  transform: none;
 }
 
 /* --- スキャンライン --- */
@@ -465,6 +491,7 @@
   border: none;
   outline: none;
   width: 100%;
+  font-size: var(--cli-font-size, 1rem);
   accent-color: var(--skin-accent);
 }
 
@@ -1081,4 +1108,57 @@ kbd {
   100% {
     background-position: 0% 100%;
   }
+}
+
+/* --- 設定項目（ターミナル表示設定）--- */
+.settings-item {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 20%);
+}
+
+.settings-item:last-child {
+  border-bottom: none;
+}
+
+.settings-item-label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+}
+
+.settings-range {
+  width: 100%;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.settings-range-value {
+  font-size: 0.75rem;
+  font-family: ui-monospace, monospace;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.settings-item-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.settings-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.settings-checkbox-label {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
 }
