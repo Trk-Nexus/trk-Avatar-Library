@@ -247,6 +247,10 @@
   background: color-mix(in srgb, var(--color-accent) 15%, transparent);
 }
 
+.skin-picker-toggle {
+  anchor-name: --skin-picker;
+}
+
 .skin-picker-popover {
   position: absolute;
   anchor: --skin-picker;
@@ -265,7 +269,11 @@
   z-index: 50;
 }
 
-.skin-picker-popover[hidden] {
+.skin-picker-popover:popover-open {
+  animation: popover-fade-in 0.2s ease forwards;
+}
+
+.skin-picker-popover:not(:popover-open) {
   display: none;
 }
 
@@ -633,6 +641,17 @@ input:focus-visible {
   }
 }
 
+@keyframes popover-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .skin-preview-card-header {
   padding: 0.75rem;
   border-bottom: 1px solid color-mix(in srgb, var(--skin-border) 30%);
@@ -860,18 +879,12 @@ input:focus-visible {
 }
 
 /* --- 設定パネル（オーバーレイ、Modern Web Guidance: dialog/overlay パターン）--- */
-.settings-backdrop {
+.settings-panel::backdrop {
   position: fixed;
   inset: 0;
   background: color-mix(in srgb, #000 40%);
   backdrop-filter: blur(4px);
-  z-index: 200;
-  transition: opacity 0.2s ease;
-}
-
-.settings-backdrop[hidden] {
-  display: none;
-  opacity: 0;
+  opacity: 1;
 }
 
 .settings-panel {
@@ -889,13 +902,14 @@ input:focus-visible {
   box-shadow: 0 20px 40px color-mix(in srgb, #000 35%);
   overflow-y: auto;
   z-index: 210;
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.settings-panel[hidden] {
+.settings-panel:popover-open {
+  animation: popover-fade-in 0.2s ease forwards;
+}
+
+.settings-panel:not(:popover-open) {
   display: none;
-  transform: translate(-50%, -60%);
-  opacity: 0;
 }
 
 .settings-panel-header {
@@ -1226,3 +1240,118 @@ kbd {
   cursor: pointer;
   user-select: none;
 }
+
+/* --- トースト通知 --- */
+#toast-container {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.toast {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--color-accent, #333);
+  box-shadow: 0 4px 12px color-mix(in srgb, #000 30%);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: auto;
+  font-size: 0.9rem;
+}
+
+.toast--show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast--success { background: #4caf50; }
+.toast--error { background: #f44336; }
+.toast--warning { background: #ff9800; }
+
+/* --- キーボードショートカットヘルプ（Popover API）--- */
+.shortcut-help {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 480px;
+  max-height: 80vh;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-panel);
+  color: var(--color-text);
+  box-shadow: 0 20px 40px color-mix(in srgb, #000 35%);
+  overflow-y: auto;
+  z-index: 210;
+  padding: 1rem 1.25rem;
+}
+
+.shortcut-help::backdrop {
+  background: color-mix(in srgb, #000 30%);
+  backdrop-filter: blur(4px);
+}
+
+.shortcut-help-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.shortcut-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.shortcut-close {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  line-height: 1;
+}
+
+.shortcut-close:hover {
+  opacity: 0.7;
+}
+
+.shortcut-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.shortcut-table th,
+.shortcut-table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 40%);
+}
+
+.shortcut-table th {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.shortcut-table td code {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  color: var(--color-text);
+}
+

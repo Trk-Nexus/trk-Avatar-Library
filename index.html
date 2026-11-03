@@ -18,6 +18,44 @@
     document.documentElement.setAttribute('data-theme', savedTheme);
     document.documentElement.style.colorScheme = savedTheme === 'system' ? 'light dark' : savedTheme;
   })();
+
+// --- トースト通知 ---
+function showToast(message, type = "info") {
+  const toastContainer = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+  toast.className = "toast toast--" + type;
+  toast.setAttribute("role", "status");
+  toast.setAttribute("aria-live", "polite");
+  toast.textContent = message;
+  toastContainer.appendChild(toast);
+
+  requestAnimationFrame(() => {
+    toast.classList.add("toast--show");
+  });
+
+  setTimeout(() => {
+    toast.classList.remove("toast--show");
+    toast.addEventListener("transitionend", () => toast.remove(), { once: true });
+  }, 3000);
+}
+
+// ベル音（AudioContext で生成、外部ファイル不要）
+let audioCtx;
+function playBell() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.type = "sine";
+  osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(1760, audioCtx.currentTime + 0.1);
+  gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.3);
+}
+
 </script>
 </head>
 <body trk-build="trk269" data-theme="dark">
@@ -29,7 +67,7 @@
     <span class="header-sub">Terminal &amp; Wizard Skin</span>
   </div>
   <div class="header-right">
-    <button type="button" id="settings-toggle" class="settings-toggle" aria-expanded="false" aria-controls="settings-panel" aria-label="設定を開く">
+    <button type="button" id="settings-toggle" class="settings-toggle" popovertarget="settings-panel" aria-label="設定を開く">
       ⚙️
     </button>
   </div>
@@ -46,10 +84,10 @@
   </section>
 
   <!-- 設定パネル（オーバーレイ、通常時は非表示） -->
-  <div id="settings-panel" class="settings-panel" role="dialog" aria-modal="true" aria-label="設定" hidden>
+  <div id="settings-panel" class="settings-panel" popover role="dialog" aria-modal="true" aria-label="設定">
     <div class="settings-panel-header">
       <h2 class="settings-title">設定</h2>
-      <button type="button" id="settings-close" class="settings-close" aria-label="設定を閉じる">✕</button>
+      <button type="button" id="settings-close" class="settings-close" popovertarget="settings-panel" popovertargetaction="hide" aria-label="設定を閉じる">✕</button>
     </div>
 
     <div class="settings-section">
@@ -70,10 +108,10 @@
     <div class="settings-section">
       <h3 class="settings-section-title">スキン</h3>
       <div class="skin-picker-anchor" id="skin-picker-anchor">
-        <button type="button" id="skin-picker-toggle" class="skin-picker-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="skin-picker-popover">
+        <button type="button" id="skin-picker-toggle" class="skin-picker-toggle" popovertarget="skin-picker-popover">
           スキン選択: <span id="skin-picker-label">wizard-cli</span>
         </button>
-        <div id="skin-picker-popover" class="skin-picker-popover" role="menu" aria-label="スキン一覧" hidden>
+        <div id="skin-picker-popover" class="skin-picker-popover" popover role="menu" aria-label="スキン一覧">
           <div class="skin-picker-header">
             <span class="skin-picker-count" id="skin-picker-count">24 種</span>
             <input type="search" id="skin-picker-search" class="skin-picker-search" placeholder="スキン名で検索" aria-label="スキン検索">
@@ -127,7 +165,7 @@
   </div>
 
   <!-- 設定パネル用バックドロップ -->
-  <div id="settings-backdrop" class="settings-backdrop" hidden></div>
+
 </main>
 
 <!-- js/characters/miku.js の直後に skins-wizard.js を読み込む -->
@@ -153,12 +191,10 @@
   const settingsToggle = document.getElementById("settings-toggle");
   const settingsPanel = document.getElementById("settings-panel");
   const settingsClose = document.getElementById("settings-close");
-  const settingsBackdrop = document.getElementById("settings-backdrop");
   const statusAnnouncer = document.getElementById("status-announcer");
 
   let currentTheme = localStorage.getItem("trk-theme") || "dark";
   let currentSkinId = "wizard-cli";
-  let settingsOpen = false;
 
   // アナウンス（スクリーンリーダー）
   function announce(message) {
@@ -166,45 +202,48 @@
     statusAnnouncer.textContent = message;
   }
 
-  // --- 設定パネル 開閉 ---
-  function openSettings() {
-    settingsOpen = true;
-    settingsPanel.hidden = false;
-    settingsBackdrop.hidden = false;
-    settingsToggle.setAttribute("aria-expanded", "true");
-    settingsClose.focus();
-    announce("設定パネルを開きました");
-  }
-
-  function closeSettings() {
-    settingsOpen = false;
-    settingsPanel.hidden = true;
-    settingsBackdrop.hidden = true;
-    settingsToggle.setAttribute("aria-expanded", "false");
-    settingsToggle.focus();
-    announce("設定パネルを閉じました");
-  }
-
-  settingsToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (settingsOpen) closeSettings();
-    else openSettings();
+  // --- 設定パネル 開閉（Popover API） ---
+  settingsPanel.addEventListener("toggle", (event) => {
+    settingsToggle.setAttribute("aria-expanded", event.newState === "open" ? "true" : "false");
   });
 
-  settingsClose.addEventListener("click", closeSettings);
-
-  settingsBackdrop.addEventListener("click", closeSettings);
+  settingsClose.addEventListener("click", () => {
+    settingsPanel.hidePopover();
+    settingsToggle.focus();
+    announce("設定パネルを閉じました");
+  });
 
   // キーボードショートカット: Ctrl+K / Cmd+K で設定開閉、Esc で閉じる
   document.addEventListener("keydown", (e) => {
     if ((e.key === "k" || e.key === "K") && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
-      if (settingsOpen) closeSettings();
-      else openSettings();
+      if (settingsPanel.matches(":popover-open")) {
+        settingsPanel.hidePopover();
+        settingsToggle.focus();
+        announce("設定パネルを閉じました");
+      } else {
+        settingsPanel.showPopover();
+        settingsClose.focus();
+        announce("設定パネルを開きました");
+      }
     }
-    if (e.key === "Escape" && settingsOpen) {
+    if (e.key === "Escape" && settingsPanel.matches(":popover-open")) {
       e.preventDefault();
-      closeSettings();
+      settingsPanel.hidePopover();
+      settingsToggle.focus();
+      announce("設定パネルを閉じました");
+    }
+
+    if (e.key === "?") {
+      e.preventDefault();
+      const shortcutHelp = document.getElementById("shortcut-help");
+      if (shortcutHelp.matches(":popover-open")) {
+        shortcutHelp.hidePopover();
+      } else {
+        shortcutHelp.showPopover();
+        shortcutHelp.querySelector(".shortcut-close").focus();
+        announce("ショートカットヘルプを表示しました");
+      }
     }
   });
 
@@ -351,8 +390,8 @@
       `;
       li.addEventListener("click", () => {
         applySkin(skin.id);
-        skinPickerPopover.hidden = true;
-        skinPickerToggle.setAttribute("aria-expanded", "false");
+        skinPickerPopover.hidePopover();
+        skinPickerToggle.focus();
       });
       skinPickerList.appendChild(li);
     });
@@ -362,14 +401,12 @@
 
   skinPickerSearch.addEventListener("input", (e) => renderSkinList(e.target.value));
 
-  skinPickerToggle.addEventListener("click", () => {
-    const expanded = skinPickerToggle.getAttribute("aria-expanded") === "true";
-    skinPickerPopover.hidden = expanded;
-    skinPickerToggle.setAttribute("aria-expanded", String(!expanded));
-    if (!expanded) skinPickerSearch.focus();
+  // スキンピッカー ポップオーバー 開閉状態を aria-expanded に同期（Popover API）
+  skinPickerPopover.addEventListener("toggle", (event) => {
+    skinPickerToggle.setAttribute("aria-expanded", event.newState === "open" ? "true" : "false");
   });
 
-  // ポップオーバー外クリックで閉じる（設定パネル内では backdrop が処理）
+  // ポップオーバー外クリックで閉じる
   skinPickerPopover.addEventListener("click", (e) => e.stopPropagation());
 
   // スキンピッカー キーボードナビゲーション
@@ -387,8 +424,7 @@
   skinPickerToggle.addEventListener("keydown", (e) => {
     if (e.key === "ArrowDown" || e.key === "ArrowUp") {
       e.preventDefault();
-      skinPickerPopover.hidden = false;
-      skinPickerToggle.setAttribute("aria-expanded", "true");
+      skinPickerPopover.showPopover();
       skinPickerFocusedIndex = 0;
       updateSkinPickerFocus(skinPickerFocusedIndex);
     }
@@ -411,14 +447,12 @@
       if (items[skinPickerFocusedIndex]) {
         const skinId = items[skinPickerFocusedIndex].dataset.skinId;
         applySkin(skinId);
-        skinPickerPopover.hidden = true;
-        skinPickerToggle.setAttribute("aria-expanded", "false");
+        skinPickerPopover.hidePopover();
         skinPickerToggle.focus();
         announce(`スキンを${skinId}に変更しました`);
       }
     } else if (e.key === "Escape") {
-      skinPickerPopover.hidden = true;
-      skinPickerToggle.setAttribute("aria-expanded", "false");
+      skinPickerPopover.hidePopover();
       skinPickerToggle.focus();
     }
   });
@@ -671,6 +705,27 @@
     });
   }
 </script>
+<!-- トースト通知コンテナ -->
+<div id="toast-container" role="region" aria-label="通知" aria-live="polite"></div>
+
+
+  <!-- キーボードショートカットヘルプ（Popover API） -->
+  <div id="shortcut-help" class="shortcut-help" popover role="dialog" aria-label="キーボードショートカット">
+    <div class="shortcut-help-header">
+      <h2 class="shortcut-title">キーボードショートカット</h2>
+      <button type="button" class="shortcut-close" popovertarget="shortcut-help" popovertargetaction="hide" aria-label="閉じる">✕</button>
+    </div>
+    <table class="shortcut-table">
+      <thead><tr><th>キー</th><th>操作</th></tr></thead>
+      <tbody>
+        <tr><td><code>Ctrl+K</code> / <code>Cmd+K</code></td><td>設定パネルを開閉</td></tr>
+        <tr><td><code>Esc</code></td><td>パネル・ポップオーバーを閉じる</td></tr>
+        <tr><td><code>↓</code> / <code>↑</code></td><td>スキン一覧をナビゲート</td></tr>
+        <tr><td><code>Enter</code> / <code>Space</code></td><td>スキンを適用</td></tr>
+        <tr><td><code>?</code></td><td>このヘルプを表示</td></tr>
+      </tbody>
+    </table>
+  </div>
 
 </body>
 </html>
