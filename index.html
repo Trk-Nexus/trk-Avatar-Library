@@ -297,6 +297,52 @@ function playBell() {
           </label>
           <p class="settings-section-desc">field-sizing: content で入力欄をコンテンツの長さに応じて自動リサイズ（guides/visual-design/browser-ui-theming）</p>
         </div>
+
+        <!-- インタラクション・ナビゲーション設定（Phase 10 インタラクション・ナビゲーション） -->
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-command-palette" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-command-palette">
+            <strong>コマンドパレット（Ctrl+K / Cmd+K）</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">キーボードショートカットで設定項目を検索・ジャンプするコマンドパレット（guides/ui-behaviors：invoker commands / Modern Web Guidance core）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-focus-loop" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-focus-loop">
+            <strong>キーボードナビゲーションループ</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">設定パネル内のフォーカス移動をループさせるか、端で止めるか（Modern Web Guidance focusgroup / アクセシビリティガイド）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-edge-fade" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-edge-fade">
+            <strong>スクロールエッジフェード</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">スクロール可能なエリアの端にフェードを付け、さらにスクロールできることを示唆（Modern Web Guidance user-experience）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-pull-to-reveal" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-pull-to-reveal">
+            <strong>プルダウン隠しメニュー</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">プルダウンジェスチャーで隠し機能やショートカットを表示（guides/ui-atoms/pull-to-reveal）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-cursor-anim" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-cursor-anim">
+            <strong>カーソルアニメーション（個別 transform）</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">カーソルやカレットのアニメーションを translate/rotate/scale で個別に制御（Modern Web Guidance CSS ガイド）</p>
+        </div>
       </div>
     </details>
 
@@ -888,6 +934,11 @@ function playBell() {
   const advanceSelectionColor = document.getElementById("settings-advance-selection-color");
   const advanceCustomFormControls = document.getElementById("settings-advance-custom-form-controls");
   const advanceFieldSizing = document.getElementById("settings-advance-field-sizing");
+  const advanceCommandPalette = document.getElementById("settings-advance-command-palette");
+  const advanceFocusLoop = document.getElementById("settings-advance-focus-loop");
+  const advanceEdgeFade = document.getElementById("settings-advance-edge-fade");
+  const advancePullToReveal = document.getElementById("settings-advance-pull-to-reveal");
+  const advanceCursorAnim = document.getElementById("settings-advance-cursor-anim");
 
   let currentAdvanceAnimEnabled = localStorage.getItem("trk-advance-anim-enabled") !== "false";
   let currentAdvanceReduceMotion = localStorage.getItem("trk-advance-reduce-motion") === "true";
@@ -898,6 +949,11 @@ function playBell() {
   let currentAdvanceSelectionColor = localStorage.getItem("trk-advance-selection-color") === "true";
   let currentAdvanceCustomFormControls = localStorage.getItem("trk-advance-custom-form-controls") === "true";
   let currentAdvanceFieldSizing = localStorage.getItem("trk-advance-field-sizing") === "true";
+  let currentAdvanceCommandPalette = localStorage.getItem("trk-advance-command-palette") === "true";
+  let currentAdvanceFocusLoop = localStorage.getItem("trk-advance-focus-loop") === "true";
+  let currentAdvanceEdgeFade = localStorage.getItem("trk-advance-edge-fade") === "true";
+  let currentAdvancePullToReveal = localStorage.getItem("trk-advance-pull-to-reveal") === "true";
+  let currentAdvanceCursorAnim = localStorage.getItem("trk-advance-cursor-anim") === "true";
 
   // UI 初期化
   advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
@@ -909,6 +965,11 @@ function playBell() {
   advanceSelectionColor.checked = currentAdvanceSelectionColor;
   advanceCustomFormControls.checked = currentAdvanceCustomFormControls;
   advanceFieldSizing.checked = currentAdvanceFieldSizing;
+  advanceCommandPalette.checked = currentAdvanceCommandPalette;
+  advanceFocusLoop.checked = currentAdvanceFocusLoop;
+  advanceEdgeFade.checked = currentAdvanceEdgeFade;
+  advancePullToReveal.checked = currentAdvancePullToReveal;
+  advanceCursorAnim.checked = currentAdvanceCursorAnim;
 
   // 設定パネル開閉アニメーションの有効/無効を適用
   function applyAdvanceAnimEnabled() {
@@ -991,6 +1052,51 @@ function playBell() {
     }
   }
 
+  // コマンドパレットを適用
+  function applyAdvanceCommandPalette() {
+    if (currentAdvanceCommandPalette) {
+      root.classList.add("command-palette-enabled");
+    } else {
+      root.classList.remove("command-palette-enabled");
+    }
+  }
+
+  // キーボードナビゲーションループを適用
+  function applyAdvanceFocusLoop() {
+    if (currentAdvanceFocusLoop) {
+      root.classList.add("focus-loop-enabled");
+    } else {
+      root.classList.remove("focus-loop-enabled");
+    }
+  }
+
+  // スクロールエッジフェードを適用
+  function applyAdvanceEdgeFade() {
+    if (currentAdvanceEdgeFade) {
+      root.classList.add("edge-fade-enabled");
+    } else {
+      root.classList.remove("edge-fade-enabled");
+    }
+  }
+
+  // プルダウン隠しメニューを適用
+  function applyAdvancePullToReveal() {
+    if (currentAdvancePullToReveal) {
+      root.classList.add("pull-to-reveal-enabled");
+    } else {
+      root.classList.remove("pull-to-reveal-enabled");
+    }
+  }
+
+  // カーソルアニメーション（個別 transform）を適用
+  function applyAdvanceCursorAnim() {
+    if (currentAdvanceCursorAnim) {
+      root.classList.add("cursor-anim-enabled");
+    } else {
+      root.classList.remove("cursor-anim-enabled");
+    }
+  }
+
   // 全設定を適用
   function applyAllAdvanceSettings() {
     applyAdvanceAnimEnabled();
@@ -1002,6 +1108,11 @@ function playBell() {
     applyAdvanceSelectionColor();
     applyAdvanceCustomFormControls();
     applyAdvanceFieldSizing();
+    applyAdvanceCommandPalette();
+    applyAdvanceFocusLoop();
+    applyAdvanceEdgeFade();
+    applyAdvancePullToReveal();
+    applyAdvanceCursorAnim();
   }
 
   applyAllAdvanceSettings();
@@ -1070,6 +1181,41 @@ function playBell() {
     announce(currentAdvanceFieldSizing ? "フィールドサイズ連動を有効にしました" : "フィールドサイズ連動を無効にしました");
   });
 
+  advanceCommandPalette.addEventListener("change", (e) => {
+    currentAdvanceCommandPalette = e.target.checked;
+    localStorage.setItem("trk-advance-command-palette", currentAdvanceCommandPalette);
+    applyAdvanceCommandPalette();
+    announce(currentAdvanceCommandPalette ? "コマンドパレットを有効にしました" : "コマンドパレットを無効にしました");
+  });
+
+  advanceFocusLoop.addEventListener("change", (e) => {
+    currentAdvanceFocusLoop = e.target.checked;
+    localStorage.setItem("trk-advance-focus-loop", currentAdvanceFocusLoop);
+    applyAdvanceFocusLoop();
+    announce(currentAdvanceFocusLoop ? "キーボードナビゲーションループを有効にしました" : "キーボードナビゲーションループを無効にしました");
+  });
+
+  advanceEdgeFade.addEventListener("change", (e) => {
+    currentAdvanceEdgeFade = e.target.checked;
+    localStorage.setItem("trk-advance-edge-fade", currentAdvanceEdgeFade);
+    applyAdvanceEdgeFade();
+    announce(currentAdvanceEdgeFade ? "スクロールエッジフェードを有効にしました" : "スクロールエッジフェードを無効にしました");
+  });
+
+  advancePullToReveal.addEventListener("change", (e) => {
+    currentAdvancePullToReveal = e.target.checked;
+    localStorage.setItem("trk-advance-pull-to-reveal", currentAdvancePullToReveal);
+    applyAdvancePullToReveal();
+    announce(currentAdvancePullToReveal ? "プルダウン隠しメニューを有効にしました" : "プルダウン隠しメニューを無効にしました");
+  });
+
+  advanceCursorAnim.addEventListener("change", (e) => {
+    currentAdvanceCursorAnim = e.target.checked;
+    localStorage.setItem("trk-advance-cursor-anim", currentAdvanceCursorAnim);
+    applyAdvanceCursorAnim();
+    announce(currentAdvanceCursorAnim ? "カーソルアニメーションを有効にしました" : "カーソルアニメーションを無効にしました");
+  });
+
   // wizard 辞書のリセット時に advance wizard 設定もリセットする対応
   wizardDictReset.addEventListener("click", () => {
     currentAdvanceAnimEnabled = true;
@@ -1081,6 +1227,11 @@ function playBell() {
     currentAdvanceSelectionColor = false;
     currentAdvanceCustomFormControls = false;
     currentAdvanceFieldSizing = false;
+    currentAdvanceCommandPalette = false;
+    currentAdvanceFocusLoop = false;
+    currentAdvanceEdgeFade = false;
+    currentAdvancePullToReveal = false;
+    currentAdvanceCursorAnim = false;
     localStorage.setItem("trk-advance-anim-enabled", currentAdvanceAnimEnabled);
     localStorage.setItem("trk-advance-reduce-motion", currentAdvanceReduceMotion);
     localStorage.setItem("trk-advance-component-color-scheme", currentAdvanceComponentColorScheme);
@@ -1090,6 +1241,11 @@ function playBell() {
     localStorage.setItem("trk-advance-selection-color", currentAdvanceSelectionColor);
     localStorage.setItem("trk-advance-custom-form-controls", currentAdvanceCustomFormControls);
     localStorage.setItem("trk-advance-field-sizing", currentAdvanceFieldSizing);
+    localStorage.setItem("trk-advance-command-palette", currentAdvanceCommandPalette);
+    localStorage.setItem("trk-advance-focus-loop", currentAdvanceFocusLoop);
+    localStorage.setItem("trk-advance-edge-fade", currentAdvanceEdgeFade);
+    localStorage.setItem("trk-advance-pull-to-reveal", currentAdvancePullToReveal);
+    localStorage.setItem("trk-advance-cursor-anim", currentAdvanceCursorAnim);
     advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
     advanceReduceMotion.checked = currentAdvanceReduceMotion;
     advanceComponentColorScheme.checked = currentAdvanceComponentColorScheme;
@@ -1099,6 +1255,11 @@ function playBell() {
     advanceSelectionColor.checked = currentAdvanceSelectionColor;
     advanceCustomFormControls.checked = currentAdvanceCustomFormControls;
     advanceFieldSizing.checked = currentAdvanceFieldSizing;
+    advanceCommandPalette.checked = currentAdvanceCommandPalette;
+    advanceFocusLoop.checked = currentAdvanceFocusLoop;
+    advanceEdgeFade.checked = currentAdvanceEdgeFade;
+    advancePullToReveal.checked = currentAdvancePullToReveal;
+    advanceCursorAnim.checked = currentAdvanceCursorAnim;
     applyAllAdvanceSettings();
     announce("advance wizard 設定もデフォルトに戻しました");
   });

@@ -510,6 +510,16 @@ node tools/check-docs.mjs            # README の表・リンク・セットの�
 | カスタムチェックボックス/ラジオ/スイッチ | `wizard.theme.customFormControls` | オフ | `appearance: none` + 生成コンテンツでスキンカラーに合ったカスタムフォームコントロール | guides/visual-design/browser-ui-theming |
 | テキストフィールド連動サイズ | `wizard.theme.fieldSizing` | オフ | `field-sizing: content` で入力欄をコンテンツの長さに応じて自動リサイズ | guides/visual-design/browser-ui-theming |
 
+#### インタラクション・ナビゲーション
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| コマンドパレット | `wizard.nav.commandPalette` | オフ | キーボードショートカットで設定項目を検索・ジャンプするコマンドパレット | guides/ui-behaviors（invoker commands）/ Modern Web Guidance core |
+| キーボードナビゲーションループ | `wizard.nav.focusLoop` | オフ | 設定パネル内のフォーカス移動をループさせるか、端で止めるか | Modern Web Guidance focusgroup / アクセシビリティガイド |
+| スクロールエッジフェード | `wizard.nav.edgeFade` | オフ | スクロール可能なエリアの端にフェードを付け、さらにスクロールできることを示唆 | Modern Web Guidance user-experience |
+| プルダウン隠しメニュー | `wizard.nav.pullToReveal` | オフ | プルダウンジェスチャーで隠し機能やショートカットを表示 | guides/ui-atoms/pull-to-reveal |
+| カーソルアニメーション（個別 transform） | `wizard.anim.cursorStyle` | オフ | カーソルやカレットのアニメーションを translate/rotate/scale で個別に制御 | Modern Web Guidance CSS ガイド |
+
 #### アコーディオン構造
 
 - 各設定セクションは `details`/`summary` でラップされ、個別に開閉可能
