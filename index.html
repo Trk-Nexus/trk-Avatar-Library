@@ -7,6 +7,10 @@
 <title>trk! — Terminal &amp; Wizard Skin (trk269)</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preload" as="style" href="css/style.css">
+<link rel="icon" href="./icon-192.png">
 </head>
 <body trk-build="trk269" data-theme="dark">
 
@@ -363,6 +367,90 @@
       term.scrollTop = term.scrollHeight;
     }
   });
+</script>
+
+<!-- Core Web Vitals 測定（LCP / FID / CLS） -->
+<script>
+  (function () {
+    // Performance Observer がサポートされているか確認
+    if (!window.PerformanceObserver) return;
+
+    const vitals = {};
+
+    // LCP 測定
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        vitals.lcp = entry.startTime;
+      }
+    }).observe({ entryTypes: ["largest-contentful-paint"] });
+
+    // FID 測定（First Input Delay）
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        vitals.fid = entry.processingStart - entry.startTime;
+      }
+    }).observe({ entryTypes: ["first-input"] });
+
+    // CLS 測定（Cumulative Layout Shift）
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (!entry.hadRecentInput) {
+          vitals.cls = (vitals.cls || 0) + entry.value;
+        }
+      }
+    }).observe({ entryTypes: ["layout-shift"] });
+
+    // ページ読み込み完了時にレポート
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const report = {
+          lcp: vitals.lcp ? Math.round(vitals.lcp) : null,
+          fid: vitals.fid ? Math.round(vitals.fid) : null,
+          cls: vitals.cls ? Math.round(vitals.cls * 1000) / 1000 : null,
+        };
+        // コンソールに出力（開発時）
+        if (typeof console !== "undefined" && console.table) {
+          console.table(report, ["Core Web Vitals"]);
+        }
+        // ウィンドウプロパティとして公開（外部スクリプトからアクセス可能）
+        window.trkWebVitals = report;
+      }, 0);
+    });
+  })();
+</script>
+
+<!-- Service Worker 登録 -->
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("./sw.js", { scope: "./" })
+        .then((registration) => {
+          console.log("Service Worker 登録成功:", registration.scope);
+          // 新しい Service Worker が待機中の場合は即座に有効化
+          if (registration.waiting) {
+            registration.waiting.postMessage({ type: "SKIP_WAITING" });
+          }
+          registration.addEventListener("updatefound", () => {
+            const installingWorker = registration.installing;
+            if (!installingWorker) return;
+            installingWorker.addEventListener("statechange", () => {
+              if (
+                installingWorker.state === "installed" &&
+                navigator.serviceWorker.controller
+              ) {
+                // 新しいバージョンがインストールされた
+                console.log("新しい Service Worker がインストールされました");
+                // ユーザーにリロードを促す（オプション）
+              }
+            });
+          });
+        })
+        .catch((error) => {
+          console.error("Service Worker 登録失敗:", error);
+        });
+    });
+  }
 </script>
 
 </body>
