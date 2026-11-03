@@ -66,7 +66,7 @@
   node tools/check-docs.mjs            # README の表・内部リンク・セットの記録が今の中身と合っているか
   ```
 
-- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `4a9cf1ccdb84ea92fb198fef7465ab16d342ffa0`**＝2026-11-03・trk268 まで）。
+- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `6f60e234fca63cf47a2cba4bbcd954ee3850dacd`**＝2026-11-03・trk269 まで）。
   trk-PWA の版が上がったら、**この1行と §7 の記録を一緒に**変えます。固定した版と `main` の両方を見るため、
   週に1回（日曜 21:00 UTC）`upstream-main` ジョブが `main` でも契約を確かめます（失敗しても全体は赤にしません）。
 
@@ -423,6 +423,21 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 - GitHub Actions（`check.yml`）は push／PR で **成功**（run 41218922745・13 秒）
 
 ## 7. 変更履歴（新しい順）
+
+### 2026-11-03 trk269 ターミナルの定番とWizardスキン — TRK_PWA_REF を trk269（6f60e234fca63cf47a2cba4bbcd954ee3850dacd）に、Wizard CLIスキン5操作感・コントラスト修正
+
+- **`TRK_PWA_REF` を `6f60e234fca63cf47a2cba4bbcd954ee3850dacd`（trk269、40桁）に変更**：`.github/workflows/check.yml` と `.github/workflows/release-set.yml` の `env.TRK_PWA_REF`、および本文書 §1 の記録を同じ回にする。7桁では `actions/checkout` が枝名として探して失敗するため、必ず40桁のフル SHA を使う。
+- **`catalog/skins.json` の wizard 24 種に cli オブジェクトと5操作感を追加**：`cursor`（block/underline/bar）、`opacity`（0.5〜1、地::beforeに適用、文字は透けさせない）、`history`（10〜200）、`completion`（tab/off）、`bell`（true のみ、デフォルトオフ、AudioContext で生成）。CLI対応12種（wizard-cli, wizard-terminal, wizard-grimoire, wizard-arcane, wizard-console, wizard-grep, wizard-man, wizard-sudo, wizard-pipe, wizard-history, wizard-tmux, wizard-nord）に完全実装。
+- **cli.font の二重クォート修正**：wizard-grep, wizard-man, wizard-sudo の 3 種で `\"Courier New\",\"Courier\",monospace` → `Courier New, Courier, monospace` に正規化。
+- **残り12種の Wizard スキン（CLIなし）の muted コントラストを 4.5:1 以上に修正**：wizard-spell, wizard-rune, wizard-alchemy, wizard-cauldron, wizard-crystal, wizard-tarot, wizard-void（text も #e0e0e0 に変更）, wizard-eldritch, wizard-seance, wizard-ouija, wizard-hermetic（field #ffe0b2 / text #3a2a5a / muted #3a2a5a / panel #e0c0a0 に変更）, wizard-necromancer。
+- **`tools/import-skin-catalog.mjs` 新設**：catalog/skins.json から js/skins-wizard.js を生成（--cat=wizard、--cli-only 不使用で24種全入力、手編集禁止）。
+- **`js/skins-wizard.js` 生成**：wizard 24 種のスキン定義。index.html で js/characters/miku.js の直後に読み込み。
+- **`tools/check-cli-skin.mjs` を v2 にアップデート**：カタログ（--catalog）を受け取り、5操作感（cursor/opacity/history/completion/bell）もチェック対象。rgba(...) 形式の色に対応。--json で reason（name/color/contrast/cli）を出力。終了コード 0=受け取り／1=名前なし／2=読めない。
+- **`tools/check-repo.mjs` 新設**：リポジトリ全体のスキンチェック（チェック対象 24 種、スキップ 229 種）。
+- **PWA 基盤ファイル新設**：`package.json`（npm run check / npm test / import:skins）、`index.html`（trk-build=trk269、CACHE=trk-v2026.11.03-trk269、skins-wizard.js 読み込み）、`css/style.css`（地::beforeに --cli-opacity、文字は透けさせない）、`js/core.js`（SKIN_CATS に wizard 追加、cliBell 初期値）、`js/data.js`（sanitizeCliLook, cliLookVars, CLI_CURSOR_SHAPE）、`js/cli.js`（pwd/ls/cd/cat/grep/history/clear/echo/bell、`;` と `|` でつなぐ、生パス拒否、bell は AudioContext 生成）、`js/i18n.js`（catWizard 4言語）、`sw.js`（キャッシュ名 trk-v2026.11.03-trk269）、`manifest.json`。
+- **テスト新設**：`tests/trk269-cli-standard.test.mjs`（23件、302 assert 合格）、`tests/skin-contrast.test.mjs`（61種、244 check 項目合格）。
+- **npm run check 緑**：check-cli-skin.mjs v2（--catalog）24 種合格 + check-repo.mjs 24 種合格。
+- **npm test 緑**：trk269-cli-standard 23 件通過 + skin-contrast 61 種通過。
 
 ### 2026-11-03 trk268 CLI スキン受け口 — TRK_PWA_REF を trk268（4a9cf1ccdb84ea92fb198fef7465ab16d342ffa0）に、Wizard 定番CLIスキン追加
 - **`TRK_PWA_REF` を `4a9cf1ccdb84ea92fb198fef7465ab16d342ffa0`（trk268、40桁）に変更**：`.github/workflows/check.yml` と `.github/workflows/release-set.yml` の `env.TRK_PWA_REF`、および本文書 §1 の記録を同じ回にする。7桁では `actions/checkout` が枝名として探して失敗するため、必ず40桁のフル SHA を使う。

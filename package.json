@@ -1,0 +1,15 @@
+{
+  "name": "trk-avatar-library",
+  "version": "2026.11.03-trk269",
+  "description": "trk PWA Avatar Library — Terminal & Wizard Skin (trk269)",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "check": "node tools/check-cli-skin.mjs catalog/skins.json --catalog --json && node tools/check-repo.mjs",
+    "test": "node tests/trk269-cli-standard.test.mjs && node tests/skin-contrast.test.mjs",
+    "import:skins": "node tools/import-skin-catalog.mjs --cat=wizard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Trk-Nexus/trk-Avatar-Library"
+  }
+}

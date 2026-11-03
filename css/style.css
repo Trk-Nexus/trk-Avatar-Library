@@ -1,0 +1,137 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+/* trk269: PWA スタイル — CLI スキン対応 */
+
+/* --- ベース変数 --- */
+:root {
+  --bg: #0a0a0a;
+  --panel: #141414;
+  --text: #e0e0e0;
+  --muted: #888888;
+  --accent: #d4af37;
+  --gold: #ffffff;
+  --border: #d4af37;
+
+  /* --- CLI 5 操作感変数 --- */
+  --cli-font: "Courier New", Courier, monospace;
+  --cli-prompt: ">";
+  --cli-caret: "#d4af37";
+  --cli-scan: 0.1;
+  --cli-cursor: block;
+  --cli-opacity: 1;
+  --cli-history: 50;
+  --cli-completion: tab;
+  --cli-bell: true;
+}
+
+/* --- 地（::before）に --cli-opacity を適用。文字は透けさせない。 --- */
+.cli-base::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  opacity: var(--cli-opacity);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cli-base {
+  position: relative;
+  z-index: 1;
+  color: var(--text); /* 文字は透けさせない（opacity を適用しない） */
+  font-family: var(--cli-font);
+}
+
+/* --- ターミナル表示 --- */
+.cli-term {
+  position: relative;
+  padding: 1rem;
+  font-family: var(--cli-font);
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-height: 200px;
+  overflow-y: auto;
+}
+
+.cli-line {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.25rem 0;
+  white-space: pre-wrap;
+}
+
+.cli-prompt {
+  color: var(--accent);
+  font-weight: bold;
+  user-select: none;
+}
+
+.cli-caret {
+  color: var(--cli-caret);
+  display: inline-block;
+  width: 0.75em;
+}
+
+/* カーソル形状 */
+.cli-cursor.block {
+  display: inline-block;
+  width: 0.75em;
+  height: 1em;
+  background: var(--cli-caret);
+  animation: cli-blink 1s step-end infinite;
+}
+
+.cli-cursor.underline {
+  display: inline-block;
+  width: 0.75em;
+  height: 2px;
+  background: var(--cli-caret);
+  animation: cli-blink 1s step-end infinite;
+}
+
+.cli-cursor.bar {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--cli-caret);
+  animation: cli-blink 1s step-end infinite;
+}
+
+@keyframes cli-blink {
+  50% { opacity: 0; }
+}
+
+/* --- スキャンライン --- */
+.cli-scan::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, var(--cli-scan)) 50.1%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --- コマンド入力 --- */
+.cli-input {
+  margin-top: 0.5rem;
+  font-family: var(--cli-font);
+  color: var(--text);
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+/* --- ユーティリティ --- */
+.cli-hidden { display: none; }
+.cli-muted { color: var(--muted); }
+.cli-accent { color: var(--accent); }
+.cli-gold { color: var(--gold); }
