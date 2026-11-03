@@ -1,22 +1,22 @@
 {
   "format": "trk-avatar-library-skins",
   "version": 1,
-  "generatedAt": "2026-11-02T20:11:05.213800+00:00",
+  "generatedAt": "2026-11-03T00:31:29.528507+00:00",
   "source": "trk-PWA / js/data.js + js/characters/miku.js",
-  "count": 245,
+  "count": 253,
   "typeSkins": 43,
   "categories": {
     "basic": 22,
-    "light": 98,
-    "grad": 114,
-    "fun": 93,
-    "dark": 86,
-    "access": 27,
-    "life": 30,
+    "light": 99,
+    "grad": 117,
+    "fun": 97,
+    "dark": 89,
+    "access": 30,
+    "life": 32,
     "type": 43,
     "miku": 4,
     "glitch": 16,
-    "wizard": 16
+    "wizard": 24
   },
   "skins": [
     {
@@ -11050,22 +11050,28 @@
         "don": "#d4af37",
         "ka": "#666666",
         "text": "#e0e0e0",
-        "muted": "#333333",
+        "muted": "#8fd79a",
         "bg": "#050505",
-        "panel": "rgba(5,5,5,.98)",
+        "panel": "#031406",
         "field": "#0a0a0a",
         "button": "#1a1a1a",
         "accent": "#d4af37",
         "onAccent": "#000000",
         "gold": "#ffffff",
-        "border": "rgba(212,175,55,.30)"
+        "border": "#d4af37"
       },
       "shapes": [
         "square",
         "square"
       ],
       "locked": false,
-      "video": "contrast(1.2) brightness(.85)"
+      "video": "contrast(1.2) brightness(.85)",
+      "cli": {
+        "font": "Cascadia Mono, Consolas, monospace",
+        "prompt": "λ",
+        "caret": "#39ff14",
+        "scan": 0.12
+      }
     },
     {
       "id": "wizard-spell",
@@ -11154,7 +11160,7 @@
         "don": "#d4af37",
         "ka": "#8d6e63",
         "text": "#f5f5f5",
-        "muted": "#795548",
+        "muted": "#cbb6ac",
         "bg": "#261411",
         "panel": "rgba(38,20,17,.97)",
         "field": "#3e2723",
@@ -11169,7 +11175,13 @@
         "circle"
       ],
       "locked": false,
-      "video": "sepia(.35) contrast(1.15) brightness(.9)"
+      "video": "sepia(.35) contrast(1.15) brightness(.9)",
+      "cli": {
+        "font": "Trajan Pro, Garamond, serif",
+        "prompt": ">",
+        "caret": "#d4af37",
+        "scan": 0.08
+      }
     },
     {
       "id": "wizard-rune",
@@ -11310,7 +11322,7 @@
         "don": "#ccaa00",
         "ka": "#4a4a00",
         "text": "#ffbf00",
-        "muted": "#554400",
+        "muted": "#aa8800",
         "bg": "#0a0a00",
         "panel": "rgba(10,10,0,.98)",
         "field": "#1a1a00",
@@ -11325,7 +11337,13 @@
         "square"
       ],
       "locked": false,
-      "video": "sepia(.5) contrast(1.15) brightness(.85)"
+      "video": "sepia(.5) contrast(1.15) brightness(.85)",
+      "cli": {
+        "font": "Courier New, Courier, monospace",
+        "prompt": ">",
+        "caret": "#ffbf00",
+        "scan": 0.15
+      }
     },
     {
       "id": "wizard-cauldron",
@@ -11570,7 +11588,7 @@
         "don": "#ff00ff",
         "ka": "#74b9ff",
         "text": "#00ffff",
-        "muted": "#4a2a6a",
+        "muted": "#b39ddb",
         "bg": "#1a052e",
         "panel": "rgba(26,5,46,.97)",
         "field": "#2d0a3e",
@@ -11585,7 +11603,13 @@
         "diamond"
       ],
       "locked": false,
-      "video": "hue-rotate(280deg) saturate(1.6) brightness(.8) contrast(1.3)"
+      "video": "hue-rotate(280deg) saturate(1.6) brightness(.8) contrast(1.3)",
+      "cli": {
+        "font": "Cinzel, Trajan Pro, serif",
+        "prompt": "✦",
+        "caret": "#ff00ff",
+        "scan": 0.18
+      }
     },
     {
       "id": "wizard-eldritch",
@@ -11846,6 +11870,473 @@
       ],
       "locked": false,
       "video": "hue-rotate(260deg) saturate(1.3) contrast(1.25) brightness(.8)"
+    },
+    {
+      "id": "wizard-console",
+      "label": {
+        "ja": "ウィザードコンソール",
+        "en": "Wizard Console",
+        "zh": "巫师控制台",
+        "ko": "마법사 콘솔"
+      },
+      "desc": {
+        "ja": "打鍵感を重視したコンソール、CRTのざらつきと魔法の輝き",
+        "en": "Console emphasizing keystroke feel, CRT grain and magical glow",
+        "zh": "强调敲击感的控制台，CRT颗粒感与魔法光芒",
+        "ko": "타건감을 중시한 콘솔, CRT의 거친 느낌과 마법의 광채"
+      },
+      "cat": [
+        "wizard",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Press Start 2P\",\"Courier New\",monospace",
+      "type": {
+        "title": "\"Press Start 2P\",monospace",
+        "weight": "400",
+        "lh": "1.25",
+        "titleWeight": "700",
+        "titleSpace": ".04em",
+        "titleTransform": "uppercase",
+        "mark": "KEYPRESS"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#00ff00",
+        "don": "#39ff14",
+        "ka": "#00cc00",
+        "text": "#00ff00",
+        "muted": "#66ff66",
+        "bg": "#050505",
+        "panel": "#031406",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#39ff14",
+        "onAccent": "#000000",
+        "gold": "#66ff66",
+        "border": "rgba(57,255,20,.30)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "saturate(1.6) contrast(1.3) brightness(.85) hue-rotate(110deg)",
+      "cli": {
+        "font": "Courier New,Courier,monospace",
+        "prompt": "λ",
+        "caret": "#39ff14",
+        "scan": 0.2
+      }
+    },
+    {
+      "id": "wizard-grep",
+      "label": {
+        "ja": "ウィザード・グレップ",
+        "en": "Wizard Grep",
+        "zh": "巫师搜索",
+        "ko": "마법사 검색"
+      },
+      "desc": {
+        "ja": "テキスト検索・マッチ強調・黄色マーカー",
+        "en": "Text search, match highlight, yellow marker",
+        "zh": "文本搜索，匹配高亮，黄色标记",
+        "ko": "텍스트 검색, 일치 강조, 노란색 마커"
+      },
+      "cat": [
+        "wizard",
+        "fun",
+        "access"
+      ],
+      "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+      "type": {
+        "title": "\\\"Courier New\\\",monospace",
+        "weight": "600",
+        "lh": "1.3",
+        "titleWeight": "700",
+        "titleSpace": ".03em",
+        "titleTransform": "uppercase",
+        "mark": "grep"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#f8f8f2",
+        "don": "#ff79c6",
+        "ka": "#bd93f9",
+        "text": "#f8f8f2",
+        "muted": "#bd93f9",
+        "bg": "#0a0a0a",
+        "panel": "#1a1a2e",
+        "field": "#0a0a0a",
+        "button": "#1a1a2e",
+        "accent": "#ffff00",
+        "onAccent": "#000000",
+        "gold": "#ffff00",
+        "border": "rgba(255,255,0,.30)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "saturate(1.4) contrast(1.2) brightness(.9)",
+      "cli": {
+        "font": "Courier New,Courier,monospace",
+        "prompt": "?",
+        "caret": "#ffff00",
+        "scan": 0.1
+      },
+      "cli.font": "Courier New, Courier, monospace"
+    },
+    {
+      "id": "wizard-man",
+      "label": {
+        "ja": "ウィザード・マン",
+        "en": "Wizard Man",
+        "zh": "巫师手册",
+        "ko": "마법사 매뉴얼"
+      },
+      "desc": {
+        "ja": "manページ・ドキュメント閲覧・serifフォント",
+        "en": "man page, document viewing, serif font",
+        "zh": "man页面，文档查看，衬线字体",
+        "ko": "man 페이지, 문서 조회, 세리프 글꼴"
+      },
+      "cat": [
+        "wizard",
+        "life",
+        "grad"
+      ],
+      "font": "\\\"Trajan Pro\\\",\\\"Garamond\\\",serif",
+      "type": {
+        "title": "\\\"Trajan Pro\\\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "600",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f5f5f5",
+        "ink": "#1a1a1a",
+        "don": "#d4af37",
+        "ka": "#8d6e63",
+        "text": "#1a1a1a",
+        "muted": "#7b1fa2",
+        "bg": "#ffffff",
+        "panel": "#f5f5f5",
+        "field": "#ffffff",
+        "button": "#e0e0e0",
+        "accent": "#cbd5e1",
+        "onAccent": "#000000",
+        "gold": "#ffe082",
+        "border": "rgba(203,213,225,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.1) brightness(1.02)",
+      "cli": {
+        "font": "Trajan Pro,Garamond,serif",
+        "prompt": ">",
+        "caret": "#cbd5e1",
+        "scan": 0.05
+      },
+      "cli.font": "Trajan Pro, Garamond, serif"
+    },
+    {
+      "id": "wizard-sudo",
+      "label": {
+        "ja": "ウィザード・スードー",
+        "en": "Wizard Sudo",
+        "zh": "巫师根权限",
+        "ko": "마법사 루트"
+      },
+      "desc": {
+        "ja": "root権限・警告色・赤アクセント",
+        "en": "root permission, warning color, red accent",
+        "zh": "root权限，警告色，红色强调",
+        "ko": "root 권한, 경고색, 빨간색 강조"
+      },
+      "cat": [
+        "wizard",
+        "dark",
+        "access"
+      ],
+      "font": "\\\"Cascadia Mono\\\",\\\"Consolas\\\",monospace",
+      "type": {
+        "title": "\\\"Cascadia Mono\\\",monospace",
+        "weight": "700",
+        "lh": "1.25",
+        "titleWeight": "900",
+        "titleSpace": "-.03em",
+        "titleTransform": "uppercase",
+        "mark": "root"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#f8f8f2",
+        "don": "#ff0040",
+        "ka": "#ff5555",
+        "text": "#f8f8f2",
+        "muted": "#ff79c6",
+        "bg": "#0a0a0a",
+        "panel": "#1a1a1a",
+        "field": "#0a0a0a",
+        "button": "#1a1a2e",
+        "accent": "#ff0040",
+        "onAccent": "#ffffff",
+        "gold": "#ff5555",
+        "border": "rgba(255,0,64,.35)"
+      },
+      "shapes": [
+        "square",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "hue-rotate(0deg) saturate(1.5) contrast(1.3) brightness(.8)",
+      "cli": {
+        "font": "Cascadia Mono,Consolas,monospace",
+        "prompt": "#",
+        "caret": "#ff0040",
+        "scan": 0.15
+      },
+      "cli.font": "Cascadia Mono, Consolas, monospace"
+    },
+    {
+      "id": "wizard-pipe",
+      "label": {
+        "ja": "ウィザード・パイプ",
+        "en": "Wizard Pipe",
+        "zh": "巫师管道",
+        "ko": "마법사 파이프"
+      },
+      "desc": {
+        "ja": "コマンドをつなぐ・矢印・フロー感",
+        "en": "Connecting commands, arrows, flow",
+        "zh": "连接命令，箭头，流程感",
+        "ko": "명령어 연결, 화살표, 흐름감"
+      },
+      "cat": [
+        "wizard",
+        "fun",
+        "grad"
+      ],
+      "font": "Rajdhani, Oswald, sans-serif",
+      "type": {
+        "title": "Rajdhani, sans-serif",
+        "weight": "600",
+        "lh": "1.25",
+        "titleWeight": "700",
+        "titleSpace": "-.01em",
+        "titleTransform": "",
+        "mark": "→"
+      },
+      "colors": {
+        "stage": "#050510",
+        "ink": "#00ffff",
+        "don": "#ff00ff",
+        "ka": "#4a4a6a",
+        "text": "#00ffff",
+        "muted": "#88c0d0",
+        "bg": "#05050a",
+        "panel": "#0a0a1a",
+        "field": "#0a0a10",
+        "button": "#1a1a2a",
+        "accent": "#00ffff",
+        "onAccent": "#000000",
+        "gold": "#ff00ff",
+        "border": "rgba(0,255,255,.35)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "hue-rotate(200deg) saturate(1.6) brightness(.75) contrast(1.3)",
+      "cli": {
+        "font": "Rajdhani, Oswald, sans-serif",
+        "prompt": "→",
+        "caret": "#00ffff",
+        "scan": 0.12
+      }
+    },
+    {
+      "id": "wizard-history",
+      "label": {
+        "ja": "ウィザード・ヒストリー",
+        "en": "Wizard History",
+        "zh": "巫师历史",
+        "ko": "마법사 기록"
+      },
+      "desc": {
+        "ja": "コマンド履歴・過去の呪文・タイムスタンプ",
+        "en": "Command history, past spells, timestamps",
+        "zh": "命令历史，过去的咒语，时间戳",
+        "ko": "명령어 기록, 과거 주문, 타임스탬프"
+      },
+      "cat": [
+        "wizard",
+        "life",
+        "dark"
+      ],
+      "font": "Courier New, Courier, monospace",
+      "type": {
+        "title": "Courier New, monospace",
+        "weight": "400",
+        "lh": "1.4",
+        "titleWeight": "600",
+        "titleSpace": "0",
+        "titleTransform": "",
+        "mark": "@"
+      },
+      "colors": {
+        "stage": "#00000a",
+        "ink": "#80deea",
+        "don": "#4db6ac",
+        "ka": "#4a4a6a",
+        "text": "#80deea",
+        "muted": "#4db6ac",
+        "bg": "#000005",
+        "panel": "#0a0a15",
+        "field": "#00000a",
+        "button": "#0a0a2a",
+        "accent": "#80deea",
+        "onAccent": "#000000",
+        "gold": "#b2ebf2",
+        "border": "rgba(128,222,234,.30)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "brightness(1.05) saturate(.9) contrast(1.02)",
+      "cli": {
+        "font": "Courier New, Courier, monospace",
+        "prompt": "@",
+        "caret": "#80deea",
+        "scan": 0.1
+      }
+    },
+    {
+      "id": "wizard-tmux",
+      "label": {
+        "ja": "ウィザード・ティムックス",
+        "en": "Wizard Tmux",
+        "zh": "巫师分屏",
+        "ko": "마법사 다중창"
+      },
+      "desc": {
+        "ja": "画面分割・グリッド・ペイン操作",
+        "en": "Screen split, grid, pane operation",
+        "zh": "屏幕分割，网格，窗格操作",
+        "ko": "화면 분할, 그리드, 창 분할 조작"
+      },
+      "cat": [
+        "wizard",
+        "fun",
+        "access"
+      ],
+      "font": "JetBrains Mono, monospace",
+      "type": {
+        "title": "JetBrains Mono, monospace",
+        "weight": "600",
+        "lh": "1.3",
+        "titleWeight": "700",
+        "titleSpace": "-.02em",
+        "titleTransform": "",
+        "mark": "+"
+      },
+      "colors": {
+        "stage": "#272822",
+        "ink": "#f8f8f2",
+        "don": "#f92672",
+        "ka": "#a6e22e",
+        "text": "#f8f8f2",
+        "muted": "#a6e22e",
+        "bg": "#272822",
+        "panel": "#3e3d32",
+        "field": "#272822",
+        "button": "#3e3d32",
+        "accent": "#f92672",
+        "onAccent": "#ffffff",
+        "gold": "#a6e22e",
+        "border": "rgba(249,38,114,.30)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "saturate(1.2) contrast(1.15) brightness(.95)",
+      "cli": {
+        "font": "JetBrains Mono, monospace",
+        "prompt": "+",
+        "caret": "#f92672",
+        "scan": 0.08
+      }
+    },
+    {
+      "id": "wizard-nord",
+      "label": {
+        "ja": "ウィザード・ノルド",
+        "en": "Wizard Nord",
+        "zh": "巫师北欧",
+        "ko": "마법사 노르딕"
+      },
+      "desc": {
+        "ja": "青灰系・落ち着いた夜間モード",
+        "en": "Blue-gray, calm night mode",
+        "zh": "蓝灰色，平静的夜间模式",
+        "ko": "청회색, 차분한 야간 모드"
+      },
+      "cat": [
+        "wizard",
+        "grad",
+        "light"
+      ],
+      "font": "JetBrains Mono, monospace",
+      "type": {
+        "title": "JetBrains Mono, monospace",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "600",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#2e3440",
+        "ink": "#d8dee9",
+        "don": "#88c0d0",
+        "ka": "#81a1c1",
+        "text": "#d8dee9",
+        "muted": "#8fbcbb",
+        "bg": "#2e3440",
+        "panel": "#3b4252",
+        "field": "#2e3440",
+        "button": "#434c5e",
+        "accent": "#88c0d0",
+        "onAccent": "#2e3440",
+        "gold": "#eceff4",
+        "border": "rgba(136,192,208,.30)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "saturate(.8) brightness(1.02)",
+      "cli": {
+        "font": "JetBrains Mono, monospace",
+        "prompt": ">",
+        "caret": "#88c0d0",
+        "scan": 0.06
+      }
     }
   ],
   "fontPacks": [
