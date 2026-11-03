@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// trk269: CLI 標準テスト（23件）
+// trk269: CLI 標準テスト（29件）
 // import-skin-catalog.mjs で生成された js/skins-wizard.js と
 // catalog/skins.json の整合性・セキュリティ・cli 5 操作感を検証
 
@@ -37,7 +37,7 @@ function test(name, fn) {
   testPromises.push(p);
 }
 
-console.log("=== trk269 CLI 標準テスト（23件） ===\n");
+console.log("=== trk269 CLI 標準テスト（29件） ===\n");
 
 // --- 1. スキン総数 ---
 test("スキン総数は 291 種", () => {
@@ -238,6 +238,62 @@ test("CliCommands: ; と | でつなぐ", async () => {
   const cli = new CliCommands({});
   const out = await cli.run("echo a; echo b");
   assert.ok(out.includes("a") && out.includes("b"), `出力: ${out}`);
+});
+
+// --- 24. help -wizard: wizard機能一覧 ---
+test("CliCommands: help -wizard", async () => {
+  const cli = new CliCommands({});
+  const out = await cli.run("help -wizard");
+  assert.ok(out.includes("wizard機能一覧"), `出力: ${out}`);
+  assert.ok(out.includes("wizard-aura-caster"), `出力: ${out}`);
+  assert.ok(out.includes("wizard-view-transition-master"), `出力: ${out}`);
+});
+
+// --- 25. help --tutorial: チュートリアル ---
+test("CliCommands: help --tutorial", async () => {
+  const cli = new CliCommands({});
+  const out = await cli.run("help --tutorial");
+  assert.ok(out.includes("チュートリアル"), `出力: ${out}`);
+  assert.ok(out.includes("cd wizard-cli"), `出力: ${out}`);
+});
+
+// --- 26. wizard 辞書登録（wizard <単語> rec） ---
+test("CliCommands: wizard <単語> rec 辞書登録", async () => {
+  const cli = new CliCommands({});
+  const out = await cli.run("wizard 魔導書 rec");
+  assert.ok(out.includes("登録しました"), `出力: ${out}`);
+  const dict = await cli.run("wizard dict");
+  assert.ok(dict.includes("魔導書"), `辞書出力: ${dict}`);
+});
+
+// --- 27. wizard 辞書登録（wizard rec <単語>） ---
+test("CliCommands: wizard rec <単語> 辞書登録", async () => {
+  const cli = new CliCommands({});
+  const out = await cli.run("wizard rec 呪文");
+  assert.ok(out.includes("登録しました"), `出力: ${out}`);
+  const dict = await cli.run("wizard dict");
+  assert.ok(dict.includes("呪文"), `辞書出力: ${dict}`);
+});
+
+// --- 28. wizard export / import ---
+test("CliCommands: wizard export / import", async () => {
+  const cli = new CliCommands({});
+  const exportOut = await cli.run("wizard export");
+  assert.ok(exportOut.includes("dictionary"), `エクスポート出力: ${exportOut}`);
+  assert.ok(exportOut.includes("settings"), `エクスポート出力: ${exportOut}`);
+
+  const importOut = await cli.run("wizard import {\"dictionary\":{\"輸入語\":\"輸入語\"}}");
+  assert.ok(importOut.includes("インポートしました"), `インポート出力: ${importOut}`);
+
+  const dict = await cli.run("wizard dict");
+  assert.ok(dict.includes("輸入語"), `インポート後辞書: ${dict}`);
+});
+
+// --- 29. wizard 使用禁止文字拒否 ---
+test("CliCommands: wizard 辞書 使用禁止文字拒否", async () => {
+  const cli = new CliCommands({});
+  const out = await cli.run("wizard ../secret rec");
+  assert.ok(out.includes("エラー"), `出力: ${out}`);
 });
 
 await Promise.all(testPromises);
