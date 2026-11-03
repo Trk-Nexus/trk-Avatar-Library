@@ -487,6 +487,63 @@ node tools/check-docs.mjs            # README の表・リンク・セットの�
 - セキュリティ：辞書登録・スキンID・フォント名等に使用禁止文字（バッククォート、バックスラッシュ、`..`、`~`、`C:`）を拒否
 - colors は bg/panel/text/accent/gold の5色必須、prompt は1-4文字・クォート禁止、caret は #rgb/#rrggbb/currentColor、scan は 0-0.6
 
+### advance wizard 設定（Phase 10：Modern Web Guidance 準拠）
+
+設定パネルに追加された advance wizard 設定は、GoogleChrome/modern-web-guidance-src の思想に基づきます。各項目は**オプションでオンオフ可能**です。
+
+#### 設定パネル構造・アニメーション
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| 設定パネル開閉アニメーション | `wizard.anim.enabled` | オン | `@starting-style` + `transition-behavior: allow-discrete` で開閉をスムーズにアニメーション | guides/ui-behaviors/animate-element-entry-exit |
+| prefers-reduced-motion 尊重 | `wizard.anim.reducedMotion` | オフ | OSの「動きを減らす」設定に応じて移動系アニメーションを無効化・フェードのみに短縮 | guides/ui-behaviors/animate-element-entry-exit（MANDATORY） |
+| 個別コンポーネント color-scheme | `wizard.theme.componentColorScheme` | オフ | 特定のコンポーネントだけを常にライト/ダークモードに固定（`color-scheme: only light/dark`） | guides/ui-atoms/component-specific-light-dark-theme |
+| フォームコントロール accent-color | `wizard.theme.accentFormControls` | オン | チェックボックス・ラジオ・スイッチ・セレクト等にスキンのアクセントカラーを適用 | guides/visual-design/browser-ui-theming |
+
+#### テーマ・カラー
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| ベースカラーからティント・シェード生成 | `wizard.theme.colorRamp` | オフ | `relative-color()` / `oklab()` / `color-mix()` / `lab()` でベースカラーからバリエーションを生成 | guides/visual-design/color-ramps |
+| スクロールバーの色・太さ | `wizard.theme.scrollbarStyle` | オフ | `scrollbar-color` / `scrollbar-width` でスクロールバーをスキンカラーに統一 | guides/visual-design/browser-ui-theming |
+| テキスト選択範囲色 | `wizard.theme.selectionColor` | オフ | `::selection` でテキスト選択時のハイライト色をスキンのアクセントカラーに | guides/visual-design/browser-ui-theming |
+| カスタムチェックボックス/ラジオ/スイッチ | `wizard.theme.customFormControls` | オフ | `appearance: none` + 生成コンテンツでスキンカラーに合ったカスタムフォームコントロール | guides/visual-design/browser-ui-theming |
+| テキストフィールド連動サイズ | `wizard.theme.fieldSizing` | オフ | `field-sizing: content` で入力欄をコンテンツの長さに応じて自動リサイズ | guides/visual-design/browser-ui-theming |
+
+#### インタラクション・ナビゲーション
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| コマンドパレット | `wizard.nav.commandPalette` | オフ | キーボードショートカットで設定項目を検索・ジャンプするコマンドパレット | guides/ui-behaviors（invoker commands）/ Modern Web Guidance core |
+| キーボードナビゲーションループ | `wizard.nav.focusLoop` | オフ | 設定パネル内のフォーカス移動をループさせるか、端で止めるか | Modern Web Guidance focusgroup / アクセシビリティガイド |
+| スクロールエッジフェード | `wizard.nav.edgeFade` | オフ | スクロール可能なエリアの端にフェードを付け、さらにスクロールできることを示唆 | Modern Web Guidance user-experience |
+| プルダウン隠しメニュー | `wizard.nav.pullToReveal` | オフ | プルダウンジェスチャーで隠し機能やショートカットを表示 | guides/ui-atoms/pull-to-reveal |
+| カーソルアニメーション（個別 transform） | `wizard.anim.cursorStyle` | オフ | カーソルやカレットのアニメーションを translate/rotate/scale で個別に制御 | Modern Web Guidance CSS ガイド |
+
+#### アクセシビリティ・ユーザー設定
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| OS コントラスト設定に対応 | `wizard.a11y.contrastMode` | オフ | `prefers-contrast` / `prefers-reduced-transparency` に応じて UI を調整 | guides/accessibility/preference-aware-ui |
+| バリデーションスタイル（ユーザー操作後のみ） | `wizard.a11y.validationStyle` | オフ | `:user-valid` / `:user-invalid` で操作後のフィールドバリデーションのみをスタイリング | guides/visual-design/browser-ui-theming |
+| 隠しヒントの「ページ内検索」表示 | `wizard.a11y.hiddenHints` | オフ | `hidden="until-found"` で隠しヒントをマークアップし、ブラウザ検索で表示可能に | guides/ui-components/accordion |
+
+#### パフォーマンス・PWA
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| トップレイヤー UI の永続化 | `wizard.perf.topLayer` | オフ | 設定パネルをトップレイヤー（popover / dialog）として固定し、DOM 移動後も表示を維持 | Modern Web Guidance user-experience |
+| PWA インストールプロンプト制御 | `wizard.pwa.installPrompt` | オフ | PWA インストールプロンプトの表示タイミングや頻度を制御 | guides/pwa |
+
+#### アコーディオン構造
+
+- 各設定セクションは `details`/`summary` でラップされ、個別に開閉可能
+- 「全展開」「全折りたたみ」ボタンで一括制御
+- `hidden="until-found"` + `beforematch` イベントで、ブラウザの「ページ内検索」時に該当セクションを自動展開
+- 出典：guides/ui-components/accordion
+
+各設定はローカルストレージに永続化され、`wizard 辞書` のリセットボタンでデフォルトに戻せます。
+
 ### 検証
 
 - `npm test`：CLI 標準テスト 1030/0、skin-contrast 244/0、Modern UX 21/0 合格

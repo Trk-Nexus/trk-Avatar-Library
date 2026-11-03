@@ -90,24 +90,38 @@ function playBell() {
       <button type="button" id="settings-close" class="settings-close" popovertarget="settings-panel" popovertargetaction="hide" aria-label="設定を閉じる">✕</button>
     </div>
 
-    <div class="settings-section">
-      <h3 class="settings-section-title">テーマ</h3>
-      <div class="theme-controls">
-        <label class="theme-label" for="settings-theme-select">カラースキーム:</label>
-        <select id="settings-theme-select" class="custom-select">
-          <option value="dark">ダーク</option>
-          <option value="light">ライト</option>
-          <option value="system">システム設定に従う</option>
-        </select>
-        <button type="button" id="settings-theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="テーマを切替">
-          🌓
-        </button>
-      </div>
+    <div class="settings-accordion-controls">
+      <button type="button" id="settings-accordion-expand-all" class="settings-button settings-button--secondary">全展開</button>
+      <button type="button" id="settings-accordion-collapse-all" class="settings-button settings-button--secondary">全折りたたみ</button>
     </div>
 
-    <div class="settings-section">
-      <h3 class="settings-section-title">スキン</h3>
-      <div class="skin-picker-anchor" id="skin-picker-anchor">
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-theme">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">テーマ</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content" hidden="until-found">
+        <div class="theme-controls">
+          <label class="theme-label" for="settings-theme-select">カラースキーム:</label>
+          <select id="settings-theme-select" class="custom-select">
+            <option value="dark">ダーク</option>
+            <option value="light">ライト</option>
+            <option value="system">システム設定に従う</option>
+          </select>
+          <button type="button" id="settings-theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="テーマを切替">
+            🌓
+          </button>
+        </div>
+      </div>
+    </details>
+
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-skin">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">スキン</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content" hidden="until-found">
+        <div class="skin-picker-anchor" id="skin-picker-anchor">
         <button type="button" id="skin-picker-toggle" class="skin-picker-toggle" popovertarget="skin-picker-popover">
           スキン選択: <span id="skin-picker-label">wizard-cli</span>
         </button>
@@ -120,16 +134,26 @@ function playBell() {
         </div>
       </div>
     </div>
+  </details>
 
-    <div class="settings-section settings-section-spin-preview">
-      <h3 class="settings-section-title">スキンプレビュー</h3>
-      <div class="skin-preview-grid" id="skin-preview-grid"></div>
-    </div>
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-preview">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">スキンプレビュー</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content settings-section-spin-preview" hidden="until-found">
+        <div class="skin-preview-grid" id="skin-preview-grid"></div>
+      </div>
+    </details>
 
-    <div class="settings-section">
-      <h3 class="settings-section-title">ターミナル表示</h3>
-      <div class="settings-item">
-        <label class="settings-item-label" for="settings-scan">スキャンライン強度:</label>
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-terminal">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">ターミナル表示</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content" hidden="until-found">
+        <div class="settings-item">
+          <label class="settings-item-label" for="settings-scan">スキャンライン強度:</label>
         <input type="range" id="settings-scan" class="settings-range" min="0" max="0.6" step="0.05" value="0.1" aria-label="スキャンライン強度">
         <span class="settings-range-value" id="settings-scan-value">0.10</span>
       </div>
@@ -158,8 +182,14 @@ function playBell() {
         <label class="settings-checkbox-label" for="settings-bell">ベル音を有効にする</label>
       </div>
     </div>
+  </details>
 
-    <div class="settings-section settings-section-wizard-dict">
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-dict">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">wizard 辞書</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content settings-section-wizard-dict" hidden="until-found">
       <h3 class="settings-section-title">wizard 辞書</h3>
       <p class="settings-section-desc">単語を登録・削除できます。エクスポートで設定を持ち運べます。</p>
       <div class="settings-item settings-item-dict-input">
@@ -176,6 +206,192 @@ function playBell() {
         <textarea id="settings-wizard-dict-import-json" class="settings-textarea" placeholder="JSONを貼り付けてインポート" aria-label="インポート用JSON"></textarea>
       </div>
     </div>
+  </details>
+
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-advance">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">advance wizard 設定</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content settings-section-advance-wizard" hidden="until-found">
+        <p class="settings-section-desc">Modern Web Guidance（GoogleChrome/modern-web-guidance-src）の思想に基づく設定です。各項目はオプションでオンオフ可能です。</p>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-anim-enabled" class="settings-checkbox" checked data-default="true">
+          <label class="settings-checkbox-label" for="settings-advance-anim-enabled">
+            <strong>設定パネル開閉アニメーションを有効にする</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オン）</span>
+          </label>
+          <p class="settings-section-desc">@starting-style + transition-behavior: allow-discrete で開閉をスムーズにアニメーション（guides/ui-behaviors/animate-element-entry-exit）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-reduce-motion" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-reduce-motion">
+            <strong>prefers-reduced-motion を尊重する</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ＝システム設定に従う）</span>
+          </label>
+          <p class="settings-section-desc">OSの「動きを減らす」設定に応じて移動系アニメーションを無効化・フェードのみに短縮（guides/ui-behaviors/animate-element-entry-exit MANDATORY）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-component-color-scheme" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-component-color-scheme">
+            <strong>個別コンポーネント color-scheme を適用する</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">特定のコンポーネントだけを常にライト/ダークモードに固定（color-scheme: only light/dark）（guides/ui-atoms/component-specific-light-dark-theme）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-accent-form-controls" class="settings-checkbox" checked data-default="true">
+          <label class="settings-checkbox-label" for="settings-advance-accent-form-controls">
+            <strong>フォームコントロールに accent-color を適用する</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オン）</span>
+          </label>
+          <p class="settings-section-desc">チェックボックス・ラジオ・スイッチ・セレクト等にスキンのアクセントカラーを適用（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <!-- テーマ・カラー設定（Phase 10 テーマ・カラー） -->
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-color-ramp" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-color-ramp">
+            <strong>ベースカラーからティント・シェードを動的生成</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">relative-color() / oklab() / color-mix() / lab() でスキンのベースカラーからボーダー・ホバー・フォーカス用バリエーションを生成（guides/visual-design/color-ramps）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-scrollbar-style" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-scrollbar-style">
+            <strong>スクロールバーの色・太さをスキンに合わせる</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">scrollbar-color / scrollbar-width でスクロールバーをスキンカラーに統一（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-selection-color" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-selection-color">
+            <strong>テキスト選択範囲の色をスキンに合わせる</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">::selection でテキスト選択時のハイライト色をスキンのアクセントカラーに（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-custom-form-controls" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-custom-form-controls">
+            <strong>カスタムチェックボックス / ラジオ / スイッチ</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">appearance: none + 生成コンテンツでスキンカラーに合ったカスタムフォームコントロール（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-field-sizing" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-field-sizing">
+            <strong>テキストフィールドをコンテンツ連動サイズ</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">field-sizing: content で入力欄をコンテンツの長さに応じて自動リサイズ（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <!-- インタラクション・ナビゲーション設定（Phase 10 インタラクション・ナビゲーション） -->
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-command-palette" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-command-palette">
+            <strong>コマンドパレット（Ctrl+K / Cmd+K）</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">キーボードショートカットで設定項目を検索・ジャンプするコマンドパレット（guides/ui-behaviors：invoker commands / Modern Web Guidance core）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-focus-loop" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-focus-loop">
+            <strong>キーボードナビゲーションループ</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">設定パネル内のフォーカス移動をループさせるか、端で止めるか（Modern Web Guidance focusgroup / アクセシビリティガイド）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-edge-fade" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-edge-fade">
+            <strong>スクロールエッジフェード</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">スクロール可能なエリアの端にフェードを付け、さらにスクロールできることを示唆（Modern Web Guidance user-experience）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-pull-to-reveal" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-pull-to-reveal">
+            <strong>プルダウン隠しメニュー</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">プルダウンジェスチャーで隠し機能やショートカットを表示（guides/ui-atoms/pull-to-reveal）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-cursor-anim" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-cursor-anim">
+            <strong>カーソルアニメーション（個別 transform）</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">カーソルやカレットのアニメーションを translate/rotate/scale で個別に制御（Modern Web Guidance CSS ガイド）</p>
+        </div>
+
+        <!-- アクセシビリティ・ユーザー設定（Phase 10 アクセシビリティ・ユーザー設定） -->
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-contrast-mode" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-contrast-mode">
+            <strong>OS コントラスト設定に対応</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">prefers-contrast / prefers-reduced-transparency に応じて UI を調整（guides/accessibility/preference-aware-ui）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-validation-style" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-validation-style">
+            <strong>バリデーションスタイル（ユーザー操作後のみ）</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">:user-valid / :user-invalid で操作後のフィールドバリデーションのみをスタイリング（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-hidden-hints" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-hidden-hints">
+            <strong>隠しヒントの「ページ内検索」表示</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">hidden="until-found" で隠しヒントをマークアップし、ブラウザ検索で表示可能に（guides/ui-components/accordion）</p>
+        </div>
+
+        <!-- パフォーマンス・PWA設定（Phase 10 パフォーマンス・PWA） -->
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-top-layer" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-top-layer">
+            <strong>トップレイヤー UI の永続化</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">設定パネルをトップレイヤー（popover / dialog）として固定し、DOM 移動後も表示を維持（Modern Web Guidance user-experience）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-pwa-prompt" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-pwa-prompt">
+            <strong>PWA インストールプロンプト制御</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">PWA インストールプロンプトの表示タイミングや頻度を制御（guides/pwa）</p>
+        </div>
+      </div>
+    </details>
 
     <div class="settings-panel-footer">
       <p class="settings-hint">ショートカット: <kbd>Ctrl</kbd> + <kbd>K</kbd> または <kbd>⌘</kbd> + <kbd>K</kbd> で設定を開く / <kbd>Esc</kbd> で閉じる</p>
@@ -751,6 +967,502 @@ function playBell() {
 
   // 初期表示
   renderWizardDict();
+
+  // ============================================================
+  // advance wizard 設定（Modern Web Guidance 準拠）
+  // 各項目はオプションでオンオフ可能。ローカルストレージに永続化。
+  // ============================================================
+  const advanceAnimEnabled = document.getElementById("settings-advance-anim-enabled");
+  const advanceReduceMotion = document.getElementById("settings-advance-reduce-motion");
+  const advanceComponentColorScheme = document.getElementById("settings-advance-component-color-scheme");
+  const advanceAccentFormControls = document.getElementById("settings-advance-accent-form-controls");
+  const advanceColorRamp = document.getElementById("settings-advance-color-ramp");
+  const advanceScrollbarStyle = document.getElementById("settings-advance-scrollbar-style");
+  const advanceSelectionColor = document.getElementById("settings-advance-selection-color");
+  const advanceCustomFormControls = document.getElementById("settings-advance-custom-form-controls");
+  const advanceFieldSizing = document.getElementById("settings-advance-field-sizing");
+  const advanceCommandPalette = document.getElementById("settings-advance-command-palette");
+  const advanceFocusLoop = document.getElementById("settings-advance-focus-loop");
+  const advanceEdgeFade = document.getElementById("settings-advance-edge-fade");
+  const advancePullToReveal = document.getElementById("settings-advance-pull-to-reveal");
+  const advanceCursorAnim = document.getElementById("settings-advance-cursor-anim");
+  const advanceContrastMode = document.getElementById("settings-advance-contrast-mode");
+  const advanceValidationStyle = document.getElementById("settings-advance-validation-style");
+  const advanceHiddenHints = document.getElementById("settings-advance-hidden-hints");
+  const advanceTopLayer = document.getElementById("settings-advance-top-layer");
+  const advancePwaPrompt = document.getElementById("settings-advance-pwa-prompt");
+
+  let currentAdvanceAnimEnabled = localStorage.getItem("trk-advance-anim-enabled") !== "false";
+  let currentAdvanceReduceMotion = localStorage.getItem("trk-advance-reduce-motion") === "true";
+  let currentAdvanceComponentColorScheme = localStorage.getItem("trk-advance-component-color-scheme") === "true";
+  let currentAdvanceAccentFormControls = localStorage.getItem("trk-advance-accent-form-controls") !== "false";
+  let currentAdvanceColorRamp = localStorage.getItem("trk-advance-color-ramp") === "true";
+  let currentAdvanceScrollbarStyle = localStorage.getItem("trk-advance-scrollbar-style") === "true";
+  let currentAdvanceSelectionColor = localStorage.getItem("trk-advance-selection-color") === "true";
+  let currentAdvanceCustomFormControls = localStorage.getItem("trk-advance-custom-form-controls") === "true";
+  let currentAdvanceFieldSizing = localStorage.getItem("trk-advance-field-sizing") === "true";
+  let currentAdvanceCommandPalette = localStorage.getItem("trk-advance-command-palette") === "true";
+  let currentAdvanceFocusLoop = localStorage.getItem("trk-advance-focus-loop") === "true";
+  let currentAdvanceEdgeFade = localStorage.getItem("trk-advance-edge-fade") === "true";
+  let currentAdvancePullToReveal = localStorage.getItem("trk-advance-pull-to-reveal") === "true";
+  let currentAdvanceCursorAnim = localStorage.getItem("trk-advance-cursor-anim") === "true";
+  let currentAdvanceContrastMode = localStorage.getItem("trk-advance-contrast-mode") === "true";
+  let currentAdvanceValidationStyle = localStorage.getItem("trk-advance-validation-style") === "true";
+  let currentAdvanceHiddenHints = localStorage.getItem("trk-advance-hidden-hints") === "true";
+  let currentAdvanceTopLayer = localStorage.getItem("trk-advance-top-layer") === "true";
+  let currentAdvancePwaPrompt = localStorage.getItem("trk-advance-pwa-prompt") === "true";
+
+  // UI 初期化
+  advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
+  advanceReduceMotion.checked = currentAdvanceReduceMotion;
+  advanceComponentColorScheme.checked = currentAdvanceComponentColorScheme;
+  advanceAccentFormControls.checked = currentAdvanceAccentFormControls;
+  advanceColorRamp.checked = currentAdvanceColorRamp;
+  advanceScrollbarStyle.checked = currentAdvanceScrollbarStyle;
+  advanceSelectionColor.checked = currentAdvanceSelectionColor;
+  advanceCustomFormControls.checked = currentAdvanceCustomFormControls;
+  advanceFieldSizing.checked = currentAdvanceFieldSizing;
+  advanceCommandPalette.checked = currentAdvanceCommandPalette;
+  advanceFocusLoop.checked = currentAdvanceFocusLoop;
+  advanceEdgeFade.checked = currentAdvanceEdgeFade;
+  advancePullToReveal.checked = currentAdvancePullToReveal;
+  advanceCursorAnim.checked = currentAdvanceCursorAnim;
+  advanceContrastMode.checked = currentAdvanceContrastMode;
+  advanceValidationStyle.checked = currentAdvanceValidationStyle;
+  advanceHiddenHints.checked = currentAdvanceHiddenHints;
+  advanceTopLayer.checked = currentAdvanceTopLayer;
+  advancePwaPrompt.checked = currentAdvancePwaPrompt;
+  advanceCursorAnim.checked = currentAdvanceCursorAnim;
+
+  // 設定パネル開閉アニメーションの有効/無効を適用
+  function applyAdvanceAnimEnabled() {
+    const panel = document.getElementById("settings-panel");
+    if (currentAdvanceAnimEnabled) {
+      panel.classList.remove("advance-anim-disabled");
+    } else {
+      panel.classList.add("advance-anim-disabled");
+    }
+  }
+
+  // prefers-reduced-motion 尊重を適用
+  function applyAdvanceReduceMotion() {
+    if (currentAdvanceReduceMotion) {
+      root.classList.add("reduce-motion");
+    }
+  }
+
+  // 個別コンポーネント color-scheme を適用
+  function applyAdvanceComponentColorScheme() {
+    const panel = document.getElementById("settings-panel");
+    if (currentAdvanceComponentColorScheme) {
+      panel.setAttribute("data-component-color-scheme", "dark");
+    } else {
+      panel.removeAttribute("data-component-color-scheme");
+    }
+  }
+
+  // フォームコントロール accent-color を適用
+  function applyAdvanceAccentFormControls() {
+    if (currentAdvanceAccentFormControls) {
+      root.classList.add("accent-form-controls");
+    } else {
+      root.classList.remove("accent-form-controls");
+    }
+  }
+
+  // ティント・シェード動的生成を適用
+  function applyAdvanceColorRamp() {
+    if (currentAdvanceColorRamp) {
+      root.classList.add("color-ramp-enabled");
+    } else {
+      root.classList.remove("color-ramp-enabled");
+    }
+  }
+
+  // スクロールバースタイルを適用
+  function applyAdvanceScrollbarStyle() {
+    if (currentAdvanceScrollbarStyle) {
+      root.classList.add("scrollbar-styled");
+    } else {
+      root.classList.remove("scrollbar-styled");
+    }
+  }
+
+  // テキスト選択範囲色を適用
+  function applyAdvanceSelectionColor() {
+    if (currentAdvanceSelectionColor) {
+      root.classList.add("selection-styled");
+    } else {
+      root.classList.remove("selection-styled");
+    }
+  }
+
+  // カスタムフォームコントロールを適用
+  function applyAdvanceCustomFormControls() {
+    if (currentAdvanceCustomFormControls) {
+      root.classList.add("custom-form-controls");
+    } else {
+      root.classList.remove("custom-form-controls");
+    }
+  }
+
+  // field-sizing を適用
+  function applyAdvanceFieldSizing() {
+    if (currentAdvanceFieldSizing) {
+      root.classList.add("field-sizing-content");
+    } else {
+      root.classList.remove("field-sizing-content");
+    }
+  }
+
+  // コマンドパレットを適用
+  function applyAdvanceCommandPalette() {
+    if (currentAdvanceCommandPalette) {
+      root.classList.add("command-palette-enabled");
+    } else {
+      root.classList.remove("command-palette-enabled");
+    }
+  }
+
+  // キーボードナビゲーションループを適用
+  function applyAdvanceFocusLoop() {
+    if (currentAdvanceFocusLoop) {
+      root.classList.add("focus-loop-enabled");
+    } else {
+      root.classList.remove("focus-loop-enabled");
+    }
+  }
+
+  // スクロールエッジフェードを適用
+  function applyAdvanceEdgeFade() {
+    if (currentAdvanceEdgeFade) {
+      root.classList.add("edge-fade-enabled");
+    } else {
+      root.classList.remove("edge-fade-enabled");
+    }
+  }
+
+  // プルダウン隠しメニューを適用
+  function applyAdvancePullToReveal() {
+    if (currentAdvancePullToReveal) {
+      root.classList.add("pull-to-reveal-enabled");
+    } else {
+      root.classList.remove("pull-to-reveal-enabled");
+    }
+  }
+
+  // カーソルアニメーション（個別 transform）を適用
+  function applyAdvanceCursorAnim() {
+    if (currentAdvanceCursorAnim) {
+      root.classList.add("cursor-anim-enabled");
+    } else {
+      root.classList.remove("cursor-anim-enabled");
+    }
+  }
+
+  // OS コントラスト設定に対応を適用
+  function applyAdvanceContrastMode() {
+    if (currentAdvanceContrastMode) {
+      root.classList.add("contrast-mode-enabled");
+    } else {
+      root.classList.remove("contrast-mode-enabled");
+    }
+  }
+
+  // バリデーションスタイルを適用
+  function applyAdvanceValidationStyle() {
+    if (currentAdvanceValidationStyle) {
+      root.classList.add("validation-style-user-interaction");
+    } else {
+      root.classList.remove("validation-style-user-interaction");
+    }
+  }
+
+  // 隠しヒントのページ内検索表示を適用
+  function applyAdvanceHiddenHints() {
+    if (currentAdvanceHiddenHints) {
+      root.classList.add("hidden-hints-enabled");
+    } else {
+      root.classList.remove("hidden-hints-enabled");
+    }
+  }
+
+  // トップレイヤー UI の永続化を適用
+  function applyAdvanceTopLayer() {
+    const panel = document.getElementById("settings-panel");
+    if (currentAdvanceTopLayer) {
+      panel.classList.add("top-layer-persistent");
+    } else {
+      panel.classList.remove("top-layer-persistent");
+    }
+  }
+
+  // PWA インストールプロンプト制御を適用
+  function applyAdvancePwaPrompt() {
+    if (currentAdvancePwaPrompt) {
+      root.classList.add("pwa-prompt-enabled");
+    } else {
+      root.classList.remove("pwa-prompt-enabled");
+    }
+  }
+
+  // 全設定を適用
+  function applyAllAdvanceSettings() {
+    applyAdvanceAnimEnabled();
+    applyAdvanceReduceMotion();
+    applyAdvanceComponentColorScheme();
+    applyAdvanceAccentFormControls();
+    applyAdvanceColorRamp();
+    applyAdvanceScrollbarStyle();
+    applyAdvanceSelectionColor();
+    applyAdvanceCustomFormControls();
+    applyAdvanceFieldSizing();
+    applyAdvanceCommandPalette();
+    applyAdvanceFocusLoop();
+    applyAdvanceEdgeFade();
+    applyAdvancePullToReveal();
+    applyAdvanceCursorAnim();
+    applyAdvanceContrastMode();
+    applyAdvanceValidationStyle();
+    applyAdvanceHiddenHints();
+    applyAdvanceTopLayer();
+    applyAdvancePwaPrompt();
+  }
+
+  applyAllAdvanceSettings();
+
+  // イベントリスナー
+  advanceAnimEnabled.addEventListener("change", (e) => {
+    currentAdvanceAnimEnabled = e.target.checked;
+    localStorage.setItem("trk-advance-anim-enabled", currentAdvanceAnimEnabled);
+    applyAdvanceAnimEnabled();
+    announce(currentAdvanceAnimEnabled ? "開閉アニメーションを有効にしました" : "開閉アニメーションを無効にしました");
+  });
+
+  advanceReduceMotion.addEventListener("change", (e) => {
+    currentAdvanceReduceMotion = e.target.checked;
+    localStorage.setItem("trk-advance-reduce-motion", currentAdvanceReduceMotion);
+    applyAdvanceReduceMotion();
+    announce(currentAdvanceReduceMotion ? "prefers-reduced-motion を尊重するように設定しました" : "システム設定に従うように戻しました");
+  });
+
+  advanceComponentColorScheme.addEventListener("change", (e) => {
+    currentAdvanceComponentColorScheme = e.target.checked;
+    localStorage.setItem("trk-advance-component-color-scheme", currentAdvanceComponentColorScheme);
+    applyAdvanceComponentColorScheme();
+    announce(currentAdvanceComponentColorScheme ? "個別コンポーネント color-scheme を有効にしました" : "個別コンポーネント color-scheme を無効にしました");
+  });
+
+  advanceAccentFormControls.addEventListener("change", (e) => {
+    currentAdvanceAccentFormControls = e.target.checked;
+    localStorage.setItem("trk-advance-accent-form-controls", currentAdvanceAccentFormControls);
+    applyAdvanceAccentFormControls();
+    announce(currentAdvanceAccentFormControls ? "フォームコントロール accent-color を有効にしました" : "フォームコントロール accent-color を無効にしました");
+  });
+
+  advanceColorRamp.addEventListener("change", (e) => {
+    currentAdvanceColorRamp = e.target.checked;
+    localStorage.setItem("trk-advance-color-ramp", currentAdvanceColorRamp);
+    applyAdvanceColorRamp();
+    announce(currentAdvanceColorRamp ? "色ランプ生成を有効にしました" : "色ランプ生成を無効にしました");
+  });
+
+  advanceScrollbarStyle.addEventListener("change", (e) => {
+    currentAdvanceScrollbarStyle = e.target.checked;
+    localStorage.setItem("trk-advance-scrollbar-style", currentAdvanceScrollbarStyle);
+    applyAdvanceScrollbarStyle();
+    announce(currentAdvanceScrollbarStyle ? "スクロールバースタイルを有効にしました" : "スクロールバースタイルを無効にしました");
+  });
+
+  advanceSelectionColor.addEventListener("change", (e) => {
+    currentAdvanceSelectionColor = e.target.checked;
+    localStorage.setItem("trk-advance-selection-color", currentAdvanceSelectionColor);
+    applyAdvanceSelectionColor();
+    announce(currentAdvanceSelectionColor ? "テキスト選択範囲色を有効にしました" : "テキスト選択範囲色を無効にしました");
+  });
+
+  advanceCustomFormControls.addEventListener("change", (e) => {
+    currentAdvanceCustomFormControls = e.target.checked;
+    localStorage.setItem("trk-advance-custom-form-controls", currentAdvanceCustomFormControls);
+    applyAdvanceCustomFormControls();
+    announce(currentAdvanceCustomFormControls ? "カスタムフォームコントロールを有効にしました" : "カスタムフォームコントロールを無効にしました");
+  });
+
+  advanceFieldSizing.addEventListener("change", (e) => {
+    currentAdvanceFieldSizing = e.target.checked;
+    localStorage.setItem("trk-advance-field-sizing", currentAdvanceFieldSizing);
+    applyAdvanceFieldSizing();
+    announce(currentAdvanceFieldSizing ? "フィールドサイズ連動を有効にしました" : "フィールドサイズ連動を無効にしました");
+  });
+
+  advanceCommandPalette.addEventListener("change", (e) => {
+    currentAdvanceCommandPalette = e.target.checked;
+    localStorage.setItem("trk-advance-command-palette", currentAdvanceCommandPalette);
+    applyAdvanceCommandPalette();
+    announce(currentAdvanceCommandPalette ? "コマンドパレットを有効にしました" : "コマンドパレットを無効にしました");
+  });
+
+  advanceFocusLoop.addEventListener("change", (e) => {
+    currentAdvanceFocusLoop = e.target.checked;
+    localStorage.setItem("trk-advance-focus-loop", currentAdvanceFocusLoop);
+    applyAdvanceFocusLoop();
+    announce(currentAdvanceFocusLoop ? "キーボードナビゲーションループを有効にしました" : "キーボードナビゲーションループを無効にしました");
+  });
+
+  advanceEdgeFade.addEventListener("change", (e) => {
+    currentAdvanceEdgeFade = e.target.checked;
+    localStorage.setItem("trk-advance-edge-fade", currentAdvanceEdgeFade);
+    applyAdvanceEdgeFade();
+    announce(currentAdvanceEdgeFade ? "スクロールエッジフェードを有効にしました" : "スクロールエッジフェードを無効にしました");
+  });
+
+  advancePullToReveal.addEventListener("change", (e) => {
+    currentAdvancePullToReveal = e.target.checked;
+    localStorage.setItem("trk-advance-pull-to-reveal", currentAdvancePullToReveal);
+    applyAdvancePullToReveal();
+    announce(currentAdvancePullToReveal ? "プルダウン隠しメニューを有効にしました" : "プルダウン隠しメニューを無効にしました");
+  });
+
+  advanceCursorAnim.addEventListener("change", (e) => {
+    currentAdvanceCursorAnim = e.target.checked;
+    localStorage.setItem("trk-advance-cursor-anim", currentAdvanceCursorAnim);
+    applyAdvanceCursorAnim();
+    announce(currentAdvanceCursorAnim ? "カーソルアニメーションを有効にしました" : "カーソルアニメーションを無効にしました");
+  });
+
+  advanceContrastMode.addEventListener("change", (e) => {
+    currentAdvanceContrastMode = e.target.checked;
+    localStorage.setItem("trk-advance-contrast-mode", currentAdvanceContrastMode);
+    applyAdvanceContrastMode();
+    announce(currentAdvanceContrastMode ? "OS コントラスト設定に対応しました" : "OS コントラスト設定への対応を無効にしました");
+  });
+
+  advanceValidationStyle.addEventListener("change", (e) => {
+    currentAdvanceValidationStyle = e.target.checked;
+    localStorage.setItem("trk-advance-validation-style", currentAdvanceValidationStyle);
+    applyAdvanceValidationStyle();
+    announce(currentAdvanceValidationStyle ? "バリデーションスタイルを有効にしました" : "バリデーションスタイルを無効にしました");
+  });
+
+  advanceHiddenHints.addEventListener("change", (e) => {
+    currentAdvanceHiddenHints = e.target.checked;
+    localStorage.setItem("trk-advance-hidden-hints", currentAdvanceHiddenHints);
+    applyAdvanceHiddenHints();
+    announce(currentAdvanceHiddenHints ? "隠しヒントのページ内検索表示を有効にしました" : "隠しヒントのページ内検索表示を無効にしました");
+  });
+
+  advanceTopLayer.addEventListener("change", (e) => {
+    currentAdvanceTopLayer = e.target.checked;
+    localStorage.setItem("trk-advance-top-layer", currentAdvanceTopLayer);
+    applyAdvanceTopLayer();
+    announce(currentAdvanceTopLayer ? "トップレイヤー UI の永続化を有効にしました" : "トップレイヤー UI の永続化を無効にしました");
+  });
+
+  advancePwaPrompt.addEventListener("change", (e) => {
+    currentAdvancePwaPrompt = e.target.checked;
+    localStorage.setItem("trk-advance-pwa-prompt", currentAdvancePwaPrompt);
+    applyAdvancePwaPrompt();
+    announce(currentAdvancePwaPrompt ? "PWA インストールプロンプト制御を有効にしました" : "PWA インストールプロンプト制御を無効にしました");
+  });
+
+  // wizard 辞書のリセット時に advance wizard 設定もリセットする対応
+  wizardDictReset.addEventListener("click", () => {
+    currentAdvanceAnimEnabled = true;
+    currentAdvanceReduceMotion = false;
+    currentAdvanceComponentColorScheme = false;
+    currentAdvanceAccentFormControls = true;
+    currentAdvanceColorRamp = false;
+    currentAdvanceScrollbarStyle = false;
+    currentAdvanceSelectionColor = false;
+    currentAdvanceCustomFormControls = false;
+    currentAdvanceFieldSizing = false;
+    currentAdvanceCommandPalette = false;
+    currentAdvanceFocusLoop = false;
+    currentAdvanceEdgeFade = false;
+    currentAdvancePullToReveal = false;
+    currentAdvanceCursorAnim = false;
+    currentAdvanceContrastMode = false;
+    currentAdvanceValidationStyle = false;
+    currentAdvanceHiddenHints = false;
+    currentAdvanceTopLayer = false;
+    currentAdvancePwaPrompt = false;
+    localStorage.setItem("trk-advance-anim-enabled", currentAdvanceAnimEnabled);
+    localStorage.setItem("trk-advance-reduce-motion", currentAdvanceReduceMotion);
+    localStorage.setItem("trk-advance-component-color-scheme", currentAdvanceComponentColorScheme);
+    localStorage.setItem("trk-advance-accent-form-controls", currentAdvanceAccentFormControls);
+    localStorage.setItem("trk-advance-color-ramp", currentAdvanceColorRamp);
+    localStorage.setItem("trk-advance-scrollbar-style", currentAdvanceScrollbarStyle);
+    localStorage.setItem("trk-advance-selection-color", currentAdvanceSelectionColor);
+    localStorage.setItem("trk-advance-custom-form-controls", currentAdvanceCustomFormControls);
+    localStorage.setItem("trk-advance-field-sizing", currentAdvanceFieldSizing);
+    localStorage.setItem("trk-advance-command-palette", currentAdvanceCommandPalette);
+    localStorage.setItem("trk-advance-focus-loop", currentAdvanceFocusLoop);
+    localStorage.setItem("trk-advance-edge-fade", currentAdvanceEdgeFade);
+    localStorage.setItem("trk-advance-pull-to-reveal", currentAdvancePullToReveal);
+    localStorage.setItem("trk-advance-cursor-anim", currentAdvanceCursorAnim);
+    localStorage.setItem("trk-advance-contrast-mode", currentAdvanceContrastMode);
+    localStorage.setItem("trk-advance-validation-style", currentAdvanceValidationStyle);
+    localStorage.setItem("trk-advance-hidden-hints", currentAdvanceHiddenHints);
+    localStorage.setItem("trk-advance-top-layer", currentAdvanceTopLayer);
+    localStorage.setItem("trk-advance-pwa-prompt", currentAdvancePwaPrompt);
+    advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
+    advanceReduceMotion.checked = currentAdvanceReduceMotion;
+    advanceComponentColorScheme.checked = currentAdvanceComponentColorScheme;
+    advanceAccentFormControls.checked = currentAdvanceAccentFormControls;
+    advanceColorRamp.checked = currentAdvanceColorRamp;
+    advanceScrollbarStyle.checked = currentAdvanceScrollbarStyle;
+    advanceSelectionColor.checked = currentAdvanceSelectionColor;
+    advanceCustomFormControls.checked = currentAdvanceCustomFormControls;
+    advanceFieldSizing.checked = currentAdvanceFieldSizing;
+    advanceCommandPalette.checked = currentAdvanceCommandPalette;
+    advanceFocusLoop.checked = currentAdvanceFocusLoop;
+    advanceEdgeFade.checked = currentAdvanceEdgeFade;
+    advancePullToReveal.checked = currentAdvancePullToReveal;
+    advanceCursorAnim.checked = currentAdvanceCursorAnim;
+    advanceContrastMode.checked = currentAdvanceContrastMode;
+    advanceValidationStyle.checked = currentAdvanceValidationStyle;
+    advanceHiddenHints.checked = currentAdvanceHiddenHints;
+    advanceTopLayer.checked = currentAdvanceTopLayer;
+    advancePwaPrompt.checked = currentAdvancePwaPrompt;
+    applyAllAdvanceSettings();
+    announce("advance wizard 設定もデフォルトに戻しました");
+  });
+
+  // ============================================================
+  // advance wizard 設定：アコーディオン操作（Modern Web Guidance: guides/ui-components/accordion 準拠）
+  // ============================================================
+  const accordionExpandAll = document.getElementById("settings-accordion-expand-all");
+  const accordionCollapseAll = document.getElementById("settings-accordion-collapse-all");
+  const accordionItems = document.querySelectorAll(".settings-accordion-item");
+
+  // 全展開
+  accordionExpandAll.addEventListener("click", () => {
+    accordionItems.forEach((item) => {
+      item.open = true;
+    });
+    announce("すべての設定セクションを展開しました");
+  });
+
+  // 全折りたたみ
+  accordionCollapseAll.addEventListener("click", () => {
+    accordionItems.forEach((item) => {
+      item.open = false;
+    });
+    announce("すべての設定セクションを折りたたみました");
+  });
+
+  // 検索でアコーディオン項目を開く（hidden="until-found" + beforematch）
+  // 出典：guides/ui-components/accordion（beforematch イベント）
+  document.addEventListener("beforematch", (event) => {
+    const target = event.target;
+    if (target.classList.contains("settings-accordion-content")) {
+      const details = target.closest(".settings-accordion-item");
+      if (details) {
+        details.open = true;
+        announce(`「${details.id}」セクションを開きました`);
+      }
+    }
+  }, { capture: true });
 </script>
 
 <!-- Core Web Vitals 測定（LCP / FID / CLS） -->
