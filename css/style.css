@@ -1522,3 +1522,167 @@ kbd {
   100% { transform: translate(0, 0); }
 }
 
+
+/* ============================================================
+   設定パネル：wizard 辞書セクション
+   ============================================================ */
+.settings-section-wizard-dict {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 40%);
+}
+
+.settings-section-wizard-dict .settings-section-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.settings-section-wizard-dict .settings-section-desc {
+  margin: 0 0 1rem 0;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.settings-item-dict-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.settings-text-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-field);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.settings-text-input::placeholder {
+  color: color-mix(in srgb, var(--color-text) 40%);
+}
+
+.settings-text-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 20%);
+}
+
+.settings-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.settings-button:hover {
+  opacity: 0.85;
+}
+
+.settings-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.settings-button--secondary {
+  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.settings-button--danger {
+  background: #d32f2f;
+  color: #ffffff;
+}
+
+.settings-button--danger:hover {
+  opacity: 0.85;
+}
+
+.settings-item-dict-list {
+  margin-bottom: 0.75rem;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-field);
+}
+
+.settings-item-dict-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.settings-item-dict-list li {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 40%);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-item-dict-list li:last-child {
+  border-bottom: none;
+}
+
+.settings-item-dict-list li .dict-delete {
+  background: none;
+  border: none;
+  color: color-mix(in srgb, var(--color-text) 50%);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.settings-item-dict-list li .dict-delete:hover {
+  background: color-mix(in srgb, #d32f2f 20%, transparent);
+  color: #d32f2f;
+}
+
+.settings-item-dict-list li .dict-delete:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.settings-item-dict-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.settings-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-field);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 60px;
+  margin-top: 0.5rem;
+}
+
+.settings-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 20%);
+}
+

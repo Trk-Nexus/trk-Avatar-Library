@@ -159,6 +159,24 @@ function playBell() {
       </div>
     </div>
 
+    <div class="settings-section settings-section-wizard-dict">
+      <h3 class="settings-section-title">wizard 辞書</h3>
+      <p class="settings-section-desc">単語を登録・削除できます。エクスポートで設定を持ち運べます。</p>
+      <div class="settings-item settings-item-dict-input">
+        <input type="text" id="settings-wizard-dict-word" class="settings-text-input" placeholder="単語を入力して追加" aria-label="辞書に登録する単語">
+        <button type="button" id="settings-wizard-dict-add" class="settings-button">追加</button>
+      </div>
+      <div class="settings-item settings-item-dict-list">
+        <ul id="settings-wizard-dict-list"></ul>
+      </div>
+      <div class="settings-item settings-item-dict-actions">
+        <button type="button" id="settings-wizard-dict-export" class="settings-button settings-button--secondary">エクスポート</button>
+        <button type="button" id="settings-wizard-dict-import" class="settings-button settings-button--secondary">インポート</button>
+        <button type="button" id="settings-wizard-dict-reset" class="settings-button settings-button--danger">リセット</button>
+        <textarea id="settings-wizard-dict-import-json" class="settings-textarea" placeholder="JSONを貼り付けてインポート" aria-label="インポート用JSON"></textarea>
+      </div>
+    </div>
+
     <div class="settings-panel-footer">
       <p class="settings-hint">ショートカット: <kbd>Ctrl</kbd> + <kbd>K</kbd> または <kbd>⌘</kbd> + <kbd>K</kbd> で設定を開く / <kbd>Esc</kbd> で閉じる</p>
     </div>
@@ -177,7 +195,7 @@ function playBell() {
 <script type="module">
   import { SKIN_CATS, CLI_FEATURE_DEFAULTS } from "./js/core.js";
   import { sanitizeCliLook, cliLookVars, CLI_CURSOR_SHAPE } from "./js/data.js";
-  import { CliCommands } from "./js/cli.js";
+  import { CliCommands, loadWizardData, saveWizardData, WIZARD_DEFAULTS } from "./js/cli.js";
   import { SKINS_WIZARD } from "./js/skins-wizard.js";
 
   document.documentElement.setAttribute("trk-build", document.documentElement.getAttribute("trk-build") || "trk269");
@@ -632,6 +650,107 @@ function playBell() {
       term.scrollTop = term.scrollHeight;
     }
   });
+
+  // ============================================================
+  // wizard 辞書 GUI 編集（設定パネルから辞書を追加・削除・エクスポート/インポート）
+  // ============================================================
+  const wizardDictWord = document.getElementById("settings-wizard-dict-word");
+  const wizardDictAdd = document.getElementById("settings-wizard-dict-add");
+  const wizardDictList = document.getElementById("settings-wizard-dict-list");
+  const wizardDictExport = document.getElementById("settings-wizard-dict-export");
+  const wizardDictImport = document.getElementById("settings-wizard-dict-import");
+  const wizardDictImportJson = document.getElementById("settings-wizard-dict-import-json");
+  const wizardDictReset = document.getElementById("settings-wizard-dict-reset");
+
+  let wizardData = loadWizardData();
+
+  function renderWizardDict() {
+    wizardDictList.innerHTML = "";
+    const keys = Object.keys(wizardData.dictionary);
+    if (keys.length === 0) {
+      const li = document.createElement("li");
+      li.textContent = "(登録された単語はありません)";
+      li.style.color = "color-mix(in srgb, var(--color-text) 40%)";
+      li.style.fontStyle = "italic";
+      wizardDictList.appendChild(li);
+      return;
+    }
+    keys.forEach((word) => {
+      const li = document.createElement("li");
+      li.textContent = word;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "dict-delete";
+      btn.textContent = "削除";
+      btn.setAttribute("aria-label", `辞書から「${word}」を削除`);
+      btn.addEventListener("click", () => {
+        delete wizardData.dictionary[word];
+        saveWizardData(wizardData);
+        renderWizardDict();
+        announce(`辞書から「${word}」を削除しました`);
+      });
+      li.appendChild(btn);
+      wizardDictList.appendChild(li);
+    });
+  }
+
+  function addWizardDictWord() {
+    const word = wizardDictWord.value.trim();
+    if (!word) return;
+    // セキュリティチェック
+    if (/[`\\]/.test(word) || /\.\./.test(word) || /~/.test(word) || /^[Cc]:/.test(word)) {
+      announce("使用禁止文字が含まれています");
+      return;
+    }
+    if (word.length > 50) {
+      announce("単語は50文字以内で入力してください");
+      return;
+    }
+    wizardData.dictionary[word] = word;
+    saveWizardData(wizardData);
+    wizardDictWord.value = "";
+    renderWizardDict();
+    announce(`辞書に「${word}」を登録しました`);
+  }
+
+  wizardDictAdd.addEventListener("click", addWizardDictWord);
+  wizardDictWord.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") addWizardDictWord();
+  });
+
+  wizardDictExport.addEventListener("click", () => {
+    const json = JSON.stringify(wizardData, null, 2);
+    wizardDictImportJson.value = json;
+    announce("wizard設定をエクスポートしました（下のテキストエリアをコピーしてください）");
+  });
+
+  wizardDictImport.addEventListener("click", () => {
+    const jsonStr = wizardDictImportJson.value.trim();
+    if (!jsonStr) {
+      announce("JSONを貼り付けてください");
+      return;
+    }
+    try {
+      const parsed = JSON.parse(jsonStr);
+      if (parsed.dictionary) wizardData.dictionary = { ...wizardData.dictionary, ...parsed.dictionary };
+      if (parsed.settings) wizardData.settings = { ...wizardData.settings, ...parsed.settings };
+      saveWizardData(wizardData);
+      renderWizardDict();
+      announce("wizard設定をインポートしました");
+    } catch (e) {
+      announce("JSONの解析に失敗しました");
+    }
+  });
+
+  wizardDictReset.addEventListener("click", () => {
+    wizardData = { ...WIZARD_DEFAULTS };
+    saveWizardData(wizardData);
+    renderWizardDict();
+    announce("wizard設定と辞書をリセットしました");
+  });
+
+  // 初期表示
+  renderWizardDict();
 </script>
 
 <!-- Core Web Vitals 測定（LCP / FID / CLS） -->
