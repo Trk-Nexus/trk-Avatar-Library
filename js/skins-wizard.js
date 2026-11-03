@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // 自動生成: tools/import-skin-catalog.mjs --cat=wizard
 // 入力: catalog/skins.json（手編集禁止）
-// 生成日時: 2026-11-03T04:30:09.273Z
-// スキン数: 46
+// 生成日時: 2026-11-03T04:37:44.066Z
+// スキン数: 52
 
 const SKINS_WIZARD = [
   {
@@ -82,6 +82,19 @@ const SKINS_WIZARD = [
     video: "hue-rotate(100deg) saturate(1.3) contrast(1.1) brightness(.9)",
   },
   {
+    id: "wizard-clausewitz",
+    label: {"ja":"クラウゼヴィッツ 戦争論","en":"Clausewitz On War","zh":"克劳塞维茨 战争论","ko":"클라우제비츠 전쟁론"},
+    desc: {"ja":"近代戦争の哲学、戦争は他の手段による政治の継続","en":"Philosophy of modern war, war is the continuation of politics by other means","zh":"近代战争的哲学，战争是以其他手段继续政治","ko":"근대 전쟁의 철학, 전쟁은 다른 수단에 의한 정치의 계속"},
+    cat: ["wizard","dark","fun"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"K"},
+    colors: {"stage":"#0a0a0a","ink":"#e0e0e0","don":"#d4af37","ka":"#666666","text":"#e0e0e0","muted":"#8fd79a","bg":"#050505","panel":"#031406","field":"#0a0a0a","button":"#1a1a1a","accent":"#d4af37","onAccent":"#000000","gold":"#ffffff","border":"#d4af37"},
+    shapes: ["square","square"],
+    locked: false,
+    video: "contrast(1.2) brightness(.85)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"K","caret":"#d4af37","scan":0.12,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-cli",
     label: {"ja":"ウィザードCLI","en":"Wizard CLI","zh":"巫师命令行","ko":"마법사 CLI"},
     desc: {"ja":"黒い端末に白い呪文、コマンドライン魔術","en":"Black terminal with white spells, command line wizardry","zh":"黑色终端上的白色咒语，命令行巫术","ko":"검은 터미널의 하얀 주문, 명령줄 마법"},
@@ -118,6 +131,19 @@ const SKINS_WIZARD = [
     shapes: ["circle","circle"],
     locked: false,
     video: "hue-rotate(280deg) saturate(1.2) brightness(.9) contrast(1.1)",
+  },
+  {
+    id: "wizard-douhet",
+    label: {"ja":"ドゥーエ 制空","en":"Douhet The Command of the Air","zh":"杜埃 制空权","ko":"두에 공중제공"},
+    desc: {"ja":"航空戦略の先駆、制空権と戦略爆撃の理論","en":"Pioneer of air strategy, command of the air and strategic bombing","zh":"航空战略的先驱，制空权与战略轰炸理论","ko":"항공전략의 선구자, 공중제공과 전략폭격 이론"},
+    cat: ["wizard","dark","fun"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"✈"},
+    colors: {"stage":"#1a1a2e","ink":"#e6e6fa","don":"#4169e1","ka":"#6495ed","text":"#e6e6fa","muted":"#9370db","bg":"#0f0f3d","panel":"rgba(15,15,61,.96)","field":"#1a1a2e","button":"#2c2c6c","accent":"#4169e1","onAccent":"#ffffff","gold":"#ffd700","border":"rgba(65,105,225,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "hue-rotate(220deg) saturate(1.1) contrast(1.2) brightness(.85)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"✈","caret":"#4169e1","scan":0.22,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-eldritch",
@@ -274,6 +300,19 @@ const SKINS_WIZARD = [
     cli: {"font":"Courier New, Courier, monospace","prompt":"✝","caret":"#d4af37","scan":0.1,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
+    id: "wizard-jomini",
+    label: {"ja":"ジョミニ 戦争概論","en":"Jomini Summary of the Art of War","zh":"若米尼 战争概论","ko":"조미니 전쟁 개론"},
+    desc: {"ja":"ナポレオン戦争の戦術家、戦争の原理と体系化","en":"Napoleonic wars tactician, principles and systematization of war","zh":"拿破仑战争的战术家，战争的原理与体系化","ko":"나폴레옹 전쟁의 전략가, 전쟁의 원리와 체계화"},
+    cat: ["wizard","light","access"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"J"},
+    colors: {"stage":"#fafafa","ink":"#1a1a1a","don":"#2c5282","ka":"#4a5568","text":"#1a1a1a","muted":"#4a5568","bg":"#ffffff","panel":"rgba(255,255,255,.98)","field":"#fafafa","button":"#e2e8f0","accent":"#2c5282","onAccent":"#ffffff","gold":"#7aa2f7","border":"rgba(44,82,130,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "contrast(1.05) brightness(1.0)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"J","caret":"#2c5282","scan":0.1,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-lemgeton",
     label: {"ja":"レメゲトン","en":"Lesser Key of Solomon","zh":"所罗门小钥匙","ko":"소omon의 소록"},
     desc: {"ja":" goetiaを含む禁忌の魔導書、72柱の悪魔を従属させる印","en":"Lemegeton, forbidden grimoire including Goetia, seals to command 72 demons","zh":"《小钥匙》，包含高蒂亚的禁忌魔导书，征服72柱恶魔的印记","ko":"레메게톤, 고에티아를 포함한 금기의 마도서, 72귀리를 복종시키는 인장"},
@@ -298,6 +337,32 @@ const SKINS_WIZARD = [
     locked: false,
     video: "sepia(.25) contrast(1.1) brightness(1.05)",
     cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"韜","caret":"#b8860b","scan":0.14,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-machiavelli",
+    label: {"ja":"マキアヴェッリ 戦術論","en":"Machiavelli The Art of War","zh":"马基雅维利 战争术","ko":"마키아벨리 전쟁론"},
+    desc: {"ja":"ルネサンス期の政治・軍事論、君主論と戦争の芸術","en":"Renaissance political military treatise, The Prince and the art of war","zh":"文艺复兴时期的政治军事论，君主论与战争艺术","ko":"르네상스期의 정치 군사론, 군주론과 전쟁 예술"},
+    cat: ["wizard","grad","light"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"500","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"V"},
+    colors: {"stage":"#f5efe0","ink":"#2a241e","don":"#b8860b","ka":"#8b4513","text":"#2a241e","muted":"#6a5a40","bg":"#f0e8d8","panel":"rgba(240,232,216,.97)","field":"#f5efe0","button":"#e8e0d0","accent":"#b8860b","onAccent":"#ffffff","gold":"#ffd700","border":"rgba(184,134,11,.35)"},
+    shapes: ["square","circle"],
+    locked: false,
+    video: "sepia(.25) contrast(1.1) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"V","caret":"#b8860b","scan":0.14,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-mahan",
+    label: {"ja":"マハン 海上権力史論","en":"Mahan The Influence of Sea Power","zh":"马汉 海权史论","ko":"마한 해상권력사론"},
+    desc: {"ja":"海戦略の古典、制海権と海上貿易の重要性","en":"Classic of naval strategy, command of the sea and maritime trade","zh":"海战略的经典，制海权与海上贸易的重要性","ko":"해전략의 고전, 제해권과 해상 무역의 중요성"},
+    cat: ["wizard","grad","dark"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"500","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"⚓"},
+    colors: {"stage":"#121e2e","ink":"#dce6f0","don":"#3498db","ka":"#2c3e50","text":"#dce6f0","muted":"#7f8c8d","bg":"#0b1420","panel":"rgba(11,20,32,.97)","field":"#121e2e","button":"#223040","accent":"#3498db","onAccent":"#ffffff","gold":"#f1c40f","border":"rgba(52,152,219,.35)"},
+    shapes: ["circle","square"],
+    locked: false,
+    video: "hue-rotate(200deg) saturate(1.1) contrast(1.15) brightness(.85)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"⚓","caret":"#3498db","scan":0.16,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-man",
@@ -565,6 +630,19 @@ const SKINS_WIZARD = [
     locked: false,
     video: "saturate(1.2) contrast(1.15) brightness(.95)",
     cli: {"font":"JetBrains Mono, monospace","prompt":"+","caret":"#f92672","scan":0.08,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-vegetius",
+    label: {"ja":"ウェゲティウス 軍事論","en":"Vegetius De Re Militari","zh":"韦格提乌 兵法论","ko":"ウェ게티우스 군사론"},
+    desc: {"ja":"古代ローマの軍事論、軍制・訓練・戦術の体系","en":"Ancient Roman military treatise, system of military organization training and tactics","zh":"古罗马的军事论，军制训练与战术体系","ko":"고대 로마의 군사론, 군제 훈련 및 전술 체계"},
+    cat: ["wizard","grad","dark"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"500","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"M"},
+    colors: {"stage":"#2a2a3a","ink":"#d8d4c0","don":"#8b7355","ka":"#5d4037","text":"#d8d4c0","muted":"#b8b0a0","bg":"#1e1e28","panel":"rgba(30,30,40,.97)","field":"#2a2a3a","button":"#3a3a4a","accent":"#8b7355","onAccent":"#ffffff","gold":"#d4af37","border":"rgba(139,115,85,.35)"},
+    shapes: ["square","square"],
+    locked: false,
+    video: "sepia(.3) contrast(1.15) brightness(.9)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"M","caret":"#8b7355","scan":0.14,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-void",
