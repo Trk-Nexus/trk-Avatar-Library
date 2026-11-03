@@ -424,7 +424,16 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 
 ## 7. 変更履歴（新しい順）
 
-### 2026-11-03 trk268 CLI スキン受け口 — TRK_PWA_REF を trk268（4a9cf1ccdb84ea92fb198fef7465ab16d342ffa0）に
+### 2026-11-03 trk268 CLI スキン受け口 — TRK_PWA_REF を trk268（4a9cf1ccdb84ea92fb198fef7465ab16d342ffa0）に、Wizard 定番CLIスキン追加
+- **`TRK_PWA_REF` を `4a9cf1ccdb84ea92fb198fef7465ab16d342ffa0`（trk268、40桁）に変更**：`.github/workflows/check.yml` と `.github/workflows/release-set.yml` の `env.TRK_PWA_REF`、および本文書 §1 の記録を同じ回にする。7桁では `actions/checkout` が枝名として探して失敗するため、必ず40桁のフル SHA を使う。
+- **Wizard 定番CLIスキン3種を追加**（総数246→249種、wizard カテゴリ17→20種）：
+  - `wizard-grep`（検索・ハイライト重視・黄色マーカー、cli: font=Courier New, prompt=?, caret=#ffff00, scan=0.10）
+  - `wizard-man`（マニュアル・ドキュメント閲覧・serifフォント、cli: font=Trajan Pro/Garamond, prompt=>, caret=#cbd5e1, scan=0.05）
+  - `wizard-sudo`（管理者権限・警告色・赤アクセント、cli: font=Cascadia Mono, prompt=#, caret=#ff0040, scan=0.15）
+- **既存 Wizard CLI スキン5種の cli.font 正規化**（クォート除去）：wizard-cli, wizard-terminal, wizard-grimoire, wizard-arcane, wizard-console
+- **CLI対応Wizardスキン合計8種**（`check-cli-skin.mjs` で全員 exit 0 を通過）
+- **`docs/CLI-定番機能とWizardスキン案.md` を新設**：CLI定番機能・コマンド・カラースキーム・ターミナル機能の調査まとめ、Wizardスキン追加案7種、実装担当への伝達事項を記載
+- **Google Drive フォルダ `trk-PWA-trk268-ターミナルの受け口-2026-11-03`**（ID `1YuApiK64rdk4NfpE615QbuqyO1YTuGP2`）に受け入れ条件ファイル7点を配置済み
 - **`TRK_PWA_REF` を `4a9cf1ccdb84ea92fb198fef7465ab16d342ffa0`（trk268、40桁）に変更**：`.github/workflows/check.yml` と `.github/workflows/release-set.yml` の `env.TRK_PWA_REF`、および本文書 §1 の記録を同じ回にする。7桁では `actions/checkout` が枝名として探して失敗するため、必ず40桁のフル SHA を使う。
 - **CLI 用スキン `wizard-cli` を `catalog/skins.json` に追加**：`cat` に `"wizard"` を1語含む（`["dark","wizard"]`）。`colors` は `bg`/`panel`/`text`/`accent`/`gold` の5色。`cli` は `font`/`prompt`/`caret`/`scan` を持ち、コントラストは text/muted vs panel/field で 4.5:1 以上、エラー行 vs field で 3:1 以上。
 - **`tools/check-cli-skin.mjs` を新設**：CLI スキンのバリデーションツール。`cat` の命名・`colors` の不足・コントラスト・`cli` の値をチェック。終了コード 0=受け取り／1=名前なし／2=読めない。
