@@ -104,11 +104,11 @@ test("E7: CSS に accent-color 記載", () => {
 
 // --- Phase 3: UX コンポーネントのモダン化 ---
 
-// E10. スキンプレビュー モダンUI（index.html）
-test("E10: index.html にスキンプレビューセクション記載", () => {
+// E10. スキンプレビュー モダンUI（index.html、設定パネル内）
+test("E10: index.html にスキンプレビューグリッド記載", () => {
   const html = readFileSync(join(repoRoot, "index.html"), "utf-8");
-  assert.ok(html.includes('class="skin-preview"'), 'skin-preview クラスが記載されていません');
   assert.ok(html.includes('id="skin-preview-grid"'), 'skin-preview-grid IDが記載されていません');
+  assert.ok(html.includes('skin-preview-card'), 'skin-preview-card クラスが記載されていません');
 });
 
 // E11. CLI ターミナル モダン化（カーソルアニメーション強化）

@@ -14,52 +14,79 @@
 </head>
 <body trk-build="trk269" data-theme="dark">
 
-<header>
-  <h1>trk! Terminal &amp; Wizard Skin</h1>
-  <p>trk-build: <span id="trk-build"></span> | CACHE: <span id="cache-name"></span></p>
-
-  <!-- テーマ切替コントロール -->
-  <div class="theme-controls">
-    <label class="theme-label" for="theme-select">テーマ:</label>
-    <select id="theme-select" class="custom-select">
-      <option value="dark">ダーク</option>
-      <option value="light">ライト</option>
-      <option value="system">システム設定に従う</option>
-    </select>
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">
-      🌓
+<!-- ミニマルヘッダー：タイトル＋設定ボタンのみ -->
+<header class="mini-header">
+  <div class="header-left">
+    <h1>trk!</h1>
+    <span class="header-sub">Terminal &amp; Wizard Skin</span>
+  </div>
+  <div class="header-right">
+    <button type="button" id="settings-toggle" class="settings-toggle" aria-expanded="false" aria-controls="settings-panel" aria-label="設定を開く">
+      ⚙️
     </button>
   </div>
 </header>
 
-<main>
+<main class="immersive-main">
   <!-- スクリーンリーダー用ライブリージョン -->
   <div id="status-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
+  <!-- ターミナルセクション（メイン） -->
   <section class="cli-base">
     <div class="cli-term" id="cli-term" role="log" aria-label="ターミナル出力"></div>
-    <input type="text" class="cli-input" id="cli-input" placeholder="コマンドを入力 (man / help でヘルプ)" aria-label="コマンド入力">
+    <input type="text" class="cli-input" id="cli-input" placeholder="コマンドを入力 (man / help でヘルプ)" aria-label="コマンド入力" autocomplete="off">
   </section>
 
-  <!-- スキン選択ポップオーバー（アンカーポジショニング対象） -->
-  <div class="skin-picker-anchor" id="skin-picker-anchor">
-    <button type="button" id="skin-picker-toggle" class="skin-picker-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="skin-picker-popover">
-      スキン選択: <span id="skin-picker-label">wizard-cli</span>
-    </button>
-    <div id="skin-picker-popover" class="skin-picker-popover" role="menu" aria-label="スキン一覧" hidden>
-      <div class="skin-picker-header">
-        <span class="skin-picker-count" id="skin-picker-count">24 種</span>
-        <input type="search" id="skin-picker-search" class="skin-picker-search" placeholder="スキン名で検索" aria-label="スキン検索">
+  <!-- 設定パネル（オーバーレイ、通常時は非表示） -->
+  <div id="settings-panel" class="settings-panel" role="dialog" aria-modal="true" aria-label="設定" hidden>
+    <div class="settings-panel-header">
+      <h2 class="settings-title">設定</h2>
+      <button type="button" id="settings-close" class="settings-close" aria-label="設定を閉じる">✕</button>
+    </div>
+
+    <div class="settings-section">
+      <h3 class="settings-section-title">テーマ</h3>
+      <div class="theme-controls">
+        <label class="theme-label" for="settings-theme-select">カラースキーム:</label>
+        <select id="settings-theme-select" class="custom-select">
+          <option value="dark">ダーク</option>
+          <option value="light">ライト</option>
+          <option value="system">システム設定に従う</option>
+        </select>
+        <button type="button" id="settings-theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="テーマを切替">
+          🌓
+        </button>
       </div>
-      <ul class="skin-picker-list" id="skin-picker-list"></ul>
+    </div>
+
+    <div class="settings-section">
+      <h3 class="settings-section-title">スキン</h3>
+      <div class="skin-picker-anchor" id="skin-picker-anchor">
+        <button type="button" id="skin-picker-toggle" class="skin-picker-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="skin-picker-popover">
+          スキン選択: <span id="skin-picker-label">wizard-cli</span>
+        </button>
+        <div id="skin-picker-popover" class="skin-picker-popover" role="menu" aria-label="スキン一覧" hidden>
+          <div class="skin-picker-header">
+            <span class="skin-picker-count" id="skin-picker-count">24 種</span>
+            <input type="search" id="skin-picker-search" class="skin-picker-search" placeholder="スキン名で検索" aria-label="スキン検索">
+          </div>
+          <ul class="skin-picker-list" id="skin-picker-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section settings-section-spin-preview">
+      <h3 class="settings-section-title">スキンプレビュー</h3>
+      <div class="skin-preview-grid" id="skin-preview-grid"></div>
+    </div>
+
+    <div class="settings-panel-footer">
+      <p class="settings-hint">ショートカット: <kbd>Ctrl</kbd> + <kbd>K</kbd> または <kbd>⌘</kbd> + <kbd>K</kbd> で設定を開く / <kbd>Esc</kbd> で閉じる</p>
     </div>
   </div>
 
-  <!-- スキンプレビューカード（モダンUI） -->
-  <section class="skin-preview" aria-label="スキンプレビュー">
-    <h2 class="sr-only">スキンプレビュー</h2>
-    <div class="skin-preview-grid" id="skin-preview-grid"></div>
-  </section>
+  <!-- 設定パネル用バックドロップ -->
+  <div id="settings-backdrop" class="settings-backdrop" hidden></div>
 </main>
 
 <!-- js/characters/miku.js の直後に skins-wizard.js を読み込む -->
@@ -74,29 +101,76 @@
   import { CliCommands } from "./js/cli.js";
   import { SKINS_WIZARD } from "./js/skins-wizard.js";
 
-  document.getElementById("trk-build").textContent = document.documentElement.getAttribute("trk-build") || "trk269";
-  document.getElementById("cache-name").textContent = "trk-v2026.11.03-trk269";
+  document.documentElement.setAttribute("trk-build", document.documentElement.getAttribute("trk-build") || "trk269");
 
   // Wizard スキンのカテゴリ登録
   console.log("SKIN_CATS.wizard:", SKIN_CATS.wizard);
   console.log("Wizard スキン数:", SKINS_WIZARD.length);
 
-  // --- テーマ状態管理 ---
+  // --- 状態管理 ---
   const root = document.documentElement;
-  const themeSelect = document.getElementById("theme-select");
-  const themeToggle = document.getElementById("theme-toggle");
-  const skinPickerAnchor = document.getElementById("skin-picker-anchor");
-  const skinPickerToggle = document.getElementById("skin-picker-toggle");
-  const skinPickerPopover = document.getElementById("skin-picker-popover");
-  const skinPickerLabel = document.getElementById("skin-picker-label");
-  const skinPickerSearch = document.getElementById("skin-picker-search");
-  const skinPickerList = document.getElementById("skin-picker-list");
-  const skinPickerCount = document.getElementById("skin-picker-count");
+  const settingsToggle = document.getElementById("settings-toggle");
+  const settingsPanel = document.getElementById("settings-panel");
+  const settingsClose = document.getElementById("settings-close");
+  const settingsBackdrop = document.getElementById("settings-backdrop");
+  const statusAnnouncer = document.getElementById("status-announcer");
 
   let currentTheme = localStorage.getItem("trk-theme") || "dark";
   let currentSkinId = "wizard-cli";
+  let settingsOpen = false;
 
-  // テーマを適用
+  // アナウンス（スクリーンリーダー）
+  function announce(message) {
+    statusAnnouncer.textContent = "";
+    statusAnnouncer.textContent = message;
+  }
+
+  // --- 設定パネル 開閉 ---
+  function openSettings() {
+    settingsOpen = true;
+    settingsPanel.hidden = false;
+    settingsBackdrop.hidden = false;
+    settingsToggle.setAttribute("aria-expanded", "true");
+    settingsClose.focus();
+    announce("設定パネルを開きました");
+  }
+
+  function closeSettings() {
+    settingsOpen = false;
+    settingsPanel.hidden = true;
+    settingsBackdrop.hidden = true;
+    settingsToggle.setAttribute("aria-expanded", "false");
+    settingsToggle.focus();
+    announce("設定パネルを閉じました");
+  }
+
+  settingsToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (settingsOpen) closeSettings();
+    else openSettings();
+  });
+
+  settingsClose.addEventListener("click", closeSettings);
+
+  settingsBackdrop.addEventListener("click", closeSettings);
+
+  // キーボードショートカット: Ctrl+K / Cmd+K で設定開閉、Esc で閉じる
+  document.addEventListener("keydown", (e) => {
+    if ((e.key === "k" || e.key === "K") && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      if (settingsOpen) closeSettings();
+      else openSettings();
+    }
+    if (e.key === "Escape" && settingsOpen) {
+      e.preventDefault();
+      closeSettings();
+    }
+  });
+
+  // --- テーマ状態管理 ---
+  const themeSelect = document.getElementById("settings-theme-select");
+  const themeToggle = document.getElementById("settings-theme-toggle");
+
   function applyTheme(theme) {
     if (theme === "system") {
       root.removeAttribute("data-theme");
@@ -112,10 +186,8 @@
     themeToggle.textContent = theme === "dark" ? "🌙" : "☀️";
   }
 
-  // テーマ初期化
   applyTheme(currentTheme);
 
-  // テーマ切替イベント
   themeSelect.addEventListener("change", (e) => applyTheme(e.target.value));
   themeToggle.addEventListener("click", () => {
     const next = currentTheme === "dark" ? "light" : "dark";
@@ -124,9 +196,15 @@
 
   // --- スキン選択ポップオーバー ---
   const wizardSkins = SKINS_WIZARD.filter((s) => s.cat && s.cat.includes("wizard"));
+  const skinPickerCount = document.getElementById("skin-picker-count");
+  const skinPickerLabel = document.getElementById("skin-picker-label");
+  const skinPickerSearch = document.getElementById("skin-picker-search");
+  const skinPickerList = document.getElementById("skin-picker-list");
+  const skinPickerToggle = document.getElementById("skin-picker-toggle");
+  const skinPickerPopover = document.getElementById("skin-picker-popover");
+
   skinPickerCount.textContent = `${wizardSkins.length} 種`;
 
-  // スキンリストをレンダリング
   function renderSkinList(filter = "") {
     skinPickerList.innerHTML = "";
     const filtered = wizardSkins.filter((s) =>
@@ -155,10 +233,8 @@
 
   renderSkinList();
 
-  // 検索フィルタ
   skinPickerSearch.addEventListener("input", (e) => renderSkinList(e.target.value));
 
-  // ポップオーバー開閉
   skinPickerToggle.addEventListener("click", () => {
     const expanded = skinPickerToggle.getAttribute("aria-expanded") === "true";
     skinPickerPopover.hidden = expanded;
@@ -166,111 +242,10 @@
     if (!expanded) skinPickerSearch.focus();
   });
 
-  // ポップオーバー外クリックで閉じる
-  document.addEventListener("click", (e) => {
-    if (!skinPickerAnchor.contains(e.target)) {
-      skinPickerPopover.hidden = true;
-      skinPickerToggle.setAttribute("aria-expanded", "false");
-    }
-  });
+  // ポップオーバー外クリックで閉じる（設定パネル内では backdrop が処理）
+  skinPickerPopover.addEventListener("click", (e) => e.stopPropagation());
 
-  // --- スキン適用 ---
-  function applySkin(id) {
-    const skin = SKINS_WIZARD.find((s) => s.id === id);
-    if (!skin) throw new Error("skin not found");
-    currentSkinId = id;
-    skinPickerLabel.textContent = id;
-
-    root.style.setProperty("--skin-bg", skin.colors.bg);
-    root.style.setProperty("--skin-panel", skin.colors.panel);
-    root.style.setProperty("--skin-text", skin.colors.text);
-    root.style.setProperty("--skin-muted", skin.colors.muted);
-    root.style.setProperty("--skin-accent", skin.colors.accent);
-    root.style.setProperty("--skin-gold", skin.colors.gold);
-    root.style.setProperty("--skin-border", skin.colors.border);
-
-    if (skin.cli) {
-      const look = sanitizeCliLook(skin.cli);
-      cliLookVars(look, root);
-    }
-
-    // 現在選択中のリスト項目を更新
-    document.querySelectorAll(".skin-picker-item").forEach((li) => {
-      li.classList.toggle("current", li.dataset.skinId === id);
-    });
-  }
-
-  // --- スキンプレビューカードのレンダリング ---
-  const skinPreviewGrid = document.getElementById("skin-preview-grid");
-  const statusAnnouncer = document.getElementById("status-announcer");
-
-  function announce(message) {
-    statusAnnouncer.textContent = message;
-  }
-
-  function renderSkinPreview() {
-    skinPreviewGrid.innerHTML = "";
-    wizardSkins.forEach((skin) => {
-      const card = document.createElement("article");
-      card.className = "skin-preview-card";
-      card.tabIndex = 0;
-      card.dataset.skinId = skin.id;
-      card.setAttribute("role", "button");
-      card.setAttribute("aria-label", `${skin.id} - ${skin.label ? skin.label.ja : ""} スキン`);
-      if (skin.id === currentSkinId) card.classList.add("current");
-      card.innerHTML = `
-        <header class="skin-preview-card-header">
-          <h3 class="skin-preview-card-id">${skin.id}</h3>
-          <p class="skin-preview-card-label">${skin.label ? skin.label.ja : ""}</p>
-        </header>
-        <div class="skin-preview-card-body">
-          <div class="skin-preview-card-color-swatch">
-            <span class="skin-preview-color" style="background:${skin.colors.bg};" title="bg"></span>
-            <span class="skin-preview-color" style="background:${skin.colors.panel};" title="panel"></span>
-            <span class="skin-preview-color" style="background:${skin.colors.text};" title="text"></span>
-            <span class="skin-preview-color" style="background:${skin.colors.accent};" title="accent"></span>
-            <span class="skin-preview-color" style="background:${skin.colors.gold};" title="gold"></span>
-          </div>
-        </div>
-        <footer class="skin-preview-card-footer">
-          <button type="button" class="skin-preview-card-apply" data-skin-id="${skin.id}">適用</button>
-        </footer>
-      `;
-
-      // カードクリックで適用
-      card.addEventListener("click", (e) => {
-        if (e.target.classList.contains("skin-preview-card-apply")) return;
-        applySkin(skin.id);
-        announce(`スキンを${skin.id}に変更しました`);
-      });
-
-      // 「適用」ボタンクリック
-      const applyBtn = card.querySelector(".skin-preview-card-apply");
-      applyBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        applySkin(skin.id);
-        announce(`スキンを${skin.id}に変更しました`);
-      });
-
-      // キーボードナビゲーション（Enter/Space で適用）
-      card.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          applySkin(skin.id);
-          announce(`スキンを${skin.id}に変更しました`);
-        }
-      });
-
-      skinPreviewGrid.appendChild(card);
-    });
-  }
-
-  renderSkinPreview();
-
-  // デフォルトスキンを適用
-  applySkin("wizard-cli");
-
-  // --- スキンピッカー キーボードナビゲーション ---
+  // スキンピッカー キーボードナビゲーション
   let skinPickerFocusedIndex = -1;
   const skinPickerItems = () => skinPickerList.querySelectorAll('[role="menuitem"]');
 
@@ -321,9 +296,108 @@
     }
   });
 
+  // --- スキン適用 ---
+  function applySkin(id) {
+    const skin = SKINS_WIZARD.find((s) => s.id === id);
+    if (!skin) throw new Error("skin not found");
+    currentSkinId = id;
+    skinPickerLabel.textContent = id;
+
+    root.style.setProperty("--skin-bg", skin.colors.bg);
+    root.style.setProperty("--skin-panel", skin.colors.panel);
+    root.style.setProperty("--skin-text", skin.colors.text);
+    root.style.setProperty("--skin-muted", skin.colors.muted);
+    root.style.setProperty("--skin-accent", skin.colors.accent);
+    root.style.setProperty("--skin-gold", skin.colors.gold);
+    root.style.setProperty("--skin-border", skin.colors.border);
+
+    if (skin.cli) {
+      const look = sanitizeCliLook(skin.cli);
+      cliLookVars(look, root);
+    }
+
+    // スキンプレビューの current 状態を更新
+    document.querySelectorAll(".skin-preview-card").forEach((card) => {
+      card.classList.toggle("current", card.dataset.skinId === id);
+    });
+    document.querySelectorAll(".skin-picker-item").forEach((li) => {
+      li.classList.toggle("current", li.dataset.skinId === id);
+    });
+  }
+
+  // --- スキンプレビューカードのレンダリング ---
+  const skinPreviewGrid = document.getElementById("skin-preview-grid");
+
+  function renderSkinPreview() {
+    skinPreviewGrid.innerHTML = "";
+    wizardSkins.forEach((skin) => {
+      const card = document.createElement("article");
+      card.className = "skin-preview-card";
+      card.tabIndex = 0;
+      card.dataset.skinId = skin.id;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `${skin.id} - ${skin.label ? skin.label.ja : ""} スキン`);
+      if (skin.id === currentSkinId) card.classList.add("current");
+      card.innerHTML = `
+        <header class="skin-preview-card-header">
+          <h3 class="skin-preview-card-id">${skin.id}</h3>
+          <p class="skin-preview-card-label">${skin.label ? skin.label.ja : ""}</p>
+        </header>
+        <div class="skin-preview-card-body">
+          <div class="skin-preview-card-color-swatch">
+            <span class="skin-preview-color" style="background:${skin.colors.bg};" title="bg"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.panel};" title="panel"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.text};" title="text"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.accent};" title="accent"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.gold};" title="gold"></span>
+          </div>
+        </div>
+        <footer class="skin-preview-card-footer">
+          <button type="button" class="skin-preview-card-apply" data-skin-id="${skin.id}">適用</button>
+        </footer>
+      `;
+
+      card.addEventListener("click", (e) => {
+        if (e.target.classList.contains("skin-preview-card-apply")) return;
+        applySkin(skin.id);
+        announce(`スキンを${skin.id}に変更しました`);
+      });
+
+      const applyBtn = card.querySelector(".skin-preview-card-apply");
+      applyBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        applySkin(skin.id);
+        announce(`スキンを${skin.id}に変更しました`);
+      });
+
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          applySkin(skin.id);
+          announce(`スキンを${skin.id}に変更しました`);
+        }
+      });
+
+      skinPreviewGrid.appendChild(card);
+    });
+  }
+
+  renderSkinPreview();
+
+  // デフォルトスキンを適用
+  applySkin("wizard-cli");
+
   // --- CLI 初期化 ---
   const term = document.getElementById("cli-term");
   const input = document.getElementById("cli-input");
+
+  const skinManager = {
+    applySkin(id) {
+      return applySkin(id);
+    },
+  };
+
+  const cli = new CliCommands(skinManager);
 
   // --- CLI キーボードショートカット ---
   input.addEventListener("keydown", (e) => {
@@ -338,14 +412,6 @@
       cli.run("clear");
     }
   });
-
-  const skinManager = {
-    applySkin(id) {
-      return applySkin(id);
-    },
-  };
-
-  const cli = new CliCommands(skinManager);
 
   input.addEventListener("keydown", async (e) => {
     if (e.key === "Enter") {
@@ -372,26 +438,22 @@
 <!-- Core Web Vitals 測定（LCP / FID / CLS） -->
 <script>
   (function () {
-    // Performance Observer がサポートされているか確認
     if (!window.PerformanceObserver) return;
 
     const vitals = {};
 
-    // LCP 測定
     new PerformanceObserver((entryList) => {
       for (const entry of entryList.getEntries()) {
         vitals.lcp = entry.startTime;
       }
     }).observe({ entryTypes: ["largest-contentful-paint"] });
 
-    // FID 測定（First Input Delay）
     new PerformanceObserver((entryList) => {
       for (const entry of entryList.getEntries()) {
         vitals.fid = entry.processingStart - entry.startTime;
       }
     }).observe({ entryTypes: ["first-input"] });
 
-    // CLS 測定（Cumulative Layout Shift）
     new PerformanceObserver((entryList) => {
       for (const entry of entryList.getEntries()) {
         if (!entry.hadRecentInput) {
@@ -400,7 +462,6 @@
       }
     }).observe({ entryTypes: ["layout-shift"] });
 
-    // ページ読み込み完了時にレポート
     window.addEventListener("load", () => {
       setTimeout(() => {
         const report = {
@@ -408,11 +469,9 @@
           fid: vitals.fid ? Math.round(vitals.fid) : null,
           cls: vitals.cls ? Math.round(vitals.cls * 1000) / 1000 : null,
         };
-        // コンソールに出力（開発時）
         if (typeof console !== "undefined" && console.table) {
           console.table(report, ["Core Web Vitals"]);
         }
-        // ウィンドウプロパティとして公開（外部スクリプトからアクセス可能）
         window.trkWebVitals = report;
       }, 0);
     });
@@ -427,7 +486,6 @@
         .register("./sw.js", { scope: "./" })
         .then((registration) => {
           console.log("Service Worker 登録成功:", registration.scope);
-          // 新しい Service Worker が待機中の場合は即座に有効化
           if (registration.waiting) {
             registration.waiting.postMessage({ type: "SKIP_WAITING" });
           }
@@ -439,9 +497,7 @@
                 installingWorker.state === "installed" &&
                 navigator.serviceWorker.controller
               ) {
-                // 新しいバージョンがインストールされた
                 console.log("新しい Service Worker がインストールされました");
-                // ユーザーにリロードを促す（オプション）
               }
             });
           });

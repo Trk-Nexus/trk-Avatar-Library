@@ -47,12 +47,84 @@
   color-scheme: dark;
 }
 
-/* --- テーマ切替コントロール --- */
+/* --- ミニマルヘッダー（設定隠蔽UX）--- */
+.mini-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--color-panel);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mini-header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--cli-font);
+}
+
+.header-sub {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settings-toggle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  background: var(--color-panel);
+  color: var(--color-text);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.settings-toggle:hover {
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+
+.settings-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.settings-toggle[aria-expanded="true"] {
+  background: var(--color-accent);
+  color: #000;
+  border-color: var(--color-accent);
+}
+
+/* テーマ切替コントロール（設定パネル内） */
 .theme-controls {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   padding: 0.5rem 1rem;
   background: var(--color-panel);
   border: 1px solid var(--color-border);
@@ -678,4 +750,335 @@ input:focus-visible {
   clip: rect(0, 0, 0, 0);
   border: 0;
   white-space: nowrap;
+}
+
+/* --- 没入型メイン（設定隠蔽UX）--- */
+.immersive-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 1rem 3rem;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+}
+
+.immersive-main .cli-base {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 設定パネル（オーバーレイ、Modern Web Guidance: dialog/overlay パターン）--- */
+.settings-backdrop {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in srgb, #000 40%);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  transition: opacity 0.2s ease;
+}
+
+.settings-backdrop[hidden] {
+  display: none;
+  opacity: 0;
+}
+
+.settings-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92vw;
+  max-width: 520px;
+  max-height: 85vh;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-panel);
+  color: var(--color-text);
+  box-shadow: 0 20px 40px color-mix(in srgb, #000 35%);
+  overflow-y: auto;
+  z-index: 210;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.settings-panel[hidden] {
+  display: none;
+  transform: translate(-50%, -60%);
+  opacity: 0;
+}
+
+.settings-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+}
+
+.settings-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.settings-close {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-border);
+  background: var(--color-panel);
+  color: var(--color-text);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.125rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.settings-close:hover {
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+
+.settings-close:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* 設定セクション */
+.settings-section {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 30%);
+}
+
+.settings-section:last-child {
+  border-bottom: none;
+}
+
+.settings-section-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.settings-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.settings-panel-footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-accent) 3%, transparent);
+}
+
+kbd {
+  display: inline-block;
+  padding: 0.125rem 0.375rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 0.75rem;
+  font-family: var(--cli-font);
+  font-weight: 600;
+  margin: 0 0.125rem;
+}
+
+/* --- スキンプレビューカード（設定パネル内用、コンパクト）--- */
+.settings-section-spin-preview .skin-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.settings-section-spin-preview .skin-preview-card {
+  border-radius: 8px;
+  min-height: 140px;
+}
+
+.settings-section-spin-preview .skin-preview-card-header {
+  padding: 0.5rem 0.75rem;
+}
+
+.settings-section-spin-preview .skin-preview-card-id {
+  font-size: 0.85rem;
+}
+
+.settings-section-spin-preview .skin-preview-card-label {
+  font-size: 0.75rem;
+}
+
+.settings-section-spin-preview .skin-preview-card-body {
+  padding: 0.5rem 0.75rem;
+  gap: 0.375rem;
+}
+
+.settings-section-spin-preview .skin-preview-color {
+  width: 16px;
+  height: 16px;
+}
+
+.settings-section-spin-preview .skin-preview-card-footer {
+  padding: 0.375rem 0.75rem;
+}
+
+.settings-section-spin-preview .skin-preview-card-apply {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* --- レスポンシブ対応（モバイルファースト）--- */
+@media (max-width: 640px) {
+  .mini-header {
+    padding: 0.75rem;
+  }
+
+  .mini-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .header-sub {
+    display: none;
+  }
+
+  .immersive-main {
+    padding: 1rem 0.75rem 2rem;
+  }
+
+  .settings-panel {
+    width: 94vw;
+    max-width: none;
+    max-height: 90vh;
+  }
+
+  .settings-section {
+    padding: 1rem;
+  }
+
+  .settings-panel-header {
+    padding: 1rem;
+  }
+
+  .custom-select {
+    width: 100%;
+  }
+
+  .skin-picker-popover {
+    width: auto;
+    min-width: 280px;
+    max-height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 90vw;
+    max-width: 320px;
+  }
+
+  .skin-preview {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+    padding: 0 0.75rem;
+  }
+
+  .skin-preview-card {
+    border-radius: 8px;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  .cli-term {
+    min-height: 150px;
+    padding: 0.75rem;
+  }
+
+  .cli-input {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 0 0.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skin-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .skin-picker-popover {
+    width: 92vw;
+    max-width: 280px;
+  }
+
+  .skin-picker-item {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .skin-picker-item-id {
+    font-size: 0.8rem;
+  }
+
+  .skin-picker-item-label {
+    font-size: 0.75rem;
+  }
+
+  .settings-panel {
+    width: 96vw;
+    max-height: 92vh;
+  }
+}
+
+/* --- CLI ターミナル強化：カーソルアニメーションバリエーション --- */
+.cli-cursor.blink-fast {
+  animation: cli-blink-fast 0.5s step-end infinite;
+}
+
+.cli-cursor.blink-slow {
+  animation: cli-blink-slow 2s step-end infinite;
+}
+
+@keyframes cli-blink-fast {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes cli-blink-slow {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- スキャンライン強化：テーマ対応 --- */
+.cli-scan.scan-fast::after {
+  animation: cli-scan-move 2s linear infinite;
+}
+
+.cli-scan.scan-slow::after {
+  animation: cli-scan-move 6s linear infinite;
+}
+
+@keyframes cli-scan-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }
