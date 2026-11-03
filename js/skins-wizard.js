@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // 自動生成: tools/import-skin-catalog.mjs --cat=wizard
 // 入力: catalog/skins.json（手編集禁止）
-// 生成日時: 2026-11-03T04:15:23.247Z
-// スキン数: 40
+// 生成日時: 2026-11-03T04:30:09.273Z
+// スキン数: 46
 
 const SKINS_WIZARD = [
   {
@@ -287,6 +287,19 @@ const SKINS_WIZARD = [
     cli: {"font":"Courier New, Courier, monospace","prompt":"⛤","caret":"#8b00ff","scan":0.2,"cursor":"block","opacity":0.9,"history":50,"completion":"tab","bell":true},
   },
   {
+    id: "wizard-liu-tao",
+    label: {"ja":"六韜","en":"Six Secret Teachings","zh":"六韬","ko":"육도"},
+    desc: {"ja":"姜太公が文王に伝えたとされる中国最古の軍略書、韜略の六篇","en":"Chinese military classic attributed to Jiang Taigong, six sections of military strategy","zh":"据说姜太公传给文王的中国最古老的军略书，六韬六篇","ko":"강태공이 문왕에 전했다고 하는 중국最古의 군사전략서, 육도 육편"},
+    cat: ["wizard","grad","light"],
+    font: "\"KaiTi\",\"SimSun\",serif",
+    type: {"title":"\"KaiTi\",serif","weight":"500","lh":"1.7","titleWeight":"700","titleSpace":".04em","titleTransform":"","mark":"韜"},
+    colors: {"stage":"#f5efe0","ink":"#2a241e","don":"#b8860b","ka":"#8b4513","text":"#2a241e","muted":"#6a5a40","bg":"#f0e8d8","panel":"rgba(240,232,216,.97)","field":"#f5efe0","button":"#e8e0d0","accent":"#b8860b","onAccent":"#ffffff","gold":"#ffd700","border":"rgba(184,134,11,.35)"},
+    shapes: ["square","square"],
+    locked: false,
+    video: "sepia(.25) contrast(1.1) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"韜","caret":"#b8860b","scan":0.14,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-man",
     label: {"ja":"ウィザード・マン","en":"Wizard Man","zh":"巫师手册","ko":"마법사 매뉴얼"},
     desc: {"ja":"manページ・ドキュメント閲覧・serifフォント","en":"man page, document viewing, serif font","zh":"man页面，文档查看，衬线字体","ko":"man 페이지, 문서 조회, 세리프 글꼴"},
@@ -401,6 +414,19 @@ const SKINS_WIZARD = [
     video: "saturate(.6) contrast(1.25) brightness(.8)",
   },
   {
+    id: "wizard-san-lue",
+    label: {"ja":"三略","en":"Three Strategies","zh":"三略","ko":"삼략"},
+    desc: {"ja":"黄石公が張良に授けたとされる軍略書、上・中・下三篇","en":"Military classic attributed to Huang Shigong given to Zhang Liang, three sections","zh":"据说黄石公传给张良的军略书，上中下三篇","ko":"황석공이 장량에 전했다고 하는 군사전략서, 상·중·하 三篇"},
+    cat: ["wizard","dark","access"],
+    font: "\"KaiTi\",\"SimSun\",serif",
+    type: {"title":"\"KaiTi\",serif","weight":"500","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"略"},
+    colors: {"stage":"#1a2e1a","ink":"#d4e8d4","don":"#4a7c59","ka":"#2f4f2f","text":"#d4e8d4","muted":"#8fb08f","bg":"#101f10","panel":"rgba(16,31,16,.97)","field":"#1a2e1a","button":"#2a4a2a","accent":"#4a7c59","onAccent":"#ffffff","gold":"#c5a059","border":"rgba(74,124,89,.35)"},
+    shapes: ["circle","square"],
+    locked: false,
+    video: "hue-rotate(100deg) saturate(1.1) contrast(1.15) brightness(.85)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"略","caret":"#4a7c59","scan":0.16,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-seance",
     label: {"ja":"降霊術","en":"Seance","zh":"降灵术","ko":"강령술"},
     desc: {"ja":"ろうそくの灯りと霊媒、あの世との対話","en":"Candlelight and medium, dialogue with the other world","zh":"蜡烛之光与降灵师，与另一个世界的对话","ko":"초불과 영매, 저세상과의 대화"},
@@ -411,6 +437,32 @@ const SKINS_WIZARD = [
     shapes: ["circle","circle"],
     locked: false,
     video: "sepia(.45) brightness(1.05) contrast(1.1)",
+  },
+  {
+    id: "wizard-seven-military-classics",
+    label: {"ja":"武経七書","en":"Seven Military Classics","zh":"武经七书","ko":"무경칠서"},
+    desc: {"ja":"孫子・六韜・三略・司馬法・尉繚子・三略・太公六韜を含む七種の軍事書集成","en":"Seven Military Classics including Sun Tzu, Six Secret Teachings, Three Strategies and more","zh":"包括孙子、六韬、三略、司马法、尉繚子等七种军事书的集成","ko":"손자·육도·삼략·사마법·위료자 등을 포함한 7종의 군사서 집성"},
+    cat: ["wizard","life","grad"],
+    font: "\"KaiTi\",\"SimSun\",serif",
+    type: {"title":"\"KaiTi\",serif","weight":"500","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"七"},
+    colors: {"stage":"#4a3a1a","ink":"#f0e6d2","don":"#d4af37","ka":"#c5a059","text":"#f0e6d2","muted":"#c9b18a","bg":"#3e2f14","panel":"rgba(62,47,20,.96)","field":"#4a3a1a","button":"#5d4524","accent":"#d4af37","onAccent":"#000000","gold":"#ffe082","border":"rgba(212,175,55,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "sepia(.2) saturate(1.15) contrast(1.1) brightness(1.0)",
+    cli: {"font":"Cinzel, Trajan Pro, serif","prompt":"七","caret":"#d4af37","scan":0.18,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-sima-fa",
+    label: {"ja":"司馬法","en":"Methods of the Sima","zh":"司马法","ko":"사마법"},
+    desc: {"ja":"春秋時代の軍律書、齊の司馬穰苴が著したとされる兵法","en":"Spring and Autumn period military code, attributed to Tian Rangju of Qi","zh":"春秋时期的军律书，据说由齐的田穰苴著作的兵法","ko":"춘추 시대의 군율서, 제의 사마려주가 저술했다고 하는 병법"},
+    cat: ["wizard","light","access"],
+    font: "\"KaiTi\",\"SimSun\",serif",
+    type: {"title":"\"KaiTi\",serif","weight":"500","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"司"},
+    colors: {"stage":"#fafafa","ink":"#1a1a1a","don":"#2c5282","ka":"#4a5568","text":"#1a1a1a","muted":"#4a5568","bg":"#ffffff","panel":"rgba(255,255,255,.98)","field":"#fafafa","button":"#e2e8f0","accent":"#2c5282","onAccent":"#ffffff","gold":"#7aa2f7","border":"rgba(44,82,130,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "contrast(1.05) brightness(1.0)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"司","caret":"#2c5282","scan":0.1,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-solomon-book",
@@ -464,6 +516,19 @@ const SKINS_WIZARD = [
     cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"#","caret":"#ff0040","scan":0.15,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
+    id: "wizard-sun-tzu",
+    label: {"ja":"孫子","en":"The Art of War","zh":"孙子兵法","ko":"손자"},
+    desc: {"ja":"孫武が著したとされる兵法の最高峰、知略と戦略の極意","en":"Sun Tzu’s supreme military classic, essence of stratagem and strategy","zh":"据说孙武著作的兵法最高峰，智略与战略的极意","ko":"손무가 저술했다고 하는 병법의 최고봉, 지략과 전략의 극의"},
+    cat: ["wizard","dark","fun"],
+    font: "\"KaiTi\",\"SimSun\",serif",
+    type: {"title":"\"KaiTi\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"","mark":"孫"},
+    colors: {"stage":"#1a0a0a","ink":"#ffd700","don":"#8b0000","ka":"#a52a2a","text":"#ffd700","muted":"#c08080","bg":"#100000","panel":"rgba(16,0,0,.97)","field":"#1a0a0a","button":"#3d0000","accent":"#8b0000","onAccent":"#ffffff","gold":"#d4af37","border":"rgba(139,0,0,.35)"},
+    shapes: ["square","square"],
+    locked: false,
+    video: "hue-rotate(0deg) saturate(1.4) contrast(1.25) brightness(.85)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"孫","caret":"#8b0000","scan":0.2,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-tarot",
     label: {"ja":"タロット","en":"Tarot","zh":"塔罗牌","ko":"타로"},
     desc: {"ja":"タロットカード、運命のカードリーディング","en":"Tarot cards, card reading of fate","zh":"塔罗牌，命运的卡片占卜","ko":"타로 카드, 운명의 카드 리딩"},
@@ -512,6 +577,19 @@ const SKINS_WIZARD = [
     shapes: ["square","square"],
     locked: false,
     video: "brightness(.6) contrast(1.4)",
+  },
+  {
+    id: "wizard-wei-liao-zi",
+    label: {"ja":"尉繚子","en":"Wei Liaozi","zh":"尉繚子","ko":"위료자"},
+    desc: {"ja":"戦国時代の軍事論、尉繚子が著したとされる覇術の書","en":"Warring States period military treatise, attributed to Wei Liao, book of hegemon strategy","zh":"战国时代的军事论，据说尉繚子著作的霸术之书","ko":"전국 시대의 군사론, 위료자가 저술했다고 하는 패술의 서"},
+    cat: ["wizard","grad","dark"],
+    font: "\"KaiTi\",\"SimSun\",serif",
+    type: {"title":"\"KaiTi\",serif","weight":"500","lh":"1.6","titleWeight":"700","titleSpace":".04em","titleTransform":"","mark":"尉"},
+    colors: {"stage":"#2d3a2a","ink":"#e8f0e8","don":"#6b8e23","ka":"#556b2f","text":"#e8f0e8","muted":"#8fb08f","bg":"#223022","panel":"rgba(34,48,34,.96)","field":"#2d3a2a","button":"#4a5d4a","accent":"#6b8e23","onAccent":"#ffffff","gold":"#8fbc8f","border":"rgba(107,142,35,.35)"},
+    shapes: ["circle","square"],
+    locked: false,
+    video: "sepia(.15) saturate(1.1) contrast(1.15) brightness(.9)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"尉","caret":"#6b8e23","scan":0.15,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   }
 ];
 
