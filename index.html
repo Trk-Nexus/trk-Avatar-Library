@@ -8,11 +8,24 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body trk-build="trk269">
+<body trk-build="trk269" data-theme="dark">
 
 <header>
   <h1>trk! Terminal &amp; Wizard Skin</h1>
   <p>trk-build: <span id="trk-build"></span> | CACHE: <span id="cache-name"></span></p>
+
+  <!-- テーマ切替コントロール -->
+  <div class="theme-controls">
+    <label class="theme-label" for="theme-select">テーマ:</label>
+    <select id="theme-select" class="custom-select">
+      <option value="dark">ダーク</option>
+      <option value="light">ライト</option>
+      <option value="system">システム設定に従う</option>
+    </select>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">
+      🌓
+    </button>
+  </div>
 </header>
 
 <main>
@@ -20,6 +33,20 @@
     <div class="cli-term" id="cli-term"></div>
     <input type="text" class="cli-input" id="cli-input" placeholder="コマンドを入力 (man / help でヘルプ)">
   </section>
+
+  <!-- スキン選択ポップオーバー（アンカーポジショニング対象） -->
+  <div class="skin-picker-anchor" id="skin-picker-anchor">
+    <button type="button" id="skin-picker-toggle" class="skin-picker-toggle" aria-expanded="false" aria-haspopup="true">
+      スキン選択: <span id="skin-picker-label">wizard-cli</span>
+    </button>
+    <div id="skin-picker-popover" class="skin-picker-popover" role="menu" aria-label="スキン一覧" hidden>
+      <div class="skin-picker-header">
+        <span class="skin-picker-count" id="skin-picker-count">24 種</span>
+        <input type="search" id="skin-picker-search" class="skin-picker-search" placeholder="スキン名で検索">
+      </div>
+      <ul class="skin-picker-list" id="skin-picker-list"></ul>
+    </div>
+  </div>
 </main>
 
 <!-- js/characters/miku.js の直後に skins-wizard.js を読み込む -->
@@ -41,35 +68,139 @@
   console.log("SKIN_CATS.wizard:", SKIN_CATS.wizard);
   console.log("Wizard スキン数:", SKINS_WIZARD.length);
 
-  // CLI 初期化
+  // --- テーマ状態管理 ---
+  const root = document.documentElement;
+  const themeSelect = document.getElementById("theme-select");
+  const themeToggle = document.getElementById("theme-toggle");
+  const skinPickerAnchor = document.getElementById("skin-picker-anchor");
+  const skinPickerToggle = document.getElementById("skin-picker-toggle");
+  const skinPickerPopover = document.getElementById("skin-picker-popover");
+  const skinPickerLabel = document.getElementById("skin-picker-label");
+  const skinPickerSearch = document.getElementById("skin-picker-search");
+  const skinPickerList = document.getElementById("skin-picker-list");
+  const skinPickerCount = document.getElementById("skin-picker-count");
+
+  let currentTheme = localStorage.getItem("trk-theme") || "dark";
+  let currentSkinId = "wizard-cli";
+
+  // テーマを適用
+  function applyTheme(theme) {
+    if (theme === "system") {
+      root.removeAttribute("data-theme");
+      root.style.colorScheme = "light dark";
+    } else {
+      root.setAttribute("data-theme", theme);
+      root.style.colorScheme = theme;
+    }
+    currentTheme = theme;
+    localStorage.setItem("trk-theme", theme);
+    themeSelect.value = theme;
+    themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+    themeToggle.textContent = theme === "dark" ? "🌙" : "☀️";
+  }
+
+  // テーマ初期化
+  applyTheme(currentTheme);
+
+  // テーマ切替イベント
+  themeSelect.addEventListener("change", (e) => applyTheme(e.target.value));
+  themeToggle.addEventListener("click", () => {
+    const next = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(next);
+  });
+
+  // --- スキン選択ポップオーバー ---
+  const wizardSkins = SKINS_WIZARD.filter((s) => s.cat && s.cat.includes("wizard"));
+  skinPickerCount.textContent = `${wizardSkins.length} 種`;
+
+  // スキンリストをレンダリング
+  function renderSkinList(filter = "") {
+    skinPickerList.innerHTML = "";
+    const filtered = wizardSkins.filter((s) =>
+      s.id.toLowerCase().includes(filter.toLowerCase()) ||
+      (s.label && s.label.ja && s.label.ja.includes(filter))
+    );
+    filtered.forEach((skin) => {
+      const li = document.createElement("li");
+      li.role = "menuitem";
+      li.className = "skin-picker-item";
+      li.dataset.skinId = skin.id;
+      if (skin.id === currentSkinId) li.classList.add("current");
+      li.innerHTML = `
+        <span class="skin-picker-item-color" style="background:${skin.colors.accent};"></span>
+        <span class="skin-picker-item-id">${skin.id}</span>
+        <span class="skin-picker-item-label">${skin.label ? skin.label.ja : ""}</span>
+      `;
+      li.addEventListener("click", () => {
+        applySkin(skin.id);
+        skinPickerPopover.hidden = true;
+        skinPickerToggle.setAttribute("aria-expanded", "false");
+      });
+      skinPickerList.appendChild(li);
+    });
+  }
+
+  renderSkinList();
+
+  // 検索フィルタ
+  skinPickerSearch.addEventListener("input", (e) => renderSkinList(e.target.value));
+
+  // ポップオーバー開閉
+  skinPickerToggle.addEventListener("click", () => {
+    const expanded = skinPickerToggle.getAttribute("aria-expanded") === "true";
+    skinPickerPopover.hidden = expanded;
+    skinPickerToggle.setAttribute("aria-expanded", String(!expanded));
+    if (!expanded) skinPickerSearch.focus();
+  });
+
+  // ポップオーバー外クリックで閉じる
+  document.addEventListener("click", (e) => {
+    if (!skinPickerAnchor.contains(e.target)) {
+      skinPickerPopover.hidden = true;
+      skinPickerToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // --- スキン適用 ---
+  function applySkin(id) {
+    const skin = SKINS_WIZARD.find((s) => s.id === id);
+    if (!skin) throw new Error("skin not found");
+    currentSkinId = id;
+    skinPickerLabel.textContent = id;
+
+    root.style.setProperty("--skin-bg", skin.colors.bg);
+    root.style.setProperty("--skin-panel", skin.colors.panel);
+    root.style.setProperty("--skin-text", skin.colors.text);
+    root.style.setProperty("--skin-muted", skin.colors.muted);
+    root.style.setProperty("--skin-accent", skin.colors.accent);
+    root.style.setProperty("--skin-gold", skin.colors.gold);
+    root.style.setProperty("--skin-border", skin.colors.border);
+
+    if (skin.cli) {
+      const look = sanitizeCliLook(skin.cli);
+      cliLookVars(look, root);
+    }
+
+    // 現在選択中のリスト項目を更新
+    document.querySelectorAll(".skin-picker-item").forEach((li) => {
+      li.classList.toggle("current", li.dataset.skinId === id);
+    });
+  }
+
+  // デフォルトスキンを適用
+  applySkin("wizard-cli");
+
+  // --- CLI 初期化 ---
   const term = document.getElementById("cli-term");
   const input = document.getElementById("cli-input");
 
   const skinManager = {
     applySkin(id) {
-      const skin = SKINS_WIZARD.find((s) => s.id === id);
-      if (!skin) throw new Error("skin not found");
-      const root = document.documentElement;
-      root.style.setProperty("--bg", skin.colors.bg);
-      root.style.setProperty("--panel", skin.colors.panel);
-      root.style.setProperty("--text", skin.colors.text);
-      root.style.setProperty("--muted", skin.colors.muted);
-      root.style.setProperty("--accent", skin.colors.accent);
-      root.style.setProperty("--gold", skin.colors.gold);
-      root.style.setProperty("--border", skin.colors.border);
-
-      if (skin.cli) {
-        const look = sanitizeCliLook(skin.cli);
-        cliLookVars(look, root);
-      }
-      return skin;
+      return applySkin(id);
     },
   };
 
   const cli = new CliCommands(skinManager);
-
-  // デフォルトスキンを適用
-  skinManager.applySkin("wizard-cli");
 
   input.addEventListener("keydown", async (e) => {
     if (e.key === "Enter") {
