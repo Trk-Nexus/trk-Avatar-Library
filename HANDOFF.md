@@ -426,7 +426,17 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 
 ### 2026-11-03 trk268 CLI スキン受け口 — TRK_PWA_REF を trk268（4a9cf1ccdb84ea92fb198fef7465ab16d342ffa0）に、Wizard 定番CLIスキン追加
 - **`TRK_PWA_REF` を `4a9cf1ccdb84ea92fb198fef7465ab16d342ffa0`（trk268、40桁）に変更**：`.github/workflows/check.yml` と `.github/workflows/release-set.yml` の `env.TRK_PWA_REF`、および本文書 §1 の記録を同じ回にする。7桁では `actions/checkout` が枝名として探して失敗するため、必ず40桁のフル SHA を使う。
-- **Wizard 定番CLIスキン3種を追加**（総数246→249種、wizard カテゴリ17→20種）：
+- **Wizard 定番CLIスキン7種を追加**（総数246→253種、wizard カテゴリ17→24種）：
+  - `wizard-grep`（検索・ハイライト重視・黄色マーカー、cli: font=Courier New, prompt=?, caret=#ffff00, scan=0.10）
+  - `wizard-man`（マニュアル・ドキュメント閲覧・serifフォント、cli: font=Trajan Pro/Garamond, prompt=>, caret=#cbd5e1, scan=0.05）
+  - `wizard-sudo`（管理者権限・警告色・赤アクセント、cli: font=Cascadia Mono, prompt=#, caret=#ff0040, scan=0.15）
+  - `wizard-pipe`（パイプライン・フロー重視・青空、cli: font=Rajdhani/Oswald, prompt=→, caret=#00ffff, scan=0.12）
+  - `wizard-history`（履歴・タイムスタンプ重視、cli: font=Courier New, prompt=@, caret=#80deea, scan=0.10）
+  - `wizard-tmux`（マルチペイン重視・グリッド、cli: font=JetBrains Mono, prompt=+, caret=#f92672, scan=0.08）
+  - `wizard-nord`（定番カラースキームNord・青灰系、cli: font=JetBrains Mono, prompt=>, caret=#88c0d0, scan=0.06）
+- **既存 Wizard CLI スキン5種の cli.font 正規化**（クォート除去）：wizard-cli, wizard-terminal, wizard-grimoire, wizard-arcane, wizard-console
+- **CLI対応Wizardスキン合計12種**（`check-cli-skin.mjs` で全員 exit 0 を通過）
+- **gallery/skins-wizard.html を 24 種で再生成**
   - `wizard-grep`（検索・ハイライト重視・黄色マーカー、cli: font=Courier New, prompt=?, caret=#ffff00, scan=0.10）
   - `wizard-man`（マニュアル・ドキュメント閲覧・serifフォント、cli: font=Trajan Pro/Garamond, prompt=>, caret=#cbd5e1, scan=0.05）
   - `wizard-sudo`（管理者権限・警告色・赤アクセント、cli: font=Cascadia Mono, prompt=#, caret=#ff0040, scan=0.15）
