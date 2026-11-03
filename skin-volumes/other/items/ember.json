@@ -1,0 +1,43 @@
+{
+  "id": "ember",
+  "label": {
+    "ja": "残炎",
+    "en": "Embers",
+    "zh": "余烬",
+    "ko": "잔불"
+  },
+  "desc": {
+    "ja": "燃えさかる赤と灰の煙",
+    "en": "Smoldering red with a wisp of ash",
+    "zh": "燃烧的赤红与灰烟",
+    "ko": "타오르는 붉은빛과 재의 연기"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#2a0b07,#0c0202)",
+    "ink": "#fff1ea",
+    "don": "#ff5a2e",
+    "ka": "#9fc3e0",
+    "text": "#fff1ea",
+    "muted": "#c39a8c",
+    "bg": "linear-gradient(180deg,#3a0f0a,#120303)",
+    "panel": "rgba(40,14,10,.95)",
+    "field": "#200806",
+    "button": "#2e0f0a",
+    "accent": "#ff6a3d",
+    "onAccent": "#2a0b04",
+    "gold": "#ffc861",
+    "border": "rgba(255,110,60,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.6) saturate(1.5) hue-rotate(-15deg) brightness(.6) contrast(1.25)"
+}

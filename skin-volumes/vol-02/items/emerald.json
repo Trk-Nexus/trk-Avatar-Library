@@ -1,0 +1,43 @@
+{
+  "id": "emerald",
+  "label": {
+    "ja": "エメラルド",
+    "en": "Emerald",
+    "zh": "绿宝石",
+    "ko": "에메랄드"
+  },
+  "desc": {
+    "ja": "深緑の宝石、成長と希望の緑",
+    "en": "Deep green jewel, growth and hope in green",
+    "zh": "深绿宝石，成长与希望的绿",
+    "ko": "깊은 초록 보석, 성장과 희망의 초록"
+  },
+  "cat": [
+    "grad",
+    "light"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#0e3b2e,#031a0f)",
+    "ink": "#e6ffe6",
+    "don": "#ff6b6b",
+    "ka": "#4ecdc4",
+    "text": "#e6ffe6",
+    "muted": "#70b38f",
+    "bg": "linear-gradient(180deg,#031a0f,#010d07)",
+    "panel": "rgba(14,59,46,.95)",
+    "field": "#0e3b2e",
+    "button": "#1e4b3e",
+    "accent": "#4ecdc4",
+    "onAccent": "#031a0f",
+    "gold": "#ccffe6",
+    "border": "rgba(78,205,196,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.3) hue-rotate(120deg) saturate(1.4) brightness(.85) contrast(1.15)"
+}

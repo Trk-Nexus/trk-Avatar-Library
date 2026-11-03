@@ -1,0 +1,52 @@
+{
+  "id": "art-deco",
+  "label": {
+    "ja": "アールデコ",
+    "en": "Art Deco",
+    "zh": "装饰艺术",
+    "ko": "아르데코"
+  },
+  "desc": {
+    "ja": "幾何学的黄金時代、ゴージャスでモダンな装飾",
+    "en": "Geometric golden age, gorgeous and modern ornament",
+    "zh": "几何学黄金时代，华丽而现代的装饰",
+    "ko": "기하학적 황금기, 화려하고 현대적인 장식"
+  },
+  "cat": [
+    "grad",
+    "fun",
+    "light"
+  ],
+  "font": "\"Trajan Pro\",\"Papyrus\",fantasy",
+  "type": {
+    "title": "\"Trajan Pro\",fantasy",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".05em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#d4af37,#b8860b,#8b4513)",
+    "ink": "#fffdf0",
+    "don": "#ffd700",
+    "ka": "#bdc3c7",
+    "text": "#fffdf0",
+    "muted": "#a08c5a",
+    "bg": "linear-gradient(180deg,#5c4033,#3e2723)",
+    "panel": "rgba(139,69,19,.96)",
+    "field": "#8b4513",
+    "button": "#a0522d",
+    "accent": "#ffd700",
+    "onAccent": "#3e2723",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(1.2) brightness(1.02) contrast(1.1)"
+}

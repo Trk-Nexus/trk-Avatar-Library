@@ -1,0 +1,826 @@
+{
+  "format": "trk-avatar-library-skins",
+  "version": 1,
+  "count": 16,
+  "skins": [
+    {
+      "id": "casino-royale",
+      "label": {
+        "ja": "カジノロワイヤル",
+        "en": "Casino Royale",
+        "zh": "赌场皇家",
+        "ko": "카지노 로얄"
+      },
+      "desc": {
+        "ja": "王族のような気高さ、エメラルドグリーンのカジノテーブル",
+        "en": "Royal nobility, emerald green casino table",
+        "zh": "王族般的高贵，祖母绿赌场桌面",
+        "ko": "왕족 같은 고귀함, 에메랄드 그린 카지노 테이블"
+      },
+      "cat": [
+        "light",
+        "grad",
+        "fun"
+      ],
+      "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Playfair Display\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "700",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#1a5e3a,#0f3d24)",
+        "ink": "#f0f4f8",
+        "don": "#ffd700",
+        "ka": "#4ecdc4",
+        "text": "#f0f4f8",
+        "muted": "#a8b8c8",
+        "bg": "linear-gradient(180deg,#0f3d24,#0a2b1a)",
+        "panel": "rgba(26,94,58,.96)",
+        "field": "#1a5e3a",
+        "button": "#2c6e4a",
+        "accent": "#ffd700",
+        "onAccent": "#0f3d24",
+        "gold": "#ffe082",
+        "border": "rgba(255,215,0,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.2) saturate(1.15) brightness(.95) contrast(1.1)"
+    },
+    {
+      "id": "jackpot-777",
+      "label": {
+        "ja": "ジャックポット777",
+        "en": "Jackpot 777",
+        "zh": "头奖777",
+        "ko": "잭팟 777"
+      },
+      "desc": {
+        "ja": "スロットの大当たり、777の歓喜と黄金の輝き",
+        "en": "Slot machine jackpot, 777 joy and golden shine",
+        "zh": "老虎机大奖，777的狂喜和金色光芒",
+        "ko": "슬롯 머신 잭팟, 777의 환희와 황금빛"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "\"Orbitron\",\"Rajdhani\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Orbitron\",sans-serif",
+        "weight": "700",
+        "lh": "1.25",
+        "titleWeight": "900",
+        "titleSpace": "-.04em",
+        "titleTransform": "uppercase",
+        "mark": "7 7 7"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffd700,#b8860b)",
+        "ink": "#1a1a1a",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#1a1a1a",
+        "muted": "#8a6d3b",
+        "bg": "linear-gradient(180deg,#b8860b,#6b4a0b)",
+        "panel": "rgba(255,215,0,.95)",
+        "field": "#fffdf0",
+        "button": "#ffe082",
+        "accent": "#ff6b6b",
+        "onAccent": "#1a1a1a",
+        "gold": "#ffe082",
+        "border": "rgba(255,107,107,.32)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "sepia(.1) saturate(1.4) brightness(1.08) contrast(1.15)"
+    },
+    {
+      "id": "slot-machine",
+      "label": {
+        "ja": "スロットマシーン",
+        "en": "Slot Machine",
+        "zh": "老虎机",
+        "ko": "슬롯 머신"
+      },
+      "desc": {
+        "ja": "レトロスロットマシーン、回転リールとレバーの音",
+        "en": "Retro slot machine, spinning reels and lever sound",
+        "zh": "复古老虎机，旋转滚筒和拉杆声",
+        "ko": "레트로 슬롯 머신, 회전 릴과 레버 소리"
+      },
+      "cat": [
+        "fun",
+        "grad",
+        "dark"
+      ],
+      "font": "\"Impact\",\"Haettenschweiler\",sans-serif",
+      "type": {
+        "title": "\"Impact\",sans-serif",
+        "weight": "900",
+        "lh": "1.1",
+        "titleWeight": "900",
+        "titleSpace": "-.05em",
+        "titleTransform": "uppercase",
+        "mark": "BAR BAR BAR"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#2a1a3a,#0a0a1a)",
+        "ink": "#ffe066",
+        "don": "#ff0055",
+        "ka": "#00ffcc",
+        "text": "#ffe066",
+        "muted": "#8a7aaa",
+        "bg": "linear-gradient(180deg,#0a0a1a,#000000)",
+        "panel": "rgba(42,26,58,.97)",
+        "field": "#1a102a",
+        "button": "#2a1a3a",
+        "accent": "#ff0055",
+        "onAccent": "#ffffff",
+        "gold": "#ffe066",
+        "border": "rgba(255,0,85,.30)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "hue-rotate(280deg) saturate(1.5) brightness(.85) contrast(1.2)"
+    },
+    {
+      "id": "roulette-wheel",
+      "label": {
+        "ja": "ルーレットホイール",
+        "en": "Roulette Wheel",
+        "zh": "轮盘赌",
+        "ko": "룰렛 휠"
+      },
+      "desc": {
+        "ja": "ルーレットの回転、赤と黒の運命の輪",
+        "en": "Roulette spin, red and black wheel of fate",
+        "zh": "轮盘旋转，红黑命运之轮",
+        "ko": "룰렛 회전, 빨강과 검정 운명의 바퀴"
+      },
+      "cat": [
+        "grad",
+        "fun"
+      ],
+      "font": "\"Trajan Pro\",\"Papyrus\",fantasy",
+      "type": {
+        "title": "\"Trajan Pro\",fantasy",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".04em",
+        "titleTransform": "uppercase",
+        "mark": "RED BLACK"
+      },
+      "colors": {
+        "stage": "linear-gradient(90deg,#8e1222,#1a1a1a,#8e1222,#1a1a1a)",
+        "ink": "#f0f0f0",
+        "don": "#ffd700",
+        "ka": "#ffffff",
+        "text": "#f0f0f0",
+        "muted": "#a0a0a0",
+        "bg": "#0a0a0a",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#1a1a1a",
+        "button": "#2a2a2a",
+        "accent": "#ffd700",
+        "onAccent": "#000000",
+        "gold": "#ffe082",
+        "border": "rgba(255,255,255,.20)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "contrast(1.2) saturate(1.1) brightness(.9)"
+    },
+    {
+      "id": "poker-face",
+      "label": {
+        "ja": "ポーカーフェイス",
+        "en": "Poker Face",
+        "zh": "扑克脸",
+        "ko": "포커 페이스"
+      },
+      "desc": {
+        "ja": "ポーカーの緊張感、深緑のフェルトと無表情",
+        "en": "Poker tension, deep green felt and expressionless",
+        "zh": "扑克的紧张感，深绿色呢绒和无表情",
+        "ko": "포커의 긴장감, 깊은 초록색 펠트와 무표정"
+      },
+      "cat": [
+        "dark",
+        "basic"
+      ],
+      "font": "\"Caslon\",\"Garamond\",serif",
+      "type": {
+        "title": "\"Caslon\",serif",
+        "weight": "400",
+        "lh": "1.65",
+        "titleWeight": "600",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "♠ ♥ ♦ ♣"
+      },
+      "colors": {
+        "stage": "#1a3a1a",
+        "ink": "#e8f0e8",
+        "don": "#d4af37",
+        "ka": "#8c9eac",
+        "text": "#e8f0e8",
+        "muted": "#7a8a7a",
+        "bg": "#152a15",
+        "panel": "rgba(26,58,26,.97)",
+        "field": "#1a3a1a",
+        "button": "#2a4a2a",
+        "accent": "#d4af37",
+        "onAccent": "#152a15",
+        "gold": "#ffe082",
+        "border": "rgba(140,158,172,.24)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.3) contrast(1.1) brightness(.9)"
+    },
+    {
+      "id": "blackjack-21",
+      "label": {
+        "ja": "ブラックジャック21",
+        "en": "Blackjack 21",
+        "zh": "二十一点",
+        "ko": "블랙잭 21"
+      },
+      "desc": {
+        "ja": "ブラックジャック、21を目指す緊張と興奮",
+        "en": "Blackjack, tension and excitement aiming for 21",
+        "zh": "二十一点，瞄准21的紧张与兴奋",
+        "ko": "블랙잭, 21을 목표로 하는 긴장과 흥분"
+      },
+      "cat": [
+        "fun",
+        "dark"
+      ],
+      "font": "\"Oswald\",\"Impact\",sans-serif",
+      "type": {
+        "title": "\"Oswald\",sans-serif",
+        "weight": "700",
+        "lh": "1.35",
+        "titleWeight": "800",
+        "titleSpace": "-.03em",
+        "titleTransform": "",
+        "mark": "21"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#ffffff",
+        "don": "#d4af37",
+        "ka": "#ffd700",
+        "text": "#ffffff",
+        "muted": "#666666",
+        "bg": "#1a1a1a",
+        "panel": "rgba(10,10,10,.99)",
+        "field": "#0a0a0a",
+        "button": "#2a2a2a",
+        "accent": "#d4af37",
+        "onAccent": "#000000",
+        "gold": "#ffe082",
+        "border": "rgba(255,255,255,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.3) contrast(1.25) brightness(.85)"
+    },
+    {
+      "id": "high-roller",
+      "label": {
+        "ja": "ハイローラー",
+        "en": "High Roller",
+        "zh": "大赌客",
+        "ko": "하이 롤러"
+      },
+      "desc": {
+        "ja": "大金持ちのギャンブラー、シャンパンと黄金",
+        "en": "Wealthy gambler, champagne and gold",
+        "zh": "富豪赌客，香槟和黄金",
+        "ko": "부유한 도박꾼, 샴페인과 금"
+      },
+      "cat": [
+        "grad",
+        "fun",
+        "light"
+      ],
+      "font": "\"Didot\",\"Bodoni MT\",serif",
+      "type": {
+        "title": "\"Didot\",serif",
+        "weight": "300",
+        "lh": "1.6",
+        "titleWeight": "800",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#f5f5dc,#d4af37)",
+        "ink": "#2c2c2c",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#2c2c2c",
+        "muted": "#8a8a8a",
+        "bg": "linear-gradient(180deg,#d4af37,#b8860b)",
+        "panel": "rgba(245,245,220,.96)",
+        "field": "#ffffff",
+        "button": "#ffe082",
+        "accent": "#ff6b6b",
+        "onAccent": "#2c2c2c",
+        "gold": "#ffe082",
+        "border": "rgba(212,175,55,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.15) saturate(1.2) brightness(1.05)"
+    },
+    {
+      "id": "vip-lounge",
+      "label": {
+        "ja": "VIPラウンジ",
+        "en": "VIP Lounge",
+        "zh": "VIP休息室",
+        "ko": "VIP 라운지"
+      },
+      "desc": {
+        "ja": "排他的なVIP空間、深紫のベルベット",
+        "en": "Exclusive VIP space, deep purple velvet",
+        "zh": "排他性VIP空间，深紫色天鹅绒",
+        "ko": "배타적인 VIP 공간, 진보라색 벨벳"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "\"Garamond\",\"Baskerville\",serif",
+      "type": {
+        "title": "\"Garamond\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "600",
+        "titleSpace": ".04em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#2a1a3a",
+        "ink": "#e0d8f0",
+        "don": "#d4af37",
+        "ka": "#bb86fc",
+        "text": "#e0d8f0",
+        "muted": "#8a7aaa",
+        "bg": "#1a0f2a",
+        "panel": "rgba(42,26,58,.97)",
+        "field": "#2a1a3a",
+        "button": "#3a2a5a",
+        "accent": "#bb86fc",
+        "onAccent": "#1a0f2a",
+        "gold": "#d4af37",
+        "border": "rgba(187,134,252,.28)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "hue-rotate(260deg) saturate(1.2) brightness(.9) contrast(1.1)"
+    },
+    {
+      "id": "neon-vegas",
+      "label": {
+        "ja": "ネオンベガス",
+        "en": "Neon Vegas",
+        "zh": "霓虹拉斯维加斯",
+        "ko": "네온 베가스"
+      },
+      "desc": {
+        "ja": "ラスベガスのネオン街、派手で賑やかな夜",
+        "en": "Las Vegas neon street, flashy and lively night",
+        "zh": "拉斯维加斯霓虹街，花哨热闹的夜晚",
+        "ko": "라스베이거스 네온 거리, 화려하고 시끌벅적한 밤"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "\"Orbitron\",\"Futura\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Orbitron\",sans-serif",
+        "weight": "700",
+        "lh": "1.2",
+        "titleWeight": "900",
+        "titleSpace": "-.05em",
+        "titleTransform": "uppercase",
+        "mark": "VEGAS"
+      },
+      "colors": {
+        "stage": "#0a0a1a",
+        "ink": "#00ffff",
+        "don": "#ff00ff",
+        "ka": "#00ffcc",
+        "text": "#00ffff",
+        "muted": "#8a7aaa",
+        "bg": "#000000",
+        "panel": "rgba(10,10,26,.98)",
+        "field": "#0a0a1a",
+        "button": "#1a1a2a",
+        "accent": "#ff00ff",
+        "onAccent": "#000000",
+        "gold": "#00ffff",
+        "border": "rgba(0,255,255,.30)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "hue-rotate(180deg) saturate(1.6) brightness(.75) contrast(1.3)"
+    },
+    {
+      "id": "gold-chip",
+      "label": {
+        "ja": "金チップ",
+        "en": "Gold Chip",
+        "zh": "金色筹码",
+        "ko": "골드 칩"
+      },
+      "desc": {
+        "ja": "カジノチップの積み重ね、黄金の賭け",
+        "en": "Stacked casino chips, golden bet",
+        "zh": "叠叠的赌场筹码，金色的赌注",
+        "ko": "쌓인 카지노 칩, 황금의 베팅"
+      },
+      "cat": [
+        "grad",
+        "light"
+      ],
+      "font": "\"Montserrat\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Montserrat\",sans-serif",
+        "weight": "500",
+        "lh": "1.5",
+        "titleWeight": "700",
+        "titleSpace": "-.01em",
+        "titleTransform": "",
+        "mark": "$100 $500 $1000"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#daa520,#8b4513)",
+        "ink": "#fffdf0",
+        "don": "#ffd700",
+        "ka": "#b8860b",
+        "text": "#fffdf0",
+        "muted": "#b8860b",
+        "bg": "linear-gradient(180deg,#8b4513,#4a2505)",
+        "panel": "rgba(218,165,32,.96)",
+        "field": "#fffdf0",
+        "button": "#daa520",
+        "accent": "#ffd700",
+        "onAccent": "#4a2505",
+        "gold": "#ffe082",
+        "border": "rgba(255,215,0,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.3) saturate(1.2) brightness(1.02)"
+    },
+    {
+      "id": "diamond-club",
+      "label": {
+        "ja": "ダイアモンドクラブ",
+        "en": "Diamond Club",
+        "zh": "钻石俱乐部",
+        "ko": "다이아몬드 클럽"
+      },
+      "desc": {
+        "ja": "ダイヤモンドの輝き、特別な会員制クラブ",
+        "en": "Diamond shine, exclusive members club",
+        "zh": "钻石光芒，专属会员俱乐部",
+        "ko": "다이아몬드 빛, 특별 회원제 클럽"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "\"Trajan Pro\",\"Garamond\",serif",
+      "type": {
+        "title": "\"Trajan Pro\",serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "♦ ♣ ♥ ♠"
+      },
+      "colors": {
+        "stage": "#f0f0f0",
+        "ink": "#1a1a1a",
+        "don": "#d4af37",
+        "ka": "#bdc3c7",
+        "text": "#1a1a1a",
+        "muted": "#7f7f7f",
+        "bg": "#e0e0e0",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#d0d0d0",
+        "accent": "#bdc3c7",
+        "onAccent": "#000000",
+        "gold": "#ffd700",
+        "border": "rgba(189,195,199,.20)"
+      },
+      "shapes": [
+        "diamond",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "grayscale(.1) contrast(1.05) brightness(1.01)"
+    },
+    {
+      "id": "midnight-casino",
+      "label": {
+        "ja": "ミッドナイトカジノ",
+        "en": "Midnight Casino",
+        "zh": "午夜赌场",
+        "ko": "미드나잇 카지노"
+      },
+      "desc": {
+        "ja": "真夜中のカジノ、ダークブルーの静寂",
+        "en": "Midnight casino, dark blue silence",
+        "zh": "午夜赌场，深蓝色寂静",
+        "ko": "자정 카지노, 다크 블루 정적"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "\"Rajdhani\",\"Oswald\",sans-serif",
+      "type": {
+        "title": "\"Rajdhani\",sans-serif",
+        "weight": "400",
+        "lh": "1.45",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#0a0f2a",
+        "ink": "#e0e7ff",
+        "don": "#ff6b6b",
+        "ka": "#74b9ff",
+        "text": "#e0e7ff",
+        "muted": "#a8b8d0",
+        "bg": "#050a1a",
+        "panel": "rgba(10,15,42,.97)",
+        "field": "#0a0f2a",
+        "button": "#15203a",
+        "accent": "#74b9ff",
+        "onAccent": "#050a1a",
+        "gold": "#ffe082",
+        "border": "rgba(116,185,255,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "hue-rotate(200deg) saturate(1.1) brightness(.85) contrast(1.1)"
+    },
+    {
+      "id": "velvet-ropes",
+      "label": {
+        "ja": "ベルベットロープ",
+        "en": "Velvet Ropes",
+        "zh": "天鹅绒绳索",
+        "ko": "벨벳 로프"
+      },
+      "desc": {
+        "ja": "入場制限のベルベットロープ、排他的な夜",
+        "en": "Velvet ropes with entry restriction, exclusive night",
+        "zh": "带入场限制的天鹅绒绳索，排他性之夜",
+        "ko": "입장 제한 벨벳 로프, 배타적인 밤"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "\"Papyrus\",\"Papyrus Custom\",fantasy",
+      "type": {
+        "title": "\"Papyrus\",fantasy",
+        "weight": "400",
+        "lh": "1.55",
+        "titleWeight": "600",
+        "titleSpace": ".05em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#4a0e4e",
+        "ink": "#ffe0b2",
+        "don": "#d4af37",
+        "ka": "#bb86fc",
+        "text": "#ffe0b2",
+        "muted": "#8a7aaa",
+        "bg": "#2a072e",
+        "panel": "rgba(74,14,78,.97)",
+        "field": "#3a0d3e",
+        "button": "#4a0e4e",
+        "accent": "#d4af37",
+        "onAccent": "#2a072e",
+        "gold": "#ffe082",
+        "border": "rgba(212,175,55,.28)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "hue-rotate(280deg) saturate(1.25) brightness(.85) contrast(1.15)"
+    },
+    {
+      "id": "champagne-gold",
+      "label": {
+        "ja": "シャンパンゴールド",
+        "en": "Champagne Gold",
+        "zh": "香槟金",
+        "ko": "샴페인 골드"
+      },
+      "desc": {
+        "ja": "シャンパンの祝勝、軽やかで贅沢な金",
+        "en": "Champagne celebration, light and luxurious gold",
+        "zh": "香槟庆祝，轻快奢华的金",
+        "ko": "샴페인 승리 축하, 가볍고 호화로운 금"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Playfair Display\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "700",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#f5e6d3,#d4c0a8)",
+        "ink": "#4a3728",
+        "don": "#d4af37",
+        "ka": "#8c9eac",
+        "text": "#4a3728",
+        "muted": "#8c8074",
+        "bg": "linear-gradient(180deg,#d4c0a8,#b8a080)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#fffef5",
+        "button": "#e8dec7",
+        "accent": "#d4af37",
+        "onAccent": "#4a3728",
+        "gold": "#ffe082",
+        "border": "rgba(140,158,172,.20)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.2) saturate(1.05) brightness(1.03)"
+    },
+    {
+      "id": "neon-sign",
+      "label": {
+        "ja": "ネオンサイン",
+        "en": "Neon Sign",
+        "zh": "霓虹招牌",
+        "ko": "네온 사인"
+      },
+      "desc": {
+        "ja": "カジノのネオン看板、派手で目を引く",
+        "en": "Casino neon sign, flashy and eye-catching",
+        "zh": "赌场霓虹招牌，花哨引人注目",
+        "ko": "카지노 네온 사인, 화려하고 눈길을 끄는"
+      },
+      "cat": [
+        "fun",
+        "dark"
+      ],
+      "font": "\"Caveat\",\"Komodo Axis\",cursive",
+      "type": {
+        "title": "\"Caveat\",cursive",
+        "weight": "400",
+        "lh": "1.4",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#ff00ff",
+        "don": "#00ffff",
+        "ka": "#ffff00",
+        "text": "#ff00ff",
+        "muted": "#666666",
+        "bg": "#000000",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#00ffff",
+        "onAccent": "#000000",
+        "gold": "#ffff00",
+        "border": "rgba(255,255,255,.15)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "saturate(1.7) brightness(.7) contrast(1.4)"
+    },
+    {
+      "id": "house-edge",
+      "label": {
+        "ja": "ハウスエッジ",
+        "en": "House Edge",
+        "zh": "庄家优势",
+        "ko": "하우스 에지"
+      },
+      "desc": {
+        "ja": "カジノの暗い面、ハウスの勝利と絶望",
+        "en": "Casino dark side, house victory and despair",
+        "zh": "赌场的黑暗面，庄家胜利与绝望",
+        "ko": "카지노의 어두운 면, 하우스 승리와 절망"
+      },
+      "cat": [
+        "dark",
+        "access"
+      ],
+      "font": "\"Oswald\",\"Impact\",sans-serif",
+      "type": {
+        "title": "\"Oswald\",sans-serif",
+        "weight": "700",
+        "lh": "1.3",
+        "titleWeight": "800",
+        "titleSpace": "-.03em",
+        "titleTransform": "uppercase",
+        "mark": "HOUSE WINS"
+      },
+      "colors": {
+        "stage": "#1a1a1a",
+        "ink": "#666666",
+        "don": "#ff0040",
+        "ka": "#999999",
+        "text": "#666666",
+        "muted": "#333333",
+        "bg": "#0a0a0a",
+        "panel": "rgba(10,10,10,.99)",
+        "field": "#1a1a1a",
+        "button": "#2a2a2a",
+        "accent": "#ff0040",
+        "onAccent": "#ffffff",
+        "gold": "#999999",
+        "border": "rgba(150,150,150,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.8) contrast(1.3) brightness(.7)"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "soda-pop",
+  "label": {
+    "ja": "ソーダポップ",
+    "en": "Soda Pop",
+    "zh": "苏打汽水",
+    "ko": "소다 팝"
+  },
+  "desc": {
+    "ja": "炭酸の泡、ポップで楽しい色合い",
+    "en": "Carbonation bubbles, pop and fun colors",
+    "zh": "碳酸气泡，流行有趣的色调",
+    "ko": "탄산 기포, 팝적이고 재미있는 색감"
+  },
+  "cat": [
+    "fun",
+    "grad",
+    "light"
+  ],
+  "font": "\"Caveat\",\"Komodo Axis\",cursive",
+  "type": {
+    "title": "\"Caveat\",cursive",
+    "weight": "400",
+    "lh": "1.4",
+    "titleWeight": "600",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#ff9ff3",
+    "ink": "#2d3436",
+    "don": "#feca57",
+    "ka": "#54a0ff",
+    "text": "#2d3436",
+    "muted": "#636e72",
+    "bg": "#ffede1",
+    "panel": "rgba(255,255,255,.95)",
+    "field": "#ffffff",
+    "button": "#ff9ff3",
+    "accent": "#feca57",
+    "onAccent": "#ffffff",
+    "gold": "#ffeaa7",
+    "border": "rgba(254,202,87,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.3) brightness(1.05) contrast(1.05)"
+}

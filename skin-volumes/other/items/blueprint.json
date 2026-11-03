@@ -1,0 +1,42 @@
+{
+  "id": "blueprint",
+  "label": {
+    "ja": "青写真",
+    "en": "Blueprint",
+    "zh": "蓝图",
+    "ko": "청사진"
+  },
+  "desc": {
+    "ja": "製図用紙の青と白い線",
+    "en": "Drafting-paper blue with white lines",
+    "zh": "绘图纸的蓝与白线",
+    "ko": "제도지의 파랑과 흰 선"
+  },
+  "cat": [
+    "dark"
+  ],
+  "font": "\"Cascadia Mono\",\"Consolas\",\"Menlo\",\"Noto Sans Mono\",monospace",
+  "type": null,
+  "colors": {
+    "stage": "#0e2c50",
+    "ink": "#eaf3ff",
+    "don": "#ffffff",
+    "ka": "#7ec2ff",
+    "text": "#eaf3ff",
+    "muted": "#a0bbd9",
+    "bg": "#103055",
+    "panel": "rgba(16,42,74,.95)",
+    "field": "#0c2544",
+    "button": "#143a66",
+    "accent": "#7ec2ff",
+    "onAccent": "#0a1e38",
+    "gold": "#ffd166",
+    "border": "rgba(160,200,255,.34)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.5) sepia(1) hue-rotate(190deg) saturate(2) brightness(.6)"
+}

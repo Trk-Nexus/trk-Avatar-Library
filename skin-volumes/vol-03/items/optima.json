@@ -1,0 +1,51 @@
+{
+  "id": "optima",
+  "label": {
+    "ja": "オプティマ",
+    "en": "Optima",
+    "zh": "奥普蒂玛",
+    "ko": "옵티마"
+  },
+  "desc": {
+    "ja": "セリフとサンセリフの間、柔らかな書体",
+    "en": "Between serif and sans, soft and balanced",
+    "zh": "介于衬线与无衬线之间，柔和平衡",
+    "ko": "세리프와 산세리프 사이, 부드럽고 균형 잡힌 서체"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Optima\",\"URW Palladio\",serif",
+  "type": {
+    "title": "\"Optima\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#fafafa",
+    "ink": "#2d3436",
+    "don": "#d63031",
+    "ka": "#0984e3",
+    "text": "#2d3436",
+    "muted": "#636e72",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#dfe6e9",
+    "accent": "#0984e3",
+    "onAccent": "#ffffff",
+    "gold": "#fdcb6e",
+    "border": "rgba(45,52,54,.12)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "contrast(1.03) brightness(1.01)"
+}

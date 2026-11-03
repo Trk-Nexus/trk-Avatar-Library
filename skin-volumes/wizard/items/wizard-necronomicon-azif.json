@@ -1,0 +1,63 @@
+{
+  "id": "wizard-necronomicon-azif",
+  "label": {
+    "ja": "ネクロノミコン（アル・アジフ）",
+    "en": "Necronomicon (Al Azif)",
+    "zh": "死灵名册（阿赞飞）",
+    "ko": "네크로노미콘（알 아지프）"
+  },
+  "desc": {
+    "ja": "元のアラビア語名「アル・アジフ」、夜の蝿が囁く狂気の書",
+    "en": "Original Arabic name Al Azif, book of madness whispered by night flies",
+    "zh": "原阿拉伯语名“阿赞飞”，夜之蝿低语的疯狂之书",
+    "ko": "원래 아랍어명 \"알 아지프\", 밤파리가 속삭이는 광기의 책"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "dark"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "アジ"
+  },
+  "colors": {
+    "stage": "#191970",
+    "ink": "#e6e6fa",
+    "don": "#4169e1",
+    "ka": "#6495ed",
+    "text": "#e6e6fa",
+    "muted": "#c8c8ff",
+    "bg": "#0f0f3d",
+    "panel": "rgba(15,15,61,.96)",
+    "field": "#191970",
+    "button": "#2c2c6c",
+    "accent": "#4169e1",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(65,105,225,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "hue-rotate(220deg) saturate(1.1) contrast(1.2) brightness(.85)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "アジ",
+    "caret": "#191970",
+    "scan": 0.28,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "inkWash",
+  "label": {
+    "ja": "墨流し",
+    "en": "Ink Wash Flow",
+    "zh": "墨流し",
+    "ko": "먹 흘림"
+  },
+  "desc": {
+    "ja": "和紙に墨の濃淡、朱の判子だけの差し色",
+    "en": "Ink wash on washi paper, with only a red seal as accent",
+    "zh": "宣纸上的墨色浓淡，仅以朱印点缀",
+    "ko": "한지 위의 먹 농담, 주인 한 점만 더한 색"
+  },
+  "cat": [
+    "light",
+    "type"
+  ],
+  "font": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",\"Noto Serif CJK JP\",\"Noto Serif SC\",\"Noto Serif KR\",serif",
+  "type": {
+    "title": "",
+    "weight": "400",
+    "lh": "1.75",
+    "titleWeight": "600",
+    "titleSpace": ".1em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f3efe6",
+    "ink": "#1b1b1b",
+    "don": "#1d1d1d",
+    "ka": "#7d7a72",
+    "text": "#1b1b1b",
+    "muted": "#56534c",
+    "bg": "#f3efe6",
+    "panel": "#fbf8f1",
+    "field": "#ffffff",
+    "button": "#e7e1d3",
+    "accent": "#b3261e",
+    "onAccent": "#ffffff",
+    "gold": "#8f3500",
+    "border": "rgba(27,27,27,.25)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.6) contrast(1.05)"
+}

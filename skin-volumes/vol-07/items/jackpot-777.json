@@ -1,0 +1,51 @@
+{
+  "id": "jackpot-777",
+  "label": {
+    "ja": "ジャックポット777",
+    "en": "Jackpot 777",
+    "zh": "头奖777",
+    "ko": "잭팟 777"
+  },
+  "desc": {
+    "ja": "スロットの大当たり、777の歓喜と黄金の輝き",
+    "en": "Slot machine jackpot, 777 joy and golden shine",
+    "zh": "老虎机大奖，777的狂喜和金色光芒",
+    "ko": "슬롯 머신 잭팟, 777의 환희와 황금빛"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "\"Orbitron\",\"Rajdhani\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Orbitron\",sans-serif",
+    "weight": "700",
+    "lh": "1.25",
+    "titleWeight": "900",
+    "titleSpace": "-.04em",
+    "titleTransform": "uppercase",
+    "mark": "7 7 7"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#ffd700,#b8860b)",
+    "ink": "#1a1a1a",
+    "don": "#ff6b6b",
+    "ka": "#4ecdc4",
+    "text": "#1a1a1a",
+    "muted": "#8a6d3b",
+    "bg": "linear-gradient(180deg,#b8860b,#6b4a0b)",
+    "panel": "rgba(255,215,0,.95)",
+    "field": "#fffdf0",
+    "button": "#ffe082",
+    "accent": "#ff6b6b",
+    "onAccent": "#1a1a1a",
+    "gold": "#ffe082",
+    "border": "rgba(255,107,107,.32)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "sepia(.1) saturate(1.4) brightness(1.08) contrast(1.15)"
+}

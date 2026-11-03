@@ -1,0 +1,51 @@
+{
+  "id": "runic-iron",
+  "label": {
+    "ja": "ルーンアイアン",
+    "en": "Runic Iron",
+    "zh": "符文铁",
+    "ko": "룬 아이언"
+  },
+  "desc": {
+    "ja": "北欧神話のルーン文字、古き鉄の重み",
+    "en": "Norse rune letters, weight of ancient iron",
+    "zh": "北欧神话的符文文字，古老铁的重量",
+    "ko": "북유럽 신화의 룬 문자, 고대 철의 무게"
+  },
+  "cat": [
+    "dark",
+    "type"
+  ],
+  "font": "\"MedievalSharp\",\"Papyrus\",fantasy",
+  "type": {
+    "title": "\"MedievalSharp\",fantasy",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".08em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#2c241d",
+    "ink": "#d4c5a8",
+    "don": "#d65a31",
+    "ka": "#8c9eac",
+    "text": "#d4c5a8",
+    "muted": "#8c8272",
+    "bg": "#1a1510",
+    "panel": "rgba(44,36,29,.97)",
+    "field": "#2c241d",
+    "button": "#3a3028",
+    "accent": "#d65a31",
+    "onAccent": "#1a1510",
+    "gold": "#e3c089",
+    "border": "rgba(212,197,168,.25)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "sepia(.35) contrast(1.1) brightness(.85)"
+}

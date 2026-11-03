@@ -1,0 +1,51 @@
+{
+  "id": "whiskey",
+  "label": {
+    "ja": "ウイスキー",
+    "en": "Whiskey",
+    "zh": "威士忌",
+    "ko": "위스키"
+  },
+  "desc": {
+    "ja": "琥珀色、樽の香りと落ち着いた味わい",
+    "en": "Amber color, barrel aroma and calm taste",
+    "zh": "琥珀色，桶香与平静口感",
+    "ko": "호박색, 통향과 차분한 맛"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#8b4513,#5c4033)",
+    "ink": "#fdf5e6",
+    "don": "#d4af37",
+    "ka": "#b8860b",
+    "text": "#fdf5e6",
+    "muted": "#a0522d",
+    "bg": "linear-gradient(180deg,#5c4033,#3e2723)",
+    "panel": "rgba(139,69,19,.96)",
+    "field": "#8b4513",
+    "button": "#a0522d",
+    "accent": "#d4af37",
+    "onAccent": "#3e2723",
+    "gold": "#ffe082",
+    "border": "rgba(160,82,45,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.3) contrast(1.1) brightness(.95)"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "lavenderHill",
+  "label": {
+    "ja": "ラベンダーの丘",
+    "en": "Lavender Hill",
+    "zh": "薰衣草之丘",
+    "ko": "라벤더 언덕"
+  },
+  "desc": {
+    "ja": "紫色に包まれた丘と、静寂な夜",
+    "en": "A hill wrapped in purple and a quiet night",
+    "zh": "紫色包裹的山丘与寂静之夜",
+    "ko": "보라색에 싸인 언덕과 고요한 밤"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#e6e6fa,#d8bfd8)",
+    "ink": "#4a4060",
+    "don": "#c17ad8",
+    "ka": "#9fd8ff",
+    "text": "#4a4060",
+    "muted": "#8a80a0",
+    "bg": "linear-gradient(180deg,#f0e6ff,#e0d0e8)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#e8e0f0",
+    "accent": "#c17ad8",
+    "onAccent": "#4a4060",
+    "gold": "#d8bfd8",
+    "border": "rgba(193,122,216,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.05) brightness(1.05)"
+}

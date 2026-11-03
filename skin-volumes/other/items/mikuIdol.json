@@ -1,0 +1,44 @@
+{
+  "id": "mikuIdol",
+  "label": {
+    "ja": "ミク・アイドル",
+    "en": "Miku Idol",
+    "zh": "初音・偶像",
+    "ko": "미쿠 아이돌"
+  },
+  "desc": {
+    "ja": "星降る夜のアイドル服ミク（二次創作・PCL・非公式）",
+    "en": "Idol-outfit Miku under falling stars (fan art, PCL, unofficial)",
+    "zh": "星夜偶像服初音（二次创作・PCL・非官方）",
+    "ko": "별이 쏟아지는 밤의 아이돌 옷 미쿠 (2차 창작・PCL・비공식)"
+  },
+  "cat": [
+    "miku",
+    "dark",
+    "grad"
+  ],
+  "font": "\"Trebuchet MS\",\"Avenir Next\",system-ui,sans-serif",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#120818,#241030)",
+    "ink": "#fff0fa",
+    "don": "#ff8abf",
+    "ka": "#8fd0ff",
+    "text": "#fff0fa",
+    "muted": "#c9a8cf",
+    "bg": "linear-gradient(180deg,#170a24,#33133f)",
+    "panel": "rgba(26,12,38,.96)",
+    "field": "#170a24",
+    "button": "#241031",
+    "accent": "#ff8abf",
+    "onAccent": "#2a0a1c",
+    "gold": "#ffe08a",
+    "border": "rgba(255,138,190,.32)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.35) sepia(1) hue-rotate(280deg) saturate(1.5) brightness(.7)"
+}

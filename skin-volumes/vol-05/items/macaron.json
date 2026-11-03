@@ -1,0 +1,44 @@
+{
+  "id": "macaron",
+  "label": {
+    "ja": "マカロン",
+    "en": "Macaron",
+    "zh": "马卡龙",
+    "ko": "마카롱"
+  },
+  "desc": {
+    "ja": "パステルカラーのフランス菓子、かわいらしい色合い",
+    "en": "Pastel French confectionery, cute colors",
+    "zh": "淡色法国点心，可爱色调",
+    "ko": "파스텔 컬러 프랑스 과자, 귀여운 색감"
+  },
+  "cat": [
+    "light",
+    "fun",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#f3e5f5,#e1bee7)",
+    "ink": "#4a148c",
+    "don": "#ce93d8",
+    "ka": "#b39ddb",
+    "text": "#4a148c",
+    "muted": "#9c27b0",
+    "bg": "linear-gradient(180deg,#e1bee7,#ce93d8)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#e1bee7",
+    "accent": "#ab47bc",
+    "onAccent": "#ffffff",
+    "gold": "#f3e5f5",
+    "border": "rgba(171,71,188,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(1.05)"
+}

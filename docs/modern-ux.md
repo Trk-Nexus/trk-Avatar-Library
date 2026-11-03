@@ -47,7 +47,7 @@ https://github.com/GoogleChrome/modern-web-guidance-src
 `:root { color-scheme: light dark; }` でブラウザ UI 色を自動追従。
 
 #### 2-3. アンカーポジショニング
-スキン選択ポップオーバーに `position-anchor: --skin-picker`、`position-try-options: flip-block, flip-inline` を適用。
+スキン選択ポップオーバーに `position-anchor: --skin-picker`、`position-try-fallbacks: flip-block, flip-inline` を適用。
 
 #### 2-4. カスタマイズ可能 `<select>`
 `appearance: none`、SVG data URI のカスタム矢印、フォーカスリング（`:focus-visible`）を適用。

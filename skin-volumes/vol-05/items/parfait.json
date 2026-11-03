@@ -1,0 +1,43 @@
+{
+  "id": "parfait",
+  "label": {
+    "ja": "パフェ",
+    "en": "Parfait",
+    "zh": "圣代",
+    "ko": "파르페"
+  },
+  "desc": {
+    "ja": "層になったアイスパフェ、色とりどり",
+    "en": "Layered ice parfait, colorful",
+    "zh": "分层冰淇淋圣代，色彩缤纷",
+    "ko": "층을 이룬 아이스 파르페, 색색깔"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#ff9a9e,#fecfef,#ff9a9e)",
+    "ink": "#2d3436",
+    "don": "#fd79a8",
+    "ka": "#a29bfe",
+    "text": "#2d3436",
+    "muted": "#b2bec3",
+    "bg": "linear-gradient(180deg,#ffc3a1,#afd9fe)",
+    "panel": "rgba(255,255,255,.95)",
+    "field": "#ffffff",
+    "button": "#ffc8dd",
+    "accent": "#e17055",
+    "onAccent": "#2d3436",
+    "gold": "#ffeaa7",
+    "border": "rgba(225,112,85,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.15) brightness(1.04)"
+}

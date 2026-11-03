@@ -1,0 +1,43 @@
+{
+  "id": "mikuNoir",
+  "label": {
+    "ja": "ミク・ノワール",
+    "en": "Miku Noir",
+    "zh": "初音・黑",
+    "ko": "미쿠 누아르"
+  },
+  "desc": {
+    "ja": "黒い衣装のミク（二次創作・PCL・非公式）",
+    "en": "Miku in black (fan art, PCL, unofficial)",
+    "zh": "黑衣初音（二次创作・PCL・非官方）",
+    "ko": "검은 옷 미쿠 (2차 창작・PCL・비공식)"
+  },
+  "cat": [
+    "miku",
+    "dark"
+  ],
+  "font": "\"Trebuchet MS\",\"Avenir Next\",system-ui,sans-serif",
+  "type": null,
+  "colors": {
+    "stage": "#05070b",
+    "ink": "#f2f6ff",
+    "don": "#ff5d8f",
+    "ka": "#39c5bb",
+    "text": "#f2f6ff",
+    "muted": "#a3adc4",
+    "bg": "#06070c",
+    "panel": "rgba(12,14,22,.96)",
+    "field": "#0a0d16",
+    "button": "#131726",
+    "accent": "#39c5bb",
+    "onAccent": "#04201e",
+    "gold": "#ff5d8f",
+    "border": "rgba(57,197,187,.28)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.5) brightness(.65)"
+}

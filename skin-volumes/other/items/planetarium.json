@@ -1,0 +1,42 @@
+{
+  "id": "planetarium",
+  "label": {
+    "ja": "天体観測",
+    "en": "Planetarium",
+    "zh": "天象仪",
+    "ko": "천체 관측"
+  },
+  "desc": {
+    "ja": "星図と黄金の線",
+    "en": "Star charts and golden lines",
+    "zh": "星图与金线",
+    "ko": "별자리 지도와 황금선"
+  },
+  "cat": [
+    "dark"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#080b18",
+    "ink": "#f0ecdc",
+    "don": "#ff8a5c",
+    "ka": "#a8ccf0",
+    "text": "#f0ecdc",
+    "muted": "#b3ac93",
+    "bg": "#0a0e1e",
+    "panel": "rgba(12,16,34,.95)",
+    "field": "#080c1a",
+    "button": "#10152c",
+    "accent": "#d4af37",
+    "onAccent": "#1a1405",
+    "gold": "#9fd0ff",
+    "border": "rgba(212,175,55,.30)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.6) brightness(.5)"
+}

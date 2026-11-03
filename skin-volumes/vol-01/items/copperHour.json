@@ -1,0 +1,43 @@
+{
+  "id": "copperHour",
+  "label": {
+    "ja": "銅色の時",
+    "en": "Copper Hour",
+    "zh": "铜色时刻",
+    "ko": "구리색 시간"
+  },
+  "desc": {
+    "ja": "夕日に染まる銅色の空と、街の灯り",
+    "en": "Copper-colored sky dyed by sunset and city lights",
+    "zh": "夕阳染成的铜色天空与城市灯火",
+    "ko": "노을로 물든 구리색 하늘과 도시 불빛"
+  },
+  "cat": [
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#b87333,#4a1e1e)",
+    "ink": "#fff7e0",
+    "don": "#ff7043",
+    "ka": "#8d6e63",
+    "text": "#fff7e0",
+    "muted": "#a1887f",
+    "bg": "linear-gradient(180deg,#4a1e1e,#2a0f0f)",
+    "panel": "rgba(184,115,51,.95)",
+    "field": "#b87333",
+    "button": "#8d4e2a",
+    "accent": "#ff7043",
+    "onAccent": "#2a0f0f",
+    "gold": "#ffc861",
+    "border": "rgba(255,112,67,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.4) saturate(1.2) hue-rotate(-10deg) brightness(.8) contrast(1.1)"
+}

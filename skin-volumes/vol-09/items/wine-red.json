@@ -1,0 +1,51 @@
+{
+  "id": "wine-red",
+  "label": {
+    "ja": "ワインレッド",
+    "en": "Wine Red",
+    "zh": "酒红色",
+    "ko": "와인 레드"
+  },
+  "desc": {
+    "ja": "深い赤、タンニンと熟成の重み",
+    "en": "Deep red, tannin and aged weight",
+    "zh": "深红色，单宁与陈年的重量",
+    "ko": "깊은 빨강, 타닌과 숙성의 무게"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.65",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#722f37",
+    "ink": "#fdf5e6",
+    "don": "#d4af37",
+    "ka": "#8c9eac",
+    "text": "#fdf5e6",
+    "muted": "#a0522d",
+    "bg": "#4a1c24",
+    "panel": "rgba(114,47,55,.96)",
+    "field": "#722f37",
+    "button": "#5d262c",
+    "accent": "#d4af37",
+    "onAccent": "#4a1c24",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.4) contrast(1.15) brightness(.9)"
+}

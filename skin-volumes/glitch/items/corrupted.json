@@ -1,0 +1,52 @@
+{
+  "id": "corrupted",
+  "label": {
+    "ja": "コラプテッド",
+    "en": "Corrupted",
+    "zh": "损坏",
+    "ko": "손상됨"
+  },
+  "desc": {
+    "ja": "壊れたファイルの美学、断片化と色破綻",
+    "en": "Corrupted file aesthetics, fragmentation and color breakdown",
+    "zh": "损坏文件美学，碎片化和色彩崩溃",
+    "ko": "손상된 파일 미학, 단편화와 색상 붕괴"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "dark"
+  ],
+  "font": "\\\"Courier New\\\",monospace",
+  "type": {
+    "title": "\\\"Courier New\\\",monospace",
+    "weight": "700",
+    "lh": "1.2",
+    "titleWeight": "800",
+    "titleSpace": "0",
+    "titleTransform": "",
+    "mark": "ERR"
+  },
+  "colors": {
+    "stage": "#1a1a1a",
+    "ink": "#ff0040",
+    "don": "#00ffff",
+    "ka": "#4a4a4a",
+    "text": "#ff0040",
+    "muted": "#333333",
+    "bg": "#0f0f0f",
+    "panel": "rgba(15,15,15,.97)",
+    "field": "#1a1a1a",
+    "button": "#2a2a2a",
+    "accent": "#ff0040",
+    "onAccent": "#ffffff",
+    "gold": "#00ffff",
+    "border": "rgba(255,0,64,.35)"
+  },
+  "shapes": [
+    "diamond",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(0deg) saturate(1.6) contrast(1.35) brightness(.8)"
+}

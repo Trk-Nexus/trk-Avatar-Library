@@ -1,0 +1,42 @@
+{
+  "id": "cbDark",
+  "label": {
+    "ja": "色覚にやさしい（暗め）",
+    "en": "Colorblind-friendly (dark)",
+    "zh": "色觉友好（深色）",
+    "ko": "색각 친화（어두움）"
+  },
+  "desc": {
+    "ja": "青とだいだい色。ノーツの形も変えて区別",
+    "en": "Blue and vermilion, with different note shapes",
+    "zh": "蓝色与朱红色，并用不同形状区分",
+    "ko": "파랑과 주황. 노트 모양도 달리해 구분"
+  },
+  "cat": [
+    "access"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#0b0f17",
+    "ink": "#f0f4f8",
+    "don": "#d55e00",
+    "ka": "#56b4e9",
+    "text": "#f0f4f8",
+    "muted": "#b8c2d0",
+    "bg": "#0b0f17",
+    "panel": "rgba(16,22,34,.97)",
+    "field": "#0e1420",
+    "button": "#1b2536",
+    "accent": "#56b4e9",
+    "onAccent": "#001018",
+    "gold": "#f0e442",
+    "border": "rgba(255,255,255,.28)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "grayscale(.6) contrast(1.2) brightness(.8)"
+}

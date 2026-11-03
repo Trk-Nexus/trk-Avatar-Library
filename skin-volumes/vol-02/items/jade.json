@@ -1,0 +1,43 @@
+{
+  "id": "jade",
+  "label": {
+    "ja": "ジェイド",
+    "en": "Jade",
+    "zh": "翡翠",
+    "ko": "제이드"
+  },
+  "desc": {
+    "ja": "優しい緑の宝石、安定と調和の緑",
+    "en": "Gentle green jewel, stability and harmony in green",
+    "zh": "温柔绿色宝石，稳定与和谐的绿",
+    "ko": "부드러운 초록 보석, 안정과 조화의 초록"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#52b788",
+    "ink": "#1e272e",
+    "don": "#e74c3c",
+    "ka": "#2ecc71",
+    "text": "#1e272e",
+    "muted": "#748c79",
+    "bg": "#d1f2eb",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#abebc6",
+    "accent": "#2ecc71",
+    "onAccent": "#1e272e",
+    "gold": "#f9e79f",
+    "border": "rgba(46,204,113,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(1.05)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "pulsar",
+  "label": {
+    "ja": "パルサー",
+    "en": "Pulsar",
+    "zh": "脉冲星",
+    "ko": "펄사"
+  },
+  "desc": {
+    "ja": "回転する電波の点滅、規則的な光のパルス",
+    "en": "Rotating radio wave flashing, regular light pulse",
+    "zh": "旋转无线电闪烁，规律光脉冲",
+    "ko": "회전하는 전파 점멸, 규칙적인 빛 펄스"
+  },
+  "cat": [
+    "grad",
+    "fun"
+  ],
+  "font": "\"Orbitron\",\"Futura\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Orbitron\",sans-serif",
+    "weight": "700",
+    "lh": "1.2",
+    "titleWeight": "900",
+    "titleSpace": "-.04em",
+    "titleTransform": "uppercase",
+    "mark": "PULSE"
+  },
+  "colors": {
+    "stage": "#0a0a1a",
+    "ink": "#00ffff",
+    "don": "#ff00ff",
+    "ka": "#00ffcc",
+    "text": "#00ffff",
+    "muted": "#404060",
+    "bg": "#000000",
+    "panel": "rgba(10,10,26,.98)",
+    "field": "#0a0a1a",
+    "button": "#1a1a2a",
+    "accent": "#00ffff",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "rgba(0,255,255,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(180deg) saturate(1.6) brightness(.75) contrast(1.3)"
+}

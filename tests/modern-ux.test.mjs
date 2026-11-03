@@ -87,7 +87,7 @@ test("E6: CSS に light-dark() 記載", () => {
 test("E8: CSS にアンカーポジショニング記載", () => {
   const css = readFileSync(join(repoRoot, "css/style.css"), "utf-8");
   assert.ok(css.includes("position-anchor"), "position-anchor が記載されていません");
-  assert.ok(css.includes("position-try-options"), "position-try-options が記載されていません");
+  assert.ok(css.includes("position-try-fallbacks"), "position-try-fallbacks が記載されていません");
 });
 
 // E9. カスタマイズ可能 <select>

@@ -1,0 +1,51 @@
+{
+  "id": "ancient-bronze",
+  "label": {
+    "ja": "古銅",
+    "en": "Ancient Bronze",
+    "zh": "古铜",
+    "ko": "고대 청동"
+  },
+  "desc": {
+    "ja": "緑青の古銅、歴史と時の重みを纏う",
+    "en": "Verdigris ancient bronze, wearing history and time",
+    "zh": "铜绿古铜，披着历史与时间的重量",
+    "ko": "녹청 고대 청동, 역사와 시간의 무게를 두른"
+  },
+  "cat": [
+    "life",
+    "grad"
+  ],
+  "font": "\"Trajan Pro\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Trajan Pro\",serif",
+    "weight": "400",
+    "lh": "1.65",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#8b4513",
+    "ink": "#f5deb3",
+    "don": "#d4af37",
+    "ka": "#b8860b",
+    "text": "#f5deb3",
+    "muted": "#a0522d",
+    "bg": "#5c4033",
+    "panel": "rgba(139,69,19,.96)",
+    "field": "#f5deb3",
+    "button": "#8b4513",
+    "accent": "#d4af37",
+    "onAccent": "#5c4033",
+    "gold": "#ffe082",
+    "border": "rgba(160,82,45,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.5) contrast(1.15) brightness(.9)"
+}

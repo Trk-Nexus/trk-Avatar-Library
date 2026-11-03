@@ -1,0 +1,51 @@
+{
+  "id": "gold-chip",
+  "label": {
+    "ja": "金チップ",
+    "en": "Gold Chip",
+    "zh": "金色筹码",
+    "ko": "골드 칩"
+  },
+  "desc": {
+    "ja": "カジノチップの積み重ね、黄金の賭け",
+    "en": "Stacked casino chips, golden bet",
+    "zh": "叠叠的赌场筹码，金色的赌注",
+    "ko": "쌓인 카지노 칩, 황금의 베팅"
+  },
+  "cat": [
+    "grad",
+    "light"
+  ],
+  "font": "\"Montserrat\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Montserrat\",sans-serif",
+    "weight": "500",
+    "lh": "1.5",
+    "titleWeight": "700",
+    "titleSpace": "-.01em",
+    "titleTransform": "",
+    "mark": "$100 $500 $1000"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#daa520,#8b4513)",
+    "ink": "#fffdf0",
+    "don": "#ffd700",
+    "ka": "#b8860b",
+    "text": "#fffdf0",
+    "muted": "#b8860b",
+    "bg": "linear-gradient(180deg,#8b4513,#4a2505)",
+    "panel": "rgba(218,165,32,.96)",
+    "field": "#fffdf0",
+    "button": "#daa520",
+    "accent": "#ffd700",
+    "onAccent": "#4a2505",
+    "gold": "#ffe082",
+    "border": "rgba(255,215,0,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(1.2) brightness(1.02)"
+}

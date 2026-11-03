@@ -1,0 +1,43 @@
+{
+  "id": "strawberry",
+  "label": {
+    "ja": "ストロベリーホイップ",
+    "en": "Strawberry Whip",
+    "zh": "草莓奶昔",
+    "ko": "스트로베리 휩"
+  },
+  "desc": {
+    "ja": "いちごミルクのやさしいグラデ",
+    "en": "A gentle strawberry-milk gradient",
+    "zh": "草莓牛奶般的柔和渐变",
+    "ko": "딸기우유 같은 부드러운 그라데이션"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#fff3ec,#ffdee9)",
+    "ink": "#40222e",
+    "don": "#e0568a",
+    "ka": "#5a9ec9",
+    "text": "#40222e",
+    "muted": "#845c6b",
+    "bg": "linear-gradient(180deg,#fff8f4,#ffe9f0)",
+    "panel": "rgba(255,251,248,.97)",
+    "field": "#fffdfa",
+    "button": "#ffeef2",
+    "accent": "#e0568a",
+    "onAccent": "#000000",
+    "gold": "#d9782a",
+    "border": "rgba(224,86,120,.26)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.15) saturate(1.1) brightness(1.05)"
+}

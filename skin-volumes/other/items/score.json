@@ -1,0 +1,42 @@
+{
+  "id": "score",
+  "label": {
+    "ja": "楽譜（五線と音符）",
+    "en": "Sheet music (staves and notes)",
+    "zh": "乐谱（五线与音符）",
+    "ko": "악보(오선과 음표)"
+  },
+  "desc": {
+    "ja": "淡い紙の上に五線、ブラウンの音符",
+    "en": "Staff lines and brown notes on pale paper",
+    "zh": "淡色纸上的五线与棕色音符",
+    "ko": "연한 종이 위의 오선과 갈색 음표"
+  },
+  "cat": [
+    "light"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#fbf9f2",
+    "ink": "#2a2118",
+    "don": "#2a2118",
+    "ka": "#4f7a96",
+    "text": "#2a2118",
+    "muted": "#6b5a48",
+    "bg": "#faf7ef",
+    "panel": "#fffdf7",
+    "field": "#ffffff",
+    "button": "#eee6d4",
+    "accent": "#7a4a1e",
+    "onAccent": "#ffffff",
+    "gold": "#8f5e10",
+    "border": "rgba(60,40,20,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) brightness(1.04)"
+}

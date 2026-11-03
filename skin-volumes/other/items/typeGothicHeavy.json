@@ -1,0 +1,52 @@
+{
+  "id": "typeGothicHeavy",
+  "label": {
+    "ja": "極太ゴシック",
+    "en": "Ultra gothic",
+    "zh": "超粗黑体",
+    "ko": "극태 고딕"
+  },
+  "desc": {
+    "ja": "詰めた字間と、蛍光のアクセント",
+    "en": "Tight tracking with a fluorescent accent",
+    "zh": "紧凑字距与荧光点缀",
+    "ko": "좁힌 자간과 형광 포인트"
+  },
+  "cat": [
+    "type",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Impact\",\"Haettenschweiler\",\"Arial Black\",\"Hiragino Kaku Gothic StdN\",\"Hiragino Sans\",\"Yu Gothic UI\",\"Noto Sans JP\",sans-serif",
+  "type": {
+    "title": "\"Impact\",\"Haettenschweiler\",\"Arial Black\",\"Hiragino Kaku Gothic StdN\",\"Hiragino Sans\",\"Noto Sans JP\",sans-serif",
+    "weight": "700",
+    "lh": "1.35",
+    "titleWeight": "900",
+    "titleSpace": "-.03em",
+    "titleTransform": "none",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#101013",
+    "ink": "#f7f7fa",
+    "don": "#d8ff3e",
+    "ka": "#59d7ff",
+    "text": "#f7f7fa",
+    "muted": "#bcbcc8",
+    "bg": "#101013",
+    "panel": "rgba(35,35,43,.96)",
+    "field": "#15151a",
+    "button": "#23232b",
+    "accent": "#d8ff3e",
+    "onAccent": "#11130a",
+    "gold": "#d8ff3e",
+    "border": "rgba(247,247,250,.22)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.2) saturate(1.1)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "exoplanet",
+  "label": {
+    "ja": "系外惑星",
+    "en": "Exoplanet",
+    "zh": "系外行星",
+    "ko": "계외 행성"
+  },
+  "desc": {
+    "ja": "未知の惑星表面、異星の風景",
+    "en": "Unknown planet surface, alien landscape",
+    "zh": "未知行星表面，异星风景",
+    "ko": "알 수 없는 행성 표면, 이질 풍경"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "\"Montserrat\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Montserrat\",sans-serif",
+    "weight": "400",
+    "lh": "1.55",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#8e9eab,#eef2f3)",
+    "ink": "#2c3e50",
+    "don": "#e74c3c",
+    "ka": "#3498db",
+    "text": "#2c3e50",
+    "muted": "#7f8c8d",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#d5dbdb",
+    "accent": "#3498db",
+    "onAccent": "#ffffff",
+    "gold": "#f1c40f",
+    "border": "rgba(52,152,219,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.03) contrast(1.01)"
+}

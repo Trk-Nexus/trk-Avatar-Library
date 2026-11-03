@@ -1,0 +1,51 @@
+{
+  "id": "martian-red",
+  "label": {
+    "ja": "火星赤",
+    "en": "Martian Red",
+    "zh": "火星红",
+    "ko": "화성 빨강"
+  },
+  "desc": {
+    "ja": "鉄分の赤い砂漠、惑星表面の赤",
+    "en": "Iron-rich red desert, planet surface red",
+    "zh": "富铁的红色沙漠，行星表面的红",
+    "ko": "철분이 많은 빨간 사막, 행성 표면의 빨강"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "\"Papyrus\",\"Papyrus Custom\",fantasy",
+  "type": {
+    "title": "\"Papyrus\",fantasy",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#c1440e",
+    "ink": "#fffdf0",
+    "don": "#e65100",
+    "ka": "#d4af37",
+    "text": "#fffdf0",
+    "muted": "#e65100",
+    "bg": "#8e2f0a",
+    "panel": "rgba(193,68,14,.96)",
+    "field": "#c1440e",
+    "button": "#a03309",
+    "accent": "#d4af37",
+    "onAccent": "#8e2f0a",
+    "gold": "#ffe082",
+    "border": "rgba(230,81,0,.24)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.4) contrast(1.1) brightness(.95)"
+}

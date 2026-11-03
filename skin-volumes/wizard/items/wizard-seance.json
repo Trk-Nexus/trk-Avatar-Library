@@ -1,0 +1,52 @@
+{
+  "id": "wizard-seance",
+  "label": {
+    "ja": "降霊術",
+    "en": "Seance",
+    "zh": "降灵术",
+    "ko": "강령술"
+  },
+  "desc": {
+    "ja": "ろうそくの灯りと霊媒、あの世との対話",
+    "en": "Candlelight and medium, dialogue with the other world",
+    "zh": "蜡烛之光与降灵师，与另一个世界的对话",
+    "ko": "초불과 영매, 저세상과의 대화"
+  },
+  "cat": [
+    "wizard",
+    "life",
+    "dark"
+  ],
+  "font": "\\\"Garamond\\\",\\\"Noto Serif JP\\\",serif",
+  "type": {
+    "title": "\\\"Garamond\\\",serif",
+    "weight": "400",
+    "lh": "1.75",
+    "titleWeight": "600",
+    "titleSpace": ".05em",
+    "titleTransform": "",
+    "mark": "🕯️"
+  },
+  "colors": {
+    "stage": "#4a2c2a",
+    "ink": "#ffe082",
+    "don": "#d4af37",
+    "ka": "#8d6e63",
+    "text": "#ffe082",
+    "muted": "#cc8f79",
+    "bg": "#2a1a15",
+    "panel": "rgba(42,26,21,.96)",
+    "field": "#4a2c2a",
+    "button": "#5d4037",
+    "accent": "#ffe082",
+    "onAccent": "#000000",
+    "gold": "#ffecb3",
+    "border": "rgba(212,175,55,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.45) brightness(1.05) contrast(1.1)"
+}

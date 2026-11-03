@@ -1,0 +1,51 @@
+{
+  "id": "paris-cafe",
+  "label": {
+    "ja": "パリカフェ",
+    "en": "Paris Cafe",
+    "zh": "巴黎咖啡厅",
+    "ko": "파리 카페"
+  },
+  "desc": {
+    "ja": "テラス席とエッフェル塔、優雅な午後",
+    "en": "Terrace seats and Eiffel Tower, elegant afternoon",
+    "zh": "露台座位和埃菲尔铁塔，优雅的下午",
+    "ko": "테라스席과 에펠탑, 우아한 오후"
+  },
+  "cat": [
+    "light",
+    "life"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f5e6d3",
+    "ink": "#4a3728",
+    "don": "#d4af37",
+    "ka": "#8c9eac",
+    "text": "#4a3728",
+    "muted": "#8c8074",
+    "bg": "#ffe082",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#fffef5",
+    "button": "#e8dec7",
+    "accent": "#d4af37",
+    "onAccent": "#4a3728",
+    "gold": "#ffe082",
+    "border": "rgba(140,158,172,.20)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) saturate(1.05) brightness(1.03)"
+}

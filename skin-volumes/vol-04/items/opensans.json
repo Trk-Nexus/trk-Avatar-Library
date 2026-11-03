@@ -1,0 +1,51 @@
+{
+  "id": "opensans",
+  "label": {
+    "ja": "オープンサンス",
+    "en": "Open Sans",
+    "zh": "开放无衬线",
+    "ko": "오픈 산스"
+  },
+  "desc": {
+    "ja": "人間的なゴシック、読みやすさと親しみやすさ",
+    "en": "Humanist sans, legibility and friendliness",
+    "zh": "人本主义无衬线体，可读性和亲和力",
+    "ko": "휴먼체 고딕, 가독성과 친근함"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Open Sans\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Open Sans\",sans-serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#eef2f3",
+    "ink": "#34495e",
+    "don": "#e74c3c",
+    "ka": "#2ecc71",
+    "text": "#34495e",
+    "muted": "#95a5a6",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#d5dbdb",
+    "accent": "#2ecc71",
+    "onAccent": "#ffffff",
+    "gold": "#f39c12",
+    "border": "rgba(52,73,94,.12)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.03) contrast(.99)"
+}

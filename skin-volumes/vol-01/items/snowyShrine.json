@@ -1,0 +1,44 @@
+{
+  "id": "snowyShrine",
+  "label": {
+    "ja": "雪の神社",
+    "en": "Snowy Shrine",
+    "zh": "雪之神社",
+    "ko": "눈 신사"
+  },
+  "desc": {
+    "ja": "白い雪に包まれた神社と、朱色の鳥居",
+    "en": "A shrine wrapped in white snow, with a vermilion torii gate",
+    "zh": "白雪包裹的神社与朱红鸟居",
+    "ko": "흰 눈에 싸인 신사와 주홍색 도리이"
+  },
+  "cat": [
+    "dark",
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#0f1a2e,#080d1a)",
+    "ink": "#f3f4f6",
+    "don": "#c73e3a",
+    "ka": "#2c5f7c",
+    "text": "#f3f4f6",
+    "muted": "#a8b8c8",
+    "bg": "linear-gradient(180deg,#080d1a,#04060d)",
+    "panel": "rgba(15,26,46,.95)",
+    "field": "#0f1a2e",
+    "button": "#1c2a46",
+    "accent": "#c73e3a",
+    "onAccent": "#ffffff",
+    "gold": "#f0c987",
+    "border": "rgba(255,255,255,.20)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "grayscale(.5) contrast(1.15) brightness(.75)"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "autumnMaple",
+  "label": {
+    "ja": "紅葉の夜",
+    "en": "Autumn Maple Night",
+    "zh": "红叶之夜",
+    "ko": "단풍밤"
+  },
+  "desc": {
+    "ja": "赤と橙と黄色、夜に舞う紅葉のグラデ",
+    "en": "Red, orange, and yellow autumn maple gradient dancing at night",
+    "zh": "红、橙、黄，夜晚飞舞的红叶渐变",
+    "ko": "빨강과 주황과 노랑, 밤에 춤추는 단풍 그라데이션"
+  },
+  "cat": [
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#4a1515,#1a0a05)",
+    "ink": "#fff1e0",
+    "don": "#e0568a",
+    "ka": "#a8b545",
+    "text": "#fff1e0",
+    "muted": "#8c6a5a",
+    "bg": "linear-gradient(180deg,#1a0a05,#0d0502)",
+    "panel": "rgba(74,21,21,.95)",
+    "field": "#4a1515",
+    "button": "#6b2a2a",
+    "accent": "#e0568a",
+    "onAccent": "#fff1e0",
+    "gold": "#d9782a",
+    "border": "rgba(224,86,120,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(1.25) hue-rotate(-20deg) brightness(.7) contrast(1.2)"
+}

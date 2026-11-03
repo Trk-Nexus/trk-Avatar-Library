@@ -1,0 +1,63 @@
+{
+  "id": "wizard-agrippa",
+  "label": {
+    "ja": "オカルト哲学三書",
+    "en": "Three Books of Occult Philosophy",
+    "zh": "秘术哲学三书",
+    "ko": "오컬트 철학 삼부작"
+  },
+  "desc": {
+    "ja": "ヘンリヒュス・コルネリウス・アグリッパによる白魔術の体系化、天使・惑星・調和",
+    "en": "Heinrich Cornelius Agrippa\\u2019s systematization of white magic, angels, planets and harmony",
+    "zh": "海因里ヒ・コルネリウス・阿格リッパ对白魔术的系统化，天使、行星与和谐",
+    "ko": "하인리히ウス・코르네リウス・아그리파의 백마술 체계화, 천사・행성・조화"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "☉ ♀ ♂"
+  },
+  "colors": {
+    "stage": "#f5efe0",
+    "ink": "#2a241e",
+    "don": "#b8860b",
+    "ka": "#8b4513",
+    "text": "#2a241e",
+    "muted": "#6a5a40",
+    "bg": "#f0e8d8",
+    "panel": "rgba(240,232,216,.97)",
+    "field": "#f5efe0",
+    "button": "#e8e0d0",
+    "accent": "#b8860b",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(184,134,11,.35)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.2) contrast(1.1) brightness(1.05)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "☉",
+    "caret": "#b8860b",
+    "scan": 0.14,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

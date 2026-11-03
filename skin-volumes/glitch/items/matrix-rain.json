@@ -1,0 +1,52 @@
+{
+  "id": "matrix-rain",
+  "label": {
+    "ja": "マトリックス・レイン",
+    "en": "Matrix Rain",
+    "zh": "黑客帝国数字雨",
+    "ko": "매트릭스 비"
+  },
+  "desc": {
+    "ja": "デジタルの緑の雨、落ちゆくコード",
+    "en": "Digital green rain, falling code",
+    "zh": "数字的绿色雨，坠落的代码",
+    "ko": "디지털 녹색 비, 떨어지는 코드"
+  },
+  "cat": [
+    "glitch",
+    "dark",
+    "fun"
+  ],
+  "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+  "type": {
+    "title": "\\\"Courier New\\\",monospace",
+    "weight": "700",
+    "lh": "1.1",
+    "titleWeight": "800",
+    "titleSpace": "0",
+    "titleTransform": "",
+    "mark": "01"
+  },
+  "colors": {
+    "stage": "#000000",
+    "ink": "#00ff00",
+    "don": "#00cc00",
+    "ka": "#33ff33",
+    "text": "#00ff00",
+    "muted": "#004400",
+    "bg": "#000000",
+    "panel": "rgba(0,0,0,.98)",
+    "field": "#000000",
+    "button": "#0a0a0a",
+    "accent": "#00ff00",
+    "onAccent": "#000000",
+    "gold": "#66ff66",
+    "border": "rgba(0,255,0,.25)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(120deg) saturate(1.6) brightness(.7) contrast(1.3)"
+}

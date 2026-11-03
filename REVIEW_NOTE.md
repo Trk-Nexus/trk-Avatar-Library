@@ -1,5 +1,7 @@
 # トーク269 Phase 10 レビュー依頼（advance wizard 設定）
 
+> この資料はレビュー依頼時点の記録です。レビュー後の現行仕様は README の advance wizard 設定を参照してください。
+
 ## 概要
 
 Modern Web Guidance (GoogleChrome/modern-web-guidance-src) の思想（Popover API、View Transitions、Container Queries、Scroll-driven Animations、prefers-color-scheme、light-dark()、アンカーポジショニング、:focus-visible、Responsible Fallbacks、Progressive Enhancement）を、trk-Avatar-Library の設定パネル（advance wizard）に大胆に追加しました。
@@ -57,7 +59,7 @@ Modern Web Guidance (GoogleChrome/modern-web-guidance-src) の思想（Popover A
 | index.html | 設定パネル（advance wizard 設定セクション、アコーディオン構造、JSロジック） |
 | css/style.css | advance wizard 用スタイル（アコーディオン、色ランプ、スクロールバー、::selection、カスタムフォーム、エッジフェード、プルダウン、カーソルアニメーション、コントラスト、バリデーション、トップレイヤー、PWAプロンプト） |
 | README.md | §10 トーク269 Wizardスキンシリーズ（advance wizard 設定テーブル追加） |
-| ADVANCE_WIZARD_PROPOSALS.md | 全25項目の提案書 |
+| ADVANCE_WIZARD_PROPOSALs.md | 全25項目の提案書 |
 | docs/CONTEXT.md | 設計原則 |
 | docs/EVALS.md | 評価基準 |
 | docs/MODERN-UX-GUIDANCE.md | Modern Web Guidance 準拠ドキュメント |

@@ -1,0 +1,63 @@
+{
+  "id": "wizard-mahan",
+  "label": {
+    "ja": "マハン 海上権力史論",
+    "en": "Mahan The Influence of Sea Power",
+    "zh": "马汉 海权史论",
+    "ko": "마한 해상권력사론"
+  },
+  "desc": {
+    "ja": "海戦略の古典、制海権と海上貿易の重要性",
+    "en": "Classic of naval strategy, command of the sea and maritime trade",
+    "zh": "海战略的经典，制海权与海上贸易的重要性",
+    "ko": "해전략의 고전, 제해권과 해상 무역의 중요성"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "dark"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "500",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "⚓"
+  },
+  "colors": {
+    "stage": "#121e2e",
+    "ink": "#dce6f0",
+    "don": "#3498db",
+    "ka": "#2c3e50",
+    "text": "#dce6f0",
+    "muted": "#7f8c8d",
+    "bg": "#0b1420",
+    "panel": "rgba(11,20,32,.97)",
+    "field": "#121e2e",
+    "button": "#223040",
+    "accent": "#3498db",
+    "onAccent": "#ffffff",
+    "gold": "#f1c40f",
+    "border": "rgba(52,152,219,.35)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(200deg) saturate(1.1) contrast(1.15) brightness(.85)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "⚓",
+    "caret": "#3498db",
+    "scan": 0.16,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

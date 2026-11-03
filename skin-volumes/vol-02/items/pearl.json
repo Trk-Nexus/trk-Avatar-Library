@@ -1,0 +1,43 @@
+{
+  "id": "pearl",
+  "label": {
+    "ja": "パール",
+    "en": "Pearl",
+    "zh": "珍珠",
+    "ko": "진주"
+  },
+  "desc": {
+    "ja": "乳白色の宝石、純真と慈愛の白",
+    "en": "Creamy white jewel, purity and compassion in white",
+    "zh": "乳白色宝石，纯真与慈爱的白",
+    "ko": "크림색 하양 보석, 순수와 연민의 하양"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#fdfefe",
+    "ink": "#2d3436",
+    "don": "#e17055",
+    "ka": "#74b9ff",
+    "text": "#2d3436",
+    "muted": "#b2bec3",
+    "bg": "#dfe6e9",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#e5e7e9",
+    "accent": "#74b9ff",
+    "onAccent": "#2d3436",
+    "gold": "#fdcb6e",
+    "border": "rgba(178,190,195,.20)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.05) brightness(1.08) contrast(.98)"
+}

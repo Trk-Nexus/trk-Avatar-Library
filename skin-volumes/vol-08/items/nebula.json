@@ -1,0 +1,52 @@
+{
+  "id": "nebula",
+  "label": {
+    "ja": "星雲",
+    "en": "Nebula",
+    "zh": "星云",
+    "ko": "성운"
+  },
+  "desc": {
+    "ja": "ガスと塵のカラフルな星雲、星の誕生の場",
+    "en": "Colorful gas and dust nebula, birthplace of stars",
+    "zh": "色彩缤纷的气体和尘埃星云，恒星诞生之地",
+    "ko": "컬러풀한 가스와 먼지 성운, 별의 탄생지"
+  },
+  "cat": [
+    "grad",
+    "fun",
+    "light"
+  ],
+  "font": "\"Orbitron\",\"Rajdhani\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Orbitron\",sans-serif",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "700",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#667eea,#764ba2,#f093fb,#f5576c)",
+    "ink": "#ffffff",
+    "don": "#ffd700",
+    "ka": "#00d2ff",
+    "text": "#ffffff",
+    "muted": "#a8b8d0",
+    "bg": "linear-gradient(180deg,#0f0c29,#302b63,#24243e)",
+    "panel": "rgba(15,12,41,.96)",
+    "field": "#1a1a2e",
+    "button": "#16213e",
+    "accent": "#00d2ff",
+    "onAccent": "#000000",
+    "gold": "#ffd700",
+    "border": "rgba(0,210,255,.28)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.3) hue-rotate(30deg) brightness(.9) contrast(1.15)"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "futura",
+  "label": {
+    "ja": "フューチュラ",
+    "en": "Futura",
+    "zh": "未来体",
+    "ko": "퓨투라"
+  },
+  "desc": {
+    "ja": "幾何学的なゴシック、近未来的でシャープ",
+    "en": "Geometric sans, sharp and near-futuristic",
+    "zh": "几何学无衬线体，锐利且近未来感",
+    "ko": "기하학적 고딕, 근미래적이고 샤프함"
+  },
+  "cat": [
+    "type",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Futura\",\"Avant Garde\",\"ITC AvantGarde Gothic\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Futura\",\"Avant Garde\",sans-serif",
+    "weight": "700",
+    "lh": "1.3",
+    "titleWeight": "900",
+    "titleSpace": "-.04em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#fafafa",
+    "don": "#ff0055",
+    "ka": "#00ffcc",
+    "text": "#fafafa",
+    "muted": "#666666",
+    "bg": "#000000",
+    "panel": "rgba(10,10,10,.98)",
+    "field": "#0a0a0a",
+    "button": "#1a1a1a",
+    "accent": "#00ffcc",
+    "onAccent": "#000000",
+    "gold": "#ffd700",
+    "border": "rgba(255,255,255,.15)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.15) saturate(1.1) brightness(.9)"
+}

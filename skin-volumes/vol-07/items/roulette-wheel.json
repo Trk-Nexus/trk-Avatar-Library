@@ -1,0 +1,51 @@
+{
+  "id": "roulette-wheel",
+  "label": {
+    "ja": "ルーレットホイール",
+    "en": "Roulette Wheel",
+    "zh": "轮盘赌",
+    "ko": "룰렛 휠"
+  },
+  "desc": {
+    "ja": "ルーレットの回転、赤と黒の運命の輪",
+    "en": "Roulette spin, red and black wheel of fate",
+    "zh": "轮盘旋转，红黑命运之轮",
+    "ko": "룰렛 회전, 빨강과 검정 운명의 바퀴"
+  },
+  "cat": [
+    "grad",
+    "fun"
+  ],
+  "font": "\"Trajan Pro\",\"Papyrus\",fantasy",
+  "type": {
+    "title": "\"Trajan Pro\",fantasy",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "uppercase",
+    "mark": "RED BLACK"
+  },
+  "colors": {
+    "stage": "linear-gradient(90deg,#8e1222,#1a1a1a,#8e1222,#1a1a1a)",
+    "ink": "#f0f0f0",
+    "don": "#ffd700",
+    "ka": "#ffffff",
+    "text": "#f0f0f0",
+    "muted": "#a0a0a0",
+    "bg": "#0a0a0a",
+    "panel": "rgba(10,10,10,.98)",
+    "field": "#1a1a1a",
+    "button": "#2a2a2a",
+    "accent": "#ffd700",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(255,255,255,.20)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "contrast(1.2) saturate(1.1) brightness(.9)"
+}

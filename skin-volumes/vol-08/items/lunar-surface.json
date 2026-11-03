@@ -1,0 +1,51 @@
+{
+  "id": "lunar-surface",
+  "label": {
+    "ja": "月面",
+    "en": "Lunar Surface",
+    "zh": "月面",
+    "ko": "달 표면"
+  },
+  "desc": {
+    "ja": "クレーターだらけの灰色、静寂の月",
+    "en": "Crater-filled gray, silent moon",
+    "zh": "陨石坑遍布的灰色，寂静的月球",
+    "ko": "분화구 투성이의 회색, 고요한 달"
+  },
+  "cat": [
+    "light",
+    "access"
+  ],
+  "font": "\"Inter\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Inter\",sans-serif",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#d3d3d3",
+    "ink": "#2c3e50",
+    "don": "#95a5a6",
+    "ka": "#7f8c8d",
+    "text": "#2c3e50",
+    "muted": "#95a5a6",
+    "bg": "#bdc3c7",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#ecf0f1",
+    "accent": "#7f8c8d",
+    "onAccent": "#ffffff",
+    "gold": "#f1c40f",
+    "border": "rgba(128,128,128,.20)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.1) contrast(1.1) brightness(1.05)"
+}

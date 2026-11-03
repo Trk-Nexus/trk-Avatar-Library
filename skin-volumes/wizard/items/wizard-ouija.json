@@ -1,0 +1,52 @@
+{
+  "id": "wizard-ouija",
+  "label": {
+    "ja": "ウィジャ板",
+    "en": "Ouija",
+    "zh": "灵派",
+    "ko": "위자 보드"
+  },
+  "desc": {
+    "ja": "ウィジャ盤面、文字と数字の円周配置",
+    "en": "Ouija board, letters and numbers in circular layout",
+    "zh": "灵派板面，字母和数字的圆周布置",
+    "ko": "위자 보드, 알파벳과 숫자의 원형 배치"
+  },
+  "cat": [
+    "wizard",
+    "fun",
+    "dark"
+  ],
+  "font": "\\\"Trajan Pro\\\",\\\"Papyrus\\\",fantasy",
+  "type": {
+    "title": "\\\"Trajan Pro\\\",fantasy",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "600",
+    "titleSpace": ".06em",
+    "titleTransform": "uppercase",
+    "mark": "YES NO"
+  },
+  "colors": {
+    "stage": "#1a1a1a",
+    "ink": "#f5f5f5",
+    "don": "#e0e0e0",
+    "ka": "#666666",
+    "text": "#f5f5f5",
+    "muted": "#878787",
+    "bg": "#0f0f0f",
+    "panel": "rgba(15,15,15,.97)",
+    "field": "#1a1a1a",
+    "button": "#2a2a2a",
+    "accent": "#e0e0e0",
+    "onAccent": "#000000",
+    "gold": "#ffffff",
+    "border": "rgba(224,224,224,.25)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.4) contrast(1.2) brightness(.85)"
+}

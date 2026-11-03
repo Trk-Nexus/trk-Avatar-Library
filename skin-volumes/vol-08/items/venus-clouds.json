@@ -1,0 +1,51 @@
+{
+  "id": "venus-clouds",
+  "label": {
+    "ja": "金星雲",
+    "en": "Venus Clouds",
+    "zh": "金星云",
+    "ko": "금성 구름"
+  },
+  "desc": {
+    "ja": "有毒な黄色い雲、金星の厚い大気",
+    "en": "Toxic yellow clouds, thick Venus atmosphere",
+    "zh": "有毒的黄色云，金星厚大气层",
+    "ko": "독성이 있는 노란 구름, 금성의 두꺼운 대기"
+  },
+  "cat": [
+    "grad",
+    "light"
+  ],
+  "font": "\"Garamond\",\"Baskerville\",serif",
+  "type": {
+    "title": "\"Garamond\",serif",
+    "weight": "400",
+    "lh": "1.65",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#ffd700,#ffa500,#ffff00)",
+    "ink": "#4a3728",
+    "don": "#d4af37",
+    "ka": "#8c9eac",
+    "text": "#4a3728",
+    "muted": "#8c8074",
+    "bg": "linear-gradient(180deg,#ffff00,#ffa500)",
+    "panel": "rgba(255,255,0,.96)",
+    "field": "#fffef5",
+    "button": "#e8dec7",
+    "accent": "#d4af37",
+    "onAccent": "#4a3728",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.20)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(1.2) brightness(1.02)"
+}

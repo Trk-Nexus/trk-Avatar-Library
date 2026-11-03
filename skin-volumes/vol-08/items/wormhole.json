@@ -1,0 +1,51 @@
+{
+  "id": "wormhole",
+  "label": {
+    "ja": "ワームホール",
+    "en": "Wormhole",
+    "zh": "虫洞",
+    "ko": "웜홀"
+  },
+  "desc": {
+    "ja": "時空のトンネル、別の宇宙への扉",
+    "en": "Spacetime tunnel, door to another universe",
+    "zh": "时空隧道，通往另一个宇宙的门",
+    "ko": "시공간 터널, 또 다른 우주로 가는 문"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "\"Caveat\",\"Komodo Axis\",cursive",
+  "type": {
+    "title": "\"Caveat\",cursive",
+    "weight": "400",
+    "lh": "1.4",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#1a0f2e,#0e2233,#0e2e22,#2e2a0c,#33101f)",
+    "ink": "#f4f2ff",
+    "don": "#ff6b9d",
+    "ka": "#a29bfe",
+    "text": "#f4f2ff",
+    "muted": "#b0aecb",
+    "bg": "linear-gradient(180deg,#241539,#123041,#153829,#38300f,#3b1526)",
+    "panel": "rgba(18,16,32,.94)",
+    "field": "#151126",
+    "button": "#201a35",
+    "accent": "#f0eeff",
+    "onAccent": "#241a3a",
+    "gold": "#ffd166",
+    "border": "rgba(255,255,255,.22)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "saturate(1.4) contrast(1.2) brightness(.75) hue-rotate(30deg)"
+}

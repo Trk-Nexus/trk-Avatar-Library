@@ -1,0 +1,52 @@
+{
+  "id": "wizard-hermetic",
+  "label": {
+    "ja": "ヘルメティック",
+    "en": "Hermetic",
+    "zh": "赫密斯",
+    "ko": "헤르메스"
+  },
+  "desc": {
+    "ja": "ヘルメス主義、黄金の黄昏と秘教幾何学",
+    "en": "Hermeticism, golden twilight and occult geometry",
+    "zh": "赫密斯主义，金色黄昏与秘教几何",
+    "ko": "헤르메스주의, 황금 황혼과 비밀 기하학"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\\\"Trajan Pro\\\",\\\"Caslon\\\",serif",
+  "type": {
+    "title": "\\\"Trajan Pro\\\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "☿"
+  },
+  "colors": {
+    "stage": "#b8860b",
+    "ink": "#fffdf0",
+    "don": "#ffd700",
+    "ka": "#d4af37",
+    "text": "#3a2a5a",
+    "muted": "#3a2a5a",
+    "bg": "#5c4033",
+    "panel": "#e0c0a0",
+    "field": "#ffe0b2",
+    "button": "#8b6508",
+    "accent": "#ffd700",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.35)"
+  },
+  "shapes": [
+    "square",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.25) saturate(1.1) brightness(1.02)"
+}

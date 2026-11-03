@@ -1,0 +1,43 @@
+{
+  "id": "taiyaki",
+  "label": {
+    "ja": "たい焼き",
+    "en": "Taiyaki",
+    "zh": "鱼形烤饼",
+    "ko": "타이야키"
+  },
+  "desc": {
+    "ja": "和菓子のたい焼き、焦げ茶色の温かさ",
+    "en": "Japanese taiyaki, warm burnt brown",
+    "zh": "日式太阳烧，温暖焦茶色",
+    "ko": "일본 붕어빵, 따뜻한 구운 갈색"
+  },
+  "cat": [
+    "life",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#bf360c",
+    "ink": "#ffebee",
+    "don": "#ffab91",
+    "ka": "#d7ccc8",
+    "text": "#ffebee",
+    "muted": "#e65100",
+    "bg": "#d84315",
+    "panel": "rgba(216,67,21,.96)",
+    "field": "#bf360c",
+    "button": "#e64a19",
+    "accent": "#ffab91",
+    "onAccent": "#3e2723",
+    "gold": "#ffccbc",
+    "border": "rgba(230,81,0,.22)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.4) contrast(1.1) brightness(.9)"
+}

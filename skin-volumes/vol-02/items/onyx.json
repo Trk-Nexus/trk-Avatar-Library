@@ -1,0 +1,43 @@
+{
+  "id": "onyx",
+  "label": {
+    "ja": "オニキス",
+    "en": "Onyx",
+    "zh": "玛瑙",
+    "ko": "오닉스"
+  },
+  "desc": {
+    "ja": "漆黒の宝石、強さと守護の黒",
+    "en": "Jet black jewel, strength and protection in black",
+    "zh": "漆黑宝石，强壮与守护的黑",
+    "ko": "칠흑 보석, 강함과 보호의 검정"
+  },
+  "cat": [
+    "dark",
+    "access"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#e0e0e0",
+    "don": "#ff6b6b",
+    "ka": "#4ecdc4",
+    "text": "#e0e0e0",
+    "muted": "#666666",
+    "bg": "#000000",
+    "panel": "rgba(10,10,10,.98)",
+    "field": "#0a0a0a",
+    "button": "#1a1a1a",
+    "accent": "#4ecdc4",
+    "onAccent": "#000000",
+    "gold": "#ffd700",
+    "border": "#ffffff"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(1) brightness(.6) contrast(1.4)"
+}

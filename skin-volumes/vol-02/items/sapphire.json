@@ -1,0 +1,43 @@
+{
+  "id": "sapphire",
+  "label": {
+    "ja": "サファイア",
+    "en": "Sapphire",
+    "zh": "蓝宝石",
+    "ko": "사파이어"
+  },
+  "desc": {
+    "ja": "深藍の宝石、誠実と知恵の青",
+    "en": "Deep blue jewel, sincerity and wisdom in blue",
+    "zh": "深蓝宝石，诚实与智慧的蓝",
+    "ko": "깊은 파란 보석, 성실과 지혜의 파랑"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#0a2a4a,#030a1a)",
+    "ink": "#e6f2ff",
+    "don": "#ff6b6b",
+    "ka": "#4da6ff",
+    "text": "#e6f2ff",
+    "muted": "#709fb3",
+    "bg": "linear-gradient(180deg,#030a1a,#01050d)",
+    "panel": "rgba(10,42,74,.95)",
+    "field": "#0a2a4a",
+    "button": "#1a3a5a",
+    "accent": "#4da6ff",
+    "onAccent": "#030a1a",
+    "gold": "#cce6ff",
+    "border": "rgba(77,166,255,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.2) hue-rotate(190deg) saturate(1.3) brightness(.8) contrast(1.2)"
+}

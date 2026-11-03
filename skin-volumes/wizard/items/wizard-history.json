@@ -1,0 +1,63 @@
+{
+  "id": "wizard-history",
+  "label": {
+    "ja": "ウィザード・ヒストリー",
+    "en": "Wizard History",
+    "zh": "巫师历史",
+    "ko": "마법사 기록"
+  },
+  "desc": {
+    "ja": "コマンド履歴・過去の呪文・タイムスタンプ",
+    "en": "Command history, past spells, timestamps",
+    "zh": "命令历史，过去的咒语，时间戳",
+    "ko": "명령어 기록, 과거 주문, 타임스탬프"
+  },
+  "cat": [
+    "wizard",
+    "life",
+    "dark"
+  ],
+  "font": "Courier New, Courier, monospace",
+  "type": {
+    "title": "Courier New, monospace",
+    "weight": "400",
+    "lh": "1.4",
+    "titleWeight": "600",
+    "titleSpace": "0",
+    "titleTransform": "",
+    "mark": "@"
+  },
+  "colors": {
+    "stage": "#00000a",
+    "ink": "#80deea",
+    "don": "#4db6ac",
+    "ka": "#4a4a6a",
+    "text": "#80deea",
+    "muted": "#4db6ac",
+    "bg": "#000005",
+    "panel": "#0a0a15",
+    "field": "#00000a",
+    "button": "#0a0a2a",
+    "accent": "#80deea",
+    "onAccent": "#000000",
+    "gold": "#b2ebf2",
+    "border": "rgba(128,222,234,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "brightness(1.05) saturate(.9) contrast(1.02)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "@",
+    "caret": "#80deea",
+    "scan": 0.1,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

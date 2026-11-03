@@ -1,0 +1,44 @@
+{
+  "id": "amethyst",
+  "label": {
+    "ja": "アメジスト",
+    "en": "Amethyst",
+    "zh": "紫水晶",
+    "ko": "자수정"
+  },
+  "desc": {
+    "ja": "高貴な紫の宝石、平和と癒やしの紫",
+    "en": "Noble purple jewel, peace and healing in purple",
+    "zh": "高贵紫色宝石，平和与治愈的紫",
+    "ko": "고귀한 보라색 보석, 평화와 치유의 보라"
+  },
+  "cat": [
+    "dark",
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#3b1a5a,#1a0633)",
+    "ink": "#f0e6ff",
+    "don": "#ff6b9d",
+    "ka": "#a29bfe",
+    "text": "#f0e6ff",
+    "muted": "#b38fc9",
+    "bg": "linear-gradient(180deg,#1a0633,#0d031a)",
+    "panel": "rgba(59,26,90,.95)",
+    "field": "#3b1a5a",
+    "button": "#5b2a7a",
+    "accent": "#a29bfe",
+    "onAccent": "#1a0633",
+    "gold": "#e6ccff",
+    "border": "rgba(162,155,254,.30)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "grayscale(.4) hue-rotate(240deg) saturate(1.3) brightness(.8) contrast(1.2)"
+}

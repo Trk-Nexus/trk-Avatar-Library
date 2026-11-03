@@ -1,0 +1,63 @@
+{
+  "id": "wizard-view-transition-master",
+  "label": {
+    "ja": "遷移マスター",
+    "en": "View Transition Master",
+    "zh": "视图过渡大师",
+    "ko": "뷰 전환 마스터"
+  },
+  "desc": {
+    "ja": "View Transitions API をフル活用、スキン変更時の要素ごとのスムーズ遷移アニメーション",
+    "en": "Full use of View Transitions API, element-by-element smooth transition animation on skin change",
+    "zh": "全面使用View Transitions API，皮肤更换时元素之间的平滑过渡动画",
+    "ko": "View Transitions API를 완전히 활용, 스킨 변경 시 요소별 부드러운 전환 애니메이션"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "500",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "✦"
+  },
+  "colors": {
+    "stage": "#f5f1e6",
+    "ink": "#2a241e",
+    "don": "#b8860b",
+    "ka": "#8b4513",
+    "text": "#2a241e",
+    "muted": "#6a5a40",
+    "bg": "#f0e8d8",
+    "panel": "rgba(240,232,216,.97)",
+    "field": "#f5f1e6",
+    "button": "#e8e0d0",
+    "accent": "#b8860b",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(184,134,11,.35)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.2) contrast(1.1) brightness(1.05)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "✦",
+    "caret": "#b8860b",
+    "scan": 0.14,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

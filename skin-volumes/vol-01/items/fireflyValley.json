@@ -1,0 +1,44 @@
+{
+  "id": "fireflyValley",
+  "label": {
+    "ja": "蛍の谷",
+    "en": "Firefly Valley",
+    "zh": "萤火谷",
+    "ko": "반딧불 계곡"
+  },
+  "desc": {
+    "ja": "暗闇に浮かぶ緑と黄色の蛍の光",
+    "en": "Green and yellow firefly lights floating in the dark",
+    "zh": "黑暗中漂浮的绿色和黄色萤火虫光",
+    "ko": "어둠에 떠 있는 초록과 노랑 반딧불 빛"
+  },
+  "cat": [
+    "dark",
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#050805,#000000)",
+    "ink": "#d4f5c4",
+    "don": "#ffd93d",
+    "ka": "#6eff6e",
+    "text": "#d4f5c4",
+    "muted": "#8fb88f",
+    "bg": "linear-gradient(180deg,#000000,#050805)",
+    "panel": "rgba(0,8,0,.96)",
+    "field": "#050805",
+    "button": "#0a1c0a",
+    "accent": "#6eff6e",
+    "onAccent": "#000000",
+    "gold": "#ffd93d",
+    "border": "rgba(110,255,110,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.4) hue-rotate(100deg) saturate(1.5) brightness(.5) contrast(1.3)"
+}

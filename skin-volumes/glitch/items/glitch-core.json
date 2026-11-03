@@ -1,0 +1,52 @@
+{
+  "id": "glitch-core",
+  "label": {
+    "ja": "グリッチコア",
+    "en": "Glitch Core",
+    "zh": "故障核心",
+    "ko": "글리치 코어"
+  },
+  "desc": {
+    "ja": "RGB分解とデータ破壊の美学、デジタルノイズ",
+    "en": "RGB decomposition and data destruction aesthetics, digital noise",
+    "zh": "RGB分解与数据破坏美学，数字噪声",
+    "ko": "RGB 분해와 데이터 파괴 미학, 디지털 노이즈"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "dark"
+  ],
+  "font": "\\\"Orbitron\\\",\\\"Courier New\\\",\\\"Courier\\\",monospace",
+  "type": {
+    "title": "\\\"Orbitron\\\",monospace",
+    "weight": "700",
+    "lh": "1.15",
+    "titleWeight": "900",
+    "titleSpace": "-.03em",
+    "titleTransform": "uppercase",
+    "mark": "GLITCH 01"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#00ffff",
+    "don": "#ff00ff",
+    "ka": "#ffff00",
+    "text": "#00ffff",
+    "muted": "#333333",
+    "bg": "#050505",
+    "panel": "rgba(10,10,10,.96)",
+    "field": "#0a0a0a",
+    "button": "#1a1a1a",
+    "accent": "#ff00ff",
+    "onAccent": "#ffffff",
+    "gold": "#ffff00",
+    "border": "rgba(255,0,255,.35)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "hue-rotate(0deg) saturate(1.8) contrast(1.4) brightness(.85)"
+}

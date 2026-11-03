@@ -1,0 +1,52 @@
+{
+  "id": "gold",
+  "label": {
+    "ja": "王家の黄金",
+    "en": "Royal Gold",
+    "zh": "王室黄金",
+    "ko": "왕실의 금"
+  },
+  "desc": {
+    "ja": "豪華で気高い黄金、王冠と王座の輝き",
+    "en": "Luxurious and noble gold, crown and throne shining",
+    "zh": "豪华高贵的黄金，王冠和王座的光芒",
+    "ko": "호화롭고 기품 있는 금, 왕관과 왕좌의 빛"
+  },
+  "cat": [
+    "grad",
+    "fun",
+    "light"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "700",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#ffd700,#b8860b)",
+    "ink": "#1a1a1a",
+    "don": "#d4af37",
+    "ka": "#ffd700",
+    "text": "#1a1a1a",
+    "muted": "#8a6d3b",
+    "bg": "linear-gradient(180deg,#b8860b,#6b4a0b)",
+    "panel": "rgba(255,215,0,.96)",
+    "field": "#fffdf0",
+    "button": "#ffe082",
+    "accent": "#d4af37",
+    "onAccent": "#1a1a1a",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.32)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "sepia(.15) saturate(1.3) brightness(1.08) contrast(1.1)"
+}

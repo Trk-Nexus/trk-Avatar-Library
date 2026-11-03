@@ -1,0 +1,52 @@
+{
+  "id": "wizard-spell",
+  "label": {
+    "ja": "スペルキャスト",
+    "en": "Spell Cast",
+    "zh": "施法",
+    "ko": "주문 시전"
+  },
+  "desc": {
+    "ja": "呪文の発動エフェクト、光の粒子と轟音",
+    "en": "Spell activation effect, particles of light and roar",
+    "zh": "咒语发动效果，光之粒子与轰鸣",
+    "ko": "주문 발동 이펙트, 빛의 입자와 굉음"
+  },
+  "cat": [
+    "wizard",
+    "fun",
+    "grad"
+  ],
+  "font": "\\\"Trajan Pro\\\",\\\"Papyrus\\\",fantasy",
+  "type": {
+    "title": "\\\"Trajan Pro\\\",fantasy",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "700",
+    "titleSpace": ".08em",
+    "titleTransform": "uppercase",
+    "mark": "✦ CAST ✦"
+  },
+  "colors": {
+    "stage": "#1a0a2e",
+    "ink": "#ffd700",
+    "don": "#bb86fc",
+    "ka": "#74b9ff",
+    "text": "#ffd700",
+    "muted": "#a05ae5",
+    "bg": "#0f051a",
+    "panel": "rgba(15,5,26,.97)",
+    "field": "#1a0a2e",
+    "button": "#2a1a3e",
+    "accent": "#bb86fc",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(187,134,252,.35)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "hue-rotate(270deg) saturate(1.5) brightness(.85) contrast(1.2)"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "mikuClassic",
+  "label": {
+    "ja": "ミク・クラシック",
+    "en": "Miku Classic",
+    "zh": "初音・经典",
+    "ko": "미쿠 클래식"
+  },
+  "desc": {
+    "ja": "初期配色を思わせるミク（二次創作・PCL・非公式）",
+    "en": "Early-coloring Miku (fan art, PCL, unofficial)",
+    "zh": "令人想起初期配色的初音（二次创作・PCL・非官方）",
+    "ko": "초기 배색을 떠올리게 하는 미쿠 (2차 창작・PCL・비공식)"
+  },
+  "cat": [
+    "miku",
+    "light"
+  ],
+  "font": "\"Trebuchet MS\",\"Avenir Next\",system-ui,sans-serif",
+  "type": null,
+  "colors": {
+    "stage": "#ecf3f3",
+    "ink": "#23343a",
+    "don": "#e8457c",
+    "ka": "#1f9e94",
+    "text": "#23343a",
+    "muted": "#526770",
+    "bg": "#eef3f3",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#e5eeee",
+    "accent": "#1f9e94",
+    "onAccent": "#000000",
+    "gold": "#e8457c",
+    "border": "rgba(35,90,100,.20)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.25) brightness(1.08) contrast(1.05)"
+}

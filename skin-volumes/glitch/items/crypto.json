@@ -1,0 +1,52 @@
+{
+  "id": "crypto",
+  "label": {
+    "ja": "クリプト",
+    "en": "Crypto",
+    "zh": "加密",
+    "ko": "크립토"
+  },
+  "desc": {
+    "ja": "ブロックチェーンと暗号通貨、デジタルゴールド",
+    "en": "Blockchain and cryptocurrency, digital gold",
+    "zh": "区块链和加密货币，数字黄金",
+    "ko": "블록체인과 암호화폐, 디지털 골드"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "grad"
+  ],
+  "font": "\\\"Rajdhani\\\",\\\"Oswald\\\",sans-serif",
+  "type": {
+    "title": "\\\"Rajdhani\\\",sans-serif",
+    "weight": "700",
+    "lh": "1.2",
+    "titleWeight": "800",
+    "titleSpace": "-.02em",
+    "titleTransform": "uppercase",
+    "mark": "₿"
+  },
+  "colors": {
+    "stage": "#0a0a1a",
+    "ink": "#f7931a",
+    "don": "#ffd700",
+    "ka": "#4a4a6a",
+    "text": "#f7931a",
+    "muted": "#2a2a4a",
+    "bg": "#050510",
+    "panel": "rgba(5,5,16,.98)",
+    "field": "#0a0a1a",
+    "button": "#1a1a2a",
+    "accent": "#f7931a",
+    "onAccent": "#000000",
+    "gold": "#ffd700",
+    "border": "rgba(247,147,26,.35)"
+  },
+  "shapes": [
+    "square",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.3) contrast(1.2) brightness(.9)"
+}

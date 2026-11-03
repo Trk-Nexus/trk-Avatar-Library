@@ -1,0 +1,52 @@
+{
+  "id": "chrome-steel",
+  "label": {
+    "ja": "クロムスチール",
+    "en": "Chrome Steel",
+    "zh": "铬钢",
+    "ko": "크롬 스틸"
+  },
+  "desc": {
+    "ja": "鏡面メッキの鋼、現代的でスタイリッシュな輝き",
+    "en": "Mirror-plated steel, modern and stylish shine",
+    "zh": "镜面镀铬钢，现代时尚的光泽",
+    "ko": "거울면 도금 강철, 현대적이고 세련된 광채"
+  },
+  "cat": [
+    "dark",
+    "fun",
+    "access"
+  ],
+  "font": "\"Orbitron\",\"Rajdhani\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Orbitron\",sans-serif",
+    "weight": "400",
+    "lh": "1.35",
+    "titleWeight": "700",
+    "titleSpace": "-.02em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#1a1a1a",
+    "ink": "#fafafa",
+    "don": "#00ffff",
+    "ka": "#bdc3c7",
+    "text": "#fafafa",
+    "muted": "#666666",
+    "bg": "#0a0a0a",
+    "panel": "rgba(26,26,26,.97)",
+    "field": "#1a1a1a",
+    "button": "#2d2d2d",
+    "accent": "#00ffff",
+    "onAccent": "#000000",
+    "gold": "#ffffff",
+    "border": "rgba(255,255,255,.18)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.3) saturate(1.1) brightness(.85)"
+}

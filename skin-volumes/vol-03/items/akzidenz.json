@@ -1,0 +1,51 @@
+{
+  "id": "akzidenz",
+  "label": {
+    "ja": "アクシデンツ",
+    "en": "Akzidenz",
+    "zh": "阿克齐登茨",
+    "ko": "악시덴츠"
+  },
+  "desc": {
+    "ja": "グロテスク、無骨で実用的な書体",
+    "en": "Grotesque sans, rugged and practical",
+    "zh": "粗犷无衬线体，粗犷且实用",
+    "ko": "그로테스크, 거칠고 실용적인 서체"
+  },
+  "cat": [
+    "type",
+    "dark"
+  ],
+  "font": "\"Akzidenz-Grotesk\",\"Alternate Gothic\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Akzidenz-Grotesk\",sans-serif",
+    "weight": "400",
+    "lh": "1.45",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#1a1a1a",
+    "ink": "#e0e0e0",
+    "don": "#ff7675",
+    "ka": "#74b9ff",
+    "text": "#e0e0e0",
+    "muted": "#636e72",
+    "bg": "#0d0d0d",
+    "panel": "rgba(26,26,26,.97)",
+    "field": "#1a1a1a",
+    "button": "#2d2d2d",
+    "accent": "#74b9ff",
+    "onAccent": "#0d0d0d",
+    "gold": "#fdcb6e",
+    "border": "rgba(224,224,224,.15)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.08) brightness(.88)"
+}

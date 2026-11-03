@@ -1,0 +1,43 @@
+{
+  "id": "obsidian",
+  "label": {
+    "ja": "オブシディアン",
+    "en": "Obsidian",
+    "zh": "黒曜石",
+    "ko": "흑요석"
+  },
+  "desc": {
+    "ja": "火山ガラスの黒、真実と洞察の黒",
+    "en": "Volcanic glass black, truth and insight in black",
+    "zh": "火山玻璃黑，真理与洞察的黑",
+    "ko": "화산 유리 검정, 진실과 통찰의 검정"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#1a1a1a,#000000)",
+    "ink": "#dfe6e9",
+    "don": "#e17055",
+    "ka": "#0984e3",
+    "text": "#dfe6e9",
+    "muted": "#636e72",
+    "bg": "linear-gradient(180deg,#000000,#0d0d0d)",
+    "panel": "rgba(26,26,26,.96)",
+    "field": "#1a1a1a",
+    "button": "#2d2d2d",
+    "accent": "#00b894",
+    "onAccent": "#ffffff",
+    "gold": "#fdcb6e",
+    "border": "rgba(223,230,233,.20)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.7) contrast(1.15) brightness(.7)"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "shojiLight",
+  "label": {
+    "ja": "障子の光",
+    "en": "Shoji light",
+    "zh": "障子之光",
+    "ko": "쇼지의 빛"
+  },
+  "desc": {
+    "ja": "和紙越しのやわらかい光と、木の桟",
+    "en": "Soft light through washi paper and wooden lattice",
+    "zh": "透过和纸的柔光与木格栅",
+    "ko": "와시 종이를 통한 부드러운 빛과 나무 격자"
+  },
+  "cat": [
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#f4eee0",
+    "ink": "#2b2620",
+    "don": "#b5533c",
+    "ka": "#5f7f8f",
+    "text": "#2b2620",
+    "muted": "#60584e",
+    "bg": "#efe9dc",
+    "panel": "#fbf8f1",
+    "field": "#fffdf8",
+    "button": "#e6dfd0",
+    "accent": "#b5533c",
+    "onAccent": "#fff8f0",
+    "gold": "#a67c2e",
+    "border": "rgba(60,45,30,.25)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) brightness(1.1) contrast(.95)"
+}

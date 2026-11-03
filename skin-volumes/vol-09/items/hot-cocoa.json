@@ -1,0 +1,51 @@
+{
+  "id": "hot-cocoa",
+  "label": {
+    "ja": "ホットココア",
+    "en": "Hot Cocoa",
+    "zh": "热可可",
+    "ko": "핫 코코아"
+  },
+  "desc": {
+    "ja": "温かい茶色、マシュマロの柔らかさ",
+    "en": "Warm brown, marshmallow softness",
+    "zh": "温暖的棕色，棉花糖的柔软",
+    "ko": "따뜻한 갈색, 마쉬멜로우의 부드러움"
+  },
+  "cat": [
+    "light",
+    "life"
+  ],
+  "font": "\"Comic Sans MS\",\"Cursive\",fantasy",
+  "type": {
+    "title": "\"Comic Sans MS\",cursive",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#795548",
+    "ink": "#fff3e0",
+    "don": "#ffcc80",
+    "ka": "#bcaaa4",
+    "text": "#fff3e0",
+    "muted": "#8d6e63",
+    "bg": "#d7ccc8",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#bcaaa4",
+    "accent": "#795548",
+    "onAccent": "#fff3e0",
+    "gold": "#ffe0b2",
+    "border": "rgba(141,110,99,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.25) contrast(1.05) brightness(.98)"
+}

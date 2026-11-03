@@ -1,0 +1,701 @@
+{
+  "format": "trk-avatar-library-skins",
+  "version": 1,
+  "count": 16,
+  "skins": [
+    {
+      "id": "ruby",
+      "label": {
+        "ja": "ルビー",
+        "en": "Ruby",
+        "zh": "红宝石",
+        "ko": "루비"
+      },
+      "desc": {
+        "ja": "深紅の宝石、情熱と勇気の赤",
+        "en": "Deep red jewel, passion and courage in red",
+        "zh": "深红宝石，激情与勇气的红",
+        "ko": "깊은 붉은 보석, 열정과 용기의 빨강"
+      },
+      "cat": [
+        "grad",
+        "fun",
+        "dark"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#4a0e0e,#1a0303)",
+        "ink": "#ffe6e6",
+        "don": "#ff1a1a",
+        "ka": "#4da6ff",
+        "text": "#ffe6e6",
+        "muted": "#b37070",
+        "bg": "linear-gradient(180deg,#1a0303,#0a0101)",
+        "panel": "rgba(26,3,3,.95)",
+        "field": "#2a0e0e",
+        "button": "#4a0e0e",
+        "accent": "#ff1a1a",
+        "onAccent": "#ffffff",
+        "gold": "#ffcccc",
+        "border": "rgba(255,26,26,.32)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.3) saturate(1.4) hue-rotate(-10deg) brightness(.75) contrast(1.25)"
+    },
+    {
+      "id": "sapphire",
+      "label": {
+        "ja": "サファイア",
+        "en": "Sapphire",
+        "zh": "蓝宝石",
+        "ko": "사파이어"
+      },
+      "desc": {
+        "ja": "深藍の宝石、誠実と知恵の青",
+        "en": "Deep blue jewel, sincerity and wisdom in blue",
+        "zh": "深蓝宝石，诚实与智慧的蓝",
+        "ko": "깊은 파란 보석, 성실과 지혜의 파랑"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#0a2a4a,#030a1a)",
+        "ink": "#e6f2ff",
+        "don": "#ff6b6b",
+        "ka": "#4da6ff",
+        "text": "#e6f2ff",
+        "muted": "#709fb3",
+        "bg": "linear-gradient(180deg,#030a1a,#01050d)",
+        "panel": "rgba(10,42,74,.95)",
+        "field": "#0a2a4a",
+        "button": "#1a3a5a",
+        "accent": "#4da6ff",
+        "onAccent": "#030a1a",
+        "gold": "#cce6ff",
+        "border": "rgba(77,166,255,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "grayscale(.2) hue-rotate(190deg) saturate(1.3) brightness(.8) contrast(1.2)"
+    },
+    {
+      "id": "emerald",
+      "label": {
+        "ja": "エメラルド",
+        "en": "Emerald",
+        "zh": "绿宝石",
+        "ko": "에메랄드"
+      },
+      "desc": {
+        "ja": "深緑の宝石、成長と希望の緑",
+        "en": "Deep green jewel, growth and hope in green",
+        "zh": "深绿宝石，成长与希望的绿",
+        "ko": "깊은 초록 보석, 성장과 희망의 초록"
+      },
+      "cat": [
+        "grad",
+        "light"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#0e3b2e,#031a0f)",
+        "ink": "#e6ffe6",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#e6ffe6",
+        "muted": "#70b38f",
+        "bg": "linear-gradient(180deg,#031a0f,#010d07)",
+        "panel": "rgba(14,59,46,.95)",
+        "field": "#0e3b2e",
+        "button": "#1e4b3e",
+        "accent": "#4ecdc4",
+        "onAccent": "#031a0f",
+        "gold": "#ccffe6",
+        "border": "rgba(78,205,196,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "grayscale(.3) hue-rotate(120deg) saturate(1.4) brightness(.85) contrast(1.15)"
+    },
+    {
+      "id": "diamond",
+      "label": {
+        "ja": "ダイヤモンド",
+        "en": "Diamond",
+        "zh": "钻石",
+        "ko": "다이아몬드"
+      },
+      "desc": {
+        "ja": "無色透明の宝石、純粋と永遠の輝き",
+        "en": "Colorless transparent jewel, purity and eternity shining",
+        "zh": "无色透明宝石，纯粹与永恒的光芒",
+        "ko": "무색 투명 보석, 순수와 영원의 반짝임"
+      },
+      "cat": [
+        "light",
+        "grad",
+        "access"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#f0f0f0",
+        "ink": "#262626",
+        "don": "#ff4757",
+        "ka": "#747d8c",
+        "text": "#262626",
+        "muted": "#999999",
+        "bg": "#e0e0e0",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#d0d0d0",
+        "accent": "#747d8c",
+        "onAccent": "#ffffff",
+        "gold": "#ffd700",
+        "border": "rgba(100,100,100,.25)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.1) contrast(1.1) brightness(1.05)"
+    },
+    {
+      "id": "amber",
+      "label": {
+        "ja": "アンバー",
+        "en": "Amber",
+        "zh": "琥珀",
+        "ko": "호박"
+      },
+      "desc": {
+        "ja": "黄金色の樹脂、温もりと記憶の琥珀",
+        "en": "Golden resin, warmth and memory in amber",
+        "zh": "金色树脂，温暖与记忆的琥珀",
+        "ko": "금색 수지, 온기와 기억의 호박"
+      },
+      "cat": [
+        "grad",
+        "fun",
+        "light"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#b8860b,#4a370b)",
+        "ink": "#fff4e6",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#fff4e6",
+        "muted": "#b39370",
+        "bg": "linear-gradient(180deg,#4a370b,#2a1d05)",
+        "panel": "rgba(184,134,11,.95)",
+        "field": "#b8860b",
+        "button": "#8a6a0b",
+        "accent": "#ff6b6b",
+        "onAccent": "#2a1d05",
+        "gold": "#ffe0b3",
+        "border": "rgba(255,107,87,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.5) saturate(1.2) hue-rotate(-20deg) brightness(.85) contrast(1.1)"
+    },
+    {
+      "id": "amethyst",
+      "label": {
+        "ja": "アメジスト",
+        "en": "Amethyst",
+        "zh": "紫水晶",
+        "ko": "자수정"
+      },
+      "desc": {
+        "ja": "高貴な紫の宝石、平和と癒やしの紫",
+        "en": "Noble purple jewel, peace and healing in purple",
+        "zh": "高贵紫色宝石，平和与治愈的紫",
+        "ko": "고귀한 보라색 보석, 평화와 치유의 보라"
+      },
+      "cat": [
+        "dark",
+        "grad",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#3b1a5a,#1a0633)",
+        "ink": "#f0e6ff",
+        "don": "#ff6b9d",
+        "ka": "#a29bfe",
+        "text": "#f0e6ff",
+        "muted": "#b38fc9",
+        "bg": "linear-gradient(180deg,#1a0633,#0d031a)",
+        "panel": "rgba(59,26,90,.95)",
+        "field": "#3b1a5a",
+        "button": "#5b2a7a",
+        "accent": "#a29bfe",
+        "onAccent": "#1a0633",
+        "gold": "#e6ccff",
+        "border": "rgba(162,155,254,.30)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "grayscale(.4) hue-rotate(240deg) saturate(1.3) brightness(.8) contrast(1.2)"
+    },
+    {
+      "id": "topaz",
+      "label": {
+        "ja": "トパーズ",
+        "en": "Topaz",
+        "zh": "黄玉",
+        "ko": "토파즈"
+      },
+      "desc": {
+        "ja": "黄金色の宝石、友情と誠実の黄",
+        "en": "Golden yellow jewel, friendship and sincerity in yellow",
+        "zh": "金黄色宝石，友情与真诚的黄",
+        "ko": "금빛 보석, 우정과 성실의 노랑"
+      },
+      "cat": [
+        "grad",
+        "light",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffc107,#b8860b)",
+        "ink": "#3e2723",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#3e2723",
+        "muted": "#8d6e63",
+        "bg": "linear-gradient(180deg,#b8860b,#6b4a0b)",
+        "panel": "rgba(255,193,7,.95)",
+        "field": "#fff9c4",
+        "button": "#ffe082",
+        "accent": "#ff6b6b",
+        "onAccent": "#3e2723",
+        "gold": "#fff176",
+        "border": "rgba(255,107,87,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.2) saturate(1.15) brightness(1.05)"
+    },
+    {
+      "id": "opal",
+      "label": {
+        "ja": "オパール",
+        "en": "Opal",
+        "zh": "欧泊",
+        "ko": "오팔"
+      },
+      "desc": {
+        "ja": "虹色に輝く宝石、創造と想像の虹色",
+        "en": "Rainbow-shining jewel, creativity and imagination in rainbow",
+        "zh": "彩虹色闪耀宝石，创造与想象的彩虹",
+        "ko": "무지개빛으로 빛나는 보석, 창의와 상상의 무지개"
+      },
+      "cat": [
+        "grad",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(90deg,#1a0f2e,#0e2233,#0e2e22,#2e2a0c,#33101f)",
+        "ink": "#f4f2ff",
+        "don": "#ff6b9d",
+        "ka": "#a29bfe",
+        "text": "#f4f2ff",
+        "muted": "#b0aecb",
+        "bg": "linear-gradient(90deg,#241539,#123041,#153829,#38300f,#3b1526)",
+        "panel": "rgba(18,16,32,.94)",
+        "field": "#151126",
+        "button": "#201a35",
+        "accent": "#f0eeff",
+        "onAccent": "#241a3a",
+        "gold": "#ffd166",
+        "border": "rgba(255,255,255,.22)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "saturate(1.4) contrast(1.2) brightness(.75) hue-rotate(30deg)"
+    },
+    {
+      "id": "quartz",
+      "label": {
+        "ja": "クォーツ",
+        "en": "Quartz",
+        "zh": "石英",
+        "ko": "쿼츠"
+      },
+      "desc": {
+        "ja": "透明な結晶、調和と浄化の白",
+        "en": "Transparent crystal, harmony and purification in white",
+        "zh": "透明水晶，和谐与净化的白",
+        "ko": "투명한 결정, 조화와 정화의 하양"
+      },
+      "cat": [
+        "light",
+        "access"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#f8f9fa",
+        "ink": "#495057",
+        "don": "#e83e8c",
+        "ka": "#6c757d",
+        "text": "#495057",
+        "muted": "#adb5bd",
+        "bg": "#e9ecef",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#dee2e6",
+        "accent": "#6c757d",
+        "onAccent": "#ffffff",
+        "gold": "#ffc107",
+        "border": "rgba(100,100,100,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.1) brightness(1.05) contrast(1.02)"
+    },
+    {
+      "id": "onyx",
+      "label": {
+        "ja": "オニキス",
+        "en": "Onyx",
+        "zh": "玛瑙",
+        "ko": "오닉스"
+      },
+      "desc": {
+        "ja": "漆黒の宝石、強さと守護の黒",
+        "en": "Jet black jewel, strength and protection in black",
+        "zh": "漆黑宝石，强壮与守护的黑",
+        "ko": "칠흑 보석, 강함과 보호의 검정"
+      },
+      "cat": [
+        "dark",
+        "access"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#e0e0e0",
+        "don": "#ff6b6b",
+        "ka": "#4ecdc4",
+        "text": "#e0e0e0",
+        "muted": "#666666",
+        "bg": "#000000",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#4ecdc4",
+        "onAccent": "#000000",
+        "gold": "#ffd700",
+        "border": "#ffffff"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(1) brightness(.6) contrast(1.4)"
+    },
+    {
+      "id": "jade",
+      "label": {
+        "ja": "ジェイド",
+        "en": "Jade",
+        "zh": "翡翠",
+        "ko": "제이드"
+      },
+      "desc": {
+        "ja": "優しい緑の宝石、安定と調和の緑",
+        "en": "Gentle green jewel, stability and harmony in green",
+        "zh": "温柔绿色宝石，稳定与和谐的绿",
+        "ko": "부드러운 초록 보석, 안정과 조화의 초록"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#52b788",
+        "ink": "#1e272e",
+        "don": "#e74c3c",
+        "ka": "#2ecc71",
+        "text": "#1e272e",
+        "muted": "#748c79",
+        "bg": "#d1f2eb",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#abebc6",
+        "accent": "#2ecc71",
+        "onAccent": "#1e272e",
+        "gold": "#f9e79f",
+        "border": "rgba(46,204,113,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.1) brightness(1.05)"
+    },
+    {
+      "id": "pearl",
+      "label": {
+        "ja": "パール",
+        "en": "Pearl",
+        "zh": "珍珠",
+        "ko": "진주"
+      },
+      "desc": {
+        "ja": "乳白色の宝石、純真と慈愛の白",
+        "en": "Creamy white jewel, purity and compassion in white",
+        "zh": "乳白色宝石，纯真与慈爱的白",
+        "ko": "크림색 하양 보석, 순수와 연민의 하양"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#fdfefe",
+        "ink": "#2d3436",
+        "don": "#e17055",
+        "ka": "#74b9ff",
+        "text": "#2d3436",
+        "muted": "#b2bec3",
+        "bg": "#dfe6e9",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#e5e7e9",
+        "accent": "#74b9ff",
+        "onAccent": "#2d3436",
+        "gold": "#fdcb6e",
+        "border": "rgba(178,190,195,.20)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.05) brightness(1.08) contrast(.98)"
+    },
+    {
+      "id": "garnet",
+      "label": {
+        "ja": "ガーネット",
+        "en": "Garnet",
+        "zh": "石榴石",
+        "ko": "가넷"
+      },
+      "desc": {
+        "ja": "深紅褐色の宝石、友愛と忠実の赤褐",
+        "en": "Deep red-brown jewel, friendship and loyalty in red-brown",
+        "zh": "深红褐色宝石，友谊与忠诚的红褐",
+        "ko": "깊은 붉은 갈색 보석, 우정과 충실의 빨간 갈색"
+      },
+      "cat": [
+        "grad",
+        "dark"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#5d2e2e,#1a0a0a)",
+        "ink": "#ffe6e6",
+        "don": "#d63031",
+        "ka": "#74b9ff",
+        "text": "#ffe6e6",
+        "muted": "#a06e6e",
+        "bg": "linear-gradient(180deg,#1a0a0a,#0d0505)",
+        "panel": "rgba(93,46,46,.95)",
+        "field": "#3d1e1e",
+        "button": "#5d2e2e",
+        "accent": "#d63031",
+        "onAccent": "#ffffff",
+        "gold": "#fab1a0",
+        "border": "rgba(214,48,49,.30)"
+      },
+      "shapes": [
+        "circle",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.4) saturate(1.25) hue-rotate(-15deg) brightness(.75) contrast(1.2)"
+    },
+    {
+      "id": "citrine",
+      "label": {
+        "ja": "シトリン",
+        "en": "Citrine",
+        "zh": "黄水晶",
+        "ko": "시트린"
+      },
+      "desc": {
+        "ja": "鮮やかな黄色の宝石、富と繁栄の黄",
+        "en": "Vivid yellow jewel, wealth and prosperity in yellow",
+        "zh": "鲜艳黄色宝石，富与繁荣的黄",
+        "ko": "선명한 노란색 보석, 부와 번영의 노랑"
+      },
+      "cat": [
+        "grad",
+        "fun",
+        "light"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#f1c40f,#b7950b)",
+        "ink": "#2d3436",
+        "don": "#e17055",
+        "ka": "#00b894",
+        "text": "#2d3436",
+        "muted": "#8b854a",
+        "bg": "linear-gradient(180deg,#b7950b,#6b5605)",
+        "panel": "rgba(241,196,15,.95)",
+        "field": "#ffeaa7",
+        "button": "#fdcb6e",
+        "accent": "#e17055",
+        "onAccent": "#2d3436",
+        "gold": "#ffeaa7",
+        "border": "rgba(225,112,85,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.15) saturate(1.25) brightness(1.1) contrast(1.05)"
+    },
+    {
+      "id": "turquoise",
+      "label": {
+        "ja": "ターコイズ",
+        "en": "Turquoise",
+        "zh": "青金石",
+        "ko": "터콰이즈"
+      },
+      "desc": {
+        "ja": "空色の宝石、癒やしと保護の青緑",
+        "en": "Sky blue jewel, healing and protection in teal",
+        "zh": "天蓝色宝石，治愈与保护的青绿",
+        "ko": "하늘색 보석, 치유와 보호의 청록"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#00cec9",
+        "ink": "#2d3436",
+        "don": "#e17055",
+        "ka": "#0984e3",
+        "text": "#2d3436",
+        "muted": "#6cabac",
+        "bg": "#81ecec",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#55efc4",
+        "accent": "#00b894",
+        "onAccent": "#ffffff",
+        "gold": "#ffeaa7",
+        "border": "rgba(0,206,201,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.15) brightness(1.05) contrast(1.02)"
+    },
+    {
+      "id": "obsidian",
+      "label": {
+        "ja": "オブシディアン",
+        "en": "Obsidian",
+        "zh": "黒曜石",
+        "ko": "흑요석"
+      },
+      "desc": {
+        "ja": "火山ガラスの黒、真実と洞察の黒",
+        "en": "Volcanic glass black, truth and insight in black",
+        "zh": "火山玻璃黑，真理与洞察的黑",
+        "ko": "화산 유리 검정, 진실과 통찰의 검정"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#1a1a1a,#000000)",
+        "ink": "#dfe6e9",
+        "don": "#e17055",
+        "ka": "#0984e3",
+        "text": "#dfe6e9",
+        "muted": "#636e72",
+        "bg": "linear-gradient(180deg,#000000,#0d0d0d)",
+        "panel": "rgba(26,26,26,.96)",
+        "field": "#1a1a1a",
+        "button": "#2d2d2d",
+        "accent": "#00b894",
+        "onAccent": "#ffffff",
+        "gold": "#fdcb6e",
+        "border": "rgba(223,230,233,.20)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.7) contrast(1.15) brightness(.7)"
+    }
+  ]
+}

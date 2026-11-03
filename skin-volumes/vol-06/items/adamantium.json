@@ -1,0 +1,52 @@
+{
+  "id": "adamantium",
+  "label": {
+    "ja": "アダマンチウム",
+    "en": "Adamantium",
+    "zh": "亚当合金",
+    "ko": "아다만티움"
+  },
+  "desc": {
+    "ja": "不壊の金属、ダークで重厚な鋼鉄の質感",
+    "en": "Indestructible metal, dark and heavy steel texture",
+    "zh": "不可破坏的金属，深色厚重的钢铁质感",
+    "ko": "불가파괴 금속, 다크하고 무거운 강철 질감"
+  },
+  "cat": [
+    "dark",
+    "access",
+    "fun"
+  ],
+  "font": "\"Oswald\",\"Impact\",sans-serif",
+  "type": {
+    "title": "\"Oswald\",sans-serif",
+    "weight": "700",
+    "lh": "1.3",
+    "titleWeight": "800",
+    "titleSpace": "-.04em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#1a1a1a",
+    "ink": "#e0e0e0",
+    "don": "#d4af37",
+    "ka": "#95a5a6",
+    "text": "#e0e0e0",
+    "muted": "#666666",
+    "bg": "#0d0d0d",
+    "panel": "rgba(26,26,26,.98)",
+    "field": "#1a1a1a",
+    "button": "#2d2d2d",
+    "accent": "#d4af37",
+    "onAccent": "#0d0d0d",
+    "gold": "#ffd700",
+    "border": "rgba(224,224,224,.20)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.7) contrast(1.25) brightness(.75)"
+}

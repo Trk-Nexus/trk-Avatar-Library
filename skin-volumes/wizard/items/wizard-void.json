@@ -1,0 +1,52 @@
+{
+  "id": "wizard-void",
+  "label": {
+    "ja": "ヴォイド",
+    "en": "Void",
+    "zh": "虚空",
+    "ko": "보이드"
+  },
+  "desc": {
+    "ja": "虚無の空間、すべてを飲み込む黒",
+    "en": "Void space, black that swallows everything",
+    "zh": "虚空，吞噬一切的黑",
+    "ko": "공허 공간, 모든 것을 삼키는 검정"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "access"
+  ],
+  "font": "\\\"Rajdhani\\\",\\\"Oswald\\\",sans-serif",
+  "type": {
+    "title": "\\\"Rajdhani\\\",sans-serif",
+    "weight": "700",
+    "lh": "1.1",
+    "titleWeight": "900",
+    "titleSpace": "-.04em",
+    "titleTransform": "uppercase",
+    "mark": "Ø"
+  },
+  "colors": {
+    "stage": "#000000",
+    "ink": "#000000",
+    "don": "#111111",
+    "ka": "#0a0a0a",
+    "text": "#e0e0e0",
+    "muted": "#757575",
+    "bg": "#000000",
+    "panel": "rgba(0,0,0,.99)",
+    "field": "#000000",
+    "button": "#050505",
+    "accent": "#1a1a1a",
+    "onAccent": "#000000",
+    "gold": "#2a2a2a",
+    "border": "rgba(26,26,26,.20)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "brightness(.6) contrast(1.4)"
+}

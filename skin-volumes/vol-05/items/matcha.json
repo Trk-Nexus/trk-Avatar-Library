@@ -1,0 +1,44 @@
+{
+  "id": "matcha",
+  "label": {
+    "ja": "抹茶",
+    "en": "Matcha",
+    "zh": "抹茶",
+    "ko": "말차"
+  },
+  "desc": {
+    "ja": "和スイーツの定番、落ち着いた緑色",
+    "en": "Japanese sweet standard, calm green",
+    "zh": "日式甜点标准，平静的绿色",
+    "ko": "일본 디저트 표준, 차분한 초록색"
+  },
+  "cat": [
+    "light",
+    "grad",
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#81c784,#2e7d32)",
+    "ink": "#1b5e20",
+    "don": "#ffab91",
+    "ka": "#a5d6a7",
+    "text": "#1b5e20",
+    "muted": "#81c784",
+    "bg": "linear-gradient(180deg,#c8e6c9,#a5d6a7)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#c8e6c9",
+    "accent": "#4caf50",
+    "onAccent": "#ffffff",
+    "gold": "#d4e157",
+    "border": "rgba(46,125,50,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(1.02)"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "creme-brulee",
+  "label": {
+    "ja": "クレームブリュレ",
+    "en": "Creme Brulee",
+    "zh": "焦糖布丁",
+    "ko": "크렘 브륄레"
+  },
+  "desc": {
+    "ja": "カラメルの表面、ゴールドの輝き",
+    "en": "Caramel surface, golden shine",
+    "zh": "焦糖表面，金色光泽",
+    "ko": "캐러멜 표면, 골드 빛깔"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#ffe082,#ffb74d)",
+    "ink": "#e65100",
+    "don": "#ffd54f",
+    "ka": "#ffe082",
+    "text": "#e65100",
+    "muted": "#ff6f00",
+    "bg": "linear-gradient(180deg,#ffecb3,#ffe082)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#ffecb3",
+    "accent": "#ffa000",
+    "onAccent": "#fff9c4",
+    "gold": "#ffd54f",
+    "border": "rgba(230,81,0,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.15) saturate(1.1) brightness(1.02)"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "poppins",
+  "label": {
+    "ja": "ポピンズ",
+    "en": "Poppins",
+    "zh": "波平斯",
+    "ko": "포핀스"
+  },
+  "desc": {
+    "ja": "インド発の幾何学ゴシック、丸みがかわいい書体",
+    "en": "Indian geometric sans, round and cute",
+    "zh": "印度几何学无衬线体，圆润可爱",
+    "ko": "인도 기하학적 고딕, 둥글고 귀여운 서체"
+  },
+  "cat": [
+    "type",
+    "fun",
+    "light"
+  ],
+  "font": "\"Poppins\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Poppins\",sans-serif",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#fff0f5",
+    "ink": "#2d3436",
+    "don": "#e84393",
+    "ka": "#00cec9",
+    "text": "#2d3436",
+    "muted": "#b2bec3",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#ffe5f0",
+    "accent": "#e84393",
+    "onAccent": "#ffffff",
+    "gold": "#fd79a8",
+    "border": "rgba(45,52,54,.12)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.04) saturate(1.05)"
+}

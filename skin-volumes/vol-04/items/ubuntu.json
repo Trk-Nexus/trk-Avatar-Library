@@ -1,0 +1,52 @@
+{
+  "id": "ubuntu",
+  "label": {
+    "ja": "ウブントゥ",
+    "en": "Ubuntu",
+    "zh": "乌班图",
+    "ko": "우분투"
+  },
+  "desc": {
+    "ja": "Linux ディストリビューションの定番、丸みのある書体",
+    "en": "Linux distribution standard, rounded typeface",
+    "zh": "Linux 发行版标准，圆润字体",
+    "ko": "리눅스 배포판 표준, 둥근 서체"
+  },
+  "cat": [
+    "type",
+    "fun",
+    "light"
+  ],
+  "font": "\"Ubuntu\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Ubuntu\",sans-serif",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "700",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#e3f2fd",
+    "ink": "#1a237e",
+    "don": "#dd2c00",
+    "ka": "#0288d1",
+    "text": "#1a237e",
+    "muted": "#5c6bc0",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#bbdefb",
+    "accent": "#dd2c00",
+    "onAccent": "#ffffff",
+    "gold": "#ffd54f",
+    "border": "rgba(26,35,126,.12)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.03) saturate(1.05)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "noto-sans-jp",
+  "label": {
+    "ja": "ノトサンスJP",
+    "en": "Noto Sans JP",
+    "zh": "思源黑体 JP",
+    "ko": "노토 산스 JP"
+  },
+  "desc": {
+    "ja": "日本語ウェブの定番、バランスの取れた角ゴシック",
+    "en": "Japanese web standard, balanced gothic",
+    "zh": "日语网页标准，均衡的角ゴシック",
+    "ko": "일본어 웹 표준, 균형 잡힌 고딕"
+  },
+  "cat": [
+    "type",
+    "basic"
+  ],
+  "font": "\"Noto Sans JP\",\"Noto Sans CJK JP\",sans-serif",
+  "type": {
+    "title": "\"Noto Sans JP\",sans-serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "700",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#fafafa",
+    "ink": "#1a1a1a",
+    "don": "#d32f2f",
+    "ka": "#1976d2",
+    "text": "#1a1a1a",
+    "muted": "#757575",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#eeeeee",
+    "accent": "#1976d2",
+    "onAccent": "#ffffff",
+    "gold": "#ffa000",
+    "border": "rgba(26,26,26,.12)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.02) brightness(1.01)"
+}

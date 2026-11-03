@@ -1,0 +1,42 @@
+{
+  "id": "daylight",
+  "label": {
+    "ja": "デイライト",
+    "en": "Daylight",
+    "zh": "日光",
+    "ko": "데이라이트"
+  },
+  "desc": {
+    "ja": "明るく見やすいライトテーマ",
+    "en": "Clean, bright light theme",
+    "zh": "明亮清爽的浅色主题",
+    "ko": "밝고 깔끔한 라이트 테마"
+  },
+  "cat": [
+    "basic"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#e6eaf0",
+    "ink": "#1f2433",
+    "don": "#f0384f",
+    "ka": "#2f8cff",
+    "text": "#1f2433",
+    "muted": "#5b6475",
+    "bg": "#eef1f6",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#f3f5f9",
+    "accent": "#e0294a",
+    "onAccent": "#ffffff",
+    "gold": "#c47f00",
+    "border": "rgba(20,30,50,.16)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.25) brightness(1.12)"
+}

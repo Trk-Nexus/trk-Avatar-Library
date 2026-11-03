@@ -1,0 +1,51 @@
+{
+  "id": "house-edge",
+  "label": {
+    "ja": "ハウスエッジ",
+    "en": "House Edge",
+    "zh": "庄家优势",
+    "ko": "하우스 에지"
+  },
+  "desc": {
+    "ja": "カジノの暗い面、ハウスの勝利と絶望",
+    "en": "Casino dark side, house victory and despair",
+    "zh": "赌场的黑暗面，庄家胜利与绝望",
+    "ko": "카지노의 어두운 면, 하우스 승리와 절망"
+  },
+  "cat": [
+    "dark",
+    "access"
+  ],
+  "font": "\"Oswald\",\"Impact\",sans-serif",
+  "type": {
+    "title": "\"Oswald\",sans-serif",
+    "weight": "700",
+    "lh": "1.3",
+    "titleWeight": "800",
+    "titleSpace": "-.03em",
+    "titleTransform": "uppercase",
+    "mark": "HOUSE WINS"
+  },
+  "colors": {
+    "stage": "#1a1a1a",
+    "ink": "#666666",
+    "don": "#ff0040",
+    "ka": "#999999",
+    "text": "#666666",
+    "muted": "#333333",
+    "bg": "#0a0a0a",
+    "panel": "rgba(10,10,10,.99)",
+    "field": "#1a1a1a",
+    "button": "#2a2a2a",
+    "accent": "#ff0040",
+    "onAccent": "#ffffff",
+    "gold": "#999999",
+    "border": "rgba(150,150,150,.18)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.8) contrast(1.3) brightness(.7)"
+}

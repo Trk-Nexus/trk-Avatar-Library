@@ -1,0 +1,44 @@
+{
+  "id": "lanternAlley",
+  "label": {
+    "ja": "提灯横丁",
+    "en": "Lantern Alley",
+    "zh": "提灯横丁",
+    "ko": "등불 골목"
+  },
+  "desc": {
+    "ja": "暖かな提灯の光が並ぶ祭りの夜道",
+    "en": "A festival night street lined with warm lantern lights",
+    "zh": "暖暖提灯光排列的祭夜街道",
+    "ko": "따뜻한 등불이 늘어선 축제 밤길"
+  },
+  "cat": [
+    "life",
+    "fun",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#2a1810,#0f0703)",
+    "ink": "#fff4e6",
+    "don": "#ff5a2e",
+    "ka": "#46c2cb",
+    "text": "#fff4e6",
+    "muted": "#c9ad96",
+    "bg": "linear-gradient(180deg,#0f0703,#060301)",
+    "panel": "rgba(26,10,5,.95)",
+    "field": "#1a0a05",
+    "button": "#2a1810",
+    "accent": "#ff5a2e",
+    "onAccent": "#fff4e6",
+    "gold": "#ffc861",
+    "border": "rgba(255,90,46,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.5) saturate(1.3) hue-rotate(-15deg) brightness(.7) contrast(1.2)"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "wizard-grimoire-umbra",
+  "label": {
+    "ja": "影の魔導書",
+    "en": "Grimoire Umbra",
+    "zh": "影之魔导书",
+    "ko": "그림자의 마도서"
+  },
+  "desc": {
+    "ja": "闇に沈む魔導書、影獣がうごめくページ",
+    "en": "Grimoire sunk in darkness, shadow beasts stir in the pages",
+    "zh": "沉没在黑暗中的魔导书，影兽蠢动的书页",
+    "ko": "어둠에 잠긴 마도서, 그림자 짐승이 꿈틀하는 페이지"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Cinzel\",\"Trajan Pro\",serif",
+  "type": {
+    "title": "\"Cinzel\",serif",
+    "weight": "700",
+    "lh": "1.5",
+    "titleWeight": "800",
+    "titleSpace": ".1em",
+    "titleTransform": "uppercase",
+    "mark": "✧ UMBRA ✧"
+  },
+  "colors": {
+    "stage": "#0a0a12",
+    "ink": "#c8d0e0",
+    "don": "#6b5b95",
+    "ka": "#8b7cb8",
+    "text": "#c8d0e0",
+    "muted": "#9aa0b8",
+    "bg": "#06060c",
+    "panel": "rgba(6,6,12,.97)",
+    "field": "#0a0a12",
+    "button": "#1a1a24",
+    "accent": "#6b5b95",
+    "onAccent": "#ffffff",
+    "gold": "#b8a040",
+    "border": "rgba(107,91,149,.35)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "hue-rotate(240deg) saturate(.9) contrast(1.25) brightness(.85)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "☽",
+    "caret": "#6b5b95",
+    "scan": 0.2,
+    "cursor": "block",
+    "opacity": 0.9,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "wizard-grep",
+  "label": {
+    "ja": "ウィザード・グレップ",
+    "en": "Wizard Grep",
+    "zh": "巫师搜索",
+    "ko": "마법사 검색"
+  },
+  "desc": {
+    "ja": "テキスト検索・マッチ強調・黄色マーカー",
+    "en": "Text search, match highlight, yellow marker",
+    "zh": "文本搜索，匹配高亮，黄色标记",
+    "ko": "텍스트 검색, 일치 강조, 노란색 마커"
+  },
+  "cat": [
+    "wizard",
+    "fun",
+    "access"
+  ],
+  "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+  "type": {
+    "title": "\\\"Courier New\\\",monospace",
+    "weight": "600",
+    "lh": "1.3",
+    "titleWeight": "700",
+    "titleSpace": ".03em",
+    "titleTransform": "uppercase",
+    "mark": "grep"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#f8f8f2",
+    "don": "#ff79c6",
+    "ka": "#bd93f9",
+    "text": "#f8f8f2",
+    "muted": "#bd93f9",
+    "bg": "#0a0a0a",
+    "panel": "#1a1a2e",
+    "field": "#0a0a0a",
+    "button": "#1a1a2e",
+    "accent": "#ffff00",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "rgba(255,255,0,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "saturate(1.4) contrast(1.2) brightness(.9)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "?",
+    "caret": "#ffff00",
+    "scan": 0.1,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  },
+  "cli.font": "Courier New, Courier, monospace"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "wizard-pipe",
+  "label": {
+    "ja": "ウィザード・パイプ",
+    "en": "Wizard Pipe",
+    "zh": "巫师管道",
+    "ko": "마법사 파이프"
+  },
+  "desc": {
+    "ja": "コマンドをつなぐ・矢印・フロー感",
+    "en": "Connecting commands, arrows, flow",
+    "zh": "连接命令，箭头，流程感",
+    "ko": "명령어 연결, 화살표, 흐름감"
+  },
+  "cat": [
+    "wizard",
+    "fun",
+    "grad"
+  ],
+  "font": "Rajdhani, Oswald, sans-serif",
+  "type": {
+    "title": "Rajdhani, sans-serif",
+    "weight": "600",
+    "lh": "1.25",
+    "titleWeight": "700",
+    "titleSpace": "-.01em",
+    "titleTransform": "",
+    "mark": "→"
+  },
+  "colors": {
+    "stage": "#050510",
+    "ink": "#00ffff",
+    "don": "#ff00ff",
+    "ka": "#4a4a6a",
+    "text": "#00ffff",
+    "muted": "#88c0d0",
+    "bg": "#05050a",
+    "panel": "#0a0a1a",
+    "field": "#0a0a10",
+    "button": "#1a1a2a",
+    "accent": "#00ffff",
+    "onAccent": "#000000",
+    "gold": "#ff00ff",
+    "border": "rgba(0,255,255,.35)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(200deg) saturate(1.6) brightness(.75) contrast(1.3)",
+  "cli": {
+    "font": "Rajdhani, Oswald, sans-serif",
+    "prompt": "→",
+    "caret": "#00ffff",
+    "scan": 0.12,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

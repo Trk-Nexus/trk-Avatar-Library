@@ -1,0 +1,52 @@
+{
+  "id": "hacker",
+  "label": {
+    "ja": "ハッカー・ターミナル",
+    "en": "Hacker Terminal",
+    "zh": "黑客终端",
+    "ko": "해커 터미널"
+  },
+  "desc": {
+    "ja": "黒背景緑文字の端末、コマンドライン美学",
+    "en": "Black background green text terminal, command line aesthetics",
+    "zh": "黑色背景绿色文字终端，命令行美学",
+    "ko": "검은 배경 녹색 문자 터미널, 명령줄 미학"
+  },
+  "cat": [
+    "glitch",
+    "dark",
+    "access"
+  ],
+  "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+  "type": {
+    "title": "\\\"Courier New\\\",monospace",
+    "weight": "600",
+    "lh": "1.3",
+    "titleWeight": "700",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "root@trk:~#"
+  },
+  "colors": {
+    "stage": "#000000",
+    "ink": "#00ff00",
+    "don": "#00cc00",
+    "ka": "#333333",
+    "text": "#00ff00",
+    "muted": "#005500",
+    "bg": "#000000",
+    "panel": "rgba(0,0,0,.98)",
+    "field": "#000000",
+    "button": "#0a0a0a",
+    "accent": "#00ff00",
+    "onAccent": "#000000",
+    "gold": "#66ff66",
+    "border": "rgba(0,255,0,.25)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(110deg) saturate(1.4) brightness(.75) contrast(1.25)"
+}

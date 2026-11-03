@@ -1,0 +1,52 @@
+{
+  "id": "rockwell",
+  "label": {
+    "ja": "ロックウェル",
+    "en": "Rockwell",
+    "zh": "ロックウェル",
+    "ko": "록웰"
+  },
+  "desc": {
+    "ja": "スラブセリフ、力強く重厚な書体",
+    "en": "Slab serif, powerful and substantial",
+    "zh": "方体衬线体，有力且厚重",
+    "ko": "슬래브 세리프, 강력하고 중후한 서체"
+  },
+  "cat": [
+    "type",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Rockwell\",\"Courier New\",monospace",
+  "type": {
+    "title": "\"Rockwell\",serif",
+    "weight": "700",
+    "lh": "1.45",
+    "titleWeight": "800",
+    "titleSpace": "-.02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#1a202c",
+    "ink": "#fafafa",
+    "don": "#fc8181",
+    "ka": "#63b3ed",
+    "text": "#fafafa",
+    "muted": "#a0aec0",
+    "bg": "#2d3748",
+    "panel": "rgba(45,55,72,.96)",
+    "field": "#1a202c",
+    "button": "#2d3748",
+    "accent": "#fc8181",
+    "onAccent": "#1a202c",
+    "gold": "#f6e05e",
+    "border": "rgba(255,255,255,.18)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.15) saturate(1.05) brightness(.9)"
+}

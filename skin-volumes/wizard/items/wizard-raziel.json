@@ -1,0 +1,63 @@
+{
+  "id": "wizard-raziel",
+  "label": {
+    "ja": "ラジエルの書",
+    "en": "Book of Raziel",
+    "zh": "拉齐尔之书",
+    "ko": "라지엘의 서"
+  },
+  "desc": {
+    "ja": "天使ラジエルがアダムに授けたとされるカバラ的グリモワール、宇宙の秘密と守護の知識",
+    "en": "Cabalistic grimoire said to be given by Archangel Raziel to Adam, secrets of the universe and protective knowledge",
+    "zh": "据传由大天使拉齐尔赐予亚当的卡巴拉式魔导书，宇宙的奥秘与守护知识",
+    "ko": "천사 라지엘이 아담에게 주었다고 하는 카발라적 그모아르, 우주의 비밀과 보호의 지식"
+  },
+  "cat": [
+    "wizard",
+    "light",
+    "access"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "☿ ☽ ♀"
+  },
+  "colors": {
+    "stage": "#f0f4f8",
+    "ink": "#1a2332",
+    "don": "#d4af37",
+    "ka": "#7aa2f7",
+    "text": "#1a2332",
+    "muted": "#4a6a85",
+    "bg": "#e8edf4",
+    "panel": "rgba(232,237,244,.97)",
+    "field": "#f0f4f8",
+    "button": "#dbe5f0",
+    "accent": "#7aa2f7",
+    "onAccent": "#000000",
+    "gold": "#ffd700",
+    "border": "rgba(122,162,247,.35)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.05) contrast(1.05) brightness(1.05)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "ℜ",
+    "caret": "#7aa2f7",
+    "scan": 0.12,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

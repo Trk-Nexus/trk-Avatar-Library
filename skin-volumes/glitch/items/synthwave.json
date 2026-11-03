@@ -1,0 +1,52 @@
+{
+  "id": "synthwave",
+  "label": {
+    "ja": "シンセウェイブ",
+    "en": "Synthwave",
+    "zh": "合成波",
+    "ko": "신스웨이브"
+  },
+  "desc": {
+    "ja": "80年代レトログリッド、夕焼けと太陽",
+    "en": "80s retro grid, sunset and sun",
+    "zh": "80年代复古网格，日落和太阳",
+    "ko": "80년대 레트로 그리드, 일몰과 태양"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "grad"
+  ],
+  "font": "\\\"Orbitron\\\",\\\"Futura\\\",sans-serif",
+  "type": {
+    "title": "\\\"Orbitron\\\",sans-serif",
+    "weight": "700",
+    "lh": "1.15",
+    "titleWeight": "800",
+    "titleSpace": "-.04em",
+    "titleTransform": "uppercase",
+    "mark": "80s"
+  },
+  "colors": {
+    "stage": "#1a0a2e",
+    "ink": "#ff00ff",
+    "don": "#ffd700",
+    "ka": "#4ecdc4",
+    "text": "#ff00ff",
+    "muted": "#4a2a6a",
+    "bg": "#0f051a",
+    "panel": "rgba(15,5,26,.98)",
+    "field": "#1a0a2e",
+    "button": "#2a1a3e",
+    "accent": "#ff00ff",
+    "onAccent": "#000000",
+    "gold": "#ffd700",
+    "border": "rgba(255,0,255,.35)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(260deg) saturate(1.5) brightness(.8) contrast(1.25)"
+}

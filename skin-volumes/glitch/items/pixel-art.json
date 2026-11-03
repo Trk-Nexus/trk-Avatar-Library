@@ -1,0 +1,52 @@
+{
+  "id": "pixel-art",
+  "label": {
+    "ja": "ピクセルアート",
+    "en": "Pixel Art",
+    "zh": "像素艺术",
+    "ko": "픽셀 아트"
+  },
+  "desc": {
+    "ja": "ドット絵キャラ、クラシックゲーム画面",
+    "en": "Dot art characters, classic game screen",
+    "zh": "点阵画角色，经典游戏画面",
+    "ko": "도트 아트 캐릭터, 클래식 게임 화면"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "light"
+  ],
+  "font": "\\\"Press Start 2P\\\",\\\"Courier New\\\",monospace",
+  "type": {
+    "title": "\\\"Press Start 2P\\\",monospace",
+    "weight": "400",
+    "lh": "1.25",
+    "titleWeight": "700",
+    "titleSpace": ".04em",
+    "titleTransform": "uppercase",
+    "mark": "PX"
+  },
+  "colors": {
+    "stage": "#f0f0f0",
+    "ink": "#1a1a1a",
+    "don": "#ff0000",
+    "ka": "#888888",
+    "text": "#1a1a1a",
+    "muted": "#cccccc",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#e0e0e0",
+    "accent": "#ff0000",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(255,0,0,.20)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "saturate(1.2) contrast(1.15) brightness(1.02)"
+}

@@ -1,0 +1,824 @@
+{
+  "format": "trk-avatar-library-skins",
+  "version": 1,
+  "count": 16,
+  "skins": [
+    {
+      "id": "nebula",
+      "label": {
+        "ja": "星雲",
+        "en": "Nebula",
+        "zh": "星云",
+        "ko": "성운"
+      },
+      "desc": {
+        "ja": "ガスと塵のカラフルな星雲、星の誕生の場",
+        "en": "Colorful gas and dust nebula, birthplace of stars",
+        "zh": "色彩缤纷的气体和尘埃星云，恒星诞生之地",
+        "ko": "컬러풀한 가스와 먼지 성운, 별의 탄생지"
+      },
+      "cat": [
+        "grad",
+        "fun",
+        "light"
+      ],
+      "font": "\"Orbitron\",\"Rajdhani\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Orbitron\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "700",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#667eea,#764ba2,#f093fb,#f5576c)",
+        "ink": "#ffffff",
+        "don": "#ffd700",
+        "ka": "#00d2ff",
+        "text": "#ffffff",
+        "muted": "#a8b8d0",
+        "bg": "linear-gradient(180deg,#0f0c29,#302b63,#24243e)",
+        "panel": "rgba(15,12,41,.96)",
+        "field": "#1a1a2e",
+        "button": "#16213e",
+        "accent": "#00d2ff",
+        "onAccent": "#000000",
+        "gold": "#ffd700",
+        "border": "rgba(0,210,255,.28)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.3) hue-rotate(30deg) brightness(.9) contrast(1.15)"
+    },
+    {
+      "id": "black-hole",
+      "label": {
+        "ja": "ブラックホール",
+        "en": "Black Hole",
+        "zh": "黑洞",
+        "ko": "블랙홀"
+      },
+      "desc": {
+        "ja": "光を吸い込む究極のダーク、事件の地平線",
+        "en": "Ultimate dark absorbing light, event horizon",
+        "zh": "吸收光的究极深色，事件视界",
+        "ko": "빛을 흡수하는究极 다크, 사건의 지평선"
+      },
+      "cat": [
+        "dark",
+        "access"
+      ],
+      "font": "\"Rajdhani\",\"Oswald\",sans-serif",
+      "type": {
+        "title": "\"Rajdhani\",sans-serif",
+        "weight": "400",
+        "lh": "1.4",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#000000",
+        "ink": "#e0e0e0",
+        "don": "#ff0040",
+        "ka": "#00ff88",
+        "text": "#e0e0e0",
+        "muted": "#404040",
+        "bg": "#050505",
+        "panel": "rgba(5,5,5,.99)",
+        "field": "#000000",
+        "button": "#101010",
+        "accent": "#00ff88",
+        "onAccent": "#000000",
+        "gold": "#ff0040",
+        "border": "#ffffff"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "grayscale(1) brightness(.55) contrast(1.5)"
+    },
+    {
+      "id": "supernova",
+      "label": {
+        "ja": "超新星",
+        "en": "Supernova",
+        "zh": "超新星",
+        "ko": "초신성"
+      },
+      "desc": {
+        "ja": "星の大爆発、壮絶な光と熱の放出",
+        "en": "Stellar great explosion, magnificent light and heat release",
+        "zh": "恒星大爆发，壮烈的光与热释放",
+        "ko": "별의 대폭발, 장엄한 빛과 열 방출"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "\"Impact\",\"Haettenschweiler\",sans-serif",
+      "type": {
+        "title": "\"Impact\",sans-serif",
+        "weight": "900",
+        "lh": "1.1",
+        "titleWeight": "900",
+        "titleSpace": "-.05em",
+        "titleTransform": "uppercase",
+        "mark": "BOOM"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#ff4b1f,#ff9068,#ffffff)",
+        "ink": "#ffffff",
+        "don": "#ff4b1f",
+        "ka": "#4ecdc4",
+        "text": "#ffffff",
+        "muted": "#ff9068",
+        "bg": "linear-gradient(180deg,#1a0a0a,#4a0a0a)",
+        "panel": "rgba(26,10,10,.97)",
+        "field": "#2a0f0f",
+        "button": "#4a1a1a",
+        "accent": "#ff4b1f",
+        "onAccent": "#ffffff",
+        "gold": "#ffd700",
+        "border": "rgba(255,75,31,.32)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "saturate(1.5) brightness(1.05) contrast(1.2)"
+    },
+    {
+      "id": "pulsar",
+      "label": {
+        "ja": "パルサー",
+        "en": "Pulsar",
+        "zh": "脉冲星",
+        "ko": "펄사"
+      },
+      "desc": {
+        "ja": "回転する電波の点滅、規則的な光のパルス",
+        "en": "Rotating radio wave flashing, regular light pulse",
+        "zh": "旋转无线电闪烁，规律光脉冲",
+        "ko": "회전하는 전파 점멸, 규칙적인 빛 펄스"
+      },
+      "cat": [
+        "grad",
+        "fun"
+      ],
+      "font": "\"Orbitron\",\"Futura\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Orbitron\",sans-serif",
+        "weight": "700",
+        "lh": "1.2",
+        "titleWeight": "900",
+        "titleSpace": "-.04em",
+        "titleTransform": "uppercase",
+        "mark": "PULSE"
+      },
+      "colors": {
+        "stage": "#0a0a1a",
+        "ink": "#00ffff",
+        "don": "#ff00ff",
+        "ka": "#00ffcc",
+        "text": "#00ffff",
+        "muted": "#404060",
+        "bg": "#000000",
+        "panel": "rgba(10,10,26,.98)",
+        "field": "#0a0a1a",
+        "button": "#1a1a2a",
+        "accent": "#00ffff",
+        "onAccent": "#000000",
+        "gold": "#ffff00",
+        "border": "rgba(0,255,255,.30)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "hue-rotate(180deg) saturate(1.6) brightness(.75) contrast(1.3)"
+    },
+    {
+      "id": "quasar",
+      "label": {
+        "ja": "クエーサー",
+        "en": "Quasar",
+        "zh": "类星体",
+        "ko": "퀘이사"
+      },
+      "desc": {
+        "ja": "遠方宇宙の超高エネルギー、活動銀河核",
+        "en": "Distant universe ultra-high energy, active galactic nucleus",
+        "zh": "远方宇宙超高能量，活跃星系核",
+        "ko": "먼 우주의 초고에너지, 활동은하핵"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "\"Trajan Pro\",\"Papyrus\",fantasy",
+      "type": {
+        "title": "\"Trajan Pro\",fantasy",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".04em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#2c003e,#000000,#2c003e)",
+        "ink": "#e0e7ff",
+        "don": "#bb86fc",
+        "ka": "#03dac6",
+        "text": "#e0e7ff",
+        "muted": "#a8a8b8",
+        "bg": "#000000",
+        "panel": "rgba(0,0,0,.99)",
+        "field": "#0d0b1e",
+        "button": "#1a0f2a",
+        "accent": "#bb86fc",
+        "onAccent": "#000000",
+        "gold": "#03dac6",
+        "border": "rgba(187,134,252,.30)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "hue-rotate(270deg) saturate(1.4) brightness(.8) contrast(1.2)"
+    },
+    {
+      "id": "event-horizon",
+      "label": {
+        "ja": "事象の地平線",
+        "en": "Event Horizon",
+        "zh": "事件视界",
+        "ko": "사건의 지평선"
+      },
+      "desc": {
+        "ja": "回復不能な境界線、ブラックホールの端",
+        "en": "Irrecoverable boundary line, edge of black hole",
+        "zh": "无法恢复的边界线，黑洞边缘",
+        "ko": "복구할 수 없는 경계선, 블랙홀 가장자리"
+      },
+      "cat": [
+        "dark",
+        "access"
+      ],
+      "font": "\"Oswald\",\"Impact\",sans-serif",
+      "type": {
+        "title": "\"Oswald\",sans-serif",
+        "weight": "700",
+        "lh": "1.3",
+        "titleWeight": "800",
+        "titleSpace": "-.03em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#e0e0e0",
+        "don": "#d4af37",
+        "ka": "#bdc3c7",
+        "text": "#e0e0e0",
+        "muted": "#666666",
+        "bg": "#050505",
+        "panel": "rgba(10,10,10,.99)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#d4af37",
+        "onAccent": "#050505",
+        "gold": "#ffd700",
+        "border": "rgba(189,195,199,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.7) contrast(1.25) brightness(.75)"
+    },
+    {
+      "id": "dark-matter",
+      "label": {
+        "ja": "ダークマター",
+        "en": "Dark Matter",
+        "zh": "暗物质",
+        "ko": "다크 매터"
+      },
+      "desc": {
+        "ja": "見えない物質の気配、宇宙を支配する闇",
+        "en": "Invisible matter presence, darkness ruling universe",
+        "zh": "不可见物质的气息，统治宇宙的黑暗",
+        "ko": "보이지 않는 물질의 기세, 우주를 지배하는 어둠"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "\"Rajdhani\",\"Oswald\",sans-serif",
+      "type": {
+        "title": "\"Rajdhani\",sans-serif",
+        "weight": "400",
+        "lh": "1.4",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a0b2e",
+        "ink": "#ccd6f6",
+        "don": "#64ffda",
+        "ka": "#8892b0",
+        "text": "#ccd6f6",
+        "muted": "#4f5b7a",
+        "bg": "#0d0b1e",
+        "panel": "rgba(13,11,30,.97)",
+        "field": "#1a0b2e",
+        "button": "#2a163e",
+        "accent": "#64ffda",
+        "onAccent": "#0d0b1e",
+        "gold": "#ccd6f6",
+        "border": "rgba(100,255,218,.28)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "hue-rotate(200deg) saturate(1.2) brightness(.85) contrast(1.15)"
+    },
+    {
+      "id": "wormhole",
+      "label": {
+        "ja": "ワームホール",
+        "en": "Wormhole",
+        "zh": "虫洞",
+        "ko": "웜홀"
+      },
+      "desc": {
+        "ja": "時空のトンネル、別の宇宙への扉",
+        "en": "Spacetime tunnel, door to another universe",
+        "zh": "时空隧道，通往另一个宇宙的门",
+        "ko": "시공간 터널, 또 다른 우주로 가는 문"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "\"Caveat\",\"Komodo Axis\",cursive",
+      "type": {
+        "title": "\"Caveat\",cursive",
+        "weight": "400",
+        "lh": "1.4",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#1a0f2e,#0e2233,#0e2e22,#2e2a0c,#33101f)",
+        "ink": "#f4f2ff",
+        "don": "#ff6b9d",
+        "ka": "#a29bfe",
+        "text": "#f4f2ff",
+        "muted": "#b0aecb",
+        "bg": "linear-gradient(180deg,#241539,#123041,#153829,#38300f,#3b1526)",
+        "panel": "rgba(18,16,32,.94)",
+        "field": "#151126",
+        "button": "#201a35",
+        "accent": "#f0eeff",
+        "onAccent": "#241a3a",
+        "gold": "#ffd166",
+        "border": "rgba(255,255,255,.22)"
+      },
+      "shapes": [
+        "circle",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "saturate(1.4) contrast(1.2) brightness(.75) hue-rotate(30deg)"
+    },
+    {
+      "id": "exoplanet",
+      "label": {
+        "ja": "系外惑星",
+        "en": "Exoplanet",
+        "zh": "系外行星",
+        "ko": "계외 행성"
+      },
+      "desc": {
+        "ja": "未知の惑星表面、異星の風景",
+        "en": "Unknown planet surface, alien landscape",
+        "zh": "未知行星表面，异星风景",
+        "ko": "알 수 없는 행성 표면, 이질 풍경"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "\"Montserrat\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Montserrat\",sans-serif",
+        "weight": "400",
+        "lh": "1.55",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#8e9eab,#eef2f3)",
+        "ink": "#2c3e50",
+        "don": "#e74c3c",
+        "ka": "#3498db",
+        "text": "#2c3e50",
+        "muted": "#7f8c8d",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#d5dbdb",
+        "accent": "#3498db",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(52,152,219,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.03) contrast(1.01)"
+    },
+    {
+      "id": "asteroid-belt",
+      "label": {
+        "ja": "小惑星帯",
+        "en": "Asteroid Belt",
+        "zh": "小行星带",
+        "ko": "소행성대"
+      },
+      "desc": {
+        "ja": "宇宙の破片の集積、岩だらけの帯域",
+        "en": "Collection of space debris, rock-filled belt",
+        "zh": "宇宙碎片的集成，岩石遍布的带状区域",
+        "ko": "우주 파편의 집적, 암석으로 가득한 지대"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "\"Caslon\",\"Garamond\",serif",
+      "type": {
+        "title": "\"Caslon\",serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#4a3728",
+        "ink": "#efe6d4",
+        "don": "#d4af37",
+        "ka": "#8c9eac",
+        "text": "#efe6d4",
+        "muted": "#8c8074",
+        "bg": "#2c241d",
+        "panel": "rgba(74,55,40,.96)",
+        "field": "#3a3028",
+        "button": "#4a3728",
+        "accent": "#d4af37",
+        "onAccent": "#2c241d",
+        "gold": "#e3c089",
+        "border": "rgba(227,192,137,.25)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.35) contrast(1.05) brightness(.9)"
+    },
+    {
+      "id": "solar-flare",
+      "label": {
+        "ja": "太陽フレア",
+        "en": "Solar Flare",
+        "zh": "太阳耀斑",
+        "ko": "태양 플레어"
+      },
+      "desc": {
+        "ja": "太陽表面の爆発、激しい光と熱の放出",
+        "en": "Solar surface explosion, intense light and heat release",
+        "zh": "太阳表面爆发，强烈的光与热释放",
+        "ko": "태양 표면 폭발, 강한 빛과 열 방출"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "\"Futura\",\"Avant Garde\",sans-serif",
+      "type": {
+        "title": "\"Futura\",sans-serif",
+        "weight": "700",
+        "lh": "1.2",
+        "titleWeight": "900",
+        "titleSpace": "-.05em",
+        "titleTransform": "uppercase",
+        "mark": "FLARE"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#ff6b00,#ffa500,#ffff00)",
+        "ink": "#ffffff",
+        "don": "#ff4500",
+        "ka": "#ffd700",
+        "text": "#ffffff",
+        "muted": "#ff8c00",
+        "bg": "linear-gradient(180deg,#4a0a00,#1a0a00)",
+        "panel": "rgba(74,10,0,.97)",
+        "field": "#2a0500",
+        "button": "#4a0a00",
+        "accent": "#ff4500",
+        "onAccent": "#ffffff",
+        "gold": "#ffff00",
+        "border": "rgba(255,69,0,.32)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.2) saturate(1.4) hue-rotate(-10deg) brightness(1.05) contrast(1.15)"
+    },
+    {
+      "id": "lunar-surface",
+      "label": {
+        "ja": "月面",
+        "en": "Lunar Surface",
+        "zh": "月面",
+        "ko": "달 표면"
+      },
+      "desc": {
+        "ja": "クレーターだらけの灰色、静寂の月",
+        "en": "Crater-filled gray, silent moon",
+        "zh": "陨石坑遍布的灰色，寂静的月球",
+        "ko": "분화구 투성이의 회색, 고요한 달"
+      },
+      "cat": [
+        "light",
+        "access"
+      ],
+      "font": "\"Inter\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Inter\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#d3d3d3",
+        "ink": "#2c3e50",
+        "don": "#95a5a6",
+        "ka": "#7f8c8d",
+        "text": "#2c3e50",
+        "muted": "#95a5a6",
+        "bg": "#bdc3c7",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#ecf0f1",
+        "accent": "#7f8c8d",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(128,128,128,.20)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.1) contrast(1.1) brightness(1.05)"
+    },
+    {
+      "id": "martian-red",
+      "label": {
+        "ja": "火星赤",
+        "en": "Martian Red",
+        "zh": "火星红",
+        "ko": "화성 빨강"
+      },
+      "desc": {
+        "ja": "鉄分の赤い砂漠、惑星表面の赤",
+        "en": "Iron-rich red desert, planet surface red",
+        "zh": "富铁的红色沙漠，行星表面的红",
+        "ko": "철분이 많은 빨간 사막, 행성 표면의 빨강"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "\"Papyrus\",\"Papyrus Custom\",fantasy",
+      "type": {
+        "title": "\"Papyrus\",fantasy",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".04em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#c1440e",
+        "ink": "#fffdf0",
+        "don": "#e65100",
+        "ka": "#d4af37",
+        "text": "#fffdf0",
+        "muted": "#e65100",
+        "bg": "#8e2f0a",
+        "panel": "rgba(193,68,14,.96)",
+        "field": "#c1440e",
+        "button": "#a03309",
+        "accent": "#d4af37",
+        "onAccent": "#8e2f0a",
+        "gold": "#ffe082",
+        "border": "rgba(230,81,0,.24)"
+      },
+      "shapes": [
+        "circle",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.4) contrast(1.1) brightness(.95)"
+    },
+    {
+      "id": "venus-clouds",
+      "label": {
+        "ja": "金星雲",
+        "en": "Venus Clouds",
+        "zh": "金星云",
+        "ko": "금성 구름"
+      },
+      "desc": {
+        "ja": "有毒な黄色い雲、金星の厚い大気",
+        "en": "Toxic yellow clouds, thick Venus atmosphere",
+        "zh": "有毒的黄色云，金星厚大气层",
+        "ko": "독성이 있는 노란 구름, 금성의 두꺼운 대기"
+      },
+      "cat": [
+        "grad",
+        "light"
+      ],
+      "font": "\"Garamond\",\"Baskerville\",serif",
+      "type": {
+        "title": "\"Garamond\",serif",
+        "weight": "400",
+        "lh": "1.65",
+        "titleWeight": "600",
+        "titleSpace": ".04em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffd700,#ffa500,#ffff00)",
+        "ink": "#4a3728",
+        "don": "#d4af37",
+        "ka": "#8c9eac",
+        "text": "#4a3728",
+        "muted": "#8c8074",
+        "bg": "linear-gradient(180deg,#ffff00,#ffa500)",
+        "panel": "rgba(255,255,0,.96)",
+        "field": "#fffef5",
+        "button": "#e8dec7",
+        "accent": "#d4af37",
+        "onAccent": "#4a3728",
+        "gold": "#ffe082",
+        "border": "rgba(212,175,55,.20)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.3) saturate(1.2) brightness(1.02)"
+    },
+    {
+      "id": "mercury-core",
+      "label": {
+        "ja": "水星コア",
+        "en": "Mercury Core",
+        "zh": "水星核心",
+        "ko": "수성 코어"
+      },
+      "desc": {
+        "ja": "灼熱の惑星コア、鉄とニッケルの融合",
+        "en": "Scorching planet core, iron and nickel fusion",
+        "zh": "灼热行星核心，铁和镍的融合",
+        "ko": "뜨거운 행성 코어, 철과 니켈의 융합"
+      },
+      "cat": [
+        "dark",
+        "access"
+      ],
+      "font": "\"Oswald\",\"Rajdhani\",sans-serif",
+      "type": {
+        "title": "\"Oswald\",sans-serif",
+        "weight": "700",
+        "lh": "1.3",
+        "titleWeight": "800",
+        "titleSpace": "-.03em",
+        "titleTransform": "uppercase",
+        "mark": "CORE"
+      },
+      "colors": {
+        "stage": "#2a2a2a",
+        "ink": "#e0e0e0",
+        "don": "#ffd700",
+        "ka": "#bdc3c7",
+        "text": "#e0e0e0",
+        "muted": "#666666",
+        "bg": "#1a1a1a",
+        "panel": "rgba(42,42,42,.98)",
+        "field": "#2a2a2a",
+        "button": "#3a3a3a",
+        "accent": "#ffd700",
+        "onAccent": "#1a1a1a",
+        "gold": "#ffe082",
+        "border": "rgba(189,195,199,.20)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "grayscale(.5) contrast(1.2) brightness(.8)"
+    },
+    {
+      "id": "cosmic-dust",
+      "label": {
+        "ja": "宇宙塵",
+        "en": "Cosmic Dust",
+        "zh": "宇宙尘埃",
+        "ko": "우주 먼지"
+      },
+      "desc": {
+        "ja": "星間物質のきらめき、微細な粒子の舞い",
+        "en": "Interstellar matter shimmer, fine particles dancing",
+        "zh": "星际物质的闪烁，细微粒子的舞蹈",
+        "ko": "성간 물질의 반짝임, 미세한 입자의 춤"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "\"Caveat\",\"Komodo Axis\",cursive",
+      "type": {
+        "title": "\"Caveat\",cursive",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f5f5f5",
+        "ink": "#262626",
+        "don": "#d4af37",
+        "ka": "#7f8c8d",
+        "text": "#262626",
+        "muted": "#8c8c8c",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#eaeaea",
+        "accent": "#d4af37",
+        "onAccent": "#ffffff",
+        "gold": "#fffdf0",
+        "border": "rgba(38,38,38,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.08) brightness(1.03)"
+    }
+  ]
+}

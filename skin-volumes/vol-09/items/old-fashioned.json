@@ -1,0 +1,51 @@
+{
+  "id": "old-fashioned",
+  "label": {
+    "ja": "オールドファッション",
+    "en": "Old Fashioned",
+    "zh": "老式鸡尾酒",
+    "ko": "올드 패션드"
+  },
+  "desc": {
+    "ja": "ウイスキーとビターズ、レトロなカクテル",
+    "en": "Whiskey and bitters, retro cocktail",
+    "zh": "威士忌和苦精，复古鸡尾酒",
+    "ko": "위스키와 비터스, 레트로 칵테일"
+  },
+  "cat": [
+    "dark",
+    "basic"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.65",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#3e2723",
+    "ink": "#d7ccc8",
+    "don": "#d4af37",
+    "ka": "#b8860b",
+    "text": "#d7ccc8",
+    "muted": "#a1887f",
+    "bg": "#263238",
+    "panel": "rgba(62,39,35,.97)",
+    "field": "#3e2723",
+    "button": "#4e342e",
+    "accent": "#d4af37",
+    "onAccent": "#263238",
+    "gold": "#ffe082",
+    "border": "rgba(140,158,172,.20)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.4) contrast(1.1) brightness(.85)"
+}

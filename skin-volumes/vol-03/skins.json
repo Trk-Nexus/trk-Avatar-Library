@@ -1,0 +1,827 @@
+{
+  "format": "trk-avatar-library-skins",
+  "version": 1,
+  "count": 16,
+  "skins": [
+    {
+      "id": "helvetica",
+      "label": {
+        "ja": "ヘルベチカ",
+        "en": "Helvetica",
+        "zh": "黑体",
+        "ko": "헤르베티카"
+      },
+      "desc": {
+        "ja": "中立的な書体、明快で機能的なニュートラル",
+        "en": "Neutral typeface, clear and functional",
+        "zh": "中性字体，清晰且功能性强",
+        "ko": "중립적인 서체, 명확하고 기능적"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "",
+      "type": {
+        "title": "system-ui,-apple-system,\"Segoe UI\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "700",
+        "titleSpace": "-.01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f7fafc",
+        "ink": "#2d3748",
+        "don": "#e53e3e",
+        "ka": "#3182ce",
+        "text": "#2d3748",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#edf2f7",
+        "accent": "#3182ce",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(45,55,72,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "brightness(1.02) contrast(1.01)"
+    },
+    {
+      "id": "garamond",
+      "label": {
+        "ja": "ガラモン",
+        "en": "Garamond",
+        "zh": "加拉蒙",
+        "ko": "가라몽"
+      },
+      "desc": {
+        "ja": "クラシックな明朝、上品で落ち着いた書体",
+        "en": "Classic serif, elegant and composed",
+        "zh": "经典衬线体，优雅而沉稳",
+        "ko": "클래식한 명조체, 우아하고 차분한 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",\"Noto Serif CJK JP\",serif",
+      "type": {
+        "title": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",serif",
+        "weight": "400",
+        "lh": "1.8",
+        "titleWeight": "600",
+        "titleSpace": ".04em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#faf5ee",
+        "ink": "#3e2723",
+        "don": "#8d6e63",
+        "ka": "#5d4037",
+        "text": "#3e2723",
+        "muted": "#a1887f",
+        "bg": "#fff8e1",
+        "panel": "rgba(255,248,225,.97)",
+        "field": "#fffef5",
+        "button": "#efe4cc",
+        "accent": "#8d6e63",
+        "onAccent": "#fff8e1",
+        "gold": "#d7ccc8",
+        "border": "rgba(62,39,35,.15)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.12) brightness(1.02)"
+    },
+    {
+      "id": "futura",
+      "label": {
+        "ja": "フューチュラ",
+        "en": "Futura",
+        "zh": "未来体",
+        "ko": "퓨투라"
+      },
+      "desc": {
+        "ja": "幾何学的なゴシック、近未来的でシャープ",
+        "en": "Geometric sans, sharp and near-futuristic",
+        "zh": "几何学无衬线体，锐利且近未来感",
+        "ko": "기하학적 고딕, 근미래적이고 샤프함"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Futura\",\"Avant Garde\",\"ITC AvantGarde Gothic\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Futura\",\"Avant Garde\",sans-serif",
+        "weight": "700",
+        "lh": "1.3",
+        "titleWeight": "900",
+        "titleSpace": "-.04em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#fafafa",
+        "don": "#ff0055",
+        "ka": "#00ffcc",
+        "text": "#fafafa",
+        "muted": "#666666",
+        "bg": "#000000",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#00ffcc",
+        "onAccent": "#000000",
+        "gold": "#ffd700",
+        "border": "rgba(255,255,255,.15)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.15) saturate(1.1) brightness(.9)"
+    },
+    {
+      "id": "bodoni",
+      "label": {
+        "ja": "ボドーニ",
+        "en": "Bodoni",
+        "zh": "博多尼",
+        "ko": "보도니"
+      },
+      "desc": {
+        "ja": "コントラストの強い近代明朝、華やかで気高い",
+        "en": "High-contrast modern serif, gorgeous and noble",
+        "zh": "高对比度现代衬线体，华丽而高贵",
+        "ko": "높은 대비를 가진 현대 명조체, 화려하고 기품 있음"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Didot\",\"Bodoni MT\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Didot\",\"Bodoni MT\",serif",
+        "weight": "300",
+        "lh": "1.6",
+        "titleWeight": "800",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#fafafa",
+        "don": "#c0392b",
+        "ka": "#f1c40f",
+        "text": "#fafafa",
+        "muted": "#bdc3c7",
+        "bg": "#000000",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#c0392b",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(255,255,255,.12)"
+      },
+      "shapes": [
+        "square",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "contrast(1.25) saturate(1.05) brightness(.85)"
+    },
+    {
+      "id": "caslon",
+      "label": {
+        "ja": "キャスロン",
+        "en": "Caslon",
+        "zh": "卡斯隆",
+        "ko": "캐슬론"
+      },
+      "desc": {
+        "ja": "オールドスタイルの衬线、伝統と信頼の書体",
+        "en": "Old-style serif, tradition and reliability",
+        "zh": "旧式衬线体，传统与可靠",
+        "ko": "올드스타일 서체, 전통과 신뢰성"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"ITC Caslon\",\"Caslon\",serif",
+      "type": {
+        "title": "\"ITC Caslon\",\"Caslon\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "600",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f4f1ea",
+        "ink": "#2c241d",
+        "don": "#a5522e",
+        "ka": "#4a5d6a",
+        "text": "#2c241d",
+        "muted": "#8c8074",
+        "bg": "#faf7f2",
+        "panel": "rgba(255,254,248,.97)",
+        "field": "#ffffff",
+        "button": "#eae4d9",
+        "accent": "#a5522e",
+        "onAccent": "#f4f1ea",
+        "gold": "#b8860b",
+        "border": "rgba(44,36,29,.15)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.18) brightness(1.01)"
+    },
+    {
+      "id": "baskerville",
+      "label": {
+        "ja": "バスカービル",
+        "en": "Baskerville",
+        "zh": "巴斯克维尔",
+        "ko": "바스커빌"
+      },
+      "desc": {
+        "ja": "移行期の衬线、均整のとれた美しい書体",
+        "en": "Transitional serif, balanced and beautiful",
+        "zh": "过渡期衬线体，均衡而美丽",
+        "ko": "전이 시기 서체, 균형 잡힌 아름다운 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Baskerville\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Baskerville\",\"Noto Serif JP\",serif",
+        "weight": "400",
+        "lh": "1.65",
+        "titleWeight": "600",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f5f5f0",
+        "ink": "#1a202c",
+        "don": "#c53030",
+        "ka": "#2b6cb0",
+        "text": "#1a202c",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#edf2f7",
+        "accent": "#2b6cb0",
+        "onAccent": "#ffffff",
+        "gold": "#d69e2e",
+        "border": "rgba(26,32,44,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.05) brightness(1.01)"
+    },
+    {
+      "id": "gill-sans",
+      "label": {
+        "ja": "ギルサンド",
+        "en": "Gill Sans",
+        "zh": "吉尔桑",
+        "ko": "길 산스"
+      },
+      "desc": {
+        "ja": "ヒューマニスト・ゴシック、人間味あふれる書体",
+        "en": "Humanist sans, warm and human",
+        "zh": "人本主义无衬线体，温暖且亲切",
+        "ko": "휴먼체 고딕, 따뜻하고 인간미 넘치는 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Gill Sans\",\"Gill Sans MT\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Gill Sans\",sans-serif",
+        "weight": "400",
+        "lh": "1.55",
+        "titleWeight": "700",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#e3f2fd",
+        "ink": "#1a237e",
+        "don": "#d32f2f",
+        "ka": "#0288d1",
+        "text": "#1a237e",
+        "muted": "#5c6bc0",
+        "bg": "#bbdefb",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#c5cae9",
+        "accent": "#0288d1",
+        "onAccent": "#ffffff",
+        "gold": "#fff176",
+        "border": "rgba(26,35,126,.15)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "brightness(1.03) saturate(.95)"
+    },
+    {
+      "id": "din",
+      "label": {
+        "ja": "DIN",
+        "en": "DIN",
+        "zh": "DIN体",
+        "ko": "DIN체"
+      },
+      "desc": {
+        "ja": "工業的なゴシック、機能的で無駄のない書体",
+        "en": "Industrial sans, functional and waste-free",
+        "zh": "工业无衬线体，功能性强且简洁",
+        "ko": "산업용 고딕, 기능적이고 낭비 없는 서체"
+      },
+      "cat": [
+        "type",
+        "dark"
+      ],
+      "font": "\"DIN Alternate\",\"DIN\",system-ui,sans-serif",
+      "type": {
+        "title": "\"DIN Alternate\",\"DIN\",sans-serif",
+        "weight": "700",
+        "lh": "1.4",
+        "titleWeight": "800",
+        "titleSpace": "-.02em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a202c",
+        "ink": "#fafafa",
+        "don": "#f56565",
+        "ka": "#4299e1",
+        "text": "#fafafa",
+        "muted": "#a0aec0",
+        "bg": "#2d3748",
+        "panel": "rgba(45,55,72,.96)",
+        "field": "#1a202c",
+        "button": "#2d3748",
+        "accent": "#4299e1",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(255,255,255,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.1) brightness(.9)"
+    },
+    {
+      "id": "univers",
+      "label": {
+        "ja": "ユニバース",
+        "en": "Univers",
+        "zh": "宇宙体",
+        "ko": "유니버스"
+      },
+      "desc": {
+        "ja": "新グロテスク、調和のとれたモダンな書体",
+        "en": "Neo-grotesque sans, harmonious and modern",
+        "zh": "新怪诞体，和谐而现代",
+        "ko": "신그로테스크, 조화롭고 현대적인 서체"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "system-ui,-apple-system,sans-serif",
+      "type": {
+        "title": "system-ui,-apple-system,sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#edf2f7",
+        "ink": "#2d3748",
+        "don": "#e53e3e",
+        "ka": "#3182ce",
+        "text": "#2d3748",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#e2e8f0",
+        "accent": "#3182ce",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(45,55,72,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.02) brightness(1.01)"
+    },
+    {
+      "id": "frutiger",
+      "label": {
+        "ja": "フルティガ",
+        "en": "Frutiger",
+        "zh": "佛鲁迪杰",
+        "ko": "루티거"
+      },
+      "desc": {
+        "ja": "看板用のヒューマニスト、視認性と開放感",
+        "en": "Humanist sans, legibility and openness",
+        "zh": "人本主义无衬线体，可读性和开放感",
+        "ko": "간판용 휴먼체, 가독성과 개방감"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Frutiger\",\"Frutiger LT\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Frutiger\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#e6fffa",
+        "ink": "#1a202c",
+        "don": "#fc8181",
+        "ka": "#4299e1",
+        "text": "#1a202c",
+        "muted": "#718096",
+        "bg": "#c3e6e6",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#bee3e8",
+        "accent": "#4299e1",
+        "onAccent": "#ffffff",
+        "gold": "#faf089",
+        "border": "rgba(26,32,44,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "brightness(1.04) contrast(.98)"
+    },
+    {
+      "id": "optima",
+      "label": {
+        "ja": "オプティマ",
+        "en": "Optima",
+        "zh": "奥普蒂玛",
+        "ko": "옵티마"
+      },
+      "desc": {
+        "ja": "セリフとサンセリフの間、柔らかな書体",
+        "en": "Between serif and sans, soft and balanced",
+        "zh": "介于衬线与无衬线之间，柔和平衡",
+        "ko": "세리프와 산세리프 사이, 부드럽고 균형 잡힌 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Optima\",\"URW Palladio\",serif",
+      "type": {
+        "title": "\"Optima\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "600",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fafafa",
+        "ink": "#2d3436",
+        "don": "#d63031",
+        "ka": "#0984e3",
+        "text": "#2d3436",
+        "muted": "#636e72",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#dfe6e9",
+        "accent": "#0984e3",
+        "onAccent": "#ffffff",
+        "gold": "#fdcb6e",
+        "border": "rgba(45,52,54,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.03) brightness(1.01)"
+    },
+    {
+      "id": "rockwell",
+      "label": {
+        "ja": "ロックウェル",
+        "en": "Rockwell",
+        "zh": "ロックウェル",
+        "ko": "록웰"
+      },
+      "desc": {
+        "ja": "スラブセリフ、力強く重厚な書体",
+        "en": "Slab serif, powerful and substantial",
+        "zh": "方体衬线体，有力且厚重",
+        "ko": "슬래브 세리프, 강력하고 중후한 서체"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Rockwell\",\"Courier New\",monospace",
+      "type": {
+        "title": "\"Rockwell\",serif",
+        "weight": "700",
+        "lh": "1.45",
+        "titleWeight": "800",
+        "titleSpace": "-.02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a202c",
+        "ink": "#fafafa",
+        "don": "#fc8181",
+        "ka": "#63b3ed",
+        "text": "#fafafa",
+        "muted": "#a0aec0",
+        "bg": "#2d3748",
+        "panel": "rgba(45,55,72,.96)",
+        "field": "#1a202c",
+        "button": "#2d3748",
+        "accent": "#fc8181",
+        "onAccent": "#1a202c",
+        "gold": "#f6e05e",
+        "border": "rgba(255,255,255,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.15) saturate(1.05) brightness(.9)"
+    },
+    {
+      "id": "copperplate",
+      "label": {
+        "ja": "カッパープレート",
+        "en": "Copperplate",
+        "zh": "铜版印刷",
+        "ko": "코퍼플레이트"
+      },
+      "desc": {
+        "ja": "銅版彫刻のような大文字、格調高い書体",
+        "en": "Engraved capitals, distinguished and formal",
+        "zh": "铜版雕刻风格的大写，高雅而正式",
+        "ko": "구리판 조각 같은 대문자, 고상하고 정중한 서체"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Copperplate\",\"Papyrus\",fantasy",
+      "type": {
+        "title": "\"Copperplate\",fantasy",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".05em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a1a1a",
+        "ink": "#d4c5a8",
+        "don": "#d65a31",
+        "ka": "#8c9eac",
+        "text": "#d4c5a8",
+        "muted": "#8c8272",
+        "bg": "#121212",
+        "panel": "rgba(18,18,18,.97)",
+        "field": "#1a1a1a",
+        "button": "#2a2a2a",
+        "accent": "#d65a31",
+        "onAccent": "#121212",
+        "gold": "#e3c089",
+        "border": "rgba(212,197,168,.25)"
+      },
+      "shapes": [
+        "square",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "sepia(.3) contrast(1.1) brightness(.85)"
+    },
+    {
+      "id": "didot",
+      "label": {
+        "ja": "ディドー",
+        "en": "Didot",
+        "zh": "迪多",
+        "ko": "디도"
+      },
+      "desc": {
+        "ja": "モダン・ロマンの衬线、シャープで洗練された書体",
+        "en": "Modern romantic serif, sharp and refined",
+        "zh": "现代浪漫衬线体，锐利而精致",
+        "ko": "모던 로맨틱 세리프, 샤프하고 정교한 서체"
+      },
+      "cat": [
+        "type",
+        "dark"
+      ],
+      "font": "\"Didot\",\"Bodoni MT\",serif",
+      "type": {
+        "title": "\"Didot\",serif",
+        "weight": "300",
+        "lh": "1.6",
+        "titleWeight": "800",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#0a0a0a",
+        "ink": "#fafafa",
+        "don": "#e84393",
+        "ka": "#00cec9",
+        "text": "#fafafa",
+        "muted": "#b2bec3",
+        "bg": "#000000",
+        "panel": "rgba(10,10,10,.98)",
+        "field": "#0a0a0a",
+        "button": "#1a1a1a",
+        "accent": "#e84393",
+        "onAccent": "#ffffff",
+        "gold": "#fd79a8",
+        "border": "rgba(255,255,255,.12)"
+      },
+      "shapes": [
+        "square",
+        "diamond"
+      ],
+      "locked": false,
+      "video": "contrast(1.3) saturate(1.1) brightness(.8)"
+    },
+    {
+      "id": "akzidenz",
+      "label": {
+        "ja": "アクシデンツ",
+        "en": "Akzidenz",
+        "zh": "阿克齐登茨",
+        "ko": "악시덴츠"
+      },
+      "desc": {
+        "ja": "グロテスク、無骨で実用的な書体",
+        "en": "Grotesque sans, rugged and practical",
+        "zh": "粗犷无衬线体，粗犷且实用",
+        "ko": "그로테스크, 거칠고 실용적인 서체"
+      },
+      "cat": [
+        "type",
+        "dark"
+      ],
+      "font": "\"Akzidenz-Grotesk\",\"Alternate Gothic\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Akzidenz-Grotesk\",sans-serif",
+        "weight": "400",
+        "lh": "1.45",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a1a1a",
+        "ink": "#e0e0e0",
+        "don": "#ff7675",
+        "ka": "#74b9ff",
+        "text": "#e0e0e0",
+        "muted": "#636e72",
+        "bg": "#0d0d0d",
+        "panel": "rgba(26,26,26,.97)",
+        "field": "#1a1a1a",
+        "button": "#2d2d2d",
+        "accent": "#74b9ff",
+        "onAccent": "#0d0d0d",
+        "gold": "#fdcb6e",
+        "border": "rgba(224,224,224,.15)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.08) brightness(.88)"
+    },
+    {
+      "id": "letterpress",
+      "label": {
+        "ja": "レタープレス",
+        "en": "Letterpress",
+        "zh": "活版印刷",
+        "ko": "레터프레스"
+      },
+      "desc": {
+        "ja": "活版印刷のインク、レトロで温かみのある書体",
+        "en": "Letterpress ink, retro and warm",
+        "zh": "活版印刷油墨，复古而温暖",
+        "ko": "활판 인쇄 잉크, 레트로하고 따뜻한 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Courier New\",\"Courier\",monospace",
+      "type": {
+        "title": "\"Courier New\",monospace",
+        "weight": "400",
+        "lh": "1.75",
+        "titleWeight": "700",
+        "titleSpace": ".1em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#efe6d4",
+        "ink": "#4a3728",
+        "don": "#8d4e2a",
+        "ka": "#5d6d7e",
+        "text": "#4a3728",
+        "muted": "#8c7a63",
+        "bg": "#e3d5c4",
+        "panel": "rgba(255,250,240,.96)",
+        "field": "#fffaf0",
+        "button": "#d7cbbd",
+        "accent": "#8d4e2a",
+        "onAccent": "#efe6d4",
+        "gold": "#b8860b",
+        "border": "rgba(74,55,40,.20)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.35) contrast(1.05) brightness(1.02)"
+    }
+  ]
+}

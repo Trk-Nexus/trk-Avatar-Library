@@ -1,0 +1,52 @@
+{
+  "id": "silver",
+  "label": {
+    "ja": "白銀",
+    "en": "Silver",
+    "zh": "白银",
+    "ko": "은"
+  },
+  "desc": {
+    "ja": "清涼で清純な銀の輝き、月のような静寂",
+    "en": "Cool and pure silver shine, moon-like silence",
+    "zh": "清凉纯净的银光，月光般的静谧",
+    "ko": "시원하고 순수한 은빛, 달빛 같은 정적"
+  },
+  "cat": [
+    "light",
+    "access",
+    "basic"
+  ],
+  "font": "\"Inter\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Inter\",sans-serif",
+    "weight": "400",
+    "lh": "1.55",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#e8eaed",
+    "ink": "#2c3e50",
+    "don": "#bdc3c7",
+    "ka": "#7f8c8d",
+    "text": "#2c3e50",
+    "muted": "#95a5a6",
+    "bg": "#f4f6f7",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#d5dbdb",
+    "accent": "#bdc3c7",
+    "onAccent": "#2c3e50",
+    "gold": "#ecf0f1",
+    "border": "rgba(44,62,80,.12)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.2) contrast(1.05) brightness(1.02)"
+}

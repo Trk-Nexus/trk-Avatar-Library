@@ -1,0 +1,63 @@
+{
+  "id": "wizard-sun-tzu",
+  "label": {
+    "ja": "孫子",
+    "en": "The Art of War",
+    "zh": "孙子兵法",
+    "ko": "손자"
+  },
+  "desc": {
+    "ja": "孫武が著したとされる兵法の最高峰、知略と戦略の極意",
+    "en": "Sun Tzu’s supreme military classic, essence of stratagem and strategy",
+    "zh": "据说孙武著作的兵法最高峰，智略与战略的极意",
+    "ko": "손무가 저술했다고 하는 병법의 최고봉, 지략과 전략의 극의"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "fun"
+  ],
+  "font": "\"KaiTi\",\"SimSun\",serif",
+  "type": {
+    "title": "\"KaiTi\",serif",
+    "weight": "700",
+    "lh": "1.5",
+    "titleWeight": "800",
+    "titleSpace": ".1em",
+    "titleTransform": "",
+    "mark": "孫"
+  },
+  "colors": {
+    "stage": "#1a0a0a",
+    "ink": "#ffd700",
+    "don": "#8b0000",
+    "ka": "#a52a2a",
+    "text": "#ffd700",
+    "muted": "#c08080",
+    "bg": "#100000",
+    "panel": "rgba(16,0,0,.97)",
+    "field": "#1a0a0a",
+    "button": "#3d0000",
+    "accent": "#8b0000",
+    "onAccent": "#ffffff",
+    "gold": "#d4af37",
+    "border": "rgba(139,0,0,.35)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(0deg) saturate(1.4) contrast(1.25) brightness(.85)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "孫",
+    "caret": "#8b0000",
+    "scan": 0.2,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

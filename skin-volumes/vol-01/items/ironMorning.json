@@ -1,0 +1,43 @@
+{
+  "id": "ironMorning",
+  "label": {
+    "ja": "鉄の朝",
+    "en": "Iron Morning",
+    "zh": "铁之晨",
+    "ko": "철의 아침"
+  },
+  "desc": {
+    "ja": "工場地帯の朝、鉄とコンクリートの灰色",
+    "en": "Industrial district morning, gray of iron and concrete",
+    "zh": "工业区的早晨，铁与混凝土的灰色",
+    "ko": "공업 지대의 아침, 철과 콘크리트의 회색"
+  },
+  "cat": [
+    "dark",
+    "access"
+  ],
+  "font": "\"Courier New\",Courier,\"Cascadia Mono\",Consolas,\"Noto Sans Mono\",monospace",
+  "type": null,
+  "colors": {
+    "stage": "#2a2a2a",
+    "ink": "#e0e0e0",
+    "don": "#ffff00",
+    "ka": "#00e5ff",
+    "text": "#e0e0e0",
+    "muted": "#808080",
+    "bg": "#1a1a1a",
+    "panel": "rgba(42,42,42,.98)",
+    "field": "#2a2a2a",
+    "button": "#3a3a3a",
+    "accent": "#ffff00",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "#ffffff"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(1) brightness(.6) contrast(1.4)"
+}

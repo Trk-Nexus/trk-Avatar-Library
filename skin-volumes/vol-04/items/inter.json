@@ -1,0 +1,51 @@
+{
+  "id": "inter",
+  "label": {
+    "ja": "インタ",
+    "en": "Inter",
+    "zh": "间体",
+    "ko": "인터"
+  },
+  "desc": {
+    "ja": "UI/UX デザインの定番、画面に最適化された書体",
+    "en": "UI/UX design standard, screen-optimized",
+    "zh": "UI/UX 设计标准，屏幕优化",
+    "ko": "UI/UX 디자인 표준, 화면 최적화된 서체"
+  },
+  "cat": [
+    "type",
+    "basic"
+  ],
+  "font": "\"Inter\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Inter\",sans-serif",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f8f9fa",
+    "ink": "#1a202c",
+    "don": "#e53e3e",
+    "ka": "#3182ce",
+    "text": "#1a202c",
+    "muted": "#718096",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#edf2f7",
+    "accent": "#3182ce",
+    "onAccent": "#ffffff",
+    "gold": "#f6e05e",
+    "border": "rgba(26,32,44,.12)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.01) brightness(1.01)"
+}

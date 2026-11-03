@@ -1,0 +1,51 @@
+{
+  "id": "dark-matter",
+  "label": {
+    "ja": "ダークマター",
+    "en": "Dark Matter",
+    "zh": "暗物质",
+    "ko": "다크 매터"
+  },
+  "desc": {
+    "ja": "見えない物質の気配、宇宙を支配する闇",
+    "en": "Invisible matter presence, darkness ruling universe",
+    "zh": "不可见物质的气息，统治宇宙的黑暗",
+    "ko": "보이지 않는 물질의 기세, 우주를 지배하는 어둠"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "\"Rajdhani\",\"Oswald\",sans-serif",
+  "type": {
+    "title": "\"Rajdhani\",sans-serif",
+    "weight": "400",
+    "lh": "1.4",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#1a0b2e",
+    "ink": "#ccd6f6",
+    "don": "#64ffda",
+    "ka": "#8892b0",
+    "text": "#ccd6f6",
+    "muted": "#4f5b7a",
+    "bg": "#0d0b1e",
+    "panel": "rgba(13,11,30,.97)",
+    "field": "#1a0b2e",
+    "button": "#2a163e",
+    "accent": "#64ffda",
+    "onAccent": "#0d0b1e",
+    "gold": "#ccd6f6",
+    "border": "rgba(100,255,218,.28)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "hue-rotate(200deg) saturate(1.2) brightness(.85) contrast(1.15)"
+}

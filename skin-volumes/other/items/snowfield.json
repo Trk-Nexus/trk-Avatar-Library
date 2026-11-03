@@ -1,0 +1,42 @@
+{
+  "id": "snowfield",
+  "label": {
+    "ja": "スノーフィールド",
+    "en": "Snowfield",
+    "zh": "雪原",
+    "ko": "스노필드"
+  },
+  "desc": {
+    "ja": "雪景色のライトテーマ",
+    "en": "Snowy light theme",
+    "zh": "雪景浅色主题",
+    "ko": "눈 풍경 라이트 테마"
+  },
+  "cat": [
+    "basic"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#e8f1f8",
+    "ink": "#1d3550",
+    "don": "#ff5d7a",
+    "ka": "#3a9be0",
+    "text": "#1d3550",
+    "muted": "#566b83",
+    "bg": "#eef5fb",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#f1f6fb",
+    "accent": "#2f8fd8",
+    "onAccent": "#000000",
+    "gold": "#c2477e",
+    "border": "rgba(40,90,140,.18)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.6) brightness(1.1) contrast(1.1) hue-rotate(180deg) saturate(.6)"
+}

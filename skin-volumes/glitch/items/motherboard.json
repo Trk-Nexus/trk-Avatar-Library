@@ -1,0 +1,52 @@
+{
+  "id": "motherboard",
+  "label": {
+    "ja": "マザーボード",
+    "en": "Motherboard",
+    "zh": "主板",
+    "ko": "마더보드"
+  },
+  "desc": {
+    "ja": "回路基板と電子回路、基板緑と金属パッド",
+    "en": "Circuit board and electronic circuits, PCB green and metal pads",
+    "zh": "电路板和电子线路，PCB绿与金属焊盘",
+    "ko": "회로 기판과 전자 회로, PCB 녹색과 금속 패드"
+  },
+  "cat": [
+    "glitch",
+    "dark",
+    "access"
+  ],
+  "font": "\\\"Rajdhani\\\",\\\"Oswald\\\",sans-serif",
+  "type": {
+    "title": "\\\"Rajdhani\\\",sans-serif",
+    "weight": "600",
+    "lh": "1.3",
+    "titleWeight": "800",
+    "titleSpace": "-.01em",
+    "titleTransform": "uppercase",
+    "mark": "M/B"
+  },
+  "colors": {
+    "stage": "#1e3a1e",
+    "ink": "#00ff41",
+    "don": "#b8860b",
+    "ka": "#4a4a4a",
+    "text": "#00ff41",
+    "muted": "#2a4a2a",
+    "bg": "#142214",
+    "panel": "rgba(20,34,20,.97)",
+    "field": "#1e3a1e",
+    "button": "#2a4a2a",
+    "accent": "#00ff41",
+    "onAccent": "#000000",
+    "gold": "#b8860b",
+    "border": "rgba(0,255,65,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(100deg) saturate(1.4) brightness(.85) contrast(1.15)"
+}

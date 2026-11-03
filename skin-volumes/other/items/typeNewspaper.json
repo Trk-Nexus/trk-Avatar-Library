@@ -1,0 +1,51 @@
+{
+  "id": "typeNewspaper",
+  "label": {
+    "ja": "新聞の活字",
+    "en": "Newsprint",
+    "zh": "报纸铅字",
+    "ko": "신문 활자"
+  },
+  "desc": {
+    "ja": "極太の見出しと、詰まった明朝の本文",
+    "en": "Heavy headlines over tight Mincho body text",
+    "zh": "粗黑标题配紧密的明朝正文",
+    "ko": "굵은 제목과 촘촘한 명조 본문"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",\"Noto Serif CJK JP\",\"Noto Serif SC\",\"Noto Serif KR\",serif",
+  "type": {
+    "title": "\"Hiragino Kaku Gothic StdN\",\"Hiragino Sans\",\"Yu Gothic UI\",\"Noto Sans JP\",sans-serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "900",
+    "titleSpace": "-.02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f2efe8",
+    "ink": "#14120e",
+    "don": "#b3261e",
+    "ka": "#12406e",
+    "text": "#14120e",
+    "muted": "#4e4a42",
+    "bg": "#f2efe8",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#e8e4da",
+    "accent": "#b3261e",
+    "onAccent": "#ffffff",
+    "gold": "#6b5b1e",
+    "border": "rgba(20,18,14,.28)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.05) saturate(.9)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "roboto",
+  "label": {
+    "ja": "ロボト",
+    "en": "Roboto",
+    "zh": "机器人",
+    "ko": "로보토"
+  },
+  "desc": {
+    "ja": "Material Design の定番、機械的で読みやすい書体",
+    "en": "Material Design standard, mechanical and legible",
+    "zh": "Material Design 标准，机械且易读",
+    "ko": "머티리얼 디자인 표준, 기계적이고 읽기 쉬운 서체"
+  },
+  "cat": [
+    "type",
+    "basic"
+  ],
+  "font": "\"Roboto\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Roboto\",sans-serif",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "500",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#eceff1",
+    "ink": "#212121",
+    "don": "#f44336",
+    "ka": "#2196f3",
+    "text": "#212121",
+    "muted": "#757575",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#cfd8dc",
+    "accent": "#2196f3",
+    "onAccent": "#ffffff",
+    "gold": "#ffc107",
+    "border": "rgba(33,33,33,.12)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.01) brightness(1.01)"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "wizard-abramelin",
+  "label": {
+    "ja": "アブラメリンの書",
+    "en": "Book of Abramelin",
+    "zh": "亚伯拉梅林之书",
+    "ko": "아브라멜린의 서"
+  },
+  "desc": {
+    "ja": "守護聖天使との交信を目的とした白魔術の書、浄化と祈りの儀式",
+    "en": "White magic grimoire for communion with the Holy Guardian Angel, purification and prayer rituals",
+    "zh": "旨在与圣守护天使交流的白魔术之书，净化与祈祷仪式",
+    "ko": "신성 수호천사와의 교신을 목적으로 한 백마술의 서, 정화와 기도 의식"
+  },
+  "cat": [
+    "wizard",
+    "life",
+    "grad"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa"
+  },
+  "colors": {
+    "stage": "#2d3a2a",
+    "ink": "#e8f0e8",
+    "don": "#d4af37",
+    "ka": "#8fbc8f",
+    "text": "#e8f0e8",
+    "muted": "#a8c0a8",
+    "bg": "#223022",
+    "panel": "rgba(34,48,34,.96)",
+    "field": "#2d3a2a",
+    "button": "#4a5d4a",
+    "accent": "#8fbc8f",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(143,188,143,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.15) saturate(1.1) brightness(1.0)",
+  "cli": {
+    "font": "Cinzel, Trajan Pro, serif",
+    "prompt": "👼",
+    "caret": "#8fbc8f",
+    "scan": 0.15,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

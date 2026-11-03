@@ -1,0 +1,63 @@
+{
+  "id": "wizard-liu-tao",
+  "label": {
+    "ja": "六韜",
+    "en": "Six Secret Teachings",
+    "zh": "六韬",
+    "ko": "육도"
+  },
+  "desc": {
+    "ja": "姜太公が文王に伝えたとされる中国最古の軍略書、韜略の六篇",
+    "en": "Chinese military classic attributed to Jiang Taigong, six sections of military strategy",
+    "zh": "据说姜太公传给文王的中国最古老的军略书，六韬六篇",
+    "ko": "강태공이 문왕에 전했다고 하는 중국最古의 군사전략서, 육도 육편"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\"KaiTi\",\"SimSun\",serif",
+  "type": {
+    "title": "\"KaiTi\",serif",
+    "weight": "500",
+    "lh": "1.7",
+    "titleWeight": "700",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "韜"
+  },
+  "colors": {
+    "stage": "#f5efe0",
+    "ink": "#2a241e",
+    "don": "#b8860b",
+    "ka": "#8b4513",
+    "text": "#2a241e",
+    "muted": "#6a5a40",
+    "bg": "#f0e8d8",
+    "panel": "rgba(240,232,216,.97)",
+    "field": "#f5efe0",
+    "button": "#e8e0d0",
+    "accent": "#b8860b",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(184,134,11,.35)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.25) contrast(1.1) brightness(1.05)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "韜",
+    "caret": "#b8860b",
+    "scan": 0.14,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "garamond",
+  "label": {
+    "ja": "ガラモン",
+    "en": "Garamond",
+    "zh": "加拉蒙",
+    "ko": "가라몽"
+  },
+  "desc": {
+    "ja": "クラシックな明朝、上品で落ち着いた書体",
+    "en": "Classic serif, elegant and composed",
+    "zh": "经典衬线体，优雅而沉稳",
+    "ko": "클래식한 명조체, 우아하고 차분한 서체"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",\"Noto Serif CJK JP\",serif",
+  "type": {
+    "title": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",serif",
+    "weight": "400",
+    "lh": "1.8",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#faf5ee",
+    "ink": "#3e2723",
+    "don": "#8d6e63",
+    "ka": "#5d4037",
+    "text": "#3e2723",
+    "muted": "#a1887f",
+    "bg": "#fff8e1",
+    "panel": "rgba(255,248,225,.97)",
+    "field": "#fffef5",
+    "button": "#efe4cc",
+    "accent": "#8d6e63",
+    "onAccent": "#fff8e1",
+    "gold": "#d7ccc8",
+    "border": "rgba(62,39,35,.15)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.12) brightness(1.02)"
+}

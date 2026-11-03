@@ -1,0 +1,51 @@
+{
+  "id": "kir-royale",
+  "label": {
+    "ja": "キールロワイヤル",
+    "en": "Kir Royale",
+    "zh": "基尔皇家",
+    "ko": "키르 로얄"
+  },
+  "desc": {
+    "ja": "シャンパンとカシス、紫色の祝勝",
+    "en": "Champagne and cassis, purple celebration",
+    "zh": "香槟和黑加仑，紫色庆祝",
+    "ko": "샴페인과 카시스, 보라색 승리 축하"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "700",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#e1bee7,#f3e5f5)",
+    "ink": "#4a148c",
+    "don": "#ce93d8",
+    "ka": "#b39ddb",
+    "text": "#4a148c",
+    "muted": "#9c27b0",
+    "bg": "linear-gradient(180deg,#f3e5f5,#e1bee7)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#e1bee7",
+    "accent": "#ab47bc",
+    "onAccent": "#ffffff",
+    "gold": "#f3e5f5",
+    "border": "rgba(171,71,188,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(1.05)"
+}

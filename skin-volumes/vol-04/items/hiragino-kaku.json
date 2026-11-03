@@ -1,0 +1,51 @@
+{
+  "id": "hiragino-kaku",
+  "label": {
+    "ja": "ヒラギノ角ゴ",
+    "en": "Hiragino Kaku Gothic",
+    "zh": "椿圆角ゴシック",
+    "ko": "히라기노 각 고딕"
+  },
+  "desc": {
+    "ja": "macOS の定番、丸みを帯びた上品な角ゴシック",
+    "en": "macOS standard, rounded elegant gothic",
+    "zh": "macOS 标准，圆润优雅的角ゴシック",
+    "ko": "macOS 표준, 둥글고 우아한 각 고딕"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Hiragino Kaku Gothic ProN\",\"Hiragino Sans\",sans-serif",
+  "type": {
+    "title": "\"Hiragino Kaku Gothic ProN\",sans-serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#fbfcfc",
+    "ink": "#2c3e50",
+    "don": "#c0392b",
+    "ka": "#2980b9",
+    "text": "#2c3e50",
+    "muted": "#7f8c8d",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#ecf0f1",
+    "accent": "#2980b9",
+    "onAccent": "#ffffff",
+    "gold": "#f1c40f",
+    "border": "rgba(44,62,80,.12)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.01) contrast(1.01)"
+}

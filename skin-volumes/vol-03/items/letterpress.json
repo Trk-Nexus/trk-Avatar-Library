@@ -1,0 +1,51 @@
+{
+  "id": "letterpress",
+  "label": {
+    "ja": "レタープレス",
+    "en": "Letterpress",
+    "zh": "活版印刷",
+    "ko": "레터프레스"
+  },
+  "desc": {
+    "ja": "活版印刷のインク、レトロで温かみのある書体",
+    "en": "Letterpress ink, retro and warm",
+    "zh": "活版印刷油墨，复古而温暖",
+    "ko": "활판 인쇄 잉크, 레트로하고 따뜻한 서체"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Courier New\",\"Courier\",monospace",
+  "type": {
+    "title": "\"Courier New\",monospace",
+    "weight": "400",
+    "lh": "1.75",
+    "titleWeight": "700",
+    "titleSpace": ".1em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#efe6d4",
+    "ink": "#4a3728",
+    "don": "#8d4e2a",
+    "ka": "#5d6d7e",
+    "text": "#4a3728",
+    "muted": "#8c7a63",
+    "bg": "#e3d5c4",
+    "panel": "rgba(255,250,240,.96)",
+    "field": "#fffaf0",
+    "button": "#d7cbbd",
+    "accent": "#8d4e2a",
+    "onAccent": "#efe6d4",
+    "gold": "#b8860b",
+    "border": "rgba(74,55,40,.20)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.35) contrast(1.05) brightness(1.02)"
+}

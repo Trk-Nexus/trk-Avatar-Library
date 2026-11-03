@@ -1,0 +1,44 @@
+{
+  "id": "cherrySnow",
+  "label": {
+    "ja": "桜吹雪の夜",
+    "en": "Cherry Blossom Snow Night",
+    "zh": "樱花飘雪之夜",
+    "ko": "벚꽃 눈비 밤"
+  },
+  "desc": {
+    "ja": "桜の花びらが舞う、淡いピンクの夜",
+    "en": "A pale pink night with cherry blossom petals dancing",
+    "zh": "樱花花瓣飞舞的淡粉色之夜",
+    "ko": "벚꽃 꽃잎이舞는 연분홍색 밤"
+  },
+  "cat": [
+    "light",
+    "fun",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#ffeef3,#ffd1dc)",
+    "ink": "#3a2330",
+    "don": "#e0568a",
+    "ka": "#5aa9e6",
+    "text": "#3a2330",
+    "muted": "#7c5968",
+    "bg": "linear-gradient(180deg,#fff0f4,#ffe6f0)",
+    "panel": "rgba(255,250,252,.97)",
+    "field": "#ffffff",
+    "button": "#ffe6ee",
+    "accent": "#e0568a",
+    "onAccent": "#000000",
+    "gold": "#d9782a",
+    "border": "rgba(214,77,128,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.25) saturate(1.15) brightness(1.06)"
+}

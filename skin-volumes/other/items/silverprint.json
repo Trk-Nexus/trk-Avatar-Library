@@ -1,0 +1,42 @@
+{
+  "id": "silverprint",
+  "label": {
+    "ja": "モノクロ印画",
+    "en": "Silver Print",
+    "zh": "黑白照片",
+    "ko": "모노크롬 인화"
+  },
+  "desc": {
+    "ja": "印画紙の白と黒",
+    "en": "Photographic paper in black and white",
+    "zh": "相纸的黑与白",
+    "ko": "인화지의 흑과 백"
+  },
+  "cat": [
+    "light"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#e8e8e8",
+    "ink": "#1c1c1c",
+    "don": "#262626",
+    "ka": "#8c8c8c",
+    "text": "#1c1c1c",
+    "muted": "#5c5c5c",
+    "bg": "#ececec",
+    "panel": "rgba(250,250,250,.97)",
+    "field": "#f8f8f8",
+    "button": "#e2e2e2",
+    "accent": "#1c1c1c",
+    "onAccent": "#ffffff",
+    "gold": "#6e6e6e",
+    "border": "rgba(40,40,40,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.15) brightness(1.1)"
+}

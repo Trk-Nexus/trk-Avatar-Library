@@ -1,0 +1,63 @@
+{
+  "id": "wizard-container-query-responder",
+  "label": {
+    "ja": "コンテナクエリ・レスポンシバー",
+    "en": "Container Query Responder",
+    "zh": "容器查询响应者",
+    "ko": "컨테이너 쿼리 응답자"
+  },
+  "desc": {
+    "ja": "Container Queries をフル活用、@container でコンテナ幅に応じたレイアウト自動適応",
+    "en": "Full use of Container Queries, @container for automatic layout adaptation to container width",
+    "zh": "全面使用Container Queries，@container用于根据容器宽度自动适应布局",
+    "ko": "Container Queries를 완전히 활용, @container로 컨테이너 너비에 따른 레이아웃 자동 적응"
+  },
+  "cat": [
+    "wizard",
+    "light",
+    "access"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "📐"
+  },
+  "colors": {
+    "stage": "#fafafa",
+    "ink": "#1a1a1a",
+    "don": "#2c5282",
+    "ka": "#4a5568",
+    "text": "#1a1a1a",
+    "muted": "#4a5568",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#fafafa",
+    "button": "#e2e8f0",
+    "accent": "#2c5282",
+    "onAccent": "#ffffff",
+    "gold": "#7aa2f7",
+    "border": "rgba(44,82,130,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "contrast(1.05) brightness(1.0)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "📐",
+    "caret": "#2c5282",
+    "scan": 0.1,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

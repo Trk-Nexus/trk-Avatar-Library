@@ -1,0 +1,63 @@
+{
+  "id": "wizard-wei-liao-zi",
+  "label": {
+    "ja": "尉繚子",
+    "en": "Wei Liaozi",
+    "zh": "尉繚子",
+    "ko": "위료자"
+  },
+  "desc": {
+    "ja": "戦国時代の軍事論、尉繚子が著したとされる覇術の書",
+    "en": "Warring States period military treatise, attributed to Wei Liao, book of hegemon strategy",
+    "zh": "战国时代的军事论，据说尉繚子著作的霸术之书",
+    "ko": "전국 시대의 군사론, 위료자가 저술했다고 하는 패술의 서"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "dark"
+  ],
+  "font": "\"KaiTi\",\"SimSun\",serif",
+  "type": {
+    "title": "\"KaiTi\",serif",
+    "weight": "500",
+    "lh": "1.6",
+    "titleWeight": "700",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "尉"
+  },
+  "colors": {
+    "stage": "#2d3a2a",
+    "ink": "#e8f0e8",
+    "don": "#6b8e23",
+    "ka": "#556b2f",
+    "text": "#e8f0e8",
+    "muted": "#8fb08f",
+    "bg": "#223022",
+    "panel": "rgba(34,48,34,.96)",
+    "field": "#2d3a2a",
+    "button": "#4a5d4a",
+    "accent": "#6b8e23",
+    "onAccent": "#ffffff",
+    "gold": "#8fbc8f",
+    "border": "rgba(107,142,35,.35)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.15) saturate(1.1) contrast(1.15) brightness(.9)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "尉",
+    "caret": "#6b8e23",
+    "scan": 0.15,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

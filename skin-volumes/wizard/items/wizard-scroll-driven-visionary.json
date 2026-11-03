@@ -1,0 +1,63 @@
+{
+  "id": "wizard-scroll-driven-visionary",
+  "label": {
+    "ja": "スクロールドリブン・ビジョナー",
+    "en": "Scroll-Driven Visionary",
+    "zh": "滚动驱动的先知",
+    "ko": "스크롤 구동 예언자"
+  },
+  "desc": {
+    "ja": "Scroll-driven Animations をフル活用、animation-timeline: view() でスクロール連動フェードイン・スライド",
+    "en": "Full use of Scroll-driven Animations, animation-timeline: view() for scroll-linked fade-in and slide",
+    "zh": "全面使用Scroll-driven Animations，animation-timeline: view()用于滚动关联的淡入和滑动",
+    "ko": "Scroll-driven Animations를 완전히 활용, animation-timeline: view()으로 스크롤 연결 페이드인 및 슬라이드"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "dark"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "👁️"
+  },
+  "colors": {
+    "stage": "#0b1026",
+    "ink": "#dce6ff",
+    "don": "#7aa2ff",
+    "ka": "#9fbbff",
+    "text": "#dce6ff",
+    "muted": "#b8c8f0",
+    "bg": "#090d1c",
+    "panel": "rgba(9,13,28,.94)",
+    "field": "#0b1026",
+    "button": "#1a2440",
+    "accent": "#7aa2ff",
+    "onAccent": "#000000",
+    "gold": "#e0c38c",
+    "border": "rgba(122,162,255,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.2) contrast(1.15) brightness(1.05)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "👁️",
+    "caret": "#7aa2ff",
+    "scan": 0.12,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

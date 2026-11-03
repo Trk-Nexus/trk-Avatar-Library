@@ -1,0 +1,43 @@
+{
+  "id": "garnet",
+  "label": {
+    "ja": "ガーネット",
+    "en": "Garnet",
+    "zh": "石榴石",
+    "ko": "가넷"
+  },
+  "desc": {
+    "ja": "深紅褐色の宝石、友愛と忠実の赤褐",
+    "en": "Deep red-brown jewel, friendship and loyalty in red-brown",
+    "zh": "深红褐色宝石，友谊与忠诚的红褐",
+    "ko": "깊은 붉은 갈색 보석, 우정과 충실의 빨간 갈색"
+  },
+  "cat": [
+    "grad",
+    "dark"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#5d2e2e,#1a0a0a)",
+    "ink": "#ffe6e6",
+    "don": "#d63031",
+    "ka": "#74b9ff",
+    "text": "#ffe6e6",
+    "muted": "#a06e6e",
+    "bg": "linear-gradient(180deg,#1a0a0a,#0d0505)",
+    "panel": "rgba(93,46,46,.95)",
+    "field": "#3d1e1e",
+    "button": "#5d2e2e",
+    "accent": "#d63031",
+    "onAccent": "#ffffff",
+    "gold": "#fab1a0",
+    "border": "rgba(214,48,49,.30)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.4) saturate(1.25) hue-rotate(-15deg) brightness(.75) contrast(1.2)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "helvetica",
+  "label": {
+    "ja": "ヘルベチカ",
+    "en": "Helvetica",
+    "zh": "黑体",
+    "ko": "헤르베티카"
+  },
+  "desc": {
+    "ja": "中立的な書体、明快で機能的なニュートラル",
+    "en": "Neutral typeface, clear and functional",
+    "zh": "中性字体，清晰且功能性强",
+    "ko": "중립적인 서체, 명확하고 기능적"
+  },
+  "cat": [
+    "type",
+    "basic"
+  ],
+  "font": "",
+  "type": {
+    "title": "system-ui,-apple-system,\"Segoe UI\",sans-serif",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "700",
+    "titleSpace": "-.01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f7fafc",
+    "ink": "#2d3748",
+    "don": "#e53e3e",
+    "ka": "#3182ce",
+    "text": "#2d3748",
+    "muted": "#718096",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#edf2f7",
+    "accent": "#3182ce",
+    "onAccent": "#ffffff",
+    "gold": "#f6e05e",
+    "border": "rgba(45,55,72,.12)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "brightness(1.02) contrast(1.01)"
+}

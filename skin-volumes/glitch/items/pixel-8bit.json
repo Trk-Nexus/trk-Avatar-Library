@@ -1,0 +1,52 @@
+{
+  "id": "pixel-8bit",
+  "label": {
+    "ja": "ピクセル8ビット",
+    "en": "Pixel 8-bit",
+    "zh": "8位元像素",
+    "ko": "8비트 픽셀"
+  },
+  "desc": {
+    "ja": "8ビット低解像度ドット絵、限定パレット",
+    "en": "8-bit low-resolution pixel art, limited palette",
+    "zh": "8位元低分辨率像素画，有限调色板",
+    "ko": "8비트 저해상도 도트아트, 제한된 팔레트"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "light"
+  ],
+  "font": "\\\"Press Start 2P\\\",\\\"Courier New\\\",monospace",
+  "type": {
+    "title": "\\\"Press Start 2P\\\",monospace",
+    "weight": "400",
+    "lh": "1.2",
+    "titleWeight": "600",
+    "titleSpace": ".05em",
+    "titleTransform": "uppercase",
+    "mark": "8BIT"
+  },
+  "colors": {
+    "stage": "#2a2a2a",
+    "ink": "#ffffff",
+    "don": "#ff0000",
+    "ka": "#00ff00",
+    "text": "#ffffff",
+    "muted": "#555555",
+    "bg": "#1a1a1a",
+    "panel": "rgba(26,26,26,.97)",
+    "field": "#2a2a2a",
+    "button": "#3a3a3a",
+    "accent": "#00ff00",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "rgba(0,255,0,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "saturate(1.4) contrast(1.25) brightness(.95)"
+}

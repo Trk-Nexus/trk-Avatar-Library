@@ -1,0 +1,52 @@
+{
+  "id": "ice-hotel",
+  "label": {
+    "ja": "アイスホテル",
+    "en": "Ice Hotel",
+    "zh": "冰酒店",
+    "ko": "아이스 호텔"
+  },
+  "desc": {
+    "ja": "氷の部屋とオーロラ、北国の冷気",
+    "en": "Ice room and aurora, northern cold air",
+    "zh": "冰房和极光，北国冷气",
+    "ko": "얼음 방과 오로라, 북극 냉기"
+  },
+  "cat": [
+    "light",
+    "grad",
+    "access"
+  ],
+  "font": "\"Rajdhani\",\"Oswald\",sans-serif",
+  "type": {
+    "title": "\"Rajdhani\",sans-serif",
+    "weight": "400",
+    "lh": "1.4",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#e0f7fa",
+    "ink": "#006064",
+    "don": "#b2ebf2",
+    "ka": "#80deea",
+    "text": "#006064",
+    "muted": "#4db6ac",
+    "bg": "#b2ebf2",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#e0f7fa",
+    "accent": "#4db6ac",
+    "onAccent": "#ffffff",
+    "gold": "#fff9c4",
+    "border": "rgba(77,182,172,.24)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "brightness(1.05) saturate(.9) contrast(1.02)"
+}

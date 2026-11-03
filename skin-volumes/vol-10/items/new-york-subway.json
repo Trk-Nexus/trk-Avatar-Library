@@ -1,0 +1,51 @@
+{
+  "id": "new-york-subway",
+  "label": {
+    "ja": "ニューヨーク地下鉄",
+    "en": "New York Subway",
+    "zh": "纽约地铁",
+    "ko": "뉴욕 지하철"
+  },
+  "desc": {
+    "ja": "タイルと電車の音、都会の鼓動",
+    "en": "Tiles and train sounds, urban pulse",
+    "zh": "瓷砖和火车声，都市脉搏",
+    "ko": "타일과 전차 소리, 대도시 맥박"
+  },
+  "cat": [
+    "dark",
+    "fun"
+  ],
+  "font": "\"Impact\",\"Haettenschweiler\",sans-serif",
+  "type": {
+    "title": "\"Impact\",sans-serif",
+    "weight": "900",
+    "lh": "1.1",
+    "titleWeight": "900",
+    "titleSpace": "-.05em",
+    "titleTransform": "uppercase",
+    "mark": "NYC"
+  },
+  "colors": {
+    "stage": "#2c3e50",
+    "ink": "#f0f0f0",
+    "don": "#e74c3c",
+    "ka": "#3498db",
+    "text": "#f0f0f0",
+    "muted": "#7f8c8d",
+    "bg": "#1a252f",
+    "panel": "rgba(26,37,47,.97)",
+    "field": "#2c3e50",
+    "button": "#3a4a5a",
+    "accent": "#3498db",
+    "onAccent": "#ffffff",
+    "gold": "#f1c40f",
+    "border": "rgba(52,152,219,.24)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.15) brightness(.9)"
+}

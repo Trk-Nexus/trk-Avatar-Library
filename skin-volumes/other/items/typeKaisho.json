@@ -1,0 +1,51 @@
+{
+  "id": "typeKaisho",
+  "label": {
+    "ja": "楷書の便箋",
+    "en": "Kaisho letter",
+    "zh": "楷书信笺",
+    "ko": "해서 편지지"
+  },
+  "desc": {
+    "ja": "筆の流れが残る楷書と、紺の便箋",
+    "en": "Brush-stroke Kaisho on navy writing paper",
+    "zh": "带笔锋的楷书与深蓝信笺",
+    "ko": "붓결이 남는 해서와 남색 편지지"
+  },
+  "cat": [
+    "type",
+    "dark"
+  ],
+  "font": "\"DFKai-SB\",\"KaiTi\",\"STKaiti\",\"Kaiti SC\",\"BiauKai\",\"Yu Mincho\",\"Hiragino Mincho ProN\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "",
+    "weight": "400",
+    "lh": "1.75",
+    "titleWeight": "600",
+    "titleSpace": ".1em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#141a2e",
+    "ink": "#f3efe2",
+    "don": "#f0c987",
+    "ka": "#9fd8ff",
+    "text": "#f3efe2",
+    "muted": "#c6bfa9",
+    "bg": "#141a2e",
+    "panel": "rgba(35,44,74,.95)",
+    "field": "#111730",
+    "button": "#232c4a",
+    "accent": "#f0c987",
+    "onAccent": "#2b2210",
+    "gold": "#f0c987",
+    "border": "rgba(243,239,226,.2)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(.9) brightness(.95)"
+}

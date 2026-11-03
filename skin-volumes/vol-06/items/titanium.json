@@ -1,0 +1,52 @@
+{
+  "id": "titanium",
+  "label": {
+    "ja": "チタン",
+    "en": "Titanium",
+    "zh": "钛",
+    "ko": "티타늄"
+  },
+  "desc": {
+    "ja": "現代的で強靭なチタン、機械的な無機質感",
+    "en": "Modern and strong titanium, mechanical inorganic texture",
+    "zh": "现代而强韧的钛，机械性的无机质感",
+    "ko": "현대적이고 강인한 티타늄, 기계적인 무미건조한 질감"
+  },
+  "cat": [
+    "dark",
+    "access",
+    "basic"
+  ],
+  "font": "\"Montserrat\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Montserrat\",sans-serif",
+    "weight": "500",
+    "lh": "1.45",
+    "titleWeight": "700",
+    "titleSpace": "-.02em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#5d6d7e",
+    "ink": "#ecf0f1",
+    "don": "#95a5a6",
+    "ka": "#3498db",
+    "text": "#ecf0f1",
+    "muted": "#7f8c8d",
+    "bg": "#34495e",
+    "panel": "rgba(52,73,94,.96)",
+    "field": "#5d6d7e",
+    "button": "#2c3e50",
+    "accent": "#3498db",
+    "onAccent": "#ffffff",
+    "gold": "#bdc3c7",
+    "border": "rgba(52,152,219,.24)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.4) contrast(1.15) brightness(.9)"
+}

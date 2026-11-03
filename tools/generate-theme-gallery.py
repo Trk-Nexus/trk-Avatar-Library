@@ -57,7 +57,7 @@ def main():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-title>trk! スキン見本 {theme} — {title_ja}（{len(theme_skins)}種）— trk-Avatar-Library</title>
+<title>trk! スキン見本 {theme} — {title_ja}（{len(theme_skins)}種）— trk-Avatar-Library</title>
 <style>
   :root{{--bg:#0b0c10;--panel:#14161d;--line:#2a2e3a;--text:#f2f3f7;--muted:#a9adbd;--accent:#ff3b55;}}
   *{{box-sizing:border-box}}

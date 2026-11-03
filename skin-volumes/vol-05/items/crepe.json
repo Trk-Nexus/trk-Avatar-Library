@@ -1,0 +1,43 @@
+{
+  "id": "crepe",
+  "label": {
+    "ja": "クレープ",
+    "en": "Crepe",
+    "zh": "薄煎饼",
+    "ko": "크레페"
+  },
+  "desc": {
+    "ja": "フランスの屋台、やわらかな肌色",
+    "en": "French street crepe, soft skin tone",
+    "zh": "法式路边煎饼，柔和肤色",
+    "ko": "프랑스 노점, 부드러운 살색"
+  },
+  "cat": [
+    "light",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#ffe0b2",
+    "ink": "#4e342e",
+    "don": "#ff7043",
+    "ka": "#ffccbc",
+    "text": "#4e342e",
+    "muted": "#a1887f",
+    "bg": "#ffe0b2",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#ffccbc",
+    "accent": "#ff7043",
+    "onAccent": "#4e342e",
+    "gold": "#ffd54f",
+    "border": "rgba(78,52,46,.20)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) brightness(1.03)"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "miku39",
+  "label": {
+    "ja": "ミク・ティール",
+    "en": "Miku Teal",
+    "zh": "初音青",
+    "ko": "미쿠 틸"
+  },
+  "desc": {
+    "ja": "初音ミク二次創作（PCL・非公式）",
+    "en": "Hatsune Miku fan art (PCL, unofficial)",
+    "zh": "初音未来二次创作（PCL・非官方）",
+    "ko": "하츠네 미쿠 2차 창작 (PCL・비공식)"
+  },
+  "cat": [
+    "basic",
+    "miku"
+  ],
+  "font": "\"Trebuchet MS\",\"Avenir Next\",system-ui,sans-serif",
+  "type": null,
+  "colors": {
+    "stage": "#061414",
+    "ink": "#e9fffd",
+    "don": "#ff5d8f",
+    "ka": "#39c5bb",
+    "text": "#e9fffd",
+    "muted": "#9fc9c5",
+    "bg": "#071a1a",
+    "panel": "rgba(10,32,33,.96)",
+    "field": "#061514",
+    "button": "#0e2a2a",
+    "accent": "#39c5bb",
+    "onAccent": "#04201e",
+    "gold": "#ff9ec4",
+    "border": "rgba(57,197,187,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.4) sepia(1) hue-rotate(130deg) saturate(1.6) brightness(.7)"
+}

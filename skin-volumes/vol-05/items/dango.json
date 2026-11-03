@@ -1,0 +1,44 @@
+{
+  "id": "dango",
+  "label": {
+    "ja": "だんご",
+    "en": "Dango",
+    "zh": "团子",
+    "ko": "단고"
+  },
+  "desc": {
+    "ja": "三色団子、祭りの屋台をイメージ",
+    "en": "Three-color dango, festival street food",
+    "zh": "三色团子，节日摊位风格",
+    "ko": "삼색 단고, 축제 노점 이미지"
+  },
+  "cat": [
+    "fun",
+    "grad",
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#dce775",
+    "ink": "#33691e",
+    "don": "#f48fb1",
+    "ka": "#4db6ac",
+    "text": "#33691e",
+    "muted": "#827717",
+    "bg": "#fff176",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#fff59d",
+    "accent": "#f48fb1",
+    "onAccent": "#33691e",
+    "gold": "#fff176",
+    "border": "rgba(51,105,30,.20)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.2) brightness(1.03)"
+}

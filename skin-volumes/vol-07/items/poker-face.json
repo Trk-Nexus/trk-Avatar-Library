@@ -1,0 +1,51 @@
+{
+  "id": "poker-face",
+  "label": {
+    "ja": "ポーカーフェイス",
+    "en": "Poker Face",
+    "zh": "扑克脸",
+    "ko": "포커 페이스"
+  },
+  "desc": {
+    "ja": "ポーカーの緊張感、深緑のフェルトと無表情",
+    "en": "Poker tension, deep green felt and expressionless",
+    "zh": "扑克的紧张感，深绿色呢绒和无表情",
+    "ko": "포커의 긴장감, 깊은 초록색 펠트와 무표정"
+  },
+  "cat": [
+    "dark",
+    "basic"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.65",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "♠ ♥ ♦ ♣"
+  },
+  "colors": {
+    "stage": "#1a3a1a",
+    "ink": "#e8f0e8",
+    "don": "#d4af37",
+    "ka": "#8c9eac",
+    "text": "#e8f0e8",
+    "muted": "#7a8a7a",
+    "bg": "#152a15",
+    "panel": "rgba(26,58,26,.97)",
+    "field": "#1a3a1a",
+    "button": "#2a4a2a",
+    "accent": "#d4af37",
+    "onAccent": "#152a15",
+    "gold": "#ffe082",
+    "border": "rgba(140,158,172,.24)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.3) contrast(1.1) brightness(.9)"
+}

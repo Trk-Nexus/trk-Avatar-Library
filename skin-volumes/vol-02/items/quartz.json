@@ -1,0 +1,43 @@
+{
+  "id": "quartz",
+  "label": {
+    "ja": "クォーツ",
+    "en": "Quartz",
+    "zh": "石英",
+    "ko": "쿼츠"
+  },
+  "desc": {
+    "ja": "透明な結晶、調和と浄化の白",
+    "en": "Transparent crystal, harmony and purification in white",
+    "zh": "透明水晶，和谐与净化的白",
+    "ko": "투명한 결정, 조화와 정화의 하양"
+  },
+  "cat": [
+    "light",
+    "access"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#f8f9fa",
+    "ink": "#495057",
+    "don": "#e83e8c",
+    "ka": "#6c757d",
+    "text": "#495057",
+    "muted": "#adb5bd",
+    "bg": "#e9ecef",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#dee2e6",
+    "accent": "#6c757d",
+    "onAccent": "#ffffff",
+    "gold": "#ffc107",
+    "border": "rgba(100,100,100,.18)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.1) brightness(1.05) contrast(1.02)"
+}

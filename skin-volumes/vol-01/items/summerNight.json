@@ -1,0 +1,43 @@
+{
+  "id": "summerNight",
+  "label": {
+    "ja": "夏の夜風",
+    "en": "Summer Night Breeze",
+    "zh": "夏夜之风",
+    "ko": "여름 밤바람"
+  },
+  "desc": {
+    "ja": "打ち上げ花火と、ネオンのきらめく夜",
+    "en": "Fireworks and neon glittering at night",
+    "zh": "烟花与闪烁的霓虹之夜",
+    "ko": "불꽃놀이와 반짝이는 네온 밤"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#050810,#000000)",
+    "ink": "#ffffff",
+    "don": "#ff3df0",
+    "ka": "#3df0ff",
+    "text": "#ffffff",
+    "muted": "#8fa8bb",
+    "bg": "linear-gradient(180deg,#000000,#050810)",
+    "panel": "rgba(8,14,24,.95)",
+    "field": "#060e18",
+    "button": "#0b1826",
+    "accent": "#3df0ff",
+    "onAccent": "#032027",
+    "gold": "#ff3df0",
+    "border": "rgba(61,240,255,.28)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.2) hue-rotate(180deg) saturate(1.6) brightness(.65) contrast(1.3)"
+}

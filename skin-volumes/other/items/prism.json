@@ -1,0 +1,43 @@
+{
+  "id": "prism",
+  "label": {
+    "ja": "プリズム",
+    "en": "Prism",
+    "zh": "棱镜",
+    "ko": "프리즘"
+  },
+  "desc": {
+    "ja": "横に走る宝石色の虹",
+    "en": "A jewel-tone rainbow across the screen",
+    "zh": "横贯屏幕的宝石色彩虹",
+    "ko": "가로지르는 보석빛 무지개"
+  },
+  "cat": [
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(90deg,#1a0f2e,#0e2233,#0e2e22,#2e2a0c,#33101f)",
+    "ink": "#f4f2ff",
+    "don": "#ff5d8f",
+    "ka": "#5ad0e8",
+    "text": "#f4f2ff",
+    "muted": "#b0aecb",
+    "bg": "linear-gradient(90deg,#241539,#123041,#153829,#38300f,#3b1526)",
+    "panel": "rgba(18,16,32,.94)",
+    "field": "#151126",
+    "button": "#201a35",
+    "accent": "#f0eeff",
+    "onAccent": "#241a3a",
+    "gold": "#ffd166",
+    "border": "rgba(255,255,255,.22)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "saturate(1.4) contrast(1.2) brightness(.75)"
+}

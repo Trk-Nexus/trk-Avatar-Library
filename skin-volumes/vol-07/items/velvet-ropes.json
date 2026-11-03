@@ -1,0 +1,51 @@
+{
+  "id": "velvet-ropes",
+  "label": {
+    "ja": "ベルベットロープ",
+    "en": "Velvet Ropes",
+    "zh": "天鹅绒绳索",
+    "ko": "벨벳 로프"
+  },
+  "desc": {
+    "ja": "入場制限のベルベットロープ、排他的な夜",
+    "en": "Velvet ropes with entry restriction, exclusive night",
+    "zh": "带入场限制的天鹅绒绳索，排他性之夜",
+    "ko": "입장 제한 벨벳 로프, 배타적인 밤"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "\"Papyrus\",\"Papyrus Custom\",fantasy",
+  "type": {
+    "title": "\"Papyrus\",fantasy",
+    "weight": "400",
+    "lh": "1.55",
+    "titleWeight": "600",
+    "titleSpace": ".05em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#4a0e4e",
+    "ink": "#ffe0b2",
+    "don": "#d4af37",
+    "ka": "#bb86fc",
+    "text": "#ffe0b2",
+    "muted": "#8a7aaa",
+    "bg": "#2a072e",
+    "panel": "rgba(74,14,78,.97)",
+    "field": "#3a0d3e",
+    "button": "#4a0e4e",
+    "accent": "#d4af37",
+    "onAccent": "#2a072e",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.28)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "hue-rotate(280deg) saturate(1.25) brightness(.85) contrast(1.15)"
+}

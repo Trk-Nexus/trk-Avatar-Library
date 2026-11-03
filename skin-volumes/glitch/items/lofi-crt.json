@@ -1,0 +1,52 @@
+{
+  "id": "lofi-crt",
+  "label": {
+    "ja": "ローファイCRT",
+    "en": "Lo-fi CRT",
+    "zh": "低保真CRT",
+    "ko": "로파이 CRT"
+  },
+  "desc": {
+    "ja": "低解像度ブラウン管、ざらついたアナログ感",
+    "en": "Low-resolution CRT, grainy analog feel",
+    "zh": "低分辨率CRT，粗糙的模拟感",
+    "ko": "저해상도 CRT, 거친 아날로그 느낌"
+  },
+  "cat": [
+    "glitch",
+    "dark",
+    "life"
+  ],
+  "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+  "type": {
+    "title": "\\\"Courier New\\\",monospace",
+    "weight": "400",
+    "lh": "1.4",
+    "titleWeight": "600",
+    "titleSpace": "0",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#1a1a1a",
+    "ink": "#e0e0e0",
+    "don": "#aaaaaa",
+    "ka": "#666666",
+    "text": "#e0e0e0",
+    "muted": "#4a4a4a",
+    "bg": "#0f0f0f",
+    "panel": "rgba(15,15,15,.97)",
+    "field": "#1a1a1a",
+    "button": "#2a2a2a",
+    "accent": "#aaaaaa",
+    "onAccent": "#000000",
+    "gold": "#ffffff",
+    "border": "rgba(170,170,170,.20)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.6) contrast(1.15) brightness(.85)"
+}

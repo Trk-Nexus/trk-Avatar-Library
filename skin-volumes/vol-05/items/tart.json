@@ -1,0 +1,43 @@
+{
+  "id": "tart",
+  "label": {
+    "ja": "タルト",
+    "en": "Tart",
+    "zh": "塔",
+    "ko": "타르트"
+  },
+  "desc": {
+    "ja": "フルーツタルト、色とりどりのフルーツ",
+    "en": "Fruit tart, colorful fruits",
+    "zh": "水果塔，色彩缤纷水果",
+    "ko": "과일 타르트, 색색깔 과일"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#ff8a80",
+    "ink": "#bf360c",
+    "don": "#ff5252",
+    "ka": "#aed581",
+    "text": "#bf360c",
+    "muted": "#d32f2f",
+    "bg": "#ffab91",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#ff8a80",
+    "accent": "#ff5252",
+    "onAccent": "#ffffff",
+    "gold": "#ffd54f",
+    "border": "rgba(191,54,12,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.25) brightness(1.03)"
+}

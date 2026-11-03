@@ -1,0 +1,52 @@
+{
+  "id": "neon-grid",
+  "label": {
+    "ja": "ネオングリッド",
+    "en": "Neon Grid",
+    "zh": "霓虹网格",
+    "ko": "네온 그리드"
+  },
+  "desc": {
+    "ja": "発光する格子、ワイヤーフレーム空間",
+    "en": "Glowing grid, wireframe space",
+    "zh": "发光的网格，线框空间",
+    "ko": "발광하는 그리드, 와이어프레임 공간"
+  },
+  "cat": [
+    "glitch",
+    "grad",
+    "fun"
+  ],
+  "font": "\\\"Rajdhani\\\",\\\"Oswald\\\",sans-serif",
+  "type": {
+    "title": "\\\"Rajdhani\\\",sans-serif",
+    "weight": "600",
+    "lh": "1.25",
+    "titleWeight": "700",
+    "titleSpace": "-.01em",
+    "titleTransform": "",
+    "mark": "GRID"
+  },
+  "colors": {
+    "stage": "#0a0a1a",
+    "ink": "#00ffff",
+    "don": "#ff00ff",
+    "ka": "#4a4a6a",
+    "text": "#00ffff",
+    "muted": "#1a1a3a",
+    "bg": "#05050a",
+    "panel": "rgba(10,10,26,.98)",
+    "field": "#0a0a1a",
+    "button": "#1a1a2a",
+    "accent": "#00ffff",
+    "onAccent": "#000000",
+    "gold": "#ff00ff",
+    "border": "rgba(0,255,255,.35)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(200deg) saturate(1.6) brightness(.75) contrast(1.3)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "din",
+  "label": {
+    "ja": "DIN",
+    "en": "DIN",
+    "zh": "DIN体",
+    "ko": "DIN체"
+  },
+  "desc": {
+    "ja": "工業的なゴシック、機能的で無駄のない書体",
+    "en": "Industrial sans, functional and waste-free",
+    "zh": "工业无衬线体，功能性强且简洁",
+    "ko": "산업용 고딕, 기능적이고 낭비 없는 서체"
+  },
+  "cat": [
+    "type",
+    "dark"
+  ],
+  "font": "\"DIN Alternate\",\"DIN\",system-ui,sans-serif",
+  "type": {
+    "title": "\"DIN Alternate\",\"DIN\",sans-serif",
+    "weight": "700",
+    "lh": "1.4",
+    "titleWeight": "800",
+    "titleSpace": "-.02em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#1a202c",
+    "ink": "#fafafa",
+    "don": "#f56565",
+    "ka": "#4299e1",
+    "text": "#fafafa",
+    "muted": "#a0aec0",
+    "bg": "#2d3748",
+    "panel": "rgba(45,55,72,.96)",
+    "field": "#1a202c",
+    "button": "#2d3748",
+    "accent": "#4299e1",
+    "onAccent": "#ffffff",
+    "gold": "#f6e05e",
+    "border": "rgba(255,255,255,.18)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.1) brightness(.9)"
+}

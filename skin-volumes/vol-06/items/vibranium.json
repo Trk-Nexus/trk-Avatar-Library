@@ -1,0 +1,52 @@
+{
+  "id": "vibranium",
+  "label": {
+    "ja": "ヴィブラニウム",
+    "en": "Vibranium",
+    "zh": "振金",
+    "ko": "비브라늄"
+  },
+  "desc": {
+    "ja": "衝撃を吸収する紫金属、ダークで神秘的",
+    "en": "Impact-absorbing purple metal, dark and mysterious",
+    "zh": "吸收冲击的紫色金属，深色神秘",
+    "ko": "충격을 흡수하는 보라색 금속, 다크하고 신비로운"
+  },
+  "cat": [
+    "dark",
+    "grad",
+    "fun"
+  ],
+  "font": "\"Futura\",\"Avant Garde\",sans-serif",
+  "type": {
+    "title": "\"Futura\",sans-serif",
+    "weight": "700",
+    "lh": "1.3",
+    "titleWeight": "900",
+    "titleSpace": "-.05em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#2e1a47,#0d0b1e)",
+    "ink": "#e0e7ff",
+    "don": "#bb86fc",
+    "ka": "#03dac6",
+    "text": "#e0e7ff",
+    "muted": "#a8a8b8",
+    "bg": "linear-gradient(180deg,#0d0b1e,#000000)",
+    "panel": "rgba(13,11,30,.97)",
+    "field": "#2e1a47",
+    "button": "#3a2a5a",
+    "accent": "#bb86fc",
+    "onAccent": "#130b1e",
+    "gold": "#03dac6",
+    "border": "rgba(187,134,252,.30)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(270deg) saturate(1.4) brightness(.8) contrast(1.2)"
+}

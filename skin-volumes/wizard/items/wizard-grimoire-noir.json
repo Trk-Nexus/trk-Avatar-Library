@@ -1,0 +1,63 @@
+{
+  "id": "wizard-grimoire-noir",
+  "label": {
+    "ja": "黒の魔導書",
+    "en": "Grimoire Noir",
+    "zh": "黑之魔导书",
+    "ko": "흑의 마도서"
+  },
+  "desc": {
+    "ja": "羊皮紙と黒革の魔導書、禁忌の呪文が刻まれる",
+    "en": "Parchment and black leather grimoire, forbidden spells inscribed",
+    "zh": "羊皮纸与黑皮魔导书，刻印禁忌咒语",
+    "ko": "양피지와 흑색 가죽 마도서, 금기의 주문 각인"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "access"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "☿ ☽ ♀"
+  },
+  "colors": {
+    "stage": "#141210",
+    "ink": "#d4c7b8",
+    "don": "#8b0000",
+    "ka": "#a67c52",
+    "text": "#d4c7b8",
+    "muted": "#a89684",
+    "bg": "#100e0a",
+    "panel": "rgba(16,14,10,.97)",
+    "field": "#141210",
+    "button": "#241e18",
+    "accent": "#8b0000",
+    "onAccent": "#ffffff",
+    "gold": "#d4af37",
+    "border": "rgba(139,0,0,.35)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.3) contrast(1.15) brightness(.9)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "🔮",
+    "caret": "#8b0000",
+    "scan": 0.15,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

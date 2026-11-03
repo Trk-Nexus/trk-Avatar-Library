@@ -1,0 +1,44 @@
+{
+  "id": "amber",
+  "label": {
+    "ja": "アンバー",
+    "en": "Amber",
+    "zh": "琥珀",
+    "ko": "호박"
+  },
+  "desc": {
+    "ja": "黄金色の樹脂、温もりと記憶の琥珀",
+    "en": "Golden resin, warmth and memory in amber",
+    "zh": "金色树脂，温暖与记忆的琥珀",
+    "ko": "금색 수지, 온기와 기억의 호박"
+  },
+  "cat": [
+    "grad",
+    "fun",
+    "light"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#b8860b,#4a370b)",
+    "ink": "#fff4e6",
+    "don": "#ff6b6b",
+    "ka": "#4ecdc4",
+    "text": "#fff4e6",
+    "muted": "#b39370",
+    "bg": "linear-gradient(180deg,#4a370b,#2a1d05)",
+    "panel": "rgba(184,134,11,.95)",
+    "field": "#b8860b",
+    "button": "#8a6a0b",
+    "accent": "#ff6b6b",
+    "onAccent": "#2a1d05",
+    "gold": "#ffe0b3",
+    "border": "rgba(255,107,87,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.5) saturate(1.2) hue-rotate(-20deg) brightness(.85) contrast(1.1)"
+}

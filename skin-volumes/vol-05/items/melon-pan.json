@@ -1,0 +1,45 @@
+{
+  "id": "melon-pan",
+  "label": {
+    "ja": "メロンパン",
+    "en": "Melon Pan",
+    "zh": "瓜面包",
+    "ko": "멜론빵"
+  },
+  "zh": "瓜面包",
+  "ko": "멜론빵",
+  "desc": {
+    "ja": "日本の菓子パン、クッキー生地のグリッド",
+    "en": "Japanese sweet bread, cookie dough grid",
+    "zh": "日本甜面包，饼干面团网格",
+    "ko": "일본 과자빵, 쿠키 반죽 그리드"
+  },
+  "cat": [
+    "life",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#fff9c4",
+    "ink": "#f57f17",
+    "don": "#ffcc80",
+    "ka": "#ffe0b2",
+    "text": "#f57f17",
+    "muted": "#ff6f00",
+    "bg": "#ffe082",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#ffecb3",
+    "accent": "#ffa000",
+    "onAccent": "#fff9c4",
+    "gold": "#ffd54f",
+    "border": "rgba(245,127,23,.22)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.1) saturate(1.1) brightness(1.02)"
+}

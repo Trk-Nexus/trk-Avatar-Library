@@ -1,0 +1,51 @@
+{
+  "id": "frutiger",
+  "label": {
+    "ja": "フルティガ",
+    "en": "Frutiger",
+    "zh": "佛鲁迪杰",
+    "ko": "루티거"
+  },
+  "desc": {
+    "ja": "看板用のヒューマニスト、視認性と開放感",
+    "en": "Humanist sans, legibility and openness",
+    "zh": "人本主义无衬线体，可读性和开放感",
+    "ko": "간판용 휴먼체, 가독성과 개방감"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Frutiger\",\"Frutiger LT\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Frutiger\",sans-serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#e6fffa",
+    "ink": "#1a202c",
+    "don": "#fc8181",
+    "ka": "#4299e1",
+    "text": "#1a202c",
+    "muted": "#718096",
+    "bg": "#c3e6e6",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#bee3e8",
+    "accent": "#4299e1",
+    "onAccent": "#ffffff",
+    "gold": "#faf089",
+    "border": "rgba(26,32,44,.12)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "brightness(1.04) contrast(.98)"
+}

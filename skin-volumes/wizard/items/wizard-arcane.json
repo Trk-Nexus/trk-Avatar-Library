@@ -1,0 +1,63 @@
+{
+  "id": "wizard-arcane",
+  "label": {
+    "ja": "アーケイン",
+    "en": "Arcane",
+    "zh": "奥秘",
+    "ko": "신비"
+  },
+  "desc": {
+    "ja": "神秘の魔法陣、発光する古代文字",
+    "en": "Mystic magic circle, glowing ancient script",
+    "zh": "神秘魔法阵，发光的古代文字",
+    "ko": "신비한 마법 진, 빛나는 고대 문자"
+  },
+  "cat": [
+    "wizard",
+    "fun",
+    "grad"
+  ],
+  "font": "\\\"Cinzel\\\",\\\"Trajan Pro\\\",serif",
+  "type": {
+    "title": "\\\"Cinzel\\\",serif",
+    "weight": "700",
+    "lh": "1.5",
+    "titleWeight": "800",
+    "titleSpace": ".1em",
+    "titleTransform": "uppercase",
+    "mark": "✧ ARCANE ✧"
+  },
+  "colors": {
+    "stage": "#2d0a3e",
+    "ink": "#00ffff",
+    "don": "#ff00ff",
+    "ka": "#74b9ff",
+    "text": "#00ffff",
+    "muted": "#b39ddb",
+    "bg": "#1a052e",
+    "panel": "rgba(26,5,46,.97)",
+    "field": "#2d0a3e",
+    "button": "#3d154e",
+    "accent": "#ff00ff",
+    "onAccent": "#000000",
+    "gold": "#00ffff",
+    "border": "rgba(255,0,255,.35)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "hue-rotate(280deg) saturate(1.6) brightness(.8) contrast(1.3)",
+  "cli": {
+    "font": "Cinzel, Trajan Pro, serif",
+    "prompt": "✦",
+    "caret": "#ff00ff",
+    "scan": 0.18,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

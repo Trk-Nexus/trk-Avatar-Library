@@ -1,0 +1,43 @@
+{
+  "id": "showacafe",
+  "label": {
+    "ja": "昭和喫茶",
+    "en": "Showa Cafe",
+    "zh": "昭和咖啡厅",
+    "ko": "쇼와 카페"
+  },
+  "desc": {
+    "ja": "なつかしい喫茶店の皿",
+    "en": "A nostalgic coffee-shop plate",
+    "zh": "令人怀念的咖啡厅瓷盘",
+    "ko": "그리운 찻집의 접시"
+  },
+  "cat": [
+    "light",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#efe2cc",
+    "ink": "#3a2e22",
+    "don": "#d4552e",
+    "ka": "#2e8b8b",
+    "text": "#3a2e22",
+    "muted": "#655646",
+    "bg": "#f2e8d8",
+    "panel": "rgba(250,243,230,.97)",
+    "field": "#faf4e8",
+    "button": "#eadcc4",
+    "accent": "#d4552e",
+    "onAccent": "#000000",
+    "gold": "#2e8b8b",
+    "border": "rgba(120,80,40,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.4) saturate(1.1) brightness(.98)"
+}

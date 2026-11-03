@@ -1,0 +1,63 @@
+{
+  "id": "wizard-goetia",
+  "label": {
+    "ja": "ゴエティア",
+    "en": "Goetia",
+    "zh": "高蒂亚",
+    "ko": "고에티아"
+  },
+  "desc": {
+    "ja": "72柱の悪魔を列伝するソロモンの鍵の一部分、深紅の魔術陣",
+    "en": "Part of the Lesser Key of Solomon listing 72 demons, crimson magic circle",
+    "zh": "所罗门钥匙的一部分，列传72柱恶魔，深红色魔法阵",
+    "ko": "솔로몬의 소록의 일부, 72귀리를 나열하는 것, 진홍색 마법진"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Cinzel\",\"Trajan Pro\",serif",
+  "type": {
+    "title": "\"Cinzel\",serif",
+    "weight": "700",
+    "lh": "1.5",
+    "titleWeight": "800",
+    "titleSpace": ".1em",
+    "titleTransform": "uppercase",
+    "mark": "72"
+  },
+  "colors": {
+    "stage": "#1a0000",
+    "ink": "#ffd700",
+    "don": "#8b0000",
+    "ka": "#a52a2a",
+    "text": "#ffd700",
+    "muted": "#c08080",
+    "bg": "#100000",
+    "panel": "rgba(16,0,0,.97)",
+    "field": "#1a0000",
+    "button": "#3d0000",
+    "accent": "#8b0000",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(139,0,0,.35)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(0deg) saturate(1.4) contrast(1.25) brightness(.85)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "72",
+    "caret": "#8b0000",
+    "scan": 0.25,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

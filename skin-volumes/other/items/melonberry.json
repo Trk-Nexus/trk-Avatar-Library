@@ -1,0 +1,44 @@
+{
+  "id": "melonberry",
+  "label": {
+    "ja": "メロンベリー",
+    "en": "Melon Berry",
+    "zh": "蜜瓜莓果",
+    "ko": "멜론베리"
+  },
+  "desc": {
+    "ja": "緑×ピンクのポップな横グラデ",
+    "en": "A pop green-and-pink side gradient",
+    "zh": "绿×粉的流行横向渐变",
+    "ko": "그린×핑크 팝한 가로 그라데이션"
+  },
+  "cat": [
+    "light",
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(90deg,#e6f7ea,#ffe8f2)",
+    "ink": "#263428",
+    "don": "#ff6b9d",
+    "ka": "#2e9e5b",
+    "text": "#263428",
+    "muted": "#5c6d61",
+    "bg": "linear-gradient(90deg,#eaf8ee,#ffeef5)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#fefffe",
+    "button": "#eaf5ee",
+    "accent": "#ff6b9d",
+    "onAccent": "#000000",
+    "gold": "#2e9e5b",
+    "border": "rgba(46,158,91,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(1.06)"
+}

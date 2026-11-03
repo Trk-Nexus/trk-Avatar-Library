@@ -1,0 +1,52 @@
+{
+  "id": "orichalcum",
+  "label": {
+    "ja": "オリハルコン",
+    "en": "Orichalcum",
+    "zh": "奥尔哈尔库姆",
+    "ko": "오리HAL콘"
+  },
+  "desc": {
+    "ja": "古代ギリシャの神聖金属、山吹色の輝き",
+    "en": "Ancient Greek sacred metal, golden-yellow shine",
+    "zh": "古希腊神圣金属，山吹色光泽",
+    "ko": "고대 그리스의 신성한 금속, 산죽색 광채"
+  },
+  "cat": [
+    "grad",
+    "fun",
+    "light"
+  ],
+  "font": "\"Trajan Pro\",\"Papyrus\",fantasy",
+  "type": {
+    "title": "\"Trajan Pro\",fantasy",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".05em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#daa520,#8b4513)",
+    "ink": "#fffdf0",
+    "don": "#ffd700",
+    "ka": "#b8860b",
+    "text": "#fffdf0",
+    "muted": "#b8860b",
+    "bg": "linear-gradient(180deg,#8b4513,#4a2505)",
+    "panel": "rgba(218,165,32,.96)",
+    "field": "#fffdf0",
+    "button": "#daa520",
+    "accent": "#ffd700",
+    "onAccent": "#4a2505",
+    "gold": "#ffe082",
+    "border": "rgba(255,215,0,.30)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(1.25) brightness(1.05) contrast(1.1)"
+}

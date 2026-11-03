@@ -1,0 +1,52 @@
+{
+  "id": "copperplate",
+  "label": {
+    "ja": "カッパープレート",
+    "en": "Copperplate",
+    "zh": "铜版印刷",
+    "ko": "코퍼플레이트"
+  },
+  "desc": {
+    "ja": "銅版彫刻のような大文字、格調高い書体",
+    "en": "Engraved capitals, distinguished and formal",
+    "zh": "铜版雕刻风格的大写，高雅而正式",
+    "ko": "구리판 조각 같은 대문자, 고상하고 정중한 서체"
+  },
+  "cat": [
+    "type",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Copperplate\",\"Papyrus\",fantasy",
+  "type": {
+    "title": "\"Copperplate\",fantasy",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "600",
+    "titleSpace": ".05em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#1a1a1a",
+    "ink": "#d4c5a8",
+    "don": "#d65a31",
+    "ka": "#8c9eac",
+    "text": "#d4c5a8",
+    "muted": "#8c8272",
+    "bg": "#121212",
+    "panel": "rgba(18,18,18,.97)",
+    "field": "#1a1a1a",
+    "button": "#2a2a2a",
+    "accent": "#d65a31",
+    "onAccent": "#121212",
+    "gold": "#e3c089",
+    "border": "rgba(212,197,168,.25)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "sepia(.3) contrast(1.1) brightness(.85)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "supernova",
+  "label": {
+    "ja": "超新星",
+    "en": "Supernova",
+    "zh": "超新星",
+    "ko": "초신성"
+  },
+  "desc": {
+    "ja": "星の大爆発、壮絶な光と熱の放出",
+    "en": "Stellar great explosion, magnificent light and heat release",
+    "zh": "恒星大爆发，壮烈的光与热释放",
+    "ko": "별의 대폭발, 장엄한 빛과 열 방출"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "\"Impact\",\"Haettenschweiler\",sans-serif",
+  "type": {
+    "title": "\"Impact\",sans-serif",
+    "weight": "900",
+    "lh": "1.1",
+    "titleWeight": "900",
+    "titleSpace": "-.05em",
+    "titleTransform": "uppercase",
+    "mark": "BOOM"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#ff4b1f,#ff9068,#ffffff)",
+    "ink": "#ffffff",
+    "don": "#ff4b1f",
+    "ka": "#4ecdc4",
+    "text": "#ffffff",
+    "muted": "#ff9068",
+    "bg": "linear-gradient(180deg,#1a0a0a,#4a0a0a)",
+    "panel": "rgba(26,10,10,.97)",
+    "field": "#2a0f0f",
+    "button": "#4a1a1a",
+    "accent": "#ff4b1f",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(255,75,31,.32)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "saturate(1.5) brightness(1.05) contrast(1.2)"
+}

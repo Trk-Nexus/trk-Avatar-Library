@@ -1,0 +1,63 @@
+{
+  "id": "wizard-machiavelli",
+  "label": {
+    "ja": "マキアヴェッリ 戦術論",
+    "en": "Machiavelli The Art of War",
+    "zh": "马基雅维利 战争术",
+    "ko": "마키아벨리 전쟁론"
+  },
+  "desc": {
+    "ja": "ルネサンス期の政治・軍事論、君主論と戦争の芸術",
+    "en": "Renaissance political military treatise, The Prince and the art of war",
+    "zh": "文艺复兴时期的政治军事论，君主论与战争艺术",
+    "ko": "르네상스期의 정치 군사론, 군주론과 전쟁 예술"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "500",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "V"
+  },
+  "colors": {
+    "stage": "#f5efe0",
+    "ink": "#2a241e",
+    "don": "#b8860b",
+    "ka": "#8b4513",
+    "text": "#2a241e",
+    "muted": "#6a5a40",
+    "bg": "#f0e8d8",
+    "panel": "rgba(240,232,216,.97)",
+    "field": "#f5efe0",
+    "button": "#e8e0d0",
+    "accent": "#b8860b",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(184,134,11,.35)"
+  },
+  "shapes": [
+    "square",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.25) contrast(1.1) brightness(1.05)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "V",
+    "caret": "#b8860b",
+    "scan": 0.14,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}
