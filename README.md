@@ -25,7 +25,8 @@
 | `gallery/all-skins.html` | **全スキン見本**（trk! の見た目のスキン **53 種**）。1ファイルで、ダブルクリックだけで開けます。外部からは何も読みません（オフラインOK） |
 | `gallery/fonts.html` | **書体の一覧と検索**（29 パック・42 ウェイト）。対応字数・大きさ・太さ・ライセンス・ひとこと・雰囲気タグを並べ、**50 音順／大きさ順／字数順**に並べ替え、**雰囲気・ライセンス・太さ・大きさで絞り込み**、言葉で横断検索。1ファイル・外部参照 0。**行ごとに 1 本だけ落とせる**リンクつき（L13・L14） |
 | `gallery/packs.html` | **パックの一覧**（30 パック・書体 42 本）。パックごとに、中に入っている書体（family・太さ・ひとこと・タグ・対応字数・大きさ）・ライセンス・sha256 を並べ、**言葉で横断検索**・**雰囲気タグで絞り込み**・**パック名／大きさ／書体の数で並べ替え**。1ファイル・外部参照 0。**パックごとに「⬇ .stpack」**（「どのパックにどの書体が入っているか」をパックの側から見る） |
-| `catalog/skins.json` | 上の見本のもとデータ（機械が読む用・53 種・書体 9 種） |
+| `catalog/skins.json` | 全 291 種のスキン目録（巻別データの正本）。`gallery/all-skins.html` は固定版由来の 53 種の見本 |
+| `catalog/upstream-skins.json` | 固定版 trk-PWA の 53 種のスナップショット。全スキン見本の生成・照合に使用 |
 | `gallery/pairings.html` | **書体の組み合わせ 14 組**の見本。題字・見出し・本文・注記は**本物の書体**で出て、**役ごとの書体・字間・行間、全体の倍率**をその場で変えられます（エディターの試作・設定を JSON で書き出し）。1ファイル・外部参照 0。もとデータは `catalog/typography.json` |
 | `catalog/fonts.json` | 書体の一覧のもとデータ（機械が読む用・29 パック・42 ウェイト） |
 | `catalog/typography.json` | 組み合わせのもとデータ（6 役・5 倍率・字間/行間の範囲・**4 段階の細分化**・14 組）。`tools/check-typography.mjs` が目録と突き合わせます |
@@ -396,7 +397,7 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 
 | 項目 | 結果 |
 | --- | --- |
-| `tools/export-skin-gallery.mjs` | trk-PWA（main・b79fa3c／trk230）の `js/data.js` + `js/characters/miku.js` から **53 種（書体 9 種）**。いまの `catalog/skins.json` と**中身が一致**（生成し直しても同じ） |
+| `tools/export-skin-gallery.mjs` | trk-PWA（main・b79fa3c／trk230）の `js/data.js` + `js/characters/miku.js` から **53 種（書体 9 種）**。`catalog/upstream-skins.json` と一致。拡張目録 `catalog/skins.json` にはこの 53 種を含む |
 | `tools/export-font-gallery.mjs` | 目録（`catalog/index.json`）から **書体の一覧と検索**（`gallery/fonts.html`・27,863 B）と `catalog/fonts.json` を作る。並べ替え・絞り込み・検索は HTML の中の JS（外部参照 0）。`--check` で今のファイルと一致するかを見る |
 | 見本 HTML の外部参照 | **0 件**（`https?://` を含まない。フォントも画像も外部から読まない） |
 | `tools/verify-pack.mjs` | 見本パックと書体パックの 2 件で合格。**壊れた ZIP・pack.json なし・色の形式違い・指すファイルの欠落・`..` のパス・日本語の family・OFL.txt なし・release の形違い**で、それぞれ不合格になることを確認 |
