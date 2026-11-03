@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // 自動生成: tools/import-skin-catalog.mjs --cat=wizard
 // 入力: catalog/skins.json（手編集禁止）
-// 生成日時: 2026-11-03T04:01:24.478Z
-// スキン数: 28
+// 生成日時: 2026-11-03T04:10:02.603Z
+// スキン数: 34
 
 const SKINS_WIZARD = [
   {
@@ -91,6 +91,19 @@ const SKINS_WIZARD = [
     shapes: ["diamond","square"],
     locked: false,
     video: "hue-rotate(180deg) saturate(1.3) contrast(1.2) brightness(.8)",
+  },
+  {
+    id: "wizard-goetia",
+    label: {"ja":"ゴエティア","en":"Goetia","zh":"高蒂亚","ko":"고에티아"},
+    desc: {"ja":"72柱の悪魔を列伝するソロモンの鍵の一部分、深紅の魔術陣","en":"Part of the Lesser Key of Solomon listing 72 demons, crimson magic circle","zh":"所罗门钥匙的一部分，列传72柱恶魔，深红色魔法阵","ko":"솔로몬의 소록의 일부, 72귀리를 나열하는 것, 진홍색 마법진"},
+    cat: ["wizard","dark","fun"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"72"},
+    colors: {"stage":"#1a0000","ink":"#ffd700","don":"#8b0000","ka":"#a52a2a","text":"#ffd700","muted":"#c08080","bg":"#100000","panel":"rgba(16,0,0,.97)","field":"#1a0000","button":"#3d0000","accent":"#8b0000","onAccent":"#ffffff","gold":"#ffd700","border":"rgba(139,0,0,.35)"},
+    shapes: ["square","square"],
+    locked: false,
+    video: "hue-rotate(0deg) saturate(1.4) contrast(1.25) brightness(.85)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"72","caret":"#8b0000","scan":0.25,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-grep",
@@ -196,6 +209,19 @@ const SKINS_WIZARD = [
     cli: {"font":"Courier New, Courier, monospace","prompt":"@","caret":"#80deea","scan":0.1,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
+    id: "wizard-lemgeton",
+    label: {"ja":"レメゲトン","en":"Lesser Key of Solomon","zh":"所罗门小钥匙","ko":"소omon의 소록"},
+    desc: {"ja":" goetiaを含む禁忌の魔導書、72柱の悪魔を従属させる印","en":"Lemegeton, forbidden grimoire including Goetia, seals to command 72 demons","zh":"《小钥匙》，包含高蒂亚的禁忌魔导书，征服72柱恶魔的印记","ko":"레메게톤, 고에티아를 포함한 금기의 마도서, 72귀리를 복종시키는 인장"},
+    cat: ["wizard","dark","access"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"⛤"},
+    colors: {"stage":"#0a0810","ink":"#d8d0e0","don":"#4b0082","ka":"#6a5acd","text":"#d8d0e0","muted":"#8a7fa0","bg":"#06050a","panel":"rgba(6,5,10,.97)","field":"#0a0810","button":"#1a1624","accent":"#4b0082","onAccent":"#ffffff","gold":"#d4af37","border":"rgba(75,0,130,.35)"},
+    shapes: ["square","diamond"],
+    locked: false,
+    video: "hue-rotate(260deg) saturate(1.2) contrast(1.3) brightness(.8)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"⛤","caret":"#8b00ff","scan":0.2,"cursor":"block","opacity":0.9,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-man",
     label: {"ja":"ウィザード・マン","en":"Wizard Man","zh":"巫师手册","ko":"마법사 매뉴얼"},
     desc: {"ja":"manページ・ドキュメント閲覧・serifフォント","en":"man page, document viewing, serif font","zh":"man页面，文档查看，衬线字体","ko":"man 페이지, 문서 조회, 세리프 글꼴"},
@@ -219,6 +245,32 @@ const SKINS_WIZARD = [
     shapes: ["square","diamond"],
     locked: false,
     video: "hue-rotate(260deg) saturate(1.3) contrast(1.25) brightness(.8)",
+  },
+  {
+    id: "wizard-necronomicon",
+    label: {"ja":"ネクロノミコン","en":"Necronomicon","zh":"死灵名册","ko":"네크로노미콘"},
+    desc: {"ja":"アブドル・アラハズレッドが執筆した禁書、死者の名を記す黒き書","en":"Forbidden book by Abdul Alhazred, black volume recording the names of the dead","zh":"阿卜杜勒·阿拉兹レッド執筆的禁书，记载死者名字的黑色书卷","ko":"압둘 알라즈レッド가 집필한 금서, 죽은 자의 이름을 기록하는 검은 책"},
+    cat: ["wizard","dark","fun"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"📖"},
+    colors: {"stage":"#0d1b0a","ink":"#8fbc8f","don":"#556b2f","ka":"#6b8e23","text":"#8fbc8f","muted":"#8fb08f","bg":"#0a1408","panel":"rgba(10,20,8,.97)","field":"#0d1b0a","button":"#1a2e14","accent":"#556b2f","onAccent":"#ffffff","gold":"#bdb76b","border":"rgba(85,107,47,.35)"},
+    shapes: ["circle","square"],
+    locked: false,
+    video: "hue-rotate(100deg) saturate(.8) contrast(1.3) brightness(.8)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"📖","caret":"#006400","scan":0.3,"cursor":"block","opacity":0.85,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-necronomicon-azif",
+    label: {"ja":"ネクロノミコン（アル・アジフ）","en":"Necronomicon (Al Azif)","zh":"死灵名册（阿赞飞）","ko":"네크로노미콘（알 아지프）"},
+    desc: {"ja":"元のアラビア語名「アル・アジフ」、夜の蝿が囁く狂気の書","en":"Original Arabic name Al Azif, book of madness whispered by night flies","zh":"原阿拉伯语名“阿赞飞”，夜之蝿低语的疯狂之书","ko":"원래 아랍어명 \"알 아지프\", 밤파리가 속삭이는 광기의 책"},
+    cat: ["wizard","grad","dark"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"アジ"},
+    colors: {"stage":"#191970","ink":"#e6e6fa","don":"#4169e1","ka":"#6495ed","text":"#e6e6fa","muted":"#c8c8ff","bg":"#0f0f3d","panel":"rgba(15,15,61,.96)","field":"#191970","button":"#2c2c6c","accent":"#4169e1","onAccent":"#ffffff","gold":"#ffd700","border":"rgba(65,105,225,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "hue-rotate(220deg) saturate(1.1) contrast(1.2) brightness(.85)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"アジ","caret":"#191970","scan":0.28,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-nord",
@@ -281,6 +333,32 @@ const SKINS_WIZARD = [
     shapes: ["circle","circle"],
     locked: false,
     video: "sepia(.45) brightness(1.05) contrast(1.1)",
+  },
+  {
+    id: "wizard-solomon-book",
+    label: {"ja":"ソロモンの書","en":"Book of Solomon","zh":"所罗门之书","ko":"솔로몬의 서"},
+    desc: {"ja":"賢王ソロモンの知恵が記された羊皮紙、黄金の知識と卓越した魔術","en":"Parchment of wise King Solomon, golden knowledge and transcendent sorcery","zh":"智慧之王所罗门记载的羊皮纸，黄金知识与卓越魔术","ko":"현왕 솔로몬의 지혜가 적힌 양피지, 황금 지식과 초월한 마술"},
+    cat: ["wizard","life","grad"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"あア漢 Aa"},
+    colors: {"stage":"#3e2f14","ink":"#f0e6d2","don":"#d4af37","ka":"#c5a059","text":"#f0e6d2","muted":"#c9b18a","bg":"#342810","panel":"rgba(52,40,16,.96)","field":"#3e2f14","button":"#5d4524","accent":"#d4af37","onAccent":"#000000","gold":"#ffe082","border":"rgba(212,175,55,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "sepia(.25) saturate(1.1) brightness(1.05)",
+    cli: {"font":"Cinzel, Trajan Pro, serif","prompt":"📜","caret":"#8b4513","scan":0.12,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-solomon-key",
+    label: {"ja":"ソロモンの鍵","en":"Key of Solomon","zh":"所罗门之钥","ko":"솔로몬의 열쇠"},
+    desc: {"ja":" clavicula salomonis、神聖幾何学の印章と天使召喚の儀式","en":"Clavicula Salomonis, sacred geometry seals and angelic summoning rituals","zh":"《所罗门钥匙》，神圣几何学印记与天使召唤仪式","ko":"클라비cula 솔로몬니스, 신성 기하학 인장과 천사 소환 의식"},
+    cat: ["wizard","grad","light"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"400","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"☿ ☽ ♀"},
+    colors: {"stage":"#f5f1e6","ink":"#2a241e","don":"#b8860b","ka":"#8b4513","text":"#2a241e","muted":"#6a5b40","bg":"#fffaf0","panel":"rgba(255,250,240,.97)","field":"#f5f1e6","button":"#e8e0d0","accent":"#b8860b","onAccent":"#ffffff","gold":"#ffd700","border":"rgba(184,134,11,.35)"},
+    shapes: ["circle","square"],
+    locked: false,
+    video: "sepia(.15) contrast(1.1) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"🗝️","caret":"#b8860b","scan":0.15,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-spell",

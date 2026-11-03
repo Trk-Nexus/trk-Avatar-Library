@@ -221,10 +221,11 @@ npm run check / テスト各種 + モダン UX EVALS 基準を満たすことを
 `?` キーでショートカット一覧ポップオーバー（`popover` 属性、role="dialog"）を表示。`popovertargetaction="hide"` で閉じ、フォーカスを閉じるボタンに移動。一覧は表形式でキーと操作を記載。
 
 #### 9-5. 魔導書テーマスキンシリーズ（グリモワール等）追加
-`catalog/skins.json` に魔導書テーマスキン 4 種を追加し、`tools/import-skin-catalog.mjs --cat=wizard` で `js/skins-wizard.js` を再生成。
-- `wizard-grimoire-noir`（黒の魔導書、dark/access）、`wizard-grimoire-aureate`（黄金の魔導書、grad/light）、`wizard-grimoire-umbra`（影の魔導書、dark/fun）、`wizard-grimoire-celestial`（天球の魔導書、grad/light）
+`catalog/skins.json` に魔導書テーマスキンを追加し、`tools/import-skin-catalog.mjs --cat=wizard` で `js/skins-wizard.js` を再生成（手編集禁止）。
+- 第1弾（Phase 9b）：`wizard-grimoire-noir`（黒の魔導書、dark/access）、`wizard-grimoire-aureate`（黄金の魔導書、grad/light）、`wizard-grimoire-umbra`（影の魔導書、dark/fun）、`wizard-grimoire-celestial`（天球の魔導書、grad/light）
+- 第2弾（本追加）：`wizard-solomon-key`（ソロモンの鍵、grad/light）、`wizard-lemgeton`（レメゲトン、dark/access）、`wizard-solomon-book`（ソロモンの書、life/grad）、`wizard-goetia`（ゴエティア、dark/fun）、`wizard-necronomicon`（ネクロノミコン、dark/fun）、`wizard-necronomicon-azif`（ネクロノミコン アル・アジフ、grad/dark）
 - colors に bg/panel/text/accent/gold の5色を定義。cli オブジェクトに prompt（1-4文字、クォート無）、caret（#rrggbb）、scan（0-0.6）を定義。
-- スキン総数 257 種、wizard 28 種、CLI 対応 wizard 16 種。
+- スキン総数 263 種、wizard 34 種、CLI 対応 wizard 22 種。
 
 ## 関連ファイル
 
