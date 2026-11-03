@@ -343,6 +343,34 @@ function playBell() {
           </label>
           <p class="settings-section-desc">カーソルやカレットのアニメーションを translate/rotate/scale で個別に制御（Modern Web Guidance CSS ガイド）</p>
         </div>
+
+        <!-- アクセシビリティ・ユーザー設定（Phase 10 アクセシビリティ・ユーザー設定） -->
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-contrast-mode" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-contrast-mode">
+            <strong>OS コントラスト設定に対応</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">prefers-contrast / prefers-reduced-transparency に応じて UI を調整（guides/accessibility/preference-aware-ui）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-validation-style" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-validation-style">
+            <strong>バリデーションスタイル（ユーザー操作後のみ）</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">:user-valid / :user-invalid で操作後のフィールドバリデーションのみをスタイリング（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-hidden-hints" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-hidden-hints">
+            <strong>隠しヒントの「ページ内検索」表示</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">hidden="until-found" で隠しヒントをマークアップし、ブラウザ検索で表示可能に（guides/ui-components/accordion）</p>
+        </div>
       </div>
     </details>
 
@@ -939,6 +967,9 @@ function playBell() {
   const advanceEdgeFade = document.getElementById("settings-advance-edge-fade");
   const advancePullToReveal = document.getElementById("settings-advance-pull-to-reveal");
   const advanceCursorAnim = document.getElementById("settings-advance-cursor-anim");
+  const advanceContrastMode = document.getElementById("settings-advance-contrast-mode");
+  const advanceValidationStyle = document.getElementById("settings-advance-validation-style");
+  const advanceHiddenHints = document.getElementById("settings-advance-hidden-hints");
 
   let currentAdvanceAnimEnabled = localStorage.getItem("trk-advance-anim-enabled") !== "false";
   let currentAdvanceReduceMotion = localStorage.getItem("trk-advance-reduce-motion") === "true";
@@ -954,6 +985,9 @@ function playBell() {
   let currentAdvanceEdgeFade = localStorage.getItem("trk-advance-edge-fade") === "true";
   let currentAdvancePullToReveal = localStorage.getItem("trk-advance-pull-to-reveal") === "true";
   let currentAdvanceCursorAnim = localStorage.getItem("trk-advance-cursor-anim") === "true";
+  let currentAdvanceContrastMode = localStorage.getItem("trk-advance-contrast-mode") === "true";
+  let currentAdvanceValidationStyle = localStorage.getItem("trk-advance-validation-style") === "true";
+  let currentAdvanceHiddenHints = localStorage.getItem("trk-advance-hidden-hints") === "true";
 
   // UI 初期化
   advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
@@ -969,6 +1003,10 @@ function playBell() {
   advanceFocusLoop.checked = currentAdvanceFocusLoop;
   advanceEdgeFade.checked = currentAdvanceEdgeFade;
   advancePullToReveal.checked = currentAdvancePullToReveal;
+  advanceCursorAnim.checked = currentAdvanceCursorAnim;
+  advanceContrastMode.checked = currentAdvanceContrastMode;
+  advanceValidationStyle.checked = currentAdvanceValidationStyle;
+  advanceHiddenHints.checked = currentAdvanceHiddenHints;
   advanceCursorAnim.checked = currentAdvanceCursorAnim;
 
   // 設定パネル開閉アニメーションの有効/無効を適用
@@ -1097,6 +1135,33 @@ function playBell() {
     }
   }
 
+  // OS コントラスト設定に対応を適用
+  function applyAdvanceContrastMode() {
+    if (currentAdvanceContrastMode) {
+      root.classList.add("contrast-mode-enabled");
+    } else {
+      root.classList.remove("contrast-mode-enabled");
+    }
+  }
+
+  // バリデーションスタイルを適用
+  function applyAdvanceValidationStyle() {
+    if (currentAdvanceValidationStyle) {
+      root.classList.add("validation-style-user-interaction");
+    } else {
+      root.classList.remove("validation-style-user-interaction");
+    }
+  }
+
+  // 隠しヒントのページ内検索表示を適用
+  function applyAdvanceHiddenHints() {
+    if (currentAdvanceHiddenHints) {
+      root.classList.add("hidden-hints-enabled");
+    } else {
+      root.classList.remove("hidden-hints-enabled");
+    }
+  }
+
   // 全設定を適用
   function applyAllAdvanceSettings() {
     applyAdvanceAnimEnabled();
@@ -1113,6 +1178,9 @@ function playBell() {
     applyAdvanceEdgeFade();
     applyAdvancePullToReveal();
     applyAdvanceCursorAnim();
+    applyAdvanceContrastMode();
+    applyAdvanceValidationStyle();
+    applyAdvanceHiddenHints();
   }
 
   applyAllAdvanceSettings();
@@ -1216,6 +1284,27 @@ function playBell() {
     announce(currentAdvanceCursorAnim ? "カーソルアニメーションを有効にしました" : "カーソルアニメーションを無効にしました");
   });
 
+  advanceContrastMode.addEventListener("change", (e) => {
+    currentAdvanceContrastMode = e.target.checked;
+    localStorage.setItem("trk-advance-contrast-mode", currentAdvanceContrastMode);
+    applyAdvanceContrastMode();
+    announce(currentAdvanceContrastMode ? "OS コントラスト設定に対応しました" : "OS コントラスト設定への対応を無効にしました");
+  });
+
+  advanceValidationStyle.addEventListener("change", (e) => {
+    currentAdvanceValidationStyle = e.target.checked;
+    localStorage.setItem("trk-advance-validation-style", currentAdvanceValidationStyle);
+    applyAdvanceValidationStyle();
+    announce(currentAdvanceValidationStyle ? "バリデーションスタイルを有効にしました" : "バリデーションスタイルを無効にしました");
+  });
+
+  advanceHiddenHints.addEventListener("change", (e) => {
+    currentAdvanceHiddenHints = e.target.checked;
+    localStorage.setItem("trk-advance-hidden-hints", currentAdvanceHiddenHints);
+    applyAdvanceHiddenHints();
+    announce(currentAdvanceHiddenHints ? "隠しヒントのページ内検索表示を有効にしました" : "隠しヒントのページ内検索表示を無効にしました");
+  });
+
   // wizard 辞書のリセット時に advance wizard 設定もリセットする対応
   wizardDictReset.addEventListener("click", () => {
     currentAdvanceAnimEnabled = true;
@@ -1232,6 +1321,9 @@ function playBell() {
     currentAdvanceEdgeFade = false;
     currentAdvancePullToReveal = false;
     currentAdvanceCursorAnim = false;
+    currentAdvanceContrastMode = false;
+    currentAdvanceValidationStyle = false;
+    currentAdvanceHiddenHints = false;
     localStorage.setItem("trk-advance-anim-enabled", currentAdvanceAnimEnabled);
     localStorage.setItem("trk-advance-reduce-motion", currentAdvanceReduceMotion);
     localStorage.setItem("trk-advance-component-color-scheme", currentAdvanceComponentColorScheme);
@@ -1246,6 +1338,9 @@ function playBell() {
     localStorage.setItem("trk-advance-edge-fade", currentAdvanceEdgeFade);
     localStorage.setItem("trk-advance-pull-to-reveal", currentAdvancePullToReveal);
     localStorage.setItem("trk-advance-cursor-anim", currentAdvanceCursorAnim);
+    localStorage.setItem("trk-advance-contrast-mode", currentAdvanceContrastMode);
+    localStorage.setItem("trk-advance-validation-style", currentAdvanceValidationStyle);
+    localStorage.setItem("trk-advance-hidden-hints", currentAdvanceHiddenHints);
     advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
     advanceReduceMotion.checked = currentAdvanceReduceMotion;
     advanceComponentColorScheme.checked = currentAdvanceComponentColorScheme;
@@ -1260,6 +1355,9 @@ function playBell() {
     advanceEdgeFade.checked = currentAdvanceEdgeFade;
     advancePullToReveal.checked = currentAdvancePullToReveal;
     advanceCursorAnim.checked = currentAdvanceCursorAnim;
+    advanceContrastMode.checked = currentAdvanceContrastMode;
+    advanceValidationStyle.checked = currentAdvanceValidationStyle;
+    advanceHiddenHints.checked = currentAdvanceHiddenHints;
     applyAllAdvanceSettings();
     announce("advance wizard 設定もデフォルトに戻しました");
   });

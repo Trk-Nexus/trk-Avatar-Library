@@ -2113,3 +2113,74 @@ kbd {
   }
 }
 
+/* ============================================================
+   advance wizard 設定：アクセシビリティ・ユーザー設定（Modern Web Guidance 準拠）
+   出典：guides/accessibility/preference-aware-ui、guides/visual-design/browser-ui-theming
+   ============================================================ */
+
+/* --- OS コントラスト設定に対応 ---
+   出典：guides/accessibility/preference-aware-ui */
+.contrast-mode-enabled {
+  /* prefers-contrast / prefers-reduced-transparency に応じたスタイルは
+     CSS メディアクエリで自動適用される。クラスで状態を示す。 */
+}
+
+@media (prefers-contrast: more) {
+  .contrast-mode-enabled button,
+  .contrast-mode-enabled .settings-checkbox,
+  .contrast-mode-enabled .settings-range,
+  .contrast-mode-enabled .custom-select {
+    border-width: 2px;
+    border-color: var(--color-text);
+  }
+
+  .contrast-mode-enabled .settings-section {
+    border-bottom: 2px solid var(--color-text);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .contrast-mode-enabled .settings-panel::backdrop {
+    backdrop-filter: none;
+    background: color-mix(in srgb, #000 60%);
+  }
+
+  .contrast-mode-enabled .skin-picker-popover::backdrop,
+  .contrast-mode-enabled .settings-panel::backdrop {
+    backdrop-filter: none;
+  }
+}
+
+/* --- バリデーションスタイル（ユーザー操作後のみ）---
+   出典：guides/visual-design/browser-ui-theming */
+.validation-style-user-interaction input:user-valid,
+.validation-style-user-interaction select:user-valid {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 20%);
+}
+
+.validation-style-user-interaction input:user-invalid,
+.validation-style-user-interaction select:user-invalid {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 2px color-mix(in srgb, #d32f2f 20%);
+}
+
+/* --- 隠しヒントの「ページ内検索」表示 ---
+   出典：guides/ui-components/accordion（hidden="until-found"） */
+.hidden-hints-enabled .settings-accordion-content[hidden="until-found"] {
+  /* beforematch イベントで open になった際に表示される。
+     このクラスでスタイルを追加調整可能。 */
+  animation: hint-reveal 0.3s ease forwards;
+}
+
+@keyframes hint-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

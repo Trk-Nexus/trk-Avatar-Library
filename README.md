@@ -520,6 +520,14 @@ node tools/check-docs.mjs            # README の表・リンク・セットの�
 | プルダウン隠しメニュー | `wizard.nav.pullToReveal` | オフ | プルダウンジェスチャーで隠し機能やショートカットを表示 | guides/ui-atoms/pull-to-reveal |
 | カーソルアニメーション（個別 transform） | `wizard.anim.cursorStyle` | オフ | カーソルやカレットのアニメーションを translate/rotate/scale で個別に制御 | Modern Web Guidance CSS ガイド |
 
+#### アクセシビリティ・ユーザー設定
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| OS コントラスト設定に対応 | `wizard.a11y.contrastMode` | オフ | `prefers-contrast` / `prefers-reduced-transparency` に応じて UI を調整 | guides/accessibility/preference-aware-ui |
+| バリデーションスタイル（ユーザー操作後のみ） | `wizard.a11y.validationStyle` | オフ | `:user-valid` / `:user-invalid` で操作後のフィールドバリデーションのみをスタイリング | guides/visual-design/browser-ui-theming |
+| 隠しヒントの「ページ内検索」表示 | `wizard.a11y.hiddenHints` | オフ | `hidden="until-found"` で隠しヒントをマークアップし、ブラウザ検索で表示可能に | guides/ui-components/accordion |
+
 #### アコーディオン構造
 
 - 各設定セクションは `details`/`summary` でラップされ、個別に開閉可能
