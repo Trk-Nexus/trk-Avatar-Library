@@ -40,18 +40,18 @@ function test(name, fn) {
 console.log("=== trk269 CLI 標準テスト（23件） ===\n");
 
 // --- 1. スキン総数 ---
-test("スキン総数は 285 種", () => {
-  assert.strictEqual(skins.length, 285);
+test("スキン総数は 291 種", () => {
+  assert.strictEqual(skins.length, 291);
 });
 
-// --- 2. wizard カテゴリ 56 種 ---
-test("wizard カテゴリは 56 種", () => {
-  assert.strictEqual(wizardSkins.length, 56);
+// --- 2. wizard カテゴリ 62 種 ---
+test("wizard カテゴリは 62 種", () => {
+  assert.strictEqual(wizardSkins.length, 62);
 });
 
-// --- 3. CLI 対応 44 種 ---
-test("CLI 対応 wizard スキンは 44 種", () => {
-  assert.strictEqual(cliSkins.length, 44);
+// --- 3. CLI 対応 50 種 ---
+test("CLI 対応 wizard スキンは 50 種", () => {
+  assert.strictEqual(cliSkins.length, 50);
 });
 
 // --- 4. cli.font 二重クォートなし（wizard-grep/man/sudo）---

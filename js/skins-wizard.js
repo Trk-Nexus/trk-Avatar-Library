@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // 自動生成: tools/import-skin-catalog.mjs --cat=wizard
 // 入力: catalog/skins.json（手編集禁止）
-// 生成日時: 2026-11-03T04:42:47.266Z
-// スキン数: 56
+// 生成日時: 2026-11-03T04:49:29.172Z
+// スキン数: 62
 
 const SKINS_WIZARD = [
   {
@@ -42,6 +42,19 @@ const SKINS_WIZARD = [
     shapes: ["circle","square"],
     locked: false,
     video: "sepia(.4) saturate(1.2) contrast(1.15) brightness(.9)",
+  },
+  {
+    id: "wizard-anchor-positioner",
+    label: {"ja":"アンカーポジショナー","en":"Anchor Positioner","zh":"锚点定位器","ko":"앵커 위치잡기"},
+    desc: {"ja":"Anchor Positioning をフル活用、ツールチップとポップオーバーをアンカー要素に固定","en":"Full use of Anchor Positioning, tooltips and popovers anchored to anchor elements","zh":"全面使用Anchor Positioning，工具提示和弹出窗口固定到锚点元素","ko":"Anchor Positioning를 완전히 활용, 툴팁과 팝오버를 앵커 요소에 고정"},
+    cat: ["wizard","dark","access"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"⚓"},
+    colors: {"stage":"#0a0a0a","ink":"#e0e0e0","don":"#d4af37","ka":"#666666","text":"#e0e0e0","muted":"#8fd79a","bg":"#050505","panel":"#031406","field":"#0a0a0a","button":"#1a1a1a","accent":"#d4af37","onAccent":"#000000","gold":"#ffffff","border":"#d4af37"},
+    shapes: ["square","square"],
+    locked: false,
+    video: "contrast(1.2) brightness(.85)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"⚓","caret":"#d4af37","scan":0.12,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-arbatel",
@@ -134,6 +147,19 @@ const SKINS_WIZARD = [
     cli: {"font":"Courier New, Courier, monospace","prompt":"λ","caret":"#39ff14","scan":0.2,"cursor":"block","opacity":0.85,"history":50,"completion":"tab","bell":true},
   },
   {
+    id: "wizard-container-query-responder",
+    label: {"ja":"コンテナクエリ・レスポンシバー","en":"Container Query Responder","zh":"容器查询响应者","ko":"컨테이너 쿼리 응답자"},
+    desc: {"ja":"Container Queries をフル活用、@container でコンテナ幅に応じたレイアウト自動適応","en":"Full use of Container Queries, @container for automatic layout adaptation to container width","zh":"全面使用Container Queries，@container用于根据容器宽度自动适应布局","ko":"Container Queries를 완전히 활용, @container로 컨테이너 너비에 따른 레이아웃 자동 적응"},
+    cat: ["wizard","light","access"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"📐"},
+    colors: {"stage":"#fafafa","ink":"#1a1a1a","don":"#2c5282","ka":"#4a5568","text":"#1a1a1a","muted":"#4a5568","bg":"#ffffff","panel":"rgba(255,255,255,.98)","field":"#fafafa","button":"#e2e8f0","accent":"#2c5282","onAccent":"#ffffff","gold":"#7aa2f7","border":"rgba(44,82,130,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "contrast(1.05) brightness(1.0)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"📐","caret":"#2c5282","scan":0.1,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-crystal",
     label: {"ja":"クリスタルボール","en":"Crystal Ball","zh":"水晶球","ko":"크리스털 볼"},
     desc: {"ja":"水晶占い、未来を映す球体と紫の霧","en":"Crystal gazing, sphere reflecting the future and purple mist","zh":"水晶占卜，映照未来的球体与紫色薄雾","ko":"수정 구 점술, 미래를 비추는 구체와 보라색 안개"},
@@ -182,6 +208,19 @@ const SKINS_WIZARD = [
     shapes: ["diamond","square"],
     locked: false,
     video: "hue-rotate(180deg) saturate(1.3) contrast(1.2) brightness(.8)",
+  },
+  {
+    id: "wizard-focus-ring-navigator",
+    label: {"ja":"フォーカスリング・ナビゲーター","en":"Focus Ring Navigator","zh":"焦点环导航者","ko":"포커스 링 항해사"},
+    desc: {"ja":":focus-visible をフル活用、キーボードのみでの完全操作とフォーカスリング強化","en":"Full use of :focus-visible, keyboard-only full operation and focus ring enhancement","zh":"全面使用:focus-visible，仅键盘的完全操作和焦点环增强","ko":":focus-visible를 완전히 활용, 키보드만으로의 완전한 조작과 포커스 링 강화"},
+    cat: ["wizard","light","access"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"500","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"◎"},
+    colors: {"stage":"#ffffff","ink":"#1a1a1a","don":"#d4af37","ka":"#8b4513","text":"#1a1a1a","muted":"#666666","bg":"#fafafa","panel":"rgba(250,250,250,.98)","field":"#ffffff","button":"#e8e8e8","accent":"#d4af37","onAccent":"#000000","gold":"#ffd700","border":"rgba(212,175,55,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "contrast(1.05) brightness(1.0)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"◎","caret":"#d4af37","scan":0.1,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-glitch-sorcerer",
@@ -506,6 +545,19 @@ const SKINS_WIZARD = [
     cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"ℜ","caret":"#7aa2f7","scan":0.12,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
+    id: "wizard-reduce-motion-accessor",
+    label: {"ja":"リデュース・モーション・アクセシビラー","en":"Reduce Motion Accessor","zh":"减少动作的可达者","ko":"움직임 감소 접근자"},
+    desc: {"ja":"prefers-reduced-motion をフル活用、モーション削減設定に応じたアニメーション制御","en":"Full use of prefers-reduced-motion, animation control based on motion reduction settings","zh":"全面使用prefers-reduced-motion，根据运动减少设置进行动画控制","ko":"prefers-reduced-motion을 완전히 활용, 움직임 감소 설정에 따른 애니메이션 제어"},
+    cat: ["wizard","dark","access"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"♿"},
+    colors: {"stage":"#1a1a1a","ink":"#e0e0e0","don":"#8b0000","ka":"#a52a2a","text":"#e0e0e0","muted":"#c08080","bg":"#101010","panel":"rgba(16,16,16,.97)","field":"#1a1a1a","button":"#2a2a2a","accent":"#8b0000","onAccent":"#ffffff","gold":"#d4af37","border":"rgba(139,0,0,.35)"},
+    shapes: ["square","square"],
+    locked: false,
+    video: "hue-rotate(0deg) saturate(1.4) contrast(1.25) brightness(.85)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"♿","caret":"#8b0000","scan":0.2,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-rune",
     label: {"ja":"ルーン文字","en":"Rune","zh":"卢恩文字","ko":"룬 문자"},
     desc: {"ja":"北欧ルーン刻印、石板と氷の青","en":"Nordic rune carving, stone tablet and ice blue","zh":"北欧卢恩刻印，石板与冰蓝","ko":"노르드 룬 문자 새김, 돌판과 얼음 파랑"},
@@ -529,6 +581,19 @@ const SKINS_WIZARD = [
     locked: false,
     video: "hue-rotate(100deg) saturate(1.1) contrast(1.15) brightness(.85)",
     cli: {"font":"Courier New, Courier, monospace","prompt":"略","caret":"#4a7c59","scan":0.16,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-scroll-driven-visionary",
+    label: {"ja":"スクロールドリブン・ビジョナー","en":"Scroll-Driven Visionary","zh":"滚动驱动的先知","ko":"스크롤 구동 예언자"},
+    desc: {"ja":"Scroll-driven Animations をフル活用、animation-timeline: view() でスクロール連動フェードイン・スライド","en":"Full use of Scroll-driven Animations, animation-timeline: view() for scroll-linked fade-in and slide","zh":"全面使用Scroll-driven Animations，animation-timeline: view()用于滚动关联的淡入和滑动","ko":"Scroll-driven Animations를 완전히 활용, animation-timeline: view()으로 스크롤 연결 페이드인 및 슬라이드"},
+    cat: ["wizard","grad","dark"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"👁️"},
+    colors: {"stage":"#0b1026","ink":"#dce6ff","don":"#7aa2ff","ka":"#9fbbff","text":"#dce6ff","muted":"#b8c8f0","bg":"#090d1c","panel":"rgba(9,13,28,.94)","field":"#0b1026","button":"#1a2440","accent":"#7aa2ff","onAccent":"#000000","gold":"#e0c38c","border":"rgba(122,162,255,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "saturate(1.2) contrast(1.15) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"👁️","caret":"#7aa2ff","scan":0.12,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-seance",
@@ -682,6 +747,19 @@ const SKINS_WIZARD = [
     locked: false,
     video: "sepia(.3) contrast(1.15) brightness(.9)",
     cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"M","caret":"#8b7355","scan":0.14,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-view-transition-master",
+    label: {"ja":"遷移マスター","en":"View Transition Master","zh":"视图过渡大师","ko":"뷰 전환 마스터"},
+    desc: {"ja":"View Transitions API をフル活用、スキン変更時の要素ごとのスムーズ遷移アニメーション","en":"Full use of View Transitions API, element-by-element smooth transition animation on skin change","zh":"全面使用View Transitions API，皮肤更换时元素之间的平滑过渡动画","ko":"View Transitions API를 완전히 활용, 스킨 변경 시 요소별 부드러운 전환 애니메이션"},
+    cat: ["wizard","grad","light"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"500","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"✦"},
+    colors: {"stage":"#f5f1e6","ink":"#2a241e","don":"#b8860b","ka":"#8b4513","text":"#2a241e","muted":"#6a5a40","bg":"#f0e8d8","panel":"rgba(240,232,216,.97)","field":"#f5f1e6","button":"#e8e0d0","accent":"#b8860b","onAccent":"#ffffff","gold":"#ffd700","border":"rgba(184,134,11,.35)"},
+    shapes: ["circle","square"],
+    locked: false,
+    video: "sepia(.2) contrast(1.1) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"✦","caret":"#b8860b","scan":0.14,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-void",
