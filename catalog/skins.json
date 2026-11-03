@@ -1,7 +1,7 @@
 {
   "format": "trk-avatar-library-skins",
   "version": 1,
-  "generatedAt": "2026-11-03T00:31:29.528507+00:00",
+  "generatedAt": "2026-11-03T01:15:23.595415+00:00",
   "source": "trk-PWA / js/data.js + js/characters/miku.js",
   "count": 253,
   "typeSkins": 43,
@@ -11070,7 +11070,12 @@
         "font": "Cascadia Mono, Consolas, monospace",
         "prompt": "λ",
         "caret": "#39ff14",
-        "scan": 0.12
+        "scan": 0.12,
+        "cursor": "block",
+        "opacity": 1,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       }
     },
     {
@@ -11108,7 +11113,7 @@
         "don": "#bb86fc",
         "ka": "#74b9ff",
         "text": "#ffd700",
-        "muted": "#4a2a6a",
+        "muted": "#a05ae5",
         "bg": "#0f051a",
         "panel": "rgba(15,5,26,.97)",
         "field": "#1a0a2e",
@@ -11180,7 +11185,12 @@
         "font": "Trajan Pro, Garamond, serif",
         "prompt": ">",
         "caret": "#d4af37",
-        "scan": 0.08
+        "scan": 0.08,
+        "cursor": "block",
+        "opacity": 1,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       }
     },
     {
@@ -11218,7 +11228,7 @@
         "don": "#cbd5e1",
         "ka": "#64748b",
         "text": "#e2e8f0",
-        "muted": "#475569",
+        "muted": "#7086a5",
         "bg": "#020617",
         "panel": "rgba(2,6,23,.98)",
         "field": "#0f172a",
@@ -11270,7 +11280,7 @@
         "don": "#ffd700",
         "ka": "#8b4513",
         "text": "#d4af37",
-        "muted": "#795548",
+        "muted": "#cc8f79",
         "bg": "#2a1a15",
         "panel": "rgba(42,26,21,.97)",
         "field": "#4a2c2a",
@@ -11342,7 +11352,12 @@
         "font": "Courier New, Courier, monospace",
         "prompt": ">",
         "caret": "#ffbf00",
-        "scan": 0.15
+        "scan": 0.15,
+        "cursor": "block",
+        "opacity": 0.9,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       }
     },
     {
@@ -11380,7 +11395,7 @@
         "don": "#81c784",
         "ka": "#388e3c",
         "text": "#a5d6a7",
-        "muted": "#66bb6a",
+        "muted": "#7ae07f",
         "bg": "#0d3b0d",
         "panel": "rgba(13,59,13,.97)",
         "field": "#1b5e20",
@@ -11432,7 +11447,7 @@
         "don": "#ce93d8",
         "ka": "#ba68c8",
         "text": "#e1bee7",
-        "muted": "#8e24aa",
+        "muted": "#ffffff",
         "bg": "#311b92",
         "panel": "rgba(49,27,146,.96)",
         "field": "#4a148c",
@@ -11484,7 +11499,7 @@
         "don": "#bb86fc",
         "ka": "#74b9ff",
         "text": "#e0d8f0",
-        "muted": "#4a4a6a",
+        "muted": "#8080b7",
         "bg": "#0f0b1e",
         "panel": "rgba(15,11,30,.97)",
         "field": "#1a1a2e",
@@ -11535,8 +11550,8 @@
         "ink": "#000000",
         "don": "#111111",
         "ka": "#0a0a0a",
-        "text": "#000000",
-        "muted": "#1a1a1a",
+        "text": "#e0e0e0",
+        "muted": "#757575",
         "bg": "#000000",
         "panel": "rgba(0,0,0,.99)",
         "field": "#000000",
@@ -11608,7 +11623,12 @@
         "font": "Cinzel, Trajan Pro, serif",
         "prompt": "✦",
         "caret": "#ff00ff",
-        "scan": 0.18
+        "scan": 0.18,
+        "cursor": "block",
+        "opacity": 1,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       }
     },
     {
@@ -11646,7 +11666,7 @@
         "don": "#45b7aa",
         "ka": "#2c7873",
         "text": "#4ecdc4",
-        "muted": "#3a6b6b",
+        "muted": "#529999",
         "bg": "#061a1a",
         "panel": "rgba(6,26,26,.98)",
         "field": "#0d2a2a",
@@ -11698,7 +11718,7 @@
         "don": "#d4af37",
         "ka": "#8d6e63",
         "text": "#ffe082",
-        "muted": "#795548",
+        "muted": "#cc8f79",
         "bg": "#2a1a15",
         "panel": "rgba(42,26,21,.96)",
         "field": "#4a2c2a",
@@ -11750,7 +11770,7 @@
         "don": "#e0e0e0",
         "ka": "#666666",
         "text": "#f5f5f5",
-        "muted": "#333333",
+        "muted": "#878787",
         "bg": "#0f0f0f",
         "panel": "rgba(15,15,15,.97)",
         "field": "#1a1a1a",
@@ -11801,11 +11821,11 @@
         "ink": "#fffdf0",
         "don": "#ffd700",
         "ka": "#d4af37",
-        "text": "#fffdf0",
-        "muted": "#a08c5a",
+        "text": "#3a2a5a",
+        "muted": "#3a2a5a",
         "bg": "#5c4033",
-        "panel": "rgba(92,64,51,.96)",
-        "field": "#b8860b",
+        "panel": "#e0c0a0",
+        "field": "#ffe0b2",
         "button": "#8b6508",
         "accent": "#ffd700",
         "onAccent": "#000000",
@@ -11854,7 +11874,7 @@
         "don": "#d4af37",
         "ka": "#4a4a4a",
         "text": "#bb86fc",
-        "muted": "#333333",
+        "muted": "#878787",
         "bg": "#0a0a0a",
         "panel": "rgba(10,10,10,.98)",
         "field": "#1a1a1a",
@@ -11923,10 +11943,15 @@
       "locked": false,
       "video": "saturate(1.6) contrast(1.3) brightness(.85) hue-rotate(110deg)",
       "cli": {
-        "font": "Courier New,Courier,monospace",
+        "font": "Courier New, Courier, monospace",
         "prompt": "λ",
         "caret": "#39ff14",
-        "scan": 0.2
+        "scan": 0.2,
+        "cursor": "block",
+        "opacity": 0.85,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       }
     },
     {
@@ -11981,10 +12006,15 @@
       "locked": false,
       "video": "saturate(1.4) contrast(1.2) brightness(.9)",
       "cli": {
-        "font": "Courier New,Courier,monospace",
+        "font": "Courier New, Courier, monospace",
         "prompt": "?",
         "caret": "#ffff00",
-        "scan": 0.1
+        "scan": 0.1,
+        "cursor": "block",
+        "opacity": 1,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       },
       "cli.font": "Courier New, Courier, monospace"
     },
@@ -12040,10 +12070,15 @@
       "locked": false,
       "video": "sepia(.1) brightness(1.02)",
       "cli": {
-        "font": "Trajan Pro,Garamond,serif",
+        "font": "Trajan Pro, Garamond, serif",
         "prompt": ">",
         "caret": "#cbd5e1",
-        "scan": 0.05
+        "scan": 0.05,
+        "cursor": "block",
+        "opacity": 1,
+        "history": 50,
+        "completion": "tab",
+        "bell": false
       },
       "cli.font": "Trajan Pro, Garamond, serif"
     },
@@ -12099,10 +12134,15 @@
       "locked": false,
       "video": "hue-rotate(0deg) saturate(1.5) contrast(1.3) brightness(.8)",
       "cli": {
-        "font": "Cascadia Mono,Consolas,monospace",
+        "font": "Cascadia Mono, Consolas, monospace",
         "prompt": "#",
         "caret": "#ff0040",
-        "scan": 0.15
+        "scan": 0.15,
+        "cursor": "block",
+        "opacity": 1,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       },
       "cli.font": "Cascadia Mono, Consolas, monospace"
     },
@@ -12161,7 +12201,12 @@
         "font": "Rajdhani, Oswald, sans-serif",
         "prompt": "→",
         "caret": "#00ffff",
-        "scan": 0.12
+        "scan": 0.12,
+        "cursor": "block",
+        "opacity": 1,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       }
     },
     {
@@ -12219,7 +12264,12 @@
         "font": "Courier New, Courier, monospace",
         "prompt": "@",
         "caret": "#80deea",
-        "scan": 0.1
+        "scan": 0.1,
+        "cursor": "block",
+        "opacity": 1,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       }
     },
     {
@@ -12277,7 +12327,12 @@
         "font": "JetBrains Mono, monospace",
         "prompt": "+",
         "caret": "#f92672",
-        "scan": 0.08
+        "scan": 0.08,
+        "cursor": "block",
+        "opacity": 1,
+        "history": 50,
+        "completion": "tab",
+        "bell": true
       }
     },
     {
@@ -12335,7 +12390,12 @@
         "font": "JetBrains Mono, monospace",
         "prompt": ">",
         "caret": "#88c0d0",
-        "scan": 0.06
+        "scan": 0.06,
+        "cursor": "block",
+        "opacity": 0.95,
+        "history": 50,
+        "completion": "tab",
+        "bell": false
       }
     }
   ],
