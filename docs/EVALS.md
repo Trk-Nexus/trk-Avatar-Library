@@ -196,6 +196,46 @@ https://github.com/GoogleChrome/modern-web-guidance-src
 | カードUI | Grid レイアウト、カラースウォッチ、適用ボタン |
 | キーボード操作 | Enter/Space でスキン適用、tabIndex 管理 |
 
+### E24. ターミナル表示設定（スキャンライン強度／カーソル速度／フォントサイズ／アニメーション減らす／ベル音）
+| 項目 | 合格基準 |
+|------|----------|
+| スキャンライン強度 | 0〜0.6 の range スライダー、`--cli-scan` で制御 |
+| カーソル点滅速度 | 通常/速い/遅い、`--cli-blink-speed` で制御 |
+| フォントサイズ | 小/中/大、`--cli-font-size` で制御 |
+| アニメーション減らすモード | `.reduce-motion` クラスでアニメーション無効化 |
+| ベル音オン/オフ | `cli.bell.enabled` と連動、`localStorage` で保存 |
+| 設定保存 | localStorage に保存し、ページリロード後も反映 |
+
+---
+
+## Phase 8: モダンUX機能拡張（View Transitions / Container Queries / Scroll-driven Animations / FOUC対策）— 評価項目
+
+### E25. View Transitions API（スキン変更時のスムーズな遷移）
+| 項目 | 合格基準 |
+|------|----------|
+| 実装 | `document.startViewTransition()` でスキン変更時の DOM 更新を囲む |
+| フォールバック | `startViewTransition` 未サポート時は即座に適用 |
+| 発表 | 遷移完了後、スクリーンリーダーにスキン変更をアナウンス |
+
+### E26. Container Queries（スキンプレビューカード）
+| 項目 | 合格基準 |
+|------|----------|
+| コンテナ設定 | `.skin-preview-card` に `container-type: inline-size` / `container-name: skin-card` |
+| コンテナクエリ | `@container skin-card (max-width: 200px)` と `(min-width: 300px)` で内部レイアウト変更 |
+
+### E27. Scroll-driven Animations（スキンプレビューカード）
+| 項目 | 合格基準 |
+|------|----------|
+| アニメーション | `animation-timeline: view()` でビューポート連動フェードイン＋スライドイン |
+| アニメーション範囲 | `animation-range: entry 10% cover 30%` |
+| Progressive Enhancement | 未サポートブラウザでも通常表示される |
+
+### E28. FOUC 対策（テーマの即座適用）
+| 項目 | 合格基準 |
+|------|----------|
+| インラインスクリプト | `<head>` 内で `localStorage` からテーマを読み込み、`data-theme` と `color-scheme` を即座に設定 |
+| ちらつき防止 | CSS 読み込み前にテーマが適用される |
+
 ---
 
 ## 合格/不合格の判定
@@ -208,3 +248,5 @@ https://github.com/GoogleChrome/modern-web-guidance-src
 |------|------|
 | 2026-11-03 | 初版作成。Phase 1 評価項目を策定。 |
 | 2026-11-03 | Phase 6 評価項目（E20〜E23）を追加。 |
+| 2026-11-03 | Phase 7 評価項目（E24）を追加。 |
+| 2026-11-03 | Phase 8 評価項目（E25〜E28）を追加。 |

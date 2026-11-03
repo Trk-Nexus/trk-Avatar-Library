@@ -11,6 +11,14 @@
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="preload" as="style" href="css/style.css">
 <link rel="icon" href="./icon-192.png">
+<!-- FOUC 対策：テーマを即座に適用（Modern Web Guidance: color-scheme FOUC prevention）-->
+<script>
+  (function () {
+    const savedTheme = localStorage.getItem('trk-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.documentElement.style.colorScheme = savedTheme === 'system' ? 'light dark' : savedTheme;
+  })();
+</script>
 </head>
 <body trk-build="trk269" data-theme="dark">
 
@@ -415,33 +423,66 @@
     }
   });
 
-  // --- スキン適用 ---
+  // --- スキン適用（View Transitions API でスムーズな遷移アニメーション）---
   function applySkin(id) {
     const skin = SKINS_WIZARD.find((s) => s.id === id);
     if (!skin) throw new Error("skin not found");
     currentSkinId = id;
     skinPickerLabel.textContent = id;
 
-    root.style.setProperty("--skin-bg", skin.colors.bg);
-    root.style.setProperty("--skin-panel", skin.colors.panel);
-    root.style.setProperty("--skin-text", skin.colors.text);
-    root.style.setProperty("--skin-muted", skin.colors.muted);
-    root.style.setProperty("--skin-accent", skin.colors.accent);
-    root.style.setProperty("--skin-gold", skin.colors.gold);
-    root.style.setProperty("--skin-border", skin.colors.border);
+    // View Transitions API: DOM 変更を囲んでスムーズな遷移アニメーションを適用
+    // Modern Web Guidance: view-transitions feature
+    const transition = document.startViewTransition ? document.startViewTransition(() => {
+      root.style.setProperty("--skin-bg", skin.colors.bg);
+      root.style.setProperty("--skin-panel", skin.colors.panel);
+      root.style.setProperty("--skin-text", skin.colors.text);
+      root.style.setProperty("--skin-muted", skin.colors.muted);
+      root.style.setProperty("--skin-accent", skin.colors.accent);
+      root.style.setProperty("--skin-gold", skin.colors.gold);
+      root.style.setProperty("--skin-border", skin.colors.border);
 
-    if (skin.cli) {
-      const look = sanitizeCliLook(skin.cli);
-      cliLookVars(look, root);
+      if (skin.cli) {
+        const look = sanitizeCliLook(skin.cli);
+        cliLookVars(look, root);
+      }
+
+      // スキンプレビューの current 状態を更新
+      document.querySelectorAll(".skin-preview-card").forEach((card) => {
+        card.classList.toggle("current", card.dataset.skinId === id);
+      });
+      document.querySelectorAll(".skin-picker-item").forEach((li) => {
+        li.classList.toggle("current", li.dataset.skinId === id);
+      });
+    }) : (() => {
+      root.style.setProperty("--skin-bg", skin.colors.bg);
+      root.style.setProperty("--skin-panel", skin.colors.panel);
+      root.style.setProperty("--skin-text", skin.colors.text);
+      root.style.setProperty("--skin-muted", skin.colors.muted);
+      root.style.setProperty("--skin-accent", skin.colors.accent);
+      root.style.setProperty("--skin-gold", skin.colors.gold);
+      root.style.setProperty("--skin-border", skin.colors.border);
+
+      if (skin.cli) {
+        const look = sanitizeCliLook(skin.cli);
+        cliLookVars(look, root);
+      }
+
+      // スキンプレビューの current 状態を更新
+      document.querySelectorAll(".skin-preview-card").forEach((card) => {
+        card.classList.toggle("current", card.dataset.skinId === id);
+      });
+      document.querySelectorAll(".skin-picker-item").forEach((li) => {
+        li.classList.toggle("current", li.dataset.skinId === id);
+      });
+    })();
+
+    if (transition && typeof transition.finished === "object") {
+      transition.finished.then(() => {
+        announce(`スキンを${skin.id}に変更しました`);
+      });
+    } else {
+      announce(`スキンを${skin.id}に変更しました`);
     }
-
-    // スキンプレビューの current 状態を更新
-    document.querySelectorAll(".skin-preview-card").forEach((card) => {
-      card.classList.toggle("current", card.dataset.skinId === id);
-    });
-    document.querySelectorAll(".skin-picker-item").forEach((li) => {
-      li.classList.toggle("current", li.dataset.skinId === id);
-    });
   }
 
   // --- スキンプレビューカードのレンダリング ---

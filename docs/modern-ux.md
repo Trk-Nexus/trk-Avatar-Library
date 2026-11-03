@@ -174,6 +174,34 @@ npm run check / テスト各種 + モダン UX EVALS 基準を満たすことを
 - `Esc`: 設定パネルを閉じる / 入力クリア
 - `Ctrl+L`: 画面クリア（clear コマンド）
 
+### Phase 7: UX 設定拡張（完了）
+
+#### 7-1. ターミナル表示設定（設定パネル内）
+以下の設定項目を設定パネルに追加し、`localStorage` に保存・復元：
+- **スキャンライン強度**（0〜0.6、range スライダー、`--cli-scan` で制御）
+- **カーソル点滅速度**（通常/速い/遅い、`--cli-blink-speed` で制御）
+- **フォントサイズ**（小/中/大、`--cli-font-size` で制御）
+- **アニメーション減らすモード**（アクセシビリティ、`.reduce-motion` クラス）
+- **ベル音オン/オフ**（`cli.bell.enabled` と連動）
+
+#### 7-2. アクセシビリティ強化
+- アニメーション減らすモードでモーションに敏感なユーザーに配慮
+- 各設定変更時にスクリーンリーダーへアナウンス（`aria-live="polite"`）
+
+### Phase 8: モダンUX機能拡張（完了）
+
+#### 8-1. View Transitions API（スキン変更時のスムーズな遷移）
+`document.startViewTransition()` でスキン変更時の DOM 更新を囲み、スムーズな遷移アニメーションを適用。未サポートブラウザでは即座に適用。
+
+#### 8-2. Container Queries（スキンプレビューカード）
+`.skin-preview-card` に `container-type: inline-size` / `container-name: skin-card` を設定。`@container skin-card (max-width: 200px)` と `(min-width: 300px)` でカード幅に応じた内部レイアウト変更。
+
+#### 8-3. Scroll-driven Animations（スキンプレビューカード）
+`animation-timeline: view()` でビューポート連動フェードイン＋スライドイン。`animation-range: entry 10% cover 30%`。未サポートブラウザでも通常表示（Progressive Enhancement）。
+
+#### 8-4. FOUC 対策（テーマの即座適用）
+`<head>` 内のインラインスクリプトで `localStorage` からテーマを読み込み、`data-theme` と `color-scheme` を CSS 読み込み前に即座に設定。テーマのちらつきを防止。
+
 ## 関連ファイル
 
 | ファイル | 役割 |
@@ -194,4 +222,6 @@ npm run check / テスト各種 + モダン UX EVALS 基準を満たすことを
 |------|------|
 | 2026-11-03 | 初版作成。Phase 1〜5 の実装手順を記録。 |
 | 2026-11-03 | Phase 6 実装手順を追加。 |
+| 2026-11-03 | Phase 7 実装手順を追加。 |
+| 2026-11-03 | Phase 8 実装手順を追加。 |
 
