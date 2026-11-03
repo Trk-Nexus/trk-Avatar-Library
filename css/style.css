@@ -433,3 +433,249 @@ input:focus-visible {
   outline: 2px solid var(--skin-accent);
   outline-offset: 2px;
 }
+
+/* --- スキンプレビューカード（Modern Web Guidance: カードレイアウト）--- */
+.skin-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+.skin-preview-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--skin-border);
+  border-radius: 10px;
+  background: var(--skin-panel);
+  color: var(--skin-text);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.skin-preview-card:focus-visible {
+  outline: 2px solid var(--skin-accent);
+  outline-offset: 2px;
+}
+
+.skin-preview-card:hover {
+  border-color: var(--skin-accent);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--skin-accent) 20%);
+  transform: translateY(-2px);
+}
+
+.skin-preview-card.current {
+  border-color: var(--skin-accent);
+  box-shadow: 0 0 0 2px var(--skin-accent);
+}
+
+.skin-preview-card-header {
+  padding: 0.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--skin-border) 30%);
+  background: color-mix(in srgb, var(--skin-accent) 5%, transparent);
+}
+
+.skin-preview-card-id {
+  font-size: 0.875rem;
+  font-family: ui-monospace, monospace;
+  font-weight: 700;
+  color: var(--skin-text);
+  margin: 0;
+}
+
+.skin-preview-card-label {
+  font-size: 0.8rem;
+  color: var(--skin-muted);
+  margin: 0.25rem 0 0;
+}
+
+.skin-preview-card-body {
+  padding: 0.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skin-preview-card-color-swatch {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.skin-preview-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, #fff 40%);
+}
+
+.skin-preview-card-footer {
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--skin-border) 30%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skin-preview-card-apply {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--skin-accent);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--skin-accent);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.skin-preview-card-apply:hover {
+  background: var(--skin-accent);
+  color: color-mix(in srgb, var(--skin-accent) 80%, #000);
+}
+
+.skin-preview-card-apply:focus-visible {
+  outline: 2px solid var(--skin-accent);
+  outline-offset: 2px;
+}
+
+/* --- レスポンシブ対応（モバイルファースト）--- */
+@media (max-width: 640px) {
+  .theme-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .theme-label {
+    text-align: left;
+  }
+
+  .custom-select {
+    width: 100%;
+  }
+
+  .skin-picker-popover {
+    width: auto;
+    min-width: 280px;
+    max-height: 300px;
+    inset: auto !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 90vw;
+    max-width: 320px;
+  }
+
+  .skin-preview {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+    padding: 0 0.75rem;
+  }
+
+  .skin-preview-card {
+    border-radius: 8px;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  header p {
+    font-size: 0.875rem;
+  }
+
+  .cli-term {
+    min-height: 150px;
+    padding: 0.75rem;
+  }
+
+  .cli-input {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 0 0.75rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skin-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .skin-picker-popover {
+    width: 92vw;
+    max-width: 280px;
+  }
+
+  .skin-picker-item {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .skin-picker-item-id {
+    font-size: 0.8rem;
+  }
+
+  .skin-picker-item-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* --- CLI ターミナル強化：カーソルアニメーションバリエーション --- */
+.cli-cursor.blink-fast {
+  animation: cli-blink-fast 0.5s step-end infinite;
+}
+
+.cli-cursor.blink-slow {
+  animation: cli-blink-slow 2s step-end infinite;
+}
+
+@keyframes cli-blink-fast {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes cli-blink-slow {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- スキャンライン強化：テーマ対応 --- */
+.cli-scan.scan-fast::after {
+  animation: cli-scan-move 2s linear infinite;
+}
+
+.cli-scan.scan-slow::after {
+  animation: cli-scan-move 6s linear infinite;
+}
+
+@keyframes cli-scan-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+/* --- ライブリージョン（スクリーンリーダー対応）--- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}

@@ -29,24 +29,33 @@
 </header>
 
 <main>
+  <!-- スクリーンリーダー用ライブリージョン -->
+  <div id="status-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
   <section class="cli-base">
-    <div class="cli-term" id="cli-term"></div>
-    <input type="text" class="cli-input" id="cli-input" placeholder="コマンドを入力 (man / help でヘルプ)">
+    <div class="cli-term" id="cli-term" role="log" aria-label="ターミナル出力"></div>
+    <input type="text" class="cli-input" id="cli-input" placeholder="コマンドを入力 (man / help でヘルプ)" aria-label="コマンド入力">
   </section>
 
   <!-- スキン選択ポップオーバー（アンカーポジショニング対象） -->
   <div class="skin-picker-anchor" id="skin-picker-anchor">
-    <button type="button" id="skin-picker-toggle" class="skin-picker-toggle" aria-expanded="false" aria-haspopup="true">
+    <button type="button" id="skin-picker-toggle" class="skin-picker-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="skin-picker-popover">
       スキン選択: <span id="skin-picker-label">wizard-cli</span>
     </button>
     <div id="skin-picker-popover" class="skin-picker-popover" role="menu" aria-label="スキン一覧" hidden>
       <div class="skin-picker-header">
         <span class="skin-picker-count" id="skin-picker-count">24 種</span>
-        <input type="search" id="skin-picker-search" class="skin-picker-search" placeholder="スキン名で検索">
+        <input type="search" id="skin-picker-search" class="skin-picker-search" placeholder="スキン名で検索" aria-label="スキン検索">
       </div>
       <ul class="skin-picker-list" id="skin-picker-list"></ul>
     </div>
   </div>
+
+  <!-- スキンプレビューカード（モダンUI） -->
+  <section class="skin-preview" aria-label="スキンプレビュー">
+    <h2 class="sr-only">スキンプレビュー</h2>
+    <div class="skin-preview-grid" id="skin-preview-grid"></div>
+  </section>
 </main>
 
 <!-- js/characters/miku.js の直後に skins-wizard.js を読み込む -->
@@ -187,12 +196,144 @@
     });
   }
 
+  // --- スキンプレビューカードのレンダリング ---
+  const skinPreviewGrid = document.getElementById("skin-preview-grid");
+  const statusAnnouncer = document.getElementById("status-announcer");
+
+  function announce(message) {
+    statusAnnouncer.textContent = message;
+  }
+
+  function renderSkinPreview() {
+    skinPreviewGrid.innerHTML = "";
+    wizardSkins.forEach((skin) => {
+      const card = document.createElement("article");
+      card.className = "skin-preview-card";
+      card.tabIndex = 0;
+      card.dataset.skinId = skin.id;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `${skin.id} - ${skin.label ? skin.label.ja : ""} スキン`);
+      if (skin.id === currentSkinId) card.classList.add("current");
+      card.innerHTML = `
+        <header class="skin-preview-card-header">
+          <h3 class="skin-preview-card-id">${skin.id}</h3>
+          <p class="skin-preview-card-label">${skin.label ? skin.label.ja : ""}</p>
+        </header>
+        <div class="skin-preview-card-body">
+          <div class="skin-preview-card-color-swatch">
+            <span class="skin-preview-color" style="background:${skin.colors.bg};" title="bg"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.panel};" title="panel"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.text};" title="text"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.accent};" title="accent"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.gold};" title="gold"></span>
+          </div>
+        </div>
+        <footer class="skin-preview-card-footer">
+          <button type="button" class="skin-preview-card-apply" data-skin-id="${skin.id}">適用</button>
+        </footer>
+      `;
+
+      // カードクリックで適用
+      card.addEventListener("click", (e) => {
+        if (e.target.classList.contains("skin-preview-card-apply")) return;
+        applySkin(skin.id);
+        announce(`スキンを${skin.id}に変更しました`);
+      });
+
+      // 「適用」ボタンクリック
+      const applyBtn = card.querySelector(".skin-preview-card-apply");
+      applyBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        applySkin(skin.id);
+        announce(`スキンを${skin.id}に変更しました`);
+      });
+
+      // キーボードナビゲーション（Enter/Space で適用）
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          applySkin(skin.id);
+          announce(`スキンを${skin.id}に変更しました`);
+        }
+      });
+
+      skinPreviewGrid.appendChild(card);
+    });
+  }
+
+  renderSkinPreview();
+
   // デフォルトスキンを適用
   applySkin("wizard-cli");
+
+  // --- スキンピッカー キーボードナビゲーション ---
+  let skinPickerFocusedIndex = -1;
+  const skinPickerItems = () => skinPickerList.querySelectorAll('[role="menuitem"]');
+
+  function updateSkinPickerFocus(index) {
+    const items = skinPickerItems();
+    items.forEach((item, i) => {
+      item.tabIndex = i === index ? 0 : -1;
+    });
+    if (items[index]) items[index].focus();
+  }
+
+  skinPickerToggle.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      skinPickerPopover.hidden = false;
+      skinPickerToggle.setAttribute("aria-expanded", "true");
+      skinPickerFocusedIndex = 0;
+      updateSkinPickerFocus(skinPickerFocusedIndex);
+    }
+  });
+
+  skinPickerList.addEventListener("keydown", (e) => {
+    const items = skinPickerItems();
+    if (items.length === 0) return;
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      skinPickerFocusedIndex = Math.min(skinPickerFocusedIndex + 1, items.length - 1);
+      updateSkinPickerFocus(skinPickerFocusedIndex);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      skinPickerFocusedIndex = Math.max(skinPickerFocusedIndex - 1, 0);
+      updateSkinPickerFocus(skinPickerFocusedIndex);
+    } else if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (items[skinPickerFocusedIndex]) {
+        const skinId = items[skinPickerFocusedIndex].dataset.skinId;
+        applySkin(skinId);
+        skinPickerPopover.hidden = true;
+        skinPickerToggle.setAttribute("aria-expanded", "false");
+        skinPickerToggle.focus();
+        announce(`スキンを${skinId}に変更しました`);
+      }
+    } else if (e.key === "Escape") {
+      skinPickerPopover.hidden = true;
+      skinPickerToggle.setAttribute("aria-expanded", "false");
+      skinPickerToggle.focus();
+    }
+  });
 
   // --- CLI 初期化 ---
   const term = document.getElementById("cli-term");
   const input = document.getElementById("cli-input");
+
+  // --- CLI キーボードショートカット ---
+  input.addEventListener("keydown", (e) => {
+    // Esc で入力クリア
+    if (e.key === "Escape") {
+      input.value = "";
+      announce("入力をクリアしました");
+    }
+    // Ctrl+L で画面クリア（clear コマンドと同じ）
+    if (e.key === "l" && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      cli.run("clear");
+    }
+  });
 
   const skinManager = {
     applySkin(id) {
