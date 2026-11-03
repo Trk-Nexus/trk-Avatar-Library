@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // 自動生成: tools/import-skin-catalog.mjs --cat=wizard
 // 入力: catalog/skins.json（手編集禁止）
-// 生成日時: 2026-11-03T04:37:44.066Z
-// スキン数: 52
+// 生成日時: 2026-11-03T04:42:47.266Z
+// スキン数: 56
 
 const SKINS_WIZARD = [
   {
@@ -70,6 +70,19 @@ const SKINS_WIZARD = [
     cli: {"font":"Cinzel, Trajan Pro, serif","prompt":"✦","caret":"#ff00ff","scan":0.18,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
+    id: "wizard-aura-caster",
+    label: {"ja":"オーラキャスター","en":"Aura Caster","zh":"光环施法者","ko":"오라 캐스터"},
+    desc: {"ja":"マウス追従の発光オーラとグラデーションアニメーション、神秘的な光の軌跡","en":"Mouse-following glowing aura and gradient animation, mystical trail of light","zh":"鼠标跟随的发光光环和渐变动画，神秘的光之轨迹","ko":"마우스 추종 발광 오라와 그라데이션 애니메이션, 신비한 빛의 궤적"},
+    cat: ["wizard","grad","light"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"✦"},
+    colors: {"stage":"#fdfbf7","ink":"#2d1b69","don":"#ff00ff","ka":"#7b2cbf","text":"#2d1b69","muted":"#6a3d9a","bg":"#f0e6ff","panel":"rgba(240,230,255,.97)","field":"#fdfbf7","button":"#e8d9ff","accent":"#ff00ff","onAccent":"#ffffff","gold":"#ffe082","border":"rgba(255,0,255,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "saturate(1.2) contrast(1.15) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"✦","caret":"#ff00ff","scan":0.14,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-cauldron",
     label: {"ja":"大釜","en":"Cauldron","zh":"大锅","ko":"대솥"},
     desc: {"ja":"魔女の大釜、泡立つ緑のポーション","en":"Witch's cauldron, bubbling green potion","zh":"女巫的大锅，冒泡的绿色药水","ko":"마녀의 대솥, 끓는 녹색 포션"},
@@ -133,6 +146,19 @@ const SKINS_WIZARD = [
     video: "hue-rotate(280deg) saturate(1.2) brightness(.9) contrast(1.1)",
   },
   {
+    id: "wizard-crystal-gazer",
+    label: {"ja":"クリスタルゲイザー","en":"Crystal Gazer","zh":"水晶凝视者","ko":"크리스털 게이저"},
+    desc: {"ja":"ガラスモーフィズムとbackdrop-filterぼかし、半透明パネルの水晶占い体験","en":"Glassmorphism and backdrop-filter blur, semi-transparent panels for crystal gazing experience","zh":"玻璃拟态和backdrop-filter模糊，半透明面板的水晶占卜体验","ko":"글라스모피즘과 backdrop-filter 블러, 반투명 패널의 수정 구 점술 체험"},
+    cat: ["wizard","grad","dark"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"🔮"},
+    colors: {"stage":"#0b1026","ink":"#dce6ff","don":"#7aa2ff","ka":"#9fbbff","text":"#dce6ff","muted":"#b8c8f0","bg":"#090d1c","panel":"rgba(9,13,28,.94)","field":"#0b1026","button":"#1a2440","accent":"#7aa2ff","onAccent":"#000000","gold":"#e0c38c","border":"rgba(122,162,255,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "saturate(1.2) contrast(1.15) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"🔮","caret":"#7aa2ff","scan":0.12,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-douhet",
     label: {"ja":"ドゥーエ 制空","en":"Douhet The Command of the Air","zh":"杜埃 制空权","ko":"두에 공중제공"},
     desc: {"ja":"航空戦略の先駆、制空権と戦略爆撃の理論","en":"Pioneer of air strategy, command of the air and strategic bombing","zh":"航空战略的先驱，制空权与战略轰炸理论","ko":"항공전략의 선구자, 공중제공과 전략폭격 이론"},
@@ -156,6 +182,19 @@ const SKINS_WIZARD = [
     shapes: ["diamond","square"],
     locked: false,
     video: "hue-rotate(180deg) saturate(1.3) contrast(1.2) brightness(.8)",
+  },
+  {
+    id: "wizard-glitch-sorcerer",
+    label: {"ja":"グリッチソーサラー","en":"Glitch Sorcerer","zh":"故障术士","ko":"글리치 소서러"},
+    desc: {"ja":"CSSアニメーションによるグリッチ・色ずれ・走査線エフェクト、デジタル魔術","en":"CSS animation glitch, chromatic aberration and scanline effects, digital sorcery","zh":"CSS动画故障、色差和扫描线效果，数字魔术","ko":"CSS 애니메이션 글리치, 색수차 및 주사선 효과, 디지털 마술"},
+    cat: ["wizard","dark","fun"],
+    font: "\"Courier New\",\"Courier\",monospace",
+    type: {"title":"\"Courier New\",monospace","weight":"700","lh":"1.4","titleWeight":"900","titleSpace":".05em","titleTransform":"uppercase","mark":"═▓▒░"},
+    colors: {"stage":"#0a0a0a","ink":"#00ff00","don":"#ff00ff","ka":"#00ffff","text":"#00ff00","muted":"#00cc00","bg":"#050505","panel":"#031406","field":"#0a0a0a","button":"#1a1a1a","accent":"#ff00ff","onAccent":"#000000","gold":"#00ffff","border":"rgba(0,255,255,.30)"},
+    shapes: ["square","square"],
+    locked: false,
+    video: "hue-rotate(180deg) saturate(1.6) contrast(1.3) brightness(.85)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"▓","caret":"#00ffff","scan":0.25,"cursor":"block","opacity":0.9,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-goetia",
@@ -655,6 +694,19 @@ const SKINS_WIZARD = [
     shapes: ["square","square"],
     locked: false,
     video: "brightness(.6) contrast(1.4)",
+  },
+  {
+    id: "wizard-void-walker",
+    label: {"ja":"ボイドウォーカー","en":"Void Walker","zh":"虚空行者","ko":"보이드 워커"},
+    desc: {"ja":"暗闇に浮かぶ発光テキストと星屑エフェクト、虚空を歩く魔術師","en":"Glowing text floating in darkness and stardust effects, sorcerer walking through the void","zh":"黑暗中漂浮的发光文字和星尘效果，在虚空中行走的魔术师","ko":"어둠에 떠 있는 발광 텍스트와 별가루 효과,虚空을 걷는 마법사"},
+    cat: ["wizard","dark","access"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"◊"},
+    colors: {"stage":"#020205","ink":"#00ffff","don":"#ff00ff","ka":"#7b2cbf","text":"#00ffff","muted":"#00cccc","bg":"#000000","panel":"rgba(0,0,0,.97)","field":"#020205","button":"#0a0a0f","accent":"#00ffff","onAccent":"#000000","gold":"#ff00ff","border":"rgba(0,255,255,.35)"},
+    shapes: ["square","diamond"],
+    locked: false,
+    video: "contrast(1.3) brightness(.8)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"◊","caret":"#00ffff","scan":0.2,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-wei-liao-zi",

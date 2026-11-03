@@ -467,6 +467,7 @@ function playBell() {
     // View Transitions API: DOM 変更を囲んでスムーズな遷移アニメーションを適用
     // Modern Web Guidance: view-transitions feature
     const transition = document.startViewTransition ? document.startViewTransition(() => {
+      root.setAttribute("data-skin", id);
       root.style.setProperty("--skin-bg", skin.colors.bg);
       root.style.setProperty("--skin-panel", skin.colors.panel);
       root.style.setProperty("--skin-text", skin.colors.text);
@@ -488,6 +489,7 @@ function playBell() {
         li.classList.toggle("current", li.dataset.skinId === id);
       });
     }) : (() => {
+      root.setAttribute("data-skin", id);
       root.style.setProperty("--skin-bg", skin.colors.bg);
       root.style.setProperty("--skin-panel", skin.colors.panel);
       root.style.setProperty("--skin-text", skin.colors.text);

@@ -227,8 +227,9 @@ npm run check / テスト各種 + モダン UX EVALS 基準を満たすことを
 - 第3弾（白魔術系統）：`wizard-raziel`（ラジエルの書、light/access）、`wizard-abramelin`（アブラメリンの書、life/grad）、`wizard-agrippa`（オカルト哲学三書、grad/light）、`wizard-honorius`（ホノリウスの誓約書、light/access）、`wizard-heptameron`（ヘプタメロン、grad/light）、`wizard-arbatel`（アルバテル、life/grad）
 - 第4弾（東洋軍略書）：`wizard-liu-tao`（六韜、grad/light）、`wizard-san-lue`（三略、dark/access）、`wizard-sun-tzu`（孫子、dark/fun）、`wizard-sima-fa`（司馬法、light/access）、`wizard-wei-liao-zi`（尉繚子、grad/dark）、`wizard-seven-military-classics`（武経七書、life/grad）
 - 第5弾（西洋軍略書）：`wizard-vegetius`（ウェゲティウス 軍事論、grad/dark）、`wizard-machiavelli`（マキアヴェッリ 戦術論、grad/light）、`wizard-clausewitz`（クラウゼヴィッツ 戦争論、dark/fun）、`wizard-jomini`（ジョミニ 戦争概論、light/access）、`wizard-mahan`（マハン 海上権力史論、grad/dark）、`wizard-douhet`（ドゥーエ 制空、dark/fun）
+- 第6弾（特殊WebUX体験スキン）：`wizard-aura-caster`（オーラキャスター、grad/light、マウス追従オーラ＋グラデーションアニメーション）、`wizard-glitch-sorcerer`（グリッチソーサラー、dark/fun、CSSアニメーションによるグリッチ・色ずれ・走査線エフェクト）、`wizard-crystal-gazer`（クリスタルゲイザー、grad/dark、ガラスモーフィズム＋backdrop-filterぼかし）、`wizard-void-walker`（ボイドウォーカー、dark/access、発光テキスト＋星屑エフェクト）
 - colors に bg/panel/text/accent/gold の5色を定義。cli オブジェクトに prompt（1-4文字、クォート無）、caret（#rrggbb）、scan（0-0.6）を定義。
-- スキン総数 281 種、wizard 52 種、CLI 対応 wizard 40 種。
+- スキン総数 285 種、wizard 56 種、CLI 対応 wizard 44 種。
 
 ## 関連ファイル
 
