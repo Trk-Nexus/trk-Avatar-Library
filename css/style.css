@@ -1,26 +1,74 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later */
-/* trk269: PWA スタイル — CLI スキン対応 */
+/* trk Modern UX: PWA スタイル — CLI スキン対応 + モダンカラースキーム */
 
-/* --- ベース変数 --- */
+/* --- ベースカラースキーム（ダーク / ライト自動切替）--- */
+/* Modern Web Guidance features/color-scheme を参照 */
 :root {
-  --bg: #0a0a0a;
-  --panel: #141414;
-  --text: #e0e0e0;
-  --muted: #888888;
-  --accent: #d4af37;
-  --gold: #ffffff;
-  --border: #d4af37;
+  /* --- ダークテーマ（デフォルト） --- */
+  --color-bg: #0a0a0a;
+  --color-panel: #141414;
+  --color-text: #e0e0e0;
+  --color-muted: #888888;
+  --color-accent: #d4af37;
+  --color-gold: #ffffff;
+  --color-border: #d4af37;
+
+  /* --- スキン上書き用変数（catalog/skins.json から動的設定）--- */
+  --skin-bg: var(--color-bg);
+  --skin-panel: var(--color-panel);
+  --skin-text: var(--color-text);
+  --skin-muted: var(--color-muted);
+  --skin-accent: var(--color-accent);
+  --skin-gold: var(--color-gold);
+  --skin-border: var(--color-border);
 
   /* --- CLI 5 操作感変数 --- */
   --cli-font: "Courier New", Courier, monospace;
   --cli-prompt: ">";
-  --cli-caret: "#d4af37";
+  --cli-caret: var(--color-accent);
   --cli-scan: 0.1;
   --cli-cursor: block;
   --cli-opacity: 1;
   --cli-history: 50;
   --cli-completion: tab;
   --cli-bell: true;
+
+  /* --- カラースキーム宣言 --- */
+  color-scheme: light dark;
+}
+
+/* --- ライトテーマ（prefers-color-scheme: light）--- */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #fafafa;
+    --color-panel: #f5f5f5;
+    --color-text: #1a1a1a;
+    --color-muted: #666666;
+    --color-accent: #b8860b;
+    --color-gold: #000000;
+    --color-border: #b8860b;
+  }
+}
+
+/* --- 手動テーマ上書き（data-theme="light" / "dark"）--- */
+[data-theme="light"] {
+  --color-bg: #fafafa;
+  --color-panel: #f5f5f5;
+  --color-text: #1a1a1a;
+  --color-muted: #666666;
+  --color-accent: #b8860b;
+  --color-gold: #000000;
+  --color-border: #b8860b;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0a0a0a;
+  --color-panel: #141414;
+  --color-text: #e0e0e0;
+  --color-muted: #888888;
+  --color-accent: #d4af37;
+  --color-gold: #ffffff;
+  --color-border: #d4af37;
 }
 
 /* --- 地（::before）に --cli-opacity を適用。文字は透けさせない。 --- */
@@ -28,17 +76,19 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--bg);
+  background: var(--skin-bg);
   opacity: var(--cli-opacity);
   pointer-events: none;
   z-index: 0;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .cli-base {
   position: relative;
   z-index: 1;
-  color: var(--text); /* 文字は透けさせない（opacity を適用しない） */
+  color: var(--skin-text); /* 文字は透けさせない（opacity を適用しない） */
   font-family: var(--cli-font);
+  transition: color 0.3s ease;
 }
 
 /* --- ターミナル表示 --- */
@@ -46,12 +96,13 @@
   position: relative;
   padding: 1rem;
   font-family: var(--cli-font);
-  color: var(--text);
-  background: var(--panel);
-  border: 1px solid var(--border);
+  color: var(--skin-text);
+  background: var(--skin-panel);
+  border: 1px solid var(--skin-border);
   border-radius: 8px;
   min-height: 200px;
   overflow-y: auto;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .cli-line {
@@ -62,7 +113,7 @@
 }
 
 .cli-prompt {
-  color: var(--accent);
+  color: var(--skin-accent);
   font-weight: bold;
   user-select: none;
 }
@@ -99,7 +150,9 @@
 }
 
 @keyframes cli-blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* --- スキャンライン --- */
@@ -123,15 +176,48 @@
 .cli-input {
   margin-top: 0.5rem;
   font-family: var(--cli-font);
-  color: var(--text);
+  color: var(--skin-text);
   background: transparent;
   border: none;
   outline: none;
   width: 100%;
+  accent-color: var(--skin-accent);
+}
+
+/* フォーカスリング（アクセシビリティ） */
+.cli-input:focus-visible {
+  outline: 2px solid var(--skin-accent);
+  outline-offset: 2px;
 }
 
 /* --- ユーティリティ --- */
-.cli-hidden { display: none; }
-.cli-muted { color: var(--muted); }
-.cli-accent { color: var(--accent); }
-.cli-gold { color: var(--gold); }
+.cli-hidden {
+  display: none;
+}
+.cli-muted {
+  color: var(--skin-muted);
+}
+.cli-accent {
+  color: var(--skin-accent);
+}
+.cli-gold {
+  color: var(--skin-gold);
+}
+
+/* --- フォーム要素のテーマ統一 --- */
+button,
+select,
+input[type="button"],
+input[type="submit"] {
+  accent-color: var(--skin-accent);
+  border-color: var(--skin-border);
+  color: var(--skin-text);
+  background: var(--skin-panel);
+}
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--skin-accent);
+  outline-offset: 2px;
+}
