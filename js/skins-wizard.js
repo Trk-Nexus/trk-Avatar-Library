@@ -1,10 +1,36 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // 自動生成: tools/import-skin-catalog.mjs --cat=wizard
 // 入力: catalog/skins.json（手編集禁止）
-// 生成日時: 2026-11-03T04:10:02.603Z
-// スキン数: 34
+// 生成日時: 2026-11-03T04:15:23.247Z
+// スキン数: 40
 
 const SKINS_WIZARD = [
+  {
+    id: "wizard-abramelin",
+    label: {"ja":"アブラメリンの書","en":"Book of Abramelin","zh":"亚伯拉梅林之书","ko":"아브라멜린의 서"},
+    desc: {"ja":"守護聖天使との交信を目的とした白魔術の書、浄化と祈りの儀式","en":"White magic grimoire for communion with the Holy Guardian Angel, purification and prayer rituals","zh":"旨在与圣守护天使交流的白魔术之书，净化与祈祷仪式","ko":"신성 수호천사와의 교신을 목적으로 한 백마술의 서, 정화와 기도 의식"},
+    cat: ["wizard","life","grad"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"あア漢 Aa"},
+    colors: {"stage":"#2d3a2a","ink":"#e8f0e8","don":"#d4af37","ka":"#8fbc8f","text":"#e8f0e8","muted":"#a8c0a8","bg":"#223022","panel":"rgba(34,48,34,.96)","field":"#2d3a2a","button":"#4a5d4a","accent":"#8fbc8f","onAccent":"#000000","gold":"#ffe082","border":"rgba(143,188,143,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "sepia(.15) saturate(1.1) brightness(1.0)",
+    cli: {"font":"Cinzel, Trajan Pro, serif","prompt":"👼","caret":"#8fbc8f","scan":0.15,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-agrippa",
+    label: {"ja":"オカルト哲学三書","en":"Three Books of Occult Philosophy","zh":"秘术哲学三书","ko":"오컬트 철학 삼부작"},
+    desc: {"ja":"ヘンリヒュス・コルネリウス・アグリッパによる白魔術の体系化、天使・惑星・調和","en":"Heinrich Cornelius Agrippa\\u2019s systematization of white magic, angels, planets and harmony","zh":"海因里ヒ・コルネリウス・阿格リッパ对白魔术的系统化，天使、行星与和谐","ko":"하인리히ウス・코르네リウス・아그리파의 백마술 체계화, 천사・행성・조화"},
+    cat: ["wizard","grad","light"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"400","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"☉ ♀ ♂"},
+    colors: {"stage":"#f5efe0","ink":"#2a241e","don":"#b8860b","ka":"#8b4513","text":"#2a241e","muted":"#6a5a40","bg":"#f0e8d8","panel":"rgba(240,232,216,.97)","field":"#f5efe0","button":"#e8e0d0","accent":"#b8860b","onAccent":"#ffffff","gold":"#ffd700","border":"rgba(184,134,11,.35)"},
+    shapes: ["square","square"],
+    locked: false,
+    video: "sepia(.2) contrast(1.1) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"☉","caret":"#b8860b","scan":0.14,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
   {
     id: "wizard-alchemy",
     label: {"ja":"錬金術","en":"Alchemy","zh":"炼金术","ko":"연금술"},
@@ -16,6 +42,19 @@ const SKINS_WIZARD = [
     shapes: ["circle","square"],
     locked: false,
     video: "sepia(.4) saturate(1.2) contrast(1.15) brightness(.9)",
+  },
+  {
+    id: "wizard-arbatel",
+    label: {"ja":"アルバテル","en":"Arbatel of Magick","zh":"阿巴特尔魔术书","ko":"알바텔"},
+    desc: {"ja":"7人の大天使を崇拝するクリスチャン白魔術、オリンピックの霊と調和","en":"Christian white magic venerating the seven archangels, Olympic spirits and harmony","zh":"尊崇七位大天使的基督教白魔术，奥林匹克之灵与和谐","ko":"7명의 대천사를 숭배하는 크리스천 백마술, 올림픽의 정령과 조화"},
+    cat: ["wizard","life","grad"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"400","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"☆"},
+    colors: {"stage":"#2c3e50","ink":"#ecf0f1","don":"#f1c40f","ka":"#3498db","text":"#ecf0f1","muted":"#b8c4d0","bg":"#1a252f","panel":"rgba(26,37,47,.97)","field":"#2c3e50","button":"#34495e","accent":"#3498db","onAccent":"#ffffff","gold":"#f1c40f","border":"rgba(52,152,219,.35)"},
+    shapes: ["square","circle"],
+    locked: false,
+    video: "contrast(1.1) brightness(1.0)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"☆","caret":"#3498db","scan":0.13,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-arcane",
@@ -184,6 +223,19 @@ const SKINS_WIZARD = [
     cli: {"font":"Courier New, Courier, monospace","prompt":"☽","caret":"#6b5b95","scan":0.2,"cursor":"block","opacity":0.9,"history":50,"completion":"tab","bell":true},
   },
   {
+    id: "wizard-heptameron",
+    label: {"ja":"ヘプタメロン","en":"Heptameron","zh":"七天书","ko":"헵타메론"},
+    desc: {"ja":"7日間の天使魔術、ポーピアーノによる天使召喚と白魔術の儀式","en":"Seven days of angelic magic, Pietro d\\u2019Abano\\u2019s angel summoning and white magic rituals","zh":"七天的天使魔术，皮埃トロ・ダバーノ的天使召唤与白魔术仪式","ko":"7일간의 천사 마법, 피에트로・다바노의 천사 소환과 백마술 의식"},
+    cat: ["wizard","grad","light"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"7日"},
+    colors: {"stage":"#5d4a3a","ink":"#f0e6d2","don":"#d4af37","ka":"#c5a059","text":"#f0e6d2","muted":"#dcc8a5","bg":"#4a3520","panel":"rgba(74,53,32,.96)","field":"#5d4a3a","button":"#7a5d40","accent":"#c5a059","onAccent":"#000000","gold":"#ffe082","border":"rgba(212,175,55,.35)"},
+    shapes: ["circle","square"],
+    locked: false,
+    video: "sepia(.3) saturate(1.1) contrast(1.15) brightness(.95)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"☿","caret":"#c5a059","scan":0.16,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
     id: "wizard-hermetic",
     label: {"ja":"ヘルメティック","en":"Hermetic","zh":"赫密斯","ko":"헤르메스"},
     desc: {"ja":"ヘルメス主義、黄金の黄昏と秘教幾何学","en":"Hermeticism, golden twilight and occult geometry","zh":"赫密斯主义，金色黄昏与秘教几何","ko":"헤르메스주의, 황금 황혼과 비밀 기하학"},
@@ -207,6 +259,19 @@ const SKINS_WIZARD = [
     locked: false,
     video: "brightness(1.05) saturate(.9) contrast(1.02)",
     cli: {"font":"Courier New, Courier, monospace","prompt":"@","caret":"#80deea","scan":0.1,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-honorius",
+    label: {"ja":"ホノリウスの誓約書","en":"Sworn Book of Honorius","zh":"霍诺里ウス誓约书","ko":"호노리우스의 맹약서"},
+    desc: {"ja":"教会に認められた白魔術、神の御名と祈り、浄化と防御の儀式","en":"Church-sanctioned white magic, the holy name of God and prayer, purification and defense rituals","zh":"教会认可的白魔术，上帝的圣名与祈祷，净化与防御仪式","ko":"교회가 인정한 백마술, 하느님의 거룩한 이름과 기도, 정화와 방어 의식"},
+    cat: ["wizard","light","access"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"✝"},
+    colors: {"stage":"#ffffff","ink":"#1a1a1a","don":"#d4af37","ka":"#8b4513","text":"#1a1a1a","muted":"#666666","bg":"#fafafa","panel":"rgba(250,250,250,.98)","field":"#ffffff","button":"#e8e8e8","accent":"#d4af37","onAccent":"#000000","gold":"#ffd700","border":"rgba(212,175,55,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "contrast(1.05) brightness(1.0)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"✝","caret":"#d4af37","scan":0.1,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-lemgeton",
@@ -309,6 +374,19 @@ const SKINS_WIZARD = [
     locked: false,
     video: "hue-rotate(200deg) saturate(1.6) brightness(.75) contrast(1.3)",
     cli: {"font":"Rajdhani, Oswald, sans-serif","prompt":"→","caret":"#00ffff","scan":0.12,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-raziel",
+    label: {"ja":"ラジエルの書","en":"Book of Raziel","zh":"拉齐尔之书","ko":"라지엘의 서"},
+    desc: {"ja":"天使ラジエルがアダムに授けたとされるカバラ的グリモワール、宇宙の秘密と守護の知識","en":"Cabalistic grimoire said to be given by Archangel Raziel to Adam, secrets of the universe and protective knowledge","zh":"据传由大天使拉齐尔赐予亚当的卡巴拉式魔导书，宇宙的奥秘与守护知识","ko":"천사 라지엘이 아담에게 주었다고 하는 카발라적 그모아르, 우주의 비밀과 보호의 지식"},
+    cat: ["wizard","light","access"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"400","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"☿ ☽ ♀"},
+    colors: {"stage":"#f0f4f8","ink":"#1a2332","don":"#d4af37","ka":"#7aa2f7","text":"#1a2332","muted":"#4a6a85","bg":"#e8edf4","panel":"rgba(232,237,244,.97)","field":"#f0f4f8","button":"#dbe5f0","accent":"#7aa2f7","onAccent":"#000000","gold":"#ffd700","border":"rgba(122,162,247,.35)"},
+    shapes: ["circle","square"],
+    locked: false,
+    video: "sepia(.05) contrast(1.05) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"ℜ","caret":"#7aa2f7","scan":0.12,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-rune",
