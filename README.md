@@ -445,3 +445,81 @@ node tools/check-docs.mjs            # README の表・リンク・セットの�
   上げるときは `.github/workflows/check.yml` の `env` の1行を変えます
 - 週に1回（日曜 21:00 UTC）、**固定しない `main`** でも同じ契約検査を回します（`upstream-main`）。
   相手側が先に進んでも、こちらが静かに壊れないようにするためです
+
+## 10. トーク269 ターミナルの定番とWizardスキンシリーズ
+
+トーク269「ターミナルの定番とWizardスキン」は、trk-PWA の見た目をカスタマイズする **Wizardスキン（魔導書テーマ）** のシリーズです。モダンUX Phase 1〜9j まで完了し、Popover API 移行・トースト通知・ショートカットヘルプ・魔導書テーマスキンシリーズを実装しています。
+
+### スキン構成（2026-11-03 現在）
+
+| 項目 | 数 |
+|------|------|
+| スキン総数 | 291 種 |
+| wizard カテゴリ | 62 種 |
+| CLI 対応 wizard スキン | 50 種 |
+| TRK_PWA_REF | `6f60e234fca63cf47a2cba4bbcd954ee3850dacd`（40 桁） |
+
+### 魔導書テーマスキンシリーズ
+
+| 弾 | テーマ | スキン（代表） |
+|----|--------|--------------|
+| 第1弾 | 黒魔術グリモワール | `wizard-grimoire-noir`（黒の魔導書）、`wizard-grimoire-aureate`（黄金の魔導書）、`wizard-grimoire-umbra`（影の魔導書）、`wizard-grimoire-celestial`（天球の魔導書） |
+| 第2弾 | 著名グリモワール | `wizard-solomon-key`（ソロモンの鍵）、`wizard-lemgeton`（レメゲトン）、`wizard-solomon-book`（ソロモンの書）、`wizard-goetia`（ゴエティア）、`wizard-necronomicon`（ネクロノミコン）、`wizard-necronomicon-azif`（ネクロノミコン アル・アジフ） |
+| 第3弾 | 白魔術系統 | `wizard-raziel`（ラジエルの書）、`wizard-abramelin`（アブラメリンの書）、`wizard-agrippa`（オカルト哲学三書）、`wizard-honorius`（ホノリウスの誓約書）、`wizard-heptameron`（ヘプタメロン）、`wizard-arbatel`（アルバテル） |
+| 第4弾 | 東洋軍略書 | `wizard-liu-tao`（六韜）、`wizard-san-lue`（三略）、`wizard-sun-tzu`（孫子）、`wizard-sima-fa`（司馬法）、`wizard-wei-liao-zi`（尉繚子）、`wizard-seven-military-classics`（武経七書） |
+| 第5弾 | 西洋軍略書 | `wizard-vegetius`（ウェゲティウス 軍事論）、`wizard-machiavelli`（マキアヴェッリ 戦術論）、`wizard-clausewitz`（クラウゼヴィッツ 戦争論）、`wizard-jomini`（ジョミニ 戦争概論）、`wizard-mahan`（マハン 海上権力史論）、`wizard-douhet`（ドゥーエ 制空） |
+| 第6弾 | 特殊WebUX体験 | `wizard-aura-caster`（オーラキャスター）、`wizard-glitch-sorcerer`（グリッチソーサラー）、`wizard-crystal-gazer`（クリスタルゲイザー）、`wizard-void-walker`（ボイドウォーカー） |
+| 第7弾 | Modern Web Guidance 準拠 | `wizard-view-transition-master`（遷移マスター）、`wizard-anchor-positioner`（アンカーポジショナー）、`wizard-scroll-driven-visionary`（スクロールドリブン・ビジョナー）、`wizard-container-query-responder`（コンテナクエリ・レスポンシバー）、`wizard-reduce-motion-accessor`（リデュース・モーション・アクセシビラー）、`wizard-focus-ring-navigator`（フォーカスリング・ナビゲーター） |
+
+### モダンUX 主な実装（Phase 1〜9j）
+
+- **Popover API 移行**：設定パネル・スキンピッカーを `hidden` 属性からネイティブ Popover (`popover` / `popovertarget` 属性、`::backdrop`) に移行
+- **トースト通知**：`showToast(message, type)` で `role="status"` `aria-live="polite"` のトーストを画面下部に表示、3秒でフェードアウト
+- **ショートカットヘルプ**：`?` キーでキーボードショートカット一覧ポップオーバーを表示
+- **ベル音**：AudioContext で生成（外部音声ファイル不要）
+- **/help コマンド拡張**：`help -wizard` でwizard機能一覧、`help --tutorial` で初心者向けチュートリアルを表示
+- **ウィザード辞書**：`wizard <単語> rec` / `wizard rec <単語>` で辞書登録、`wizard dict` で一覧表示、`wizard export` / `wizard import` で設定の持ち運び、GUI（設定パネル）からも編集可能
+- **スキン固有スタイル**：`[data-skin="wizard-xxx"]` セレクタで各スキン固有のWebUX体験を適用
+
+### 主な技術
+
+- View Transitions API、Container Queries、Scroll-driven Animations、`prefers-color-scheme`、`light-dark()`、アンカーポジショニング、`:focus-visible` など、Modern Web Guidance（GoogleChrome/modern-web-guidance-src）の思想に準拠したモダンUX
+- セキュリティ：辞書登録・スキンID・フォント名等に使用禁止文字（バッククォート、バックスラッシュ、`..`、`~`、`C:`）を拒否
+- colors は bg/panel/text/accent/gold の5色必須、prompt は1-4文字・クォート禁止、caret は #rgb/#rrggbb/currentColor、scan は 0-0.6
+
+### advance wizard 設定（Phase 10：Modern Web Guidance 準拠）
+
+設定パネルに追加された advance wizard 設定は、GoogleChrome/modern-web-guidance-src の思想に基づきます。各項目は**オプションでオンオフ可能**です。
+
+#### 設定パネル構造・アニメーション
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| 設定パネル開閉アニメーション | `wizard.anim.enabled` | オン | `@starting-style` + `transition-behavior: allow-discrete` で開閉をスムーズにアニメーション | guides/ui-behaviors/animate-element-entry-exit |
+| prefers-reduced-motion 尊重 | `wizard.anim.reducedMotion` | オフ | OSの「動きを減らす」設定に応じて移動系アニメーションを無効化・フェードのみに短縮 | guides/ui-behaviors/animate-element-entry-exit（MANDATORY） |
+| 個別コンポーネント color-scheme | `wizard.theme.componentColorScheme` | オフ | 特定のコンポーネントだけを常にライト/ダークモードに固定（`color-scheme: only light/dark`） | guides/ui-atoms/component-specific-light-dark-theme |
+| フォームコントロール accent-color | `wizard.theme.accentFormControls` | オン | チェックボックス・ラジオ・スイッチ・セレクト等にスキンのアクセントカラーを適用 | guides/visual-design/browser-ui-theming |
+
+#### テーマ・カラー
+
+| 設定項目 | キー | デフォルト | 説明 | 出典 |
+|---------|------|-----------|------|------|
+| ベースカラーからティント・シェード生成 | `wizard.theme.colorRamp` | オフ | `relative-color()` / `oklab()` / `color-mix()` / `lab()` でベースカラーからバリエーションを生成 | guides/visual-design/color-ramps |
+| スクロールバーの色・太さ | `wizard.theme.scrollbarStyle` | オフ | `scrollbar-color` / `scrollbar-width` でスクロールバーをスキンカラーに統一 | guides/visual-design/browser-ui-theming |
+| テキスト選択範囲色 | `wizard.theme.selectionColor` | オフ | `::selection` でテキスト選択時のハイライト色をスキンのアクセントカラーに | guides/visual-design/browser-ui-theming |
+| カスタムチェックボックス/ラジオ/スイッチ | `wizard.theme.customFormControls` | オフ | `appearance: none` + 生成コンテンツでスキンカラーに合ったカスタムフォームコントロール | guides/visual-design/browser-ui-theming |
+| テキストフィールド連動サイズ | `wizard.theme.fieldSizing` | オフ | `field-sizing: content` で入力欄をコンテンツの長さに応じて自動リサイズ | guides/visual-design/browser-ui-theming |
+
+#### アコーディオン構造
+
+- 各設定セクションは `details`/`summary` でラップされ、個別に開閉可能
+- 「全展開」「全折りたたみ」ボタンで一括制御
+- `hidden="until-found"` + `beforematch` イベントで、ブラウザの「ページ内検索」時に該当セクションを自動展開
+- 出典：guides/ui-components/accordion
+
+各設定はローカルストレージに永続化され、`wizard 辞書` のリセットボタンでデフォルトに戻せます。
+
+### 検証
+
+- `npm test`：CLI 標準テスト 1030/0、skin-contrast 244/0、Modern UX 21/0 合格
+- `npm run check`：62/62 スキンチェック合格

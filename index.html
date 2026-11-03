@@ -7,19 +7,306 @@
 <title>trk! — Terminal &amp; Wizard Skin (trk269)</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="css/style.css">
-</head>
-<body trk-build="trk269">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preload" as="style" href="css/style.css">
+<link rel="icon" href="./icon-192.png">
+<!-- FOUC 対策：テーマを即座に適用（Modern Web Guidance: color-scheme FOUC prevention）-->
+<script>
+  (function () {
+    const savedTheme = localStorage.getItem('trk-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.documentElement.style.colorScheme = savedTheme === 'system' ? 'light dark' : savedTheme;
+  })();
 
-<header>
-  <h1>trk! Terminal &amp; Wizard Skin</h1>
-  <p>trk-build: <span id="trk-build"></span> | CACHE: <span id="cache-name"></span></p>
+// --- トースト通知 ---
+function showToast(message, type = "info") {
+  const toastContainer = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+  toast.className = "toast toast--" + type;
+  toast.setAttribute("role", "status");
+  toast.setAttribute("aria-live", "polite");
+  toast.textContent = message;
+  toastContainer.appendChild(toast);
+
+  requestAnimationFrame(() => {
+    toast.classList.add("toast--show");
+  });
+
+  setTimeout(() => {
+    toast.classList.remove("toast--show");
+    toast.addEventListener("transitionend", () => toast.remove(), { once: true });
+  }, 3000);
+}
+
+// ベル音（AudioContext で生成、外部ファイル不要）
+let audioCtx;
+function playBell() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.type = "sine";
+  osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(1760, audioCtx.currentTime + 0.1);
+  gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.3);
+}
+
+</script>
+</head>
+<body trk-build="trk269" data-theme="dark">
+
+<!-- ミニマルヘッダー：タイトル＋設定ボタンのみ -->
+<header class="mini-header">
+  <div class="header-left">
+    <h1>trk!</h1>
+    <span class="header-sub">Terminal &amp; Wizard Skin</span>
+  </div>
+  <div class="header-right">
+    <button type="button" id="settings-toggle" class="settings-toggle" popovertarget="settings-panel" aria-label="設定を開く">
+      ⚙️
+    </button>
+  </div>
 </header>
 
-<main>
+<main class="immersive-main">
+  <!-- スクリーンリーダー用ライブリージョン -->
+  <div id="status-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ターミナルセクション（メイン） -->
   <section class="cli-base">
-    <div class="cli-term" id="cli-term"></div>
-    <input type="text" class="cli-input" id="cli-input" placeholder="コマンドを入力 (man / help でヘルプ)">
+    <div class="cli-term" id="cli-term" role="log" aria-label="ターミナル出力"></div>
+    <input type="text" class="cli-input" id="cli-input" placeholder="コマンドを入力 (man / help でヘルプ)" aria-label="コマンド入力" autocomplete="off">
   </section>
+
+  <!-- 設定パネル（オーバーレイ、通常時は非表示） -->
+  <div id="settings-panel" class="settings-panel" popover role="dialog" aria-modal="true" aria-label="設定">
+    <div class="settings-panel-header">
+      <h2 class="settings-title">設定</h2>
+      <button type="button" id="settings-close" class="settings-close" popovertarget="settings-panel" popovertargetaction="hide" aria-label="設定を閉じる">✕</button>
+    </div>
+
+    <div class="settings-accordion-controls">
+      <button type="button" id="settings-accordion-expand-all" class="settings-button settings-button--secondary">全展開</button>
+      <button type="button" id="settings-accordion-collapse-all" class="settings-button settings-button--secondary">全折りたたみ</button>
+    </div>
+
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-theme">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">テーマ</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content" hidden="until-found">
+        <div class="theme-controls">
+          <label class="theme-label" for="settings-theme-select">カラースキーム:</label>
+          <select id="settings-theme-select" class="custom-select">
+            <option value="dark">ダーク</option>
+            <option value="light">ライト</option>
+            <option value="system">システム設定に従う</option>
+          </select>
+          <button type="button" id="settings-theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="テーマを切替">
+            🌓
+          </button>
+        </div>
+      </div>
+    </details>
+
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-skin">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">スキン</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content" hidden="until-found">
+        <div class="skin-picker-anchor" id="skin-picker-anchor">
+        <button type="button" id="skin-picker-toggle" class="skin-picker-toggle" popovertarget="skin-picker-popover">
+          スキン選択: <span id="skin-picker-label">wizard-cli</span>
+        </button>
+        <div id="skin-picker-popover" class="skin-picker-popover" popover role="menu" aria-label="スキン一覧">
+          <div class="skin-picker-header">
+            <span class="skin-picker-count" id="skin-picker-count">24 種</span>
+            <input type="search" id="skin-picker-search" class="skin-picker-search" placeholder="スキン名で検索" aria-label="スキン検索">
+          </div>
+          <ul class="skin-picker-list" id="skin-picker-list"></ul>
+        </div>
+      </div>
+    </div>
+  </details>
+
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-preview">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">スキンプレビュー</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content settings-section-spin-preview" hidden="until-found">
+        <div class="skin-preview-grid" id="skin-preview-grid"></div>
+      </div>
+    </details>
+
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-terminal">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">ターミナル表示</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content" hidden="until-found">
+        <div class="settings-item">
+          <label class="settings-item-label" for="settings-scan">スキャンライン強度:</label>
+        <input type="range" id="settings-scan" class="settings-range" min="0" max="0.6" step="0.05" value="0.1" aria-label="スキャンライン強度">
+        <span class="settings-range-value" id="settings-scan-value">0.10</span>
+      </div>
+      <div class="settings-item">
+        <label class="settings-item-label" for="settings-blink">カーソル点滅速度:</label>
+        <select id="settings-blink" class="custom-select">
+          <option value="normal">通常</option>
+          <option value="fast">速い</option>
+          <option value="slow">遅い</option>
+        </select>
+      </div>
+      <div class="settings-item">
+        <label class="settings-item-label" for="settings-font-size">フォントサイズ:</label>
+        <select id="settings-font-size" class="custom-select">
+          <option value="medium">中</option>
+          <option value="small">小</option>
+          <option value="large">大</option>
+        </select>
+      </div>
+      <div class="settings-item settings-item-checkbox">
+        <input type="checkbox" id="settings-reduce-motion" class="settings-checkbox" aria-label="アニメーションを減らす">
+        <label class="settings-checkbox-label" for="settings-reduce-motion">アニメーションを減らす（アクセシビリティ）</label>
+      </div>
+      <div class="settings-item settings-item-checkbox">
+        <input type="checkbox" id="settings-bell" class="settings-checkbox" checked aria-label="ベル音">
+        <label class="settings-checkbox-label" for="settings-bell">ベル音を有効にする</label>
+      </div>
+    </div>
+  </details>
+
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-dict">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">wizard 辞書</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content settings-section-wizard-dict" hidden="until-found">
+      <h3 class="settings-section-title">wizard 辞書</h3>
+      <p class="settings-section-desc">単語を登録・削除できます。エクスポートで設定を持ち運べます。</p>
+      <div class="settings-item settings-item-dict-input">
+        <input type="text" id="settings-wizard-dict-word" class="settings-text-input" placeholder="単語を入力して追加" aria-label="辞書に登録する単語">
+        <button type="button" id="settings-wizard-dict-add" class="settings-button">追加</button>
+      </div>
+      <div class="settings-item settings-item-dict-list">
+        <ul id="settings-wizard-dict-list"></ul>
+      </div>
+      <div class="settings-item settings-item-dict-actions">
+        <button type="button" id="settings-wizard-dict-export" class="settings-button settings-button--secondary">エクスポート</button>
+        <button type="button" id="settings-wizard-dict-import" class="settings-button settings-button--secondary">インポート</button>
+        <button type="button" id="settings-wizard-dict-reset" class="settings-button settings-button--danger">リセット</button>
+        <textarea id="settings-wizard-dict-import-json" class="settings-textarea" placeholder="JSONを貼り付けてインポート" aria-label="インポート用JSON"></textarea>
+      </div>
+    </div>
+  </details>
+
+    <details class="settings-accordion-item" name="settings-accordion" id="settings-accordion-advance">
+      <summary class="settings-accordion-summary">
+        <h3 class="settings-section-title">advance wizard 設定</h3>
+        <span class="settings-accordion-icon">▼</span>
+      </summary>
+      <div class="settings-accordion-content settings-section-advance-wizard" hidden="until-found">
+        <p class="settings-section-desc">Modern Web Guidance（GoogleChrome/modern-web-guidance-src）の思想に基づく設定です。各項目はオプションでオンオフ可能です。</p>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-anim-enabled" class="settings-checkbox" checked data-default="true">
+          <label class="settings-checkbox-label" for="settings-advance-anim-enabled">
+            <strong>設定パネル開閉アニメーションを有効にする</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オン）</span>
+          </label>
+          <p class="settings-section-desc">@starting-style + transition-behavior: allow-discrete で開閉をスムーズにアニメーション（guides/ui-behaviors/animate-element-entry-exit）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-reduce-motion" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-reduce-motion">
+            <strong>prefers-reduced-motion を尊重する</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ＝システム設定に従う）</span>
+          </label>
+          <p class="settings-section-desc">OSの「動きを減らす」設定に応じて移動系アニメーションを無効化・フェードのみに短縮（guides/ui-behaviors/animate-element-entry-exit MANDATORY）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-component-color-scheme" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-component-color-scheme">
+            <strong>個別コンポーネント color-scheme を適用する</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">特定のコンポーネントだけを常にライト/ダークモードに固定（color-scheme: only light/dark）（guides/ui-atoms/component-specific-light-dark-theme）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-accent-form-controls" class="settings-checkbox" checked data-default="true">
+          <label class="settings-checkbox-label" for="settings-advance-accent-form-controls">
+            <strong>フォームコントロールに accent-color を適用する</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オン）</span>
+          </label>
+          <p class="settings-section-desc">チェックボックス・ラジオ・スイッチ・セレクト等にスキンのアクセントカラーを適用（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <!-- テーマ・カラー設定（Phase 10 テーマ・カラー） -->
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-color-ramp" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-color-ramp">
+            <strong>ベースカラーからティント・シェードを動的生成</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">relative-color() / oklab() / color-mix() / lab() でスキンのベースカラーからボーダー・ホバー・フォーカス用バリエーションを生成（guides/visual-design/color-ramps）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-scrollbar-style" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-scrollbar-style">
+            <strong>スクロールバーの色・太さをスキンに合わせる</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">scrollbar-color / scrollbar-width でスクロールバーをスキンカラーに統一（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-selection-color" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-selection-color">
+            <strong>テキスト選択範囲の色をスキンに合わせる</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">::selection でテキスト選択時のハイライト色をスキンのアクセントカラーに（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-custom-form-controls" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-custom-form-controls">
+            <strong>カスタムチェックボックス / ラジオ / スイッチ</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">appearance: none + 生成コンテンツでスキンカラーに合ったカスタムフォームコントロール（guides/visual-design/browser-ui-theming）</p>
+        </div>
+
+        <div class="settings-item settings-item-checkbox">
+          <input type="checkbox" id="settings-advance-field-sizing" class="settings-checkbox" data-default="false">
+          <label class="settings-checkbox-label" for="settings-advance-field-sizing">
+            <strong>テキストフィールドをコンテンツ連動サイズ</strong>
+            <span class="settings-option-tag">オプション：オンオフ可能（デフォルト：オフ）</span>
+          </label>
+          <p class="settings-section-desc">field-sizing: content で入力欄をコンテンツの長さに応じて自動リサイズ（guides/visual-design/browser-ui-theming）</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="settings-panel-footer">
+      <p class="settings-hint">ショートカット: <kbd>Ctrl</kbd> + <kbd>K</kbd> または <kbd>⌘</kbd> + <kbd>K</kbd> で設定を開く / <kbd>Esc</kbd> で閉じる</p>
+    </div>
+  </div>
+
+  <!-- 設定パネル用バックドロップ -->
+
 </main>
 
 <!-- js/characters/miku.js の直後に skins-wizard.js を読み込む -->
@@ -31,45 +318,440 @@
 <script type="module">
   import { SKIN_CATS, CLI_FEATURE_DEFAULTS } from "./js/core.js";
   import { sanitizeCliLook, cliLookVars, CLI_CURSOR_SHAPE } from "./js/data.js";
-  import { CliCommands } from "./js/cli.js";
+  import { CliCommands, loadWizardData, saveWizardData, WIZARD_DEFAULTS } from "./js/cli.js";
   import { SKINS_WIZARD } from "./js/skins-wizard.js";
 
-  document.getElementById("trk-build").textContent = document.documentElement.getAttribute("trk-build") || "trk269";
-  document.getElementById("cache-name").textContent = "trk-v2026.11.03-trk269";
+  document.documentElement.setAttribute("trk-build", document.documentElement.getAttribute("trk-build") || "trk269");
 
   // Wizard スキンのカテゴリ登録
   console.log("SKIN_CATS.wizard:", SKIN_CATS.wizard);
   console.log("Wizard スキン数:", SKINS_WIZARD.length);
 
-  // CLI 初期化
-  const term = document.getElementById("cli-term");
-  const input = document.getElementById("cli-input");
+  // --- 状態管理 ---
+  const root = document.documentElement;
+  const settingsToggle = document.getElementById("settings-toggle");
+  const settingsPanel = document.getElementById("settings-panel");
+  const settingsClose = document.getElementById("settings-close");
+  const statusAnnouncer = document.getElementById("status-announcer");
 
-  const skinManager = {
-    applySkin(id) {
-      const skin = SKINS_WIZARD.find((s) => s.id === id);
-      if (!skin) throw new Error("skin not found");
-      const root = document.documentElement;
-      root.style.setProperty("--bg", skin.colors.bg);
-      root.style.setProperty("--panel", skin.colors.panel);
-      root.style.setProperty("--text", skin.colors.text);
-      root.style.setProperty("--muted", skin.colors.muted);
-      root.style.setProperty("--accent", skin.colors.accent);
-      root.style.setProperty("--gold", skin.colors.gold);
-      root.style.setProperty("--border", skin.colors.border);
+  let currentTheme = localStorage.getItem("trk-theme") || "dark";
+  let currentSkinId = "wizard-cli";
+
+  // アナウンス（スクリーンリーダー）
+  function announce(message) {
+    statusAnnouncer.textContent = "";
+    statusAnnouncer.textContent = message;
+  }
+
+  // --- 設定パネル 開閉（Popover API） ---
+  settingsPanel.addEventListener("toggle", (event) => {
+    settingsToggle.setAttribute("aria-expanded", event.newState === "open" ? "true" : "false");
+  });
+
+  settingsClose.addEventListener("click", () => {
+    settingsPanel.hidePopover();
+    settingsToggle.focus();
+    announce("設定パネルを閉じました");
+  });
+
+  // キーボードショートカット: Ctrl+K / Cmd+K で設定開閉、Esc で閉じる
+  document.addEventListener("keydown", (e) => {
+    if ((e.key === "k" || e.key === "K") && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      if (settingsPanel.matches(":popover-open")) {
+        settingsPanel.hidePopover();
+        settingsToggle.focus();
+        announce("設定パネルを閉じました");
+      } else {
+        settingsPanel.showPopover();
+        settingsClose.focus();
+        announce("設定パネルを開きました");
+      }
+    }
+    if (e.key === "Escape" && settingsPanel.matches(":popover-open")) {
+      e.preventDefault();
+      settingsPanel.hidePopover();
+      settingsToggle.focus();
+      announce("設定パネルを閉じました");
+    }
+
+    if (e.key === "?") {
+      e.preventDefault();
+      const shortcutHelp = document.getElementById("shortcut-help");
+      if (shortcutHelp.matches(":popover-open")) {
+        shortcutHelp.hidePopover();
+      } else {
+        shortcutHelp.showPopover();
+        shortcutHelp.querySelector(".shortcut-close").focus();
+        announce("ショートカットヘルプを表示しました");
+      }
+    }
+  });
+
+  // --- テーマ状態管理 ---
+  const themeSelect = document.getElementById("settings-theme-select");
+  const themeToggle = document.getElementById("settings-theme-toggle");
+
+  function applyTheme(theme) {
+    if (theme === "system") {
+      root.removeAttribute("data-theme");
+      root.style.colorScheme = "light dark";
+    } else {
+      root.setAttribute("data-theme", theme);
+      root.style.colorScheme = theme;
+    }
+    currentTheme = theme;
+    localStorage.setItem("trk-theme", theme);
+    themeSelect.value = theme;
+    themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+    themeToggle.textContent = theme === "dark" ? "🌙" : "☀️";
+  }
+
+  applyTheme(currentTheme);
+
+  themeSelect.addEventListener("change", (e) => applyTheme(e.target.value));
+  themeToggle.addEventListener("click", () => {
+    const next = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(next);
+  });
+
+  // --- ターミナル表示設定 ---
+  const scanInput = document.getElementById("settings-scan");
+  const scanValue = document.getElementById("settings-scan-value");
+  const blinkSelect = document.getElementById("settings-blink");
+  const fontSizeSelect = document.getElementById("settings-font-size");
+  const reduceMotionCheckbox = document.getElementById("settings-reduce-motion");
+  const bellCheckbox = document.getElementById("settings-bell");
+
+  let currentScan = parseFloat(localStorage.getItem("trk-scan")) || 0.1;
+  let currentBlink = localStorage.getItem("trk-blink") || "normal";
+  let currentFontSize = localStorage.getItem("trk-font-size") || "medium";
+  let currentReduceMotion = localStorage.getItem("trk-reduce-motion") === "true";
+  let currentBell = localStorage.getItem("trk-bell") !== "false";
+
+  // UI 初期化
+  scanInput.value = currentScan;
+  scanValue.textContent = currentScan.toFixed(2);
+  blinkSelect.value = currentBlink;
+  fontSizeSelect.value = currentFontSize;
+  reduceMotionCheckbox.checked = currentReduceMotion;
+  bellCheckbox.checked = currentBell;
+
+  // CSS カスタムプロパティを適用
+  function applyTerminalSettings() {
+    root.style.setProperty("--cli-scan", currentScan);
+    root.style.setProperty("--cli-blink-speed", currentBlink === "fast" ? "0.5s" : currentBlink === "slow" ? "2s" : "1s");
+
+    const fontSizeMap = { small: "0.875rem", medium: "1rem", large: "1.125rem" };
+    root.style.setProperty("--cli-font-size", fontSizeMap[currentFontSize] || "1rem");
+
+    if (currentReduceMotion) {
+      root.classList.add("reduce-motion");
+    } else {
+      root.classList.remove("reduce-motion");
+    }
+
+    // cliBell の有効/無効は CliCommands 側で制御（bellCheckbox 値は cli.run で参照）
+  }
+
+  applyTerminalSettings();
+
+  // スキャンライン強度変更
+  scanInput.addEventListener("input", (e) => {
+    currentScan = parseFloat(e.target.value);
+    scanValue.textContent = currentScan.toFixed(2);
+    root.style.setProperty("--cli-scan", currentScan);
+    localStorage.setItem("trk-scan", currentScan);
+    announce(`スキャンライン強度を${currentScan.toFixed(2)}に変更しました`);
+  });
+
+  // カーソル点滅速度変更
+  blinkSelect.addEventListener("change", (e) => {
+    currentBlink = e.target.value;
+    root.style.setProperty("--cli-blink-speed", currentBlink === "fast" ? "0.5s" : currentBlink === "slow" ? "2s" : "1s");
+    localStorage.setItem("trk-blink", currentBlink);
+    announce(`カーソル点滅速度を${currentBlink}に変更しました`);
+  });
+
+  // フォントサイズ変更
+  fontSizeSelect.addEventListener("change", (e) => {
+    currentFontSize = e.target.value;
+    const fontSizeMap = { small: "0.875rem", medium: "1rem", large: "1.125rem" };
+    root.style.setProperty("--cli-font-size", fontSizeMap[currentFontSize] || "1rem");
+    localStorage.setItem("trk-font-size", currentFontSize);
+    announce(`フォントサイズを${currentFontSize}に変更しました`);
+  });
+
+  // アニメーション減らす切替
+  reduceMotionCheckbox.addEventListener("change", (e) => {
+    currentReduceMotion = e.target.checked;
+    if (currentReduceMotion) {
+      root.classList.add("reduce-motion");
+    } else {
+      root.classList.remove("reduce-motion");
+    }
+    localStorage.setItem("trk-reduce-motion", currentReduceMotion);
+    announce(currentReduceMotion ? "アニメーションを減らしました" : "アニメーションを通常に戻しました");
+  });
+
+  // ベル音切替
+  bellCheckbox.addEventListener("change", (e) => {
+    currentBell = e.target.checked;
+    localStorage.setItem("trk-bell", currentBell);
+    announce(currentBell ? "ベル音を有効にしました" : "ベル音を無効にしました");
+  });
+
+  // --- スキン選択ポップオーバー ---
+  const wizardSkins = SKINS_WIZARD.filter((s) => s.cat && s.cat.includes("wizard"));
+  const skinPickerCount = document.getElementById("skin-picker-count");
+  const skinPickerLabel = document.getElementById("skin-picker-label");
+  const skinPickerSearch = document.getElementById("skin-picker-search");
+  const skinPickerList = document.getElementById("skin-picker-list");
+  const skinPickerToggle = document.getElementById("skin-picker-toggle");
+  const skinPickerPopover = document.getElementById("skin-picker-popover");
+
+  skinPickerCount.textContent = `${wizardSkins.length} 種`;
+
+  function renderSkinList(filter = "") {
+    skinPickerList.innerHTML = "";
+    const filtered = wizardSkins.filter((s) =>
+      s.id.toLowerCase().includes(filter.toLowerCase()) ||
+      (s.label && s.label.ja && s.label.ja.includes(filter))
+    );
+    filtered.forEach((skin) => {
+      const li = document.createElement("li");
+      li.role = "menuitem";
+      li.className = "skin-picker-item";
+      li.dataset.skinId = skin.id;
+      if (skin.id === currentSkinId) li.classList.add("current");
+      li.innerHTML = `
+        <span class="skin-picker-item-color" style="background:${skin.colors.accent};"></span>
+        <span class="skin-picker-item-id">${skin.id}</span>
+        <span class="skin-picker-item-label">${skin.label ? skin.label.ja : ""}</span>
+      `;
+      li.addEventListener("click", () => {
+        applySkin(skin.id);
+        skinPickerPopover.hidePopover();
+        skinPickerToggle.focus();
+      });
+      skinPickerList.appendChild(li);
+    });
+  }
+
+  renderSkinList();
+
+  skinPickerSearch.addEventListener("input", (e) => renderSkinList(e.target.value));
+
+  // スキンピッカー ポップオーバー 開閉状態を aria-expanded に同期（Popover API）
+  skinPickerPopover.addEventListener("toggle", (event) => {
+    skinPickerToggle.setAttribute("aria-expanded", event.newState === "open" ? "true" : "false");
+  });
+
+  // ポップオーバー外クリックで閉じる
+  skinPickerPopover.addEventListener("click", (e) => e.stopPropagation());
+
+  // スキンピッカー キーボードナビゲーション
+  let skinPickerFocusedIndex = -1;
+  const skinPickerItems = () => skinPickerList.querySelectorAll('[role="menuitem"]');
+
+  function updateSkinPickerFocus(index) {
+    const items = skinPickerItems();
+    items.forEach((item, i) => {
+      item.tabIndex = i === index ? 0 : -1;
+    });
+    if (items[index]) items[index].focus();
+  }
+
+  skinPickerToggle.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      skinPickerPopover.showPopover();
+      skinPickerFocusedIndex = 0;
+      updateSkinPickerFocus(skinPickerFocusedIndex);
+    }
+  });
+
+  skinPickerList.addEventListener("keydown", (e) => {
+    const items = skinPickerItems();
+    if (items.length === 0) return;
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      skinPickerFocusedIndex = Math.min(skinPickerFocusedIndex + 1, items.length - 1);
+      updateSkinPickerFocus(skinPickerFocusedIndex);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      skinPickerFocusedIndex = Math.max(skinPickerFocusedIndex - 1, 0);
+      updateSkinPickerFocus(skinPickerFocusedIndex);
+    } else if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (items[skinPickerFocusedIndex]) {
+        const skinId = items[skinPickerFocusedIndex].dataset.skinId;
+        applySkin(skinId);
+        skinPickerPopover.hidePopover();
+        skinPickerToggle.focus();
+        announce(`スキンを${skinId}に変更しました`);
+      }
+    } else if (e.key === "Escape") {
+      skinPickerPopover.hidePopover();
+      skinPickerToggle.focus();
+    }
+  });
+
+  // --- スキン適用（View Transitions API でスムーズな遷移アニメーション）---
+  function applySkin(id) {
+    const skin = SKINS_WIZARD.find((s) => s.id === id);
+    if (!skin) throw new Error("skin not found");
+    currentSkinId = id;
+    skinPickerLabel.textContent = id;
+
+    // View Transitions API: DOM 変更を囲んでスムーズな遷移アニメーションを適用
+    // Modern Web Guidance: view-transitions feature
+    const transition = document.startViewTransition ? document.startViewTransition(() => {
+      root.setAttribute("data-skin", id);
+      root.style.setProperty("--skin-bg", skin.colors.bg);
+      root.style.setProperty("--skin-panel", skin.colors.panel);
+      root.style.setProperty("--skin-text", skin.colors.text);
+      root.style.setProperty("--skin-muted", skin.colors.muted);
+      root.style.setProperty("--skin-accent", skin.colors.accent);
+      root.style.setProperty("--skin-gold", skin.colors.gold);
+      root.style.setProperty("--skin-border", skin.colors.border);
 
       if (skin.cli) {
         const look = sanitizeCliLook(skin.cli);
         cliLookVars(look, root);
       }
-      return skin;
+
+      // スキンプレビューの current 状態を更新
+      document.querySelectorAll(".skin-preview-card").forEach((card) => {
+        card.classList.toggle("current", card.dataset.skinId === id);
+      });
+      document.querySelectorAll(".skin-picker-item").forEach((li) => {
+        li.classList.toggle("current", li.dataset.skinId === id);
+      });
+    }) : (() => {
+      root.setAttribute("data-skin", id);
+      root.style.setProperty("--skin-bg", skin.colors.bg);
+      root.style.setProperty("--skin-panel", skin.colors.panel);
+      root.style.setProperty("--skin-text", skin.colors.text);
+      root.style.setProperty("--skin-muted", skin.colors.muted);
+      root.style.setProperty("--skin-accent", skin.colors.accent);
+      root.style.setProperty("--skin-gold", skin.colors.gold);
+      root.style.setProperty("--skin-border", skin.colors.border);
+
+      if (skin.cli) {
+        const look = sanitizeCliLook(skin.cli);
+        cliLookVars(look, root);
+      }
+
+      // スキンプレビューの current 状態を更新
+      document.querySelectorAll(".skin-preview-card").forEach((card) => {
+        card.classList.toggle("current", card.dataset.skinId === id);
+      });
+      document.querySelectorAll(".skin-picker-item").forEach((li) => {
+        li.classList.toggle("current", li.dataset.skinId === id);
+      });
+    })();
+
+    if (transition && typeof transition.finished === "object") {
+      transition.finished.then(() => {
+        announce(`スキンを${skin.id}に変更しました`);
+      });
+    } else {
+      announce(`スキンを${skin.id}に変更しました`);
+    }
+  }
+
+  // --- スキンプレビューカードのレンダリング ---
+  const skinPreviewGrid = document.getElementById("skin-preview-grid");
+
+  function renderSkinPreview() {
+    skinPreviewGrid.innerHTML = "";
+    wizardSkins.forEach((skin) => {
+      const card = document.createElement("article");
+      card.className = "skin-preview-card";
+      card.tabIndex = 0;
+      card.dataset.skinId = skin.id;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `${skin.id} - ${skin.label ? skin.label.ja : ""} スキン`);
+      if (skin.id === currentSkinId) card.classList.add("current");
+      card.innerHTML = `
+        <header class="skin-preview-card-header">
+          <h3 class="skin-preview-card-id">${skin.id}</h3>
+          <p class="skin-preview-card-label">${skin.label ? skin.label.ja : ""}</p>
+        </header>
+        <div class="skin-preview-card-body">
+          <div class="skin-preview-card-color-swatch">
+            <span class="skin-preview-color" style="background:${skin.colors.bg};" title="bg"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.panel};" title="panel"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.text};" title="text"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.accent};" title="accent"></span>
+            <span class="skin-preview-color" style="background:${skin.colors.gold};" title="gold"></span>
+          </div>
+        </div>
+        <footer class="skin-preview-card-footer">
+          <button type="button" class="skin-preview-card-apply" data-skin-id="${skin.id}">適用</button>
+        </footer>
+      `;
+
+      card.addEventListener("click", (e) => {
+        if (e.target.classList.contains("skin-preview-card-apply")) return;
+        applySkin(skin.id);
+        announce(`スキンを${skin.id}に変更しました`);
+      });
+
+      const applyBtn = card.querySelector(".skin-preview-card-apply");
+      applyBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        applySkin(skin.id);
+        announce(`スキンを${skin.id}に変更しました`);
+      });
+
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          applySkin(skin.id);
+          announce(`スキンを${skin.id}に変更しました`);
+        }
+      });
+
+      skinPreviewGrid.appendChild(card);
+    });
+  }
+
+  renderSkinPreview();
+
+  // デフォルトスキンを適用
+  applySkin("wizard-cli");
+
+  // --- CLI 初期化 ---
+  const term = document.getElementById("cli-term");
+  const input = document.getElementById("cli-input");
+
+  const skinManager = {
+    applySkin(id) {
+      return applySkin(id);
     },
   };
 
   const cli = new CliCommands(skinManager);
 
-  // デフォルトスキンを適用
-  skinManager.applySkin("wizard-cli");
+  // ベル音設定を反映
+  cli.bell.enabled = currentBell;
+
+  // --- CLI キーボードショートカット ---
+  input.addEventListener("keydown", (e) => {
+    // Esc で入力クリア
+    if (e.key === "Escape") {
+      input.value = "";
+      announce("入力をクリアしました");
+    }
+    // Ctrl+L で画面クリア（clear コマンドと同じ）
+    if (e.key === "l" && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      cli.run("clear");
+    }
+  });
 
   input.addEventListener("keydown", async (e) => {
     if (e.key === "Enter") {
@@ -91,7 +773,467 @@
       term.scrollTop = term.scrollHeight;
     }
   });
+
+  // ============================================================
+  // wizard 辞書 GUI 編集（設定パネルから辞書を追加・削除・エクスポート/インポート）
+  // ============================================================
+  const wizardDictWord = document.getElementById("settings-wizard-dict-word");
+  const wizardDictAdd = document.getElementById("settings-wizard-dict-add");
+  const wizardDictList = document.getElementById("settings-wizard-dict-list");
+  const wizardDictExport = document.getElementById("settings-wizard-dict-export");
+  const wizardDictImport = document.getElementById("settings-wizard-dict-import");
+  const wizardDictImportJson = document.getElementById("settings-wizard-dict-import-json");
+  const wizardDictReset = document.getElementById("settings-wizard-dict-reset");
+
+  let wizardData = loadWizardData();
+
+  function renderWizardDict() {
+    wizardDictList.innerHTML = "";
+    const keys = Object.keys(wizardData.dictionary);
+    if (keys.length === 0) {
+      const li = document.createElement("li");
+      li.textContent = "(登録された単語はありません)";
+      li.style.color = "color-mix(in srgb, var(--color-text) 40%)";
+      li.style.fontStyle = "italic";
+      wizardDictList.appendChild(li);
+      return;
+    }
+    keys.forEach((word) => {
+      const li = document.createElement("li");
+      li.textContent = word;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "dict-delete";
+      btn.textContent = "削除";
+      btn.setAttribute("aria-label", `辞書から「${word}」を削除`);
+      btn.addEventListener("click", () => {
+        delete wizardData.dictionary[word];
+        saveWizardData(wizardData);
+        renderWizardDict();
+        announce(`辞書から「${word}」を削除しました`);
+      });
+      li.appendChild(btn);
+      wizardDictList.appendChild(li);
+    });
+  }
+
+  function addWizardDictWord() {
+    const word = wizardDictWord.value.trim();
+    if (!word) return;
+    // セキュリティチェック
+    if (/[`\\]/.test(word) || /\.\./.test(word) || /~/.test(word) || /^[Cc]:/.test(word)) {
+      announce("使用禁止文字が含まれています");
+      return;
+    }
+    if (word.length > 50) {
+      announce("単語は50文字以内で入力してください");
+      return;
+    }
+    wizardData.dictionary[word] = word;
+    saveWizardData(wizardData);
+    wizardDictWord.value = "";
+    renderWizardDict();
+    announce(`辞書に「${word}」を登録しました`);
+  }
+
+  wizardDictAdd.addEventListener("click", addWizardDictWord);
+  wizardDictWord.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") addWizardDictWord();
+  });
+
+  wizardDictExport.addEventListener("click", () => {
+    const json = JSON.stringify(wizardData, null, 2);
+    wizardDictImportJson.value = json;
+    announce("wizard設定をエクスポートしました（下のテキストエリアをコピーしてください）");
+  });
+
+  wizardDictImport.addEventListener("click", () => {
+    const jsonStr = wizardDictImportJson.value.trim();
+    if (!jsonStr) {
+      announce("JSONを貼り付けてください");
+      return;
+    }
+    try {
+      const parsed = JSON.parse(jsonStr);
+      if (parsed.dictionary) wizardData.dictionary = { ...wizardData.dictionary, ...parsed.dictionary };
+      if (parsed.settings) wizardData.settings = { ...wizardData.settings, ...parsed.settings };
+      saveWizardData(wizardData);
+      renderWizardDict();
+      announce("wizard設定をインポートしました");
+    } catch (e) {
+      announce("JSONの解析に失敗しました");
+    }
+  });
+
+  wizardDictReset.addEventListener("click", () => {
+    wizardData = { ...WIZARD_DEFAULTS };
+    saveWizardData(wizardData);
+    renderWizardDict();
+    announce("wizard設定と辞書をリセットしました");
+  });
+
+  // 初期表示
+  renderWizardDict();
+
+  // ============================================================
+  // advance wizard 設定（Modern Web Guidance 準拠）
+  // 各項目はオプションでオンオフ可能。ローカルストレージに永続化。
+  // ============================================================
+  const advanceAnimEnabled = document.getElementById("settings-advance-anim-enabled");
+  const advanceReduceMotion = document.getElementById("settings-advance-reduce-motion");
+  const advanceComponentColorScheme = document.getElementById("settings-advance-component-color-scheme");
+  const advanceAccentFormControls = document.getElementById("settings-advance-accent-form-controls");
+  const advanceColorRamp = document.getElementById("settings-advance-color-ramp");
+  const advanceScrollbarStyle = document.getElementById("settings-advance-scrollbar-style");
+  const advanceSelectionColor = document.getElementById("settings-advance-selection-color");
+  const advanceCustomFormControls = document.getElementById("settings-advance-custom-form-controls");
+  const advanceFieldSizing = document.getElementById("settings-advance-field-sizing");
+
+  let currentAdvanceAnimEnabled = localStorage.getItem("trk-advance-anim-enabled") !== "false";
+  let currentAdvanceReduceMotion = localStorage.getItem("trk-advance-reduce-motion") === "true";
+  let currentAdvanceComponentColorScheme = localStorage.getItem("trk-advance-component-color-scheme") === "true";
+  let currentAdvanceAccentFormControls = localStorage.getItem("trk-advance-accent-form-controls") !== "false";
+  let currentAdvanceColorRamp = localStorage.getItem("trk-advance-color-ramp") === "true";
+  let currentAdvanceScrollbarStyle = localStorage.getItem("trk-advance-scrollbar-style") === "true";
+  let currentAdvanceSelectionColor = localStorage.getItem("trk-advance-selection-color") === "true";
+  let currentAdvanceCustomFormControls = localStorage.getItem("trk-advance-custom-form-controls") === "true";
+  let currentAdvanceFieldSizing = localStorage.getItem("trk-advance-field-sizing") === "true";
+
+  // UI 初期化
+  advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
+  advanceReduceMotion.checked = currentAdvanceReduceMotion;
+  advanceComponentColorScheme.checked = currentAdvanceComponentColorScheme;
+  advanceAccentFormControls.checked = currentAdvanceAccentFormControls;
+  advanceColorRamp.checked = currentAdvanceColorRamp;
+  advanceScrollbarStyle.checked = currentAdvanceScrollbarStyle;
+  advanceSelectionColor.checked = currentAdvanceSelectionColor;
+  advanceCustomFormControls.checked = currentAdvanceCustomFormControls;
+  advanceFieldSizing.checked = currentAdvanceFieldSizing;
+
+  // 設定パネル開閉アニメーションの有効/無効を適用
+  function applyAdvanceAnimEnabled() {
+    const panel = document.getElementById("settings-panel");
+    if (currentAdvanceAnimEnabled) {
+      panel.classList.remove("advance-anim-disabled");
+    } else {
+      panel.classList.add("advance-anim-disabled");
+    }
+  }
+
+  // prefers-reduced-motion 尊重を適用
+  function applyAdvanceReduceMotion() {
+    if (currentAdvanceReduceMotion) {
+      root.classList.add("reduce-motion");
+    }
+  }
+
+  // 個別コンポーネント color-scheme を適用
+  function applyAdvanceComponentColorScheme() {
+    const panel = document.getElementById("settings-panel");
+    if (currentAdvanceComponentColorScheme) {
+      panel.setAttribute("data-component-color-scheme", "dark");
+    } else {
+      panel.removeAttribute("data-component-color-scheme");
+    }
+  }
+
+  // フォームコントロール accent-color を適用
+  function applyAdvanceAccentFormControls() {
+    if (currentAdvanceAccentFormControls) {
+      root.classList.add("accent-form-controls");
+    } else {
+      root.classList.remove("accent-form-controls");
+    }
+  }
+
+  // ティント・シェード動的生成を適用
+  function applyAdvanceColorRamp() {
+    if (currentAdvanceColorRamp) {
+      root.classList.add("color-ramp-enabled");
+    } else {
+      root.classList.remove("color-ramp-enabled");
+    }
+  }
+
+  // スクロールバースタイルを適用
+  function applyAdvanceScrollbarStyle() {
+    if (currentAdvanceScrollbarStyle) {
+      root.classList.add("scrollbar-styled");
+    } else {
+      root.classList.remove("scrollbar-styled");
+    }
+  }
+
+  // テキスト選択範囲色を適用
+  function applyAdvanceSelectionColor() {
+    if (currentAdvanceSelectionColor) {
+      root.classList.add("selection-styled");
+    } else {
+      root.classList.remove("selection-styled");
+    }
+  }
+
+  // カスタムフォームコントロールを適用
+  function applyAdvanceCustomFormControls() {
+    if (currentAdvanceCustomFormControls) {
+      root.classList.add("custom-form-controls");
+    } else {
+      root.classList.remove("custom-form-controls");
+    }
+  }
+
+  // field-sizing を適用
+  function applyAdvanceFieldSizing() {
+    if (currentAdvanceFieldSizing) {
+      root.classList.add("field-sizing-content");
+    } else {
+      root.classList.remove("field-sizing-content");
+    }
+  }
+
+  // 全設定を適用
+  function applyAllAdvanceSettings() {
+    applyAdvanceAnimEnabled();
+    applyAdvanceReduceMotion();
+    applyAdvanceComponentColorScheme();
+    applyAdvanceAccentFormControls();
+    applyAdvanceColorRamp();
+    applyAdvanceScrollbarStyle();
+    applyAdvanceSelectionColor();
+    applyAdvanceCustomFormControls();
+    applyAdvanceFieldSizing();
+  }
+
+  applyAllAdvanceSettings();
+
+  // イベントリスナー
+  advanceAnimEnabled.addEventListener("change", (e) => {
+    currentAdvanceAnimEnabled = e.target.checked;
+    localStorage.setItem("trk-advance-anim-enabled", currentAdvanceAnimEnabled);
+    applyAdvanceAnimEnabled();
+    announce(currentAdvanceAnimEnabled ? "開閉アニメーションを有効にしました" : "開閉アニメーションを無効にしました");
+  });
+
+  advanceReduceMotion.addEventListener("change", (e) => {
+    currentAdvanceReduceMotion = e.target.checked;
+    localStorage.setItem("trk-advance-reduce-motion", currentAdvanceReduceMotion);
+    applyAdvanceReduceMotion();
+    announce(currentAdvanceReduceMotion ? "prefers-reduced-motion を尊重するように設定しました" : "システム設定に従うように戻しました");
+  });
+
+  advanceComponentColorScheme.addEventListener("change", (e) => {
+    currentAdvanceComponentColorScheme = e.target.checked;
+    localStorage.setItem("trk-advance-component-color-scheme", currentAdvanceComponentColorScheme);
+    applyAdvanceComponentColorScheme();
+    announce(currentAdvanceComponentColorScheme ? "個別コンポーネント color-scheme を有効にしました" : "個別コンポーネント color-scheme を無効にしました");
+  });
+
+  advanceAccentFormControls.addEventListener("change", (e) => {
+    currentAdvanceAccentFormControls = e.target.checked;
+    localStorage.setItem("trk-advance-accent-form-controls", currentAdvanceAccentFormControls);
+    applyAdvanceAccentFormControls();
+    announce(currentAdvanceAccentFormControls ? "フォームコントロール accent-color を有効にしました" : "フォームコントロール accent-color を無効にしました");
+  });
+
+  advanceColorRamp.addEventListener("change", (e) => {
+    currentAdvanceColorRamp = e.target.checked;
+    localStorage.setItem("trk-advance-color-ramp", currentAdvanceColorRamp);
+    applyAdvanceColorRamp();
+    announce(currentAdvanceColorRamp ? "色ランプ生成を有効にしました" : "色ランプ生成を無効にしました");
+  });
+
+  advanceScrollbarStyle.addEventListener("change", (e) => {
+    currentAdvanceScrollbarStyle = e.target.checked;
+    localStorage.setItem("trk-advance-scrollbar-style", currentAdvanceScrollbarStyle);
+    applyAdvanceScrollbarStyle();
+    announce(currentAdvanceScrollbarStyle ? "スクロールバースタイルを有効にしました" : "スクロールバースタイルを無効にしました");
+  });
+
+  advanceSelectionColor.addEventListener("change", (e) => {
+    currentAdvanceSelectionColor = e.target.checked;
+    localStorage.setItem("trk-advance-selection-color", currentAdvanceSelectionColor);
+    applyAdvanceSelectionColor();
+    announce(currentAdvanceSelectionColor ? "テキスト選択範囲色を有効にしました" : "テキスト選択範囲色を無効にしました");
+  });
+
+  advanceCustomFormControls.addEventListener("change", (e) => {
+    currentAdvanceCustomFormControls = e.target.checked;
+    localStorage.setItem("trk-advance-custom-form-controls", currentAdvanceCustomFormControls);
+    applyAdvanceCustomFormControls();
+    announce(currentAdvanceCustomFormControls ? "カスタムフォームコントロールを有効にしました" : "カスタムフォームコントロールを無効にしました");
+  });
+
+  advanceFieldSizing.addEventListener("change", (e) => {
+    currentAdvanceFieldSizing = e.target.checked;
+    localStorage.setItem("trk-advance-field-sizing", currentAdvanceFieldSizing);
+    applyAdvanceFieldSizing();
+    announce(currentAdvanceFieldSizing ? "フィールドサイズ連動を有効にしました" : "フィールドサイズ連動を無効にしました");
+  });
+
+  // wizard 辞書のリセット時に advance wizard 設定もリセットする対応
+  wizardDictReset.addEventListener("click", () => {
+    currentAdvanceAnimEnabled = true;
+    currentAdvanceReduceMotion = false;
+    currentAdvanceComponentColorScheme = false;
+    currentAdvanceAccentFormControls = true;
+    currentAdvanceColorRamp = false;
+    currentAdvanceScrollbarStyle = false;
+    currentAdvanceSelectionColor = false;
+    currentAdvanceCustomFormControls = false;
+    currentAdvanceFieldSizing = false;
+    localStorage.setItem("trk-advance-anim-enabled", currentAdvanceAnimEnabled);
+    localStorage.setItem("trk-advance-reduce-motion", currentAdvanceReduceMotion);
+    localStorage.setItem("trk-advance-component-color-scheme", currentAdvanceComponentColorScheme);
+    localStorage.setItem("trk-advance-accent-form-controls", currentAdvanceAccentFormControls);
+    localStorage.setItem("trk-advance-color-ramp", currentAdvanceColorRamp);
+    localStorage.setItem("trk-advance-scrollbar-style", currentAdvanceScrollbarStyle);
+    localStorage.setItem("trk-advance-selection-color", currentAdvanceSelectionColor);
+    localStorage.setItem("trk-advance-custom-form-controls", currentAdvanceCustomFormControls);
+    localStorage.setItem("trk-advance-field-sizing", currentAdvanceFieldSizing);
+    advanceAnimEnabled.checked = currentAdvanceAnimEnabled;
+    advanceReduceMotion.checked = currentAdvanceReduceMotion;
+    advanceComponentColorScheme.checked = currentAdvanceComponentColorScheme;
+    advanceAccentFormControls.checked = currentAdvanceAccentFormControls;
+    advanceColorRamp.checked = currentAdvanceColorRamp;
+    advanceScrollbarStyle.checked = currentAdvanceScrollbarStyle;
+    advanceSelectionColor.checked = currentAdvanceSelectionColor;
+    advanceCustomFormControls.checked = currentAdvanceCustomFormControls;
+    advanceFieldSizing.checked = currentAdvanceFieldSizing;
+    applyAllAdvanceSettings();
+    announce("advance wizard 設定もデフォルトに戻しました");
+  });
+
+  // ============================================================
+  // advance wizard 設定：アコーディオン操作（Modern Web Guidance: guides/ui-components/accordion 準拠）
+  // ============================================================
+  const accordionExpandAll = document.getElementById("settings-accordion-expand-all");
+  const accordionCollapseAll = document.getElementById("settings-accordion-collapse-all");
+  const accordionItems = document.querySelectorAll(".settings-accordion-item");
+
+  // 全展開
+  accordionExpandAll.addEventListener("click", () => {
+    accordionItems.forEach((item) => {
+      item.open = true;
+    });
+    announce("すべての設定セクションを展開しました");
+  });
+
+  // 全折りたたみ
+  accordionCollapseAll.addEventListener("click", () => {
+    accordionItems.forEach((item) => {
+      item.open = false;
+    });
+    announce("すべての設定セクションを折りたたみました");
+  });
+
+  // 検索でアコーディオン項目を開く（hidden="until-found" + beforematch）
+  // 出典：guides/ui-components/accordion（beforematch イベント）
+  document.addEventListener("beforematch", (event) => {
+    const target = event.target;
+    if (target.classList.contains("settings-accordion-content")) {
+      const details = target.closest(".settings-accordion-item");
+      if (details) {
+        details.open = true;
+        announce(`「${details.id}」セクションを開きました`);
+      }
+    }
+  }, { capture: true });
 </script>
+
+<!-- Core Web Vitals 測定（LCP / FID / CLS） -->
+<script>
+  (function () {
+    if (!window.PerformanceObserver) return;
+
+    const vitals = {};
+
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        vitals.lcp = entry.startTime;
+      }
+    }).observe({ entryTypes: ["largest-contentful-paint"] });
+
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        vitals.fid = entry.processingStart - entry.startTime;
+      }
+    }).observe({ entryTypes: ["first-input"] });
+
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (!entry.hadRecentInput) {
+          vitals.cls = (vitals.cls || 0) + entry.value;
+        }
+      }
+    }).observe({ entryTypes: ["layout-shift"] });
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const report = {
+          lcp: vitals.lcp ? Math.round(vitals.lcp) : null,
+          fid: vitals.fid ? Math.round(vitals.fid) : null,
+          cls: vitals.cls ? Math.round(vitals.cls * 1000) / 1000 : null,
+        };
+        if (typeof console !== "undefined" && console.table) {
+          console.table(report, ["Core Web Vitals"]);
+        }
+        window.trkWebVitals = report;
+      }, 0);
+    });
+  })();
+</script>
+
+<!-- Service Worker 登録 -->
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("./sw.js", { scope: "./" })
+        .then((registration) => {
+          console.log("Service Worker 登録成功:", registration.scope);
+          if (registration.waiting) {
+            registration.waiting.postMessage({ type: "SKIP_WAITING" });
+          }
+          registration.addEventListener("updatefound", () => {
+            const installingWorker = registration.installing;
+            if (!installingWorker) return;
+            installingWorker.addEventListener("statechange", () => {
+              if (
+                installingWorker.state === "installed" &&
+                navigator.serviceWorker.controller
+              ) {
+                console.log("新しい Service Worker がインストールされました");
+              }
+            });
+          });
+        })
+        .catch((error) => {
+          console.error("Service Worker 登録失敗:", error);
+        });
+    });
+  }
+</script>
+<!-- トースト通知コンテナ -->
+<div id="toast-container" role="region" aria-label="通知" aria-live="polite"></div>
+
+
+  <!-- キーボードショートカットヘルプ（Popover API） -->
+  <div id="shortcut-help" class="shortcut-help" popover role="dialog" aria-label="キーボードショートカット">
+    <div class="shortcut-help-header">
+      <h2 class="shortcut-title">キーボードショートカット</h2>
+      <button type="button" class="shortcut-close" popovertarget="shortcut-help" popovertargetaction="hide" aria-label="閉じる">✕</button>
+    </div>
+    <table class="shortcut-table">
+      <thead><tr><th>キー</th><th>操作</th></tr></thead>
+      <tbody>
+        <tr><td><code>Ctrl+K</code> / <code>Cmd+K</code></td><td>設定パネルを開閉</td></tr>
+        <tr><td><code>Esc</code></td><td>パネル・ポップオーバーを閉じる</td></tr>
+        <tr><td><code>↓</code> / <code>↑</code></td><td>スキン一覧をナビゲート</td></tr>
+        <tr><td><code>Enter</code> / <code>Space</code></td><td>スキンを適用</td></tr>
+        <tr><td><code>?</code></td><td>このヘルプを表示</td></tr>
+      </tbody>
+    </table>
+  </div>
 
 </body>
 </html>
