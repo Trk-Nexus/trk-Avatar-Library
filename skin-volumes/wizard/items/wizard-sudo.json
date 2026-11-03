@@ -1,0 +1,64 @@
+{
+  "id": "wizard-sudo",
+  "label": {
+    "ja": "ウィザード・スードー",
+    "en": "Wizard Sudo",
+    "zh": "巫师根权限",
+    "ko": "마법사 루트"
+  },
+  "desc": {
+    "ja": "root権限・警告色・赤アクセント",
+    "en": "root permission, warning color, red accent",
+    "zh": "root权限，警告色，红色强调",
+    "ko": "root 권한, 경고색, 빨간색 강조"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "access"
+  ],
+  "font": "\\\"Cascadia Mono\\\",\\\"Consolas\\\",monospace",
+  "type": {
+    "title": "\\\"Cascadia Mono\\\",monospace",
+    "weight": "700",
+    "lh": "1.25",
+    "titleWeight": "900",
+    "titleSpace": "-.03em",
+    "titleTransform": "uppercase",
+    "mark": "root"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#f8f8f2",
+    "don": "#ff0040",
+    "ka": "#ff5555",
+    "text": "#f8f8f2",
+    "muted": "#ff79c6",
+    "bg": "#0a0a0a",
+    "panel": "#1a1a1a",
+    "field": "#0a0a0a",
+    "button": "#1a1a2e",
+    "accent": "#ff0040",
+    "onAccent": "#ffffff",
+    "gold": "#ff5555",
+    "border": "rgba(255,0,64,.35)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "hue-rotate(0deg) saturate(1.5) contrast(1.3) brightness(.8)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "#",
+    "caret": "#ff0040",
+    "scan": 0.15,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  },
+  "cli.font": "Cascadia Mono, Consolas, monospace"
+}

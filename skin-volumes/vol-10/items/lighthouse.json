@@ -1,0 +1,51 @@
+{
+  "id": "lighthouse",
+  "label": {
+    "ja": "灯台",
+    "en": "Lighthouse",
+    "zh": "灯塔",
+    "ko": "등대"
+  },
+  "desc": {
+    "ja": "灯台の光と海、夜道を照らす",
+    "en": "Lighthouse light and sea, illuminating the night road",
+    "zh": "灯塔的光和海，照亮夜路",
+    "ko": "등대의 빛과 바다, 밤길을 비추는"
+  },
+  "cat": [
+    "grad",
+    "life"
+  ],
+  "font": "\"Montserrat\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Montserrat\",sans-serif",
+    "weight": "400",
+    "lh": "1.55",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#0a192f,#071a33)",
+    "ink": "#ccd6f6",
+    "don": "#ffd700",
+    "ka": "#4ecdc4",
+    "text": "#ccd6f6",
+    "muted": "#4f5b7a",
+    "bg": "linear-gradient(180deg,#071a33,#050c17)",
+    "panel": "rgba(10,25,47,.96)",
+    "field": "#0a192f",
+    "button": "#16213e",
+    "accent": "#ffd700",
+    "onAccent": "#050c17",
+    "gold": "#ffe082",
+    "border": "rgba(255,215,0,.28)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "hue-rotate(200deg) saturate(1.2) brightness(.85) contrast(1.15)"
+}

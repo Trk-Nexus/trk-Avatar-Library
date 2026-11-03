@@ -1,0 +1,42 @@
+{
+  "id": "rainWindow",
+  "label": {
+    "ja": "雨の窓",
+    "en": "Rainy window",
+    "zh": "雨窗",
+    "ko": "빗속 창가"
+  },
+  "desc": {
+    "ja": "窓ガラスを流れる雨、夜の灯りがにじむ",
+    "en": "Rain on the glass, night lights blurred",
+    "zh": "玻璃窗上流淌的雨，夜灯朦胧",
+    "ko": "유리창을 타고 흐르는 빗물, 번지는 밤의 불빛"
+  },
+  "cat": [
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#0e1820",
+    "ink": "#e8eef4",
+    "don": "#f2a36b",
+    "ka": "#6fb7d6",
+    "text": "#e8eef4",
+    "muted": "#9fb0c0",
+    "bg": "#111a22",
+    "panel": "rgba(20,30,40,.96)",
+    "field": "#0e1720",
+    "button": "#1a2834",
+    "accent": "#6fb7d6",
+    "onAccent": "#06131a",
+    "gold": "#e8d28a",
+    "border": "rgba(255,255,255,.18)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.4) brightness(.7) contrast(1.1)"
+}

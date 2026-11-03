@@ -1,0 +1,51 @@
+{
+  "id": "typeMincho",
+  "label": {
+    "ja": "明朝の本",
+    "en": "Mincho book",
+    "zh": "明朝书卷",
+    "ko": "명조 책"
+  },
+  "desc": {
+    "ja": "縦組みの本のような、明朝体の静けさ",
+    "en": "Quiet Mincho serif, like a printed book",
+    "zh": "如印刷书页般安静的明朝体",
+    "ko": "인쇄된 책 같은 조용한 명조체"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",\"Noto Serif CJK JP\",\"Noto Serif SC\",\"Noto Serif KR\",serif",
+  "type": {
+    "title": "",
+    "weight": "400",
+    "lh": "1.75",
+    "titleWeight": "600",
+    "titleSpace": ".06em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f6f1e6",
+    "ink": "#241c14",
+    "don": "#8c2f39",
+    "ka": "#2f5d7c",
+    "text": "#241c14",
+    "muted": "#5d5044",
+    "bg": "#f6f1e6",
+    "panel": "rgba(255,253,247,.96)",
+    "field": "#fffdf7",
+    "button": "#efe7d8",
+    "accent": "#8c2f39",
+    "onAccent": "#fff6f0",
+    "gold": "#a8762a",
+    "border": "rgba(36,28,20,.18)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.18) brightness(1.02)"
+}

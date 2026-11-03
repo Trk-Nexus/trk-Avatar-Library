@@ -1,0 +1,43 @@
+{
+  "id": "paperMoon",
+  "label": {
+    "ja": "紙月の夜",
+    "en": "Paper Moon Night",
+    "zh": "纸月之夜",
+    "ko": "종이 달밤"
+  },
+  "desc": {
+    "ja": "和紙の灯りと、やわらかな月の光",
+    "en": "Washi paper light and soft moonlight",
+    "zh": "和纸灯与柔和的月光",
+    "ko": "와시 종이 불빛과 부드러운 달빛"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#f4eee0",
+    "ink": "#2b2620",
+    "don": "#b5533c",
+    "ka": "#5f7f8f",
+    "text": "#2b2620",
+    "muted": "#60584e",
+    "bg": "#efe9dc",
+    "panel": "#fbf8f1",
+    "field": "#fffdf8",
+    "button": "#e6dfd0",
+    "accent": "#b5533c",
+    "onAccent": "#fff8f0",
+    "gold": "#a67c2e",
+    "border": "rgba(60,45,30,.25)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) brightness(1.1) contrast(.95)"
+}

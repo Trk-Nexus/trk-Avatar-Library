@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "vol-01",
+      "title": "vol.1 夜の情景と光の色彩",
+      "preview": "gallery/skins-vol1.html",
+      "ids": [
+        "lanternAlley",
+        "moonlitTerrace",
+        "fireflyValley",
+        "midnightCafe",
+        "snowyShrine",
+        "autumnMaple",
+        "summerNight",
+        "zenStone",
+        "inkWash",
+        "paperMoon",
+        "copperHour",
+        "lavenderHill",
+        "emeraldNight",
+        "cherrySnow",
+        "ironMorning",
+        "goldLeafNight"
+      ]
+    },
+    {
+      "id": "vol-02",
+      "title": "vol.2 宝石・鉱石",
+      "preview": "gallery/skins-jewel.html",
+      "ids": [
+        "ruby",
+        "sapphire",
+        "emerald",
+        "diamond",
+        "amber",
+        "amethyst",
+        "topaz",
+        "opal",
+        "quartz",
+        "onyx",
+        "jade",
+        "pearl",
+        "garnet",
+        "citrine",
+        "turquoise",
+        "obsidian"
+      ]
+    },
+    {
+      "id": "vol-03",
+      "title": "vol.3 タイポグラフィ",
+      "preview": "gallery/skins-typography.html",
+      "ids": [
+        "helvetica",
+        "garamond",
+        "futura",
+        "bodoni",
+        "caslon",
+        "baskerville",
+        "gill-sans",
+        "din",
+        "univers",
+        "frutiger",
+        "optima",
+        "rockwell",
+        "copperplate",
+        "didot",
+        "akzidenz",
+        "letterpress"
+      ]
+    },
+    {
+      "id": "vol-04",
+      "title": "vol.4 人気フォント",
+      "preview": "gallery/skins-fonts-vol4.html",
+      "ids": [
+        "montserrat",
+        "opensans",
+        "noto-sans-jp",
+        "hiragino-kaku",
+        "avenir",
+        "proxima-nova",
+        "lato",
+        "roboto",
+        "source-sans-pro",
+        "ubuntu",
+        "playfair-display",
+        "merriweather",
+        "oswald",
+        "raleway",
+        "poppins",
+        "inter"
+      ]
+    },
+    {
+      "id": "vol-05",
+      "title": "vol.5 スイーツ・カフェ",
+      "preview": "gallery/skins-sweets.html",
+      "ids": [
+        "matcha",
+        "chocolate",
+        "strawberry-cake",
+        "macaron",
+        "croissant",
+        "espresso",
+        "crepe",
+        "donut",
+        "parfait",
+        "mochi",
+        "dango",
+        "melon-pan",
+        "taiyaki",
+        "creme-brulee",
+        "tart",
+        "pancake"
+      ]
+    },
+    {
+      "id": "vol-06",
+      "title": "vol.6 金属",
+      "preview": "gallery/skins-metal.html",
+      "ids": [
+        "silver",
+        "gold",
+        "titanium",
+        "mithril",
+        "adamantium",
+        "orichalcum",
+        "vibranium",
+        "starmetal",
+        "voidsteel",
+        "celestial-bronze",
+        "draconic-iron",
+        "runic-iron",
+        "quicksilver",
+        "platinum",
+        "ancient-bronze",
+        "chrome-steel"
+      ]
+    },
+    {
+      "id": "vol-07",
+      "title": "vol.7 カジノ・ラグジュアリー",
+      "preview": "gallery/skins-casino.html",
+      "ids": [
+        "casino-royale",
+        "jackpot-777",
+        "slot-machine",
+        "roulette-wheel",
+        "poker-face",
+        "blackjack-21",
+        "high-roller",
+        "vip-lounge",
+        "neon-vegas",
+        "gold-chip",
+        "diamond-club",
+        "midnight-casino",
+        "velvet-ropes",
+        "champagne-gold",
+        "neon-sign",
+        "house-edge"
+      ]
+    },
+    {
+      "id": "vol-08",
+      "title": "vol.8 宇宙・惑星・星雲",
+      "preview": "gallery/skins-cosmos.html",
+      "ids": [
+        "nebula",
+        "black-hole",
+        "supernova",
+        "pulsar",
+        "quasar",
+        "event-horizon",
+        "dark-matter",
+        "wormhole",
+        "exoplanet",
+        "asteroid-belt",
+        "solar-flare",
+        "lunar-surface",
+        "martian-red",
+        "venus-clouds",
+        "mercury-core",
+        "cosmic-dust"
+      ]
+    },
+    {
+      "id": "vol-09",
+      "title": "vol.9 飲み物・カフェ",
+      "preview": "gallery/skins-drinks.html",
+      "ids": [
+        "whiskey",
+        "wine-red",
+        "champagne",
+        "espresso-martini",
+        "mojito",
+        "sake",
+        "matcha-latte",
+        "hot-cocoa",
+        "energy-drink",
+        "soda-pop",
+        "beer-foam",
+        "absinthe",
+        "tequila-sunrise",
+        "old-fashioned",
+        "negroni",
+        "kir-royale"
+      ]
+    },
+    {
+      "id": "vol-10",
+      "title": "vol.10 建築・都市",
+      "preview": "gallery/skins-architecture.html",
+      "ids": [
+        "art-deco",
+        "brutalist",
+        "gothic-cathedral",
+        "zen-temple",
+        "tokyo-night",
+        "paris-cafe",
+        "new-york-subway",
+        "venice-canal",
+        "kyoto-machiya",
+        "desert-mosque",
+        "ice-hotel",
+        "tree-house",
+        "lighthouse",
+        "windmill",
+        "clock-tower",
+        "bamboo-forest"
+      ]
+    },
+    {
+      "id": "glitch",
+      "title": "glitch デジタル実験",
+      "preview": "gallery/skins-glitch.html",
+      "ids": [
+        "glitch-core",
+        "pixel-8bit",
+        "matrix-rain",
+        "motherboard",
+        "cyberpunk",
+        "datamosh",
+        "scanline",
+        "vaporwave",
+        "lofi-crt",
+        "hacker",
+        "synthwave",
+        "corrupted",
+        "crypto",
+        "pixel-art",
+        "glitch-text",
+        "neon-grid"
+      ]
+    },
+    {
+      "id": "wizard",
+      "title": "wizard ウィザード",
+      "category": "wizard"
+    },
+    {
+      "id": "other",
+      "title": "その他・定番",
+      "remaining": true
+    }
+  ]
+}

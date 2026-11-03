@@ -1,0 +1,42 @@
+{
+  "id": "wagara",
+  "label": {
+    "ja": "和モダン",
+    "en": "Wa Modern",
+    "zh": "和风现代",
+    "ko": "화모던"
+  },
+  "desc": {
+    "ja": "和紙と墨と朱色",
+    "en": "Washi paper, ink, and vermillion",
+    "zh": "和纸・墨与朱红",
+    "ko": "와시 종이, 먹, 주홍"
+  },
+  "cat": [
+    "light"
+  ],
+  "font": "Georgia,\"Noto Serif JP\",\"Noto Serif SC\",serif",
+  "type": null,
+  "colors": {
+    "stage": "#f5efe2",
+    "ink": "#2e2a24",
+    "don": "#c73e3a",
+    "ka": "#2c5f7c",
+    "text": "#2e2a24",
+    "muted": "#696254",
+    "bg": "#f7f2e8",
+    "panel": "rgba(252,248,240,.97)",
+    "field": "#fdfaf3",
+    "button": "#f0e9db",
+    "accent": "#c73e3a",
+    "onAccent": "#ffffff",
+    "gold": "#a8842c",
+    "border": "rgba(60,50,40,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.3) contrast(1.05) brightness(1.02)"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "hc",
+  "label": {
+    "ja": "ハイコントラスト",
+    "en": "High contrast",
+    "zh": "高对比度",
+    "ko": "고대비"
+  },
+  "desc": {
+    "ja": "白と黒の強い対比。数字と判定を最優先",
+    "en": "Strong black-and-white contrast; numbers and judgments first",
+    "zh": "黑白强对比，优先显示数字与判定",
+    "ko": "흑백 강한 대비, 숫자와 판정 우선"
+  },
+  "cat": [
+    "access"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#000000",
+    "ink": "#ffffff",
+    "don": "#ffff00",
+    "ka": "#00e5ff",
+    "text": "#ffffff",
+    "muted": "#e6e6e6",
+    "bg": "#000000",
+    "panel": "rgba(0,0,0,.98)",
+    "field": "#000000",
+    "button": "#111111",
+    "accent": "#ffff00",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "#ffffff"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "grayscale(1) brightness(.6) contrast(1.4)"
+}

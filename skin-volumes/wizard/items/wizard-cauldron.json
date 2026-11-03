@@ -1,0 +1,52 @@
+{
+  "id": "wizard-cauldron",
+  "label": {
+    "ja": "大釜",
+    "en": "Cauldron",
+    "zh": "大锅",
+    "ko": "대솥"
+  },
+  "desc": {
+    "ja": "魔女の大釜、泡立つ緑のポーション",
+    "en": "Witch's cauldron, bubbling green potion",
+    "zh": "女巫的大锅，冒泡的绿色药水",
+    "ko": "마녀의 대솥, 끓는 녹색 포션"
+  },
+  "cat": [
+    "wizard",
+    "fun",
+    "dark"
+  ],
+  "font": "\\\"Comic Sans MS\\\",\\\"Cursive\\\",fantasy",
+  "type": {
+    "title": "\\\"Comic Sans MS\\\",cursive",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "🧪 BUBBLE"
+  },
+  "colors": {
+    "stage": "#1b5e20",
+    "ink": "#a5d6a7",
+    "don": "#81c784",
+    "ka": "#388e3c",
+    "text": "#a5d6a7",
+    "muted": "#7ae07f",
+    "bg": "#0d3b0d",
+    "panel": "rgba(13,59,13,.97)",
+    "field": "#1b5e20",
+    "button": "#2e7d32",
+    "accent": "#81c784",
+    "onAccent": "#000000",
+    "gold": "#c8e6c9",
+    "border": "rgba(129,199,132,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "hue-rotate(100deg) saturate(1.3) contrast(1.1) brightness(.9)"
+}

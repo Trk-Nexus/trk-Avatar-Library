@@ -1,0 +1,63 @@
+{
+  "id": "wizard-nord",
+  "label": {
+    "ja": "ウィザード・ノルド",
+    "en": "Wizard Nord",
+    "zh": "巫师北欧",
+    "ko": "마법사 노르딕"
+  },
+  "desc": {
+    "ja": "青灰系・落ち着いた夜間モード",
+    "en": "Blue-gray, calm night mode",
+    "zh": "蓝灰色，平静的夜间模式",
+    "ko": "청회색, 차분한 야간 모드"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "JetBrains Mono, monospace",
+  "type": {
+    "title": "JetBrains Mono, monospace",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#2e3440",
+    "ink": "#d8dee9",
+    "don": "#88c0d0",
+    "ka": "#81a1c1",
+    "text": "#d8dee9",
+    "muted": "#8fbcbb",
+    "bg": "#2e3440",
+    "panel": "#3b4252",
+    "field": "#2e3440",
+    "button": "#434c5e",
+    "accent": "#88c0d0",
+    "onAccent": "#2e3440",
+    "gold": "#eceff4",
+    "border": "rgba(136,192,208,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "saturate(.8) brightness(1.02)",
+  "cli": {
+    "font": "JetBrains Mono, monospace",
+    "prompt": ">",
+    "caret": "#88c0d0",
+    "scan": 0.06,
+    "cursor": "block",
+    "opacity": 0.95,
+    "history": 50,
+    "completion": "tab",
+    "bell": false
+  }
+}

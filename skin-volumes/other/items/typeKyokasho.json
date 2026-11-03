@@ -1,0 +1,51 @@
+{
+  "id": "typeKyokasho",
+  "label": {
+    "ja": "教科書の字",
+    "en": "Textbook letters",
+    "zh": "教科书字体",
+    "ko": "교과서 글자"
+  },
+  "desc": {
+    "ja": "とめ・はねの分かる、読みやすい教科書体",
+    "en": "Legible textbook strokes with clear stops and hooks",
+    "zh": "笔顺清晰的教科书体，易读",
+    "ko": "끝과 갈고리가 분명한 읽기 쉬운 교과서체"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Yu Kyokasho\",\"YuKyokasho\",\"Hiragino Kyokasho ProN\",\"Klee One\",\"Noto Serif JP\",\"Noto Serif CJK JP\",serif",
+  "type": {
+    "title": "",
+    "weight": "400",
+    "lh": "1.85",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#eef6fb",
+    "ink": "#10283a",
+    "don": "#1f6feb",
+    "ka": "#0f766e",
+    "text": "#10283a",
+    "muted": "#40596d",
+    "bg": "#eef6fb",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#e2eef7",
+    "accent": "#1f6feb",
+    "onAccent": "#ffffff",
+    "gold": "#b45309",
+    "border": "rgba(16,40,58,.18)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.03) saturate(.95)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "neon-vegas",
+  "label": {
+    "ja": "ネオンベガス",
+    "en": "Neon Vegas",
+    "zh": "霓虹拉斯维加斯",
+    "ko": "네온 베가스"
+  },
+  "desc": {
+    "ja": "ラスベガスのネオン街、派手で賑やかな夜",
+    "en": "Las Vegas neon street, flashy and lively night",
+    "zh": "拉斯维加斯霓虹街，花哨热闹的夜晚",
+    "ko": "라스베이거스 네온 거리, 화려하고 시끌벅적한 밤"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "\"Orbitron\",\"Futura\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Orbitron\",sans-serif",
+    "weight": "700",
+    "lh": "1.2",
+    "titleWeight": "900",
+    "titleSpace": "-.05em",
+    "titleTransform": "uppercase",
+    "mark": "VEGAS"
+  },
+  "colors": {
+    "stage": "#0a0a1a",
+    "ink": "#00ffff",
+    "don": "#ff00ff",
+    "ka": "#00ffcc",
+    "text": "#00ffff",
+    "muted": "#8a7aaa",
+    "bg": "#000000",
+    "panel": "rgba(10,10,26,.98)",
+    "field": "#0a0a1a",
+    "button": "#1a1a2a",
+    "accent": "#ff00ff",
+    "onAccent": "#000000",
+    "gold": "#00ffff",
+    "border": "rgba(0,255,255,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(180deg) saturate(1.6) brightness(.75) contrast(1.3)"
+}

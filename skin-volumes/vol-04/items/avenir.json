@@ -1,0 +1,51 @@
+{
+  "id": "avenir",
+  "label": {
+    "ja": "アヴェニール",
+    "en": "Avenir",
+    "zh": "未来体",
+    "ko": "아베니르"
+  },
+  "desc": {
+    "ja": "フランス生まれの幾何学ゴシック、洗練された書体",
+    "en": "French geometric sans, refined and elegant",
+    "zh": "法国几何学无衬线体，精致优雅",
+    "ko": "프랑스 기하학적 고딕, 세련되고 우아한 서체"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Avenir\",\"Avenir Next\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Avenir\",sans-serif",
+    "weight": "400",
+    "lh": "1.55",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#eceff1",
+    "ink": "#37474f",
+    "don": "#d32f2f",
+    "ka": "#0288d1",
+    "text": "#37474f",
+    "muted": "#78909c",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#cfd8dc",
+    "accent": "#0288d1",
+    "onAccent": "#ffffff",
+    "gold": "#ffb300",
+    "border": "rgba(55,71,79,.12)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "contrast(1.03) brightness(1.01)"
+}

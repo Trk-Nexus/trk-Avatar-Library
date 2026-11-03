@@ -1,0 +1,44 @@
+{
+  "id": "croissant",
+  "label": {
+    "ja": "クロワッサン",
+    "en": "Croissant",
+    "zh": "可颂",
+    "ko": "크루아상"
+  },
+  "desc": {
+    "ja": "朝のカフェ、バターの香るゴールド",
+    "en": "Morning cafe, buttery gold",
+    "zh": "早 morning 咖啡厅，黄油香的金色",
+    "ko": "아침 카페, 버터 향의 골드"
+  },
+  "cat": [
+    "light",
+    "grad",
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#ffe082,#ffcc80)",
+    "ink": "#bf360c",
+    "don": "#ffcc80",
+    "ka": "#ffe0b2",
+    "text": "#bf360c",
+    "muted": "#ef6c00",
+    "bg": "linear-gradient(180deg,#ffecb3,#ffe0b2)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#ffecb3",
+    "accent": "#fb8c00",
+    "onAccent": "#ffffff",
+    "gold": "#ffe082",
+    "border": "rgba(251,140,0,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.15) saturate(1.1) brightness(1.04)"
+}

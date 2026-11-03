@@ -1,0 +1,43 @@
+{
+  "id": "moonlitTerrace",
+  "label": {
+    "ja": "月光テラス",
+    "en": "Moonlit Terrace",
+    "zh": "月光露台",
+    "ko": "달빛 테라스"
+  },
+  "desc": {
+    "ja": "静かな月明かりの下、銀色に染まるテラス",
+    "en": "A terrace dyed silver under quiet moonlight",
+    "zh": "安静月光下，染成银色的露台",
+    "ko": "조용한 달빛 아래 은빛으로 물든 테라스"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#0d1b2a",
+    "ink": "#e0e7ff",
+    "don": "#ff8abf",
+    "ka": "#7fd3c4",
+    "text": "#e0e7ff",
+    "muted": "#a8b8d0",
+    "bg": "#0a1422",
+    "panel": "rgba(10,20,34,.95)",
+    "field": "#0d1b2a",
+    "button": "#15263a",
+    "accent": "#7fd3c4",
+    "onAccent": "#050c14",
+    "gold": "#c89bff",
+    "border": "rgba(127,211,196,.25)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.3) hue-rotate(180deg) saturate(.8) brightness(.8) contrast(1.1)"
+}

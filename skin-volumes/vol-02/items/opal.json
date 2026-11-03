@@ -1,0 +1,43 @@
+{
+  "id": "opal",
+  "label": {
+    "ja": "オパール",
+    "en": "Opal",
+    "zh": "欧泊",
+    "ko": "오팔"
+  },
+  "desc": {
+    "ja": "虹色に輝く宝石、創造と想像の虹色",
+    "en": "Rainbow-shining jewel, creativity and imagination in rainbow",
+    "zh": "彩虹色闪耀宝石，创造与想象的彩虹",
+    "ko": "무지개빛으로 빛나는 보석, 창의와 상상의 무지개"
+  },
+  "cat": [
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(90deg,#1a0f2e,#0e2233,#0e2e22,#2e2a0c,#33101f)",
+    "ink": "#f4f2ff",
+    "don": "#ff6b9d",
+    "ka": "#a29bfe",
+    "text": "#f4f2ff",
+    "muted": "#b0aecb",
+    "bg": "linear-gradient(90deg,#241539,#123041,#153829,#38300f,#3b1526)",
+    "panel": "rgba(18,16,32,.94)",
+    "field": "#151126",
+    "button": "#201a35",
+    "accent": "#f0eeff",
+    "onAccent": "#241a3a",
+    "gold": "#ffd166",
+    "border": "rgba(255,255,255,.22)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "saturate(1.4) contrast(1.2) brightness(.75) hue-rotate(30deg)"
+}

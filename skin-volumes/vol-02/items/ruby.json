@@ -1,0 +1,44 @@
+{
+  "id": "ruby",
+  "label": {
+    "ja": "ルビー",
+    "en": "Ruby",
+    "zh": "红宝石",
+    "ko": "루비"
+  },
+  "desc": {
+    "ja": "深紅の宝石、情熱と勇気の赤",
+    "en": "Deep red jewel, passion and courage in red",
+    "zh": "深红宝石，激情与勇气的红",
+    "ko": "깊은 붉은 보석, 열정과 용기의 빨강"
+  },
+  "cat": [
+    "grad",
+    "fun",
+    "dark"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#4a0e0e,#1a0303)",
+    "ink": "#ffe6e6",
+    "don": "#ff1a1a",
+    "ka": "#4da6ff",
+    "text": "#ffe6e6",
+    "muted": "#b37070",
+    "bg": "linear-gradient(180deg,#1a0303,#0a0101)",
+    "panel": "rgba(26,3,3,.95)",
+    "field": "#2a0e0e",
+    "button": "#4a0e0e",
+    "accent": "#ff1a1a",
+    "onAccent": "#ffffff",
+    "gold": "#ffcccc",
+    "border": "rgba(255,26,26,.32)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(1.4) hue-rotate(-10deg) brightness(.75) contrast(1.25)"
+}

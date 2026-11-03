@@ -1,0 +1,44 @@
+{
+  "id": "aurora",
+  "label": {
+    "ja": "オーロラ",
+    "en": "Aurora",
+    "zh": "极光",
+    "ko": "오로라"
+  },
+  "desc": {
+    "ja": "緑から紫への夜空の幕",
+    "en": "A curtain from green to violet",
+    "zh": "从绿到紫的夜空帷幕",
+    "ko": "초록에서 보라로 이어지는 밤하늘 장막"
+  },
+  "cat": [
+    "dark",
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(0deg,#0b2f24,#0c1a38)",
+    "ink": "#eafff8",
+    "don": "#ff8abf",
+    "ka": "#50ffbe",
+    "text": "#eafff8",
+    "muted": "#93c0b4",
+    "bg": "linear-gradient(0deg,#0e3a2c,#101d44)",
+    "panel": "rgba(10,26,30,.95)",
+    "field": "#082020",
+    "button": "#0c2e2c",
+    "accent": "#50ffbe",
+    "onAccent": "#032119",
+    "gold": "#c89bff",
+    "border": "rgba(80,255,190,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.6) hue-rotate(120deg) saturate(1.4) brightness(.65) contrast(1.2)"
+}

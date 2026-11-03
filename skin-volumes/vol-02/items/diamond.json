@@ -1,0 +1,44 @@
+{
+  "id": "diamond",
+  "label": {
+    "ja": "ダイヤモンド",
+    "en": "Diamond",
+    "zh": "钻石",
+    "ko": "다이아몬드"
+  },
+  "desc": {
+    "ja": "無色透明の宝石、純粋と永遠の輝き",
+    "en": "Colorless transparent jewel, purity and eternity shining",
+    "zh": "无色透明宝石，纯粹与永恒的光芒",
+    "ko": "무색 투명 보석, 순수와 영원의 반짝임"
+  },
+  "cat": [
+    "light",
+    "grad",
+    "access"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#f0f0f0",
+    "ink": "#262626",
+    "don": "#ff4757",
+    "ka": "#747d8c",
+    "text": "#262626",
+    "muted": "#999999",
+    "bg": "#e0e0e0",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#d0d0d0",
+    "accent": "#747d8c",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(100,100,100,.25)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.1) contrast(1.1) brightness(1.05)"
+}

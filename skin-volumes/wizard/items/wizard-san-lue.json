@@ -1,0 +1,63 @@
+{
+  "id": "wizard-san-lue",
+  "label": {
+    "ja": "三略",
+    "en": "Three Strategies",
+    "zh": "三略",
+    "ko": "삼략"
+  },
+  "desc": {
+    "ja": "黄石公が張良に授けたとされる軍略書、上・中・下三篇",
+    "en": "Military classic attributed to Huang Shigong given to Zhang Liang, three sections",
+    "zh": "据说黄石公传给张良的军略书，上中下三篇",
+    "ko": "황석공이 장량에 전했다고 하는 군사전략서, 상·중·하 三篇"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "access"
+  ],
+  "font": "\"KaiTi\",\"SimSun\",serif",
+  "type": {
+    "title": "\"KaiTi\",serif",
+    "weight": "500",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "略"
+  },
+  "colors": {
+    "stage": "#1a2e1a",
+    "ink": "#d4e8d4",
+    "don": "#4a7c59",
+    "ka": "#2f4f2f",
+    "text": "#d4e8d4",
+    "muted": "#8fb08f",
+    "bg": "#101f10",
+    "panel": "rgba(16,31,16,.97)",
+    "field": "#1a2e1a",
+    "button": "#2a4a2a",
+    "accent": "#4a7c59",
+    "onAccent": "#ffffff",
+    "gold": "#c5a059",
+    "border": "rgba(74,124,89,.35)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(100deg) saturate(1.1) contrast(1.15) brightness(.85)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "略",
+    "caret": "#4a7c59",
+    "scan": 0.16,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

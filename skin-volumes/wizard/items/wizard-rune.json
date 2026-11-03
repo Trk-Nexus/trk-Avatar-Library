@@ -1,0 +1,52 @@
+{
+  "id": "wizard-rune",
+  "label": {
+    "ja": "ルーン文字",
+    "en": "Rune",
+    "zh": "卢恩文字",
+    "ko": "룬 문자"
+  },
+  "desc": {
+    "ja": "北欧ルーン刻印、石板と氷の青",
+    "en": "Nordic rune carving, stone tablet and ice blue",
+    "zh": "北欧卢恩刻印，石板与冰蓝",
+    "ko": "노르드 룬 문자 새김, 돌판과 얼음 파랑"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "access"
+  ],
+  "font": "\\\"Cinzel\\\",\\\"Trajan Pro\\\",serif",
+  "type": {
+    "title": "\\\"Cinzel\\\",serif",
+    "weight": "700",
+    "lh": "1.4",
+    "titleWeight": "800",
+    "titleSpace": ".15em",
+    "titleTransform": "uppercase",
+    "mark": "ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ"
+  },
+  "colors": {
+    "stage": "#0f172a",
+    "ink": "#e2e8f0",
+    "don": "#cbd5e1",
+    "ka": "#64748b",
+    "text": "#e2e8f0",
+    "muted": "#7086a5",
+    "bg": "#020617",
+    "panel": "rgba(2,6,23,.98)",
+    "field": "#0f172a",
+    "button": "#1e293b",
+    "accent": "#cbd5e1",
+    "onAccent": "#000000",
+    "gold": "#f8fafc",
+    "border": "rgba(203,213,225,.30)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "saturate(.6) contrast(1.25) brightness(.8)"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "sumi",
+  "label": {
+    "ja": "水墨（墨と朱の判子）",
+    "en": "Sumi ink (ink and red seal)",
+    "zh": "水墨（墨与朱印）",
+    "ko": "수묵(먹과 주인)"
+  },
+  "desc": {
+    "ja": "和紙に墨の濃淡、朱の判子だけの差し色",
+    "en": "Ink wash on washi paper, with only a red seal as accent",
+    "zh": "宣纸上的墨色浓淡，仅以朱印点缀",
+    "ko": "한지 위의 먹 농담, 주인 한 점만 더한 색"
+  },
+  "cat": [
+    "light"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#f3efe6",
+    "ink": "#1b1b1b",
+    "don": "#1d1d1d",
+    "ka": "#7d7a72",
+    "text": "#1b1b1b",
+    "muted": "#56534c",
+    "bg": "#f3efe6",
+    "panel": "#fbf8f1",
+    "field": "#ffffff",
+    "button": "#e7e1d3",
+    "accent": "#b3261e",
+    "onAccent": "#ffffff",
+    "gold": "#8f3500",
+    "border": "rgba(27,27,27,.25)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.6) contrast(1.05)"
+}

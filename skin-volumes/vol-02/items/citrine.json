@@ -1,0 +1,44 @@
+{
+  "id": "citrine",
+  "label": {
+    "ja": "シトリン",
+    "en": "Citrine",
+    "zh": "黄水晶",
+    "ko": "시트린"
+  },
+  "desc": {
+    "ja": "鮮やかな黄色の宝石、富と繁栄の黄",
+    "en": "Vivid yellow jewel, wealth and prosperity in yellow",
+    "zh": "鲜艳黄色宝石，富与繁荣的黄",
+    "ko": "선명한 노란색 보석, 부와 번영의 노랑"
+  },
+  "cat": [
+    "grad",
+    "fun",
+    "light"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#f1c40f,#b7950b)",
+    "ink": "#2d3436",
+    "don": "#e17055",
+    "ka": "#00b894",
+    "text": "#2d3436",
+    "muted": "#8b854a",
+    "bg": "linear-gradient(180deg,#b7950b,#6b5605)",
+    "panel": "rgba(241,196,15,.95)",
+    "field": "#ffeaa7",
+    "button": "#fdcb6e",
+    "accent": "#e17055",
+    "onAccent": "#2d3436",
+    "gold": "#ffeaa7",
+    "border": "rgba(225,112,85,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.15) saturate(1.25) brightness(1.1) contrast(1.05)"
+}

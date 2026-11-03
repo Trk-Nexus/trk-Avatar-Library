@@ -1,0 +1,63 @@
+{
+  "id": "wizard-focus-ring-navigator",
+  "label": {
+    "ja": "フォーカスリング・ナビゲーター",
+    "en": "Focus Ring Navigator",
+    "zh": "焦点环导航者",
+    "ko": "포커스 링 항해사"
+  },
+  "desc": {
+    "ja": ":focus-visible をフル活用、キーボードのみでの完全操作とフォーカスリング強化",
+    "en": "Full use of :focus-visible, keyboard-only full operation and focus ring enhancement",
+    "zh": "全面使用:focus-visible，仅键盘的完全操作和焦点环增强",
+    "ko": ":focus-visible를 완전히 활용, 키보드만으로의 완전한 조작과 포커스 링 강화"
+  },
+  "cat": [
+    "wizard",
+    "light",
+    "access"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "500",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "◎"
+  },
+  "colors": {
+    "stage": "#ffffff",
+    "ink": "#1a1a1a",
+    "don": "#d4af37",
+    "ka": "#8b4513",
+    "text": "#1a1a1a",
+    "muted": "#666666",
+    "bg": "#fafafa",
+    "panel": "rgba(250,250,250,.98)",
+    "field": "#ffffff",
+    "button": "#e8e8e8",
+    "accent": "#d4af37",
+    "onAccent": "#000000",
+    "gold": "#ffd700",
+    "border": "rgba(212,175,55,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "contrast(1.05) brightness(1.0)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "◎",
+    "caret": "#d4af37",
+    "scan": 0.1,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

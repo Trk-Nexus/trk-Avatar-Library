@@ -1,0 +1,44 @@
+{
+  "id": "topaz",
+  "label": {
+    "ja": "トパーズ",
+    "en": "Topaz",
+    "zh": "黄玉",
+    "ko": "토파즈"
+  },
+  "desc": {
+    "ja": "黄金色の宝石、友情と誠実の黄",
+    "en": "Golden yellow jewel, friendship and sincerity in yellow",
+    "zh": "金黄色宝石，友情与真诚的黄",
+    "ko": "금빛 보석, 우정과 성실의 노랑"
+  },
+  "cat": [
+    "grad",
+    "light",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#ffc107,#b8860b)",
+    "ink": "#3e2723",
+    "don": "#ff6b6b",
+    "ka": "#4ecdc4",
+    "text": "#3e2723",
+    "muted": "#8d6e63",
+    "bg": "linear-gradient(180deg,#b8860b,#6b4a0b)",
+    "panel": "rgba(255,193,7,.95)",
+    "field": "#fff9c4",
+    "button": "#ffe082",
+    "accent": "#ff6b6b",
+    "onAccent": "#3e2723",
+    "gold": "#fff176",
+    "border": "rgba(255,107,87,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) saturate(1.15) brightness(1.05)"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "clarity",
+  "label": {
+    "ja": "クラリティ",
+    "en": "Clarity",
+    "zh": "清晰",
+    "ko": "클래리티"
+  },
+  "desc": {
+    "ja": "色覚多様性に配慮・形でも区別",
+    "en": "Colorblind-safe, shape-coded",
+    "zh": "色觉友好·形状区分",
+    "ko": "색각 친화 · 모양으로 구분"
+  },
+  "cat": [
+    "basic"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#000000",
+    "ink": "#ffffff",
+    "don": "#E69F00",
+    "ka": "#56B4E9",
+    "text": "#ffffff",
+    "muted": "#cfcfcf",
+    "bg": "#000000",
+    "panel": "#0d0d0d",
+    "field": "#000000",
+    "button": "#1a1a1a",
+    "accent": "#E69F00",
+    "onAccent": "#000000",
+    "gold": "#F0E442",
+    "border": "rgba(255,255,255,.45)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "grayscale(1) brightness(.55)"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "midnightsun",
+  "label": {
+    "ja": "白夜",
+    "en": "Midnight Sun",
+    "zh": "白夜",
+    "ko": "백야"
+  },
+  "desc": {
+    "ja": "地平線の金色の光",
+    "en": "Gold light on the horizon",
+    "zh": "地平线上的金色光芒",
+    "ko": "지평선의 금빛"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(0deg,#fdf3d8,#ffffff)",
+    "ink": "#33301f",
+    "don": "#e07a4a",
+    "ka": "#4a7fa8",
+    "text": "#33301f",
+    "muted": "#716a57",
+    "bg": "linear-gradient(0deg,#fff7df,#fdfdfa)",
+    "panel": "rgba(255,255,250,.96)",
+    "field": "#fffdf6",
+    "button": "#faf5e4",
+    "accent": "#b8912e",
+    "onAccent": "#000000",
+    "gold": "#e07a4a",
+    "border": "rgba(160,130,50,.26)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.1) saturate(.9) contrast(1.02)"
+}

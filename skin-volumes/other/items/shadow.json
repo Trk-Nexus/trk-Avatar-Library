@@ -1,0 +1,42 @@
+{
+  "id": "shadow",
+  "label": {
+    "ja": "シャドウ",
+    "en": "Shadow",
+    "zh": "暗影",
+    "ko": "섀도우"
+  },
+  "desc": {
+    "ja": "白黒シルエットの原点",
+    "en": "The original monochrome silhouette",
+    "zh": "原版黑白剪影",
+    "ko": "오리지널 흑백 실루엣"
+  },
+  "cat": [
+    "basic"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#050505",
+    "ink": "#ffffff",
+    "don": "#ff3b55",
+    "ka": "#55aaff",
+    "text": "#f4f4f8",
+    "muted": "#a9abb8",
+    "bg": "#07080d",
+    "panel": "rgba(14,16,24,.96)",
+    "field": "#0f111a",
+    "button": "#1a1d29",
+    "accent": "#ff3b55",
+    "onAccent": "#000000",
+    "gold": "#ffd166",
+    "border": "rgba(255,255,255,.16)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.7)"
+}

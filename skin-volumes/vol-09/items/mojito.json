@@ -1,0 +1,52 @@
+{
+  "id": "mojito",
+  "label": {
+    "ja": "モヒート",
+    "en": "Mojito",
+    "zh": "莫吉托",
+    "ko": "모히토"
+  },
+  "desc": {
+    "ja": "ミントとライム、爽やかな酸味",
+    "en": "Mint and lime, refreshing acidity",
+    "zh": "薄荷和青柠，清爽的酸味",
+    "ko": "민트와 라임, 상큼한 신맛"
+  },
+  "cat": [
+    "light",
+    "grad",
+    "fun"
+  ],
+  "font": "\"Montserrat\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Montserrat\",sans-serif",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#a8e6cf,#dcedc1)",
+    "ink": "#1b4332",
+    "don": "#ff9ff3",
+    "ka": "#54a0ff",
+    "text": "#1b4332",
+    "muted": "#52b788",
+    "bg": "#dcedc1",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#b2dfdb",
+    "accent": "#54a0ff",
+    "onAccent": "#ffffff",
+    "gold": "#fbc4ab",
+    "border": "rgba(84,160,255,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.2) brightness(1.05)"
+}

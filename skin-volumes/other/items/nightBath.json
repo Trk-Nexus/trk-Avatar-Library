@@ -1,0 +1,42 @@
+{
+  "id": "nightBath",
+  "label": {
+    "ja": "夜の銭湯",
+    "en": "Night bathhouse",
+    "zh": "夜间澡堂",
+    "ko": "밤의 목욕탕"
+  },
+  "desc": {
+    "ja": "タイルの壁と、ぬくもりのある電球色",
+    "en": "Tiled walls and warm bulb light",
+    "zh": "瓷砖墙与温暖的灯光",
+    "ko": "타일 벽과 따뜻한 전구 빛"
+  },
+  "cat": [
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#0b2428",
+    "ink": "#eef7f4",
+    "don": "#f0b35a",
+    "ka": "#7fd3c4",
+    "text": "#eef7f4",
+    "muted": "#a8cfc8",
+    "bg": "#0d2a2e",
+    "panel": "rgba(12,40,44,.96)",
+    "field": "#0a2024",
+    "button": "#15393e",
+    "accent": "#f0b35a",
+    "onAccent": "#2a1800",
+    "gold": "#ffd98a",
+    "border": "rgba(255,255,255,.2)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(1.2) brightness(.7)"
+}

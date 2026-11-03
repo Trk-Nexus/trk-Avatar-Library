@@ -1,0 +1,64 @@
+{
+  "id": "wizard-man",
+  "label": {
+    "ja": "ウィザード・マン",
+    "en": "Wizard Man",
+    "zh": "巫师手册",
+    "ko": "마법사 매뉴얼"
+  },
+  "desc": {
+    "ja": "manページ・ドキュメント閲覧・serifフォント",
+    "en": "man page, document viewing, serif font",
+    "zh": "man页面，文档查看，衬线字体",
+    "ko": "man 페이지, 문서 조회, 세리프 글꼴"
+  },
+  "cat": [
+    "wizard",
+    "life",
+    "grad"
+  ],
+  "font": "\\\"Trajan Pro\\\",\\\"Garamond\\\",serif",
+  "type": {
+    "title": "\\\"Trajan Pro\\\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f5f5f5",
+    "ink": "#1a1a1a",
+    "don": "#d4af37",
+    "ka": "#8d6e63",
+    "text": "#1a1a1a",
+    "muted": "#7b1fa2",
+    "bg": "#ffffff",
+    "panel": "#f5f5f5",
+    "field": "#ffffff",
+    "button": "#e0e0e0",
+    "accent": "#cbd5e1",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(203,213,225,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.1) brightness(1.02)",
+  "cli": {
+    "font": "Trajan Pro, Garamond, serif",
+    "prompt": ">",
+    "caret": "#cbd5e1",
+    "scan": 0.05,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": false
+  },
+  "cli.font": "Trajan Pro, Garamond, serif"
+}

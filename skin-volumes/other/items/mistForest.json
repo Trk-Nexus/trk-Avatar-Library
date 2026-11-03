@@ -1,0 +1,42 @@
+{
+  "id": "mistForest",
+  "label": {
+    "ja": "霧の森",
+    "en": "Misty forest",
+    "zh": "雾林",
+    "ko": "안개 숲"
+  },
+  "desc": {
+    "ja": "薄い霧が流れる、緑の階調",
+    "en": "Drifting thin mist over layers of green",
+    "zh": "薄雾流动的绿色层次",
+    "ko": "얇은 안개가 흐르는 초록의 농담"
+  },
+  "cat": [
+    "dark"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#1d3a33",
+    "ink": "#e9f3ee",
+    "don": "#8fd3b0",
+    "ka": "#d7ecd9",
+    "text": "#e9f3ee",
+    "muted": "#b1ccc1",
+    "bg": "#1d3a33",
+    "panel": "rgba(24,50,43,.96)",
+    "field": "#162e28",
+    "button": "#264a41",
+    "accent": "#8fd3b0",
+    "onAccent": "#0c231b",
+    "gold": "#d8e8a0",
+    "border": "rgba(233,243,238,.2)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(.85) brightness(.9)"
+}

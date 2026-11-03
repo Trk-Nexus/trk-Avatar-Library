@@ -1,0 +1,51 @@
+{
+  "id": "vip-lounge",
+  "label": {
+    "ja": "VIPラウンジ",
+    "en": "VIP Lounge",
+    "zh": "VIP休息室",
+    "ko": "VIP 라운지"
+  },
+  "desc": {
+    "ja": "排他的なVIP空間、深紫のベルベット",
+    "en": "Exclusive VIP space, deep purple velvet",
+    "zh": "排他性VIP空间，深紫色天鹅绒",
+    "ko": "배타적인 VIP 공간, 진보라색 벨벳"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "\"Garamond\",\"Baskerville\",serif",
+  "type": {
+    "title": "\"Garamond\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#2a1a3a",
+    "ink": "#e0d8f0",
+    "don": "#d4af37",
+    "ka": "#bb86fc",
+    "text": "#e0d8f0",
+    "muted": "#8a7aaa",
+    "bg": "#1a0f2a",
+    "panel": "rgba(42,26,58,.97)",
+    "field": "#2a1a3a",
+    "button": "#3a2a5a",
+    "accent": "#bb86fc",
+    "onAccent": "#1a0f2a",
+    "gold": "#d4af37",
+    "border": "rgba(187,134,252,.28)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "hue-rotate(260deg) saturate(1.2) brightness(.9) contrast(1.1)"
+}

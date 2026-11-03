@@ -1,0 +1,52 @@
+{
+  "id": "typePop",
+  "label": {
+    "ja": "ポップ看板",
+    "en": "Pop signboard",
+    "zh": "波普招牌",
+    "ko": "팝 간판"
+  },
+  "desc": {
+    "ja": "黄色い地に、太くて元気な文字",
+    "en": "Bold cheerful type on a sunny yellow field",
+    "zh": "黄色底上的粗壮活字",
+    "ko": "노란 바탕에 굵고 발랄한 글자"
+  },
+  "cat": [
+    "type",
+    "light",
+    "fun"
+  ],
+  "font": "\"Hiragino Maru Gothic ProN\",\"Hiragino Maru Gothic Pro\",\"M PLUS Rounded 1c\",\"Hiragino Kaku Gothic StdN\",\"Noto Sans JP\",\"Noto Sans SC\",\"Noto Sans KR\",sans-serif",
+  "type": {
+    "title": "",
+    "weight": "700",
+    "lh": "1.45",
+    "titleWeight": "900",
+    "titleSpace": ".04em",
+    "titleTransform": "none",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#fff7d6",
+    "ink": "#2b1a00",
+    "don": "#d81b60",
+    "ka": "#0e7c66",
+    "text": "#2b1a00",
+    "muted": "#644300",
+    "bg": "#fff7d6",
+    "panel": "rgba(255,253,245,.97)",
+    "field": "#fffdf5",
+    "button": "#ffe9a8",
+    "accent": "#d81b60",
+    "onAccent": "#ffffff",
+    "gold": "#c2410c",
+    "border": "rgba(43,26,0,.18)"
+  },
+  "shapes": [
+    "square",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.15) brightness(1.03)"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "tokyo-night",
+  "label": {
+    "ja": "東京ナイト",
+    "en": "Tokyo Night",
+    "zh": "东京之夜",
+    "ko": "도쿄 밤"
+  },
+  "desc": {
+    "ja": "ネオンと雨の路地、都会の夜",
+    "en": "Neon and rainy alley, city night",
+    "zh": "霓虹和雨巷，都市之夜",
+    "ko": "네온과 비 오는 골목길, 대도시 밤"
+  },
+  "cat": [
+    "fun",
+    "grad",
+    "dark"
+  ],
+  "font": "\"Orbitron\",\"Futura\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Orbitron\",sans-serif",
+    "weight": "700",
+    "lh": "1.2",
+    "titleWeight": "900",
+    "titleSpace": "-.05em",
+    "titleTransform": "uppercase",
+    "mark": "TOKYO"
+  },
+  "colors": {
+    "stage": "#0a0a1a",
+    "ink": "#00ffff",
+    "don": "#ff00ff",
+    "ka": "#ff0040",
+    "text": "#00ffff",
+    "muted": "#404060",
+    "bg": "#000000",
+    "panel": "rgba(10,10,26,.98)",
+    "field": "#0a0a1a",
+    "button": "#1a1a2a",
+    "accent": "#00ffff",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "rgba(0,255,255,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(180deg) saturate(1.6) brightness(.75) contrast(1.3)"
+}

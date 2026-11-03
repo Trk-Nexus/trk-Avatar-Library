@@ -1,0 +1,52 @@
+{
+  "id": "wizard-tarot",
+  "label": {
+    "ja": "タロット",
+    "en": "Tarot",
+    "zh": "塔罗牌",
+    "ko": "타로"
+  },
+  "desc": {
+    "ja": "タロットカード、運命のカードリーディング",
+    "en": "Tarot cards, card reading of fate",
+    "zh": "塔罗牌，命运的卡片占卜",
+    "ko": "타로 카드, 운명의 카드 리딩"
+  },
+  "cat": [
+    "wizard",
+    "fun",
+    "dark"
+  ],
+  "font": "\\\"Trajan Pro\\\",\\\"Garamond\\\",serif",
+  "type": {
+    "title": "\\\"Trajan Pro\\\",serif",
+    "weight": "400",
+    "lh": "1.65",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "♰"
+  },
+  "colors": {
+    "stage": "#1a1a2e",
+    "ink": "#e0d8f0",
+    "don": "#bb86fc",
+    "ka": "#74b9ff",
+    "text": "#e0d8f0",
+    "muted": "#8080b7",
+    "bg": "#0f0b1e",
+    "panel": "rgba(15,11,30,.97)",
+    "field": "#1a1a2e",
+    "button": "#2a163e",
+    "accent": "#bb86fc",
+    "onAccent": "#0d0b1e",
+    "gold": "#ccd6f6",
+    "border": "rgba(187,134,252,.35)"
+  },
+  "shapes": [
+    "diamond",
+    "circle"
+  ],
+  "locked": false,
+  "video": "hue-rotate(260deg) saturate(1.2) brightness(.85) contrast(1.15)"
+}

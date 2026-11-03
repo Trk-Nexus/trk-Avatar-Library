@@ -1,0 +1,51 @@
+{
+  "id": "neon-sign",
+  "label": {
+    "ja": "ネオンサイン",
+    "en": "Neon Sign",
+    "zh": "霓虹招牌",
+    "ko": "네온 사인"
+  },
+  "desc": {
+    "ja": "カジノのネオン看板、派手で目を引く",
+    "en": "Casino neon sign, flashy and eye-catching",
+    "zh": "赌场霓虹招牌，花哨引人注目",
+    "ko": "카지노 네온 사인, 화려하고 눈길을 끄는"
+  },
+  "cat": [
+    "fun",
+    "dark"
+  ],
+  "font": "\"Caveat\",\"Komodo Axis\",cursive",
+  "type": {
+    "title": "\"Caveat\",cursive",
+    "weight": "400",
+    "lh": "1.4",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#ff00ff",
+    "don": "#00ffff",
+    "ka": "#ffff00",
+    "text": "#ff00ff",
+    "muted": "#666666",
+    "bg": "#000000",
+    "panel": "rgba(10,10,10,.98)",
+    "field": "#0a0a0a",
+    "button": "#1a1a1a",
+    "accent": "#00ffff",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "rgba(255,255,255,.15)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "saturate(1.7) brightness(.7) contrast(1.4)"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "slot-machine",
+  "label": {
+    "ja": "スロットマシーン",
+    "en": "Slot Machine",
+    "zh": "老虎机",
+    "ko": "슬롯 머신"
+  },
+  "desc": {
+    "ja": "レトロスロットマシーン、回転リールとレバーの音",
+    "en": "Retro slot machine, spinning reels and lever sound",
+    "zh": "复古老虎机，旋转滚筒和拉杆声",
+    "ko": "레트로 슬롯 머신, 회전 릴과 레버 소리"
+  },
+  "cat": [
+    "fun",
+    "grad",
+    "dark"
+  ],
+  "font": "\"Impact\",\"Haettenschweiler\",sans-serif",
+  "type": {
+    "title": "\"Impact\",sans-serif",
+    "weight": "900",
+    "lh": "1.1",
+    "titleWeight": "900",
+    "titleSpace": "-.05em",
+    "titleTransform": "uppercase",
+    "mark": "BAR BAR BAR"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#2a1a3a,#0a0a1a)",
+    "ink": "#ffe066",
+    "don": "#ff0055",
+    "ka": "#00ffcc",
+    "text": "#ffe066",
+    "muted": "#8a7aaa",
+    "bg": "linear-gradient(180deg,#0a0a1a,#000000)",
+    "panel": "rgba(42,26,58,.97)",
+    "field": "#1a102a",
+    "button": "#2a1a3a",
+    "accent": "#ff0055",
+    "onAccent": "#ffffff",
+    "gold": "#ffe066",
+    "border": "rgba(255,0,85,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(280deg) saturate(1.5) brightness(.85) contrast(1.2)"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "wizard-vegetius",
+  "label": {
+    "ja": "ウェゲティウス 軍事論",
+    "en": "Vegetius De Re Militari",
+    "zh": "韦格提乌 兵法论",
+    "ko": "ウェ게티우스 군사론"
+  },
+  "desc": {
+    "ja": "古代ローマの軍事論、軍制・訓練・戦術の体系",
+    "en": "Ancient Roman military treatise, system of military organization training and tactics",
+    "zh": "古罗马的军事论，军制训练与战术体系",
+    "ko": "고대 로마의 군사론, 군제 훈련 및 전술 체계"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "dark"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "500",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "M"
+  },
+  "colors": {
+    "stage": "#2a2a3a",
+    "ink": "#d8d4c0",
+    "don": "#8b7355",
+    "ka": "#5d4037",
+    "text": "#d8d4c0",
+    "muted": "#b8b0a0",
+    "bg": "#1e1e28",
+    "panel": "rgba(30,30,40,.97)",
+    "field": "#2a2a3a",
+    "button": "#3a3a4a",
+    "accent": "#8b7355",
+    "onAccent": "#ffffff",
+    "gold": "#d4af37",
+    "border": "rgba(139,115,85,.35)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.3) contrast(1.15) brightness(.9)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "M",
+    "caret": "#8b7355",
+    "scan": 0.14,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

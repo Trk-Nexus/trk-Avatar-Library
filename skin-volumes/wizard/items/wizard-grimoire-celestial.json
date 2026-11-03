@@ -1,0 +1,63 @@
+{
+  "id": "wizard-grimoire-celestial",
+  "label": {
+    "ja": "天球の魔導書",
+    "en": "Grimoire Celestial",
+    "zh": "天球之魔导书",
+    "ko": "천구의 마도서"
+  },
+  "desc": {
+    "ja": "星図を描いた魔導書、星座が導く魔術",
+    "en": "Grimoire painted with star charts, constellations guide the magic",
+    "zh": "绘有星图的魔导书，星座引导魔术",
+    "ko": "별자리를 그린 마도서, 별자리가 이끄는 마법"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa"
+  },
+  "colors": {
+    "stage": "#0b1026",
+    "ink": "#dce6ff",
+    "don": "#7aa2ff",
+    "ka": "#9fbbff",
+    "text": "#dce6ff",
+    "muted": "#b8c8f0",
+    "bg": "#090d1c",
+    "panel": "rgba(9,13,28,.96)",
+    "field": "#0b1026",
+    "button": "#1a2440",
+    "accent": "#7aa2ff",
+    "onAccent": "#000000",
+    "gold": "#e0c38c",
+    "border": "rgba(122,162,255,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.2) contrast(1.15) brightness(1.05)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "★",
+    "caret": "#7aa2ff",
+    "scan": 0.12,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

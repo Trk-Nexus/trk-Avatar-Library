@@ -1,0 +1,42 @@
+{
+  "id": "terminal",
+  "label": {
+    "ja": "ターミナル",
+    "en": "Terminal",
+    "zh": "终端",
+    "ko": "터미널"
+  },
+  "desc": {
+    "ja": "レトロCRT・走査線",
+    "en": "Retro CRT with scanlines",
+    "zh": "复古CRT扫描线",
+    "ko": "레트로 CRT 주사선"
+  },
+  "cat": [
+    "basic"
+  ],
+  "font": "\"Cascadia Mono\",\"Consolas\",\"Menlo\",\"Noto Sans Mono\",monospace",
+  "type": null,
+  "colors": {
+    "stage": "#010501",
+    "ink": "#b8ffb0",
+    "don": "#ffb000",
+    "ka": "#39ff14",
+    "text": "#b8ffb0",
+    "muted": "#5fae63",
+    "bg": "#020a04",
+    "panel": "rgba(3,14,6,.96)",
+    "field": "#010802",
+    "button": "#04180a",
+    "accent": "#39ff14",
+    "onAccent": "#021a06",
+    "gold": "#ffb000",
+    "border": "rgba(57,255,20,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.5) sepia(1) hue-rotate(70deg) saturate(3) brightness(.7)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "voidsteel",
+  "label": {
+    "ja": "ボイドスチール",
+    "en": "Void Steel",
+    "zh": "虚空钢",
+    "ko": "보이드 스틸"
+  },
+  "desc": {
+    "ja": "虚空の黒鋼、光を吸い込む究極のダーク",
+    "en": "Void black steel, ultimate dark absorbing light",
+    "zh": "虚空黑钢，吸收光的究极深色",
+    "ko": "공허의 검은 강철, 빛을 흡수하는究极 다크"
+  },
+  "cat": [
+    "dark",
+    "access"
+  ],
+  "font": "\"Rajdhani\",\"Oswald\",sans-serif",
+  "type": {
+    "title": "\"Rajdhani\",sans-serif",
+    "weight": "400",
+    "lh": "1.4",
+    "titleWeight": "600",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#050505",
+    "ink": "#e0e0e0",
+    "don": "#ff0040",
+    "ka": "#00ff88",
+    "text": "#e0e0e0",
+    "muted": "#404040",
+    "bg": "#000000",
+    "panel": "rgba(5,5,5,.99)",
+    "field": "#050505",
+    "button": "#101010",
+    "accent": "#00ff88",
+    "onAccent": "#000000",
+    "gold": "#ff0040",
+    "border": "#ffffff"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(1) brightness(.55) contrast(1.5)"
+}

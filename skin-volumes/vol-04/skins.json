@@ -1,0 +1,827 @@
+{
+  "format": "trk-avatar-library-skins",
+  "version": 1,
+  "count": 16,
+  "skins": [
+    {
+      "id": "montserrat",
+      "label": {
+        "ja": "モントセラート",
+        "en": "Montserrat",
+        "zh": "蒙特塞拉特",
+        "ko": "몬트세라트"
+      },
+      "desc": {
+        "ja": "幾何学的なゴシック、モダンでクリーンな書体",
+        "en": "Geometric sans, modern and clean",
+        "zh": "几何学无衬线体，现代且简洁",
+        "ko": "기하학적 고딕, 모던하고 깨끗한 서체"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Montserrat\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Montserrat\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "700",
+        "titleSpace": "-.02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f8f9fa",
+        "ink": "#212529",
+        "don": "#e74c3c",
+        "ka": "#3498db",
+        "text": "#212529",
+        "muted": "#7f8c8d",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#ecf0f1",
+        "accent": "#3498db",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(33,37,41,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "brightness(1.02) contrast(1.01)"
+    },
+    {
+      "id": "opensans",
+      "label": {
+        "ja": "オープンサンス",
+        "en": "Open Sans",
+        "zh": "开放无衬线",
+        "ko": "오픈 산스"
+      },
+      "desc": {
+        "ja": "人間的なゴシック、読みやすさと親しみやすさ",
+        "en": "Humanist sans, legibility and friendliness",
+        "zh": "人本主义无衬线体，可读性和亲和力",
+        "ko": "휴먼체 고딕, 가독성과 친근함"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Open Sans\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Open Sans\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#eef2f3",
+        "ink": "#34495e",
+        "don": "#e74c3c",
+        "ka": "#2ecc71",
+        "text": "#34495e",
+        "muted": "#95a5a6",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#d5dbdb",
+        "accent": "#2ecc71",
+        "onAccent": "#ffffff",
+        "gold": "#f39c12",
+        "border": "rgba(52,73,94,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.03) contrast(.99)"
+    },
+    {
+      "id": "noto-sans-jp",
+      "label": {
+        "ja": "ノトサンスJP",
+        "en": "Noto Sans JP",
+        "zh": "思源黑体 JP",
+        "ko": "노토 산스 JP"
+      },
+      "desc": {
+        "ja": "日本語ウェブの定番、バランスの取れた角ゴシック",
+        "en": "Japanese web standard, balanced gothic",
+        "zh": "日语网页标准，均衡的角ゴシック",
+        "ko": "일본어 웹 표준, 균형 잡힌 고딕"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Noto Sans JP\",\"Noto Sans CJK JP\",sans-serif",
+      "type": {
+        "title": "\"Noto Sans JP\",sans-serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "700",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fafafa",
+        "ink": "#1a1a1a",
+        "don": "#d32f2f",
+        "ka": "#1976d2",
+        "text": "#1a1a1a",
+        "muted": "#757575",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#eeeeee",
+        "accent": "#1976d2",
+        "onAccent": "#ffffff",
+        "gold": "#ffa000",
+        "border": "rgba(26,26,26,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.02) brightness(1.01)"
+    },
+    {
+      "id": "hiragino-kaku",
+      "label": {
+        "ja": "ヒラギノ角ゴ",
+        "en": "Hiragino Kaku Gothic",
+        "zh": "椿圆角ゴシック",
+        "ko": "히라기노 각 고딕"
+      },
+      "desc": {
+        "ja": "macOS の定番、丸みを帯びた上品な角ゴシック",
+        "en": "macOS standard, rounded elegant gothic",
+        "zh": "macOS 标准，圆润优雅的角ゴシック",
+        "ko": "macOS 표준, 둥글고 우아한 각 고딕"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Hiragino Kaku Gothic ProN\",\"Hiragino Sans\",sans-serif",
+      "type": {
+        "title": "\"Hiragino Kaku Gothic ProN\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fbfcfc",
+        "ink": "#2c3e50",
+        "don": "#c0392b",
+        "ka": "#2980b9",
+        "text": "#2c3e50",
+        "muted": "#7f8c8d",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#ecf0f1",
+        "accent": "#2980b9",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(44,62,80,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.01) contrast(1.01)"
+    },
+    {
+      "id": "avenir",
+      "label": {
+        "ja": "アヴェニール",
+        "en": "Avenir",
+        "zh": "未来体",
+        "ko": "아베니르"
+      },
+      "desc": {
+        "ja": "フランス生まれの幾何学ゴシック、洗練された書体",
+        "en": "French geometric sans, refined and elegant",
+        "zh": "法国几何学无衬线体，精致优雅",
+        "ko": "프랑스 기하학적 고딕, 세련되고 우아한 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Avenir\",\"Avenir Next\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Avenir\",sans-serif",
+        "weight": "400",
+        "lh": "1.55",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#eceff1",
+        "ink": "#37474f",
+        "don": "#d32f2f",
+        "ka": "#0288d1",
+        "text": "#37474f",
+        "muted": "#78909c",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#cfd8dc",
+        "accent": "#0288d1",
+        "onAccent": "#ffffff",
+        "gold": "#ffb300",
+        "border": "rgba(55,71,79,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.03) brightness(1.01)"
+    },
+    {
+      "id": "proxima-nova",
+      "label": {
+        "ja": "プロキシマノヴァ",
+        "en": "Proxima Nova",
+        "zh": "近星新星",
+        "ko": "프록시노바"
+      },
+      "desc": {
+        "ja": "ウェブで人気の幾何学ゴシック、柔軟でモダン",
+        "en": "Popular web geometric sans, flexible and modern",
+        "zh": "流行网页几何学无衬线体，灵活且现代",
+        "ko": "웹 인기 기하학적 고딕, 유연하고 현대적"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Proxima Nova\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Proxima Nova\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": "-.01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f5f5f5",
+        "ink": "#263238",
+        "don": "#c62828",
+        "ka": "#1565c0",
+        "text": "#263238",
+        "muted": "#607d8b",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#eceff1",
+        "accent": "#1565c0",
+        "onAccent": "#ffffff",
+        "gold": "#ff9800",
+        "border": "rgba(38,50,56,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.02) brightness(1.01)"
+    },
+    {
+      "id": "lato",
+      "label": {
+        "ja": "ラト",
+        "en": "Lato",
+        "zh": "拉托",
+        "ko": "라토"
+      },
+      "desc": {
+        "ja": "夏の意味を持つ、温かみのあるサンセリフ",
+        "en": "Warm sans-serif meaning summer",
+        "zh": "意为夏天的温暖无衬线体",
+        "ko": "여름을 의미하는 따뜻한 산세리프"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Lato\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Lato\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "700",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#e8f5e9",
+        "ink": "#1b5e20",
+        "don": "#c62828",
+        "ka": "#1e88e5",
+        "text": "#1b5e20",
+        "muted": "#4caf50",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#c8e6c9",
+        "accent": "#1e88e5",
+        "onAccent": "#ffffff",
+        "gold": "#ffb300",
+        "border": "rgba(27,94,32,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.05) brightness(1.02)"
+    },
+    {
+      "id": "roboto",
+      "label": {
+        "ja": "ロボト",
+        "en": "Roboto",
+        "zh": "机器人",
+        "ko": "로보토"
+      },
+      "desc": {
+        "ja": "Material Design の定番、機械的で読みやすい書体",
+        "en": "Material Design standard, mechanical and legible",
+        "zh": "Material Design 标准，机械且易读",
+        "ko": "머티리얼 디자인 표준, 기계적이고 읽기 쉬운 서체"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Roboto\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Roboto\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "500",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#eceff1",
+        "ink": "#212121",
+        "don": "#f44336",
+        "ka": "#2196f3",
+        "text": "#212121",
+        "muted": "#757575",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#cfd8dc",
+        "accent": "#2196f3",
+        "onAccent": "#ffffff",
+        "gold": "#ffc107",
+        "border": "rgba(33,33,33,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.01) brightness(1.01)"
+    },
+    {
+      "id": "source-sans-pro",
+      "label": {
+        "ja": "ソースサンスプロ",
+        "en": "Source Sans Pro",
+        "zh": "源泉无衬线",
+        "ko": "소스 산스 프로"
+      },
+      "desc": {
+        "ja": "Adobe 製のオープンソースゴシック、UI に最適",
+        "en": "Adobe open source sans, ideal for UI",
+        "zh": "Adobe 开源无衬线体，适合 UI",
+        "ko": "Adobe 오픈 소스 고딕, UI 에 적합"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Source Sans Pro\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Source Sans Pro\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f4f6f8",
+        "ink": "#2c3e50",
+        "don": "#e74c3c",
+        "ka": "#3498db",
+        "text": "#2c3e50",
+        "muted": "#7f8c8d",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#dfe6e9",
+        "accent": "#3498db",
+        "onAccent": "#ffffff",
+        "gold": "#f1c40f",
+        "border": "rgba(44,62,80,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.02) brightness(1.01)"
+    },
+    {
+      "id": "ubuntu",
+      "label": {
+        "ja": "ウブントゥ",
+        "en": "Ubuntu",
+        "zh": "乌班图",
+        "ko": "우분투"
+      },
+      "desc": {
+        "ja": "Linux ディストリビューションの定番、丸みのある書体",
+        "en": "Linux distribution standard, rounded typeface",
+        "zh": "Linux 发行版标准，圆润字体",
+        "ko": "리눅스 배포판 표준, 둥근 서체"
+      },
+      "cat": [
+        "type",
+        "fun",
+        "light"
+      ],
+      "font": "\"Ubuntu\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Ubuntu\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "700",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#e3f2fd",
+        "ink": "#1a237e",
+        "don": "#dd2c00",
+        "ka": "#0288d1",
+        "text": "#1a237e",
+        "muted": "#5c6bc0",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#bbdefb",
+        "accent": "#dd2c00",
+        "onAccent": "#ffffff",
+        "gold": "#ffd54f",
+        "border": "rgba(26,35,126,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.03) saturate(1.05)"
+    },
+    {
+      "id": "playfair-display",
+      "label": {
+        "ja": "プレイフェアディスプレイ",
+        "en": "Playfair Display",
+        "zh": "博尼塔展示体",
+        "ko": "플레이페어 디스플레이"
+      },
+      "desc": {
+        "ja": "エレガントな明朝、雑誌の見出しに最適",
+        "en": "Elegant serif, ideal for magazine headlines",
+        "zh": "优雅衬线体，适合杂志标题",
+        "ko": "우아한 명조체, 잡지 제목에 적합"
+      },
+      "cat": [
+        "type",
+        "light",
+        "fun"
+      ],
+      "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Playfair Display\",serif",
+        "weight": "400",
+        "lh": "1.7",
+        "titleWeight": "700",
+        "titleSpace": ".03em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fdfcf0",
+        "ink": "#2c241d",
+        "don": "#a5522e",
+        "ka": "#4a5d6a",
+        "text": "#2c241d",
+        "muted": "#8c8074",
+        "bg": "#fffef5",
+        "panel": "rgba(255,255,245,.97)",
+        "field": "#ffffff",
+        "button": "#eae4d9",
+        "accent": "#a5522e",
+        "onAccent": "#fdfcf0",
+        "gold": "#b8860b",
+        "border": "rgba(44,36,29,.15)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.15) brightness(1.01)"
+    },
+    {
+      "id": "merriweather",
+      "label": {
+        "ja": "メリウェザー",
+        "en": "Merriweather",
+        "zh": "梅里韦瑟",
+        "ko": "메리웨더"
+      },
+      "desc": {
+        "ja": "画面読みやすさ重視の明朝、落ち着いた書体",
+        "en": "Screen-optimized serif, calm and readable",
+        "zh": "屏幕优化衬线体，平静且易读",
+        "ko": "화면 읽기 쉬운 명조체, 차분하고 읽기 쉬움"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Merriweather\",\"Noto Serif JP\",serif",
+      "type": {
+        "title": "\"Merriweather\",serif",
+        "weight": "400",
+        "lh": "1.75",
+        "titleWeight": "700",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f5f5f0",
+        "ink": "#1a202c",
+        "don": "#c53030",
+        "ka": "#2b6cb0",
+        "text": "#1a202c",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#edf2f7",
+        "accent": "#2b6cb0",
+        "onAccent": "#ffffff",
+        "gold": "#d69e2e",
+        "border": "rgba(26,32,44,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.04) brightness(1.01)"
+    },
+    {
+      "id": "oswald",
+      "label": {
+        "ja": "オズワルド",
+        "en": "Oswald",
+        "zh": "奥斯瓦尔德",
+        "ko": "오스왈드"
+      },
+      "desc": {
+        "ja": "圧縮されたゴシック、見出しに強い書体",
+        "en": "Condensed sans, strong for headlines",
+        "zh": "压缩无衬线体，标题有力",
+        "ko": "압축된 고딕, 제목에 강한 서체"
+      },
+      "cat": [
+        "type",
+        "dark",
+        "fun"
+      ],
+      "font": "\"Oswald\",\"Impact\",sans-serif",
+      "type": {
+        "title": "\"Oswald\",sans-serif",
+        "weight": "400",
+        "lh": "1.3",
+        "titleWeight": "700",
+        "titleSpace": "-.03em",
+        "titleTransform": "uppercase",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#1a202c",
+        "ink": "#fafafa",
+        "don": "#fc8181",
+        "ka": "#4299e1",
+        "text": "#fafafa",
+        "muted": "#a0aec0",
+        "bg": "#2d3748",
+        "panel": "rgba(45,55,72,.96)",
+        "field": "#1a202c",
+        "button": "#2d3748",
+        "accent": "#4299e1",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(255,255,255,.18)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.15) brightness(.9)"
+    },
+    {
+      "id": "raleway",
+      "label": {
+        "ja": "ラレーウェイ",
+        "en": "Raleway",
+        "zh": "拉雷维",
+        "ko": "랄레웨이"
+      },
+      "desc": {
+        "ja": "エレガントなゴシック、細身で洗練された書体",
+        "en": "Elegant sans, slim and refined",
+        "zh": "优雅无衬线体，纤细精致",
+        "ko": "우아한 고딕, 날렵하고 정교한 서체"
+      },
+      "cat": [
+        "type",
+        "light"
+      ],
+      "font": "\"Raleway\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Raleway\",sans-serif",
+        "weight": "400",
+        "lh": "1.6",
+        "titleWeight": "600",
+        "titleSpace": ".02em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fafafa",
+        "ink": "#2d3436",
+        "don": "#d63031",
+        "ka": "#0984e3",
+        "text": "#2d3436",
+        "muted": "#636e72",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#dfe6e9",
+        "accent": "#0984e3",
+        "onAccent": "#ffffff",
+        "gold": "#fdcb6e",
+        "border": "rgba(45,52,54,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "contrast(1.03) brightness(1.01)"
+    },
+    {
+      "id": "poppins",
+      "label": {
+        "ja": "ポピンズ",
+        "en": "Poppins",
+        "zh": "波平斯",
+        "ko": "포핀스"
+      },
+      "desc": {
+        "ja": "インド発の幾何学ゴシック、丸みがかわいい書体",
+        "en": "Indian geometric sans, round and cute",
+        "zh": "印度几何学无衬线体，圆润可爱",
+        "ko": "인도 기하학적 고딕, 둥글고 귀여운 서체"
+      },
+      "cat": [
+        "type",
+        "fun",
+        "light"
+      ],
+      "font": "\"Poppins\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Poppins\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#fff0f5",
+        "ink": "#2d3436",
+        "don": "#e84393",
+        "ka": "#00cec9",
+        "text": "#2d3436",
+        "muted": "#b2bec3",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#ffe5f0",
+        "accent": "#e84393",
+        "onAccent": "#ffffff",
+        "gold": "#fd79a8",
+        "border": "rgba(45,52,54,.12)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.04) saturate(1.05)"
+    },
+    {
+      "id": "inter",
+      "label": {
+        "ja": "インタ",
+        "en": "Inter",
+        "zh": "间体",
+        "ko": "인터"
+      },
+      "desc": {
+        "ja": "UI/UX デザインの定番、画面に最適化された書体",
+        "en": "UI/UX design standard, screen-optimized",
+        "zh": "UI/UX 设计标准，屏幕优化",
+        "ko": "UI/UX 디자인 표준, 화면 최적화된 서체"
+      },
+      "cat": [
+        "type",
+        "basic"
+      ],
+      "font": "\"Inter\",system-ui,sans-serif",
+      "type": {
+        "title": "\"Inter\",sans-serif",
+        "weight": "400",
+        "lh": "1.5",
+        "titleWeight": "600",
+        "titleSpace": ".01em",
+        "titleTransform": "",
+        "mark": "あア漢 Aa 12"
+      },
+      "colors": {
+        "stage": "#f8f9fa",
+        "ink": "#1a202c",
+        "don": "#e53e3e",
+        "ka": "#3182ce",
+        "text": "#1a202c",
+        "muted": "#718096",
+        "bg": "#ffffff",
+        "panel": "rgba(255,255,255,.98)",
+        "field": "#ffffff",
+        "button": "#edf2f7",
+        "accent": "#3182ce",
+        "onAccent": "#ffffff",
+        "gold": "#f6e05e",
+        "border": "rgba(26,32,44,.12)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "contrast(1.01) brightness(1.01)"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "venice-canal",
+  "label": {
+    "ja": "ヴェネチア運河",
+    "en": "Venice Canal",
+    "zh": "威尼斯运河",
+    "ko": "베네치아 운하"
+  },
+  "desc": {
+    "ja": "水路とゴンドラ、水の都の情景",
+    "en": "Waterways and gondola, city of water scenery",
+    "zh": "水道和贡多拉，水都情景",
+    "ko": "수로와 곤돌라, 물의 도시 풍경"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "\"Garamond\",\"Baskerville\",serif",
+  "type": {
+    "title": "\"Garamond\",serif",
+    "weight": "400",
+    "lh": "1.65",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#2a4d69",
+    "ink": "#fdf5e6",
+    "don": "#d4af37",
+    "ka": "#4ecdc4",
+    "text": "#fdf5e6",
+    "muted": "#5d8aa8",
+    "bg": "#1a3a5a",
+    "panel": "rgba(26,58,90,.96)",
+    "field": "#2a4d69",
+    "button": "#3a5d79",
+    "accent": "#4ecdc4",
+    "onAccent": "#1a3a5a",
+    "gold": "#ffe082",
+    "border": "rgba(78,205,196,.28)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(1.02)"
+}

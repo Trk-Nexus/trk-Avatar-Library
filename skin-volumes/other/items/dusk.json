@@ -1,0 +1,43 @@
+{
+  "id": "dusk",
+  "label": {
+    "ja": "宵闇",
+    "en": "Duskfall",
+    "zh": "暮色",
+    "ko": "황혼"
+  },
+  "desc": {
+    "ja": "紫の夜に沈むグラデ",
+    "en": "Sinking into a purple night",
+    "zh": "沉入紫色夜幕的渐变",
+    "ko": "보라빛 밤으로 가라앉는 그라데이션"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#1a1438,#0a0f26)",
+    "ink": "#eef0ff",
+    "don": "#ff6b8f",
+    "ka": "#9d8cff",
+    "text": "#eef0ff",
+    "muted": "#a5a8cc",
+    "bg": "linear-gradient(180deg,#241b4d,#0e1430)",
+    "panel": "rgba(20,17,44,.95)",
+    "field": "#131030",
+    "button": "#1c1940",
+    "accent": "#9d8cff",
+    "onAccent": "#141033",
+    "gold": "#ffb84d",
+    "border": "rgba(150,140,255,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.4) sepia(1) hue-rotate(220deg) saturate(1.8) brightness(.7)"
+}

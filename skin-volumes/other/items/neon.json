@@ -1,0 +1,42 @@
+{
+  "id": "neon",
+  "label": {
+    "ja": "ネオンアーケード",
+    "en": "Neon Arcade",
+    "zh": "霓虹街机",
+    "ko": "네온 아케이드"
+  },
+  "desc": {
+    "ja": "シンセウェーブ風の発光",
+    "en": "Synthwave glow",
+    "zh": "合成波霓虹光效",
+    "ko": "신스웨이브 네온"
+  },
+  "cat": [
+    "basic"
+  ],
+  "font": "\"Trebuchet MS\",\"Avenir Next\",system-ui,sans-serif",
+  "type": null,
+  "colors": {
+    "stage": "#0b0418",
+    "ink": "#fbefff",
+    "don": "#ff2bd6",
+    "ka": "#00e5ff",
+    "text": "#fbefff",
+    "muted": "#b9a3d6",
+    "bg": "#0b0418",
+    "panel": "rgba(20,8,40,.95)",
+    "field": "#12062a",
+    "button": "#1d0b38",
+    "accent": "#ff2bd6",
+    "onAccent": "#000000",
+    "gold": "#ffe94d",
+    "border": "rgba(255,43,214,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.5) sepia(1) hue-rotate(230deg) saturate(2.2) brightness(.8)"
+}

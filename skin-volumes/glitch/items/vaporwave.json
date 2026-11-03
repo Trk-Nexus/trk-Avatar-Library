@@ -1,0 +1,52 @@
+{
+  "id": "vaporwave",
+  "label": {
+    "ja": "ヴェイパーウェイブ",
+    "en": "Vaporwave",
+    "zh": "蒸汽波",
+    "ko": "베이퍼웨이브"
+  },
+  "desc": {
+    "ja": "90年代レトロ未来主義、ピンク×パープル×水色",
+    "en": "90s retro futurism, pink×purple×cyan",
+    "zh": "90年代复古未来主义，粉色×紫色×青色",
+    "ko": "90년대 레트로 미래주의, 핑크×퍼플×시안"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "light"
+  ],
+  "font": "\\\"Trajan Pro\\\",\\\"Papyrus\\\",fantasy",
+  "type": {
+    "title": "\\\"Trajan Pro\\\",fantasy",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "800",
+    "titleSpace": ".12em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa"
+  },
+  "colors": {
+    "stage": "#f0a0e0",
+    "ink": "#2a1a4a",
+    "don": "#ff69b4",
+    "ka": "#87ceeb",
+    "text": "#2a1a4a",
+    "muted": "#c080d0",
+    "bg": "#e0b0ff",
+    "panel": "rgba(224,176,255,.96)",
+    "field": "#f0d0ff",
+    "button": "#d090ff",
+    "accent": "#ff69b4",
+    "onAccent": "#ffffff",
+    "gold": "#ffe0ff",
+    "border": "rgba(255,105,180,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) saturate(1.3) brightness(1.05)"
+}

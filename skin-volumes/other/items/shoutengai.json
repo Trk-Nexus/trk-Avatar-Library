@@ -1,0 +1,42 @@
+{
+  "id": "shoutengai",
+  "label": {
+    "ja": "商店街の夕暮れ",
+    "en": "Shopping street at dusk",
+    "zh": "傍晚的商店街",
+    "ko": "저녁 상점가"
+  },
+  "desc": {
+    "ja": "赤い提灯と、店先の明かりが並ぶ通り",
+    "en": "A street lined with red lanterns and shop lights",
+    "zh": "红灯笼与店铺灯火排列的街道",
+    "ko": "빨간 등불과 가게 불빛이 늘어선 거리"
+  },
+  "cat": [
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#24181f",
+    "ink": "#f7eef0",
+    "don": "#ffd166",
+    "ka": "#8ec5e8",
+    "text": "#f7eef0",
+    "muted": "#c9b3bb",
+    "bg": "#2a1d24",
+    "panel": "rgba(42,29,36,.96)",
+    "field": "#22161c",
+    "button": "#36262e",
+    "accent": "#ff7a59",
+    "onAccent": "#1d0d08",
+    "gold": "#ffd166",
+    "border": "rgba(255,255,255,.2)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.25) saturate(1.2) brightness(.75)"
+}

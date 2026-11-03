@@ -1,0 +1,51 @@
+{
+  "id": "diamond-club",
+  "label": {
+    "ja": "ダイアモンドクラブ",
+    "en": "Diamond Club",
+    "zh": "钻石俱乐部",
+    "ko": "다이아몬드 클럽"
+  },
+  "desc": {
+    "ja": "ダイヤモンドの輝き、特別な会員制クラブ",
+    "en": "Diamond shine, exclusive members club",
+    "zh": "钻石光芒，专属会员俱乐部",
+    "ko": "다이아몬드 빛, 특별 회원제 클럽"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "\"Trajan Pro\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Trajan Pro\",serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "♦ ♣ ♥ ♠"
+  },
+  "colors": {
+    "stage": "#f0f0f0",
+    "ink": "#1a1a1a",
+    "don": "#d4af37",
+    "ka": "#bdc3c7",
+    "text": "#1a1a1a",
+    "muted": "#7f7f7f",
+    "bg": "#e0e0e0",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#d0d0d0",
+    "accent": "#bdc3c7",
+    "onAccent": "#000000",
+    "gold": "#ffd700",
+    "border": "rgba(189,195,199,.20)"
+  },
+  "shapes": [
+    "diamond",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "grayscale(.1) contrast(1.05) brightness(1.01)"
+}

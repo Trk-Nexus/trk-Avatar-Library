@@ -1,0 +1,63 @@
+{
+  "id": "wizard-heptameron",
+  "label": {
+    "ja": "ヘプタメロン",
+    "en": "Heptameron",
+    "zh": "七天书",
+    "ko": "헵타메론"
+  },
+  "desc": {
+    "ja": "7日間の天使魔術、ポーピアーノによる天使召喚と白魔術の儀式",
+    "en": "Seven days of angelic magic, Pietro d\\u2019Abano\\u2019s angel summoning and white magic rituals",
+    "zh": "七天的天使魔术，皮埃トロ・ダバーノ的天使召唤与白魔术仪式",
+    "ko": "7일간의 천사 마법, 피에트로・다바노의 천사 소환과 백마술 의식"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "7日"
+  },
+  "colors": {
+    "stage": "#5d4a3a",
+    "ink": "#f0e6d2",
+    "don": "#d4af37",
+    "ka": "#c5a059",
+    "text": "#f0e6d2",
+    "muted": "#dcc8a5",
+    "bg": "#4a3520",
+    "panel": "rgba(74,53,32,.96)",
+    "field": "#5d4a3a",
+    "button": "#7a5d40",
+    "accent": "#c5a059",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.35)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(1.1) contrast(1.15) brightness(.95)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "☿",
+    "caret": "#c5a059",
+    "scan": 0.16,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

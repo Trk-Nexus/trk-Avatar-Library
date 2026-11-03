@@ -1,0 +1,42 @@
+{
+  "id": "garden",
+  "label": {
+    "ja": "ミントガーデン",
+    "en": "Mint Garden",
+    "zh": "薄荷花园",
+    "ko": "민트 가든"
+  },
+  "desc": {
+    "ja": "緑と白のすっきりテーマ",
+    "en": "Crisp green and white",
+    "zh": "绿与白的清爽主题",
+    "ko": "그린과 화이트의 산뜻한 테마"
+  },
+  "cat": [
+    "light"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#edf6ee",
+    "ink": "#1e3527",
+    "don": "#ff5d7a",
+    "ka": "#2e9e5b",
+    "text": "#1e3527",
+    "muted": "#516a5a",
+    "bg": "#eef6ef",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#e2f0e5",
+    "accent": "#2e9e5b",
+    "onAccent": "#000000",
+    "gold": "#e0853a",
+    "border": "rgba(30,110,70,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.05) brightness(1.05)"
+}

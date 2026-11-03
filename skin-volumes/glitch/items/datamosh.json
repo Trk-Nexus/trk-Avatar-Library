@@ -1,0 +1,52 @@
+{
+  "id": "datamosh",
+  "label": {
+    "ja": "データモッシュ",
+    "en": "Datamosh",
+    "zh": "数据压缩",
+    "ko": "데이터 모시"
+  },
+  "desc": {
+    "ja": "動画データ破壊アート、ブロックノイズと色ズレ",
+    "en": "Video data destruction art, block noise and color shift",
+    "zh": "视频数据破坏艺术，块状噪声和色偏",
+    "ko": "동영상 데이터 파괴 예술, 블록 노이즈와 색 이동"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "dark"
+  ],
+  "font": "\\\"Courier New\\\",monospace",
+  "type": {
+    "title": "\\\"Courier New\\\",monospace",
+    "weight": "700",
+    "lh": "1.2",
+    "titleWeight": "800",
+    "titleSpace": "0",
+    "titleTransform": "",
+    "mark": "MOSH"
+  },
+  "colors": {
+    "stage": "#1a1a2e",
+    "ink": "#ff00ff",
+    "don": "#00ffff",
+    "ka": "#ff0040",
+    "text": "#ff00ff",
+    "muted": "#4a4a6a",
+    "bg": "#0f0f1a",
+    "panel": "rgba(26,26,46,.97)",
+    "field": "#1a1a2e",
+    "button": "#2a2a3e",
+    "accent": "#00ffff",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "rgba(0,255,255,.30)"
+  },
+  "shapes": [
+    "diamond",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(280deg) saturate(1.5) contrast(1.3) brightness(.8)"
+}

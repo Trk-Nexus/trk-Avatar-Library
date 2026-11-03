@@ -1,0 +1,43 @@
+{
+  "id": "dotNight",
+  "label": {
+    "ja": "ドット絵の夜",
+    "en": "Pixel night",
+    "zh": "像素夜空",
+    "ko": "도트 밤하늘"
+  },
+  "desc": {
+    "ja": "8ビット風の星空と、自作のドット",
+    "en": "An 8-bit starry sky with original pixel art",
+    "zh": "8位风格的星空与自制像素画",
+    "ko": "8비트풍 별밤과 직접 만든 도트"
+  },
+  "cat": [
+    "dark",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#0b0f2a",
+    "ink": "#e8ecff",
+    "don": "#ffd23f",
+    "ka": "#5ee0ff",
+    "text": "#e8ecff",
+    "muted": "#a9b3e0",
+    "bg": "#0b0f2a",
+    "panel": "rgba(14,20,50,.96)",
+    "field": "#070a1e",
+    "button": "#18214a",
+    "accent": "#ffd23f",
+    "onAccent": "#1a1400",
+    "gold": "#ffd23f",
+    "border": "rgba(232,236,255,.22)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.1) saturate(1.2)"
+}

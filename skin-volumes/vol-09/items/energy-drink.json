@@ -1,0 +1,51 @@
+{
+  "id": "energy-drink",
+  "label": {
+    "ja": "エナジードリンク",
+    "en": "Energy Drink",
+    "zh": "能量饮料",
+    "ko": "에너지 드링크"
+  },
+  "desc": {
+    "ja": "蛍光色、覚醒とアドレナリン",
+    "en": "Fluorescent color, awakening and adrenaline",
+    "zh": "荧光色，觉醒与肾上腺素",
+    "ko": "형광색, 각성과 아드레날린"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "\"Orbitron\",\"Rajdhani\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Orbitron\",sans-serif",
+    "weight": "700",
+    "lh": "1.2",
+    "titleWeight": "900",
+    "titleSpace": "-.05em",
+    "titleTransform": "uppercase",
+    "mark": "ENERGY"
+  },
+  "colors": {
+    "stage": "#39ff14",
+    "ink": "#000000",
+    "don": "#ff00ff",
+    "ka": "#00ffff",
+    "text": "#000000",
+    "muted": "#00ff00",
+    "bg": "#1a1a1a",
+    "panel": "rgba(57,255,20,.97)",
+    "field": "#39ff14",
+    "button": "#2ecc40",
+    "accent": "#ff00ff",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "rgba(0,255,255,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "saturate(1.7) brightness(.8) contrast(1.4)"
+}

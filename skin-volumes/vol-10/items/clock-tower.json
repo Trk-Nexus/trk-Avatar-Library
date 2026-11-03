@@ -1,0 +1,51 @@
+{
+  "id": "clock-tower",
+  "label": {
+    "ja": "時計塔",
+    "en": "Clock Tower",
+    "zh": "钟楼",
+    "ko": "시계탑"
+  },
+  "desc": {
+    "ja": "ビッグベン、時を告げる鐘の音",
+    "en": "Big Ben, bell sound telling time",
+    "zh": "大笨钟，报时的钟声",
+    "ko": "빅벤, 시간을 알려주는 종소리"
+  },
+  "cat": [
+    "dark",
+    "basic"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.65",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#2c3e50",
+    "ink": "#ecf0f1",
+    "don": "#d4af37",
+    "ka": "#bdc3c7",
+    "text": "#ecf0f1",
+    "muted": "#7f8c8d",
+    "bg": "#1a252f",
+    "panel": "rgba(26,37,47,.97)",
+    "field": "#2c3e50",
+    "button": "#3a4a5a",
+    "accent": "#d4af37",
+    "onAccent": "#1a252f",
+    "gold": "#f1c40f",
+    "border": "rgba(189,195,199,.20)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) contrast(1.1) brightness(.9)"
+}

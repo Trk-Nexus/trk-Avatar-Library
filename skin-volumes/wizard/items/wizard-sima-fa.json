@@ -1,0 +1,63 @@
+{
+  "id": "wizard-sima-fa",
+  "label": {
+    "ja": "司馬法",
+    "en": "Methods of the Sima",
+    "zh": "司马法",
+    "ko": "사마법"
+  },
+  "desc": {
+    "ja": "春秋時代の軍律書、齊の司馬穰苴が著したとされる兵法",
+    "en": "Spring and Autumn period military code, attributed to Tian Rangju of Qi",
+    "zh": "春秋时期的军律书，据说由齐的田穰苴著作的兵法",
+    "ko": "춘추 시대의 군율서, 제의 사마려주가 저술했다고 하는 병법"
+  },
+  "cat": [
+    "wizard",
+    "light",
+    "access"
+  ],
+  "font": "\"KaiTi\",\"SimSun\",serif",
+  "type": {
+    "title": "\"KaiTi\",serif",
+    "weight": "500",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "司"
+  },
+  "colors": {
+    "stage": "#fafafa",
+    "ink": "#1a1a1a",
+    "don": "#2c5282",
+    "ka": "#4a5568",
+    "text": "#1a1a1a",
+    "muted": "#4a5568",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#fafafa",
+    "button": "#e2e8f0",
+    "accent": "#2c5282",
+    "onAccent": "#ffffff",
+    "gold": "#7aa2f7",
+    "border": "rgba(44,82,130,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "contrast(1.05) brightness(1.0)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "司",
+    "caret": "#2c5282",
+    "scan": 0.1,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

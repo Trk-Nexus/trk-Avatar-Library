@@ -1,0 +1,63 @@
+{
+  "id": "wizard-grimoire-aureate",
+  "label": {
+    "ja": "黄金の魔導書",
+    "en": "Grimoire Aureate",
+    "zh": "黄金之魔导书",
+    "ko": "황금의 마도서"
+  },
+  "desc": {
+    "ja": "金箔押しの魔導書、錬金術師の秘録",
+    "en": "Gold-leaf grimoire, alchemist’s secret record",
+    "zh": "金箔装饰魔导书，炼金术师秘录",
+    "ko": "금박 인쇄 마도서, 연금술사 비급"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa"
+  },
+  "colors": {
+    "stage": "#4a3a1a",
+    "ink": "#f0e6d2",
+    "don": "#d4af37",
+    "ka": "#c5a059",
+    "text": "#f0e6d2",
+    "muted": "#c9b18a",
+    "bg": "#3e2f14",
+    "panel": "rgba(62,47,20,.96)",
+    "field": "#4a3a1a",
+    "button": "#5d4524",
+    "accent": "#d4af37",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) saturate(1.15) brightness(1.05)",
+  "cli": {
+    "font": "Cinzel, Trajan Pro, serif",
+    "prompt": "✦",
+    "caret": "#d4af37",
+    "scan": 0.18,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

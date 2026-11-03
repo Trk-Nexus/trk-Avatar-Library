@@ -1,0 +1,51 @@
+{
+  "id": "caslon",
+  "label": {
+    "ja": "キャスロン",
+    "en": "Caslon",
+    "zh": "卡斯隆",
+    "ko": "캐슬론"
+  },
+  "desc": {
+    "ja": "オールドスタイルの衬线、伝統と信頼の書体",
+    "en": "Old-style serif, tradition and reliability",
+    "zh": "旧式衬线体，传统与可靠",
+    "ko": "올드스타일 서체, 전통과 신뢰성"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"ITC Caslon\",\"Caslon\",serif",
+  "type": {
+    "title": "\"ITC Caslon\",\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f4f1ea",
+    "ink": "#2c241d",
+    "don": "#a5522e",
+    "ka": "#4a5d6a",
+    "text": "#2c241d",
+    "muted": "#8c8074",
+    "bg": "#faf7f2",
+    "panel": "rgba(255,254,248,.97)",
+    "field": "#ffffff",
+    "button": "#eae4d9",
+    "accent": "#a5522e",
+    "onAccent": "#f4f1ea",
+    "gold": "#b8860b",
+    "border": "rgba(44,36,29,.15)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.18) brightness(1.01)"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "wizard-seven-military-classics",
+  "label": {
+    "ja": "武経七書",
+    "en": "Seven Military Classics",
+    "zh": "武经七书",
+    "ko": "무경칠서"
+  },
+  "desc": {
+    "ja": "孫子・六韜・三略・司馬法・尉繚子・三略・太公六韜を含む七種の軍事書集成",
+    "en": "Seven Military Classics including Sun Tzu, Six Secret Teachings, Three Strategies and more",
+    "zh": "包括孙子、六韬、三略、司马法、尉繚子等七种军事书的集成",
+    "ko": "손자·육도·삼략·사마법·위료자 등을 포함한 7종의 군사서 집성"
+  },
+  "cat": [
+    "wizard",
+    "life",
+    "grad"
+  ],
+  "font": "\"KaiTi\",\"SimSun\",serif",
+  "type": {
+    "title": "\"KaiTi\",serif",
+    "weight": "500",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "七"
+  },
+  "colors": {
+    "stage": "#4a3a1a",
+    "ink": "#f0e6d2",
+    "don": "#d4af37",
+    "ka": "#c5a059",
+    "text": "#f0e6d2",
+    "muted": "#c9b18a",
+    "bg": "#3e2f14",
+    "panel": "rgba(62,47,20,.96)",
+    "field": "#4a3a1a",
+    "button": "#5d4524",
+    "accent": "#d4af37",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) saturate(1.15) contrast(1.1) brightness(1.0)",
+  "cli": {
+    "font": "Cinzel, Trajan Pro, serif",
+    "prompt": "七",
+    "caret": "#d4af37",
+    "scan": 0.18,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

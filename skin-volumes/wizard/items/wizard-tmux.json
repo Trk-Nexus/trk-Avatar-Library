@@ -1,0 +1,63 @@
+{
+  "id": "wizard-tmux",
+  "label": {
+    "ja": "ウィザード・ティムックス",
+    "en": "Wizard Tmux",
+    "zh": "巫师分屏",
+    "ko": "마법사 다중창"
+  },
+  "desc": {
+    "ja": "画面分割・グリッド・ペイン操作",
+    "en": "Screen split, grid, pane operation",
+    "zh": "屏幕分割，网格，窗格操作",
+    "ko": "화면 분할, 그리드, 창 분할 조작"
+  },
+  "cat": [
+    "wizard",
+    "fun",
+    "access"
+  ],
+  "font": "JetBrains Mono, monospace",
+  "type": {
+    "title": "JetBrains Mono, monospace",
+    "weight": "600",
+    "lh": "1.3",
+    "titleWeight": "700",
+    "titleSpace": "-.02em",
+    "titleTransform": "",
+    "mark": "+"
+  },
+  "colors": {
+    "stage": "#272822",
+    "ink": "#f8f8f2",
+    "don": "#f92672",
+    "ka": "#a6e22e",
+    "text": "#f8f8f2",
+    "muted": "#a6e22e",
+    "bg": "#272822",
+    "panel": "#3e3d32",
+    "field": "#272822",
+    "button": "#3e3d32",
+    "accent": "#f92672",
+    "onAccent": "#ffffff",
+    "gold": "#a6e22e",
+    "border": "rgba(249,38,114,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "saturate(1.2) contrast(1.15) brightness(.95)",
+  "cli": {
+    "font": "JetBrains Mono, monospace",
+    "prompt": "+",
+    "caret": "#f92672",
+    "scan": 0.08,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

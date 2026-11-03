@@ -1,0 +1,42 @@
+{
+  "id": "stationDusk",
+  "label": {
+    "ja": "駅のホーム（夕暮れ）",
+    "en": "Station platform at dusk",
+    "zh": "黄昏的站台",
+    "ko": "해질녘 역 승강장"
+  },
+  "desc": {
+    "ja": "電車を待つ、オレンジの灯りと群青の空",
+    "en": "Waiting for the train under amber lamps and a deep blue sky",
+    "zh": "在橙色灯光与深蓝天空下等车",
+    "ko": "주황빛 조명과 남색 하늘 아래 전철을 기다리며"
+  },
+  "cat": [
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#101a31",
+    "ink": "#f2f4fa",
+    "don": "#ffb454",
+    "ka": "#7aa6c2",
+    "text": "#f2f4fa",
+    "muted": "#aeb8d4",
+    "bg": "#15203a",
+    "panel": "rgba(22,32,58,.96)",
+    "field": "#0f1930",
+    "button": "#1d2a4a",
+    "accent": "#ffb454",
+    "onAccent": "#2a1600",
+    "gold": "#ffd98a",
+    "border": "rgba(255,255,255,.18)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(.75) contrast(1.05)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "starmetal",
+  "label": {
+    "ja": "スターメタル",
+    "en": "Starmetal",
+    "zh": "星铁",
+    "ko": "스타메탈"
+  },
+  "desc": {
+    "ja": "星から降り注ぐ金属、深宇宙のコバルトブルー",
+    "en": "Metal raining from stars, deep space cobalt blue",
+    "zh": "从星星降落的金属，深空钴蓝",
+    "ko": "별에서 내리는 금속, 심우주의 코발트 블루"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "\"Orbitron\",\"Rajdhani\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Orbitron\",sans-serif",
+    "weight": "400",
+    "lh": "1.4",
+    "titleWeight": "700",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#0a192f,#071a33)",
+    "ink": "#ccd6f6",
+    "don": "#64ffda",
+    "ka": "#8892b0",
+    "text": "#ccd6f6",
+    "muted": "#4f5b7a",
+    "bg": "linear-gradient(180deg,#071a33,#050c17)",
+    "panel": "rgba(10,25,47,.96)",
+    "field": "#0a192f",
+    "button": "#16213e",
+    "accent": "#64ffda",
+    "onAccent": "#050c17",
+    "gold": "#ccd6f6",
+    "border": "rgba(100,255,218,.28)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "hue-rotate(200deg) saturate(1.2) brightness(.85) contrast(1.15)"
+}

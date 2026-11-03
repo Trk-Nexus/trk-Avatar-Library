@@ -1,0 +1,51 @@
+{
+  "id": "typeTypewriter",
+  "label": {
+    "ja": "タイプライター",
+    "en": "Typewriter",
+    "zh": "打字机",
+    "ko": "타자기"
+  },
+  "desc": {
+    "ja": "等幅の活字と、少し広い字間",
+    "en": "Monospaced letters with generous spacing",
+    "zh": "等宽铅字与宽松字距",
+    "ko": "고정폭 활자와 넉넉한 자간"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Courier New\",Courier,\"Cascadia Mono\",Consolas,\"Noto Sans Mono\",monospace",
+  "type": {
+    "title": "\"Courier New\",Courier,\"Cascadia Mono\",Consolas,monospace",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "700",
+    "titleSpace": ".14em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#efe6d4",
+    "ink": "#2a2118",
+    "don": "#8a4b1f",
+    "ka": "#37546b",
+    "text": "#2a2118",
+    "muted": "#574734",
+    "bg": "#efe6d4",
+    "panel": "rgba(255,250,240,.96)",
+    "field": "#fffaf0",
+    "button": "#e6dbc6",
+    "accent": "#8a4b1f",
+    "onAccent": "#fff3e2",
+    "gold": "#7a5c1e",
+    "border": "rgba(42,33,24,.22)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.35) contrast(1.05)"
+}

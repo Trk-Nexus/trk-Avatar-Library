@@ -1,0 +1,52 @@
+{
+  "id": "quicksilver",
+  "label": {
+    "ja": "水銀",
+    "en": "Quicksilver",
+    "zh": "水银",
+    "ko": "수은"
+  },
+  "desc": {
+    "ja": "流動する銀、液体金属のような変幻自在な質感",
+    "en": "Flowing silver, liquid metal ever-changing texture",
+    "zh": "流动的银，液态金属般的变幻莫测质感",
+    "ko": "흐르는 은, 액체 금속 같은 변화무쌍한 질감"
+  },
+  "cat": [
+    "grad",
+    "fun",
+    "light"
+  ],
+  "font": "\"Caveat\",\"Komodo Axis\",cursive",
+  "type": {
+    "title": "\"Caveat\",cursive",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "600",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#bdc3c7,#7f8c8d)",
+    "ink": "#2c3e50",
+    "don": "#3498db",
+    "ka": "#e74c3c",
+    "text": "#2c3e50",
+    "muted": "#95a5a6",
+    "bg": "linear-gradient(180deg,#7f8c8d,#5d6d7e)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#ecf0f1",
+    "accent": "#3498db",
+    "onAccent": "#ffffff",
+    "gold": "#bdc3c7",
+    "border": "rgba(52,152,219,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.15) contrast(1.08) brightness(1.04)"
+}

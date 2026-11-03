@@ -1,0 +1,43 @@
+{
+  "id": "abyss",
+  "label": {
+    "ja": "深海",
+    "en": "Deep Sea",
+    "zh": "深海",
+    "ko": "심해"
+  },
+  "desc": {
+    "ja": "青緑の深い海の底",
+    "en": "The teal depths of the ocean",
+    "zh": "青绿色的深海之底",
+    "ko": "청록빛 깊은 바다 밑바닥"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#052028,#000609)",
+    "ink": "#e6fbff",
+    "don": "#ff7a6b",
+    "ka": "#3ee6c8",
+    "text": "#e6fbff",
+    "muted": "#8fb8c1",
+    "bg": "linear-gradient(180deg,#062a33,#010a10)",
+    "panel": "rgba(6,32,40,.95)",
+    "field": "#052028",
+    "button": "#0a3540",
+    "accent": "#3ee6c8",
+    "onAccent": "#032a24",
+    "gold": "#ffd166",
+    "border": "rgba(64,220,220,.28)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.7) hue-rotate(160deg) saturate(1.3) brightness(.55) contrast(1.2)"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "pancake",
+  "label": {
+    "ja": "パンケーキ",
+    "en": "Pancake",
+    "zh": "松饼",
+    "ko": "팬케이크"
+  },
+  "desc": {
+    "ja": "朝食のパンケーキ、バターのイエロー",
+    "en": "Breakfast pancake, buttery yellow",
+    "zh": "早餐松饼，黄油黄色",
+    "ko": "아침 팬케이크, 버터 노란색"
+  },
+  "cat": [
+    "light",
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#fff176",
+    "ink": "#f57f17",
+    "don": "#ffd54f",
+    "ka": "#ffe082",
+    "text": "#f57f17",
+    "muted": "#ff6f00",
+    "bg": "#fff59d",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#ffe082",
+    "accent": "#ffa000",
+    "onAccent": "#fff9c4",
+    "gold": "#ffeb3b",
+    "border": "rgba(245,127,23,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.05) saturate(1.05)"
+}

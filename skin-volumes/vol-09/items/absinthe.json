@@ -1,0 +1,51 @@
+{
+  "id": "absinthe",
+  "label": {
+    "ja": "アブシント",
+    "en": "Absinthe",
+    "zh": "苦艾酒",
+    "ko": "압생트"
+  },
+  "desc": {
+    "ja": "緑の妖精、苦味と神秘の緑",
+    "en": "Green fairy, bitterness and mystery of green",
+    "zh": "绿色仙女，苦味与神秘的绿",
+    "ko": "녹색 요정, 쓰음과 신비의 초록"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "\"Papyrus\",\"Papyrus Custom\",fantasy",
+  "type": {
+    "title": "\"Papyrus\",fantasy",
+    "weight": "400",
+    "lh": "1.55",
+    "titleWeight": "600",
+    "titleSpace": ".05em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#1b5e20",
+    "ink": "#fffdf0",
+    "don": "#d4af37",
+    "ka": "#8c9eac",
+    "text": "#fffdf0",
+    "muted": "#8c8074",
+    "bg": "#0d400d",
+    "panel": "rgba(27,94,32,.97)",
+    "field": "#1b5e20",
+    "button": "#2e7d32",
+    "accent": "#d4af37",
+    "onAccent": "#0d400d",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.28)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "sepia(.35) contrast(1.1) brightness(.9)"
+}

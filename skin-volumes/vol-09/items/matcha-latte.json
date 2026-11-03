@@ -1,0 +1,51 @@
+{
+  "id": "matcha-latte",
+  "label": {
+    "ja": "抹茶ラテ",
+    "en": "Matcha Latte",
+    "zh": "抹茶拿铁",
+    "ko": "녹차 라테"
+  },
+  "desc": {
+    "ja": "落ち着いた緑、ミルクとの調和",
+    "en": "Calm green, harmony with milk",
+    "zh": "平静的绿色，与牛奶的和谐",
+    "ko": "차분한 초록색, 우유와의 조화"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "\"Garamond\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Garamond\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#81c784,#4caf50)",
+    "ink": "#1b5e20",
+    "don": "#ffab91",
+    "ka": "#a5d6a7",
+    "text": "#1b5e20",
+    "muted": "#81c784",
+    "bg": "linear-gradient(180deg,#c8e6c9,#a5d6a7)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#c8e6c9",
+    "accent": "#4caf50",
+    "onAccent": "#ffffff",
+    "gold": "#d4e157",
+    "border": "rgba(46,125,50,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(1.02)"
+}

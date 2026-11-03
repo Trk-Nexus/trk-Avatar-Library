@@ -1,0 +1,51 @@
+{
+  "id": "asteroid-belt",
+  "label": {
+    "ja": "小惑星帯",
+    "en": "Asteroid Belt",
+    "zh": "小行星带",
+    "ko": "소행성대"
+  },
+  "desc": {
+    "ja": "宇宙の破片の集積、岩だらけの帯域",
+    "en": "Collection of space debris, rock-filled belt",
+    "zh": "宇宙碎片的集成，岩石遍布的带状区域",
+    "ko": "우주 파편의 집적, 암석으로 가득한 지대"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#4a3728",
+    "ink": "#efe6d4",
+    "don": "#d4af37",
+    "ka": "#8c9eac",
+    "text": "#efe6d4",
+    "muted": "#8c8074",
+    "bg": "#2c241d",
+    "panel": "rgba(74,55,40,.96)",
+    "field": "#3a3028",
+    "button": "#4a3728",
+    "accent": "#d4af37",
+    "onAccent": "#2c241d",
+    "gold": "#e3c089",
+    "border": "rgba(227,192,137,.25)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.35) contrast(1.05) brightness(.9)"
+}

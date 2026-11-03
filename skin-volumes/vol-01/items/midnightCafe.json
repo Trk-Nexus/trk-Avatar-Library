@@ -1,0 +1,43 @@
+{
+  "id": "midnightCafe",
+  "label": {
+    "ja": "深夜喫茶",
+    "en": "Midnight Cafe",
+    "zh": "深夜咖啡厅",
+    "ko": "심야 찻집"
+  },
+  "desc": {
+    "ja": "コーヒーの香りと、ブラウンのやさしい夜",
+    "en": "Coffee aroma and gentle brown night",
+    "zh": "咖啡香气与温柔棕色之夜",
+    "ko": "커피 향과 부드러운 브라운 밤"
+  },
+  "cat": [
+    "life",
+    "light"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#3e2723",
+    "ink": "#efebe9",
+    "don": "#ff7043",
+    "ka": "#8d6e63",
+    "text": "#efebe9",
+    "muted": "#a1887f",
+    "bg": "#4e342e",
+    "panel": "rgba(62,39,35,.96)",
+    "field": "#3e2723",
+    "button": "#5d4037",
+    "accent": "#ff7043",
+    "onAccent": "#3e2723",
+    "gold": "#d7ccc8",
+    "border": "rgba(255,112,67,.28)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.4) saturate(1.1) brightness(.85) contrast(1.05)"
+}

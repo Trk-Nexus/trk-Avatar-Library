@@ -1,0 +1,52 @@
+{
+  "id": "draconic-iron",
+  "label": {
+    "ja": "ドラゴンアイアン",
+    "en": "Draconic Iron",
+    "zh": "龙铁",
+    "ko": "드래곤 아이언"
+  },
+  "desc": {
+    "ja": "竜の鱗を思わせる赤黒い鉄、炎の質感",
+    "en": "Red-black iron like dragon scales, flame texture",
+    "zh": "像龙鳞的红黑铁，火焰质感",
+    "ko": "용 비늘을 연상시키는 붉은 검은 철, 불꽃 질감"
+  },
+  "cat": [
+    "fun",
+    "grad",
+    "dark"
+  ],
+  "font": "\"Papyrus\",\"Papyrus Custom\",fantasy",
+  "type": {
+    "title": "\"Papyrus\",fantasy",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "700",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#4a0e0e,#1a0303)",
+    "ink": "#ffe6e6",
+    "don": "#ff6b6b",
+    "ka": "#46c2cb",
+    "text": "#ffe6e6",
+    "muted": "#c9ad96",
+    "bg": "linear-gradient(180deg,#1a0303,#0a0101)",
+    "panel": "rgba(74,14,14,.95)",
+    "field": "#2a0e0e",
+    "button": "#4a0e0e",
+    "accent": "#ff6b6b",
+    "onAccent": "#ffffff",
+    "gold": "#ffc861",
+    "border": "rgba(255,107,107,.32)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "sepia(.5) saturate(1.3) hue-rotate(-10deg) brightness(.8) contrast(1.25)"
+}

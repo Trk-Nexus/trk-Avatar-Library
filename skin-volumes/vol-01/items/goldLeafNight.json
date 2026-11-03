@@ -1,0 +1,44 @@
+{
+  "id": "goldLeafNight",
+  "label": {
+    "ja": "金箔の夜",
+    "en": "Gold Leaf Night",
+    "zh": "金箔之夜",
+    "ko": "금박 밤"
+  },
+  "desc": {
+    "ja": "黒地に輝く金箔、豪華で気高い夜",
+    "en": "Gold leaf shining on black, a luxurious and noble night",
+    "zh": "黑地上闪耀的金箔，豪华高贵之夜",
+    "ko": "검은 배경에 빛나는 금박, 호화롭고 기품 있는 밤"
+  },
+  "cat": [
+    "dark",
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#1a1510,#0a0500)",
+    "ink": "#fdf6e3",
+    "don": "#ffd166",
+    "ka": "#b8912e",
+    "text": "#fdf6e3",
+    "muted": "#cabfe0",
+    "bg": "linear-gradient(180deg,#0a0500,#050200)",
+    "panel": "rgba(26,21,16,.96)",
+    "field": "#1a1510",
+    "button": "#2a2018",
+    "accent": "#ffd166",
+    "onAccent": "#1a1000",
+    "gold": "#ffe9a8",
+    "border": "rgba(255,209,102,.34)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.5) sepia(1) hue-rotate(18deg) saturate(1.4) brightness(.55)"
+}

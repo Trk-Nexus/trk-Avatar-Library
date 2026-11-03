@@ -1,0 +1,63 @@
+{
+  "id": "wizard-solomon-book",
+  "label": {
+    "ja": "ソロモンの書",
+    "en": "Book of Solomon",
+    "zh": "所罗门之书",
+    "ko": "솔로몬의 서"
+  },
+  "desc": {
+    "ja": "賢王ソロモンの知恵が記された羊皮紙、黄金の知識と卓越した魔術",
+    "en": "Parchment of wise King Solomon, golden knowledge and transcendent sorcery",
+    "zh": "智慧之王所罗门记载的羊皮纸，黄金知识与卓越魔术",
+    "ko": "현왕 솔로몬의 지혜가 적힌 양피지, 황금 지식과 초월한 마술"
+  },
+  "cat": [
+    "wizard",
+    "life",
+    "grad"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa"
+  },
+  "colors": {
+    "stage": "#3e2f14",
+    "ink": "#f0e6d2",
+    "don": "#d4af37",
+    "ka": "#c5a059",
+    "text": "#f0e6d2",
+    "muted": "#c9b18a",
+    "bg": "#342810",
+    "panel": "rgba(52,40,16,.96)",
+    "field": "#3e2f14",
+    "button": "#5d4524",
+    "accent": "#d4af37",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.25) saturate(1.1) brightness(1.05)",
+  "cli": {
+    "font": "Cinzel, Trajan Pro, serif",
+    "prompt": "📜",
+    "caret": "#8b4513",
+    "scan": 0.12,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

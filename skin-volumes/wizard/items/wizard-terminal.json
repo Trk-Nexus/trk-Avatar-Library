@@ -1,0 +1,63 @@
+{
+  "id": "wizard-terminal",
+  "label": {
+    "ja": "魔導ターミナル",
+    "en": "Wizard Terminal",
+    "zh": "巫师终端",
+    "ko": "마법사 터미널"
+  },
+  "desc": {
+    "ja": "琥珀色モノクロCRT、呪文のプロンプト",
+    "en": "Amber monochrome CRT, spell prompt",
+    "zh": "琥珀色单色CRT，咒语提示符",
+    "ko": "호박색 단색 CRT, 주문 프롬프트"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "life"
+  ],
+  "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+  "type": {
+    "title": "\\\"Courier New\\\",monospace",
+    "weight": "500",
+    "lh": "1.4",
+    "titleWeight": "700",
+    "titleSpace": "0",
+    "titleTransform": "",
+    "mark": "grimoire> _"
+  },
+  "colors": {
+    "stage": "#1a1a00",
+    "ink": "#ffbf00",
+    "don": "#ccaa00",
+    "ka": "#4a4a00",
+    "text": "#ffbf00",
+    "muted": "#aa8800",
+    "bg": "#0a0a00",
+    "panel": "rgba(10,10,0,.98)",
+    "field": "#1a1a00",
+    "button": "#2a2a00",
+    "accent": "#ffbf00",
+    "onAccent": "#000000",
+    "gold": "#ffff99",
+    "border": "rgba(255,191,0,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.5) contrast(1.15) brightness(.85)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": ">",
+    "caret": "#ffbf00",
+    "scan": 0.15,
+    "cursor": "block",
+    "opacity": 0.9,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

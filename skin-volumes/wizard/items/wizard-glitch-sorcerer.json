@@ -1,0 +1,63 @@
+{
+  "id": "wizard-glitch-sorcerer",
+  "label": {
+    "ja": "グリッチソーサラー",
+    "en": "Glitch Sorcerer",
+    "zh": "故障术士",
+    "ko": "글리치 소서러"
+  },
+  "desc": {
+    "ja": "CSSアニメーションによるグリッチ・色ずれ・走査線エフェクト、デジタル魔術",
+    "en": "CSS animation glitch, chromatic aberration and scanline effects, digital sorcery",
+    "zh": "CSS动画故障、色差和扫描线效果，数字魔术",
+    "ko": "CSS 애니메이션 글리치, 색수차 및 주사선 효과, 디지털 마술"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Courier New\",\"Courier\",monospace",
+  "type": {
+    "title": "\"Courier New\",monospace",
+    "weight": "700",
+    "lh": "1.4",
+    "titleWeight": "900",
+    "titleSpace": ".05em",
+    "titleTransform": "uppercase",
+    "mark": "═▓▒░"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#00ff00",
+    "don": "#ff00ff",
+    "ka": "#00ffff",
+    "text": "#00ff00",
+    "muted": "#00cc00",
+    "bg": "#050505",
+    "panel": "#031406",
+    "field": "#0a0a0a",
+    "button": "#1a1a1a",
+    "accent": "#ff00ff",
+    "onAccent": "#000000",
+    "gold": "#00ffff",
+    "border": "rgba(0,255,255,.30)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(180deg) saturate(1.6) contrast(1.3) brightness(.85)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "▓",
+    "caret": "#00ffff",
+    "scan": 0.25,
+    "cursor": "block",
+    "opacity": 0.9,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

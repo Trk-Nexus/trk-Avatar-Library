@@ -1,0 +1,44 @@
+{
+  "id": "strawberry-cake",
+  "label": {
+    "ja": "ストロベリーケーキ",
+    "en": "Strawberry Cake",
+    "zh": "草莓蛋糕",
+    "ko": "딸기 케이크"
+  },
+  "desc": {
+    "ja": "苺のショートケーキ、甘くて華やかなピンク",
+    "en": "Strawberry shortcake, sweet and gorgeous pink",
+    "zh": "草莓蛋糕，甜美华丽的粉色",
+    "ko": "딸기 쇼트케이크, 달콤하고 화려한 핑크"
+  },
+  "cat": [
+    "light",
+    "fun",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#fce4ec,#f8bbd0)",
+    "ink": "#880e4f",
+    "don": "#ec407a",
+    "ka": "#f48fb1",
+    "text": "#880e4f",
+    "muted": "#ad1457",
+    "bg": "linear-gradient(180deg,#f8bbd0,#f48fb1)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#f8bbd0",
+    "accent": "#ec407a",
+    "onAccent": "#ffffff",
+    "gold": "#ffcdd2",
+    "border": "rgba(236,64,122,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.1) saturate(1.15) brightness(1.03)"
+}

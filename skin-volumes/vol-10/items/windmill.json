@@ -1,0 +1,51 @@
+{
+  "id": "windmill",
+  "label": {
+    "ja": "風車",
+    "en": "Windmill",
+    "zh": "风车",
+    "ko": "풍차"
+  },
+  "desc": {
+    "ja": "オランダ風車、牧草地と青空",
+    "en": "Dutch windmill, pasture and blue sky",
+    "zh": "荷兰风车，牧场和蓝天",
+    "ko": "네덜란드 풍차, 목장과 파란 하늘"
+  },
+  "cat": [
+    "light",
+    "life"
+  ],
+  "font": "\"Garamond\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Garamond\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#81c784",
+    "ink": "#1b5e20",
+    "don": "#ffd700",
+    "ka": "#4ecdc4",
+    "text": "#1b5e20",
+    "muted": "#66bb6a",
+    "bg": "#c8e6c9",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#a5d6a7",
+    "accent": "#4ecdc4",
+    "onAccent": "#ffffff",
+    "gold": "#d4e157",
+    "border": "rgba(46,125,50,.22)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(1.04)"
+}

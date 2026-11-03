@@ -1,0 +1,63 @@
+{
+  "id": "wizard-douhet",
+  "label": {
+    "ja": "ドゥーエ 制空",
+    "en": "Douhet The Command of the Air",
+    "zh": "杜埃 制空权",
+    "ko": "두에 공중제공"
+  },
+  "desc": {
+    "ja": "航空戦略の先駆、制空権と戦略爆撃の理論",
+    "en": "Pioneer of air strategy, command of the air and strategic bombing",
+    "zh": "航空战略的先驱，制空权与战略轰炸理论",
+    "ko": "항공전략의 선구자, 공중제공과 전략폭격 이론"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Cinzel\",\"Trajan Pro\",serif",
+  "type": {
+    "title": "\"Cinzel\",serif",
+    "weight": "700",
+    "lh": "1.5",
+    "titleWeight": "800",
+    "titleSpace": ".1em",
+    "titleTransform": "uppercase",
+    "mark": "✈"
+  },
+  "colors": {
+    "stage": "#1a1a2e",
+    "ink": "#e6e6fa",
+    "don": "#4169e1",
+    "ka": "#6495ed",
+    "text": "#e6e6fa",
+    "muted": "#9370db",
+    "bg": "#0f0f3d",
+    "panel": "rgba(15,15,61,.96)",
+    "field": "#1a1a2e",
+    "button": "#2c2c6c",
+    "accent": "#4169e1",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(65,105,225,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "hue-rotate(220deg) saturate(1.1) contrast(1.2) brightness(.85)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "✈",
+    "caret": "#4169e1",
+    "scan": 0.22,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "wizard-crystal",
+  "label": {
+    "ja": "クリスタルボール",
+    "en": "Crystal Ball",
+    "zh": "水晶球",
+    "ko": "크리스털 볼"
+  },
+  "desc": {
+    "ja": "水晶占い、未来を映す球体と紫の霧",
+    "en": "Crystal gazing, sphere reflecting the future and purple mist",
+    "zh": "水晶占卜，映照未来的球体与紫色薄雾",
+    "ko": "수정 구 점술, 미래를 비추는 구체와 보라색 안개"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\\\"Playfair Display\\\",\\\"Noto Serif JP\\\",serif",
+  "type": {
+    "title": "\\\"Playfair Display\\\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa"
+  },
+  "colors": {
+    "stage": "#4a148c",
+    "ink": "#e1bee7",
+    "don": "#ce93d8",
+    "ka": "#ba68c8",
+    "text": "#e1bee7",
+    "muted": "#ffffff",
+    "bg": "#311b92",
+    "panel": "rgba(49,27,146,.96)",
+    "field": "#4a148c",
+    "button": "#7b1fa2",
+    "accent": "#ce93d8",
+    "onAccent": "#000000",
+    "gold": "#f3e5f5",
+    "border": "rgba(206,147,216,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "hue-rotate(280deg) saturate(1.2) brightness(.9) contrast(1.1)"
+}

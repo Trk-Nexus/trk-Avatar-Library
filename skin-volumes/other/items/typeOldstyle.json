@@ -1,0 +1,51 @@
+{
+  "id": "typeOldstyle",
+  "label": {
+    "ja": "活字の古典",
+    "en": "Old-style serif",
+    "zh": "古典铅字",
+    "ko": "고전 활자"
+  },
+  "desc": {
+    "ja": "パラティーノ系の、ゆったりした欧文",
+    "en": "A relaxed Palatino-style old-style serif",
+    "zh": "帕拉蒂诺风格的从容西文",
+    "ko": "팔라티노 계열의 여유로운 서양 활자"
+  },
+  "cat": [
+    "type",
+    "dark"
+  ],
+  "font": "\"Palatino Linotype\",\"Book Antiqua\",Palatino,Georgia,\"Times New Roman\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "",
+    "weight": "400",
+    "lh": "1.65",
+    "titleWeight": "600",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#191315",
+    "ink": "#efe8e0",
+    "don": "#e0b07a",
+    "ka": "#a8c6c0",
+    "text": "#efe8e0",
+    "muted": "#c3b5a6",
+    "bg": "#191315",
+    "panel": "rgba(42,34,36,.95)",
+    "field": "#171214",
+    "button": "#2a2224",
+    "accent": "#e0b07a",
+    "onAccent": "#221607",
+    "gold": "#e0b07a",
+    "border": "rgba(239,232,224,.2)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(.85) brightness(.9)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "celestial-bronze",
+  "label": {
+    "ja": "天鋼ブロンズ",
+    "en": "Celestial Bronze",
+    "zh": "天青铜",
+    "ko": "천강 청동"
+  },
+  "desc": {
+    "ja": "ギリシャ神話の半神のための金属、古代の緑青",
+    "en": "Metal for Greek demigods, ancient verdigris",
+    "zh": "希腊半神的金属，古代铜绿",
+    "ko": "그리스 반신반인을 위한 금속, 고대의 청동 녹청"
+  },
+  "cat": [
+    "life",
+    "grad"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#8b4513",
+    "ink": "#fffdf0",
+    "don": "#d4af37",
+    "ka": "#b8860b",
+    "text": "#fffdf0",
+    "muted": "#a0522d",
+    "bg": "#5c4033",
+    "panel": "rgba(139,69,19,.96)",
+    "field": "#8b4513",
+    "button": "#a0522d",
+    "accent": "#d4af37",
+    "onAccent": "#5c4033",
+    "gold": "#ffe082",
+    "border": "rgba(160,82,45,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.4) contrast(1.1) brightness(.95)"
+}

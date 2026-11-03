@@ -1,0 +1,43 @@
+{
+  "id": "zenStone",
+  "label": {
+    "ja": "禅の石庭",
+    "en": "Zen Stone Garden",
+    "zh": "禅石庭",
+    "ko": "선 돌정원"
+  },
+  "desc": {
+    "ja": "白砂と黒石、静謐な禅の情景",
+    "en": "White sand and black stones, a quiet Zen scene",
+    "zh": "白沙与黑石，静谧的禅之情景",
+    "ko": "白 모래와 검은 돌, 정적인 선 장면"
+  },
+  "cat": [
+    "light",
+    "access"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#e8e8e8",
+    "ink": "#1c1c1c",
+    "don": "#262626",
+    "ka": "#8c8c8c",
+    "text": "#1c1c1c",
+    "muted": "#5c5c5c",
+    "bg": "#ececec",
+    "panel": "rgba(250,250,250,.97)",
+    "field": "#f8f8f8",
+    "button": "#e2e2e2",
+    "accent": "#1c1c1c",
+    "onAccent": "#ffffff",
+    "gold": "#6e6e6e",
+    "border": "rgba(40,40,40,.24)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.1) brightness(1.05)"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "mithril",
+  "label": {
+    "ja": "ミスリル",
+    "en": "Mithril",
+    "zh": "秘银",
+    "ko": "미스릴"
+  },
+  "desc": {
+    "ja": "ファンタジーの軽銀、妖精と王族が愛した金属",
+    "en": "Fantasy light-silver, metal loved by fairies and royalty",
+    "zh": "奇幻的轻银，精灵和王族喜爱的金属",
+    "ko": "판타지의 경은, 요정과 왕족이 사랑한 금속"
+  },
+  "cat": [
+    "light",
+    "grad",
+    "fun"
+  ],
+  "font": "\"Garamond\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Garamond\",serif",
+    "weight": "300",
+    "lh": "1.75",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#d4e6f1,#7f8fa6)",
+    "ink": "#2c3e50",
+    "don": "#aed6f1",
+    "ka": "#3498db",
+    "text": "#2c3e50",
+    "muted": "#7f8c8d",
+    "bg": "linear-gradient(180deg,#7f8fa6,#5d6d7e)",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#d5dbdb",
+    "accent": "#3498db",
+    "onAccent": "#ffffff",
+    "gold": "#d4e6f1",
+    "border": "rgba(52,152,219,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.1) brightness(1.05) contrast(1.02)"
+}

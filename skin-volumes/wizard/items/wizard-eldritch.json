@@ -1,0 +1,52 @@
+{
+  "id": "wizard-eldritch",
+  "label": {
+    "ja": "エルドリッチ",
+    "en": "Eldritch",
+    "zh": "异形",
+    "ko": "엘드리트치"
+  },
+  "desc": {
+    "ja": "クトゥルフ的異形、不可視の恐怖と深淵の緑",
+    "en": "Eldritch abomination, invisible terror and abyssal green",
+    "zh": "克苏鲁式异形，无形的恐怖与深渊之绿",
+    "ko": "크툴루식 이형체, 불가시의 공포와 심연의 녹색"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "fun"
+  ],
+  "font": "\\\"Cinzel\\\",\\\"Trajan Pro\\\",serif",
+  "type": {
+    "title": "\\\"Cinzel\\\",serif",
+    "weight": "700",
+    "lh": "1.4",
+    "titleWeight": "800",
+    "titleSpace": ".12em",
+    "titleTransform": "uppercase",
+    "mark": "∿"
+  },
+  "colors": {
+    "stage": "#0d2a2a",
+    "ink": "#4ecdc4",
+    "don": "#45b7aa",
+    "ka": "#2c7873",
+    "text": "#4ecdc4",
+    "muted": "#529999",
+    "bg": "#061a1a",
+    "panel": "rgba(6,26,26,.98)",
+    "field": "#0d2a2a",
+    "button": "#1d3a3a",
+    "accent": "#4ecdc4",
+    "onAccent": "#000000",
+    "gold": "#a8e6cf",
+    "border": "rgba(78,205,196,.35)"
+  },
+  "shapes": [
+    "diamond",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(180deg) saturate(1.3) contrast(1.2) brightness(.8)"
+}

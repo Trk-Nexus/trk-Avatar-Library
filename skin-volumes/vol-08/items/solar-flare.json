@@ -1,0 +1,51 @@
+{
+  "id": "solar-flare",
+  "label": {
+    "ja": "太陽フレア",
+    "en": "Solar Flare",
+    "zh": "太阳耀斑",
+    "ko": "태양 플레어"
+  },
+  "desc": {
+    "ja": "太陽表面の爆発、激しい光と熱の放出",
+    "en": "Solar surface explosion, intense light and heat release",
+    "zh": "太阳表面爆发，强烈的光与热释放",
+    "ko": "태양 표면 폭발, 강한 빛과 열 방출"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "\"Futura\",\"Avant Garde\",sans-serif",
+  "type": {
+    "title": "\"Futura\",sans-serif",
+    "weight": "700",
+    "lh": "1.2",
+    "titleWeight": "900",
+    "titleSpace": "-.05em",
+    "titleTransform": "uppercase",
+    "mark": "FLARE"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#ff6b00,#ffa500,#ffff00)",
+    "ink": "#ffffff",
+    "don": "#ff4500",
+    "ka": "#ffd700",
+    "text": "#ffffff",
+    "muted": "#ff8c00",
+    "bg": "linear-gradient(180deg,#4a0a00,#1a0a00)",
+    "panel": "rgba(74,10,0,.97)",
+    "field": "#2a0500",
+    "button": "#4a0a00",
+    "accent": "#ff4500",
+    "onAccent": "#ffffff",
+    "gold": "#ffff00",
+    "border": "rgba(255,69,0,.32)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) saturate(1.4) hue-rotate(-10deg) brightness(1.05) contrast(1.15)"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "nessun",
+  "label": {
+    "ja": "ネッスン・ドルマ",
+    "en": "Nessun Dorma",
+    "zh": "今夜无人入睡",
+    "ko": "네순 도르마"
+  },
+  "desc": {
+    "ja": "夜空と黄金のグランドオペラ",
+    "en": "A grand opera of night and gold",
+    "zh": "夜空与黄金的宏大歌剧",
+    "ko": "밤하늘과 황금의 그랜드 오페라"
+  },
+  "cat": [
+    "dark",
+    "grad",
+    "fun"
+  ],
+  "font": "Georgia,\"Noto Serif JP\",\"Noto Serif SC\",serif",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(0deg,#231540,#0a0d22)",
+    "ink": "#fdf6e3",
+    "don": "#f2c14e",
+    "ka": "#6fa8ff",
+    "text": "#fdf6e3",
+    "muted": "#c5b8d8",
+    "bg": "linear-gradient(0deg,#2a1a3e,#0c1026)",
+    "panel": "rgba(20,16,44,.95)",
+    "field": "#130f2c",
+    "button": "#1c1638",
+    "accent": "#f2c14e",
+    "onAccent": "#241a04",
+    "gold": "#fff1c4",
+    "border": "rgba(242,193,78,.32)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(1) contrast(1.45) sepia(1) hue-rotate(200deg) saturate(1.6) brightness(.6)"
+}

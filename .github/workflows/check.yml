@@ -47,6 +47,12 @@ jobs:
           path: trk-Avatar-Library/.cache/font-packs
           key: fontsource-${{ hashFiles('trk-Avatar-Library/font-packs/*/SOURCE.json') }}
 
+      - name: 設定パネルのブラウザ回帰テストを含むテスト
+        working-directory: trk-Avatar-Library
+        run: |
+          npm ci
+          npm test
+
       - name: 道具の自己検査（selftest）
         working-directory: trk-Avatar-Library
         env:

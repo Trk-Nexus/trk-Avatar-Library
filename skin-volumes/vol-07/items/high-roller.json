@@ -1,0 +1,52 @@
+{
+  "id": "high-roller",
+  "label": {
+    "ja": "ハイローラー",
+    "en": "High Roller",
+    "zh": "大赌客",
+    "ko": "하이 롤러"
+  },
+  "desc": {
+    "ja": "大金持ちのギャンブラー、シャンパンと黄金",
+    "en": "Wealthy gambler, champagne and gold",
+    "zh": "富豪赌客，香槟和黄金",
+    "ko": "부유한 도박꾼, 샴페인과 금"
+  },
+  "cat": [
+    "grad",
+    "fun",
+    "light"
+  ],
+  "font": "\"Didot\",\"Bodoni MT\",serif",
+  "type": {
+    "title": "\"Didot\",serif",
+    "weight": "300",
+    "lh": "1.6",
+    "titleWeight": "800",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#f5f5dc,#d4af37)",
+    "ink": "#2c2c2c",
+    "don": "#ff6b6b",
+    "ka": "#4ecdc4",
+    "text": "#2c2c2c",
+    "muted": "#8a8a8a",
+    "bg": "linear-gradient(180deg,#d4af37,#b8860b)",
+    "panel": "rgba(245,245,220,.96)",
+    "field": "#ffffff",
+    "button": "#ffe082",
+    "accent": "#ff6b6b",
+    "onAccent": "#2c2c2c",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.15) saturate(1.2) brightness(1.05)"
+}

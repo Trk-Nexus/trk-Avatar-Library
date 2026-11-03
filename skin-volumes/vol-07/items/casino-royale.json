@@ -1,0 +1,52 @@
+{
+  "id": "casino-royale",
+  "label": {
+    "ja": "カジノロワイヤル",
+    "en": "Casino Royale",
+    "zh": "赌场皇家",
+    "ko": "카지노 로얄"
+  },
+  "desc": {
+    "ja": "王族のような気高さ、エメラルドグリーンのカジノテーブル",
+    "en": "Royal nobility, emerald green casino table",
+    "zh": "王族般的高贵，祖母绿赌场桌面",
+    "ko": "왕족 같은 고귀함, 에메랄드 그린 카지노 테이블"
+  },
+  "cat": [
+    "light",
+    "grad",
+    "fun"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "700",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#1a5e3a,#0f3d24)",
+    "ink": "#f0f4f8",
+    "don": "#ffd700",
+    "ka": "#4ecdc4",
+    "text": "#f0f4f8",
+    "muted": "#a8b8c8",
+    "bg": "linear-gradient(180deg,#0f3d24,#0a2b1a)",
+    "panel": "rgba(26,94,58,.96)",
+    "field": "#1a5e3a",
+    "button": "#2c6e4a",
+    "accent": "#ffd700",
+    "onAccent": "#0f3d24",
+    "gold": "#ffe082",
+    "border": "rgba(255,215,0,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) saturate(1.15) brightness(.95) contrast(1.1)"
+}

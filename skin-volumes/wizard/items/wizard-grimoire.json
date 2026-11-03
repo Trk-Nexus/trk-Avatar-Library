@@ -1,0 +1,63 @@
+{
+  "id": "wizard-grimoire",
+  "label": {
+    "ja": "魔導書",
+    "en": "Grimoire",
+    "zh": "魔导书",
+    "ko": "마도서"
+  },
+  "desc": {
+    "ja": "古びた魔導書、革製表紙と金箔文字",
+    "en": "Ancient grimoire, leather cover and gold foil lettering",
+    "zh": "古旧魔导书，皮革封面与金箔文字",
+    "ko": "낡은 마도서, 가죽 표지와 금박 글씨"
+  },
+  "cat": [
+    "wizard",
+    "life",
+    "grad"
+  ],
+  "font": "\\\"Trajan Pro\\\",\\\"Garamond\\\",\\\"Noto Serif JP\\\",serif",
+  "type": {
+    "title": "\\\"Trajan Pro\\\",serif",
+    "weight": "400",
+    "lh": "1.75",
+    "titleWeight": "600",
+    "titleSpace": ".05em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#3e2723",
+    "ink": "#f5f5f5",
+    "don": "#d4af37",
+    "ka": "#8d6e63",
+    "text": "#f5f5f5",
+    "muted": "#cbb6ac",
+    "bg": "#261411",
+    "panel": "rgba(38,20,17,.97)",
+    "field": "#3e2723",
+    "button": "#5d4037",
+    "accent": "#d4af37",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.35) contrast(1.15) brightness(.9)",
+  "cli": {
+    "font": "Trajan Pro, Garamond, serif",
+    "prompt": ">",
+    "caret": "#d4af37",
+    "scan": 0.08,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "didot",
+  "label": {
+    "ja": "ディドー",
+    "en": "Didot",
+    "zh": "迪多",
+    "ko": "디도"
+  },
+  "desc": {
+    "ja": "モダン・ロマンの衬线、シャープで洗練された書体",
+    "en": "Modern romantic serif, sharp and refined",
+    "zh": "现代浪漫衬线体，锐利而精致",
+    "ko": "모던 로맨틱 세리프, 샤프하고 정교한 서체"
+  },
+  "cat": [
+    "type",
+    "dark"
+  ],
+  "font": "\"Didot\",\"Bodoni MT\",serif",
+  "type": {
+    "title": "\"Didot\",serif",
+    "weight": "300",
+    "lh": "1.6",
+    "titleWeight": "800",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#fafafa",
+    "don": "#e84393",
+    "ka": "#00cec9",
+    "text": "#fafafa",
+    "muted": "#b2bec3",
+    "bg": "#000000",
+    "panel": "rgba(10,10,10,.98)",
+    "field": "#0a0a0a",
+    "button": "#1a1a1a",
+    "accent": "#e84393",
+    "onAccent": "#ffffff",
+    "gold": "#fd79a8",
+    "border": "rgba(255,255,255,.12)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "contrast(1.3) saturate(1.1) brightness(.8)"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "sakura",
+  "label": {
+    "ja": "サクラ",
+    "en": "Sakura",
+    "zh": "樱花",
+    "ko": "사쿠라"
+  },
+  "desc": {
+    "ja": "やわらかい桜色",
+    "en": "Soft cherry-blossom pastel",
+    "zh": "柔和樱花色",
+    "ko": "부드러운 벚꽃 파스텔"
+  },
+  "cat": [
+    "basic"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#ffeef3",
+    "ink": "#3a2330",
+    "don": "#ff5d8f",
+    "ka": "#5aa9e6",
+    "text": "#3a2330",
+    "muted": "#7c5968",
+    "bg": "#fff0f4",
+    "panel": "rgba(255,250,252,.97)",
+    "field": "#ffffff",
+    "button": "#ffe6ee",
+    "accent": "#e0568a",
+    "onAccent": "#000000",
+    "gold": "#d9782a",
+    "border": "rgba(214,77,128,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.25) saturate(1.15) brightness(1.06)"
+}

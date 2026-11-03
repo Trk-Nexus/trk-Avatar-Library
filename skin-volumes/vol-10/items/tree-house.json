@@ -1,0 +1,51 @@
+{
+  "id": "tree-house",
+  "label": {
+    "ja": "ツリーハウス",
+    "en": "Tree House",
+    "zh": "树屋",
+    "ko": "트리 하우스"
+  },
+  "desc": {
+    "ja": "木の上の家、緑と木の温もり",
+    "en": "House on trees, green and wood warmth",
+    "zh": "树上的房子，绿色与木头的温暖",
+    "ko": "나무 위의 집, 초록과 나무의 온기"
+  },
+  "cat": [
+    "life",
+    "grad"
+  ],
+  "font": "\"Comic Sans MS\",\"Cursive\",fantasy",
+  "type": {
+    "title": "\"Comic Sans MS\",cursive",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#4caf50",
+    "ink": "#1b5e20",
+    "don": "#ffab91",
+    "ka": "#81c784",
+    "text": "#1b5e20",
+    "muted": "#66bb6a",
+    "bg": "#c8e6c9",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#a5d6a7",
+    "accent": "#81c784",
+    "onAccent": "#ffffff",
+    "gold": "#d4e157",
+    "border": "rgba(46,125,50,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.15) brightness(1.05)"
+}

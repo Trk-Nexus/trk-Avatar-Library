@@ -1,0 +1,52 @@
+{
+  "id": "scanline",
+  "label": {
+    "ja": "スキャンライン",
+    "en": "Scanline",
+    "zh": "扫描线",
+    "ko": "스캔라인"
+  },
+  "desc": {
+    "ja": "CRTモニターの横縞、レトロゲーム筐体",
+    "en": "CRT monitor horizontal lines, retro game cabinet",
+    "zh": "CRT显示器横线，复古游戏机柜",
+    "ko": "CRT 모니터 가로선, 레트로 게임 캐비닛"
+  },
+  "cat": [
+    "glitch",
+    "dark",
+    "life"
+  ],
+  "font": "\\\"Press Start 2P\\\",\\\"Courier New\\\",monospace",
+  "type": {
+    "title": "\\\"Press Start 2P\\\",monospace",
+    "weight": "500",
+    "lh": "1.25",
+    "titleWeight": "700",
+    "titleSpace": ".02em",
+    "titleTransform": "uppercase",
+    "mark": "SCAN"
+  },
+  "colors": {
+    "stage": "#0d0d0d",
+    "ink": "#00ff00",
+    "don": "#cccccc",
+    "ka": "#666666",
+    "text": "#00ff00",
+    "muted": "#2a2a2a",
+    "bg": "#050505",
+    "panel": "rgba(5,5,5,.98)",
+    "field": "#0d0d0d",
+    "button": "#1a1a1a",
+    "accent": "#00ff00",
+    "onAccent": "#000000",
+    "gold": "#ffffff",
+    "border": "rgba(0,255,0,.20)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.2) saturate(1.5) contrast(1.2) brightness(.8)"
+}

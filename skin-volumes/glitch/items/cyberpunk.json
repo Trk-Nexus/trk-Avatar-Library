@@ -1,0 +1,52 @@
+{
+  "id": "cyberpunk",
+  "label": {
+    "ja": "サイバーパンク",
+    "en": "Cyberpunk",
+    "zh": "赛博朋克",
+    "ko": "사이버펑크"
+  },
+  "desc": {
+    "ja": "ネオンと雨の近未来、 magenta×cyan のコントラスト",
+    "en": "Neon and rainy near-future, magenta×cyan contrast",
+    "zh": "霓虹和雨的近未来，品红×青色对比",
+    "ko": "네온과 비의 근미래, 마젠타×시안 대비"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "grad"
+  ],
+  "font": "\\\"Orbitron\\\",\\\"Futura\\\",system-ui,sans-serif",
+  "type": {
+    "title": "\\\"Orbitron\\\",sans-serif",
+    "weight": "800",
+    "lh": "1.05",
+    "titleWeight": "900",
+    "titleSpace": "-.06em",
+    "titleTransform": "uppercase",
+    "mark": "NEON"
+  },
+  "colors": {
+    "stage": "#050510",
+    "ink": "#00ffff",
+    "don": "#ff00ff",
+    "ka": "#ff0040",
+    "text": "#00ffff",
+    "muted": "#2a1a4a",
+    "bg": "#00000a",
+    "panel": "rgba(5,5,16,.98)",
+    "field": "#050510",
+    "button": "#15152a",
+    "accent": "#ff00ff",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "rgba(0,255,255,.35)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "hue-rotate(200deg) saturate(1.7) brightness(.75) contrast(1.4)"
+}

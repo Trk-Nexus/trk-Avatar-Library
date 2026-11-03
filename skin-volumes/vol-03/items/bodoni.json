@@ -1,0 +1,52 @@
+{
+  "id": "bodoni",
+  "label": {
+    "ja": "ボドーニ",
+    "en": "Bodoni",
+    "zh": "博多尼",
+    "ko": "보도니"
+  },
+  "desc": {
+    "ja": "コントラストの強い近代明朝、華やかで気高い",
+    "en": "High-contrast modern serif, gorgeous and noble",
+    "zh": "高对比度现代衬线体，华丽而高贵",
+    "ko": "높은 대비를 가진 현대 명조체, 화려하고 기품 있음"
+  },
+  "cat": [
+    "type",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Didot\",\"Bodoni MT\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Didot\",\"Bodoni MT\",serif",
+    "weight": "300",
+    "lh": "1.6",
+    "titleWeight": "800",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#fafafa",
+    "don": "#c0392b",
+    "ka": "#f1c40f",
+    "text": "#fafafa",
+    "muted": "#bdc3c7",
+    "bg": "#000000",
+    "panel": "rgba(10,10,10,.98)",
+    "field": "#0a0a0a",
+    "button": "#1a1a1a",
+    "accent": "#c0392b",
+    "onAccent": "#ffffff",
+    "gold": "#f1c40f",
+    "border": "rgba(255,255,255,.12)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "contrast(1.25) saturate(1.05) brightness(.85)"
+}

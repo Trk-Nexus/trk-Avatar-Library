@@ -1,0 +1,51 @@
+{
+  "id": "sake",
+  "label": {
+    "ja": "日本酒",
+    "en": "Sake",
+    "zh": "清酒",
+    "ko": "사케"
+  },
+  "desc": {
+    "ja": "白濁、和の情緒と穀物の香り",
+    "en": "Cloudy white, Japanese emotion and grain aroma",
+    "zh": "白浊，日本情绪与谷物香气",
+    "ko": "하얗게 흐림, 일본의 정서와 곡물 향"
+  },
+  "cat": [
+    "light",
+    "life"
+  ],
+  "font": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Hiragino Mincho ProN\",serif",
+    "weight": "400",
+    "lh": "1.75",
+    "titleWeight": "600",
+    "titleSpace": ".1em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f3f4f6",
+    "ink": "#1a202c",
+    "don": "#d4af37",
+    "ka": "#4a5d6a",
+    "text": "#1a202c",
+    "muted": "#718096",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#e2e8f0",
+    "accent": "#d4af37",
+    "onAccent": "#ffffff",
+    "gold": "#f6e05e",
+    "border": "rgba(26,32,44,.12)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.1) brightness(1.02)"
+}

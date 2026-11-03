@@ -1,0 +1,702 @@
+{
+  "format": "trk-avatar-library-skins",
+  "version": 1,
+  "count": 16,
+  "skins": [
+    {
+      "id": "matcha",
+      "label": {
+        "ja": "抹茶",
+        "en": "Matcha",
+        "zh": "抹茶",
+        "ko": "말차"
+      },
+      "desc": {
+        "ja": "和スイーツの定番、落ち着いた緑色",
+        "en": "Japanese sweet standard, calm green",
+        "zh": "日式甜点标准，平静的绿色",
+        "ko": "일본 디저트 표준, 차분한 초록색"
+      },
+      "cat": [
+        "light",
+        "grad",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#81c784,#2e7d32)",
+        "ink": "#1b5e20",
+        "don": "#ffab91",
+        "ka": "#a5d6a7",
+        "text": "#1b5e20",
+        "muted": "#81c784",
+        "bg": "linear-gradient(180deg,#c8e6c9,#a5d6a7)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#c8e6c9",
+        "accent": "#4caf50",
+        "onAccent": "#ffffff",
+        "gold": "#d4e157",
+        "border": "rgba(46,125,50,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.1) brightness(1.02)"
+    },
+    {
+      "id": "chocolate",
+      "label": {
+        "ja": "ショコラ",
+        "en": "Chocolate",
+        "zh": "巧克力",
+        "ko": "초콜릿"
+      },
+      "desc": {
+        "ja": "濃厚なチョコレート、大人っぽい茶色",
+        "en": "Rich chocolate, adult brown",
+        "zh": "浓郁巧克力，成人色调的棕色",
+        "ko": "진한 초콜릿, 어른스러운 갈색"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#8d6e63,#4e342e)",
+        "ink": "#efebe9",
+        "don": "#ffab91",
+        "ka": "#bcaaa4",
+        "text": "#efebe9",
+        "muted": "#a1887f",
+        "bg": "linear-gradient(180deg,#d7ccc8,#bcaaa4)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#bcaaa4",
+        "accent": "#8d6e63",
+        "onAccent": "#efebe9",
+        "gold": "#ffe0b2",
+        "border": "rgba(141,110,99,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.3) saturate(1.05) brightness(.95)"
+    },
+    {
+      "id": "strawberry-cake",
+      "label": {
+        "ja": "ストロベリーケーキ",
+        "en": "Strawberry Cake",
+        "zh": "草莓蛋糕",
+        "ko": "딸기 케이크"
+      },
+      "desc": {
+        "ja": "苺のショートケーキ、甘くて華やかなピンク",
+        "en": "Strawberry shortcake, sweet and gorgeous pink",
+        "zh": "草莓蛋糕，甜美华丽的粉色",
+        "ko": "딸기 쇼트케이크, 달콤하고 화려한 핑크"
+      },
+      "cat": [
+        "light",
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#fce4ec,#f8bbd0)",
+        "ink": "#880e4f",
+        "don": "#ec407a",
+        "ka": "#f48fb1",
+        "text": "#880e4f",
+        "muted": "#ad1457",
+        "bg": "linear-gradient(180deg,#f8bbd0,#f48fb1)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#f8bbd0",
+        "accent": "#ec407a",
+        "onAccent": "#ffffff",
+        "gold": "#ffcdd2",
+        "border": "rgba(236,64,122,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.1) saturate(1.15) brightness(1.03)"
+    },
+    {
+      "id": "macaron",
+      "label": {
+        "ja": "マカロン",
+        "en": "Macaron",
+        "zh": "马卡龙",
+        "ko": "마카롱"
+      },
+      "desc": {
+        "ja": "パステルカラーのフランス菓子、かわいらしい色合い",
+        "en": "Pastel French confectionery, cute colors",
+        "zh": "淡色法国点心，可爱色调",
+        "ko": "파스텔 컬러 프랑스 과자, 귀여운 색감"
+      },
+      "cat": [
+        "light",
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#f3e5f5,#e1bee7)",
+        "ink": "#4a148c",
+        "don": "#ce93d8",
+        "ka": "#b39ddb",
+        "text": "#4a148c",
+        "muted": "#9c27b0",
+        "bg": "linear-gradient(180deg,#e1bee7,#ce93d8)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#e1bee7",
+        "accent": "#ab47bc",
+        "onAccent": "#ffffff",
+        "gold": "#f3e5f5",
+        "border": "rgba(171,71,188,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.1) brightness(1.05)"
+    },
+    {
+      "id": "croissant",
+      "label": {
+        "ja": "クロワッサン",
+        "en": "Croissant",
+        "zh": "可颂",
+        "ko": "크루아상"
+      },
+      "desc": {
+        "ja": "朝のカフェ、バターの香るゴールド",
+        "en": "Morning cafe, buttery gold",
+        "zh": "早 morning 咖啡厅，黄油香的金色",
+        "ko": "아침 카페, 버터 향의 골드"
+      },
+      "cat": [
+        "light",
+        "grad",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffe082,#ffcc80)",
+        "ink": "#bf360c",
+        "don": "#ffcc80",
+        "ka": "#ffe0b2",
+        "text": "#bf360c",
+        "muted": "#ef6c00",
+        "bg": "linear-gradient(180deg,#ffecb3,#ffe0b2)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffecb3",
+        "accent": "#fb8c00",
+        "onAccent": "#ffffff",
+        "gold": "#ffe082",
+        "border": "rgba(251,140,0,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.15) saturate(1.1) brightness(1.04)"
+    },
+    {
+      "id": "espresso",
+      "label": {
+        "ja": "エスプレッソ",
+        "en": "Espresso",
+        "zh": "浓缩咖啡",
+        "ko": "에스프레소"
+      },
+      "desc": {
+        "ja": "濃いコーヒー、ダークでシックな夜",
+        "en": "Strong coffee, dark and chic night",
+        "zh": "浓缩咖啡，深色时尚之夜",
+        "ko": "진한 커피, 다크하고 시크한 밤"
+      },
+      "cat": [
+        "dark",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#3e2723,#212121)",
+        "ink": "#ffebee",
+        "don": "#ffccbc",
+        "ka": "#8d6e63",
+        "text": "#ffebee",
+        "muted": "#795548",
+        "bg": "linear-gradient(180deg,#212121,#121212)",
+        "panel": "rgba(33,33,33,.96)",
+        "field": "#3e2723",
+        "button": "#4e342e",
+        "accent": "#8d6e63",
+        "onAccent": "#212121",
+        "gold": "#d7ccc8",
+        "border": "rgba(121,85,72,.24)"
+      },
+      "shapes": [
+        "circle",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.5) contrast(1.15) brightness(.85)"
+    },
+    {
+      "id": "crepe",
+      "label": {
+        "ja": "クレープ",
+        "en": "Crepe",
+        "zh": "薄煎饼",
+        "ko": "크레페"
+      },
+      "desc": {
+        "ja": "フランスの屋台、やわらかな肌色",
+        "en": "French street crepe, soft skin tone",
+        "zh": "法式路边煎饼，柔和肤色",
+        "ko": "프랑스 노점, 부드러운 살색"
+      },
+      "cat": [
+        "light",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#ffe0b2",
+        "ink": "#4e342e",
+        "don": "#ff7043",
+        "ka": "#ffccbc",
+        "text": "#4e342e",
+        "muted": "#a1887f",
+        "bg": "#ffe0b2",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffccbc",
+        "accent": "#ff7043",
+        "onAccent": "#4e342e",
+        "gold": "#ffd54f",
+        "border": "rgba(78,52,46,.20)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.2) brightness(1.03)"
+    },
+    {
+      "id": "donut",
+      "label": {
+        "ja": "ドーナツ",
+        "en": "Donut",
+        "zh": "甜甜圈",
+        "ko": "도넛"
+      },
+      "desc": {
+        "ja": "カラフルな glazed ドーナツ、遊び心たっぷり",
+        "en": "Colorful glazed donut, full of playfulness",
+        "zh": "彩色糖霜甜甜圈，充满童心",
+        "ko": "컬러풀한 글레이즈 도넛, 재미가득"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ff9ce0,#ff6b9d)",
+        "ink": "#2d3436",
+        "don": "#fd79a8",
+        "ka": "#a29bfe",
+        "text": "#2d3436",
+        "muted": "#b2bec3",
+        "bg": "linear-gradient(180deg,#ff79a8,#fd79a8)",
+        "panel": "rgba(255,255,255,.95)",
+        "field": "#ffffff",
+        "button": "#ffc8dd",
+        "accent": "#fd79a8",
+        "onAccent": "#2d3436",
+        "gold": "#ffeaa7",
+        "border": "rgba(253,121,168,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.2) brightness(1.05)"
+    },
+    {
+      "id": "parfait",
+      "label": {
+        "ja": "パフェ",
+        "en": "Parfait",
+        "zh": "圣代",
+        "ko": "파르페"
+      },
+      "desc": {
+        "ja": "層になったアイスパフェ、色とりどり",
+        "en": "Layered ice parfait, colorful",
+        "zh": "分层冰淇淋圣代，色彩缤纷",
+        "ko": "층을 이룬 아이스 파르페, 색색깔"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ff9a9e,#fecfef,#ff9a9e)",
+        "ink": "#2d3436",
+        "don": "#fd79a8",
+        "ka": "#a29bfe",
+        "text": "#2d3436",
+        "muted": "#b2bec3",
+        "bg": "linear-gradient(180deg,#ffc3a1,#afd9fe)",
+        "panel": "rgba(255,255,255,.95)",
+        "field": "#ffffff",
+        "button": "#ffc8dd",
+        "accent": "#e17055",
+        "onAccent": "#2d3436",
+        "gold": "#ffeaa7",
+        "border": "rgba(225,112,85,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.15) brightness(1.04)"
+    },
+    {
+      "id": "mochi",
+      "label": {
+        "ja": "餅",
+        "en": "Mochi",
+        "zh": "糯米饼",
+        "ko": "떡"
+      },
+      "desc": {
+        "ja": "和菓子の餅、柔らかく白い食感",
+        "en": "Japanese mochi, soft and white texture",
+        "zh": "日式年糕，柔软白色",
+        "ko": "일본 떡, 부드럽고 하얀 식감"
+      },
+      "cat": [
+        "light",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#fdfdfd",
+        "ink": "#4a4a4a",
+        "don": "#d1c4e9",
+        "ka": "#ffccbc",
+        "text": "#4a4a4a",
+        "muted": "#9e9e9e",
+        "bg": "#f5f5f5",
+        "panel": "rgba(255,255,255,.97)",
+        "field": "#ffffff",
+        "button": "#eeeeee",
+        "accent": "#d1c4e9",
+        "onAccent": "#4a4a4a",
+        "gold": "#fff59d",
+        "border": "rgba(74,74,74,.18)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.05) brightness(1.06) contrast(.95)"
+    },
+    {
+      "id": "dango",
+      "label": {
+        "ja": "だんご",
+        "en": "Dango",
+        "zh": "团子",
+        "ko": "단고"
+      },
+      "desc": {
+        "ja": "三色団子、祭りの屋台をイメージ",
+        "en": "Three-color dango, festival street food",
+        "zh": "三色团子，节日摊位风格",
+        "ko": "삼색 단고, 축제 노점 이미지"
+      },
+      "cat": [
+        "fun",
+        "grad",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#dce775",
+        "ink": "#33691e",
+        "don": "#f48fb1",
+        "ka": "#4db6ac",
+        "text": "#33691e",
+        "muted": "#827717",
+        "bg": "#fff176",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#fff59d",
+        "accent": "#f48fb1",
+        "onAccent": "#33691e",
+        "gold": "#fff176",
+        "border": "rgba(51,105,30,.20)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.2) brightness(1.03)"
+    },
+    {
+      "id": "melon-pan",
+      "label": {
+        "ja": "メロンパン",
+        "en": "Melon Pan",
+        "zh": "瓜面包",
+        "ko": "멜론빵"
+      },
+      "zh": "瓜面包",
+      "ko": "멜론빵",
+      "desc": {
+        "ja": "日本の菓子パン、クッキー生地のグリッド",
+        "en": "Japanese sweet bread, cookie dough grid",
+        "zh": "日本甜面包，饼干面团网格",
+        "ko": "일본 과자빵, 쿠키 반죽 그리드"
+      },
+      "cat": [
+        "life",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#fff9c4",
+        "ink": "#f57f17",
+        "don": "#ffcc80",
+        "ka": "#ffe0b2",
+        "text": "#f57f17",
+        "muted": "#ff6f00",
+        "bg": "#ffe082",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffecb3",
+        "accent": "#ffa000",
+        "onAccent": "#fff9c4",
+        "gold": "#ffd54f",
+        "border": "rgba(245,127,23,.22)"
+      },
+      "shapes": [
+        "square",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.1) saturate(1.1) brightness(1.02)"
+    },
+    {
+      "id": "taiyaki",
+      "label": {
+        "ja": "たい焼き",
+        "en": "Taiyaki",
+        "zh": "鱼形烤饼",
+        "ko": "타이야키"
+      },
+      "desc": {
+        "ja": "和菓子のたい焼き、焦げ茶色の温かさ",
+        "en": "Japanese taiyaki, warm burnt brown",
+        "zh": "日式太阳烧，温暖焦茶色",
+        "ko": "일본 붕어빵, 따뜻한 구운 갈색"
+      },
+      "cat": [
+        "life",
+        "fun"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#bf360c",
+        "ink": "#ffebee",
+        "don": "#ffab91",
+        "ka": "#d7ccc8",
+        "text": "#ffebee",
+        "muted": "#e65100",
+        "bg": "#d84315",
+        "panel": "rgba(216,67,21,.96)",
+        "field": "#bf360c",
+        "button": "#e64a19",
+        "accent": "#ffab91",
+        "onAccent": "#3e2723",
+        "gold": "#ffccbc",
+        "border": "rgba(230,81,0,.22)"
+      },
+      "shapes": [
+        "circle",
+        "square"
+      ],
+      "locked": false,
+      "video": "sepia(.4) contrast(1.1) brightness(.9)"
+    },
+    {
+      "id": "creme-brulee",
+      "label": {
+        "ja": "クレームブリュレ",
+        "en": "Creme Brulee",
+        "zh": "焦糖布丁",
+        "ko": "크렘 브륄레"
+      },
+      "desc": {
+        "ja": "カラメルの表面、ゴールドの輝き",
+        "en": "Caramel surface, golden shine",
+        "zh": "焦糖表面，金色光泽",
+        "ko": "캐러멜 표면, 골드 빛깔"
+      },
+      "cat": [
+        "light",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffe082,#ffb74d)",
+        "ink": "#e65100",
+        "don": "#ffd54f",
+        "ka": "#ffe082",
+        "text": "#e65100",
+        "muted": "#ff6f00",
+        "bg": "linear-gradient(180deg,#ffecb3,#ffe082)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffecb3",
+        "accent": "#ffa000",
+        "onAccent": "#fff9c4",
+        "gold": "#ffd54f",
+        "border": "rgba(230,81,0,.24)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "sepia(.15) saturate(1.1) brightness(1.02)"
+    },
+    {
+      "id": "tart",
+      "label": {
+        "ja": "タルト",
+        "en": "Tart",
+        "zh": "塔",
+        "ko": "타르트"
+      },
+      "desc": {
+        "ja": "フルーツタルト、色とりどりのフルーツ",
+        "en": "Fruit tart, colorful fruits",
+        "zh": "水果塔，色彩缤纷水果",
+        "ko": "과일 타르트, 색색깔 과일"
+      },
+      "cat": [
+        "fun",
+        "grad"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#ff8a80",
+        "ink": "#bf360c",
+        "don": "#ff5252",
+        "ka": "#aed581",
+        "text": "#bf360c",
+        "muted": "#d32f2f",
+        "bg": "#ffab91",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ff8a80",
+        "accent": "#ff5252",
+        "onAccent": "#ffffff",
+        "gold": "#ffd54f",
+        "border": "rgba(191,54,12,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "saturate(1.25) brightness(1.03)"
+    },
+    {
+      "id": "pancake",
+      "label": {
+        "ja": "パンケーキ",
+        "en": "Pancake",
+        "zh": "松饼",
+        "ko": "팬케이크"
+      },
+      "desc": {
+        "ja": "朝食のパンケーキ、バターのイエロー",
+        "en": "Breakfast pancake, buttery yellow",
+        "zh": "早餐松饼，黄油黄色",
+        "ko": "아침 팬케이크, 버터 노란색"
+      },
+      "cat": [
+        "light",
+        "life"
+      ],
+      "font": "",
+      "type": null,
+      "colors": {
+        "stage": "#fff176",
+        "ink": "#f57f17",
+        "don": "#ffd54f",
+        "ka": "#ffe082",
+        "text": "#f57f17",
+        "muted": "#ff6f00",
+        "bg": "#fff59d",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffe082",
+        "accent": "#ffa000",
+        "onAccent": "#fff9c4",
+        "gold": "#ffeb3b",
+        "border": "rgba(245,127,23,.22)"
+      },
+      "shapes": [
+        "circle",
+        "circle"
+      ],
+      "locked": false,
+      "video": "brightness(1.05) saturate(1.05)"
+    }
+  ]
+}

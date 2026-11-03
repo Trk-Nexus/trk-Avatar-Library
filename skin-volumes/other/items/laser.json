@@ -1,0 +1,44 @@
+{
+  "id": "laser",
+  "label": {
+    "ja": "レーザーナイト",
+    "en": "Laser Night",
+    "zh": "激光之夜",
+    "ko": "레이저 나이트"
+  },
+  "desc": {
+    "ja": "闇に走る光の帯",
+    "en": "Beams of light through the dark",
+    "zh": "划破黑暗的光带",
+    "ko": "어둠을 가르는 빛의 띠"
+  },
+  "cat": [
+    "dark",
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(270deg,#050e18,#080512)",
+    "ink": "#eafaff",
+    "don": "#ff3df0",
+    "ka": "#3df0ff",
+    "text": "#eafaff",
+    "muted": "#8fa8bb",
+    "bg": "linear-gradient(270deg,#06131f,#0a0616)",
+    "panel": "rgba(8,14,24,.95)",
+    "field": "#060e18",
+    "button": "#0b1826",
+    "accent": "#3df0ff",
+    "onAccent": "#032027",
+    "gold": "#ff3df0",
+    "border": "rgba(61,240,255,.28)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "grayscale(.5) hue-rotate(180deg) saturate(1.6) brightness(.6) contrast(1.3)"
+}

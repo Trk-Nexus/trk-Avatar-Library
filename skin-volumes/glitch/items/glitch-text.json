@@ -1,0 +1,52 @@
+{
+  "id": "glitch-text",
+  "label": {
+    "ja": "グリッチテキスト",
+    "en": "Glitch Text",
+    "zh": "故障文字",
+    "ko": "글리치 텍스트"
+  },
+  "desc": {
+    "ja": "文字のデジタル変形、色ずれと断片",
+    "en": "Digital text deformation, color shift and fragments",
+    "zh": "文字的数字变形，色偏和碎片",
+    "ko": "문자의 디지털 변형, 색 이동과 파편"
+  },
+  "cat": [
+    "glitch",
+    "fun",
+    "dark"
+  ],
+  "font": "\\\"Orbitron\\\",\\\"Courier New\\\",monospace",
+  "type": {
+    "title": "\\\"Orbitron\\\",monospace",
+    "weight": "800",
+    "lh": "1.0",
+    "titleWeight": "900",
+    "titleSpace": "-.05em",
+    "titleTransform": "uppercase",
+    "mark": "TEXT"
+  },
+  "colors": {
+    "stage": "#050505",
+    "ink": "#ff00ff",
+    "don": "#00ffff",
+    "ka": "#ffff00",
+    "text": "#ff00ff",
+    "muted": "#222222",
+    "bg": "#000000",
+    "panel": "rgba(0,0,0,.98)",
+    "field": "#050505",
+    "button": "#151515",
+    "accent": "#00ffff",
+    "onAccent": "#000000",
+    "gold": "#ffff00",
+    "border": "rgba(255,0,255,.35)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "hue-rotate(180deg) saturate(1.8) contrast(1.5) brightness(.8)"
+}

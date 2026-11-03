@@ -1,0 +1,43 @@
+{
+  "id": "graduation",
+  "label": {
+    "ja": "グラデュエーション",
+    "en": "Graduation",
+    "zh": "毕业典礼",
+    "ko": "졸업"
+  },
+  "desc": {
+    "ja": "🎓 卒業おめでとう！夜明けの金色へ",
+    "en": "🎓 Congrats, graduate! Into the golden dawn",
+    "zh": "🎓 毕业快乐！迈向金色黎明",
+    "ko": "🎓 졸업 축하! 금빛 새벽으로"
+  },
+  "cat": [
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#0a0e28 0%,#241b52 55%,#b8892a 100%)",
+    "ink": "#fdf6e3",
+    "don": "#ffd166",
+    "ka": "#6fa8ff",
+    "text": "#fdf6e3",
+    "muted": "#cabfe0",
+    "bg": "linear-gradient(180deg,#0b1030 0%,#2c2160 52%,#c99a2e 100%)",
+    "panel": "rgba(17,14,40,.96)",
+    "field": "#120e2c",
+    "button": "#191437",
+    "accent": "#ffd166",
+    "onAccent": "#241a04",
+    "gold": "#ffe9a8",
+    "border": "rgba(255,209,102,.34)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": true,
+  "video": "grayscale(1) contrast(1.5) sepia(1) hue-rotate(18deg) saturate(1.4) brightness(.55)"
+}

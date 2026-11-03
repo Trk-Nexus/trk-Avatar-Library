@@ -1,0 +1,63 @@
+{
+  "id": "wizard-solomon-key",
+  "label": {
+    "ja": "ソロモンの鍵",
+    "en": "Key of Solomon",
+    "zh": "所罗门之钥",
+    "ko": "솔로몬의 열쇠"
+  },
+  "desc": {
+    "ja": " clavicula salomonis、神聖幾何学の印章と天使召喚の儀式",
+    "en": "Clavicula Salomonis, sacred geometry seals and angelic summoning rituals",
+    "zh": "《所罗门钥匙》，神圣几何学印记与天使召唤仪式",
+    "ko": "클라비cula 솔로몬니스, 신성 기하학 인장과 천사 소환 의식"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "light"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "☿ ☽ ♀"
+  },
+  "colors": {
+    "stage": "#f5f1e6",
+    "ink": "#2a241e",
+    "don": "#b8860b",
+    "ka": "#8b4513",
+    "text": "#2a241e",
+    "muted": "#6a5b40",
+    "bg": "#fffaf0",
+    "panel": "rgba(255,250,240,.97)",
+    "field": "#f5f1e6",
+    "button": "#e8e0d0",
+    "accent": "#b8860b",
+    "onAccent": "#ffffff",
+    "gold": "#ffd700",
+    "border": "rgba(184,134,11,.35)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.15) contrast(1.1) brightness(1.05)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "🗝️",
+    "caret": "#b8860b",
+    "scan": 0.15,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

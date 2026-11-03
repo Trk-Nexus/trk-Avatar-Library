@@ -1,0 +1,51 @@
+{
+  "id": "bamboo-forest",
+  "label": {
+    "ja": "竹林",
+    "en": "Bamboo Forest",
+    "zh": "竹林",
+    "ko": "대나무 숲"
+  },
+  "desc": {
+    "ja": "京都の竹林、緑の階調と静寂",
+    "en": "Kyoto bamboo forest, green gradient and silence",
+    "zh": "京都竹林，绿色渐变与寂静",
+    "ko": "교토 대나무 숲, 초록 농담과 정적"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "\"Hiragino Mincho ProN\",\"Yu Mincho\",\"YuMincho\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Hiragino Mincho ProN\",serif",
+    "weight": "400",
+    "lh": "1.75",
+    "titleWeight": "600",
+    "titleSpace": ".1em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#81c784",
+    "ink": "#1b5e20",
+    "don": "#ffab91",
+    "ka": "#4caf50",
+    "text": "#1b5e20",
+    "muted": "#66bb6a",
+    "bg": "#c8e6c9",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#a5d6a7",
+    "accent": "#4caf50",
+    "onAccent": "#ffffff",
+    "gold": "#d4e157",
+    "border": "rgba(46,125,50,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.05) brightness(1.03)"
+}

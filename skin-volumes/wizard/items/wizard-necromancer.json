@@ -1,0 +1,52 @@
+{
+  "id": "wizard-necromancer",
+  "label": {
+    "ja": "ネクロマンサー",
+    "en": "Necromancer",
+    "zh": "死灵法师",
+    "ko": "네크로맨서"
+  },
+  "desc": {
+    "ja": "死霊術、墓場の土と腐敗の紫",
+    "en": "Necromancy, graveyard soil and decayed purple",
+    "zh": "死灵法术，墓地土壤与腐败紫",
+    "ko": "네크로맨시, 묘지 토양과 부패한 보라색"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "fun"
+  ],
+  "font": "\\\"Cinzel\\\",\\\"Trajan Pro\\\",serif",
+  "type": {
+    "title": "\\\"Cinzel\\\",serif",
+    "weight": "700",
+    "lh": "1.35",
+    "titleWeight": "800",
+    "titleSpace": ".08em",
+    "titleTransform": "uppercase",
+    "mark": "☠"
+  },
+  "colors": {
+    "stage": "#1a1a1a",
+    "ink": "#bb86fc",
+    "don": "#d4af37",
+    "ka": "#4a4a4a",
+    "text": "#bb86fc",
+    "muted": "#878787",
+    "bg": "#0a0a0a",
+    "panel": "rgba(10,10,10,.98)",
+    "field": "#1a1a1a",
+    "button": "#2a2a2a",
+    "accent": "#bb86fc",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(187,134,252,.35)"
+  },
+  "shapes": [
+    "square",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "hue-rotate(260deg) saturate(1.3) contrast(1.25) brightness(.8)"
+}

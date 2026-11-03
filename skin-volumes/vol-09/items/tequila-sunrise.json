@@ -1,0 +1,51 @@
+{
+  "id": "tequila-sunrise",
+  "label": {
+    "ja": "テキーラサンライズ",
+    "en": "Tequila Sunrise",
+    "zh": "龙舌兰日出",
+    "ko": "테킬라 선라이즈"
+  },
+  "desc": {
+    "ja": "夕焼けグラデーション、オレンジと赤",
+    "en": "Sunset gradient, orange and red",
+    "zh": "日落渐变，橙色和红色",
+    "ko": "노을 그라데이션, 오렌지와 빨강"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "\"Futura\",\"Avant Garde\",sans-serif",
+  "type": {
+    "title": "\"Futura\",sans-serif",
+    "weight": "700",
+    "lh": "1.2",
+    "titleWeight": "900",
+    "titleSpace": "-.04em",
+    "titleTransform": "uppercase",
+    "mark": "TEQUILA"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#ff6b6b,#4ecdc4,#45b7d1)",
+    "ink": "#ffffff",
+    "don": "#ff9ff3",
+    "ka": "#feca57",
+    "text": "#ffffff",
+    "muted": "#ff9ff3",
+    "bg": "linear-gradient(180deg,#45b7d1,#4ecdc4)",
+    "panel": "rgba(69,183,209,.96)",
+    "field": "#ff6b6b",
+    "button": "#4ecdc4",
+    "accent": "#feca57",
+    "onAccent": "#ffffff",
+    "gold": "#ffeaa7",
+    "border": "rgba(254,202,87,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.3) brightness(1.02) contrast(1.1)"
+}

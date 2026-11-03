@@ -1,0 +1,44 @@
+{
+  "id": "pastelloop",
+  "label": {
+    "ja": "パステルループ",
+    "en": "Pastel Loop",
+    "zh": "粉彩循环",
+    "ko": "파스텔 루프"
+  },
+  "desc": {
+    "ja": "ぴかぴかの3色パステル",
+    "en": "Three pastels in a soft loop",
+    "zh": "三色粉彩的柔和循环",
+    "ko": "삼색 파스텔의 부드러운 순환"
+  },
+  "cat": [
+    "light",
+    "grad",
+    "fun"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#fff0f6,#eefaf3,#eef1fc)",
+    "ink": "#3a3346",
+    "don": "#f27ba5",
+    "ka": "#7ecbb0",
+    "text": "#3a3346",
+    "muted": "#6b657b",
+    "bg": "linear-gradient(180deg,#ffeef5,#eefaf1,#eef0fb)",
+    "panel": "rgba(255,255,255,.95)",
+    "field": "#ffffff",
+    "button": "#f6f2fb",
+    "accent": "#b78be0",
+    "onAccent": "#000000",
+    "gold": "#f2a3c0",
+    "border": "rgba(150,130,200,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.06) saturate(1.05)"
+}

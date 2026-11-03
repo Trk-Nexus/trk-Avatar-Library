@@ -1,0 +1,43 @@
+{
+  "id": "turquoise",
+  "label": {
+    "ja": "ターコイズ",
+    "en": "Turquoise",
+    "zh": "青金石",
+    "ko": "터콰이즈"
+  },
+  "desc": {
+    "ja": "空色の宝石、癒やしと保護の青緑",
+    "en": "Sky blue jewel, healing and protection in teal",
+    "zh": "天蓝色宝石，治愈与保护的青绿",
+    "ko": "하늘색 보석, 치유와 보호의 청록"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#00cec9",
+    "ink": "#2d3436",
+    "don": "#e17055",
+    "ka": "#0984e3",
+    "text": "#2d3436",
+    "muted": "#6cabac",
+    "bg": "#81ecec",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#55efc4",
+    "accent": "#00b894",
+    "onAccent": "#ffffff",
+    "gold": "#ffeaa7",
+    "border": "rgba(0,206,201,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.15) brightness(1.05) contrast(1.02)"
+}

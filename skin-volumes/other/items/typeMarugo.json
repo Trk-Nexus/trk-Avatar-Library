@@ -1,0 +1,52 @@
+{
+  "id": "typeMarugo",
+  "label": {
+    "ja": "丸ゴのお茶目",
+    "en": "Maru gothic",
+    "zh": "圆体俏皮",
+    "ko": "둥근 고딕"
+  },
+  "desc": {
+    "ja": "角の取れた丸ゴシックと、桃色の夜",
+    "en": "Rounded gothic in a peachy night",
+    "zh": "圆润的圆体与桃色夜晚",
+    "ko": "모서리 둥근 고딕과 복숭아빛 밤"
+  },
+  "cat": [
+    "type",
+    "dark",
+    "fun"
+  ],
+  "font": "\"Hiragino Maru Gothic ProN\",\"Hiragino Maru Gothic Pro\",\"HG丸ｺﾞｼｯｸM-PRO\",\"M PLUS Rounded 1c\",\"Noto Sans JP\",\"Noto Sans SC\",\"Noto Sans KR\",sans-serif",
+  "type": {
+    "title": "",
+    "weight": "500",
+    "lh": "1.5",
+    "titleWeight": "800",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#241a2a",
+    "ink": "#fdf2f8",
+    "don": "#ffb3d2",
+    "ka": "#a7e8ff",
+    "text": "#fdf2f8",
+    "muted": "#d9c4d0",
+    "bg": "#241a2a",
+    "panel": "rgba(58,40,67,.95)",
+    "field": "#231a29",
+    "button": "#3a2843",
+    "accent": "#ffb3d2",
+    "onAccent": "#3c0f24",
+    "gold": "#ffe27a",
+    "border": "rgba(253,242,248,.2)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.05) brightness(.95)"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "wizard-alchemy",
+  "label": {
+    "ja": "錬金術",
+    "en": "Alchemy",
+    "zh": "炼金术",
+    "ko": "연금술"
+  },
+  "desc": {
+    "ja": "賢者の石、鉛から金への変容、錬金実験",
+    "en": "Philosopher's stone, transmutation of lead to gold, alchemical experiment",
+    "zh": "贤者之石，铅转化为金，炼金实验",
+    "ko": "현자의 돌, 납에서 금으로의 변환, 연금술 실험"
+  },
+  "cat": [
+    "wizard",
+    "fun",
+    "grad"
+  ],
+  "font": "\\\"Caslon\\\",\\\"Garamond\\\",serif",
+  "type": {
+    "title": "\\\"Caslon\\\",serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "☿ ☽ ♀"
+  },
+  "colors": {
+    "stage": "#4a2c2a",
+    "ink": "#d4af37",
+    "don": "#ffd700",
+    "ka": "#8b4513",
+    "text": "#d4af37",
+    "muted": "#cc8f79",
+    "bg": "#2a1a15",
+    "panel": "rgba(42,26,21,.97)",
+    "field": "#4a2c2a",
+    "button": "#5d4037",
+    "accent": "#ffd700",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.35)"
+  },
+  "shapes": [
+    "circle",
+    "square"
+  ],
+  "locked": false,
+  "video": "sepia(.4) saturate(1.2) contrast(1.15) brightness(.9)"
+}

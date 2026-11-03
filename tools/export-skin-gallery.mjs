@@ -12,12 +12,12 @@
 
    使い方：
      node tools/export-skin-gallery.mjs --trk=/path/to/trk-PWA
-     node tools/export-skin-gallery.mjs --trk=. --out=gallery/all-skins.html --json=catalog/skins.json
+     node tools/export-skin-gallery.mjs --trk=. --out=gallery/all-skins.html --json=catalog/upstream-skins.json
      node tools/export-skin-gallery.mjs --trk=… --check      … 書き出さずに、いまのファイルと合っているかだけ見る（CI 用）
 
    書き出すもの：
      gallery/all-skins.html … 単体で開ける見本（データを埋め込み・相対パス不要）
-     catalog/skins.json     … 同じ中身の JSON（アプリや他の道具が読む用）
+     catalog/upstream-skins.json … 固定版の元のスキンの JSON。拡張した catalog/skins.json は上書きしない
 
    同梱の書体（L9・trk232 からのお願い）：
      font-packs/ の .stpack が宣言している書体を「🔤 同梱の書体」の節に並べます。
@@ -28,6 +28,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
+import { isDeepStrictEqual } from "node:util";
 import { verifyPack } from "./verify-pack.mjs";
 
 const args = Object.fromEntries(process.argv.slice(2).map(a => {
@@ -41,7 +42,7 @@ const HERE = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..")
 const TRK = path.resolve(String(args.trk || ""));
 const checkOnly = !!args.check;
 const outHtml = path.resolve(HERE, String(args.out || "gallery/all-skins.html"));
-const outJson = path.resolve(HERE, String(args.json || "catalog/skins.json"));
+const outJson = path.resolve(HERE, String(args.json || "catalog/upstream-skins.json"));
 
 /* --- trk-PWA の SKINS を読む（tests と同じ順：data.js → characters/miku.js） --- */
 const sandbox = {
@@ -334,6 +335,18 @@ ${fontPacks.map(fp => `    <div class="fontCard">
 emit(outHtml, html);
 
 if (checkOnly) {
+  // The library catalog contains extra volumes beyond the pinned upstream.
+  // Check every upstream record without replacing or requiring equality of the
+  // whole, larger catalog. Normalise objects originating in the VM first.
+  const libraryPath = path.join(HERE, "catalog/skins.json");
+  const library = JSON.parse(fs.readFileSync(libraryPath, "utf8"));
+  const indexed = new Map(library.skins.map(s => [s.id, s]));
+  for (const skin of skins) {
+    if (!isDeepStrictEqual(JSON.parse(JSON.stringify(skin)), indexed.get(skin.id))) {
+      console.error(`❌ 拡張目録の元スキンが不一致: ${skin.id}`);
+      drift.push(`catalog/skins.json:${skin.id}`);
+    }
+  }
   if (drift.length) {
     console.error(`❌ 見本（${drift.join("・")}）が今の中身と合っていません。node tools/export-skin-gallery.mjs --trk=… で作り直してください`);
     process.exit(1);

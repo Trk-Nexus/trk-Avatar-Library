@@ -1,0 +1,51 @@
+{
+  "id": "negroni",
+  "label": {
+    "ja": "ネグローニ",
+    "en": "Negroni",
+    "zh": "内格罗尼",
+    "ko": "네그로니"
+  },
+  "desc": {
+    "ja": "苦い赤、イタリアのカクテル",
+    "en": "Bitter red, Italian cocktail",
+    "zh": "苦红色，意大利鸡尾酒",
+    "ko": "쓴 빨강, 이탈리아 칵테일"
+  },
+  "cat": [
+    "dark",
+    "fun"
+  ],
+  "font": "\"Papyrus\",\"Papyrus Custom\",fantasy",
+  "type": {
+    "title": "\"Papyrus\",fantasy",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "600",
+    "titleSpace": ".05em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#b3261e",
+    "ink": "#fffdf0",
+    "don": "#d4af37",
+    "ka": "#8c9eac",
+    "text": "#fffdf0",
+    "muted": "#a0522d",
+    "bg": "#7b1113",
+    "panel": "rgba(179,38,30,.97)",
+    "field": "#9c221f",
+    "button": "#b3261e",
+    "accent": "#d4af37",
+    "onAccent": "#7b1113",
+    "gold": "#ffe082",
+    "border": "rgba(212,175,55,.28)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "sepia(.45) contrast(1.15) brightness(.88)"
+}

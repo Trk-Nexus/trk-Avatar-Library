@@ -1,0 +1,51 @@
+{
+  "id": "blackjack-21",
+  "label": {
+    "ja": "ブラックジャック21",
+    "en": "Blackjack 21",
+    "zh": "二十一点",
+    "ko": "블랙잭 21"
+  },
+  "desc": {
+    "ja": "ブラックジャック、21を目指す緊張と興奮",
+    "en": "Blackjack, tension and excitement aiming for 21",
+    "zh": "二十一点，瞄准21的紧张与兴奋",
+    "ko": "블랙잭, 21을 목표로 하는 긴장과 흥분"
+  },
+  "cat": [
+    "fun",
+    "dark"
+  ],
+  "font": "\"Oswald\",\"Impact\",sans-serif",
+  "type": {
+    "title": "\"Oswald\",sans-serif",
+    "weight": "700",
+    "lh": "1.35",
+    "titleWeight": "800",
+    "titleSpace": "-.03em",
+    "titleTransform": "",
+    "mark": "21"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#ffffff",
+    "don": "#d4af37",
+    "ka": "#ffd700",
+    "text": "#ffffff",
+    "muted": "#666666",
+    "bg": "#1a1a1a",
+    "panel": "rgba(10,10,10,.99)",
+    "field": "#0a0a0a",
+    "button": "#2a2a2a",
+    "accent": "#d4af37",
+    "onAccent": "#000000",
+    "gold": "#ffe082",
+    "border": "rgba(255,255,255,.18)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "grayscale(.3) contrast(1.25) brightness(.85)"
+}

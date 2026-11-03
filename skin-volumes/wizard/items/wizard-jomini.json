@@ -1,0 +1,63 @@
+{
+  "id": "wizard-jomini",
+  "label": {
+    "ja": "ジョミニ 戦争概論",
+    "en": "Jomini Summary of the Art of War",
+    "zh": "若米尼 战争概论",
+    "ko": "조미니 전쟁 개론"
+  },
+  "desc": {
+    "ja": "ナポレオン戦争の戦術家、戦争の原理と体系化",
+    "en": "Napoleonic wars tactician, principles and systematization of war",
+    "zh": "拿破仑战争的战术家，战争的原理与体系化",
+    "ko": "나폴레옹 전쟁의 전략가, 전쟁의 원리와 체계화"
+  },
+  "cat": [
+    "wizard",
+    "light",
+    "access"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "J"
+  },
+  "colors": {
+    "stage": "#fafafa",
+    "ink": "#1a1a1a",
+    "don": "#2c5282",
+    "ka": "#4a5568",
+    "text": "#1a1a1a",
+    "muted": "#4a5568",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#fafafa",
+    "button": "#e2e8f0",
+    "accent": "#2c5282",
+    "onAccent": "#ffffff",
+    "gold": "#7aa2f7",
+    "border": "rgba(44,82,130,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "contrast(1.05) brightness(1.0)",
+  "cli": {
+    "font": "Courier New, Courier, monospace",
+    "prompt": "J",
+    "caret": "#2c5282",
+    "scan": 0.1,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

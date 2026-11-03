@@ -1,0 +1,42 @@
+{
+  "id": "cbLight",
+  "label": {
+    "ja": "色覚にやさしい（明るめ）",
+    "en": "Colorblind-friendly (light)",
+    "zh": "色觉友好（浅色）",
+    "ko": "색각 친화（밝음）"
+  },
+  "desc": {
+    "ja": "明るい背景で、青とだいだい色を使う",
+    "en": "Light background using blue and vermilion",
+    "zh": "浅色背景，使用蓝与朱红色",
+    "ko": "밝은 배경에 파랑과 주황 사용"
+  },
+  "cat": [
+    "access"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#f4f4ef",
+    "ink": "#1a1a1a",
+    "don": "#8f3500",
+    "ka": "#56b4e9",
+    "text": "#1a1a1a",
+    "muted": "#4a4a4a",
+    "bg": "#f7f7f4",
+    "panel": "#ffffff",
+    "field": "#ffffff",
+    "button": "#e9e9e4",
+    "accent": "#0072b2",
+    "onAccent": "#ffffff",
+    "gold": "#b07000",
+    "border": "rgba(0,0,0,.30)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "grayscale(.5) brightness(1.1) contrast(1.05)"
+}

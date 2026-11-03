@@ -1,0 +1,42 @@
+{
+  "id": "morningKitchen",
+  "label": {
+    "ja": "台所の朝",
+    "en": "Kitchen morning",
+    "zh": "厨房的清晨",
+    "ko": "아침 부엌"
+  },
+  "desc": {
+    "ja": "白いタイルと、窓から入る朝の光",
+    "en": "White tiles and morning light from the window",
+    "zh": "白色瓷砖与窗边的晨光",
+    "ko": "하얀 타일과 창으로 드는 아침 햇살"
+  },
+  "cat": [
+    "life"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "#f7f1e7",
+    "ink": "#2e2a24",
+    "don": "#e0894d",
+    "ka": "#4f7fb0",
+    "text": "#2e2a24",
+    "muted": "#615b4b",
+    "bg": "#f5efe6",
+    "panel": "#fffaf2",
+    "field": "#ffffff",
+    "button": "#ebe3d4",
+    "accent": "#3f7d5f",
+    "onAccent": "#ffffff",
+    "gold": "#9a6b1f",
+    "border": "rgba(60,50,40,.22)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "brightness(1.08) saturate(.95)"
+}

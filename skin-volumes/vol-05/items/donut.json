@@ -1,0 +1,43 @@
+{
+  "id": "donut",
+  "label": {
+    "ja": "ドーナツ",
+    "en": "Donut",
+    "zh": "甜甜圈",
+    "ko": "도넛"
+  },
+  "desc": {
+    "ja": "カラフルな glazed ドーナツ、遊び心たっぷり",
+    "en": "Colorful glazed donut, full of playfulness",
+    "zh": "彩色糖霜甜甜圈，充满童心",
+    "ko": "컬러풀한 글레이즈 도넛, 재미가득"
+  },
+  "cat": [
+    "fun",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#ff9ce0,#ff6b9d)",
+    "ink": "#2d3436",
+    "don": "#fd79a8",
+    "ka": "#a29bfe",
+    "text": "#2d3436",
+    "muted": "#b2bec3",
+    "bg": "linear-gradient(180deg,#ff79a8,#fd79a8)",
+    "panel": "rgba(255,255,255,.95)",
+    "field": "#ffffff",
+    "button": "#ffc8dd",
+    "accent": "#fd79a8",
+    "onAccent": "#2d3436",
+    "gold": "#ffeaa7",
+    "border": "rgba(253,121,168,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.2) brightness(1.05)"
+}

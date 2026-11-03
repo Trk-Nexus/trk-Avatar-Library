@@ -1,0 +1,63 @@
+{
+  "id": "wizard-cli",
+  "label": {
+    "ja": "ウィザードCLI",
+    "en": "Wizard CLI",
+    "zh": "巫师命令行",
+    "ko": "마법사 CLI"
+  },
+  "desc": {
+    "ja": "黒い端末に白い呪文、コマンドライン魔術",
+    "en": "Black terminal with white spells, command line wizardry",
+    "zh": "黑色终端上的白色咒语，命令行巫术",
+    "ko": "검은 터미널의 하얀 주문, 명령줄 마법"
+  },
+  "cat": [
+    "wizard",
+    "dark",
+    "access"
+  ],
+  "font": "\\\"Courier New\\\",\\\"Courier\\\",monospace",
+  "type": {
+    "title": "\\\"Courier New\\\",monospace",
+    "weight": "600",
+    "lh": "1.3",
+    "titleWeight": "700",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "> cast spell"
+  },
+  "colors": {
+    "stage": "#0a0a0a",
+    "ink": "#e0e0e0",
+    "don": "#d4af37",
+    "ka": "#666666",
+    "text": "#e0e0e0",
+    "muted": "#8fd79a",
+    "bg": "#050505",
+    "panel": "#031406",
+    "field": "#0a0a0a",
+    "button": "#1a1a1a",
+    "accent": "#d4af37",
+    "onAccent": "#000000",
+    "gold": "#ffffff",
+    "border": "#d4af37"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "contrast(1.2) brightness(.85)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "λ",
+    "caret": "#39ff14",
+    "scan": 0.12,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

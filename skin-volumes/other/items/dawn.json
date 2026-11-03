@@ -1,0 +1,43 @@
+{
+  "id": "dawn",
+  "label": {
+    "ja": "朝焼け",
+    "en": "Daybreak",
+    "zh": "朝霞",
+    "ko": "새벽빛"
+  },
+  "desc": {
+    "ja": "白から桃色にひろがる朝",
+    "en": "White melting into peach morning light",
+    "zh": "从纯白铺开到桃色的清晨",
+    "ko": "흰색에서 복숭아빛으로 퍼지는 아침"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#fdf6ee,#ffdcc7)",
+    "ink": "#3a2c28",
+    "don": "#e06a4a",
+    "ka": "#5a9ec9",
+    "text": "#3a2c28",
+    "muted": "#78625b",
+    "bg": "linear-gradient(180deg,#fdfbf7,#ffe3d3)",
+    "panel": "rgba(255,253,250,.96)",
+    "field": "#fffdfa",
+    "button": "#fbf0e8",
+    "accent": "#e06a4a",
+    "onAccent": "#000000",
+    "gold": "#c47f2a",
+    "border": "rgba(224,120,80,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.2) saturate(1.15) brightness(1.08)"
+}

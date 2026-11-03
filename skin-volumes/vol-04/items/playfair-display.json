@@ -1,0 +1,52 @@
+{
+  "id": "playfair-display",
+  "label": {
+    "ja": "プレイフェアディスプレイ",
+    "en": "Playfair Display",
+    "zh": "博尼塔展示体",
+    "ko": "플레이페어 디스플레이"
+  },
+  "desc": {
+    "ja": "エレガントな明朝、雑誌の見出しに最適",
+    "en": "Elegant serif, ideal for magazine headlines",
+    "zh": "优雅衬线体，适合杂志标题",
+    "ko": "우아한 명조체, 잡지 제목에 적합"
+  },
+  "cat": [
+    "type",
+    "light",
+    "fun"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "700",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#fdfcf0",
+    "ink": "#2c241d",
+    "don": "#a5522e",
+    "ka": "#4a5d6a",
+    "text": "#2c241d",
+    "muted": "#8c8074",
+    "bg": "#fffef5",
+    "panel": "rgba(255,255,245,.97)",
+    "field": "#ffffff",
+    "button": "#eae4d9",
+    "accent": "#a5522e",
+    "onAccent": "#fdfcf0",
+    "gold": "#b8860b",
+    "border": "rgba(44,36,29,.15)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.15) brightness(1.01)"
+}

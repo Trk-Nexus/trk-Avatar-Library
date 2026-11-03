@@ -1,0 +1,51 @@
+{
+  "id": "platinum",
+  "label": {
+    "ja": "プラチナ",
+    "en": "Platinum",
+    "zh": "铂金",
+    "ko": "백금"
+  },
+  "desc": {
+    "ja": "純白の高貴な金属、気高く清らかな輝き",
+    "en": "Pure white noble metal, noble and pure shine",
+    "zh": "纯白高贵金属，高贵清澈的光泽",
+    "ko": "순백의 고귀한 금속, 기품 있고 깨끗한 광채"
+  },
+  "cat": [
+    "light",
+    "access"
+  ],
+  "font": "\"Didot\",\"Bodoni MT\",serif",
+  "type": {
+    "title": "\"Didot\",serif",
+    "weight": "300",
+    "lh": "1.65",
+    "titleWeight": "800",
+    "titleSpace": ".02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f5f5f5",
+    "ink": "#262626",
+    "don": "#d4af37",
+    "ka": "#7f8c8d",
+    "text": "#262626",
+    "muted": "#8c8c8c",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#eaeaea",
+    "accent": "#d4af37",
+    "onAccent": "#ffffff",
+    "gold": "#fffdf0",
+    "border": "rgba(38,38,38,.12)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "contrast(1.08) brightness(1.03)"
+}

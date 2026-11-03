@@ -1,0 +1,51 @@
+{
+  "id": "montserrat",
+  "label": {
+    "ja": "モントセラート",
+    "en": "Montserrat",
+    "zh": "蒙特塞拉特",
+    "ko": "몬트세라트"
+  },
+  "desc": {
+    "ja": "幾何学的なゴシック、モダンでクリーンな書体",
+    "en": "Geometric sans, modern and clean",
+    "zh": "几何学无衬线体，现代且简洁",
+    "ko": "기하학적 고딕, 모던하고 깨끗한 서체"
+  },
+  "cat": [
+    "type",
+    "basic"
+  ],
+  "font": "\"Montserrat\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Montserrat\",sans-serif",
+    "weight": "400",
+    "lh": "1.5",
+    "titleWeight": "700",
+    "titleSpace": "-.02em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f8f9fa",
+    "ink": "#212529",
+    "don": "#e74c3c",
+    "ka": "#3498db",
+    "text": "#212529",
+    "muted": "#7f8c8d",
+    "bg": "#ffffff",
+    "panel": "rgba(255,255,255,.98)",
+    "field": "#ffffff",
+    "button": "#ecf0f1",
+    "accent": "#3498db",
+    "onAccent": "#ffffff",
+    "gold": "#f1c40f",
+    "border": "rgba(33,37,41,.12)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "brightness(1.02) contrast(1.01)"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "gill-sans",
+  "label": {
+    "ja": "ギルサンド",
+    "en": "Gill Sans",
+    "zh": "吉尔桑",
+    "ko": "길 산스"
+  },
+  "desc": {
+    "ja": "ヒューマニスト・ゴシック、人間味あふれる書体",
+    "en": "Humanist sans, warm and human",
+    "zh": "人本主义无衬线体，温暖且亲切",
+    "ko": "휴먼체 고딕, 따뜻하고 인간미 넘치는 서체"
+  },
+  "cat": [
+    "type",
+    "light"
+  ],
+  "font": "\"Gill Sans\",\"Gill Sans MT\",system-ui,sans-serif",
+  "type": {
+    "title": "\"Gill Sans\",sans-serif",
+    "weight": "400",
+    "lh": "1.55",
+    "titleWeight": "700",
+    "titleSpace": ".01em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#e3f2fd",
+    "ink": "#1a237e",
+    "don": "#d32f2f",
+    "ka": "#0288d1",
+    "text": "#1a237e",
+    "muted": "#5c6bc0",
+    "bg": "#bbdefb",
+    "panel": "rgba(255,255,255,.97)",
+    "field": "#ffffff",
+    "button": "#c5cae9",
+    "accent": "#0288d1",
+    "onAccent": "#ffffff",
+    "gold": "#fff176",
+    "border": "rgba(26,35,126,.15)"
+  },
+  "shapes": [
+    "square",
+    "square"
+  ],
+  "locked": false,
+  "video": "brightness(1.03) saturate(.95)"
+}

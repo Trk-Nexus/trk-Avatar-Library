@@ -1,0 +1,63 @@
+{
+  "id": "wizard-crystal-gazer",
+  "label": {
+    "ja": "クリスタルゲイザー",
+    "en": "Crystal Gazer",
+    "zh": "水晶凝视者",
+    "ko": "크리스털 게이저"
+  },
+  "desc": {
+    "ja": "ガラスモーフィズムとbackdrop-filterぼかし、半透明パネルの水晶占い体験",
+    "en": "Glassmorphism and backdrop-filter blur, semi-transparent panels for crystal gazing experience",
+    "zh": "玻璃拟态和backdrop-filter模糊，半透明面板的水晶占卜体验",
+    "ko": "글라스모피즘과 backdrop-filter 블러, 반투명 패널의 수정 구 점술 체험"
+  },
+  "cat": [
+    "wizard",
+    "grad",
+    "dark"
+  ],
+  "font": "\"Playfair Display\",\"Noto Serif JP\",serif",
+  "type": {
+    "title": "\"Playfair Display\",serif",
+    "weight": "400",
+    "lh": "1.7",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "🔮"
+  },
+  "colors": {
+    "stage": "#0b1026",
+    "ink": "#dce6ff",
+    "don": "#7aa2ff",
+    "ka": "#9fbbff",
+    "text": "#dce6ff",
+    "muted": "#b8c8f0",
+    "bg": "#090d1c",
+    "panel": "rgba(9,13,28,.94)",
+    "field": "#0b1026",
+    "button": "#1a2440",
+    "accent": "#7aa2ff",
+    "onAccent": "#000000",
+    "gold": "#e0c38c",
+    "border": "rgba(122,162,255,.35)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "saturate(1.2) contrast(1.15) brightness(1.05)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "🔮",
+    "caret": "#7aa2ff",
+    "scan": 0.12,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}

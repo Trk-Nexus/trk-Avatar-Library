@@ -1,0 +1,51 @@
+{
+  "id": "desert-mosque",
+  "label": {
+    "ja": "砂漠モスク",
+    "en": "Desert Mosque",
+    "zh": "沙漠清真寺",
+    "ko": "사막 모스크"
+  },
+  "desc": {
+    "ja": "砂色とミナレット、砂漠の聖域",
+    "en": "Sand color and minaret, desert sanctuary",
+    "zh": "沙色和宣礼塔，沙漠圣域",
+    "ko": "모래색과 미나레트, 사막 성역"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "\"Trajan Pro\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Trajan Pro\",serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "#f4a460",
+    "ink": "#4a3728",
+    "don": "#d4af37",
+    "ka": "#8c9eac",
+    "text": "#4a3728",
+    "muted": "#cd853f",
+    "bg": "#deb887",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#fffef5",
+    "button": "#e8dec7",
+    "accent": "#d4af37",
+    "onAccent": "#4a3728",
+    "gold": "#ffe082",
+    "border": "rgba(205,133,63,.24)"
+  },
+  "shapes": [
+    "circle",
+    "diamond"
+  ],
+  "locked": false,
+  "video": "sepia(.25) saturate(1.1) brightness(1.02)"
+}

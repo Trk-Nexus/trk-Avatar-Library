@@ -25,7 +25,8 @@
 | `gallery/all-skins.html` | **全スキン見本**（trk! の見た目のスキン **53 種**）。1ファイルで、ダブルクリックだけで開けます。外部からは何も読みません（オフラインOK） |
 | `gallery/fonts.html` | **書体の一覧と検索**（29 パック・42 ウェイト）。対応字数・大きさ・太さ・ライセンス・ひとこと・雰囲気タグを並べ、**50 音順／大きさ順／字数順**に並べ替え、**雰囲気・ライセンス・太さ・大きさで絞り込み**、言葉で横断検索。1ファイル・外部参照 0。**行ごとに 1 本だけ落とせる**リンクつき（L13・L14） |
 | `gallery/packs.html` | **パックの一覧**（30 パック・書体 42 本）。パックごとに、中に入っている書体（family・太さ・ひとこと・タグ・対応字数・大きさ）・ライセンス・sha256 を並べ、**言葉で横断検索**・**雰囲気タグで絞り込み**・**パック名／大きさ／書体の数で並べ替え**。1ファイル・外部参照 0。**パックごとに「⬇ .stpack」**（「どのパックにどの書体が入っているか」をパックの側から見る） |
-| `catalog/skins.json` | 上の見本のもとデータ（機械が読む用・53 種・書体 9 種） |
+| `catalog/skins.json` | 全 291 種のスキン目録（巻別データの正本）。`gallery/all-skins.html` は固定版由来の 53 種の見本 |
+| `catalog/upstream-skins.json` | 固定版 trk-PWA の 53 種のスナップショット。全スキン見本の生成・照合に使用 |
 | `gallery/pairings.html` | **書体の組み合わせ 14 組**の見本。題字・見出し・本文・注記は**本物の書体**で出て、**役ごとの書体・字間・行間、全体の倍率**をその場で変えられます（エディターの試作・設定を JSON で書き出し）。1ファイル・外部参照 0。もとデータは `catalog/typography.json` |
 | `catalog/fonts.json` | 書体の一覧のもとデータ（機械が読む用・29 パック・42 ウェイト） |
 | `catalog/typography.json` | 組み合わせのもとデータ（6 役・5 倍率・字間/行間の範囲・**4 段階の細分化**・14 組）。`tools/check-typography.mjs` が目録と突き合わせます |
@@ -396,7 +397,7 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 
 | 項目 | 結果 |
 | --- | --- |
-| `tools/export-skin-gallery.mjs` | trk-PWA（main・b79fa3c／trk230）の `js/data.js` + `js/characters/miku.js` から **53 種（書体 9 種）**。いまの `catalog/skins.json` と**中身が一致**（生成し直しても同じ） |
+| `tools/export-skin-gallery.mjs` | trk-PWA（main・b79fa3c／trk230）の `js/data.js` + `js/characters/miku.js` から **53 種（書体 9 種）**。`catalog/upstream-skins.json` と一致。拡張目録 `catalog/skins.json` にはこの 53 種を含む |
 | `tools/export-font-gallery.mjs` | 目録（`catalog/index.json`）から **書体の一覧と検索**（`gallery/fonts.html`・27,863 B）と `catalog/fonts.json` を作る。並べ替え・絞り込み・検索は HTML の中の JS（外部参照 0）。`--check` で今のファイルと一致するかを見る |
 | 見本 HTML の外部参照 | **0 件**（`https?://` を含まない。フォントも画像も外部から読まない） |
 | `tools/verify-pack.mjs` | 見本パックと書体パックの 2 件で合格。**壊れた ZIP・pack.json なし・色の形式違い・指すファイルの欠落・`..` のパス・日本語の family・OFL.txt なし・release の形違い**で、それぞれ不合格になることを確認 |
@@ -446,6 +447,16 @@ node tools/check-docs.mjs            # README の表・リンク・セットの�
 - 週に1回（日曜 21:00 UTC）、**固定しない `main`** でも同じ契約検査を回します（`upstream-main`）。
   相手側が先に進んでも、こちらが静かに壊れないようにするためです
 
+## 巻ごとにスキンを探す
+
+[巻別スキン一覧を開く](skin-volumes/index.html)と、vol.1〜10・glitch・wizard・その他から、巻ごと／1枚ずつ**元データ JSON**を取得できます（合計 291 種）。データは `catalog/skins.json` の抜粋で、書体ファイルは含みません。巻別見本と ID は `skin-volumes/volumes.json` で管理し、`node tools/export-skin-volumes.mjs` で再生成、`--check` で正本との差を検査します。
+
+**まだ trk-PWA 画面への直接インポート形式や巻一括パックではありません。** 取り込み口の相談案は [trk-PWA への文書](docs/2026-11-03-trk-pwa-スキン巻別受け入れの相談.md) にあります。既存の `gallery/skins-wizard.html` は旧 24 種の見本で、巻別 JSON の wizard は 62 種です。
+
+### Pages 公開の準備
+
+`node tools/prepare-pages.mjs` は公開候補を `dist/pages` に作ります（ターミナル画面・巻別データ・巻別見本のみ。書体パックや開発メモは含みません）。`.github/workflows/pages.yml` は **main からの手動実行専用**です。公開する場合は変更を確認・main に反映し、GitHub の Settings → Pages で Source を GitHub Actions にしてから、Actions の「Pages（手動公開）」を main で実行してください。これは公開準備であり、現在 Pages は有効化・公開されていません。公開前に配布対象・ライセンス・実機の操作を再確認してください。
+
 ## 10. トーク269 ターミナルの定番とWizardスキンシリーズ
 
 トーク269「ターミナルの定番とWizardスキン」は、trk-PWA の見た目をカスタマイズする **Wizardスキン（魔導書テーマ）** のシリーズです。モダンUX Phase 1〜9j まで完了し、Popover API 移行・トースト通知・ショートカットヘルプ・魔導書テーマスキンシリーズを実装しています。
@@ -487,64 +498,28 @@ node tools/check-docs.mjs            # README の表・リンク・セットの�
 - セキュリティ：辞書登録・スキンID・フォント名等に使用禁止文字（バッククォート、バックスラッシュ、`..`、`~`、`C:`）を拒否
 - colors は bg/panel/text/accent/gold の5色必須、prompt は1-4文字・クォート禁止、caret は #rgb/#rrggbb/currentColor、scan は 0-0.6
 
-### advance wizard 設定（Phase 10：Modern Web Guidance 準拠）
+### advance wizard 設定（Phase 10）
 
-設定パネルに追加された advance wizard 設定は、GoogleChrome/modern-web-guidance-src の思想に基づきます。各項目は**オプションでオンオフ可能**です。
+設定パネルでは以下の 10 項目をオン・オフできます。ブラウザに対応機能がない場合は通常表示に戻ります。値は `trk-advance-` で始まるキーに保存され、wizard 辞書のリセットで初期値に戻ります。
 
-#### 設定パネル構造・アニメーション
+| 設定 | localStorage キー | 初期値 | 内容 |
+|---|---|---|---|
+| パネル開閉アニメーション | `trk-advance-anim-enabled` | オン | パネルを開く際のフェードイン |
+| コンポーネント color-scheme | `trk-advance-component-color-scheme` | オフ | 設定パネルのブラウザ標準部品をダークにする |
+| accent-color | `trk-advance-accent-form-controls` | オン | 対応するフォーム部品にアクセント色を使う |
+| スクロールバー | `trk-advance-scrollbar-style` | オフ | スキン色と細い幅を使う |
+| テキスト選択色 | `trk-advance-selection-color` | オフ | 選択範囲にアクセント色を使う |
+| カスタムチェックボックス | `trk-advance-custom-form-controls` | オフ | 設定のチェックボックスの見た目を変更 |
+| フィールドサイズ | `trk-advance-field-sizing` | オフ | 対応ブラウザで入力内容に合わせる |
+| エッジフェード | `trk-advance-edge-fade` | オフ | スクロール可能な設定パネルの上下端をフェード |
+| OS コントラスト設定 | `trk-advance-contrast-mode` | オフ | 対応するユーザー設定に応じて表示を調整 |
+| バリデーション | `trk-advance-validation-style` | オフ | 対応ブラウザで操作済みフォームを装飾 |
 
-| 設定項目 | キー | デフォルト | 説明 | 出典 |
-|---------|------|-----------|------|------|
-| 設定パネル開閉アニメーション | `wizard.anim.enabled` | オン | `@starting-style` + `transition-behavior: allow-discrete` で開閉をスムーズにアニメーション | guides/ui-behaviors/animate-element-entry-exit |
-| prefers-reduced-motion 尊重 | `wizard.anim.reducedMotion` | オフ | OSの「動きを減らす」設定に応じて移動系アニメーションを無効化・フェードのみに短縮 | guides/ui-behaviors/animate-element-entry-exit（MANDATORY） |
-| 個別コンポーネント color-scheme | `wizard.theme.componentColorScheme` | オフ | 特定のコンポーネントだけを常にライト/ダークモードに固定（`color-scheme: only light/dark`） | guides/ui-atoms/component-specific-light-dark-theme |
-| フォームコントロール accent-color | `wizard.theme.accentFormControls` | オン | チェックボックス・ラジオ・スイッチ・セレクト等にスキンのアクセントカラーを適用 | guides/visual-design/browser-ui-theming |
+OS の `prefers-reduced-motion` は常に尊重します。手動で減らす場合は既存の「アニメーションを減らす」を使います。設定セクションは `details` / `summary` で個別・一括開閉できます。
 
-#### テーマ・カラー
-
-| 設定項目 | キー | デフォルト | 説明 | 出典 |
-|---------|------|-----------|------|------|
-| ベースカラーからティント・シェード生成 | `wizard.theme.colorRamp` | オフ | `relative-color()` / `oklab()` / `color-mix()` / `lab()` でベースカラーからバリエーションを生成 | guides/visual-design/color-ramps |
-| スクロールバーの色・太さ | `wizard.theme.scrollbarStyle` | オフ | `scrollbar-color` / `scrollbar-width` でスクロールバーをスキンカラーに統一 | guides/visual-design/browser-ui-theming |
-| テキスト選択範囲色 | `wizard.theme.selectionColor` | オフ | `::selection` でテキスト選択時のハイライト色をスキンのアクセントカラーに | guides/visual-design/browser-ui-theming |
-| カスタムチェックボックス/ラジオ/スイッチ | `wizard.theme.customFormControls` | オフ | `appearance: none` + 生成コンテンツでスキンカラーに合ったカスタムフォームコントロール | guides/visual-design/browser-ui-theming |
-| テキストフィールド連動サイズ | `wizard.theme.fieldSizing` | オフ | `field-sizing: content` で入力欄をコンテンツの長さに応じて自動リサイズ | guides/visual-design/browser-ui-theming |
-
-#### インタラクション・ナビゲーション
-
-| 設定項目 | キー | デフォルト | 説明 | 出典 |
-|---------|------|-----------|------|------|
-| コマンドパレット | `wizard.nav.commandPalette` | オフ | キーボードショートカットで設定項目を検索・ジャンプするコマンドパレット | guides/ui-behaviors（invoker commands）/ Modern Web Guidance core |
-| キーボードナビゲーションループ | `wizard.nav.focusLoop` | オフ | 設定パネル内のフォーカス移動をループさせるか、端で止めるか | Modern Web Guidance focusgroup / アクセシビリティガイド |
-| スクロールエッジフェード | `wizard.nav.edgeFade` | オフ | スクロール可能なエリアの端にフェードを付け、さらにスクロールできることを示唆 | Modern Web Guidance user-experience |
-| プルダウン隠しメニュー | `wizard.nav.pullToReveal` | オフ | プルダウンジェスチャーで隠し機能やショートカットを表示 | guides/ui-atoms/pull-to-reveal |
-| カーソルアニメーション（個別 transform） | `wizard.anim.cursorStyle` | オフ | カーソルやカレットのアニメーションを translate/rotate/scale で個別に制御 | Modern Web Guidance CSS ガイド |
-
-#### アクセシビリティ・ユーザー設定
-
-| 設定項目 | キー | デフォルト | 説明 | 出典 |
-|---------|------|-----------|------|------|
-| OS コントラスト設定に対応 | `wizard.a11y.contrastMode` | オフ | `prefers-contrast` / `prefers-reduced-transparency` に応じて UI を調整 | guides/accessibility/preference-aware-ui |
-| バリデーションスタイル（ユーザー操作後のみ） | `wizard.a11y.validationStyle` | オフ | `:user-valid` / `:user-invalid` で操作後のフィールドバリデーションのみをスタイリング | guides/visual-design/browser-ui-theming |
-| 隠しヒントの「ページ内検索」表示 | `wizard.a11y.hiddenHints` | オフ | `hidden="until-found"` で隠しヒントをマークアップし、ブラウザ検索で表示可能に | guides/ui-components/accordion |
-
-#### パフォーマンス・PWA
-
-| 設定項目 | キー | デフォルト | 説明 | 出典 |
-|---------|------|-----------|------|------|
-| トップレイヤー UI の永続化 | `wizard.perf.topLayer` | オフ | 設定パネルをトップレイヤー（popover / dialog）として固定し、DOM 移動後も表示を維持 | Modern Web Guidance user-experience |
-| PWA インストールプロンプト制御 | `wizard.pwa.installPrompt` | オフ | PWA インストールプロンプトの表示タイミングや頻度を制御 | guides/pwa |
-
-#### アコーディオン構造
-
-- 各設定セクションは `details`/`summary` でラップされ、個別に開閉可能
-- 「全展開」「全折りたたみ」ボタンで一括制御
-- `hidden="until-found"` + `beforematch` イベントで、ブラウザの「ページ内検索」時に該当セクションを自動展開
-- 出典：guides/ui-components/accordion
-
-各設定はローカルストレージに永続化され、`wizard 辞書` のリセットボタンでデフォルトに戻せます。
+レビューで動作しないと分かったコマンドパレット、フォーカスループ、色ランプ、プルダウン、隠しヒント、トップレイヤー、PWA プロンプトは一旦取り下げました。カーソルアニメーションも対象要素が存在しないため取り下げています。以前の保存キーは参照せず残します。
 
 ### 検証
 
-- `npm test`：CLI 標準テスト 1030/0、skin-contrast 244/0、Modern UX 21/0 合格
-- `npm run check`：62/62 スキンチェック合格
+- `npm ci && npm test`：CLI・skin-contrast・Modern UX と Chromium の操作テスト。ブラウザテストは Linux x64 の同梱 Chromium を使います（別の Chromium を使う場合は `CHROMIUM_PATH` を指定）。実行には NSS 等のシステムライブラリが必要です。
+- `npm run check`：291 種のうち CLI / Wizard 対象 62 種を検査（229 種は対象外）。この検査だけではすべての色の組み合わせを保証しません。trk-PWA v3 での確認と残課題は [レビュー対応メモ](docs/2026-11-03-issue35-review-response.md) を参照。

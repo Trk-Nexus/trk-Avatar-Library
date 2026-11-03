@@ -1,0 +1,51 @@
+{
+  "id": "quasar",
+  "label": {
+    "ja": "クエーサー",
+    "en": "Quasar",
+    "zh": "类星体",
+    "ko": "퀘이사"
+  },
+  "desc": {
+    "ja": "遠方宇宙の超高エネルギー、活動銀河核",
+    "en": "Distant universe ultra-high energy, active galactic nucleus",
+    "zh": "远方宇宙超高能量，活跃星系核",
+    "ko": "먼 우주의 초고에너지, 활동은하핵"
+  },
+  "cat": [
+    "dark",
+    "grad"
+  ],
+  "font": "\"Trajan Pro\",\"Papyrus\",fantasy",
+  "type": {
+    "title": "\"Trajan Pro\",fantasy",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".04em",
+    "titleTransform": "uppercase",
+    "mark": "あア漢 Aa 12"
+  },
+  "colors": {
+    "stage": "linear-gradient(180deg,#2c003e,#000000,#2c003e)",
+    "ink": "#e0e7ff",
+    "don": "#bb86fc",
+    "ka": "#03dac6",
+    "text": "#e0e7ff",
+    "muted": "#a8a8b8",
+    "bg": "#000000",
+    "panel": "rgba(0,0,0,.99)",
+    "field": "#0d0b1e",
+    "button": "#1a0f2a",
+    "accent": "#bb86fc",
+    "onAccent": "#000000",
+    "gold": "#03dac6",
+    "border": "rgba(187,134,252,.30)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "hue-rotate(270deg) saturate(1.4) brightness(.8) contrast(1.2)"
+}

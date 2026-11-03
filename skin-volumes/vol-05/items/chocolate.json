@@ -1,0 +1,43 @@
+{
+  "id": "chocolate",
+  "label": {
+    "ja": "ショコラ",
+    "en": "Chocolate",
+    "zh": "巧克力",
+    "ko": "초콜릿"
+  },
+  "desc": {
+    "ja": "濃厚なチョコレート、大人っぽい茶色",
+    "en": "Rich chocolate, adult brown",
+    "zh": "浓郁巧克力，成人色调的棕色",
+    "ko": "진한 초콜릿, 어른스러운 갈색"
+  },
+  "cat": [
+    "light",
+    "grad"
+  ],
+  "font": "",
+  "type": null,
+  "colors": {
+    "stage": "linear-gradient(180deg,#8d6e63,#4e342e)",
+    "ink": "#efebe9",
+    "don": "#ffab91",
+    "ka": "#bcaaa4",
+    "text": "#efebe9",
+    "muted": "#a1887f",
+    "bg": "linear-gradient(180deg,#d7ccc8,#bcaaa4)",
+    "panel": "rgba(255,255,255,.96)",
+    "field": "#ffffff",
+    "button": "#bcaaa4",
+    "accent": "#8d6e63",
+    "onAccent": "#efebe9",
+    "gold": "#ffe0b2",
+    "border": "rgba(141,110,99,.24)"
+  },
+  "shapes": [
+    "circle",
+    "circle"
+  ],
+  "locked": false,
+  "video": "sepia(.3) saturate(1.05) brightness(.95)"
+}

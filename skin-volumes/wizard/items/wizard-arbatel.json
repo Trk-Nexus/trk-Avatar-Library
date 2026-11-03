@@ -1,0 +1,63 @@
+{
+  "id": "wizard-arbatel",
+  "label": {
+    "ja": "アルバテル",
+    "en": "Arbatel of Magick",
+    "zh": "阿巴特尔魔术书",
+    "ko": "알바텔"
+  },
+  "desc": {
+    "ja": "7人の大天使を崇拝するクリスチャン白魔術、オリンピックの霊と調和",
+    "en": "Christian white magic venerating the seven archangels, Olympic spirits and harmony",
+    "zh": "尊崇七位大天使的基督教白魔术，奥林匹克之灵与和谐",
+    "ko": "7명의 대천사를 숭배하는 크리스천 백마술, 올림픽의 정령과 조화"
+  },
+  "cat": [
+    "wizard",
+    "life",
+    "grad"
+  ],
+  "font": "\"Caslon\",\"Garamond\",serif",
+  "type": {
+    "title": "\"Caslon\",serif",
+    "weight": "400",
+    "lh": "1.6",
+    "titleWeight": "600",
+    "titleSpace": ".03em",
+    "titleTransform": "",
+    "mark": "☆"
+  },
+  "colors": {
+    "stage": "#2c3e50",
+    "ink": "#ecf0f1",
+    "don": "#f1c40f",
+    "ka": "#3498db",
+    "text": "#ecf0f1",
+    "muted": "#b8c4d0",
+    "bg": "#1a252f",
+    "panel": "rgba(26,37,47,.97)",
+    "field": "#2c3e50",
+    "button": "#34495e",
+    "accent": "#3498db",
+    "onAccent": "#ffffff",
+    "gold": "#f1c40f",
+    "border": "rgba(52,152,219,.35)"
+  },
+  "shapes": [
+    "square",
+    "circle"
+  ],
+  "locked": false,
+  "video": "contrast(1.1) brightness(1.0)",
+  "cli": {
+    "font": "Cascadia Mono, Consolas, monospace",
+    "prompt": "☆",
+    "caret": "#3498db",
+    "scan": 0.13,
+    "cursor": "block",
+    "opacity": 1,
+    "history": 50,
+    "completion": "tab",
+    "bell": true
+  }
+}
