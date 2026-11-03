@@ -167,14 +167,14 @@ https://github.com/GoogleChrome/modern-web-guidance-src
 
 ## Phase 6: 設定隠蔽・ミニマルUX — 評価項目
 
-### E20. 設定パネルの隠蔽・展開
+### E20. 設定パネルの隠蔽・展開（Popover API 移行）
 | 項目 | 合格基準 |
 |------|----------|
-| 設定ボタン | ヘッダーに「設定」ボタン（⚙️）が1つのみ存在 |
-| 設定パネル | 通常時は非表示（hidden 属性）、クリックで展開 |
+| 設定ボタン | ヘッダーに「設定」ボタン（⚙️）が1つのみ存在、`popovertarget="settings-panel"` を設定 |
+| 設定パネル | `popover` 属性（ネイティブ Popover API）、通常時は非表示、`::backdrop` で背景ぼかし |
 | キーボードショートカット | Ctrl+K / Cmd+K で設定パネル展開、Esc で閉じる |
 | フォーカス管理 | 設定パネル展開時に「閉じる」ボタンにフォーカス、閉じる時に設定ボタンに戻る |
-| アクセシビリティ | role="dialog" aria-modal="true"、aria-label="設定" を設定 |
+| アクセシビリティ | role="dialog" aria-modal="true"、aria-label="設定" を設定、`toggle` イベントで aria-expanded を同期 |
 
 ### E21. ミニマルヘッダー
 | 項目 | 合格基準 |
@@ -238,6 +238,41 @@ https://github.com/GoogleChrome/modern-web-guidance-src
 
 ---
 
+## Phase 9: モダンUX 完結（Popover API / トースト通知 / ショートカットヘルプ / 魔導書テーマスキン）— 評価項目
+
+### E29. Popover API 移行（設定パネル・スキンピッカー）
+| 項目 | 合格基準 |
+|------|----------|
+| 設定パネル | `popover` 属性、`popovertarget="settings-panel"` でネイティブ開閉、`hidden` 属性不使用 |
+| スキンピッカー | `popover` 属性、`popovertarget="skin-picker-popover"` でネイティブ開閉 |
+| バックドロップ | `::backdrop` 擬似要素で背景ぼかし・暗転（.settings-backdrop 削除） |
+| 状態同期 | `toggle` イベントで `aria-expanded` を連動、`:popover-open` でスタイル制御 |
+
+### E30. トースト通知
+| 項目 | 合格基準 |
+|------|----------|
+| 実装 | `showToast(message, type)` でトースト表示、`role="status"` `aria-live="polite"` |
+| 自動閉じ | 3秒後にフェードアウトし DOM から削除 |
+| スタイル | `.toast--show` でスライドイン表示、type に応じた配色（info/success/error/warning） |
+
+### E31. キーボードショートカットヘルプ
+| 項目 | 合格基準 |
+|------|----------|
+| 実装 | `?` キーでショートカット一覧ポップオーバーを表示、`popover` 属性 |
+| 閉じる | `popovertargetaction="hide"` または Esc キーで閉じる、フォーカスをトグルボタンに戻す |
+| 一覧 | Ctrl+K/Cmd+K（設定開閉）、Esc（パネル閉じる）、↓/↑（スキンナビゲート）、Enter/Space（スキン適用）、?（ヘルプ） |
+
+### E32. 魔導書テーマスキンシリーズ（グリモワール等）追加
+| 項目 | 合格基準 |
+|------|----------|
+| スキン追加 | `catalog/skins.json` に魔導書テーマスキンを追加、`js/skins-wizard.js` は import ツールで生成 |
+| 必須色 | colors に bg/panel/text/accent/gold の5色を定義 |
+| CLI 操作感 | cli オブジェクトに font/prompt（1-4文字、クォート無）/caret（#rgb/#rrggbb/currentColor）/scan（0-0.6）を定義 |
+| セキュリティ | ID・値に ` ` `\` `..` `~` `C:` を含まない |
+| 検証 | `npm run check` の全 wizard スキンチェック合格、skin-contrast テスト合格 |
+
+---
+
 ## 合格/不合格の判定
 - すべての評価項目が「合格」ならフェーズ完了
 - 1 つでも「不合格」なら修正後、再評価
@@ -250,3 +285,4 @@ https://github.com/GoogleChrome/modern-web-guidance-src
 | 2026-11-03 | Phase 6 評価項目（E20〜E23）を追加。 |
 | 2026-11-03 | Phase 7 評価項目（E24）を追加。 |
 | 2026-11-03 | Phase 8 評価項目（E25〜E28）を追加。 |
+| 2026-11-03 | Phase 9 評価項目（E29〜E32：Popover API 移行、トースト通知、ショートカットヘルプ、魔導書テーマスキン）を追加。 |

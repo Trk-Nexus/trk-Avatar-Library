@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // 自動生成: tools/import-skin-catalog.mjs --cat=wizard
 // 入力: catalog/skins.json（手編集禁止）
-// 生成日時: 2026-11-03T01:17:20.725Z
-// スキン数: 24
+// 生成日時: 2026-11-03T04:01:24.478Z
+// スキン数: 28
 
 const SKINS_WIZARD = [
   {
@@ -117,6 +117,58 @@ const SKINS_WIZARD = [
     locked: false,
     video: "sepia(.35) contrast(1.15) brightness(.9)",
     cli: {"font":"Trajan Pro, Garamond, serif","prompt":">","caret":"#d4af37","scan":0.08,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-grimoire-aureate",
+    label: {"ja":"黄金の魔導書","en":"Grimoire Aureate","zh":"黄金之魔导书","ko":"황금의 마도서"},
+    desc: {"ja":"金箔押しの魔導書、錬金術師の秘録","en":"Gold-leaf grimoire, alchemist’s secret record","zh":"金箔装饰魔导书，炼金术师秘录","ko":"금박 인쇄 마도서, 연금술사 비급"},
+    cat: ["wizard","grad","light"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"あア漢 Aa"},
+    colors: {"stage":"#4a3a1a","ink":"#f0e6d2","don":"#d4af37","ka":"#c5a059","text":"#f0e6d2","muted":"#c9b18a","bg":"#3e2f14","panel":"rgba(62,47,20,.96)","field":"#4a3a1a","button":"#5d4524","accent":"#d4af37","onAccent":"#000000","gold":"#ffe082","border":"rgba(212,175,55,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "sepia(.2) saturate(1.15) brightness(1.05)",
+    cli: {"font":"Cinzel, Trajan Pro, serif","prompt":"✦","caret":"#d4af37","scan":0.18,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-grimoire-celestial",
+    label: {"ja":"天球の魔導書","en":"Grimoire Celestial","zh":"天球之魔导书","ko":"천구의 마도서"},
+    desc: {"ja":"星図を描いた魔導書、星座が導く魔術","en":"Grimoire painted with star charts, constellations guide the magic","zh":"绘有星图的魔导书，星座引导魔术","ko":"별자리를 그린 마도서, 별자리가 이끄는 마법"},
+    cat: ["wizard","grad","light"],
+    font: "\"Playfair Display\",\"Noto Serif JP\",serif",
+    type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"あア漢 Aa"},
+    colors: {"stage":"#0b1026","ink":"#dce6ff","don":"#7aa2ff","ka":"#9fbbff","text":"#dce6ff","muted":"#b8c8f0","bg":"#090d1c","panel":"rgba(9,13,28,.96)","field":"#0b1026","button":"#1a2440","accent":"#7aa2ff","onAccent":"#000000","gold":"#e0c38c","border":"rgba(122,162,255,.35)"},
+    shapes: ["circle","circle"],
+    locked: false,
+    video: "saturate(1.2) contrast(1.15) brightness(1.05)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"★","caret":"#7aa2ff","scan":0.12,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-grimoire-noir",
+    label: {"ja":"黒の魔導書","en":"Grimoire Noir","zh":"黑之魔导书","ko":"흑의 마도서"},
+    desc: {"ja":"羊皮紙と黒革の魔導書、禁忌の呪文が刻まれる","en":"Parchment and black leather grimoire, forbidden spells inscribed","zh":"羊皮纸与黑皮魔导书，刻印禁忌咒语","ko":"양피지와 흑색 가죽 마도서, 금기의 주문 각인"},
+    cat: ["wizard","dark","access"],
+    font: "\"Caslon\",\"Garamond\",serif",
+    type: {"title":"\"Caslon\",serif","weight":"400","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"☿ ☽ ♀"},
+    colors: {"stage":"#141210","ink":"#d4c7b8","don":"#8b0000","ka":"#a67c52","text":"#d4c7b8","muted":"#a89684","bg":"#100e0a","panel":"rgba(16,14,10,.97)","field":"#141210","button":"#241e18","accent":"#8b0000","onAccent":"#ffffff","gold":"#d4af37","border":"rgba(139,0,0,.35)"},
+    shapes: ["circle","square"],
+    locked: false,
+    video: "sepia(.3) contrast(1.15) brightness(.9)",
+    cli: {"font":"Cascadia Mono, Consolas, monospace","prompt":"🔮","caret":"#8b0000","scan":0.15,"cursor":"block","opacity":1,"history":50,"completion":"tab","bell":true},
+  },
+  {
+    id: "wizard-grimoire-umbra",
+    label: {"ja":"影の魔導書","en":"Grimoire Umbra","zh":"影之魔导书","ko":"그림자의 마도서"},
+    desc: {"ja":"闇に沈む魔導書、影獣がうごめくページ","en":"Grimoire sunk in darkness, shadow beasts stir in the pages","zh":"沉没在黑暗中的魔导书，影兽蠢动的书页","ko":"어둠에 잠긴 마도서, 그림자 짐승이 꿈틀하는 페이지"},
+    cat: ["wizard","dark","fun"],
+    font: "\"Cinzel\",\"Trajan Pro\",serif",
+    type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"✧ UMBRA ✧"},
+    colors: {"stage":"#0a0a12","ink":"#c8d0e0","don":"#6b5b95","ka":"#8b7cb8","text":"#c8d0e0","muted":"#9aa0b8","bg":"#06060c","panel":"rgba(6,6,12,.97)","field":"#0a0a12","button":"#1a1a24","accent":"#6b5b95","onAccent":"#ffffff","gold":"#b8a040","border":"rgba(107,91,149,.35)"},
+    shapes: ["square","diamond"],
+    locked: false,
+    video: "hue-rotate(240deg) saturate(.9) contrast(1.25) brightness(.85)",
+    cli: {"font":"Courier New, Courier, monospace","prompt":"☽","caret":"#6b5b95","scan":0.2,"cursor":"block","opacity":0.9,"history":50,"completion":"tab","bell":true},
   },
   {
     id: "wizard-hermetic",

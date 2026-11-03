@@ -202,6 +202,30 @@ npm run check / テスト各種 + モダン UX EVALS 基準を満たすことを
 #### 8-4. FOUC 対策（テーマの即座適用）
 `<head>` 内のインラインスクリプトで `localStorage` からテーマを読み込み、`data-theme` と `color-scheme` を CSS 読み込み前に即座に設定。テーマのちらつきを防止。
 
+### Phase 9: モダンUX 完結（Popover API / トースト通知 / ショートカットヘルプ / 魔導書テーマスキン）（完了）
+
+#### 9-1. Popover API 移行（設定パネル・スキンピッカー）
+`hidden` 属性による開閉をネイティブ Popover API に移行。
+- 設定パネル：`popover` 属性、`popovertarget="settings-panel"` で開閉トグル。`::backdrop` で背景ぼかし・暗転。`.settings-backdrop` 要素を削除。
+- スキンピッカー：`popover` 属性、`popovertarget="skin-picker-popover"` で開閉トグル。`position: absolute` + `anchor-name: --skin-picker` でトグルボタンにアンカー。
+- JS：`showPopover()` / `hidePopover()` を使用。`toggle` イベントで `aria-expanded` を連動。`:popover-open` 擬似クラスで開閉アニメーション。
+- キーボード：Ctrl+K / Cmd+K で設定開閉、Esc で閉じる。
+
+#### 9-2. トースト通知
+`showToast(message, type = "info")` を実装。`role="status"` `aria-live="polite"` のトーストを画面下部中央に表示し、3秒後にフェードアウトして DOM から削除。type は info/success/error/warning。
+
+#### 9-3. ベル音（AudioContext 生成）
+`playBell()` を AudioContext で生成（オシレーター + ゲイン、周波数 880Hz→1760Hz の swept sine、0.3秒）。外部音声ファイル不要。`js/cli.js` の `CliBell` も AudioContext で実装済み。
+
+#### 9-4. キーボードショートカットヘルプ
+`?` キーでショートカット一覧ポップオーバー（`popover` 属性、role="dialog"）を表示。`popovertargetaction="hide"` で閉じ、フォーカスを閉じるボタンに移動。一覧は表形式でキーと操作を記載。
+
+#### 9-5. 魔導書テーマスキンシリーズ（グリモワール等）追加
+`catalog/skins.json` に魔導書テーマスキン 4 種を追加し、`tools/import-skin-catalog.mjs --cat=wizard` で `js/skins-wizard.js` を再生成。
+- `wizard-grimoire-noir`（黒の魔導書、dark/access）、`wizard-grimoire-aureate`（黄金の魔導書、grad/light）、`wizard-grimoire-umbra`（影の魔導書、dark/fun）、`wizard-grimoire-celestial`（天球の魔導書、grad/light）
+- colors に bg/panel/text/accent/gold の5色を定義。cli オブジェクトに prompt（1-4文字、クォート無）、caret（#rrggbb）、scan（0-0.6）を定義。
+- スキン総数 257 種、wizard 28 種、CLI 対応 wizard 16 種。
+
 ## 関連ファイル
 
 | ファイル | 役割 |
@@ -210,11 +234,14 @@ npm run check / テスト各種 + モダン UX EVALS 基準を満たすことを
 | docs/CONTEXT.md | 設計原則・受入条件 |
 | docs/EVALS.md | 評価項目・合格基準 |
 | docs/modern-ux.md | 実装ガイド（本ファイル） |
-| css/style.css | モダンカラースキーム・アンカーポジショニング・レスポンシブスタイル |
-| index.html | テーマ切替・スキンピッカー・スキンプレビュー・PWA 登録・Core Web Vitals 測定 |
+| css/style.css | モダンカラースキーム・アンカーポジショニング・レスポンシブスタイル・Popover/トースト/ショートカットヘルプスタイル |
+| index.html | テーマ切替・スキンピッカー・スキンプレビュー・PWA 登録・Core Web Vitals 測定・トースト・ショートカットヘルプ |
 | sw.js | Service Worker キャッシュ戦略・オフラインフォールバック |
 | manifest.json | PWA マニフェスト |
+| js/skins-wizard.js | wizard スキン定義（catalog/skins.json から import ツールで生成、手編集禁止） |
+| catalog/skins.json | スキンカタログ（export-skin-gallery.mjs 生成物、スキン定義の提供元） |
 | tests/modern-ux.test.mjs | モダン UX 自動テスト |
+| tests/trk269-cli-standard.test.mjs | trk269 CLI 標準テスト |
 
 ## 変更履歴
 
@@ -224,4 +251,5 @@ npm run check / テスト各種 + モダン UX EVALS 基準を満たすことを
 | 2026-11-03 | Phase 6 実装手順を追加。 |
 | 2026-11-03 | Phase 7 実装手順を追加。 |
 | 2026-11-03 | Phase 8 実装手順を追加。 |
+| 2026-11-03 | Phase 9 実装手順を追加（Popover API 移行、トースト通知、ショートカットヘルプ、魔導書テーマスキンシリーズ）。 |
 
