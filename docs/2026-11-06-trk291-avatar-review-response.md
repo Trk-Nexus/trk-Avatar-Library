@@ -1,5 +1,7 @@
 # trk-PWA trk291 への検討・レビュー用のお返事案
 
+> この文書は PR #37 時点の記録です。最新の対応は [trk291 レビュー対応メモ](2026-11-06-trk291-review-followup.md) を参照してください。
+
 - 対象：Drive `AVATAR-CONSULT-TRK290-2026-11-06.md`／`LETTER-TRK273`／`SKIN-RETURN-TRK274`／`LETTER-TRK275` 以降。
 - 照合した trk-PWA main：`b5e4a885163678933129cfbf4c158d37a2e84d59`。相談文の表題は trk290、本文末尾と実コードの cache は **trk291**。相談文中の `16e2d33` 等とは別の、今回の最新 main を固定した。
 - PWA が受け取った旧目録 SHA-256：`8299b6045a0ef4986b672ce76b9cfa7e34e9065d791732bf642b777ce3162e46`。

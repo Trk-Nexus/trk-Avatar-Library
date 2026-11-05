@@ -129,7 +129,7 @@ VOL4_SKINS = [
         "desc": {
             "ja": "日本語ウェブの定番、バランスの取れた角ゴシック",
             "en": "Japanese web standard, balanced gothic",
-            "zh": "日语网页标准，均衡的角ゴシック",
+            "zh": "日语网页常用的均衡黑体",
             "ko": "일본어 웹 표준, 균형 잡힌 고딕"
         },
         "cat": ["type", "basic"],
@@ -168,13 +168,13 @@ VOL4_SKINS = [
         "label": {
             "ja": "ヒラギノ角ゴ",
             "en": "Hiragino Kaku Gothic",
-            "zh": "椿圆角ゴシック",
+            "zh": "Hiragino 角黑体",
             "ko": "히라기노 각 고딕"
         },
         "desc": {
             "ja": "macOS の定番、丸みを帯びた上品な角ゴシック",
             "en": "macOS standard, rounded elegant gothic",
-            "zh": "macOS 标准，圆润优雅的角ゴシック",
+            "zh": "macOS 常用的圆润优雅的角黑体",
             "ko": "macOS 표준, 둥글고 우아한 각 고딕"
         },
         "cat": ["type", "light"],
@@ -807,17 +807,17 @@ VOL5_SKINS = [
         "type": None,
         "colors": {
             "stage": "linear-gradient(180deg,#8d6e63,#4e342e)",
-            "ink": "#efebe9",
+            "ink": "#ffffff",
             "don": "#ffab91",
             "ka": "#bcaaa4",
-            "text": "#efebe9",
-            "muted": "#a1887f",
+            "text": "#25130f",
+            "muted": "#54382f",
             "bg": "linear-gradient(180deg,#d7ccc8,#bcaaa4)",
             "panel": "rgba(255,255,255,.96)",
             "field": "#ffffff",
             "button": "#bcaaa4",
             "accent": "#8d6e63",
-            "onAccent": "#efebe9",
+            "onAccent": "#ffffff",
             "gold": "#ffe0b2",
             "border": "rgba(141,110,99,.24)"
         },
@@ -1188,7 +1188,7 @@ VOL5_SKINS = [
             "ink": "#753a08",
             "don": "#ffcc80",
             "ka": "#ffe0b2",
-            "text": "#753a08",
+            "text": "#4a2605",
             "muted": "#814516",
             "bg": "#ffe082",
             "panel": "rgba(255,255,255,.96)",
@@ -1262,7 +1262,7 @@ VOL5_SKINS = [
             "ink": "#743000",
             "don": "#ffd54f",
             "ka": "#ffe082",
-            "text": "#743000",
+            "text": "#4a1f00",
             "muted": "#804000",
             "bg": "linear-gradient(180deg,#ffecb3,#ffe082)",
             "panel": "rgba(255,255,255,.96)",
@@ -1336,7 +1336,7 @@ VOL5_SKINS = [
             "ink": "#704019",
             "don": "#ffd54f",
             "ka": "#ffe082",
-            "text": "#704019",
+            "text": "#472810",
             "muted": "#7b4720",
             "bg": "#fff59d",
             "panel": "rgba(255,255,255,.96)",

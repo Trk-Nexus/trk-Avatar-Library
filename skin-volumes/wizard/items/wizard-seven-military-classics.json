@@ -7,10 +7,10 @@
     "ko": "무경칠서"
   },
   "desc": {
-    "ja": "孫子・六韜・三略・司馬法・尉繚子・三略・太公六韜を含む七種の軍事書集成",
-    "en": "Seven Military Classics including Sun Tzu, Six Secret Teachings, Three Strategies and more",
-    "zh": "包括孙子、六韬、三略、司马法、尉繚子等七种军事书的集成",
-    "ko": "손자·육도·삼략·사마법·위료자 등을 포함한 7종의 군사서 집성"
+    "ja": "孫子・呉子・司馬法・尉繚子・李衛公問対・三略・六韜の七つの兵書",
+    "en": "Seven Chinese military classics, including Sunzi and Wuzi",
+    "zh": "孙子、吴子、司马法、尉缭子、李卫公问对、三略与六韬七部兵书",
+    "ko": "손자·오자·사마법·위료자·이위공문대·삼략·육도의 일곱 병서"
   },
   "cat": [
     "wizard",

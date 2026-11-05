@@ -153,6 +153,20 @@ try {
       assert.ok(await page.locator('.card').count() >= 1, group.id + ': search');
     }
   }
+  await page.goto(base + prefix + 'index.html');
+  const wizardText = await page.evaluate(async () => {
+    const m = await import('./js/skins-wizard.js');
+    return m.SKINS_WIZARD.find(s => s.id === 'wizard-seven-military-classics').desc.ja;
+  });
+  for (const name of ['孫子','呉子','司馬法','尉繚子','李衛公問対','三略','六韜']) assert.equal(wizardText.split(name).length - 1, 1);
+  await page.goto(base + prefix + 'gallery/skins-casino.html');
+  await page.locator('#q').fill('house-edge');
+  assert.equal(await page.locator('.card').count(), 1);
+  assert.ok(await page.locator('.readability-warning').isVisible());
+  assert.match(await page.locator('.readability-warning').innerText(), /見づらさを意図/);
+  await page.goto(base + prefix + 'skin-volumes/index.html');
+  await page.locator('.volume').filter({hasText:'vol.7'}).locator('summary').click();
+  assert.match(await page.locator('.volume li').filter({hasText:'house-edge'}).innerText(), /見づらさを意図/);
   assert.deepEqual(errors, []);
   console.log('✅ advance wizard: Chromium behavior, persistence, XSS, subpath and offline');
   await context.close();

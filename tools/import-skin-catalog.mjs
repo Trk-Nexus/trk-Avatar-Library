@@ -3,14 +3,14 @@
 // trk269: catalog/skins.json から js/skins-wizard.js を生成（v2）
 //
 // 使い方:
-//   node tools/import-skin-catalog.mjs --cat=wizard
+//   node tools/import-skin-catalog.mjs --cat=wizard [--check]
 //
 // 出力: js/skins-wizard.js（手編集禁止）
 //   catalog/skins.json 内の指定カテゴリに属するスキンを抽出し、
 //   ES モジュール形式でエクスポートする。
 //
 // 注意:
-//   --cli-only は使用しない（24 種全入力）。
+//   --cli-only は使用しない（該当カテゴリを全件入力）。
 //   生成物は js/skins-wizard.js のみ。index.html で
 //   js/characters/miku.js の直後に読み込むこと。
 
@@ -61,15 +61,11 @@ if (invalid.length > 0) {
 // スキンを id 順にソート
 skins.sort((a, b) => a.id.localeCompare(b.id));
 
-// 生成日時
-const now = new Date().toISOString();
-
 // js/skins-wizard.js を生成
 const lines = [];
 lines.push("// SPDX-License-Identifier: GPL-3.0-or-later");
 lines.push("// 自動生成: tools/import-skin-catalog.mjs --cat=" + cat);
 lines.push("// 入力: catalog/skins.json（手編集禁止）");
-lines.push("// 生成日時: " + now);
 lines.push("// スキン数: " + skins.length);
 lines.push("");
 lines.push("const SKINS_WIZARD = [");
@@ -97,8 +93,17 @@ lines.push("");
 lines.push("export { SKINS_WIZARD };");
 lines.push("");
 
+const output = lines.join("\n");
+if (args.includes("--check")) {
+  if (!fs.existsSync(outputPath) || fs.readFileSync(outputPath, "utf8") !== output) {
+    console.error(`不一致: ${outputPath}`);
+    process.exit(1);
+  }
+  console.log(`✅ ${outputPath} は目録と一致（${skins.length} 種）`);
+  process.exit(0);
+}
 fs.mkdirSync("js", { recursive: true });
-fs.writeFileSync(outputPath, lines.join("\n"), "utf-8");
+fs.writeFileSync(outputPath, output, "utf-8");
 
 console.log(`生成完了: ${outputPath}`);
 console.log(`カテゴリ: ${cat}`);

@@ -449,6 +449,8 @@ node tools/check-docs.mjs            # README の表・リンク・セットの�
 
 ## trk-PWA trk291 の照合
 
+最新のレビュー対応・PWA連携待ちの内容は [trk291 レビュー対応メモ](docs/2026-11-06-trk291-review-followup.md) を参照してください。
+
 [差し戻し・受け入れ方針へのレビュー案](docs/2026-11-06-trk291-avatar-review-response.md)。PWA の固定 checkout を `TRK_PWA` に指定して `npm run check:pwa-skins` で生成・色検査を再現できます。既知の差し戻しは未解決として報告します。
 
 ## 巻ごとにスキンを探す
