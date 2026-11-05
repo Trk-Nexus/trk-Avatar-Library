@@ -28,8 +28,8 @@ permissions:
   contents: write
 
 env:
-  # trk240（7344111）。check.yml と同じ版にそろえる（セットの作りは版に依らないが、記録を1か所にする）
-  TRK_PWA_REF: 6f60e234fca63cf47a2cba4bbcd954ee3850dacd
+  # trk291。check.yml と同じ版にそろえる
+  TRK_PWA_REF: b5e4a885163678933129cfbf4c158d37a2e84d59
 
 jobs:
   attach:

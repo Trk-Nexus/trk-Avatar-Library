@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Cache only this application's assets; never delete a sibling application's caches.
 const CACHE_PREFIX = "trk-avatar-library-";
-const CACHE_NAME = `${CACHE_PREFIX}2026-11-03-review35`;
+const CACHE_NAME = `${CACHE_PREFIX}2026-11-06-trk290-review`;
 const BASE = self.registration.scope;
 const STATIC_ASSETS = [
   "./", "./index.html", "./css/style.css", "./js/core.js", "./js/data.js",

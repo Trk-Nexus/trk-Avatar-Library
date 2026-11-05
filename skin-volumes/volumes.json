@@ -257,7 +257,8 @@
     {
       "id": "wizard",
       "title": "wizard ウィザード",
-      "category": "wizard"
+      "category": "wizard",
+      "preview": "gallery/skins-wizard.html"
     },
     {
       "id": "other",

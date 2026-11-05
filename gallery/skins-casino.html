@@ -922,7 +922,7 @@
       catDiv.textContent = s.cat.map(x => CAT[x] || x).join("  ");
       el.append(meta, dots, name, nameEn, spec, desc, catDiv);
       grid.appendChild(el);
-    };
+    });
   }
   const chips = document.getElementById("chips");
   ORDER.forEach(k => {
