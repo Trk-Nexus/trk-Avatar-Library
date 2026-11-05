@@ -5,6 +5,7 @@
 
 import json
 import sys
+import os
 from html import escape
 
 CAT = {
@@ -26,6 +27,13 @@ ORDER = ["all", "basic", "type", "miku", "dark", "light", "grad", "fun", "access
 
 
 def main():
+    if sys.argv[1:] == ["--wizard-all"] or sys.argv[1:] == ["--wizard-all", "--check"]:
+        with open("catalog/skins.json", encoding="utf-8") as f:
+            wizard_ids = [s["id"] for s in json.load(f)["skins"] if "wizard" in s.get("cat", [])]
+        sys.argv = [sys.argv[0], "wizard", "ウィザード・オカルト・呪術実験 vol.wizard", *wizard_ids] + (["--check"] if "--check" in sys.argv else [])
+    check = "--check" in sys.argv
+    if check:
+        sys.argv.remove("--check")
     if len(sys.argv) < 4:
         print("使い方: python generate-theme-gallery.py <theme_name> <title_ja> <skin_id1> <skin_id2> ...")
         print("例: python generate-theme-gallery.py jewel \"宝石・鉱石 vol.2\" ruby sapphire emerald ...")
@@ -172,7 +180,7 @@ def main():
       catDiv.textContent = s.cat.map(x => CAT[x] || x).join("  ");
       el.append(meta, dots, name, nameEn, spec, desc, catDiv);
       grid.appendChild(el);
-    }};
+    }});
   }}
   const chips = document.getElementById("chips");
   ORDER.forEach(k => {{
@@ -218,10 +226,15 @@ def main():
     html = html.replace("__ORDER_JSON__", order_json)
 
     out = f"gallery/skins-{theme}.html"
-    with open(out, "w", encoding="utf-8") as f:
-        f.write(html)
-
-    print(f"✅ {out} を書き出しました（{len(theme_skins)}種）")
+    if check:
+        if not os.path.isfile(out) or open(out, encoding="utf-8").read() != html:
+            print(f"不一致: {out}", file=sys.stderr)
+            sys.exit(1)
+        print(f"✅ {out} は最新です（{len(theme_skins)}種）")
+    else:
+        with open(out, "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"✅ {out} を書き出しました（{len(theme_skins)}種）")
 
 
 if __name__ == "__main__":

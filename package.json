@@ -5,10 +5,11 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "check": "node tools/check-cli-skin.mjs catalog/skins.json --catalog --json && node tools/check-repo.mjs",
-    "test": "node tests/trk269-cli-standard.test.mjs && node tests/skin-contrast.test.mjs && node tests/modern-ux.test.mjs && node tests/skin-volumes.test.mjs && npm run test:browser",
+    "test": "node tests/trk269-cli-standard.test.mjs && node tests/skin-contrast.test.mjs && node tests/modern-ux.test.mjs && node tests/skin-volumes.test.mjs && node tests/pwa-skin-compat.test.mjs && node tests/review-sweets.test.mjs && npm run test:browser",
     "import:skins": "node tools/import-skin-catalog.mjs --cat=wizard",
     "test:browser": "node tests/advance-browser.test.mjs",
-    "volumes": "node tools/export-skin-volumes.mjs"
+    "volumes": "node tools/export-skin-volumes.mjs",
+    "check:pwa-skins": "node tools/check-pwa-skin-compat.mjs"
   },
   "repository": {
     "type": "git",

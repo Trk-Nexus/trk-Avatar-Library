@@ -138,6 +138,21 @@ try {
   const itemUrl = await wizard.locator('li a').first().getAttribute('href');
   const item = await (await page.request.get(new URL(itemUrl, page.url()).href)).json();
   assert.deepEqual(item, volume.skins[0]);
+  await wizard.locator('a').filter({hasText:'見本を見る'}).click();
+  assert.equal(await page.locator('.card').count(), 62);
+  await page.locator('#q').fill('wizard-abramelin');
+  assert.equal(await page.locator('.card').count(), 1);
+  assert.ok((await page.locator('.card').innerText()).includes('wizard-abramelin'));
+  // Every linked volume preview must execute and render its whole catalog on mobile.
+  const definitions = JSON.parse(await readFile(resolve(root, 'skin-volumes/volumes.json'), 'utf8'));
+  for (const group of definitions.groups.filter(g => g.preview)) {
+    await page.goto(base + prefix + group.preview);
+    assert.equal(await page.locator('.card').count(), group.id === 'wizard' ? 62 : group.ids.length, group.id);
+    if (group.ids) {
+      await page.locator('#q').fill(group.ids[0]);
+      assert.ok(await page.locator('.card').count() >= 1, group.id + ': search');
+    }
+  }
   assert.deepEqual(errors, []);
   console.log('✅ advance wizard: Chromium behavior, persistence, XSS, subpath and offline');
   await context.close();

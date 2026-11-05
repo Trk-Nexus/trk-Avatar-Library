@@ -13,10 +13,10 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
-  # （2026-11-02 から trk256 = f80e1de。r10 で上げました）
+  # trk291 の main を固定（2026-11-06 照合）。
   # （trk240 = 7344111。アプリ側の受け入れ道具 tools/check-set.mjs に --json が入り、
   #   呼び方・終了コード・--json の項目・--have の形が「契約」として書面に固定された版）
-  TRK_PWA_REF: 6f60e234fca63cf47a2cba4bbcd954ee3850dacd
+  TRK_PWA_REF: b5e4a885163678933129cfbf4c158d37a2e84d59
 
 jobs:
   check:
@@ -82,6 +82,16 @@ jobs:
         env:
           TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: node tools/export-skin-gallery.mjs --trk="$TRK_PWA" --check
+
+      - name: 巻別・Wizard の PWA 取り込みと差し戻し回帰
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: npm run check:pwa-skins
+
+      - name: Wizard 全件見本が目録と一致するか
+        working-directory: trk-Avatar-Library
+        run: python3 tools/generate-theme-gallery.py --wizard-all --check
 
       - name: 書体の一覧と検索が目録と一致するか
         run: node trk-Avatar-Library/tools/export-font-gallery.mjs --check

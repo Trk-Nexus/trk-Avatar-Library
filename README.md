@@ -442,16 +442,20 @@ node tools/build-set.mjs sets/font-set.json --check            # 書体セット
 node tools/check-docs.mjs            # README の表・リンク・セットの記録
 ```
 
-- 相手側（trk-PWA）は **`TRK_PWA_REF` で版を固定**して取ってきます（いまは trk-PWA の `d93d98b`＝trk252 まで）。
+- 相手側（trk-PWA）は **`TRK_PWA_REF` で版を固定**して取ってきます（いまは trk-PWA の `b5e4a88`＝trk291）。
   上げるときは `.github/workflows/check.yml` の `env` の1行を変えます
 - 週に1回（日曜 21:00 UTC）、**固定しない `main`** でも同じ契約検査を回します（`upstream-main`）。
   相手側が先に進んでも、こちらが静かに壊れないようにするためです
+
+## trk-PWA trk291 の照合
+
+[差し戻し・受け入れ方針へのレビュー案](docs/2026-11-06-trk291-avatar-review-response.md)。PWA の固定 checkout を `TRK_PWA` に指定して `npm run check:pwa-skins` で生成・色検査を再現できます。既知の差し戻しは未解決として報告します。
 
 ## 巻ごとにスキンを探す
 
 [巻別スキン一覧を開く](skin-volumes/index.html)と、vol.1〜10・glitch・wizard・その他から、巻ごと／1枚ずつ**元データ JSON**を取得できます（合計 291 種）。データは `catalog/skins.json` の抜粋で、書体ファイルは含みません。巻別見本と ID は `skin-volumes/volumes.json` で管理し、`node tools/export-skin-volumes.mjs` で再生成、`--check` で正本との差を検査します。
 
-**まだ trk-PWA 画面への直接インポート形式や巻一括パックではありません。** 取り込み口の相談案は [trk-PWA への文書](docs/2026-11-03-trk-pwa-スキン巻別受け入れの相談.md) にあります。既存の `gallery/skins-wizard.html` は旧 24 種の見本で、巻別 JSON の wizard は 62 種です。
+**trk-PWA 開発用の取り込み道具はこの JSON を受け取れますが、画面からの巻一括インポート機能やパックではありません。** 取り込み口の相談案は [trk-PWA への文書](docs/2026-11-03-trk-pwa-スキン巻別受け入れの相談.md) にあります。`gallery/skins-wizard.html` は現在の wizard カテゴリ全 62 種の見本です（アプリ本体のスキン選択画面とは別）。
 
 ### Pages 公開の準備
 
@@ -468,7 +472,7 @@ node tools/check-docs.mjs            # README の表・リンク・セットの�
 | スキン総数 | 291 種 |
 | wizard カテゴリ | 62 種 |
 | CLI 対応 wizard スキン | 50 種 |
-| TRK_PWA_REF | `6f60e234fca63cf47a2cba4bbcd954ee3850dacd`（40 桁） |
+| TRK_PWA_REF | `b5e4a885163678933129cfbf4c158d37a2e84d59`（trk291・40 桁） |
 
 ### 魔導書テーマスキンシリーズ
 
