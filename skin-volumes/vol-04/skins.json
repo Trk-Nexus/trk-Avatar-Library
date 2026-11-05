@@ -116,7 +116,7 @@
       "desc": {
         "ja": "日本語ウェブの定番、バランスの取れた角ゴシック",
         "en": "Japanese web standard, balanced gothic",
-        "zh": "日语网页标准，均衡的角ゴシック",
+        "zh": "日语网页常用的均衡黑体",
         "ko": "일본어 웹 표준, 균형 잡힌 고딕"
       },
       "cat": [
@@ -161,13 +161,13 @@
       "label": {
         "ja": "ヒラギノ角ゴ",
         "en": "Hiragino Kaku Gothic",
-        "zh": "椿圆角ゴシック",
+        "zh": "Hiragino 角黑体",
         "ko": "히라기노 각 고딕"
       },
       "desc": {
         "ja": "macOS の定番、丸みを帯びた上品な角ゴシック",
         "en": "macOS standard, rounded elegant gothic",
-        "zh": "macOS 标准，圆润优雅的角ゴシック",
+        "zh": "macOS 常用的圆润优雅的角黑体",
         "ko": "macOS 표준, 둥글고 우아한 각 고딕"
       },
       "cat": [

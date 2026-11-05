@@ -699,6 +699,13 @@ VOL7_SKINS = [
     },
     {
         "id": "house-edge",
+        "readability": "intentional-low",
+        "readabilityReason": {
+            "ja": "暗く読みづらい演出を意図しています。",
+            "en": "Low contrast is intentional for this dark theme.",
+            "zh": "此暗色主题有意降低可读性。",
+            "ko": "어두운 연출을 위해 가독성을 의도적으로 낮췄습니다."
+        },
         "label": {
             "ja": "ハウスエッジ",
             "en": "House Edge",

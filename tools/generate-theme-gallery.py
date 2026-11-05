@@ -91,6 +91,7 @@ def main():
   .card b{{font-size:17px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal)}}
   .card .spec{{font-size:18px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal);text-transform:var(--c-transform,none)}}
   .card small{{opacity:.85;font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}}
+  .card .readability-warning{{display:block;background:#fff3c6;color:#241b00;padding:6px;border-radius:6px;font-size:12px;font-weight:700}}
   .card .cat{{margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.08em}}
   .empty{{color:var(--muted);padding:40px 0;text-align:center}}
   footer{{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:30px}}
@@ -179,6 +180,12 @@ def main():
       catDiv.className = "cat";
       catDiv.textContent = s.cat.map(x => CAT[x] || x).join("  ");
       el.append(meta, dots, name, nameEn, spec, desc, catDiv);
+      if (s.readability === "intentional-low") {{
+        const warning = document.createElement("div");
+        warning.className = "readability-warning";
+        warning.textContent = "⚠ 見づらさを意図した配色です";
+        el.appendChild(warning);
+      }}
       grid.appendChild(el);
     }});
   }}
@@ -216,6 +223,7 @@ def main():
             "colors": s["colors"],
             "shapes": s.get("shapes", ["circle", "circle"]),
             "locked": s.get("locked", False),
+            **({"readability": s["readability"]} if "readability" in s else {}),
         })
 
     skins_json = json.dumps(skins_data, ensure_ascii=False, indent=2).replace("</script>", "<\\/script>")

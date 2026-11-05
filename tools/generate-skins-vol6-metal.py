@@ -253,8 +253,8 @@ VOL6_SKINS = [
         "label": {
             "ja": "オリハルコン",
             "en": "Orichalcum",
-            "zh": "奥尔哈尔库姆",
-            "ko": "오리HAL콘"
+            "zh": "山铜",
+            "ko": "오리하르콘"
         },
         "desc": {
             "ja": "古代ギリシャの神聖金属、山吹色の輝き",
@@ -684,13 +684,13 @@ VOL6_SKINS = [
             "don": "#d4af37",
             "ka": "#b8860b",
             "text": "#f5deb3",
-            "muted": "#a0522d",
+            "muted": "#e0d1c1",
             "bg": "#5c4033",
             "panel": "rgba(139,69,19,.96)",
-            "field": "#f5deb3",
+            "field": "#3b2a20",
             "button": "#8b4513",
             "accent": "#d4af37",
-            "onAccent": "#5c4033",
+            "onAccent": "#583c2f",
             "gold": "#ffe082",
             "border": "rgba(160,82,45,.24)"
         },

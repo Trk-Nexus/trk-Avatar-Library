@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // 自動生成: tools/import-skin-catalog.mjs --cat=wizard
 // 入力: catalog/skins.json（手編集禁止）
-// 生成日時: 2026-11-03T04:49:29.172Z
 // スキン数: 62
 
 const SKINS_WIZARD = [
@@ -21,7 +20,7 @@ const SKINS_WIZARD = [
   {
     id: "wizard-agrippa",
     label: {"ja":"オカルト哲学三書","en":"Three Books of Occult Philosophy","zh":"秘术哲学三书","ko":"오컬트 철학 삼부작"},
-    desc: {"ja":"ヘンリヒュス・コルネリウス・アグリッパによる白魔術の体系化、天使・惑星・調和","en":"Heinrich Cornelius Agrippa\\u2019s systematization of white magic, angels, planets and harmony","zh":"海因里ヒ・コルネリウス・阿格リッパ对白魔术的系统化，天使、行星与和谐","ko":"하인리히ウス・코르네リウス・아그리파의 백마술 체계화, 천사・행성・조화"},
+    desc: {"ja":"ヘンリヒュス・コルネリウス・アグリッパによる白魔術の体系化、天使・惑星・調和","en":"Heinrich Cornelius Agrippa\\u2019s systematization of white magic, angels, planets and harmony","zh":"海因里希·科尔内利乌斯·阿格里帕对白魔术的系统化：天使、行星与和谐","ko":"하인리히 코르넬리우스 아그리파의 백마술 체계화: 천사, 행성과 조화"},
     cat: ["wizard","grad","light"],
     font: "\"Caslon\",\"Garamond\",serif",
     type: {"title":"\"Caslon\",serif","weight":"400","lh":"1.6","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"☉ ♀ ♂"},
@@ -329,7 +328,7 @@ const SKINS_WIZARD = [
   {
     id: "wizard-heptameron",
     label: {"ja":"ヘプタメロン","en":"Heptameron","zh":"七天书","ko":"헵타메론"},
-    desc: {"ja":"7日間の天使魔術、ポーピアーノによる天使召喚と白魔術の儀式","en":"Seven days of angelic magic, Pietro d\\u2019Abano\\u2019s angel summoning and white magic rituals","zh":"七天的天使魔术，皮埃トロ・ダバーノ的天使召唤与白魔术仪式","ko":"7일간의 천사 마법, 피에트로・다바노의 천사 소환과 백마술 의식"},
+    desc: {"ja":"7日間の天使魔術、ポーピアーノによる天使召喚と白魔術の儀式","en":"Seven days of angelic magic, Pietro d\\u2019Abano\\u2019s angel summoning and white magic rituals","zh":"七天的天使魔术：彼得罗·达巴诺的天使召唤与白魔术仪式","ko":"7일간의 천사 마법, 피에트로・다바노의 천사 소환과 백마술 의식"},
     cat: ["wizard","grad","light"],
     font: "\"Playfair Display\",\"Noto Serif JP\",serif",
     type: {"title":"\"Playfair Display\",serif","weight":"400","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"7日"},
@@ -366,7 +365,7 @@ const SKINS_WIZARD = [
   },
   {
     id: "wizard-honorius",
-    label: {"ja":"ホノリウスの誓約書","en":"Sworn Book of Honorius","zh":"霍诺里ウス誓约书","ko":"호노리우스의 맹약서"},
+    label: {"ja":"ホノリウスの誓約書","en":"Sworn Book of Honorius","zh":"霍诺留斯誓约书","ko":"호노리우스의 맹약서"},
     desc: {"ja":"教会に認められた白魔術、神の御名と祈り、浄化と防御の儀式","en":"Church-sanctioned white magic, the holy name of God and prayer, purification and defense rituals","zh":"教会认可的白魔术，上帝的圣名与祈祷，净化与防御仪式","ko":"교회가 인정한 백마술, 하느님의 거룩한 이름과 기도, 정화와 방어 의식"},
     cat: ["wizard","light","access"],
     font: "\"Cinzel\",\"Trajan Pro\",serif",
@@ -392,8 +391,8 @@ const SKINS_WIZARD = [
   },
   {
     id: "wizard-lemgeton",
-    label: {"ja":"レメゲトン","en":"Lesser Key of Solomon","zh":"所罗门小钥匙","ko":"소omon의 소록"},
-    desc: {"ja":" goetiaを含む禁忌の魔導書、72柱の悪魔を従属させる印","en":"Lemegeton, forbidden grimoire including Goetia, seals to command 72 demons","zh":"《小钥匙》，包含高蒂亚的禁忌魔导书，征服72柱恶魔的印记","ko":"레메게톤, 고에티아를 포함한 금기의 마도서, 72귀리를 복종시키는 인장"},
+    label: {"ja":"レメゲトン","en":"Lesser Key of Solomon","zh":"所罗门小钥匙","ko":"솔로몬의 작은 열쇠"},
+    desc: {"ja":" goetiaを含む禁忌の魔導書、72柱の悪魔を従属させる印","en":"Lemegeton, forbidden grimoire including Goetia, seals to command 72 demons","zh":"《小钥匙》，包含高蒂亚的禁忌魔导书，征服72柱恶魔的印记","ko":"레메게톤, 고에티아를 포함한 금기의 마도서와 72 악마의 인장"},
     cat: ["wizard","dark","access"],
     font: "\"Cinzel\",\"Trajan Pro\",serif",
     type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"⛤"},
@@ -470,7 +469,7 @@ const SKINS_WIZARD = [
   {
     id: "wizard-necronomicon",
     label: {"ja":"ネクロノミコン","en":"Necronomicon","zh":"死灵名册","ko":"네크로노미콘"},
-    desc: {"ja":"アブドル・アラハズレッドが執筆した禁書、死者の名を記す黒き書","en":"Forbidden book by Abdul Alhazred, black volume recording the names of the dead","zh":"阿卜杜勒·阿拉兹レッド執筆的禁书，记载死者名字的黑色书卷","ko":"압둘 알라즈レッド가 집필한 금서, 죽은 자의 이름을 기록하는 검은 책"},
+    desc: {"ja":"アブドル・アラハズレッドが執筆した禁書、死者の名を記す黒き書","en":"Forbidden book by Abdul Alhazred, black volume recording the names of the dead","zh":"阿卜杜勒·阿尔哈兹莱德撰写的禁书，记载死者名字的黑色书卷","ko":"압둘 알하즈레드가 집필한 금서, 죽은 자의 이름을 기록하는 검은 책"},
     cat: ["wizard","dark","fun"],
     font: "\"Cinzel\",\"Trajan Pro\",serif",
     type: {"title":"\"Cinzel\",serif","weight":"700","lh":"1.5","titleWeight":"800","titleSpace":".1em","titleTransform":"uppercase","mark":"📖"},
@@ -610,7 +609,7 @@ const SKINS_WIZARD = [
   {
     id: "wizard-seven-military-classics",
     label: {"ja":"武経七書","en":"Seven Military Classics","zh":"武经七书","ko":"무경칠서"},
-    desc: {"ja":"孫子・六韜・三略・司馬法・尉繚子・三略・太公六韜を含む七種の軍事書集成","en":"Seven Military Classics including Sun Tzu, Six Secret Teachings, Three Strategies and more","zh":"包括孙子、六韬、三略、司马法、尉繚子等七种军事书的集成","ko":"손자·육도·삼략·사마법·위료자 등을 포함한 7종의 군사서 집성"},
+    desc: {"ja":"孫子・呉子・司馬法・尉繚子・李衛公問対・三略・六韜の七つの兵書","en":"Seven Chinese military classics, including Sunzi and Wuzi","zh":"孙子、吴子、司马法、尉缭子、李卫公问对、三略与六韬七部兵书","ko":"손자·오자·사마법·위료자·이위공문대·삼략·육도의 일곱 병서"},
     cat: ["wizard","life","grad"],
     font: "\"KaiTi\",\"SimSun\",serif",
     type: {"title":"\"KaiTi\",serif","weight":"500","lh":"1.7","titleWeight":"600","titleSpace":".03em","titleTransform":"","mark":"七"},

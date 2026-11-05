@@ -29,6 +29,7 @@
   .card b{font-size:17px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal)}
   .card .spec{font-size:18px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal);text-transform:var(--c-transform,none)}
   .card small{opacity:.85;font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+  .card .readability-warning{display:block;background:#fff3c6;color:#241b00;padding:6px;border-radius:6px;font-size:12px;font-weight:700}
   .card .cat{margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.08em}
   .empty{color:var(--muted);padding:40px 0;text-align:center}
   footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:30px}
@@ -118,17 +119,17 @@
     "type": null,
     "colors": {
       "stage": "linear-gradient(180deg,#8d6e63,#4e342e)",
-      "ink": "#efebe9",
+      "ink": "#ffffff",
       "don": "#ffab91",
       "ka": "#bcaaa4",
-      "text": "#efebe9",
-      "muted": "#a1887f",
+      "text": "#25130f",
+      "muted": "#54382f",
       "bg": "linear-gradient(180deg,#d7ccc8,#bcaaa4)",
       "panel": "rgba(255,255,255,.96)",
       "field": "#ffffff",
       "button": "#bcaaa4",
       "accent": "#8d6e63",
-      "onAccent": "#efebe9",
+      "onAccent": "#ffffff",
       "gold": "#ffe0b2",
       "border": "rgba(141,110,99,.24)"
     },
@@ -545,7 +546,7 @@
       "ink": "#753a08",
       "don": "#ffcc80",
       "ka": "#ffe0b2",
-      "text": "#753a08",
+      "text": "#4a2605",
       "muted": "#814516",
       "bg": "#ffe082",
       "panel": "rgba(255,255,255,.96)",
@@ -629,7 +630,7 @@
       "ink": "#743000",
       "don": "#ffd54f",
       "ka": "#ffe082",
-      "text": "#743000",
+      "text": "#4a1f00",
       "muted": "#804000",
       "bg": "linear-gradient(180deg,#ffecb3,#ffe082)",
       "panel": "rgba(255,255,255,.96)",
@@ -713,7 +714,7 @@
       "ink": "#704019",
       "don": "#ffd54f",
       "ka": "#ffe082",
-      "text": "#704019",
+      "text": "#472810",
       "muted": "#7b4720",
       "bg": "#fff59d",
       "panel": "rgba(255,255,255,.96)",
@@ -795,6 +796,12 @@
       catDiv.className = "cat";
       catDiv.textContent = s.cat.map(x => CAT[x] || x).join("  ");
       el.append(meta, dots, name, nameEn, spec, desc, catDiv);
+      if (s.readability === "intentional-low") {
+        const warning = document.createElement("div");
+        warning.className = "readability-warning";
+        warning.textContent = "⚠ 見づらさを意図した配色です";
+        el.appendChild(warning);
+      }
       grid.appendChild(el);
     });
   }

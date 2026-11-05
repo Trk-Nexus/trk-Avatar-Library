@@ -29,6 +29,7 @@
   .card b{font-size:17px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal)}
   .card .spec{font-size:18px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal);text-transform:var(--c-transform,none)}
   .card small{opacity:.85;font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+  .card .readability-warning{display:block;background:#fff3c6;color:#241b00;padding:6px;border-radius:6px;font-size:12px;font-weight:700}
   .card .cat{margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.08em}
   .empty{color:var(--muted);padding:40px 0;text-align:center}
   footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:30px}
@@ -164,7 +165,7 @@
     "desc": {
       "ja": "日本語ウェブの定番、バランスの取れた角ゴシック",
       "en": "Japanese web standard, balanced gothic",
-      "zh": "日语网页标准，均衡的角ゴシック",
+      "zh": "日语网页常用的均衡黑体",
       "ko": "일본어 웹 표준, 균형 잡힌 고딕"
     },
     "cat": [
@@ -208,13 +209,13 @@
     "label": {
       "ja": "ヒラギノ角ゴ",
       "en": "Hiragino Kaku Gothic",
-      "zh": "椿圆角ゴシック",
+      "zh": "Hiragino 角黑体",
       "ko": "히라기노 각 고딕"
     },
     "desc": {
       "ja": "macOS の定番、丸みを帯びた上品な角ゴシック",
       "en": "macOS standard, rounded elegant gothic",
-      "zh": "macOS 标准，圆润优雅的角ゴシック",
+      "zh": "macOS 常用的圆润优雅的角黑体",
       "ko": "macOS 표준, 둥글고 우아한 각 고딕"
     },
     "cat": [
@@ -858,8 +859,8 @@
     "locked": false
   }
 ];
-  const CAT = {"all": "すべて", "basic": "定番", "light": "ライト", "grad": "グラデーション", "fun": "遊び心", "dark": "ダーク", "access": "見やすさ", "life": "生活", "type": "書体", "miku": "ミク"};
-  const ORDER = ["all", "basic", "type", "miku", "dark", "light", "grad", "fun", "access", "life"];
+  const CAT = {"all": "すべて", "basic": "定番", "light": "ライト", "grad": "グラデーション", "fun": "遊び心", "dark": "ダーク", "access": "見やすさ", "life": "生活", "type": "書体", "miku": "ミク", "glitch": "グリッチ/実験", "wizard": "ウィザード/オカルト"};
+  const ORDER = ["all", "basic", "type", "miku", "dark", "light", "grad", "fun", "access", "life", "glitch", "wizard"];
   let state = { q:"", cat:"all" };
 
   function textOf(s) {
@@ -922,6 +923,12 @@
       catDiv.className = "cat";
       catDiv.textContent = s.cat.map(x => CAT[x] || x).join("  ");
       el.append(meta, dots, name, nameEn, spec, desc, catDiv);
+      if (s.readability === "intentional-low") {
+        const warning = document.createElement("div");
+        warning.className = "readability-warning";
+        warning.textContent = "⚠ 見づらさを意図した配色です";
+        el.appendChild(warning);
+      }
       grid.appendChild(el);
     });
   }

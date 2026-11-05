@@ -29,6 +29,7 @@
   .card b{font-size:17px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal)}
   .card .spec{font-size:18px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal);text-transform:var(--c-transform,none)}
   .card small{opacity:.85;font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+  .card .readability-warning{display:block;background:#fff3c6;color:#241b00;padding:6px;border-radius:6px;font-size:12px;font-weight:700}
   .card .cat{margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.08em}
   .empty{color:var(--muted);padding:40px 0;text-align:center}
   footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:30px}
@@ -313,8 +314,8 @@
     "label": {
       "ja": "オリハルコン",
       "en": "Orichalcum",
-      "zh": "奥尔哈尔库姆",
-      "ko": "오리HAL콘"
+      "zh": "山铜",
+      "ko": "오리하르콘"
     },
     "desc": {
       "ja": "古代ギリシャの神聖金属、山吹色の輝き",
@@ -796,13 +797,13 @@
       "don": "#d4af37",
       "ka": "#b8860b",
       "text": "#f5deb3",
-      "muted": "#a0522d",
+      "muted": "#e0d1c1",
       "bg": "#5c4033",
       "panel": "rgba(139,69,19,.96)",
-      "field": "#f5deb3",
+      "field": "#3b2a20",
       "button": "#8b4513",
       "accent": "#d4af37",
-      "onAccent": "#5c4033",
+      "onAccent": "#583c2f",
       "gold": "#ffe082",
       "border": "rgba(160,82,45,.24)"
     },
@@ -864,8 +865,8 @@
     "locked": false
   }
 ];
-  const CAT = {"all": "すべて", "basic": "定番", "light": "ライト", "grad": "グラデーション", "fun": "遊び心", "dark": "ダーク", "access": "見やすさ", "life": "生活", "type": "書体", "miku": "ミク"};
-  const ORDER = ["all", "basic", "type", "miku", "dark", "light", "grad", "fun", "access", "life"];
+  const CAT = {"all": "すべて", "basic": "定番", "light": "ライト", "grad": "グラデーション", "fun": "遊び心", "dark": "ダーク", "access": "見やすさ", "life": "生活", "type": "書体", "miku": "ミク", "glitch": "グリッチ/実験", "wizard": "ウィザード/オカルト"};
+  const ORDER = ["all", "basic", "type", "miku", "dark", "light", "grad", "fun", "access", "life", "glitch", "wizard"];
   let state = { q:"", cat:"all" };
 
   function textOf(s) {
@@ -928,6 +929,12 @@
       catDiv.className = "cat";
       catDiv.textContent = s.cat.map(x => CAT[x] || x).join("  ");
       el.append(meta, dots, name, nameEn, spec, desc, catDiv);
+      if (s.readability === "intentional-low") {
+        const warning = document.createElement("div");
+        warning.className = "readability-warning";
+        warning.textContent = "⚠ 見づらさを意図した配色です";
+        el.appendChild(warning);
+      }
       grid.appendChild(el);
     });
   }

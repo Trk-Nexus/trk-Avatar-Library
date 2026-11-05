@@ -1,0 +1,45 @@
+{
+  "format": "trk-avatar-library-color-proposal",
+  "version": 1,
+  "status": "pending-pwa-decorative-background",
+  "baseCommit": "27fdece79e0dbc79009973f6b04df84042dac1c0",
+  "note": "PWA の地の扱いが変わるまで正本に適用しない。旧 PWA では地の不合格が増える。切替可能な旧配色ではない。",
+  "skins": {
+    "gold-chip": {
+      "stage": {
+        "from": "linear-gradient(180deg,#daa520,#8b4513)",
+        "to": "linear-gradient(180deg,#daa520,#b8742a)"
+      },
+      "ink": {
+        "from": "#fffdf0",
+        "to": "#1a0d00"
+      },
+      "text": {
+        "from": "#fffdf0",
+        "to": "#2b1600"
+      },
+      "muted": {
+        "from": "#b8860b",
+        "to": "#553500"
+      }
+    },
+    "orichalcum": {
+      "stage": {
+        "from": "linear-gradient(180deg,#daa520,#8b4513)",
+        "to": "linear-gradient(180deg,#daa520,#b8742a)"
+      },
+      "ink": {
+        "from": "#fffdf0",
+        "to": "#1a0d00"
+      },
+      "text": {
+        "from": "#fffdf0",
+        "to": "#2b1600"
+      },
+      "muted": {
+        "from": "#b8860b",
+        "to": "#553500"
+      }
+    }
+  }
+}

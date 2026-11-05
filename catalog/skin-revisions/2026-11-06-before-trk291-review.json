@@ -1,0 +1,179 @@
+{
+  "format": "trk-avatar-library-skin-revisions",
+  "version": 1,
+  "baseCommit": "27fdece79e0dbc79009973f6b04df84042dac1c0",
+  "note": "正本修正前の色の履歴。PWAでの配色切替機能ではありません。",
+  "skins": [
+    {
+      "id": "chocolate",
+      "colors": {
+        "stage": "linear-gradient(180deg,#8d6e63,#4e342e)",
+        "ink": "#efebe9",
+        "don": "#ffab91",
+        "ka": "#bcaaa4",
+        "text": "#efebe9",
+        "muted": "#a1887f",
+        "bg": "linear-gradient(180deg,#d7ccc8,#bcaaa4)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#bcaaa4",
+        "accent": "#8d6e63",
+        "onAccent": "#efebe9",
+        "gold": "#ffe0b2",
+        "border": "rgba(141,110,99,.24)"
+      }
+    },
+    {
+      "id": "orichalcum",
+      "colors": {
+        "stage": "linear-gradient(180deg,#daa520,#8b4513)",
+        "ink": "#fffdf0",
+        "don": "#ffd700",
+        "ka": "#b8860b",
+        "text": "#fffdf0",
+        "muted": "#b8860b",
+        "bg": "linear-gradient(180deg,#8b4513,#4a2505)",
+        "panel": "rgba(218,165,32,.96)",
+        "field": "#fffdf0",
+        "button": "#daa520",
+        "accent": "#ffd700",
+        "onAccent": "#4a2505",
+        "gold": "#ffe082",
+        "border": "rgba(255,215,0,.30)"
+      }
+    },
+    {
+      "id": "ancient-bronze",
+      "colors": {
+        "stage": "#8b4513",
+        "ink": "#f5deb3",
+        "don": "#d4af37",
+        "ka": "#b8860b",
+        "text": "#f5deb3",
+        "muted": "#a0522d",
+        "bg": "#5c4033",
+        "panel": "rgba(139,69,19,.96)",
+        "field": "#f5deb3",
+        "button": "#8b4513",
+        "accent": "#d4af37",
+        "onAccent": "#5c4033",
+        "gold": "#ffe082",
+        "border": "rgba(160,82,45,.24)"
+      }
+    },
+    {
+      "id": "gold-chip",
+      "colors": {
+        "stage": "linear-gradient(180deg,#daa520,#8b4513)",
+        "ink": "#fffdf0",
+        "don": "#ffd700",
+        "ka": "#b8860b",
+        "text": "#fffdf0",
+        "muted": "#b8860b",
+        "bg": "linear-gradient(180deg,#8b4513,#4a2505)",
+        "panel": "rgba(218,165,32,.96)",
+        "field": "#fffdf0",
+        "button": "#daa520",
+        "accent": "#ffd700",
+        "onAccent": "#4a2505",
+        "gold": "#ffe082",
+        "border": "rgba(255,215,0,.30)"
+      }
+    },
+    {
+      "id": "hot-cocoa",
+      "colors": {
+        "stage": "#795548",
+        "ink": "#fff3e0",
+        "don": "#ffcc80",
+        "ka": "#bcaaa4",
+        "text": "#fff3e0",
+        "muted": "#8d6e63",
+        "bg": "#d7ccc8",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#bcaaa4",
+        "accent": "#795548",
+        "onAccent": "#fff3e0",
+        "gold": "#ffe0b2",
+        "border": "rgba(141,110,99,.24)"
+      }
+    },
+    {
+      "id": "tequila-sunrise",
+      "colors": {
+        "stage": "linear-gradient(180deg,#ff6b6b,#4ecdc4,#45b7d1)",
+        "ink": "#ffffff",
+        "don": "#ff9ff3",
+        "ka": "#feca57",
+        "text": "#ffffff",
+        "muted": "#ff9ff3",
+        "bg": "linear-gradient(180deg,#45b7d1,#4ecdc4)",
+        "panel": "rgba(69,183,209,.96)",
+        "field": "#ff6b6b",
+        "button": "#4ecdc4",
+        "accent": "#feca57",
+        "onAccent": "#ffffff",
+        "gold": "#ffeaa7",
+        "border": "rgba(254,202,87,.30)"
+      }
+    },
+    {
+      "id": "creme-brulee",
+      "colors": {
+        "stage": "linear-gradient(180deg,#ffe082,#ffb74d)",
+        "ink": "#743000",
+        "don": "#ffd54f",
+        "ka": "#ffe082",
+        "text": "#743000",
+        "muted": "#804000",
+        "bg": "linear-gradient(180deg,#ffecb3,#ffe082)",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffecb3",
+        "accent": "#ffa000",
+        "onAccent": "#3d2500",
+        "gold": "#ffd54f",
+        "border": "rgba(230,81,0,.24)"
+      }
+    },
+    {
+      "id": "melon-pan",
+      "colors": {
+        "stage": "#fff9c4",
+        "ink": "#753a08",
+        "don": "#ffcc80",
+        "ka": "#ffe0b2",
+        "text": "#753a08",
+        "muted": "#814516",
+        "bg": "#ffe082",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffecb3",
+        "accent": "#ffa000",
+        "onAccent": "#3d2500",
+        "gold": "#ffd54f",
+        "border": "rgba(245,127,23,.22)"
+      }
+    },
+    {
+      "id": "pancake",
+      "colors": {
+        "stage": "#fff176",
+        "ink": "#704019",
+        "don": "#ffd54f",
+        "ka": "#ffe082",
+        "text": "#704019",
+        "muted": "#7b4720",
+        "bg": "#fff59d",
+        "panel": "rgba(255,255,255,.96)",
+        "field": "#ffffff",
+        "button": "#ffe082",
+        "accent": "#ffa000",
+        "onAccent": "#3d2500",
+        "gold": "#ffeb3b",
+        "border": "rgba(245,127,23,.22)"
+      }
+    }
+  ]
+}

@@ -5,6 +5,7 @@
 
 import { validateSkin, reasonFromErrors } from "./check-cli-skin.mjs";
 import fs from "fs";
+import { validateReadability } from "./lib/skin-readability.mjs";
 
 const EXIT_OK = 0;
 const EXIT_UNREADABLE = 1;
@@ -26,6 +27,12 @@ let failed = 0;
 let skipped = 0;
 
 for (const skin of skins) {
+  const metadataErrors = validateReadability(skin);
+  if (metadataErrors.length) {
+    failed++;
+    results.push({id: skin.id, ok: false, errors: metadataErrors, reason: 'readability'});
+    continue;
+  }
   const r = validateSkin(skin);
   if (r.skip) {
     skipped++;

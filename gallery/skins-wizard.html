@@ -29,6 +29,7 @@
   .card b{font-size:17px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal)}
   .card .spec{font-size:18px;font-family:var(--c-title,inherit);font-weight:var(--c-weight,700);letter-spacing:var(--c-space,normal);text-transform:var(--c-transform,none)}
   .card small{opacity:.85;font-size:12px;line-height:1.4;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+  .card .readability-warning{display:block;background:#fff3c6;color:#241b00;padding:6px;border-radius:6px;font-size:12px;font-weight:700}
   .card .cat{margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.08em}
   .empty{color:var(--muted);padding:40px 0;text-align:center}
   footer{max-width:1200px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);margin-top:30px}
@@ -1538,13 +1539,13 @@
       "ja": "レメゲトン",
       "en": "Lesser Key of Solomon",
       "zh": "所罗门小钥匙",
-      "ko": "소omon의 소록"
+      "ko": "솔로몬의 작은 열쇠"
     },
     "desc": {
       "ja": " goetiaを含む禁忌の魔導書、72柱の悪魔を従属させる印",
       "en": "Lemegeton, forbidden grimoire including Goetia, seals to command 72 demons",
       "zh": "《小钥匙》，包含高蒂亚的禁忌魔导书，征服72柱恶魔的印记",
-      "ko": "레메게톤, 고에티아를 포함한 금기의 마도서, 72귀리를 복종시키는 인장"
+      "ko": "레메게톤, 고에티아를 포함한 금기의 마도서와 72 악마의 인장"
     },
     "cat": [
       "wizard",
@@ -1696,8 +1697,8 @@
     "desc": {
       "ja": "アブドル・アラハズレッドが執筆した禁書、死者の名を記す黒き書",
       "en": "Forbidden book by Abdul Alhazred, black volume recording the names of the dead",
-      "zh": "阿卜杜勒·阿拉兹レッド執筆的禁书，记载死者名字的黑色书卷",
-      "ko": "압둘 알라즈レッド가 집필한 금서, 죽은 자의 이름을 기록하는 검은 책"
+      "zh": "阿卜杜勒·阿尔哈兹莱德撰写的禁书，记载死者名字的黑色书卷",
+      "ko": "압둘 알하즈레드가 집필한 금서, 죽은 자의 이름을 기록하는 검은 책"
     },
     "cat": [
       "wizard",
@@ -1900,8 +1901,8 @@
     "desc": {
       "ja": "ヘンリヒュス・コルネリウス・アグリッパによる白魔術の体系化、天使・惑星・調和",
       "en": "Heinrich Cornelius Agrippa\\u2019s systematization of white magic, angels, planets and harmony",
-      "zh": "海因里ヒ・コルネリウス・阿格リッパ对白魔术的系统化，天使、行星与和谐",
-      "ko": "하인리히ウス・코르네リウス・아그리파의 백마술 체계화, 천사・행성・조화"
+      "zh": "海因里希·科尔内利乌斯·阿格里帕对白魔术的系统化：天使、行星与和谐",
+      "ko": "하인리히 코르넬리우스 아그리파의 백마술 체계화: 천사, 행성과 조화"
     },
     "cat": [
       "wizard",
@@ -1945,7 +1946,7 @@
     "label": {
       "ja": "ホノリウスの誓約書",
       "en": "Sworn Book of Honorius",
-      "zh": "霍诺里ウス誓约书",
+      "zh": "霍诺留斯誓约书",
       "ko": "호노리우스의 맹약서"
     },
     "desc": {
@@ -2002,7 +2003,7 @@
     "desc": {
       "ja": "7日間の天使魔術、ポーピアーノによる天使召喚と白魔術の儀式",
       "en": "Seven days of angelic magic, Pietro d\\u2019Abano\\u2019s angel summoning and white magic rituals",
-      "zh": "七天的天使魔术，皮埃トロ・ダバーノ的天使召唤与白魔术仪式",
+      "zh": "七天的天使魔术：彼得罗·达巴诺的天使召唤与白魔术仪式",
       "ko": "7일간의 천사 마법, 피에트로・다바노의 천사 소환과 백마술 의식"
     },
     "cat": [
@@ -2357,10 +2358,10 @@
       "ko": "무경칠서"
     },
     "desc": {
-      "ja": "孫子・六韜・三略・司馬法・尉繚子・三略・太公六韜を含む七種の軍事書集成",
-      "en": "Seven Military Classics including Sun Tzu, Six Secret Teachings, Three Strategies and more",
-      "zh": "包括孙子、六韬、三略、司马法、尉繚子等七种军事书的集成",
-      "ko": "손자·육도·삼략·사마법·위료자 등을 포함한 7종의 군사서 집성"
+      "ja": "孫子・呉子・司馬法・尉繚子・李衛公問対・三略・六韜の七つの兵書",
+      "en": "Seven Chinese military classics, including Sunzi and Wuzi",
+      "zh": "孙子、吴子、司马法、尉缭子、李卫公问对、三略与六韬七部兵书",
+      "ko": "손자·오자·사마법·위료자·이위공문대·삼략·육도의 일곱 병서"
     },
     "cat": [
       "wizard",
@@ -3280,6 +3281,12 @@
       catDiv.className = "cat";
       catDiv.textContent = s.cat.map(x => CAT[x] || x).join("  ");
       el.append(meta, dots, name, nameEn, spec, desc, catDiv);
+      if (s.readability === "intentional-low") {
+        const warning = document.createElement("div");
+        warning.className = "readability-warning";
+        warning.textContent = "⚠ 見づらさを意図した配色です";
+        el.appendChild(warning);
+      }
       grid.appendChild(el);
     });
   }

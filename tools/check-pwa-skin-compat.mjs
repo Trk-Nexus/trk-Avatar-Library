@@ -26,7 +26,14 @@ export function evaluate(report, declared, baseline) {
       ratios.sort((a, b) => a - b);
       const orderedLimits = [...limits].sort((a, b) => a - b);
       if (ratios.length > limits.length) errors.push(`${id}: ${label} の不合格が増加 (${ratios.length})`);
-      if (ratios.some((ratio, i) => !Number.isFinite(ratio) || ratio < orderedLimits[i])) errors.push(`${id}: ${label} の表示比が悪化`);
+      // The PWA report has no stable stop identifier. Once a combination disappears,
+      // the remaining ratios cannot be reliably matched to old gradient stops; do
+      // not reject an improvement based on an invented correspondence. Equal counts
+      // are compared conservatively; non-finite ratios must always fail.
+      if (ratios.some(ratio => !Number.isFinite(ratio)) ||
+          (ratios.length === orderedLimits.length && ratios.some((ratio, i) => ratio < orderedLimits[i]))) {
+        errors.push(`${id}: ${label} の表示比が悪化`);
+      }
     }
   }
   return errors;

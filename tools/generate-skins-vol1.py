@@ -309,7 +309,7 @@ SKINS_VOL1 = [
         "label": {
             "ja": "墨流し",
             "en": "Ink Wash Flow",
-            "zh": "墨流し",
+            "zh": "墨流纹",
             "ko": "먹 흘림"
         },
         "desc": {
