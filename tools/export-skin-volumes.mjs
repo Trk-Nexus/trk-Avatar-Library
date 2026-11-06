@@ -10,6 +10,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'skin-volumes');
 const catalog = JSON.parse(fs.readFileSync(path.join(root, 'catalog/skins.json'), 'utf8'));
 const definition = JSON.parse(fs.readFileSync(path.join(out, 'volumes.json'), 'utf8'));
+const modernRegistry = JSON.parse(fs.readFileSync(path.join(root, 'catalog/re-modern/index.json'), 'utf8'));
+const modernLink = modernRegistry.ids.length ? '<p><a href="../gallery/re-modern/index.html">trk-re-modern の作品解説と検索</a></p>\n' : '';
 const check = process.argv.includes('--check');
 const esc = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
 const json = value => JSON.stringify(value, null, 2) + '\n';
@@ -51,7 +53,7 @@ files.set('index.html', `<!doctype html>
 :root{color-scheme:dark;--bg:#10151b;--panel:#1a232c;--line:#465968;--text:#f3f6f8;--muted:#cfdae0;--accent:#a7eadf}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,sans-serif}main{max-width:960px;margin:auto;padding:2rem 1rem 4rem}h1{font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.25}p{max-width:75ch}a{color:var(--accent);text-underline-offset:.2em}a:focus-visible,summary:focus-visible{outline:3px solid #ffda8d;outline-offset:3px}.notice{border-left:4px solid #ffda8d;background:#262b2e;padding:.8rem 1rem}.volume{border:1px solid var(--line);border-radius:.8rem;background:var(--panel);margin:.8rem 0}.volume summary{padding:1rem;cursor:pointer;display:flex;justify-content:space-between;gap:1rem}.volume-body{padding:0 1rem 1rem;border-top:1px solid var(--line)}.download{display:inline-block;padding:.5rem .8rem;border:1px solid var(--accent);border-radius:.5rem;margin-right:.6rem}ul{padding:0;list-style:none}li{display:flex;gap:.5rem 1rem;align-items:baseline;justify-content:space-between;flex-wrap:wrap;padding:.45rem 0;border-bottom:1px solid var(--line)}small{color:var(--muted)}.readability-warning{display:inline-block;background:#fff3c6;color:#241b00;padding:.1rem .4rem;border-radius:.3rem;font-size:.8rem}footer{margin-top:2rem;color:var(--muted)}
 </style></head><body><main><p><a href="../index.html">← ライブラリへ戻る</a></p><h1>スキンを巻から探す</h1><p>好きな巻を開いて、巻ごと、または1枚ずつ元データを取得できます。全 ${all.size} 種。色や名前は元の目録からそのまま収録しています。</p><div class="notice"><strong>ご注意：</strong>ここで取得できるのはスキンの<strong>元データ JSON</strong>です。trk-PWA の開発用の道具はこの形式を読めますが、画面から巻を一括でインストールする機能やパックではありません。画面の見た目や演出を完全に再現するものでもありません。</div><p>vol.1〜10 と glitch の分類は既存見本の ID、wizard は現在のカテゴリ全体（${results.find(g=>g.id==='wizard').skins.length} 種）です。残りは「その他」にまとめています。書体ファイルは含みません。</p>
-${groupHtml}
+${modernLink}${groupHtml}
 <footer>正本：<a href="../catalog/skins.json">catalog/skins.json</a>。GPL-3.0-or-later。<a href="../index.html">ライブラリーに戻る</a></footer></main></body></html>\n`);
 
 let errors = 0;

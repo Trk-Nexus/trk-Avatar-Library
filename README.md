@@ -10,6 +10,10 @@
 
 ---
 
+## trk-re-modern を作る人へ
+
+新カテゴリーの[コンセプト・制作方式](docs/trk-re-modern-concept.md)と[紹介書式](docs/trk-re-modern-introduction-template.md)を確認し、[trk-re-modern 制作・調査・公開ガイドライン](docs/trk-re-modern-guidelines.md)を必ず適用します。検索・出典・権利、作品の意図、利用者が安全に戻れること、ブラウザ検証と公開前レビューを定めています。`npm run check:re-modern` は登録と必須記録の構造を検査します（内容の真偽・実機確認は別途レビュー）。作品はまだ登録されていません。
+
 ## はじめての3手順
 
 | | すること | 場所 |
