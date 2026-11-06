@@ -52,6 +52,10 @@ jobs:
         with:
           node-version: "22"
 
+      - name: trk-re-modern の必須記録を検査
+        working-directory: trk-Avatar-Library
+        run: node tools/check-re-modern.mjs
+
       # タグの頭（first-set / font-set）で、使う定義と記録を決める。取り違えたまま添付しない
       - name: どのセットを添付するか決める
         working-directory: trk-Avatar-Library

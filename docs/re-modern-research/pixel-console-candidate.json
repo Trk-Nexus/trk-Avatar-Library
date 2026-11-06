@@ -1,0 +1,43 @@
+{
+  "notice": "研究用の仮データ。正本・公開物・承認済み作品ではありません。",
+  "sourceId": "pixel-8bit",
+  "catalogSha256": "b4698e136b120ed8ca4a1bd348a102ed5f03b5efecbcb701980886fb11311db7",
+  "pwaRef": "f7b1272547f712d9a7d7a198404148457e936008",
+  "candidate": {
+    "id": "trk-re-modern-pixel-console",
+    "cat": [
+      "trk-re-modern",
+      "dark"
+    ],
+    "font": "system-ui, sans-serif",
+    "type": {
+      "title": "\"TrkDotGothic\",monospace",
+      "weight": "400",
+      "lh": "1.5",
+      "titleWeight": "400",
+      "titleSpace": "0",
+      "mark": "DOT 16"
+    },
+    "colors": {
+      "stage": "#10151a",
+      "ink": "#ecf6ee",
+      "don": "#ff8069",
+      "ka": "#69b8ff",
+      "text": "#ecf6ee",
+      "muted": "#b8c9bd",
+      "bg": "#10151a",
+      "panel": "#172229",
+      "field": "#101b20",
+      "button": "#293c3d",
+      "accent": "#56d994",
+      "onAccent": "#092016",
+      "gold": "#f7d680",
+      "border": "#8ea4aa"
+    },
+    "shapes": [
+      "square",
+      "diamond"
+    ],
+    "video": ""
+  }
+}
