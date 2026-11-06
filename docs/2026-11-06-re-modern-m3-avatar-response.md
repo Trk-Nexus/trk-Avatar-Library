@@ -1,5 +1,7 @@
 # trk-re-modern：PWA M3 確認と Avatar 側からの返答・検証記録（2026-11-06）
 
+> 追記（2026-11-07）：依頼者は「ピクセル・コンソール」を承認した。以下は 2026-11-06 時点の検証記録であり、実験ファイルに当時付けた「未承認」の表示は変更していない。正式登録・公開や未実施の検証は別途必要。[起動・確認手順書](re-modern-pixel-console-start-guide.md) を参照。
+
 対象：[PWA 側 M3 進捗返信](https://drive.google.com/file/d/1swQzLKTaCYpCGNacNg_ZTYzGgh2LfSAN/view) と [PWA main 固定版 4b4624140757e8faddda5b5a3b8c95df992ad9ca](https://github.com/Trk-Nexus/trk-PWA/tree/4b4624140757e8faddda5b5a3b8c95df992ad9ca)。この文書は Avatar 側の**提案・限定検証**であり、PWA 側との合意や作品の公開承認ではありません。
 
 ## 1. 受け入れ範囲と実験
