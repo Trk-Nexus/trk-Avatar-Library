@@ -5,6 +5,8 @@
 > 目録の形の**正本**は trk-PWA の [`docs/LIBRARY-TRK230-2026-10-31.md`](https://github.com/Trk-Nexus/trk-PWA/blob/main/docs/LIBRARY-TRK230-2026-10-31.md) §3。
 > 利用者向けの説明は [`README.md`](README.md)、権利は [`NOTICE.md`](NOTICE.md)。
 
+> **trk-re-modern の開発・検証（2026-11-07）：** [ピクセル・コンソール 起動・確認手順書](docs/re-modern-pixel-console-start-guide.md) に、一時見本・PWA 作品ファイル・両リポジトリの Chromium smoke の準備、固定版、復帰、既知の制約をまとめています。作品は利用者承認済みですが、正式登録・公開と実機等の確認は未完了。以下の従来パック向け固定版・手順とは対象を分けてください。
+
 ## 0. この文書の使い方
 
 | 節 | 内容 | いつ読むか |

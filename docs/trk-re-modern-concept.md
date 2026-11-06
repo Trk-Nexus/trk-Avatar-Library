@@ -88,6 +88,7 @@
 
 書斎と基地への展開は構想段階。PWAには利用者が明示的に使う「スキンのおすすめ」ノーツ設定がありますが、共通ノーツに保存され、スキンを変えても自動的に元には戻りません。実環境・利用者による検証と安全な案内が必要です。
 
+- [正式作品に向けた制作案・一時PWAへの読み込み検証](../drafts/re-modern/pixel-console/README.md)
 - [第１案の調査・出典](re-modern-research/01-pixel-console.md)
 - [方向性と限定テスト](re-modern-research/02-pixel-console-direction.md)
 - [カタログ・書斎・基地の展開案](re-modern-research/03-catalog-and-spaces.md)
