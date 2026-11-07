@@ -16,7 +16,7 @@
 
 各項目は研究・完成候補の作業。成果物ができたことと、正式な許諾・人のレビューの完了を区別する。
 
-1. **対象と依存関係を固める** 〔優先・次の着手〕
+1. **対象と依存関係を固める** 〔研究案・限定照合済み〕
    - 作品のどの領域・要素にどの書体を使うか、対象の言語・文字列、fallback 順、本文・共通ノーツ・書斎・基地などの保護範囲を明文化する。既存の書体設定と競合した場合は利用者の選択を尊重する。
    - 基本表示に必要な拡張、未導入時の代替表示、対応外・欠字、旧版の扱いを区別。作品や拡張の導入・適用は利用者の明示的な選択とする。
    - **終了条件**：入力・対象・適用しない領域・不足時の状態と未決事項を表にし、隔離試験の期待結果と対応づけられる。
@@ -54,11 +54,13 @@
 
 ## 次回の再開地点と検査
 
-A 節の手順1（対象・依存関係）は[案と限定照合](20-font-scope-dependencies-2026-11-07.md)を作成。手順2は[純粋な状態モデルと模擬試験](21-font-state-and-recovery-study-2026-11-07.md)に着手したが、実ストレージ・複数タブ・UI・永続化・隔離コントローラーとの接続は未了。次は手順3（各書体の権利情報・配布形態）の整理を進め、手順2の未検証項目も引き続き扱う。旧一覧の A1・A2（背景判定の調査）とは別の番号。人手レビュー・PWA側との合意も未了。PWA への返答や正式登録はこの段階で行わない。
+A 節の手順1（対象・依存関係）は[案と限定照合](20-font-scope-dependencies-2026-11-07.md)、手順2は[純粋な状態モデルと模擬試験](21-font-state-and-recovery-study-2026-11-07.md)、手順3は[権利情報・配布形態の整理と隔離表示見本](22-font-rights-distribution-study-2026-11-07.md)を作成。実ストレージ・複数タブ・UI・永続化・隔離コントローラーとの接続、配布の法的判断は未了。次は手順4（表現・文字・操作の確認と見本）を進め、未検証項目も引き続き扱う。旧一覧の A1・A2（背景判定の調査）とは別の番号。人手レビュー・PWA側との合意も未了。PWA への返答や正式登録はこの段階で行わない。
 
 既存の限定試験は固定版 PWA と明示的に取得した書体が必要。詳細・前提は[研究15](15-korean-font-fallback-study-2026-11-07.md)、[研究17](17-isolated-font-pack-candidate-2026-11-07.md)、[研究18](18-scoped-font-prototype-2026-11-07.md)を参照。外部取得は自動実行せず、`/tmp` の checkout や依存ライブラリは消える可能性がある。通常の `npm run check` と `npm test` に加え、以下の研究試験は必要な環境を用意して別途実行する。
 
 ```sh
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-license-study.test.mjs
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-license-study-browser.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-font-contract.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-korean-font-study.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-font-pack-study.test.mjs
