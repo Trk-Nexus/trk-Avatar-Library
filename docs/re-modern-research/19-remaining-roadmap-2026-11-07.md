@@ -56,7 +56,7 @@
 
 A 節の手順1（対象・依存関係）は[案と限定照合](20-font-scope-dependencies-2026-11-07.md)、手順2は[純粋な状態モデルと模擬試験](21-font-state-and-recovery-study-2026-11-07.md)、手順3は[権利情報・配布形態の整理と隔離表示見本](22-font-rights-distribution-study-2026-11-07.md)、手順4は[多言語見本・機械試験・人手確認票](23-multilingual-font-review-study-2026-11-07.md)を作成。手順5は[完成候補の資料束・一次版](25-pixel-console-candidate-brief-2026-11-07.md)と[候補をたどる調査の読み物](24-pixel-console-candidate-trail-2026-11-07.md)を作り、Galmuri11 を追加の固定候補として隔離比較した。作品の概念ごとに調べ方を変え、候補の背景・比較・未確認を、制作資料であると同時に読み物にもできる形で記録する。
 
-依頼者が Dot＋Neo と Galmuri11 の二つを多言語の比較候補とすることを肯定。さらに[英字・日本語の候補を調査](26-latin-japanese-font-candidates-2026-11-07.md)し、Press Start 2P・JetBrains Mono・Fira Code の固定ファイルを英字題字で隔離比較した。美咲フォントは作者資料を確認したが、実ファイルをこの環境では取得できず未検証。いずれも最終採用や正式配布とは別。
+依頼者は Dot＋Neo と Galmuri11 の二つを多言語の主な比較基準とし、Press Start 2P をピクセル・レトロ／ドットらしさを見る英字のサブ基準候補として肯定。[英字・日本語の候補を調査](26-latin-japanese-font-candidates-2026-11-07.md)し、Press Start 2P・JetBrains Mono・Fira Code の固定ファイルを英字題字で隔離比較した。美咲フォントは作者資料を確認したが、実ファイルをこの環境では取得できず未検証。いずれも最終採用や正式配布とは別。
 
 追加で[縁架ドット明朝24・横浜ドット・SolidLinker](27-japanese-solidlinker-font-trail-2026-11-07.md)を調査。SolidLinker の固定 TTF を英字題字で隔離比較し、独自ライセンスを別記。日本語の2書体は実ファイル未検証で、横浜フリー版の Web 配布・拡張同梱は保留する。
 

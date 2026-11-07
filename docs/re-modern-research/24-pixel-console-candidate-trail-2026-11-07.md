@@ -10,7 +10,7 @@
 
 ## 手がかり1：ゲームの文字から、短い見出しへ
 
-元作に名前があった **Press Start 2P** の[作者 README](https://github.com/codeman38/PressStart2P/blob/41826487a3d18e4e97f6e6ac166a376a79d1a7fa/README.md) は、1980年代のアーケードゲームの書体に基づき、英小文字も使う字形として1986年の例を挙げている。これは書体作者の説明であって、元スキンの作者が同じ歴史を意図した証拠ではない。作者は ASCII 以外の欧州向け文字、ギリシャ文字、キリル文字も挙げているが、**今回この書体のバイナリ・字種や描画を測っていない**。同じ固定資料の[ライセンス](https://github.com/codeman38/PressStart2P/blob/41826487a3d18e4e97f6e6ac166a376a79d1a7fa/LICENSE.txt) は OFL 1.1 と Reserved Font Name `Press Start` を記す。別の形式や配布元のファイルも同じだと推測しない。
+元作に名前があった **Press Start 2P** の[作者 README](https://github.com/codeman38/PressStart2P/blob/41826487a3d18e4e97f6e6ac166a376a79d1a7fa/README.md) は、1980年代のアーケードゲームの書体に基づき、英小文字も使う字形として1986年の例を挙げている。これは書体作者の説明であって、元スキンの作者が同じ歴史を意図した証拠ではない。作者は ASCII 以外の欧州向け文字、ギリシャ文字、キリル文字も挙げているが、この段階ではバイナリ・字種や描画を測っていなかった。後の[研究26](26-latin-japanese-font-candidates-2026-11-07.md)では Fontsource の Latin subset を固定して検査したが、書体全体の範囲と混同しない。同じ固定資料の[ライセンス](https://github.com/codeman38/PressStart2P/blob/41826487a3d18e4e97f6e6ac166a376a79d1a7fa/LICENSE.txt) は OFL 1.1 と Reserved Font Name `Press Start` を記す。別の形式や配布元のファイルも同じだと推測しない。
 
 日本語の短い見出しへ問いを移すと、Fontworks は **DotGothic16** を16×16ゴシックのビットマップを基にした書体と[説明](https://github.com/fontworks-fonts/DotGothic16/blob/14517183ab2f75e8bccafc5a0bff6685d268c687/README-JP.md)している。画面全体を16ピクセルの格子に揃える必要はなく、作者の可読性についての説明も、今回の端末・大きさでの人の評価とは分ける。実際の比較用 WOFF2 は Fontsource の日本語 subset で、作者資料の固定 commit がその WOFF2 のビルド元だと証明したわけではない。[実ファイルの来歴](11-dotgothic-distribution-inventory-2026-11-07.md)。
 
@@ -67,7 +67,7 @@
 
 ## 仮の結論と、best を決める前に
 
-2026-11-07 の続きで、依頼者は **Dot ＋ Neo と Galmuri11 の二つを候補にすることを肯定**した。これらを多言語の比較基準として残す。作品案の承認とは別に、二候補のうち一つへの最終採用・配布を決めたという意味ではない。その後、Press Start 2P・JetBrains Mono・Fira Code・美咲フォント等について[追加調査](26-latin-japanese-font-candidates-2026-11-07.md)した。Pixelify Sans は引き続き多言語ファイル実測まで進んでいない参考資料。
+2026-11-07 の続きで、依頼者は **Dot ＋ Neo と Galmuri11 を多言語の主な比較基準として肯定**し、さらに **Press Start 2P をピクセル・レトロ／ドットの感覚を比べる英字サブ基準候補**とした。3候補だが役割は異なり、Press Start 2P は多言語2案の代替でも必須の組合せでもない。作品案の承認とは別に、書体の最終採用・配布を決めた意味ではない。Press Start 2P・JetBrains Mono・Fira Code・美咲等の[追加調査](26-latin-japanese-font-candidates-2026-11-07.md)を参照。Pixelify Sans は引き続き実測まで進んでいない参考資料。
 
 「最良」の条件は、見た目だけでなく、対象となる言語・文字、読み手の自然さ、本文を守れる範囲、利用者設定、必要容量、出典・ライセンス、失敗／復元の体験、PWA の実装可能性で変わる。たとえば一書体にまとまる Galmuri は管理上の別の可能性を示すが、**今回の数値では二書体より小さくない**。中国語の別例はどちらにも不足し、字形の適切さはどちらも未評価。候補が一つ増えたことで問いも増えた。
 

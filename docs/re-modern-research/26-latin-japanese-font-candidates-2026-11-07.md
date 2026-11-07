@@ -2,7 +2,7 @@
 
 2026-11-07／依頼者の提案を受け、[二つの多言語候補](24-pixel-console-candidate-trail-2026-11-07.md)に加えて、英字向けの **Press Start 2P、JetBrains Mono、Fira Code** と、日本語の **美咲フォント**を調査した。さらに Source Code Pro、IBM Plex、k8x12 にもたどった。作品案の承認と別に、書体の最終採用・権利判断・公開は未決。
 
-依頼者は **DotGothic16 ＋ NeoDunggeunmo と Galmuri11 の二つを多言語の比較候補とすることを肯定**した。これらを消したり、追加候補を基本表示に強制したりしない。今回の英字候補は、特に `trk!` や英語名の**別の表情を探す案**として比べる。実際の PWA 共通題字と作品の4言語名は別で、適用先は未決。
+依頼者は **DotGothic16 ＋ NeoDunggeunmo と Galmuri11 を多言語の主な比較基準**として肯定し、さらに **Press Start 2P をピクセル・レトロやドットらしさを見る英字のサブ基準候補**として選んだ。計3候補だが役割は同じではない。Press Start 2P を多言語2案の代替や必須の追加フォントとはしない。今回の Latin subset は日本語作品名を持たない。`trk!` や英語名で比較し、実際の PWA 共通題字と作品の4言語名は別、適用先や組合せは未決。
 
 ## なぜ英字向けの書体も面白い？
 
@@ -10,7 +10,7 @@
 
 | 書体 | 作者資料からたどれること | 今回考える役割と注意 |
 | --- | --- | --- |
-| **Press Start 2P** | [作者 README](https://github.com/codeman38/PressStart2P/blob/41826487a3d18e4e97f6e6ac166a376a79d1a7fa/README.md) は、80年代のアーケードゲームの字形を基にし、ASCII 以外に欧州向け・ギリシャ・キリルも挙げる。 | 出発点へのつながりがある英字題字候補。今回使ったのは **Latin subset** であり、書体全体の文字範囲ではない。 |
+| **Press Start 2P（英字サブ基準）** | [作者 README](https://github.com/codeman38/PressStart2P/blob/41826487a3d18e4e97f6e6ac166a376a79d1a7fa/README.md) は、80年代のアーケードゲームの字形を基にし、ASCII 以外に欧州向け・ギリシャ・キリルも挙げる。 | 出発点へのつながりがある英字題字候補。今回使ったのは **Latin subset** であり、書体全体の文字範囲ではない。 |
 | **JetBrains Mono** | [作者 README](https://github.com/JetBrains/JetBrainsMono/blob/19371302b95d218af43299bce79ddbddd0bc364d/README.md) は開発者向け書体として説明し、合字を含む既定版と、合字を含まない `NL` 版を区別している。 | 等幅の端末的な印象を比べる候補。今回の作者 WOFF2 に `Привет` と `Γειά` の各文字はあるので、書体全体を「英語だけ」とは呼ばない。NL 版は今回測っていない。 |
 | **Fira Code** | [作者 README](https://github.com/tonsky/FiraCode/blob/ecd367b040ad92a28b64fa93135775f7e2417b37/README.md) はプログラミング用の複数文字の合字、文字や記号の選択肢を説明する。文字列そのものと、合字としての表示は別。 | コンソールらしさの比較候補。今回の Latin subset のギリシャ・キリル例は欠けるが、[Google Fonts の全体メタデータ](https://github.com/google/fonts/blob/86aced91de05cd4f96a06838124cca45be337b2b/ofl/firacode/METADATA.pb) は別 subset を列挙しており、書体全体が英語のみとは言えない。 |
 
@@ -84,4 +84,4 @@ python3 -m http.server 4178 --bind 127.0.0.1 --directory dist/re-modern-latin-st
 
 ## いまの位置と次の確認
 
-二つの多言語候補を基準に、英字向け3書体は**比較可能な別案**、美咲・k8x12・Source Code Pro・IBM Plex Mono は**資料段階**に置く。人に見てもらう時は、文字の区別、作品との相性、対象領域、端末や実ズームを記録し、文字があるだけで採用を決めない。美咲の実ファイルは正規入手後に別途固定・検査し、必要なら韓国語などの補助候補との組合せも考える。PWA 設定棚の相談・正式公開は完成候補が揃った後の別判断。
+二つの多言語基準候補に加え、Press Start 2P を**英字サブ基準**、JetBrains Mono・Fira Code を**比較可能な参考候補**、美咲・k8x12・Source Code Pro・IBM Plex Mono を**資料段階**に置く。人に見てもらう時は、文字の区別、作品との相性、対象領域、端末や実ズームを記録し、文字があるだけで採用を決めない。美咲の実ファイルは正規入手後に別途固定・検査し、必要なら韓国語などの補助候補との組合せも考える。PWA 設定棚の相談・正式公開は完成候補が揃った後の別判断。

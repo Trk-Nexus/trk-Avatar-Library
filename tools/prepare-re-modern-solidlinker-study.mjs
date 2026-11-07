@@ -34,7 +34,7 @@ try{
  replace('<style>','<style>\n@font-face{font-family:StudySolid;src:url("assets/x12y16pxSolidLinker.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}');
  replace('#fira:checked ~ .samples .value{font-family:StudyFira,system-ui,sans-serif}','#fira:checked ~ .samples .value{font-family:StudyFira,system-ui,sans-serif}\n#solid:checked ~ .samples .value{font-family:StudySolid,system-ui,sans-serif}\n.value.zero{letter-spacing:0}.value.spaced{letter-spacing:.125em}');
  replace('<h1>英字の表情を比べる</h1>','<h1>つながる輪郭を比べる</h1>');
- replace('固定版 PWA の共通題字と、作品データの英語名で、二つの基準候補と英字向けの参考候補を見比べます。','固定版 PWA の共通題字と、作品データの英語名で、SolidLinker と既存の候補を見比べます。');
+ replace('固定版 PWA の共通題字と、作品データの英語名で、二つの多言語基準候補と、英字サブ基準候補などを見比べます。','固定版 PWA の共通題字と、作品データの英語名で、SolidLinker と既存の候補を見比べます。');
  replace('Press Start 2P と Fira Code は Fontsource 5.3.0 の Latin subset','SolidLinker は作者提供の未改変 TTF（独自ライセンス）、Press Start 2P と Fira Code は Fontsource 5.3.0 の Latin subset');
  replace('<input type="radio" id="fira" name="font"> <label for="fira">Fira Code（Latin subset）</label>','<input type="radio" id="fira" name="font"> <label for="fira">Fira Code（Latin subset）</label><br>\n<input type="radio" id="solid" name="font"> <label for="solid">SolidLinker（作者の TTF）</label>');
  for(const id of ['brand','label-en','symbols']){

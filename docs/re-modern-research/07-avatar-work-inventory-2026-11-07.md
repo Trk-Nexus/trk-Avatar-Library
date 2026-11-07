@@ -4,7 +4,7 @@
 
 ## 進捗更新：英字と日本語の追加書体候補（2026-11-07）
 
-- 依頼者が多言語の比較候補として Dot＋Neo と Galmuri11 の二つを肯定。加えて[英字・日本語候補の調査](26-latin-japanese-font-candidates-2026-11-07.md)と、Press Start 2P・JetBrains Mono・Fira Code を英字題字で比べる隔離見本を作った。書体全体と実際に試した Latin subset を区別する。
+- 依頼者が Dot＋Neo と Galmuri11 の二つを多言語の主な比較基準として、Press Start 2P をピクセル・レトロ／ドットらしさを見る英字サブ基準候補として肯定。加えて[英字・日本語候補の調査](26-latin-japanese-font-candidates-2026-11-07.md)と、Press Start 2P・JetBrains Mono・Fira Code を英字題字で比べる隔離見本を作った。書体全体と実際に試した Latin subset を区別する。
 - 美咲フォントと k8x12 は作者資料・ライセンス案内を読んだが、この実行環境では作者提供バイナリを取得できず、実ファイル・字形・描画は未確認。最終採用・配布・PWA の設定棚・実機や人の確認は別。
 
 ## 過去の進捗：候補をたどる調査と資料束（2026-11-07）

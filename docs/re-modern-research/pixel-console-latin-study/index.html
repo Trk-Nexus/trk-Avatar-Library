@@ -16,13 +16,13 @@
 #fira:checked ~ .samples .value{font-family:StudyFira,system-ui,sans-serif}
 @media(forced-colors:active){fieldset,.sample,.badge{border-color:CanvasText}.note{border-color:CanvasText}a{color:LinkText}}
 </style></head><body><main>
-<header><span class="badge">研究用・作品への適用ではありません</span><h1>英字の表情を比べる</h1><p>固定版 PWA の共通題字と、作品データの英語名で、二つの基準候補と英字向けの参考候補を見比べます。どれを選んでも PWA や利用者の設定は変わりません。</p></header>
+<header><span class="badge">研究用・作品への適用ではありません</span><h1>英字の表情を比べる</h1><p>固定版 PWA の共通題字と、作品データの英語名で、二つの多言語基準候補と、英字サブ基準候補などを見比べます。どれを選んでも PWA や利用者の設定は変わりません。</p></header>
 <section aria-labelledby="compare"><h2 id="compare">候補を選ぶ</h2><p>初めはこの端末の system 系です。切り替わるのは下の英字・記号見本だけ。説明文や日本語の本文見本は変えません。選択はこのページからは保存しません。</p><p class="note">Press Start 2P と Fira Code は Fontsource 5.3.0 の Latin subset、JetBrains Mono は作者の WOFF2 を使用。サブセットの収録範囲は書体全体と同じとは限りません。Fira のファイルは 400 として配布されますが、内部名に Light が含まれます。失敗や欠字は端末の書体に代替され、通知は出ません。</p>
 <fieldset><legend>英字・記号の見本</legend>
 <input type="radio" id="system" name="font" checked> <label for="system">端末の system 系</label><br>
-<input type="radio" id="pair" name="font"> <label for="pair">DotGothic16 ＋ NeoDunggeunmo（基準候補）</label><br>
-<input type="radio" id="galmuri" name="font"> <label for="galmuri">Galmuri11（基準候補）</label><br>
-<input type="radio" id="press" name="font"> <label for="press">Press Start 2P（Latin subset）</label><br>
+<input type="radio" id="pair" name="font"> <label for="pair">DotGothic16 ＋ NeoDunggeunmo（多言語基準候補）</label><br>
+<input type="radio" id="galmuri" name="font"> <label for="galmuri">Galmuri11（多言語基準候補）</label><br>
+<input type="radio" id="press" name="font"> <label for="press">Press Start 2P（英字サブ基準候補・Latin subset）</label><br>
 <input type="radio" id="jet" name="font"> <label for="jet">JetBrains Mono（作者 WOFF2）</label><br>
 <input type="radio" id="fira" name="font"> <label for="fira">Fira Code（Latin subset）</label>
 <div class="samples">

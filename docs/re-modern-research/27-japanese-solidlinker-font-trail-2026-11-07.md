@@ -2,7 +2,7 @@
 
 2026-11-07／[ドットフォント一覧](https://ffont.jp/collections/dot_matome/)を入口に、**縁架ドット明朝24・横浜ドット・SolidLinker** を日英の題字の観点でたどる。特に、SolidLinker の「隣の文字と縁がつながる」印象は、作品を差別化する可能性がある。ただし、それは良さを確定した結論ではなく、比較して確かめたい仮説。
 
-[DotGothic16 ＋ NeoDunggeunmo と Galmuri11 の二つ](24-pixel-console-candidate-trail-2026-11-07.md)は、依頼者が良いと評価した**多言語の比較候補として維持**する。今回の3書体で置き換える決定ではない。[Press Start 2P・JetBrains Mono・Fira Code・美咲等](26-latin-japanese-font-candidates-2026-11-07.md)も探索の参考に残す。作品案の承認は、書体の採用、拡張の配布、公開、PWA 側の実装の承認ではない。
+[DotGothic16 ＋ NeoDunggeunmo と Galmuri11](24-pixel-console-candidate-trail-2026-11-07.md)を**多言語の主な比較基準**として維持し、[Press Start 2P](26-latin-japanese-font-candidates-2026-11-07.md)は依頼者がピクセル・レトロ／ドットらしさを見る**英字サブ基準候補**とした。役割の異なる3候補であり、今回調べた縁架・横浜・SolidLinker に置き換える決定ではない。JetBrains Mono・Fira Code・美咲等も探索の参考に残す。作品案の承認は、書体の採用、拡張の配布、公開、PWA 側の実装の承認ではない。
 
 ## 三つの方向：日英をどう楽しむか
 
