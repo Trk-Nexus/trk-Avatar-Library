@@ -36,7 +36,7 @@
    - 見本でキーボード・狭幅・拡大・動き軽減・JS 無効などを確認し、実機・異なるブラウザ・支援技術と人手レビューは結果を分ける。利用者自身が取得する任意別案は使用・画像公開条件の確認後に扱い、基本表示を必須の別案に依存させない。
    - **終了条件**：対象文字列・環境・試験／人手レビューの結果・不足と、公開可能な見本／未公開の開発メモを区別する。
 
-5. **フォント込みの完成候補をまとめる**
+5. **フォント込みの完成候補をまとめる** 〔資料束・一次版を作成、不足の解消と候補評価は継続〕
    - 作品データ、書体拡張候補、権利・出典・容量、必要な受け口、導入／設定／解除／失敗時の説明、試験・レビュー・未確認を束ねる。完成候補として伝えられる状態まで、Avatar 側で可能な差を埋める。
    - **終了条件**：使用者・PWA 側が基本表示を再現するのに必要なものと、まだ合意・実装・確認が必要な点を区別できる。未完了の人手・実機確認は空欄のまま示す。
 
@@ -54,11 +54,14 @@
 
 ## 次回の再開地点と検査
 
-A 節の手順1（対象・依存関係）は[案と限定照合](20-font-scope-dependencies-2026-11-07.md)、手順2は[純粋な状態モデルと模擬試験](21-font-state-and-recovery-study-2026-11-07.md)、手順3は[権利情報・配布形態の整理と隔離表示見本](22-font-rights-distribution-study-2026-11-07.md)、手順4は[多言語見本・機械試験・人手確認票](23-multilingual-font-review-study-2026-11-07.md)を作成。手順4の言語話者・実機・支援技術の確認、実ストレージ・複数タブ・UI・永続化・隔離コントローラーとの接続、配布の法的判断は未了。次は手順5（完成候補の資料を束ねる）へ進み、未検証の項目を不足のまま明示する。旧一覧の A1・A2（背景判定の調査）とは別の番号。人手レビュー・PWA側との合意も未了。PWA への返答や正式登録はこの段階で行わない。
+A 節の手順1（対象・依存関係）は[案と限定照合](20-font-scope-dependencies-2026-11-07.md)、手順2は[純粋な状態モデルと模擬試験](21-font-state-and-recovery-study-2026-11-07.md)、手順3は[権利情報・配布形態の整理と隔離表示見本](22-font-rights-distribution-study-2026-11-07.md)、手順4は[多言語見本・機械試験・人手確認票](23-multilingual-font-review-study-2026-11-07.md)を作成。手順5は[完成候補の資料束・一次版](25-pixel-console-candidate-brief-2026-11-07.md)と[候補をたどる調査の読み物](24-pixel-console-candidate-trail-2026-11-07.md)を作り、Galmuri11 を追加の固定候補として隔離比較した。作品の概念ごとに調べ方を変え、候補の背景・比較・未確認を、制作資料であると同時に読み物にもできる形で記録する。
+
+手順4の言語話者・実機・支援技術の確認、手順5の候補評価、実ストレージ・複数タブ・UI・永続化・隔離コントローラーとの接続、配布の法的判断は未了。次は資料束に残る不足のうち Avatar 側で可能な検証・調査を進め、人・PWA 側が必要なことは代行せず不足として示す。旧一覧の A1・A2（背景判定の調査）とは別の番号。人手レビュー・PWA側との合意も未了。PWA への返答や正式登録はこの段階で行わない。
 
 既存の限定試験は固定版 PWA と明示的に取得した書体が必要。詳細・前提は[研究15](15-korean-font-fallback-study-2026-11-07.md)、[研究17](17-isolated-font-pack-candidate-2026-11-07.md)、[研究18](18-scoped-font-prototype-2026-11-07.md)を参照。外部取得は自動実行せず、`/tmp` の checkout や依存ライブラリは消える可能性がある。通常の `npm run check` と `npm test` に加え、以下の研究試験は必要な環境を用意して別途実行する。
 
 ```sh
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir TRK_GALMURI_DIR=/path/to/galmuri-dir node tests/re-modern-candidate-comparison.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-multilingual-study.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-license-study.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-license-study-browser.test.mjs

@@ -16,7 +16,7 @@
 
 ## 文字の表情
 
-今の制作データと研究用見本が指定するのは `system-ui, sans-serif` です。実際にどの書体が表示されるかは端末により異なります。
+今の制作データと初期の静止見本が指定するのは `system-ui, sans-serif` です。実際にどの書体が表示されるかは端末により異なります。別の隔離研究見本では書体候補を選んで比べられますが、作品に適用する機能ではありません。
 
 短い日本語見出しの候補として、[DotGothic16](https://github.com/fontworks-fonts/DotGothic16/blob/14517183ab2f75e8bccafc5a0bff6685d268c687/README-JP.md) も調べました。作者の説明では、16×16のゴシック体ビットマップをベースにした書体です。出発点のスキンが指定する [Press Start 2P](https://github.com/codeman38/PressStart2P/tree/41826487a3d18e4e97f6e6ac166a376a79d1a7fa) も、ゲームに着想を得た文字として検討しました。日本語の短い見出しとのつながりを考え、今は DotGothic16 を優先候補としています。
 
@@ -33,6 +33,6 @@
 - [作品の制作データと承認・検証の状態](../../drafts/re-modern/pixel-console/README.md)
 - [元スキンのデータ](../../skin-volumes/glitch/items/pixel-8bit.json)
 - 作者資料：[DotGothic16 の説明](https://github.com/fontworks-fonts/DotGothic16/blob/14517183ab2f75e8bccafc5a0bff6685d268c687/README-JP.md)／[OFL](https://github.com/fontworks-fonts/DotGothic16/blob/14517183ab2f75e8bccafc5a0bff6685d268c687/OFL.txt)、[Press Start 2P の資料](https://github.com/codeman38/PressStart2P/tree/41826487a3d18e4e97f6e6ac166a376a79d1a7fa)／[LICENSE](https://github.com/codeman38/PressStart2P/blob/41826487a3d18e4e97f6e6ac166a376a79d1a7fa/LICENSE.txt)
-- [制作側の調査・選択・未確認の記録](10-pixel-console-development-notes.md)
+- [制作側の調査・選択・未確認の記録](10-pixel-console-development-notes.md)／[候補をたどる調査の読み物](24-pixel-console-candidate-trail-2026-11-07.md)（公開未承認）
 
 文章を公開する前に出典と掲載範囲を確認します。リンクは資料への案内であり、書体や画像を取得・適用する操作ではありません。実機・支援技術、権利、独立レビュー、正式登録・公開は別の作業です。
