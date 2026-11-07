@@ -54,11 +54,12 @@
 
 ## 次回の再開地点と検査
 
-まず A 節の手順1（対象・依存関係）を具体化し、その後手順2（状態遷移／失敗・復元試験）へ進む。旧一覧の A1・A2（背景判定の調査）とは別の番号。権利表示・文字レビューの資料は並行して準備できる。PWA への返答や正式登録はこの段階で行わない。
+A 節の手順1（対象・依存関係）は[案と限定照合](20-font-scope-dependencies-2026-11-07.md)を作成。適用方針・人手レビュー・PWA側との合意は未了。次は手順2（状態遷移／失敗・復元試験）へ進む。旧一覧の A1・A2（背景判定の調査）とは別の番号。権利表示・文字レビューの資料は並行して準備できる。PWA への返答や正式登録はこの段階で行わない。
 
 既存の限定試験は固定版 PWA と明示的に取得した書体が必要。詳細・前提は[研究15](15-korean-font-fallback-study-2026-11-07.md)、[研究17](17-isolated-font-pack-candidate-2026-11-07.md)、[研究18](18-scoped-font-prototype-2026-11-07.md)を参照。外部取得は自動実行せず、`/tmp` の checkout や依存ライブラリは消える可能性がある。通常の `npm run check` と `npm test` に加え、以下の研究試験は必要な環境を用意して別途実行する。
 
 ```sh
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-font-contract.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-korean-font-study.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-font-pack-study.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-scoped-font-study.test.mjs
