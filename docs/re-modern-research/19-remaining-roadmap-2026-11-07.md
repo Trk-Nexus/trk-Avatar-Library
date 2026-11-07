@@ -16,7 +16,7 @@
 
 各項目は研究・完成候補の作業。成果物ができたことと、正式な許諾・人のレビューの完了を区別する。
 
-1. **対象と依存関係を固める** 〔優先・次の着手〕
+1. **対象と依存関係を固める** 〔研究案・限定照合済み〕
    - 作品のどの領域・要素にどの書体を使うか、対象の言語・文字列、fallback 順、本文・共通ノーツ・書斎・基地などの保護範囲を明文化する。既存の書体設定と競合した場合は利用者の選択を尊重する。
    - 基本表示に必要な拡張、未導入時の代替表示、対応外・欠字、旧版の扱いを区別。作品や拡張の導入・適用は利用者の明示的な選択とする。
    - **終了条件**：入力・対象・適用しない領域・不足時の状態と未決事項を表にし、隔離試験の期待結果と対応づけられる。
@@ -31,12 +31,12 @@
    - 研究パックの形式、1パック／共通資源、識別子・名前衝突・更新・サイズと、2書体の権利情報を**利用者がそれぞれ読める方法**を検討する。現行 PWA のパック詳細は先頭のライセンス全文だけを表示し、NOTICE をレコードに保存しない。
    - **終了条件**：再現できる実ファイルと証拠、利用・配布条件の確認項目、未確認事項、別書体への影響を揃える。OFL の法的判断と正式配布の承認は独立した人の確認を要する。
 
-4. **表現・文字・操作の確認と見本を整える**
+4. **表現・文字・操作の確認と見本を整える** 〔隔離見本・機械試験済み、人手・実機等は未了〕
    - 対象の日本語・英語・中国語・韓国語などを明示し、字形の自然さ・欠字・結合・読みやすさと概念の適合を確認。cmap やロード成功だけで言語全体の品質を保証しない。
    - 見本でキーボード・狭幅・拡大・動き軽減・JS 無効などを確認し、実機・異なるブラウザ・支援技術と人手レビューは結果を分ける。利用者自身が取得する任意別案は使用・画像公開条件の確認後に扱い、基本表示を必須の別案に依存させない。
    - **終了条件**：対象文字列・環境・試験／人手レビューの結果・不足と、公開可能な見本／未公開の開発メモを区別する。
 
-5. **フォント込みの完成候補をまとめる**
+5. **フォント込みの完成候補をまとめる** 〔資料束・一次版を作成、不足の解消と候補評価は継続〕
    - 作品データ、書体拡張候補、権利・出典・容量、必要な受け口、導入／設定／解除／失敗時の説明、試験・レビュー・未確認を束ねる。完成候補として伝えられる状態まで、Avatar 側で可能な差を埋める。
    - **終了条件**：使用者・PWA 側が基本表示を再現するのに必要なものと、まだ合意・実装・確認が必要な点を区別できる。未完了の人手・実機確認は空欄のまま示す。
 
@@ -54,11 +54,25 @@
 
 ## 次回の再開地点と検査
 
-まず A 節の手順1（対象・依存関係）を具体化し、その後手順2（状態遷移／失敗・復元試験）へ進む。旧一覧の A1・A2（背景判定の調査）とは別の番号。権利表示・文字レビューの資料は並行して準備できる。PWA への返答や正式登録はこの段階で行わない。
+A 節の手順1（対象・依存関係）は[案と限定照合](20-font-scope-dependencies-2026-11-07.md)、手順2は[純粋な状態モデルと模擬試験](21-font-state-and-recovery-study-2026-11-07.md)、手順3は[権利情報・配布形態の整理と隔離表示見本](22-font-rights-distribution-study-2026-11-07.md)、手順4は[多言語見本・機械試験・人手確認票](23-multilingual-font-review-study-2026-11-07.md)を作成。手順5は[完成候補の資料束・一次版](25-pixel-console-candidate-brief-2026-11-07.md)と[候補をたどる調査の読み物](24-pixel-console-candidate-trail-2026-11-07.md)を作り、Galmuri11 を追加の固定候補として隔離比較した。作品の概念ごとに調べ方を変え、候補の背景・比較・未確認を、制作資料であると同時に読み物にもできる形で記録する。
+
+依頼者は Dot＋Neo と Galmuri11 の二つを多言語の主な比較基準とし、Press Start 2P をピクセル・レトロ／ドットらしさを見る英字のサブ基準候補として肯定。[英字・日本語の候補を調査](26-latin-japanese-font-candidates-2026-11-07.md)し、Press Start 2P・JetBrains Mono・Fira Code の固定ファイルを英字題字で隔離比較した。美咲フォントは作者資料を確認したが、実ファイルをこの環境では取得できず未検証。いずれも最終採用や正式配布とは別。
+
+追加で[縁架ドット明朝24・横浜ドット・SolidLinker](27-japanese-solidlinker-font-trail-2026-11-07.md)を調査。SolidLinker の固定 TTF を英字題字で隔離比較し、独自ライセンスを別記。日本語の2書体は実ファイル未検証で、横浜フリー版の Web 配布・拡張同梱は保留する。
+
+依頼者の希望を受け、[PWA相談用の受け渡し資料](28-pwa-consultation-handoff-2026-11-07.md)と共通題字色の検証用 `.stpack` の再現手順を整え、[紹介の表・裏の読み物案](29-pixel-console-reader-front-back-2026-11-07.md)を作成。相手へは未送信、作品・フォント拡張の完成や正式公開ではない。
+
+手順4の言語話者・実機・支援技術の確認、手順5の候補評価、実ストレージ・複数タブ・UI・永続化・隔離コントローラーとの接続、配布の法的判断は未了。次は資料束に残る不足のうち Avatar 側で可能な検証・調査を進め、人・PWA 側が必要なことは代行せず不足として示す。旧一覧の A1・A2（背景判定の調査）とは別の番号。人手レビュー・PWA側との合意も未了。PWA への返答や正式登録はこの段階で行わない。
 
 既存の限定試験は固定版 PWA と明示的に取得した書体が必要。詳細・前提は[研究15](15-korean-font-fallback-study-2026-11-07.md)、[研究17](17-isolated-font-pack-candidate-2026-11-07.md)、[研究18](18-scoped-font-prototype-2026-11-07.md)を参照。外部取得は自動実行せず、`/tmp` の checkout や依存ライブラリは消える可能性がある。通常の `npm run check` と `npm test` に加え、以下の研究試験は必要な環境を用意して別途実行する。
 
 ```sh
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir TRK_GALMURI_DIR=/path/to/galmuri-dir TRK_LATIN_DIR=/path/to/latin-dir node tests/re-modern-latin-study.test.mjs
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir TRK_GALMURI_DIR=/path/to/galmuri-dir node tests/re-modern-candidate-comparison.test.mjs
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-multilingual-study.test.mjs
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-license-study.test.mjs
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-license-study-browser.test.mjs
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-font-contract.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-korean-font-study.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-font-pack-study.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-scoped-font-study.test.mjs

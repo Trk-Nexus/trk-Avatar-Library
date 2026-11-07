@@ -1,0 +1,44 @@
+{
+  "status": "research-proposal-not-a-pwa-schema",
+  "workId": "trk-re-modern-pixel-console",
+  "draftSource": "drafts/re-modern/pixel-console/skin.json",
+  "pwaReference": "4f93a69f94ec3a3c14c6ea8d1cf9c064723b43e6",
+  "fontAssets": [
+    {
+      "id": "dotgothic16-japanese-400",
+      "fontBytes": 396312,
+      "fontSha256": "a042e37d1a36798f5a9dee9ab81d2fc4204950ae1729b856e4d22833a61997ee",
+      "licenseSha256": "335d6a81ce1afcf64c8bc36334458ba3292ca6fba5d3974895b3ed84ccee530e"
+    },
+    {
+      "id": "neodunggeunmo-1601-400",
+      "fontBytes": 44352,
+      "fontSha256": "0c0ca9cd73f692a5da5d7fb39737902aa9ea312537237779972a9d81ef0a33bf",
+      "licenseSha256": "4d3155f4caba9970c8b386064b398822c29d9181cfba07964ba7b07ccc6cca91"
+    }
+  ],
+  "targetCandidates": [
+    {
+      "id": "common-brand-title",
+      "kind": "current-pwa-element-proposal",
+      "selectorAtFixedPwa": ".brand h1",
+      "textAtFixedPwa": "trk!",
+      "selectionRequired": "common-work-and-explicit-font-use"
+    },
+    {
+      "id": "work-label-specimen",
+      "kind": "isolated-specimen-only",
+      "draftProperty": "label",
+      "languages": ["ja", "en", "zh", "ko"]
+    }
+  ],
+  "protectedAreas": ["body-and-descriptions", "other-headings", "study", "base", "playback-and-captions", "shared-notes", "other-packs-and-skins"],
+  "fallbackOrder": ["dotgothic16-japanese-400", "neodunggeunmo-1601-400", "user-existing-font-stack", "system-fallback"],
+  "dependencyPolicy": "both-verified-and-loaded-before-work-font-application",
+  "expectedLabelCoverage": {
+    "ja": {"dotMissing": [], "neoMissing": ["ピ", "ク", "セ", "ル", "・", "コ", "ン", "ソ", "ー"]},
+    "en": {"dotMissing": [], "neoMissing": []},
+    "zh": {"dotMissing": [], "neoMissing": ["像", "素", "控", "制", "台"]},
+    "ko": {"dotMissing": ["픽", "셀", "콘", "솔"], "neoMissing": []}
+  }
+}

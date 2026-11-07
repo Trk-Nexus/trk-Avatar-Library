@@ -2,6 +2,8 @@
 
 > 読者向け文章の**検討用草案**（2026-11-07）。作品案は依頼者に承認されていますが、この文章・掲載先・公開は未承認です。作品は正式登録・配布されていません。
 
+**続きの案**：候補や選定理由をより詳しく読める[表・裏の読み物試案](29-pixel-console-reader-front-back-2026-11-07.md)を作成しました。こちらは初期草案として残します。新しい案も公開・文章の承認を意味しません。
+
 ## 暗い舞台から考える
 
 ピクセル・コンソールは、既存スキン「[pixel-8bit](../../skin-volumes/glitch/items/pixel-8bit.json)」の暗い舞台、限られた色、角形の反復を出発点にした作品案です。小さな四角が並ぶ電子的な印象は残しながら、説明を読むときには、落ち着いた余白も大切にしたい。そんな考えから作り始めました。
@@ -16,11 +18,11 @@
 
 ## 文字の表情
 
-今の制作データと研究用見本が指定するのは `system-ui, sans-serif` です。実際にどの書体が表示されるかは端末により異なります。
+今の制作データと初期の静止見本が指定するのは `system-ui, sans-serif` です。実際にどの書体が表示されるかは端末により異なります。別の隔離研究見本では書体候補を選んで比べられますが、作品に適用する機能ではありません。
 
 短い日本語見出しの候補として、[DotGothic16](https://github.com/fontworks-fonts/DotGothic16/blob/14517183ab2f75e8bccafc5a0bff6685d268c687/README-JP.md) も調べました。作者の説明では、16×16のゴシック体ビットマップをベースにした書体です。出発点のスキンが指定する [Press Start 2P](https://github.com/codeman38/PressStart2P/tree/41826487a3d18e4e97f6e6ac166a376a79d1a7fa) も、ゲームに着想を得た文字として検討しました。日本語の短い見出しとのつながりを考え、今は DotGothic16 を優先候補としています。
 
-**どちらもこの作品の制作データや見本には読み込んでいません。** 選べる機能として提供するかは未定で、使用する実ファイルの権利・字種、読み込みの失敗や解除、利用者の既存設定への影響も確認が必要です。本文まで一律にドット書体へ変える案は、長文や多言語での読みやすさを考えて採用していません。
+制作データと初期の静止見本には、これらの書体ファイルを含めていません。その後、DotGothic16 と韓国語の補助候補 NeoDunggeunmo を使った[隔離研究見本](12-font-included-isolated-study-2026-11-07.md)を別に作りましたが、この作品を導入したときに意図した範囲へ書体を適用する機能が PWA にできたわけではありません。正式に選べる機能として提供するかは未定で、使用する実ファイルの権利・字種、読み込みの失敗や解除、利用者の既存設定への影響も確認が必要です。本文まで一律にドット書体へ変える案は、長文や多言語での読みやすさを考えて採用していません。
 
 ## これから試したいこと
 
@@ -33,6 +35,6 @@
 - [作品の制作データと承認・検証の状態](../../drafts/re-modern/pixel-console/README.md)
 - [元スキンのデータ](../../skin-volumes/glitch/items/pixel-8bit.json)
 - 作者資料：[DotGothic16 の説明](https://github.com/fontworks-fonts/DotGothic16/blob/14517183ab2f75e8bccafc5a0bff6685d268c687/README-JP.md)／[OFL](https://github.com/fontworks-fonts/DotGothic16/blob/14517183ab2f75e8bccafc5a0bff6685d268c687/OFL.txt)、[Press Start 2P の資料](https://github.com/codeman38/PressStart2P/tree/41826487a3d18e4e97f6e6ac166a376a79d1a7fa)／[LICENSE](https://github.com/codeman38/PressStart2P/blob/41826487a3d18e4e97f6e6ac166a376a79d1a7fa/LICENSE.txt)
-- [制作側の調査・選択・未確認の記録](10-pixel-console-development-notes.md)
+- [制作側の調査・選択・未確認の記録](10-pixel-console-development-notes.md)／[候補をたどる調査の読み物](24-pixel-console-candidate-trail-2026-11-07.md)（公開未承認）
 
 文章を公開する前に出典と掲載範囲を確認します。リンクは資料への案内であり、書体や画像を取得・適用する操作ではありません。実機・支援技術、権利、独立レビュー、正式登録・公開は別の作業です。
