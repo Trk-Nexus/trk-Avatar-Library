@@ -31,7 +31,7 @@
    - 研究パックの形式、1パック／共通資源、識別子・名前衝突・更新・サイズと、2書体の権利情報を**利用者がそれぞれ読める方法**を検討する。現行 PWA のパック詳細は先頭のライセンス全文だけを表示し、NOTICE をレコードに保存しない。
    - **終了条件**：再現できる実ファイルと証拠、利用・配布条件の確認項目、未確認事項、別書体への影響を揃える。OFL の法的判断と正式配布の承認は独立した人の確認を要する。
 
-4. **表現・文字・操作の確認と見本を整える**
+4. **表現・文字・操作の確認と見本を整える** 〔隔離見本・機械試験済み、人手・実機等は未了〕
    - 対象の日本語・英語・中国語・韓国語などを明示し、字形の自然さ・欠字・結合・読みやすさと概念の適合を確認。cmap やロード成功だけで言語全体の品質を保証しない。
    - 見本でキーボード・狭幅・拡大・動き軽減・JS 無効などを確認し、実機・異なるブラウザ・支援技術と人手レビューは結果を分ける。利用者自身が取得する任意別案は使用・画像公開条件の確認後に扱い、基本表示を必須の別案に依存させない。
    - **終了条件**：対象文字列・環境・試験／人手レビューの結果・不足と、公開可能な見本／未公開の開発メモを区別する。
@@ -54,11 +54,12 @@
 
 ## 次回の再開地点と検査
 
-A 節の手順1（対象・依存関係）は[案と限定照合](20-font-scope-dependencies-2026-11-07.md)、手順2は[純粋な状態モデルと模擬試験](21-font-state-and-recovery-study-2026-11-07.md)、手順3は[権利情報・配布形態の整理と隔離表示見本](22-font-rights-distribution-study-2026-11-07.md)を作成。実ストレージ・複数タブ・UI・永続化・隔離コントローラーとの接続、配布の法的判断は未了。次は手順4（表現・文字・操作の確認と見本）を進め、未検証項目も引き続き扱う。旧一覧の A1・A2（背景判定の調査）とは別の番号。人手レビュー・PWA側との合意も未了。PWA への返答や正式登録はこの段階で行わない。
+A 節の手順1（対象・依存関係）は[案と限定照合](20-font-scope-dependencies-2026-11-07.md)、手順2は[純粋な状態モデルと模擬試験](21-font-state-and-recovery-study-2026-11-07.md)、手順3は[権利情報・配布形態の整理と隔離表示見本](22-font-rights-distribution-study-2026-11-07.md)、手順4は[多言語見本・機械試験・人手確認票](23-multilingual-font-review-study-2026-11-07.md)を作成。手順4の言語話者・実機・支援技術の確認、実ストレージ・複数タブ・UI・永続化・隔離コントローラーとの接続、配布の法的判断は未了。次は手順5（完成候補の資料を束ねる）へ進み、未検証の項目を不足のまま明示する。旧一覧の A1・A2（背景判定の調査）とは別の番号。人手レビュー・PWA側との合意も未了。PWA への返答や正式登録はこの段階で行わない。
 
 既存の限定試験は固定版 PWA と明示的に取得した書体が必要。詳細・前提は[研究15](15-korean-font-fallback-study-2026-11-07.md)、[研究17](17-isolated-font-pack-candidate-2026-11-07.md)、[研究18](18-scoped-font-prototype-2026-11-07.md)を参照。外部取得は自動実行せず、`/tmp` の checkout や依存ライブラリは消える可能性がある。通常の `npm run check` と `npm test` に加え、以下の研究試験は必要な環境を用意して別途実行する。
 
 ```sh
+TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-multilingual-study.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-license-study.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-license-study-browser.test.mjs
 TRK_PWA=/path/to/fixed-pwa TRK_NEO_DIR=/path/to/neo-dir node tests/re-modern-font-contract.test.mjs
