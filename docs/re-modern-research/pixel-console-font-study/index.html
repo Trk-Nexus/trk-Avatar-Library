@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ピクセル・コンソール — 書体の研究見本</title>
+<style>
+@font-face{font-family:PixelResearchDotGothic;src:url("assets/DotGothic16-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+/* OPTIONAL_KOREAN_FONT_STYLE */
+:root{color-scheme:dark;--bg:#10151a;--panel:#172229;--text:#ecf6ee;--muted:#b8c9bd;--accent:#56d994}
+*{box-sizing:border-box;min-width:0}
+a,code,label{overflow-wrap:anywhere}
+body{margin:0;background:var(--bg);color:var(--text);font:1rem/1.65 system-ui,sans-serif}
+main{max-width:68rem;margin:auto;padding:clamp(1rem,4vw,3rem)}
+header{border-left:.35rem solid var(--accent);padding-left:1rem}
+h1{font-size:clamp(1.8rem,5vw,3rem);line-height:1.2;margin:.3rem 0}
+h2{line-height:1.3}p{max-width:65ch}a{color:#8bf2b4}a:focus-visible,input:focus-visible{outline:3px solid #f7d680;outline-offset:4px}
+.badge{display:inline-block;border:1px solid var(--accent);padding:.15rem .5rem;font-size:.85rem}
+fieldset{min-inline-size:0;margin:2rem 0;border:1px solid #8ea4aa;padding:clamp(1rem,3vw,2rem)}legend{padding:0 .5rem;font-weight:bold}
+.choice{display:inline-block;margin:.3rem 1rem .3rem 0}.choice label{cursor:pointer}
+.specimen{background:var(--panel);border:1px solid #8ea4aa;margin-top:1rem;padding:clamp(1rem,4vw,2rem)}
+.sample-heading{font:400 clamp(1.5rem,4vw,2.5rem)/1.3 system-ui,sans-serif;margin:0 0 1rem;overflow-wrap:anywhere}
+#font-dot:checked ~ .specimen .sample-heading{font-family:PixelResearchDotGothic,system-ui,sans-serif}
+.sample-text{font-family:system-ui,sans-serif}.swatch{display:flex;gap:1rem;flex-wrap:wrap}.swatch span{border:2px solid currentColor;padding:.25rem .65rem}.warm{color:#ff8069}.cool{color:#69b8ff}
+.notice{border-left:.25rem solid #f7d680;padding:.2rem 1rem;background:#293c3d}.small{font-size:.9rem;color:var(--muted)}
+@media (forced-colors:active){header,fieldset,.specimen{border-color:CanvasText}.badge{border-color:CanvasText}a{color:LinkText}}
+</style>
+</head>
+<body><main>
+<header><span class="badge">研究用・正式公開ではありません</span><h1>小さな四角と、静かな余白</h1><p>「ピクセル・コンソール」の見出し書体を調べる、独立した静止見本です。PWAやあなたの設定には適用しません。</p></header>
+<section aria-labelledby="intro"><h2 id="intro">見出しだけ、表情を比べる</h2><p>初期状態は端末の system 系です。DotGothic16 を選ぶと、この見本の見出しにだけローカルの日本語サブセットを使います。本文は system 系のままです。切り替えはこのページ内だけで、保存も通信先の追加も行いません。</p>
+<fieldset><legend>見本の見出し書体</legend>
+<input type="radio" name="font" id="font-system" value="system" checked> <span class="choice"><label for="font-system">端末の system 系</label></span>
+<input type="radio" name="font" id="font-dot" value="dot"> <span class="choice"><label for="font-dot">DotGothic16（見出しのみ）</label></span>
+<div class="specimen" aria-label="書体の見本">
+<p class="small">見出しの見本</p><p class="sample-heading"><span lang="ja">ピクセル・コンソール</span><br><span lang="en">PIXEL CONSOLE 0123</span><br><span class="sample-ko" lang="ko">픽셀 콘솔</span></p>
+<p class="sample-text">暗い舞台に、四角いリズムと読むための余白を。これは概念を示す静止した文章で、実際の PWA の画面ではありません。</p>
+<div class="swatch" aria-label="形の試案"><span class="warm">■ ドン</span><span class="cool">◆ カッ</span></div>
+<p class="small">ノーツは見本です。共通ノーツの設定は変更しません。</p>
+</div></fieldset>
+<p class="notice">DotGothic16 は日本語サブセットで、韓国語見本の文字は含みません。収録されない文字や読み込みに失敗した文字は別の書体に代替されます。端末ごとに表示が異なるため、個々の文字・読みやすさの確認が必要です。</p>
+<!-- OPTIONAL_KOREAN_FONT_DETAILS -->
+<p>将来の作品では、配布条件を確認した書体を基本表示に用意する方針です。この見本は比較用のため system 系から始まり、作品への導入・適用はまだできません。</p>
+<p>別途入手が必要な書体も、権利を確認したうえで任意の別案として紹介することを検討しています。見本画像も許諾を確認してから掲載します。ここには別案の画像や取得・適用機能はまだありません。</p>
+</section>
+<section aria-labelledby="about"><h2 id="about">書体と資料</h2><p>見本の DotGothic16 は <code>@fontsource/dotgothic16@5.3.1</code> の日本語 WOFF2 を、既存パックからローカルに取り出して使います。作者の資料とライセンスは次から読めます。外部リンクを開く操作とフォントの読み込みは別です。</p><ul><li><a href="https://github.com/fontworks-fonts/DotGothic16/tree/14517183ab2f75e8bccafc5a0bff6685d268c687">作者の資料（外部サイト）</a></li><li><a href="assets/OFL.txt">同梱する SIL Open Font License 1.1 と著作権表示</a></li><li><a href="FONT-SOURCE.txt">取得元・ハッシュ・未確認</a></li></ul><p class="small">見本を終了すれば設定は残りません。PWAへの組み込み・配布、書体の範囲、失敗時の扱い、実機と支援技術による確認は別途検討します。</p></section>
+</main></body></html>

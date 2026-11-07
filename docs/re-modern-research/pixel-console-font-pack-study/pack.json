@@ -1,0 +1,25 @@
+{
+  "format": "shadow-taiko-pack",
+  "version": 1,
+  "name": "研究用 ピクセル・コンソール書体",
+  "author": "Avatar Library research",
+  "release": "0.0.1-test",
+  "description": "研究専用。現在のPWAでは見出し以外にも適用されます。正式配布物ではありません。",
+  "license": "書体：各OFL-1.1。各ライセンス全文と著作権表示を確認してください。",
+  "fonts": [
+    {
+      "family": "TrkPixelResearchDot",
+      "file": "fonts/dotgothic.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/dot/OFL.txt"
+    },
+    {
+      "family": "TrkPixelResearchNeo",
+      "file": "fonts/neodgm.woff2",
+      "weight": 400,
+      "license": "OFL-1.1",
+      "licenseFile": "fonts/neo/OFL.txt"
+    }
+  ]
+}
