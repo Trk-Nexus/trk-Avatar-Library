@@ -16,6 +16,8 @@
 | 見本 | [文字比較](23-multilingual-font-review-study-2026-11-07.md)、[権利表示](22-font-rights-distribution-study-2026-11-07.md)、[拡張pack](17-isolated-font-pack-candidate-2026-11-07.md)、[題字限定試作](18-scoped-font-prototype-2026-11-07.md)はそれぞれ隔離した研究。 | 一つに接続された利用者向け導入・設定・解除の完成品ではない。 |
 | 紹介文と制作記録 | [読者向け文章の草案](09-pixel-console-reader-draft.md)／[制作メモ](10-pixel-console-development-notes.md)／[探索の読み物](24-pixel-console-candidate-trail-2026-11-07.md)。 | 公開先・文章の承認や、第三者素材の配布許諾ではない。 |
 
+**続き**：[PWA相談用の受け渡し資料](28-pwa-consultation-handoff-2026-11-07.md)と[紹介の表・裏の読み物案](29-pixel-console-reader-front-back-2026-11-07.md)を作成。相談用の題字色 `.stpack` は再現可能な実験であり、作品全体や書体拡張の完成品ではない。PWAへは未送信。
+
 ## 現在の基準案：何を、いつ変えるか
 
 - 共通領域に作品を選び、利用者が書体使用を明示的に選んだ場合の **固定 PWA の `.brand h1`＝`trk!`** を適用候補とする。作品名の4言語は比較対象であり、作品一覧・その他の UI を勝手に変更する仕様ではない。
