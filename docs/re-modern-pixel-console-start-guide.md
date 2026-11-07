@@ -103,6 +103,8 @@ TRK_PWA="$PWA_M3" node tests/re-modern-work-m3.test.mjs
 
 ### C-2. Linux sandbox で Chromium の共有ライブラリが無い場合
 
+固定版 Chromium 133 を明示パスに隔離し、バージョン混在を避ける手順は [共通のブラウザ試験環境ガイド](browser-test-environment-2026-11-07.md)を参照。以下は従来の方法で、共有 `/tmp/chromium` がある場合は版が混在し得る。
+
 PWA 側の [smoke の立て方（固定版）](https://github.com/Trk-Nexus/trk-PWA/blob/4b4624140757e8faddda5b5a3b8c95df992ad9ca/tools/smoke/README.md) の方法を Avatar 側でも利用できる。次は Avatar の `npm ci` 後、**同じターミナル・リポジトリルート**で実行する。`al2023.tar.br` は npm 依存に含まれる。Linux の例であり、他の OS に使わない。
 
 ```sh

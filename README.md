@@ -12,6 +12,8 @@
 
 ## trk-re-modern を作る人へ
 
+概念・資料・制作／検証ツールと現在地をまとめた[開発マップ](docs/trk-re-modern-development-map.md)も参照してください。
+
 新カテゴリーの[コンセプト・制作方式](docs/trk-re-modern-concept.md)と[紹介書式](docs/trk-re-modern-introduction-template.md)を確認し、[trk-re-modern 制作・調査・公開ガイドライン](docs/trk-re-modern-guidelines.md)を必ず適用します。検索・出典・権利、作品の意図、利用者が安全に戻れること、ブラウザ検証と公開前レビューを定めています。`npm run check:re-modern` は登録と必須記録の構造を検査します（内容の真偽・実機確認は別途レビュー）。作品はまだ登録されていません。
 
 ピクセル・コンソールの一時見本、固定 PWA への読み込み、Avatar／PWA 両側のブラウザ smoke は [起動・確認手順書](docs/re-modern-pixel-console-start-guide.md) を参照してください。作品は利用者承認済みですが、登録・公開や実機等の確認は未完了です。
@@ -533,5 +535,5 @@ OS の `prefers-reduced-motion` は常に尊重します。手動で減らす場
 
 ### 検証
 
-- `npm ci && npm test`：CLI・skin-contrast・Modern UX と Chromium の操作テスト。ブラウザテストは Linux x64 の同梱 Chromium を使います（別の Chromium を使う場合は `CHROMIUM_PATH` を指定）。実行には NSS 等のシステムライブラリが必要です。
+- `npm ci && npm test`：CLI・skin-contrast・Modern UX と Chromium の操作テスト。ブラウザテストは Linux x64 の同梱 Chromium を使います（別の Chromium を使う場合は `CHROMIUM_PATH` を指定）。実行には NSS 等のシステムライブラリが必要です。[Linux x86_64 の隔離環境の準備と確認](docs/browser-test-environment-2026-11-07.md)も参照。
 - `npm run check`：291 種のうち CLI / Wizard 対象 62 種を検査（229 種は対象外）。この検査だけではすべての色の組み合わせを保証しません。trk-PWA v3 での確認と残課題は [レビュー対応メモ](docs/2026-11-03-issue35-review-response.md) を参照。
