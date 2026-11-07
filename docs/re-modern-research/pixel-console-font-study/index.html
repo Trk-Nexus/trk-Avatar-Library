@@ -6,9 +6,10 @@
 <title>ピクセル・コンソール — 書体の研究見本</title>
 <style>
 @font-face{font-family:PixelResearchDotGothic;src:url("assets/DotGothic16-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+/* OPTIONAL_KOREAN_FONT_STYLE */
 :root{color-scheme:dark;--bg:#10151a;--panel:#172229;--text:#ecf6ee;--muted:#b8c9bd;--accent:#56d994}
 *{box-sizing:border-box;min-width:0}
-a,code{overflow-wrap:anywhere}
+a,code,label{overflow-wrap:anywhere}
 body{margin:0;background:var(--bg);color:var(--text);font:1rem/1.65 system-ui,sans-serif}
 main{max-width:68rem;margin:auto;padding:clamp(1rem,4vw,3rem)}
 header{border-left:.35rem solid var(--accent);padding-left:1rem}
@@ -32,12 +33,13 @@ fieldset{min-inline-size:0;margin:2rem 0;border:1px solid #8ea4aa;padding:clamp(
 <input type="radio" name="font" id="font-system" value="system" checked> <span class="choice"><label for="font-system">端末の system 系</label></span>
 <input type="radio" name="font" id="font-dot" value="dot"> <span class="choice"><label for="font-dot">DotGothic16（見出しのみ）</label></span>
 <div class="specimen" aria-label="書体の見本">
-<p class="small">見出しの見本</p><p class="sample-heading">ピクセル・コンソール<br>PIXEL CONSOLE 0123</p>
+<p class="small">見出しの見本</p><p class="sample-heading"><span lang="ja">ピクセル・コンソール</span><br><span lang="en">PIXEL CONSOLE 0123</span><br><span class="sample-ko" lang="ko">픽셀 콘솔</span></p>
 <p class="sample-text">暗い舞台に、四角いリズムと読むための余白を。これは概念を示す静止した文章で、実際の PWA の画面ではありません。</p>
 <div class="swatch" aria-label="形の試案"><span class="warm">■ ドン</span><span class="cool">◆ カッ</span></div>
 <p class="small">ノーツは見本です。共通ノーツの設定は変更しません。</p>
 </div></fieldset>
-<p class="notice">候補書体の対応範囲は日本語サブセットです。収録されない文字や読み込みに失敗した文字は端末の代替書体になる場合があります。個々の文字の表示・読みやすさは環境ごとの確認が必要です。</p>
+<p class="notice">DotGothic16 は日本語サブセットで、韓国語見本の文字は含みません。収録されない文字や読み込みに失敗した文字は別の書体に代替されます。端末ごとに表示が異なるため、個々の文字・読みやすさの確認が必要です。</p>
+<!-- OPTIONAL_KOREAN_FONT_DETAILS -->
 <p>将来の作品では、配布条件を確認した書体を基本表示に用意する方針です。この見本は比較用のため system 系から始まり、作品への導入・適用はまだできません。</p>
 <p>別途入手が必要な書体も、権利を確認したうえで任意の別案として紹介することを検討しています。見本画像も許諾を確認してから掲載します。ここには別案の画像や取得・適用機能はまだありません。</p>
 </section>
