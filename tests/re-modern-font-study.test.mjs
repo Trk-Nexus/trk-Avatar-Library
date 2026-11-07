@@ -24,6 +24,12 @@ try {
  assert.deepEqual(coverage(codes,'ピクセル・コンソール PIXEL CONSOLE 0123').missing,[]);
  assert(coverage(codes,'你好').missing.includes('你'));
  assert(coverage(codes,'한글').missing.includes('한'));
+ // This checks only the current four title strings, not whole languages or glyph quality.
+ const labels=JSON.parse(fs.readFileSync(path.join(root,'drafts/re-modern/pixel-console/skin.json'))).label;
+ assert.deepEqual(coverage(codes,labels.ja).missing,[]);
+ assert.deepEqual(coverage(codes,labels.en).missing,[]);
+ assert.deepEqual(coverage(codes,labels.zh).missing,[]);
+ assert.deepEqual(coverage(codes,labels.ko).missing,['픽','셀','콘','솔']);
  server=createServer((req,res)=>{
   const name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
   const file=path.resolve(temp,'.'+(name==='/'?'/index.html':name));
