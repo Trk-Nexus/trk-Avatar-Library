@@ -1,6 +1,6 @@
 # Chromium ブラウザ試験環境の準備と再現
 
-2026-11-07／Avatar Library の開発・検証用。以前の[ピクセル・コンソール開始ガイド C 節](re-modern-pixel-console-start-guide.md#c-ブラウザの自動-smoke-テスト両リポジトリで共有)にある方法を、将来の開発にも使えるよう切り出し、実行バイナリの混在を避ける手順を追記したものです。作品や PWA の機能を公開・承認する手順ではありません。
+2026-11-07／Avatar Library の開発・検証用。以前の[ピクセル・コンソール開始ガイド C 節](re-modern-pixel-console-start-guide.md)にある方法を、将来の開発にも使えるよう切り出し、実行バイナリの混在を避ける手順を追記したものです。作品や PWA の機能を公開・承認する手順ではありません。
 
 ## 何を用意するか
 
@@ -108,4 +108,4 @@ trk315 の特性試験 `tests/re-modern-trk315-review.test.mjs` は別物です�
 - 意図しない Chromium の版：`CHROMIUM_PATH`・`"$CHROMIUM_PATH" --version`・hash を確認。`/tmp/chromium` が残っていても手順2の明示パスなら使わない。
 - `npm ci` のネットワーク失敗：npm registry に到達可能か、lockfile と npm のエラーを確認。ライブラリだけの展開では依存の取得を代替しない。
 - PWA の clone／checkout 失敗：ネットワーク・GitHub のアクセスを確認し、一時クローンを再作成。認証情報や秘密情報を文書・コマンド履歴へ貼らない。
-- ブラウザ起動が終わらない：プロセスの出力と終了コードを記録し、中断する。異なる版や smoke の終了問題は[開始ガイド C-3](re-modern-pixel-console-start-guide.md#c-3-pwa-側共通題字の-smoke)も参照。
+- ブラウザ起動が終わらない：プロセスの出力と終了コードを記録し、中断する。異なる版や smoke の終了問題は[開始ガイド C-3](re-modern-pixel-console-start-guide.md)も参照。
