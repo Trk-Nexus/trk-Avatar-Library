@@ -77,7 +77,9 @@ try{
  await failurePage.route('**/*',r=>!r.request().url().startsWith(base+'/')||r.request().url().endsWith('/assets/neodgm.woff2')?r.abort():r.continue());
  await failurePage.goto(base+'/',{waitUntil:'load'});
  await failurePage.locator('#font-dot').focus();await failurePage.keyboard.press('Space');
- await failurePage.evaluate(()=>document.fonts.ready);
+ // Trigger and await the rejected load explicitly. document.fonts.ready can
+ // resolve before a style-driven load has started, leaving status='loading'.
+ await failurePage.evaluate(async()=>{try{await document.fonts.load('400 32px NeoDunggeunmo','픽셀');}catch{}});
  assert(await failurePage.locator('.sample-ko').isVisible());
  const status=await failurePage.evaluate(()=>Array.from(document.fonts).filter(f=>f.family==='NeoDunggeunmo').map(f=>f.status));
  assert.deepEqual(status,['error']);
