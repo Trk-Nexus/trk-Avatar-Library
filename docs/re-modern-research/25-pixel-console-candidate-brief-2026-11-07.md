@@ -11,6 +11,7 @@
 | 書体の基準案 | DotGothic16 日本語 subset ＋ NeoDunggeunmo 作者 webfont、二書体での題字候補。[範囲・依存](20-font-scope-dependencies-2026-11-07.md)。 | 二書体の正式採用、PWA の製品機能、権利の最終確認ではない。 |
 | 二つの多言語比較候補 | 依頼者は Dot＋Neo と Galmuri11 の二つを候補とすることを肯定。[探索と隔離比較](24-pixel-console-candidate-trail-2026-11-07.md)。Galmuri11 は一書体で現作品名の文字を持つが、容量・字形・権利の確認が別に必要。 | 二者からの最終採用、配布や最良の決定ではない。 |
 | 英字・日本語の追加候補 | [Press Start 2P、JetBrains Mono、Fira Code、美咲フォント等の追加研究](26-latin-japanese-font-candidates-2026-11-07.md)。英字の隔離比較と、実ファイル未確認の日本語候補を区別。 | 多言語基準候補を置き換える決定や作品への採用ではない。 |
+| 新たな日英候補 | [縁架ドット明朝24・横浜ドット・SolidLinker](27-japanese-solidlinker-font-trail-2026-11-07.md)。SolidLinker の英字と字間を隔離比較。日本語の2書体は作者資料のみ。横浜フリー版は権利上、配布・Web見本を保留。 | 最終採用、配布、PWAへの実装ではない。 |
 | 見本 | [文字比較](23-multilingual-font-review-study-2026-11-07.md)、[権利表示](22-font-rights-distribution-study-2026-11-07.md)、[拡張pack](17-isolated-font-pack-candidate-2026-11-07.md)、[題字限定試作](18-scoped-font-prototype-2026-11-07.md)はそれぞれ隔離した研究。 | 一つに接続された利用者向け導入・設定・解除の完成品ではない。 |
 | 紹介文と制作記録 | [読者向け文章の草案](09-pixel-console-reader-draft.md)／[制作メモ](10-pixel-console-development-notes.md)／[探索の読み物](24-pixel-console-candidate-trail-2026-11-07.md)。 | 公開先・文章の承認や、第三者素材の配布許諾ではない。 |
 
