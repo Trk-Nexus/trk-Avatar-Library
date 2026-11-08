@@ -36,10 +36,24 @@ jobs:
           path: trk-PWA
           fetch-depth: 0
 
+      # 作品ファイルの制作者向け事前確認は、契約用の旧固定版とは別の trk320 を対象にする。
+      - name: trk-PWA（作品事前確認用の固定版）
+        uses: actions/checkout@v4
+        with:
+          repository: Trk-Nexus/trk-PWA
+          ref: 8531b4e206dd79adffcad3782fce3e7dd3521d7f
+          path: trk-PWA-trk320
+
       - name: Node 22
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: 作品事前確認と削除案内の固定版試験
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA_320: ${{ github.workspace }}/trk-PWA-trk320
+        run: node --test tests/re-modern-work-preflight.test.mjs tests/re-modern-pwa-trk320-review.test.mjs
 
       - name: 書体の取り置きを使い回す（SOURCE.json が変わったら取り直す）
         uses: actions/cache@v4
