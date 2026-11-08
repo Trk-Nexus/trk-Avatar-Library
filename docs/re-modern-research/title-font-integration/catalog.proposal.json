@@ -1,0 +1,23 @@
+{
+  "format": "trk-title-font-research-catalog",
+  "version": 1,
+  "status": "research-proposal-not-a-pwa-schema",
+  "pwaReference": "1fd6a89ebc4be4eba100a53f554fc2f6e97c752e",
+  "work": {
+    "id": "trk-re-modern-pixel-console",
+    "name": "ピクセル・コンソール",
+    "comparisonCandidates": ["dotneo", "galmuri", "press"],
+    "selectedCandidate": null
+  },
+  "candidates": [
+    {"id": "dotneo", "name": "DotGothic16 ＋ NeoDunggeunmo", "role": "multilingual-comparison", "assets": ["dotgothic16", "neodunggeunmo"]},
+    {"id": "galmuri", "name": "Galmuri11", "role": "multilingual-comparison", "assets": ["galmuri11"]},
+    {"id": "press", "name": "Press Start 2P", "role": "latin-subcomparison", "assets": ["pressstart2p"]}
+  ],
+  "assets": [
+    {"id":"dotgothic16","name":"DotGothic16","file":"dotgothic16-japanese-400-normal.woff2","bytes":396312,"sha256":"a042e37d1a36798f5a9dee9ab81d2fc4204950ae1729b856e4d22833a61997ee","license":{"name":"SIL Open Font License 1.1","pwaPath":"fonts/licenses/DotGothic16-OFL.txt","sha256":"335d6a81ce1afcf64c8bc36334458ba3292ca6fba5d3974895b3ed84ccee530e"}},
+    {"id":"neodunggeunmo","name":"NeoDunggeunmo","file":"neodgm.woff2","bytes":44352,"sha256":"0c0ca9cd73f692a5da5d7fb39737902aa9ea312537237779972a9d81ef0a33bf","license":{"name":"SIL Open Font License 1.1","pwaPath":"fonts/licenses/NeoDunggeunmo-LICENSE.txt","sha256":"4d3155f4caba9970c8b386064b398822c29d9181cfba07964ba7b07ccc6cca91"}},
+    {"id":"galmuri11","name":"Galmuri11","file":"Galmuri11.woff2","bytes":505400,"sha256":"8bad9322b3340bfb5cb26cb00f4752bf4c8e7d1b526bb07205f4af458eebed31","license":{"name":"SIL Open Font License 1.1","pwaPath":"fonts/licenses/Galmuri11-OFL.txt","sha256":"86a3ee9495f942f0243f18c103da9faca27adb88142613edb8bb852e56c892c1"}},
+    {"id":"pressstart2p","name":"Press Start 2P","file":"press-start-2p-latin-400-normal.woff2","bytes":12512,"sha256":"afec86997fdaf54af1f59358fa2c1e2a0f1d04146edad18e5cd141d0384a7548","license":{"name":"SIL Open Font License 1.1","pwaPath":"fonts/licenses/PressStart2P-OFL.txt","sha256":"98e451fe911e5ee4a1a45359535dc30ea7df28b8d9a9cd1f741778efab1387ee"}}
+  ]
+}
