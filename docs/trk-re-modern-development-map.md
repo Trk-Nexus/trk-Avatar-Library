@@ -17,6 +17,8 @@
 
 **歴史資料の注意**：[残りの手順19](re-modern-research/19-remaining-roadmap-2026-11-07.md) は作成時点の作業計画で、末尾の「PWA未送信」などはその後の受け渡しより古い記述です。経緯として残し、現在地は本表と後続の28・31で確認します。
 
+**新しい調査**：PWA trk321 の削除案内・二重読み取りと、zh・ko 文言／書体の文字対応／保存復旧案は [研究39](re-modern-research/39-trk321-language-recovery-review.md) を参照。これはtrk321時点の記録です。trk323で単一読取・退避・削除・zh/ko文言が入り、[研究40](re-modern-research/40-trk323-review-followup.md) で再確認しました。復元や作品連携画面は未実装です。
+
 ## 2. 開発に使う概念の一覧
 
 | 概念 | 実務上の意味・判断 | 深掘り |

@@ -4,7 +4,7 @@
 
 ## 1. まず境界を知る
 
-固定PWA trk320 PR #109 の head [`8531b4e206dd79adffcad3782fce3e7dd3521d7f`](https://github.com/Trk-Nexus/trk-PWA/commit/8531b4e206dd79adffcad3782fce3e7dd3521d7f) の作品用受け口を対象にしています。**これはPWA mainの版とは限りません。** 対象版が変われば再照合が必要です。
+固定PWA trk320 PR #109 の head [`8531b4e206dd79adffcad3782fce3e7dd3521d7f`](https://github.com/Trk-Nexus/trk-PWA/commit/8531b4e206dd79adffcad3782fce3e7dd3521d7f) の作品用受け口を対象にしています。**これはPWA mainの版とは限りません。** 対象版が変われば再照合が必要です。PWA main `95baac2fb632d332994d6885e4a4442bcd0ea882`（trk323）でも対象4ファイルのハッシュが同一と確認し、合成テスト6件が通過しました。出力の `pwaRef` は引き続き**規則の基準版trk320**であり、指定したcheckoutのcommitを証明しません。
 
 - 作品用 `.stpack` はZIP。`pack.json` と、追加する場合はルート直下の `LICENSE`／`README`（拡張子なし、`.txt`、`.md`、大文字・小文字を区別しない）を用います。`pack.json` 自体は小文字の正確な名前。入れ子の通常ファイルや `LICENSE-OFL.txt`、`README.js`、画像・書体は作品用経路では拒否されます。ZIPのディレクトリや `__MACOSX/` の扱いなどはPWA側に固有の規則があり、この道具もそれを使用します。一般のカスタムパックや、題字書体の個別導入とは**別の受け口**です。
 - 作品ZIPは最大 **256 KiB**、展開後の `pack.json` は最大 **32 KiB**。端末に保存できる作品数は最大20件ですが、この事前確認は端末の件数や空き容量を読みません。

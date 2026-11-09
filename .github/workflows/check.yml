@@ -13,10 +13,10 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
-  # trk291 の main を固定（2026-11-06 照合）。
+  # trk323 の main を固定（固定SHAの検証結果は HANDOFF を参照）。
   # （trk240 = 7344111。アプリ側の受け入れ道具 tools/check-set.mjs に --json が入り、
   #   呼び方・終了コード・--json の項目・--have の形が「契約」として書面に固定された版）
-  TRK_PWA_REF: b5e4a885163678933129cfbf4c158d37a2e84d59
+  TRK_PWA_REF: 95baac2fb632d332994d6885e4a4442bcd0ea882
 
 jobs:
   check:
@@ -44,6 +44,14 @@ jobs:
           ref: 8531b4e206dd79adffcad3782fce3e7dd3521d7f
           path: trk-PWA-trk320
 
+      # 特性試験は固定旧版の挙動を確認し、修正済みの保証ではない。
+      - name: trk-PWA（trk321 研究用の固定版）
+        uses: actions/checkout@v4
+        with:
+          repository: Trk-Nexus/trk-PWA
+          ref: 743dcccd18e15b24f14052027fe9f3afe0784b42
+          path: trk-PWA-trk321
+
       - name: Node 22
         uses: actions/setup-node@v4
         with:
@@ -54,6 +62,18 @@ jobs:
         env:
           TRK_PWA_320: ${{ github.workspace }}/trk-PWA-trk320
         run: node --test tests/re-modern-work-preflight.test.mjs tests/re-modern-pwa-trk320-review.test.mjs
+
+      - name: 言語と保存モデル・trk321 特性試験
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA_321: ${{ github.workspace }}/trk-PWA-trk321
+        run: node --test tests/re-modern-pwa-trk321-review.test.mjs tests/re-modern-recovery-model.test.mjs
+
+      - name: trk323 独立確認（現行の固定版）
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA_323: ${{ github.workspace }}/trk-PWA
+        run: node --test tests/re-modern-pwa-trk323-review.test.mjs
 
       - name: 書体の取り置きを使い回す（SOURCE.json が変わったら取り直す）
         uses: actions/cache@v4
