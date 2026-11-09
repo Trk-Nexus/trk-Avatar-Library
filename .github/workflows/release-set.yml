@@ -28,8 +28,8 @@ permissions:
   contents: write
 
 env:
-  # trk291。check.yml と同じ版にそろえる
-  TRK_PWA_REF: b5e4a885163678933129cfbf4c158d37a2e84d59
+  # trk323。check.yml と同じ版にそろえる
+  TRK_PWA_REF: 95baac2fb632d332994d6885e4a4442bcd0ea882
 
 jobs:
   attach:

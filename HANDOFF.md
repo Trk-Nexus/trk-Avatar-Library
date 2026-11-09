@@ -68,7 +68,7 @@
   node tools/check-docs.mjs            # README の表・内部リンク・セットの記録が今の中身と合っているか
   ```
 
-- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `b5e4a885163678933129cfbf4c158d37a2e84d59`**＝trk291（2026-11-06 参照））。
+- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `95baac2fb632d332994d6885e4a4442bcd0ea882`**＝trk323）。
   trk-PWA の版が上がったら、**この1行と §7 の記録を一緒に**変えます。固定した版と `main` の両方を見るため、
   週に1回（日曜 21:00 UTC）`upstream-main` ジョブが `main` でも契約を確かめます（失敗しても全体は赤にしません）。
 
@@ -180,6 +180,8 @@
 | `tools/selftest.mjs` | 上の道具が、わざと壊した入力で**ちゃんと断る**か |
 
 ## 2.5 相手側（trk-PWA trk231〜trk233）からのお願いへの回答（2026-11-01）
+
+現在の CI 固定先は trk323 `95baac2fb632d332994d6885e4a4442bcd0ea882`。以下は当時の回答で、固定先の履歴ではありません。検査の範囲と未確認は [研究40](docs/re-modern-research/40-trk323-review-followup.md) を参照。
 
 trk-PWA の `README-trk-Avatar-Library-へのお願い-2026-11-01.txt`（L1〜L6）・`README-trk-Avatar-Library-確認と次のお願い-2026-11-01.txt`（L7〜L9）・
 `README-書体パック14種の追加をお願い-2026-11-01.txt`（書体パック 14 種・L10〜L12・セットの版の上げ方は A）と
@@ -425,6 +427,13 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 - GitHub Actions（`check.yml`）は push／PR で **成功**（run 41218922745・13 秒）
 
 ## 7. 変更履歴（新しい順）
+
+### trk323 固定とレビュー対応（研究40）
+
+- `check.yml` と `release-set.yml` の `TRK_PWA_REF` を `95baac2fb632d332994d6885e4a4442bcd0ea882` に統一。旧 trk320 事前確認と trk321 特性試験は別固定で残し、trk323 独立試験を追加。
+- `package.json`／lockfile の版を `2026.11.3-avatar.1` に同期。これは**Avatar 開発ツールの版**であり、PWA版、作品版、公開・配布タグではない。
+- 検査結果、制約、PWAへの追加提案は [研究40](docs/re-modern-research/40-trk323-review-followup.md) に記録。新たな作品登録・配布・PWAの変更は行わない。
+
 
 ### 2026-11-03 trk269 ターミナルの定番とWizardスキン — TRK_PWA_REF を trk269（6f60e234fca63cf47a2cba4bbcd954ee3850dacd）に、Wizard CLIスキン5操作感・コントラスト修正
 

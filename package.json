@@ -1,7 +1,7 @@
 {
   "name": "trk-avatar-library",
-  "version": "2026.11.03-trk269",
-  "description": "trk PWA Avatar Library — Terminal & Wizard Skin (trk269)",
+  "version": "2026.11.3-avatar.1",
+  "description": "trk PWA Avatar Library — skins, font packs, and development tools",
   "license": "GPL-3.0-or-later",
   "scripts": {
     "check": "node tools/check-cli-skin.mjs catalog/skins.json --catalog --json && node tools/check-repo.mjs && node tools/check-re-modern.mjs",
