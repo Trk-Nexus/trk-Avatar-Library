@@ -88,7 +88,7 @@ try {
   assert.equal(await page.textContent('#stat-packs'), '30 本（書体 29 本・42 ウェイト）');
   assert.equal(await page.textContent('#stat-pairings'), '14 組・6 役');
   assert.equal(await page.textContent('#stat-remodern'), '正式登録 0 件（制作案 1 件）');
-  assert.match(await page.textContent('#stat-pwa-ref'), /^trk325 /);
+  assert.match(await page.textContent('#stat-pwa-ref'), /^trk328 /);
 
   // 3. スキンタブ：保留・低可読フィルタと詳細モーダル・言語切替・XSS 防御
   await page.selectOption('#filter-skin-compat', 'holdback');

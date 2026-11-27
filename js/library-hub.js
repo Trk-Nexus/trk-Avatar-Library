@@ -365,7 +365,7 @@ function openSkinDetailDialog(skin) {
     el(
       'strong',
       '',
-      '現行 trk-PWA（trk325）向けカスタムスキン変換（skin.shadow-taiko v1）:'
+      '現行 trk-PWA（trk328）向けカスタムスキン変換（skin.shadow-taiko v1）:'
     )
   );
   convBox.appendChild(
@@ -648,11 +648,14 @@ function renderPwaTab() {
   for (const r of receivers) {
     const card = el('article', 'hub-card');
     const badges = el('div', 'hub-badges');
+    const isImplemented = r.status === 'implemented';
     badges.appendChild(
       el(
         'span',
-        'hub-badge hub-badge--warn',
-        `要望中・優先度: ${r.priority.toUpperCase()}`
+        isImplemented ? 'hub-badge hub-badge--ok' : 'hub-badge hub-badge--warn',
+        isImplemented
+          ? `実装済 (${r.implementedBuild || 'trk326'})・優先度: ${r.priority.toUpperCase()}`
+          : `要望中・優先度: ${r.priority.toUpperCase()}`
       )
     );
     badges.appendChild(el('span', 'hub-badge', r.id));

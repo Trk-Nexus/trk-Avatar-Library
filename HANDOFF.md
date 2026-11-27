@@ -27,6 +27,7 @@
 
 | 日付 | 中身（1行） |
 | --- | --- |
+| 2026-11-27 | **trk-PWA trk328 照合・固定 ref & PINS 更新・受け子 7/7 実装確認**：`TRK_PWA_REF` を **trk328（`d5de0656278e66e7ed7adb9be0147b2323e628ee`）** へ更新・`tools/check-re-modern-work-pack.mjs` の `PWA_REF` と 4 ファイルの `PINS`（`remodern-regions.js` / `remodern-ui.js` の trk326 更新分）を同期・受け子要項 [`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md) と統合マニフェスト [`catalog/library-manifest.json`](catalog/library-manifest.json) を `trk328` 基準（稼働契約 7/7・受け子 7/7 `implemented`・`check-pwa-skin-compat` 238種/13巻/既知3種33組）に更新 |
 | 2026-11-27 | **PWA実装整備・統合ライブラリUI・trk-PWA（trk325）受け渡し基盤の確立**：`TRK_PWA_REF` を **trk325（`e30eb2ce98490c94b7768dd2ddf768fab7fe726d`）** に更新（差し戻しは 11種→既知3種 `gold-chip`/`orichalcum`/`house-edge`・33組へ縮小）・統合ライブラリUI [`library.html`](library.html)（291スキン・30パック・14書体組・re-modern・PWA受け渡し＆ブラウザ内JSON検査、外部通信ゼロ・オフライン動作）を新設・共通契約/変換モジュール [`js/pwa-bridge.js`](js/pwa-bridge.js) と統合マニフェスト [`catalog/library-manifest.json`](catalog/library-manifest.json)・検証CLI [`tools/check-pwa-receivers.mjs`](tools/check-pwa-receivers.mjs)・PWA側への受け子要項仕様書 [`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md) を整備（3Dアバター要素は要望が出るまで着手留保・予約枠のみ） |
 | 2026-11-02 | **r10：旧 org の URL を全廃**（引っ越しの宿題）。`font-packs/<名前>/pack.json` 29 本の `url` を `Trk-Nexus` に・`release` を **1.0.0→1.0.1**（`maru-go` は 1.1.0→1.1.1）・`.stpack` 29 本を `build-pack --fetch` で**素材から作り直し**（1 本 −25 B・合計 63,103,675 B・**書体とライセンス全文は同じ**）・目録・`gallery` 2 枚・`build-set` の `README-はじめに.txt` の出どころ・**新検査 `tools/check-urls.mjs`**（追跡ファイルと `.stpack` の中を見る・CI に追加）・**`TRK_PWA_REF` を trk258（`722409a`）**に・**r10 の 2 セット**（はじめて 8,118,128 B／書体 64,197,328 B）。r9 を入れている人には 29 本とも「更新あり」が出る（同じ名前・同じ作者なので**棚に重複はできない**） |
 | 2026-11-02 | **返事16（trk254 への返事）**：相手は**写しの手書きをやめて目録から機械生成**に（`sync-typography-catalog.mjs`・fixture の固定版は `7d7e5ae`・`--check` で照合）。聞かれていた 2 点に実物で返した——**縮刷版は r9 の 2 セットに入っている**（1400×2416 px・486,510 B・sha256 `74ca7054…`。`release/*.json` の `files[]` と `sets/*.json` の `files[]` の両方）・**`sha256` は各組には入れない**（top-level の 1 本＝`catalog/typography.json` の 34,194 B・`4301ac04…` で足りる）。決めごとに「**目録を変えたら返事に `sha256` を書いて先に知らせる**」を追加（`docs/2026-11-01-書体の組み合わせとエディター設定.md` §10）。r9 は**タグ push で流せた**ので B-8 の 403 は配布を止めない（Run workflow は所有者の確認用）。目録・パック・セットは不変 |
@@ -69,7 +70,7 @@
   node tools/check-docs.mjs            # README の表・内部リンク・セットの記録が今の中身と合っているか
   ```
 
-- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `e30eb2ce98490c94b7768dd2ddf768fab7fe726d`**＝trk325（2026-11-27 照合））。
+- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `d5de0656278e66e7ed7adb9be0147b2323e628ee`**＝trk328（2026-11-27 照合））。
   trk-PWA の版が上がったら、**この1行と §7 の記録を一緒に**変えます。固定した版と `main` の両方を見るため、
   週に1回（日曜 21:00 UTC）`upstream-main` ジョブが `main` でも契約を確かめます（失敗しても全体は赤にしません）。
 
@@ -426,6 +427,12 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 - GitHub Actions（`check.yml`）は push／PR で **成功**（run 41218922745・13 秒）
 
 ## 7. 変更履歴（新しい順）
+
+### 2026-11-27 trk328 照合・固定 ref / PINS 更新・受け子 7/7 実装確認
+
+- **`TRK_PWA_REF` を `d5de0656278e66e7ed7adb9be0147b2323e628ee`（trk328、40桁）に変更**：`.github/workflows/check.yml` と `.github/workflows/release-set.yml` の `env.TRK_PWA_REF`、および本文書 §1 の記録を更新。7桁では `actions/checkout` が枝名として探して失敗するため、40桁のフル SHA を指定。
+- **作品事前確認 `tools/check-re-modern-work-pack.mjs` の `PWA_REF` と `PINS`（4ファイル SHA-256）を `trk328` に更新**：`remodern-regions.js`（`ebb4dceb…`）および `remodern-ui.js`（`aa13b1f3…`）を `trk326` 更新後の値へ差し替え、`remodern-work.js`／`zip-io.js` は継続維持。
+- **受け子要項・統合マニフェスト・回帰テストの `trk328` 照合**：`docs/2026-11-27-pwa-receiver-requirements.md`・`js/pwa-bridge.js`・`catalog/library-manifest.json`・`package.json`（`2026.11.27-trk328`）を更新し、`check-pwa-receivers`（稼働契約 7/7・受け子 7/7 `implemented`）および `check-pwa-skin-compat`（238種/13巻・既知の差し戻し 3種・33組）の合格を確認。
 
 ### 2026-11-03 trk269 ターミナルの定番とWizardスキン — TRK_PWA_REF を trk269（6f60e234fca63cf47a2cba4bbcd954ee3850dacd）に、Wizard CLIスキン5操作感・コントラスト修正
 

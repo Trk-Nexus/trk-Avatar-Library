@@ -1,19 +1,19 @@
-# trk-PWA 受け子（受け口）要項・連携仕様提案書（trk325 時点）
+# trk-PWA 受け子（受け口）要項・連携仕様書（trk328 照合・実装確認済）
 
-- **作成日**: 2026-11-27
-- **照合基準 `trk-PWA`**: `trk325`（commit `e30eb2ce98490c94b7768dd2ddf768fab7fe726d`）
-- **対応する先行実装（当倉庫側）**:
+- **作成・更新日**: 2026-11-27
+- **照合基準 `trk-PWA`**: `trk328`（commit `d5de0656278e66e7ed7adb9be0147b2323e628ee`・初回策定時基準 `trk325` = `e30eb2ce98490c94b7768dd2ddf768fab7fe726d`）
+- **対応する実装（当倉庫側）**:
   - データ契約・変換・検査モジュール: [`js/pwa-bridge.js`](../js/pwa-bridge.js)
   - 統合マニフェスト生成・検査: [`tools/build-library-manifest.mjs`](../tools/build-library-manifest.mjs) ／ [`catalog/library-manifest.json`](../catalog/library-manifest.json)
-  - 稼働契約＆未実装受け子プローブCLI: [`tools/check-pwa-receivers.mjs`](../tools/check-pwa-receivers.mjs)
-  - 先行契約テスト: [`tests/pwa-bridge-and-receivers.test.mjs`](../tests/pwa-bridge-and-receivers.test.mjs)
+  - 稼働契約＆受け子プローブCLI: [`tools/check-pwa-receivers.mjs`](../tools/check-pwa-receivers.mjs)
+  - 契約・回帰テスト: [`tests/pwa-bridge-and-receivers.test.mjs`](../tests/pwa-bridge-and-receivers.test.mjs)
   - 統合ライブラリUI（ブラウザ内検査・変換つき）: [`library.html`](../library.html)
 
 ---
 
 ## 1. 目的と基本原則
 
-本書は、`trk-Avatar-Library`（配る・選ぶ・検査する側）と `trk-PWA`（受け取って表示・保存する側）の間で、**現行 `trk325` で既に稼働している受け口**と、**今後 `trk-PWA` 側に実装を要望する「受け子（受け口）」の要項**を体系的に整理した提案仕様書です。
+本書は、`trk-Avatar-Library`（配る・選ぶ・検査する側）と `trk-PWA`（受け取って表示・保存する側）の間で、**基盤受け口 7 系統（`C-*`）** と **`trk326`〜`trk328` で実装・照合完了した 7 項目の「受け子（受け口）」要項（`R-*`）** を体系的に整理した仕様書です。
 
 すべての要望は、`trk-PWA` と当倉庫が共有する以下の安全原則を前提とします（合意なき仕様変更や自動適用は行いません）。
 
@@ -31,9 +31,9 @@
 
 ---
 
-## 2. 現行 `trk-PWA`（`trk325`）で稼働済みの受け口（7系統）
+## 2. 現行 `trk-PWA`（`trk328`）で稼働済みの基盤受け口（7系統）
 
-`tools/check-pwa-receivers.mjs --trk=/path/to/trk-PWA` により、以下の 7 系統が `trk325` で正常に稼働・一致していることを確認済みです。
+`tools/check-pwa-receivers.mjs --trk=/path/to/trk-PWA` により、以下の 7 系統が `trk328`（`d5de0656278e66e7ed7adb9be0147b2323e628ee`）で正常に稼働・一致していることを確認済みです。
 
 | 契約ID | 対象 | `trk-PWA` 側モジュール | 形式 / 状態 |
 | --- | --- | --- | --- |
@@ -47,9 +47,19 @@
 
 ---
 
-## 3. `trk-PWA` 側に要望する未実装「受け子」要項一覧（7項目）
+## 3. `trk-PWA` 側「受け子」要項と実装照合状況（7項目・`trk326`〜`trk328` で 7/7 実装済）
 
-優先度順（高 2 件・中 4 件・低 1 件）に、背景・受け入れデータ仕様・UI導線・安全境界を記します。
+優先度順（高 2 件・中 4 件・低 1 件）に、背景・受け入れデータ仕様・UI導線・安全境界、および `trk328`（`d5de0656278e66e7ed7adb9be0147b2323e628ee`）時点の実装状態を記します。
+
+| 受け子 | 状態（`trk328` 照合） | 根拠・主な実装箇所 |
+| --- | --- | --- |
+| `R-VOL-1`（巻別スキンの取り込み） | `implemented` | `trk326`（`js/library-receiver.js`・`js/custom.js` の「📚 取り込んだ巻」・`js/core.js`） |
+| `R-REM-1`（作品ごとの題字書体接続） | `implemented` | `trk326`（`js/title-font.js` `applyForWork`・`js/remodern-ui.js` `fontForWork`） |
+| `R-REM-2`（題字退避封筒の復元） | `implemented` | `trk326`（`js/title-font.js` `restoreWorks` / `importWorksBackup`） |
+| `R-REM-3`（書斎・基地の独立オプトイン） | `implemented` | `trk326`（`js/remodern-regions.js` `defaultOptIn`・`js/remodern-ui.js` `regionOptIn`） |
+| `R-TYP-1`（組見本単体 JSON と不足パック案内） | `implemented` | `trk326`（`js/typography.js` `pairingFromJson` / `missingPacks`・`js/ui-prefs.js`） |
+| `R-SKIN-1`（差し戻しの単一定義・旧配色切替） | `implemented` ＋ **生成物とのずれを修正** | `trk326`（`tools/skin-holdback.mjs`・`settings.skinLegacy`）＋ **`trk328` M1（出力ファイルに存在する ID のみを `SKIN_HOLDBACK` に出力する修正）** |
+| `R-WIZ-1`（Advance Wizard 設定・統合マニフェスト） | `implemented` | `trk326`（`js/cli.js` `importAdvancePrefs`・`js/pack-catalog.js` `readLibraryManifest`） |
 
 ---
 
@@ -75,10 +85,10 @@
 
 ---
 
-### 【要項 R-REM-1】（優先度：高）`trk-re-modern` 作品ごとの題字書体 UI と表示接続（`trkTitleFontWorks` 実接続）
+### 【要項 R-REM-1】（優先度：高・`trk326` 実装済）`trk-re-modern` 作品ごとの題字書体 UI と表示接続（`trkTitleFontWorks` 実接続）
 
-- **背景と課題**:
-  - `trk315`〜`trk325` の `js/title-font.js` には `WORKS_KEY = "trkTitleFontWorks"`（`{ [workId]: { font, on } }`）の保存保護・マイグレーション・件数集計・退避・削除が丁寧に実装されていますが、ソースコメント通り **「まだ画面からは使わず、適用もしない」** 受け口待機状態にあります。
+- **背景と実装経緯**:
+  - `trk315`〜`trk325` 時点の `js/title-font.js` では `WORKS_KEY = "trkTitleFontWorks"`（`{ [workId]: { font, on } }`）が保存保護・退避・削除のみの待機状態でしたが、`trk326` で `applyForWork` および `js/remodern-ui.js` の `fontForWork` により画面・表示接続が完了しました。
 - **要望する受け口仕様**:
   - **対象モジュール**: `js/title-font.js` / `js/remodern-ui.js`
   - **UI導線**:
@@ -199,4 +209,14 @@ TRK_PWA=/path/to/trk-PWA npm run check:pwa-receivers
 node tools/check-pwa-receivers.mjs --trk=/path/to/trk-PWA --json
 ```
 
-`trk-PWA` 側で `R-VOL-1`〜`R-WIZ-1` のいずれかが実装されると、`check-pwa-receivers.mjs` の `receiverProbes` が自動的に `"requested-pending"` から `"implemented"` へ変化するため、段階的な実装と回帰テストへの昇格をスムーズに進められます。
+`trk-PWA`（`trk328`：`d5de0656278e66e7ed7adb9be0147b2323e628ee`）に対して実行すると、稼働契約 7/7 合格かつ `receiverProbes` 全 7 件（`R-VOL-1`〜`R-WIZ-1`）が `"implemented"` と判定されます（`tests/pwa-bridge-and-receivers.test.mjs` でも回帰監視対象として固定済み）。なお、Node / 自動検査の合格は実ブラウザ・実機端末での操作確認を代替しません。
+
+---
+
+## 5. `trk-PWA` 側で次版以降に送られた改善余地（連携への影響なし）
+
+`trk328` 安定化レビュー（`AVATAR-HANDOFF-TRK328-2026-11-27.md` §4）にて、データ形式や受け渡し契約に影響しない PWA 内部改善として以下の 2 点が記録されています。
+
+1. **`js/library-receiver.js` の取り込み失敗メッセージ 20 件の多言語化**：画面見出し・ボタン類は 4 言語対応済みだが、JSON の不備を知らせる詳細文言が日本語固定のため、将来英語・韓国語・簡体字へ展開予定。
+2. **「取り込んだ巻をすべて消す」（`clearImported()`）実行時のスキン復帰先**：取り込みスキン使用中に全削除すると既定テーマ（`classic`）へ戻る仕様であり、取り込み前に選んでいた内蔵スキンへの復帰は今後の UI 改善候補。
+

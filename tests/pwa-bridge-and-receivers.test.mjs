@@ -31,7 +31,7 @@ test('統合マニフェストの自己整合性・改ざん検出・3Dアバタ
   const rebuilt = buildManifestObject(ROOT);
   assert.deepEqual(manifestOnDisk, rebuilt);
   assert.equal(validateLibraryManifest(manifestOnDisk).ok, true);
-  assert.equal(manifestOnDisk.pwaBaseline.build, 'trk325');
+  assert.equal(manifestOnDisk.pwaBaseline.build, 'trk328');
   assert.equal(manifestOnDisk.pwaBaseline.commit, PWA_BASELINE.commit);
   assert.equal(manifestOnDisk.futureSlots.mascot.status, 'deferred-until-requested');
   assert.equal(manifestOnDisk.futureSlots.mascot.count, 0);
@@ -247,6 +247,10 @@ test('inspectClientJsonPayload の自動判別と checkPwaReceivers 契約検査
     assert.equal(localReport.activeResults.length, 7);
     for (const r of localReport.activeResults) {
       assert.equal(r.ok, true, `active contract failed: ${r.id}`);
+    }
+    assert.equal(localReport.receiverProbes.length, 7);
+    for (const p of localReport.receiverProbes) {
+      assert.equal(p.status, 'implemented', `receiver probe regression: ${p.id} (${p.status})`);
     }
   }
 });

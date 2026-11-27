@@ -8,8 +8,8 @@
 
 export const PWA_BASELINE = Object.freeze({
   repo: 'Trk-Nexus/trk-PWA',
-  build: 'trk325',
-  commit: 'e30eb2ce98490c94b7768dd2ddf768fab7fe726d',
+  build: 'trk328',
+  commit: 'd5de0656278e66e7ed7adb9be0147b2323e628ee',
   verifiedDate: '2026-11-27',
 });
 
@@ -155,7 +155,7 @@ export const ACTIVE_PWA_CONTRACTS = Object.freeze([
     title: '題字書体3候補の SHA-256 固定導入・退避封筒・4言語対応',
     pwaModule: 'js/title-font.js / js/i18n.js',
     format: 'trk-title-font-works-backup v1',
-    sinceBuild: 'trk315 .. trk325',
+    sinceBuild: 'trk315 .. trk328',
     summary: '利用者手元の WOFF2 を SHA-256 完全一致で導入。作品別設定の保護・退避出力・指定のみ削除・4言語文言まで稼働。',
   },
 ]);
@@ -164,9 +164,11 @@ export const REQUESTED_PWA_RECEIVERS = Object.freeze([
   {
     id: 'R-VOL-1',
     priority: 'high',
+    status: 'implemented',
+    implementedBuild: 'trk326',
     category: 'skins',
     title: '巻別・単体スキン JSON（trk-avatar-library-skins v1）の画面インポート受け子',
-    targetPwaModules: ['js/skins-volumes.js', 'js/custom.js'],
+    targetPwaModules: ['js/library-receiver.js', 'js/custom.js', 'js/core.js'],
     format: 'trk-avatar-library-skins v1 / single skin item JSON',
     summary:
       '開発用 CLI だけでなく、PWA の設定画面から巻 JSON（または1枚 JSON）を選択して「📚 取り込んだ巻」棚へ追加・更新・削除できる受け口。',
@@ -176,72 +178,84 @@ export const REQUESTED_PWA_RECEIVERS = Object.freeze([
   {
     id: 'R-REM-1',
     priority: 'high',
+    status: 'implemented',
+    implementedBuild: 'trk326',
     category: 're-modern',
     title: 'trk-re-modern 作品ごとの題字書体 UI と表示接続（trkTitleFontWorks 実接続）',
     targetPwaModules: ['js/title-font.js', 'js/remodern-ui.js'],
     format: 'localStorage trkTitleFontWorks ({ [workId]: { font, on } })',
     summary:
-      '現在「保存受け口のみ」となっている作品別題字書体指定を、作品カードの設定 UI および作品適用時の題字表示へ接続する。',
+      '作品カードの設定 UI および作品適用時の題字表示（applyForWork / fontForWork）へ接続する受け口。',
     safetyBoundary:
       '優先順位は「利用者の全体題字設定 ＞ 作品連携オン時の作品指定 ＞ 既定表示」。全体設定が未導入で失敗中でも勝手に作品指定へ乗り換えない。解除で即時復帰。',
   },
   {
     id: 'R-REM-2',
     priority: 'medium',
+    status: 'implemented',
+    implementedBuild: 'trk326',
     category: 're-modern',
     title: '題字書体・作品指定の退避封筒（trk-title-font-works-backup v1）の復元受け子',
     targetPwaModules: ['js/title-font.js'],
     format: 'trk-title-font-works-backup v1',
     summary:
-      'trk322 で実装された退避（書き出し）と対になる「退避 JSON からの復元（取り込み）」ボタンと検証ロジック。',
+      'trk322 で実装された退避（書き出し）と対になる「退避 JSON からの復元（restoreWorks / importWorksBackup）」受け口と検証ロジック。',
     safetyBoundary:
       'state==="ok" の封筒のみ復元対象とし、state==="invalid"（壊れた生データの緊急退避）の無検証書き戻しを拒否。Web Locks 直列化と現在値の事前確認を行う。',
   },
   {
     id: 'R-REM-3',
     priority: 'medium',
+    status: 'implemented',
+    implementedBuild: 'trk326',
     category: 're-modern',
     title: '領域別スキン適用（書斎 study・基地 base）の独立オプトイン受け子',
     targetPwaModules: ['js/remodern-regions.js', 'js/remodern-ui.js'],
     format: 'remodern.regions (common / stage / study / base)',
     summary:
-      '作品を選んだだけで利用者の既存の書斎テーマ（30種）やノーツ視認性設定を無断変更しないよう、領域ごとの適用オン/オフ受け口を設ける。',
+      '作品を選んだだけで利用者の既存の書斎テーマ（30種）やノーツ視認性設定を無断変更しないよう、領域ごとの適用オン/オフ受け口（regionOptIn）を設ける。',
     safetyBoundary:
       '既定は利用者の既存領域設定を維持。明示的に領域適用をオンにした場合のみ反映し、オフ時は元のテーマへ完全復帰する。',
   },
   {
     id: 'R-TYP-1',
     priority: 'medium',
+    status: 'implemented',
+    implementedBuild: 'trk326',
     category: 'typography',
     title: '書体の組み合わせ単体 JSON（trk-typography-pairing v1）受け渡しと不足パック具体名案内',
     targetPwaModules: ['js/typography.js', 'js/ui-prefs.js'],
     format: 'trk-typography-pairing v1 / pairings[].packs',
     summary:
-      '利用者が調整・選択した書体組み合わせ単体 JSON の画面読み込み・書き出し受け口と、未導入時に不足している具体的な .stpack 名（packs 差分）の案内表示。',
+      '利用者が調整・選択した書体組み合わせ単体 JSON の画面読み込み・書き出し受け口（importPairingFile）と、未導入時に不足している具体的な .stpack 名（missingPacks）の案内表示。',
     safetyBoundary:
       '外部通信なし。許可された Trk* / システム書体名と数値範囲（倍率・字間・行間）のみ受け入れ、未導入書体は安全にフォールバック描画する。',
   },
   {
     id: 'R-SKIN-1',
     priority: 'medium',
+    status: 'implemented',
+    implementedBuild: 'trk326 / trk328',
     category: 'skins',
-    title: '保留2種（gold-chip / orichalcum）および重複19種の旧配色切替（legacy）合意受け子',
-    targetPwaModules: ['tools/import-skin-catalog.mjs', 'tools/check-skin-contrast.mjs'],
+    title: '保留2種（gold-chip / orichalcum）および重複19種の旧配色切替（legacy）と SKIN_HOLDBACK 単一定義化',
+    targetPwaModules: ['tools/skin-holdback.mjs', 'tools/import-skin-catalog.mjs', 'tools/check-skin-contrast.mjs'],
     format: 'trk-avatar-library-skins v1 (optional legacy colors)',
     summary:
-      'コントラスト改善案を適用した際、従来の見た目を好む利用者が旧配色を選べる仕組みと、SKIN_HOLDBACK 定数の単一定義化。',
+      'コントラスト改善案を適用した際、従来の見た目を好む利用者が旧配色を選べる仕組み（settings.skinLegacy）と、SKIN_HOLDBACK 定数の単一定義化（trk328 で出力ファイル内 ID 限定へ修正済）。',
     safetyBoundary:
       '正本は合意前に無断変更しない。警告（holdback）と合格を混同せず、意図的低可読（house-edge）と未調整保留を分離して扱う。',
   },
   {
     id: 'R-WIZ-1',
     priority: 'low',
+    status: 'implemented',
+    implementedBuild: 'trk326',
     category: 'wizard-catalog',
     title: 'Advance Wizard 設定受け渡し・統合マニフェスト（trk-avatar-library-manifest v1）参照受け子',
     targetPwaModules: ['js/cli.js', 'js/pack-catalog.js'],
     format: 'trk-avatar-library-advance-prefs v1 / trk-avatar-library-manifest v1',
     summary:
-      '当倉庫の Advance Wizard 設定（補完・辞書・モーション配慮等）の任意取り込みと、統合マニフェストからの全体件数・ハッシュ確認（将来の予約枠は無視して安全動作）。',
+      '当倉庫の Advance Wizard 設定（importAdvancePrefs）の任意取り込みと、統合マニフェストからの全体件数・ハッシュ確認（readLibraryManifest・将来の予約枠は無視して安全動作）。',
     safetyBoundary:
       '使用禁止文字（` \\ .. ~ C:）を含む入力は即座に拒否。未知の futureSlots（3Dアバター予約枠等）は読み飛ばし、エラーにしない。',
   },
@@ -497,7 +511,7 @@ export function validateSkinVolumePayload(raw, { maxSkins = 500 } = {}) {
 }
 
 /**
- * 倉庫の正本スキン（14色・4言語）を、現行 trk-PWA（trk325）のカスタムスキン枠で
+ * 倉庫の正本スキン（14色・4言語）を、現行 trk-PWA（trk328）のカスタムスキン枠で
  * 今すぐ読み込める `skin.shadow-taiko` v1 形式へ安全に変換し、保持/簡略化項目を明示する。
  */
 export function convertLibrarySkinToCustomSkinDef(skin, lang = 'ja') {
@@ -827,7 +841,7 @@ export function inspectClientJsonPayload(input) {
       return {
         ok: errors.length === 0,
         detectedFormat: 'trk-avatar-library v1（パック目録 index.json）',
-        pwaSupport: 'C-PACK-CATALOG（現行 trk325 でそのまま利用可能）',
+        pwaSupport: 'C-PACK-CATALOG（現行 trk328 でそのまま利用可能）',
         summary:
           errors.length === 0
             ? `パック目録検証合格（収録パック ${packs.length} 本）`
@@ -841,7 +855,7 @@ export function inspectClientJsonPayload(input) {
       return {
         ok: r.ok,
         detectedFormat: 'trk-avatar-library-skins v1（巻別・一括スキン目録）',
-        pwaSupport: 'ビルド時取込は稼働中 ／ 画面直接インポートは要項 R-VOL-1 提案中',
+        pwaSupport: 'C-SKIN-BUILDTIME ＋ R-VOL-1（trk326〜trk328 の「📚 取り込んだ巻」で直接インポート可能）',
         summary: r.ok
           ? `スキン巻データ検証合格（${r.count} 種収録）`
           : `スキン巻データに ${r.errors.length} 件の不備があります`,
@@ -871,7 +885,7 @@ export function inspectClientJsonPayload(input) {
       return {
         ok: errors.length === 0,
         detectedFormat: 'skin.shadow-taiko v1（trk-PWA 単体カスタムスキン）',
-        pwaSupport: 'C-CUSTOM-SKIN（現行 trk325 の「スキン作成・読み込み」でそのまま利用可能）',
+        pwaSupport: 'C-CUSTOM-SKIN（現行 trk328 の「スキン作成・読み込み」でそのまま利用可能）',
         summary:
           errors.length === 0
             ? `カスタムスキン検証合格（「${String(obj.name || 'Custom').slice(0, 24)}」）`
@@ -894,7 +908,7 @@ export function inspectClientJsonPayload(input) {
       return {
         ok: errors.length === 0,
         detectedFormat: 'trk-re-modern-registry v1（re-modern 公式登録簿）',
-        pwaSupport: 'C-REMODERN-PACK（現行 trk325 の remodern-registry.js で照合対応済み）',
+        pwaSupport: 'C-REMODERN-PACK（現行 trk328 の remodern-registry.js で照合対応済み）',
         summary:
           errors.length === 0
             ? `登録簿検証合格（正式登録 ${obj.ids.length} 件）`
@@ -908,7 +922,7 @@ export function inspectClientJsonPayload(input) {
       return {
         ok: r.ok,
         detectedFormat: 'trk-title-font-works-backup v1（題字書体・作品指定の退避封筒）',
-        pwaSupport: '退避出力は trk322 実装済み ／ 復元取り込みは要項 R-REM-2 提案中',
+        pwaSupport: 'C-TITLE-FONT-BASE ＋ R-REM-2（退避 trk322・復元取り込み trk326 実装済み）',
         summary: r.ok
           ? r.restorable
             ? `退避封筒検証合格（復元可能な作品設定 ${Object.keys(r.entries).length} 件）`
@@ -923,7 +937,7 @@ export function inspectClientJsonPayload(input) {
       return {
         ok: r.ok,
         detectedFormat: 'trk-typography-pairing v1（書体の組み合わせ単体指定）',
-        pwaSupport: 'R-TYP-1（単体組 JSON 読み込み受け子・提案中）',
+        pwaSupport: 'R-TYP-1（trk326〜trk328 の「📥 組み合わせの JSON」で直接利用可能）',
         summary: r.ok
           ? `書体組み合わせ検証合格（「${String(obj.name || obj.id)}」）`
           : '書体組み合わせ指定に不備があります',
@@ -936,7 +950,7 @@ export function inspectClientJsonPayload(input) {
       return {
         ok: r.ok,
         detectedFormat: 'trk-avatar-library-advance-prefs v1（Advance Wizard 設定書き出し）',
-        pwaSupport: 'R-WIZ-1（任意設定取り込み受け子・提案中）',
+        pwaSupport: 'R-WIZ-1（trk326〜trk328 の importAdvancePrefs で利用可能）',
         summary: r.ok ? 'Advance Wizard 設定検証合格' : 'Advance Wizard 設定に不備があります',
         errors: r.errors,
         warnings: r.warnings,
@@ -948,7 +962,7 @@ export function inspectClientJsonPayload(input) {
         return {
           ok: r.ok,
           detectedFormat: '単体スキン元データ JSON（skin-volumes/*/items/*.json）',
-          pwaSupport: 'R-VOL-1 提案中（統合ライブラリUIで skin.shadow-taiko へ変換すれば今すぐ利用可能）',
+          pwaSupport: 'R-VOL-1（trk326〜trk328 で直接インポート可能 ／ skin.shadow-taiko 変換も可能）',
           summary: r.ok
             ? `単体スキン元データ検証合格（ID: ${obj.id}）`
             : `単体スキン元データに ${r.errors.length} 件の不備があります`,

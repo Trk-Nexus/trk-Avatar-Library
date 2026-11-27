@@ -4,7 +4,7 @@
 
 ## 1. まず境界を知る
 
-固定PWA trk320 PR #109 の head [`8531b4e206dd79adffcad3782fce3e7dd3521d7f`](https://github.com/Trk-Nexus/trk-PWA/commit/8531b4e206dd79adffcad3782fce3e7dd3521d7f) の作品用受け口を対象にしています。**これはPWA mainの版とは限りません。** 対象版が変われば再照合が必要です。
+固定PWA trk328 [`d5de0656278e66e7ed7adb9be0147b2323e628ee`](https://github.com/Trk-Nexus/trk-PWA/commit/d5de0656278e66e7ed7adb9be0147b2323e628ee)（対象4ファイルのうち `remodern-work.js`／`zip-io.js` は trk320 から同一、`remodern-regions.js`／`remodern-ui.js` は trk326 更新版）の作品用受け口を対象にしています。**これは将来のPWA mainの版とは限りません。** 対象版が変われば再照合が必要です。
 
 - 作品用 `.stpack` はZIP。`pack.json` と、追加する場合はルート直下の `LICENSE`／`README`（拡張子なし、`.txt`、`.md`、大文字・小文字を区別しない）を用います。`pack.json` 自体は小文字の正確な名前。入れ子の通常ファイルや `LICENSE-OFL.txt`、`README.js`、画像・書体は作品用経路では拒否されます。ZIPのディレクトリや `__MACOSX/` の扱いなどはPWA側に固有の規則があり、この道具もそれを使用します。一般のカスタムパックや、題字書体の個別導入とは**別の受け口**です。
 - 作品ZIPは最大 **256 KiB**、展開後の `pack.json` は最大 **32 KiB**。端末に保存できる作品数は最大20件ですが、この事前確認は端末の件数や空き容量を読みません。
@@ -36,7 +36,7 @@
 Node 22、Avatar Library、信頼できる固定PWAのソースを用意して実行します。ネットワーク通信、PWAストレージへの保存、書換え、インストール、抽出ファイルの作成は行いません。入力は通常ファイルのみ、先頭から上限＋1バイトまで読みます。PWAの作品検証とZIP実装を**そのまま読み込む**ため、信頼できるチェックアウトを指定してください。4つの対象ソースのSHA-256が固定版と違う場合は停止します。hash照合は信頼された値との一致であり、作者認証・安全・権利の証明ではありません。
 
 ```sh
-TRK_PWA_320=/path/to/trusted-pwa \
+TRK_PWA=/path/to/trusted-pwa \
   node tools/check-re-modern-work-pack.mjs /path/to/your-work.stpack
 ```
 
@@ -72,7 +72,7 @@ JSONの `ok: true` は、固定版の**ZIP読取・名前・pack.jsonの一部�
 ## 4. この道具の検査
 
 ```sh
-TRK_PWA_320=/path/to/trusted-pwa node --test tests/re-modern-work-preflight.test.mjs
+TRK_PWA=/path/to/trusted-pwa node --test tests/re-modern-work-preflight.test.mjs
 ```
 
 固定PWAのZIP作成器で作った合成ファイルを使い、正常、未知項目、許可外の名前・階層、壊れたZIP・JSON、サイズ上限、題字値を確認。実相談パック `628bafef9c2b71e3246416d7770622fc3df0f4dca54a4960322e6848fea56ddd` もこの版のローカル事前確認を通過しました。いずれもPWA画面・保存・正式配布・安全性の確認ではありません。

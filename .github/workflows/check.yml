@@ -13,10 +13,10 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
-  # trk325 の main を固定（2026-11-27 照合）。
+  # trk328 のコミットを固定（2026-11-27 照合・40桁フルSHA）。
   # （trk240 = 7344111。アプリ側の受け入れ道具 tools/check-set.mjs に --json が入り、
   #   呼び方・終了コード・--json の項目・--have の形が「契約」として書面に固定された版）
-  TRK_PWA_REF: e30eb2ce98490c94b7768dd2ddf768fab7fe726d
+  TRK_PWA_REF: d5de0656278e66e7ed7adb9be0147b2323e628ee
 
 jobs:
   check:
@@ -49,9 +49,10 @@ jobs:
         with:
           node-version: "22"
 
-      - name: 作品事前確認と削除案内の固定版試験
+      - name: 作品事前確認（trk328）と削除案内の固定版試験（trk320）
         working-directory: trk-Avatar-Library
         env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
           TRK_PWA_320: ${{ github.workspace }}/trk-PWA-trk320
         run: node --test tests/re-modern-work-preflight.test.mjs tests/re-modern-pwa-trk320-review.test.mjs
 

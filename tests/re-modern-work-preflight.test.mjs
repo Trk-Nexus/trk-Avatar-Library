@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// Fixed-source integration tests; use a clean, trusted trk320 PWA checkout.
+// Fixed-source integration tests; use a clean, trusted trk328 PWA checkout.
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -7,8 +7,8 @@ import os from 'node:os';
 import path from 'node:path';
 import {inspectWorkBytes} from '../tools/check-re-modern-work-pack.mjs';
 import {loadZipIO} from '../tools/lib/zip.mjs';
-const pwa=process.env.TRK_PWA_320;
-const check=(n,fn)=>test(n,{skip:pwa?false:'set TRK_PWA_320 to trusted PWA trk320'},fn);
+const pwa=process.env.TRK_PWA||process.env.TRK_PWA_320;
+const check=(n,fn)=>test(n,{skip:pwa?false:'set TRK_PWA to trusted PWA trk328'},fn);
 const manifest={format:'shadow-taiko-pack',version:1,name:'example',author:'example',license:'example',remodern:{version:1,id:'trk-re-modern-example',regions:['common'],colors:{stage:'#123456'}}};
 async function zip(entries){const io=loadZipIO(pwa);return Buffer.from(await (await io.zipWrite(entries.map(([name,text])=>({name,blob:new Blob([text])})))).arrayBuffer());}
 check('valid manifest and permitted documentation',async()=>{const r=await inspectWorkBytes(await zip([['pack.json',JSON.stringify(manifest)],['README.md','hello'],['LICENSE.txt','license']]),pwa);assert.equal(r.ok,true);assert.equal(r.work.id,'trk-re-modern-example');assert.deepEqual(r.possiblyIgnoredFields,['pack.json:version']);});

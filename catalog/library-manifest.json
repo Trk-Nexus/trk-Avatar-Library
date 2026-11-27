@@ -3,8 +3,8 @@
   "version": 1,
   "pwaBaseline": {
     "repo": "Trk-Nexus/trk-PWA",
-    "build": "trk325",
-    "commit": "e30eb2ce98490c94b7768dd2ddf768fab7fe726d",
+    "build": "trk328",
+    "commit": "d5de0656278e66e7ed7adb9be0147b2323e628ee",
     "verifiedDate": "2026-11-27"
   },
   "summary": {
