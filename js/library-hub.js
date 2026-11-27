@@ -22,6 +22,7 @@ const RELEASE_BASE_URL = 'https://github.com/Trk-Nexus/trk-Avatar-Library/releas
 
 const state = {
   manifest: null,
+  indexData: null,
   skins: [],
   skinVolumeMap: new Map(), // skinId -> { id, title }
   volumes: [],
@@ -806,13 +807,28 @@ function setupControls() {
     renderInspectorResult(inspectClientJsonPayload(text));
   });
 
-  $('sample-pack-catalog').addEventListener('click', async () => {
-    const text = await (await fetch('./catalog/index.json')).text();
+  $('sample-pack-catalog').addEventListener('click', () => {
+    if (!state.indexData) return;
+    const text = JSON.stringify(state.indexData, null, 2);
     $('inspector-input').value = text;
     renderInspectorResult(inspectClientJsonPayload(text));
   });
-  $('sample-skin-vol').addEventListener('click', async () => {
-    const text = await (await fetch('./skin-volumes/vol-07/skins.json')).text();
+  $('sample-skin-vol').addEventListener('click', () => {
+    const vol07 = state.volumes.find((g) => g.id === 'vol-07') || state.volumes[0];
+    if (!vol07) return;
+    const idSet = Array.isArray(vol07.ids) ? new Set(vol07.ids) : null;
+    const volSkins = idSet
+      ? vol07.ids.map((id) => state.skins.find((s) => s.id === id)).filter(Boolean)
+      : state.skins.filter((s) => state.skinVolumeMap.get(s.id)?.id === vol07.id);
+    const sampleVolume = {
+      format: 'trk-avatar-library-skins',
+      version: 1,
+      volume: vol07.id,
+      title: vol07.title,
+      count: volSkins.length,
+      skins: volSkins,
+    };
+    const text = JSON.stringify(sampleVolume, null, 2);
     $('inspector-input').value = text;
     renderInspectorResult(inspectClientJsonPayload(text));
   });
@@ -851,6 +867,7 @@ async function init() {
   ]);
 
   state.manifest = manifest;
+  state.indexData = indexData;
   state.skins = skinsData.skins || [];
   state.volumes = volumesData.groups || [];
   state.skinVolumeMap = assignVolumes(state.skins, state.volumes);

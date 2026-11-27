@@ -57,21 +57,24 @@ try {
   page.on('pageerror', (err) => pageErrors.push(err.message));
 
   // 外部通信を完全遮断し、library.html 側からは外部リクエストが1件も飛ばないことを検証
+  let recordingLibraryExternal = false;
   await context.route('**/*', (route) => {
     const url = route.request().url();
     if (url.startsWith(base) || url.startsWith('blob:') || url.startsWith('data:')) {
       return route.continue();
     }
-    externalRequests.push(url);
+    if (recordingLibraryExternal) externalRequests.push(url);
     return route.abort();
   });
 
-  // 1. index.html から統合ライブラリへの遷移
+  // 1. index.html からの導線確認 & library.html 単体の外部無通信検証
   await page.goto(base + prefix + 'index.html');
   assert.equal(await page.locator('.library-hub-link').count(), 1);
-  externalRequests.length = 0; // index.html 側の preconnect 等をリセットし library.html 単体の無通信を検査
   await page.click('.library-hub-link');
   await page.waitForURL((u) => u.pathname.endsWith('/library.html'));
+
+  recordingLibraryExternal = true;
+  await page.goto(base + prefix + 'library.html');
 
   // Service Worker と初期目録の描画完了を待機
   await page.waitForFunction(() => document.getElementById('stat-skins')?.textContent?.includes('291'), null, {
@@ -138,6 +141,8 @@ try {
   assert.equal(await page.locator('#pwa-active-contracts .hub-card').count(), 7);
   assert.equal(await page.locator('#pwa-requested-receivers .hub-card').count(), 7);
 
+  await page.click('#sample-pack-catalog');
+  assert.match(await page.textContent('#inspector-result'), /trk-avatar-library v1/);
   await page.click('#sample-skin-vol');
   assert.match(await page.textContent('#inspector-result'), /検査合格/);
   await page.click('#sample-custom-skin');
@@ -149,13 +154,16 @@ try {
   await page.click('#inspector-run');
   assert.match(await page.textContent('#inspector-result'), /JSON として読み取れません/);
 
-  // 8. オフライン状態でのリロード動作検証（Service Worker キャッシュ完結）
+  // 8. オフライン状態でのリロード＆見本検査動作検証（Service Worker キャッシュ完結）
   await context.setOffline(true);
   await page.reload();
   await page.waitForFunction(() => document.getElementById('stat-skins')?.textContent?.includes('291'), null, {
     timeout: 10000,
   });
   assert.equal(await page.textContent('#stat-packs'), '30 本（書体 29 本・42 ウェイト）');
+  await page.click('#tab-pwa');
+  await page.click('#sample-skin-vol');
+  assert.match(await page.textContent('#inspector-result'), /検査合格/);
   await context.setOffline(false);
 
   assert.deepEqual(pageErrors, [], `ページ実行時エラーが発生しました: ${pageErrors.join('; ')}`);
