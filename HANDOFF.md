@@ -433,6 +433,7 @@ node tools/check-docs.mjs                                      # ✅ 文書は�
 - **`TRK_PWA_REF` を `d5de0656278e66e7ed7adb9be0147b2323e628ee`（trk328、40桁）に変更**：`.github/workflows/check.yml` と `.github/workflows/release-set.yml` の `env.TRK_PWA_REF`、および本文書 §1 の記録を更新。7桁では `actions/checkout` が枝名として探して失敗するため、40桁のフル SHA を指定。
 - **作品事前確認 `tools/check-re-modern-work-pack.mjs` の `PWA_REF` と `PINS`（4ファイル SHA-256）を `trk328` に更新**：`remodern-regions.js`（`ebb4dceb…`）および `remodern-ui.js`（`aa13b1f3…`）を `trk326` 更新後の値へ差し替え、`remodern-work.js`／`zip-io.js` は継続維持。
 - **受け子要項・統合マニフェスト・回帰テストの `trk328` 照合**：`docs/2026-11-27-pwa-receiver-requirements.md`・`js/pwa-bridge.js`・`catalog/library-manifest.json`・`package.json`（`2026.11.27-trk328`）を更新し、`check-pwa-receivers`（稼働契約 7/7・受け子 7/7 `implemented`）および `check-pwa-skin-compat`（238種/13巻・既知の差し戻し 3種・33組）の合格を確認。
+- **安定版 `/trk/` を trk328 で公開**（2026-11-27・上流 `Trk-Nexus/trk` PR #103・マージ `02d5fd3`・Deploy Pages run `46030828778` success・写した 704 ファイル）。公開サイトの `sw.js` の `CACHE` は `trk-v2026.11.27-trk328` を実測。**`TRK_PWA_REF` と `PINS` は動かしません**（照合の基準は開発版 `trk-PWA` の `d5de065…`（trk328）のままで、安定版は別物）。
 
 ### 2026-11-03 trk269 ターミナルの定番とWizardスキン — TRK_PWA_REF を trk269（6f60e234fca63cf47a2cba4bbcd954ee3850dacd）に、Wizard CLIスキン5操作感・コントラスト修正
 
