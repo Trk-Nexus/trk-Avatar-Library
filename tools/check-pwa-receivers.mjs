@@ -142,7 +142,8 @@ export function checkPwaReceivers({ rootDir = ROOT, trkPwaDir = '' } = {}) {
     }
     activeResults.push({ id: 'C-TITLE-FONT-BASE', ok: cTitleFontOk });
 
-    // (B) 要望中の受け子 7 件のプローブ（未実装時は requested-pending として報告・エラーにしない）
+    // (B) 受け子 7 件のプローブ（trk326〜trk328 で 7/7 実装済・旧チェックアウト指定時は requested-pending として報告）
+    const libraryReceiverSrc = existsPwa('js/library-receiver.js') ? readPwa('js/library-receiver.js') : '';
     const customSrc = existsPwa('js/custom.js') ? readPwa('js/custom.js') : '';
     const skinsVolSrc = existsPwa('js/skins-volumes.js') ? readPwa('js/skins-volumes.js') : '';
     const remodernUiSrc = existsPwa('js/remodern-ui.js') ? readPwa('js/remodern-ui.js') : '';
@@ -152,17 +153,23 @@ export function checkPwaReceivers({ rootDir = ROOT, trkPwaDir = '' } = {}) {
 
     const probeMap = {
       'R-VOL-1':
-        customSrc.includes('trk-avatar-library-skins') || skinsVolSrc.includes('trk-avatar-library-skins'),
+        libraryReceiverSrc.includes('trk-avatar-library-skins') ||
+        customSrc.includes('trk-avatar-library-skins') ||
+        skinsVolSrc.includes('trk-avatar-library-skins'),
       'R-REM-1':
         !titleFontSrc.includes('まだ画面からは使わず、適用もしない') && remodernUiSrc.includes('fontForWork'),
       'R-REM-2':
         titleFontSrc.includes('restoreWorks') || titleFontSrc.includes('importWorksBackup'),
       'R-REM-3':
-        remodernRegionsSrc.includes('studyOptIn') || remodernUiSrc.includes('regionOptIn'),
+        remodernRegionsSrc.includes('studyOptIn') ||
+        remodernRegionsSrc.includes('defaultOptIn') ||
+        remodernUiSrc.includes('regionOptIn'),
       'R-TYP-1':
         typoJsSrc.includes('trk-typography-pairing') || uiPrefsSrc.includes('trk-typography-pairing'),
       'R-SKIN-1':
-        skinsCatalog.skins.some((s) => s.legacyColors) || importSkinSrc.includes('legacyColors'),
+        existsPwa('tools/skin-holdback.mjs') ||
+        skinsCatalog.skins.some((s) => s.legacyColors) ||
+        importSkinSrc.includes('legacyColors'),
       'R-WIZ-1':
         cliJsSrc.includes('trk-avatar-library-advance-prefs') ||
         packCatalogSrc.includes('trk-avatar-library-manifest'),
@@ -219,7 +226,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       if (report.pwaInspected) {
         const implCount = report.receiverProbes.filter((p) => p.status === 'implemented').length;
         console.log(
-          `   📋 PWA側への要望受け子プローブ: 実装済 ${implCount} 件 ／ 要望中 ${
+          `   📋 PWA 受け子プローブ: 実装済 ${implCount} 件 ／ 未実装 ${
             report.receiverProbes.length - implCount
           } 件（docs/2026-11-27-pwa-receiver-requirements.md）`
         );

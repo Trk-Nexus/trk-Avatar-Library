@@ -8,11 +8,11 @@ import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {openZip} from './lib/zip.mjs';
 
-export const PWA_REF='e30eb2ce98490c94b7768dd2ddf768fab7fe726d'; // trk325 (pinned files unchanged since trk320: 8531b4e206dd79adffcad3782fce3e7dd3521d7f)
+export const PWA_REF='d5de0656278e66e7ed7adb9be0147b2323e628ee'; // trk328 (pinned files: remodern-regions.js/ui.js changed at trk326; remodern-work.js/zip-io.js unchanged since trk320)
 const PINS={
- 'remodern-regions.js':'40a57a0d33b3ff9721c03df77ef1d2449c02bd505af680e565da41e7ed592df0',
+ 'remodern-regions.js':'ebb4dceb5f9a52b370687d36106ff1b6ae4dc96f71d91d62eb0888b5d8a21cd9',
  'remodern-work.js':'6db59bcb17b39bd6de1c84145ee2862ff69b17c77f560ae56172357435f4d86d',
- 'remodern-ui.js':'c910b1e4448e19bea8e14d7a6d95bdcfce734cadf89389b1a94e3cd3117f04c0',
+ 'remodern-ui.js':'aa13b1f3f00fd8c202955da6279222a7d12d213d922b980719609ba240158f6b',
  'zip-io.js':'5e5b274f8656d469fcc25e95f83a7379fa2c3f36a28e79bcbc83b20d34f2fcbf'
 };
 const CAP=256*1024;
@@ -43,6 +43,6 @@ export async function inspectWorkBytes(bytes,pwa){
 }
 function readBounded(file){const fd=fs.openSync(file,'r');try{const s=fs.fstatSync(fd);if(!s.isFile())throw Error('input must be a regular file');if(s.size>CAP)return Buffer.alloc(CAP+1);const b=Buffer.alloc(CAP+1);let n=0;while(n<b.length){const r=fs.readSync(fd,b,n,b.length-n,null);if(!r)break;n+=r;}return b.subarray(0,n);}finally{fs.closeSync(fd);}}
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- try{const pwaDir=process.env.TRK_PWA_320||process.env.TRK_PWA;if(process.argv.length!==3)throw Error('Usage: TRK_PWA=/path/to/trusted-pwa node tools/check-re-modern-work-pack.mjs /path/to/work.stpack');const r=await inspectWorkBytes(readBounded(process.argv[2]),pwaDir);console.log(JSON.stringify(r,null,2));if(!r.ok)process.exitCode=1;}
+ try{const pwaDir=process.env.TRK_PWA||process.env.TRK_PWA_320;if(process.argv.length!==3)throw Error('Usage: TRK_PWA=/path/to/trusted-pwa node tools/check-re-modern-work-pack.mjs /path/to/work.stpack');const r=await inspectWorkBytes(readBounded(process.argv[2]),pwaDir);console.log(JSON.stringify(r,null,2));if(!r.ok)process.exitCode=1;}
  catch(e){console.error(`preflight error: ${e.message}`);process.exitCode=2;}
 }

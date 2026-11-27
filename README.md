@@ -347,19 +347,19 @@ trk233 で `licenseFile`（ライセンス全文）が読めるようになり�
 
 書体スキン（`js/data.js` の `SKINS[].font` に端末の書体名を書く形・9 種）は、これまでどおりそのまま使えます。
 
-## 5. trk-PWA 受け渡し状況と「受け子」要項まとめ（trk325 照合）
+## 5. trk-PWA 受け渡し状況と「受け子」要項まとめ（trk328 照合・7/7 実装済）
 
-最新の `trk-PWA`（`trk325`：`e30eb2ce98490c94b7768dd2ddf768fab7fe726d`）との間で**すでに稼働している 7 系統の契約**と、**今後 PWA 側への実装を要望する 7 項目の「受け子（受け口）」仕様**を [`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md) に整理しています。当倉庫側には先行して契約テスト（[`tests/pwa-bridge-and-receivers.test.mjs`](tests/pwa-bridge-and-receivers.test.mjs)）と自動プローブ CLI（`npm run check:pwa-receivers`）を実装済みです。
+最新の `trk-PWA`（`trk328`：`d5de0656278e66e7ed7adb9be0147b2323e628ee`）との間で、**基盤となる 7 系統の契約（`C-*`）** と **`trk326`〜`trk328` で実装完了した 7 項目の「受け子（受け口）」仕様（`R-*`）** を [`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md) に整理しています。当倉庫側では契約テスト（[`tests/pwa-bridge-and-receivers.test.mjs`](tests/pwa-bridge-and-receivers.test.mjs)）と自動プローブ CLI（`npm run check:pwa-receivers`）で全件（7/7 + 7/7）を回帰監視しています。
 
-| 要項ID | 優先度 | PWA側に要望する受け子（概要） | 当倉庫側の先行整備 |
+| 要項ID | 状態 | PWA側の受け子（概要） | 当倉庫側の整備・連携 |
 | --- | --- | --- | --- |
-| `R-VOL-1` | 高 | 巻別・単体スキン JSON（`trk-avatar-library-skins` v1）の画面インポート受け子（`📚 取り込んだ巻`） | 全13巻・291種の検証関数と、現行PWAで今すぐ試せる `skin.shadow-taiko` v1 変換書き出しを実装済み |
-| `R-REM-1` | 高 | `trk-re-modern` 作品ごとの題字書体 UI と表示接続（`trkTitleFontWorks` の実接続） | 優先順位規則（全体設定 ＞ 作品連携オン）のモデル試験と候補3種の SHA-256 照合を整備済み |
-| `R-REM-2` | 中 | 題字書体・作品指定の退避封筒（`trk-title-font-works-backup` v1）の復元（取り込み）受け子 | `state: "ok"` / `"invalid"` 分離・プロトタイプ汚染防止つきの封筒検証を先行実装済み |
-| `R-REM-3` | 中 | 領域別スキン適用（書斎 `study`・基地 `base`）の独立オプトイン受け子 | 既存読書テーマ等を無断上書きしない安全境界仕様を定義済み |
-| `R-TYP-1` | 中 | 書体の組み合わせ単体 JSON（`trk-typography-pairing` v1）受け渡しと不足 `.stpack` 具体名案内 | 全14組の単体 JSON 書き出し・検証関数を統合ライブラリUIに実装済み |
-| `R-SKIN-1` | 中 | 保留2種（`gold-chip` / `orichalcum`）・重複19種の旧配色切替（`legacy`）と保留定義の単一化 | 改訂案データの分離保持と `trk325` 差し戻しベースライン（3種・33組）の回帰監視を稼働中 |
-| `R-WIZ-1` | 低 | Advance Wizard 設定受け渡し・統合マニフェスト（`trk-avatar-library-manifest` v1）参照受け子 | 禁止文字拒否つき設定検証と統合マニフェスト生成・検査 CLI を実装済み |
+| `R-VOL-1` | 実装済（`trk326`） | 巻別・単体スキン JSON（`trk-avatar-library-skins` v1）の画面インポート受け子（`📚 取り込んだ巻`） | 全13巻・291種の検証関数と、`skin.shadow-taiko` v1 変換書き出しを実装済み |
+| `R-REM-1` | 実装済（`trk326`） | `trk-re-modern` 作品ごとの題字書体 UI と表示接続（`trkTitleFontWorks` の実接続） | 優先順位規則（全体設定 ＞ 作品連携オン）のモデル試験と候補3種の SHA-256 照合を整備済み |
+| `R-REM-2` | 実装済（`trk326`） | 題字書体・作品指定の退避封筒（`trk-title-font-works-backup` v1）の復元（取り込み）受け子 | `state: "ok"` / `"invalid"` 分離・プロトタイプ汚染防止つきの封筒検証を実装済み |
+| `R-REM-3` | 実装済（`trk326`） | 領域別スキン適用（書斎 `study`・基地 `base`）の独立オプトイン受け子 | 既存読書テーマ等を無断上書きしない安全境界仕様を定義済み |
+| `R-TYP-1` | 実装済（`trk326`） | 書体の組み合わせ単体 JSON（`trk-typography-pairing` v1）受け渡しと不足 `.stpack` 具体名案内 | 全14組の単体 JSON 書き出し・検証関数を統合ライブラリUIに実装済み |
+| `R-SKIN-1` | 実装済（`trk326` / `trk328`） | 保留2種（`gold-chip` / `orichalcum`）・重複19種の旧配色切替（`legacy`）と保留定義の単一化（`trk328` で生成物内 ID 限定へ修正） | 改訂案データの分離保持と `trk328` 差し戻しベースライン（3種・33組）の回帰監視を稼働中 |
+| `R-WIZ-1` | 実装済（`trk326`） | Advance Wizard 設定受け渡し・統合マニフェスト（`trk-avatar-library-manifest` v1）参照受け子 | 禁止文字拒否つき設定検証と統合マニフェスト生成・検査 CLI を実装済み |
 
 ## 6. 容量の方針
 
@@ -456,23 +456,23 @@ node tools/build-set.mjs sets/font-set.json --check    # 書体セット（r10�
 node tools/check-docs.mjs            # README の表・リンク・見出しアンカー・セットの記録
 ```
 
-- 相手側（trk-PWA）は **`TRK_PWA_REF` で版を固定**して取ってきます（いまは trk-PWA の `e30eb2ce98490c94b7768dd2ddf768fab7fe726d`＝trk325）。
+- 相手側（trk-PWA）は **`TRK_PWA_REF` で版を固定**して取ってきます（いまは trk-PWA の `d5de0656278e66e7ed7adb9be0147b2323e628ee`＝trk328）。
   上げるときは `.github/workflows/check.yml` と `.github/workflows/release-set.yml` の `env` を変えます
 - 週に1回（日曜 21:00 UTC）、**固定しない `main`** でも同じ契約検査を回します（`upstream-main`）。
   相手側が先に進んでも、こちらが静かに壊れないようにするためです
 
-## trk-PWA trk325 の照合とレビュー履歴
+## trk-PWA trk328 の照合とレビュー履歴
 
-現在の固定基準は **`trk325`（`e30eb2ce98490c94b7768dd2ddf768fab7fe726d`）** です。`trk293` 以降のコントラスト改善と `readability: "intentional-low"` 保持により、既知の差し戻しは 11 種（102 組）から **3 種・33 組（`gold-chip`, `orichalcum`, `house-edge`）** へ縮小しています（[`tests/pwa-holdback-baseline.json`](tests/pwa-holdback-baseline.json)）。
+現在の固定基準は **`trk328`（`d5de0656278e66e7ed7adb9be0147b2323e628ee`）** です。`trk293` 以降のコントラスト改善と `readability: "intentional-low"` 保持、および `trk328` M1 修正（出力ファイル内 ID のみを `SKIN_HOLDBACK` に出力）により、既知の差し戻しは 11 種（102 組）から **3 種・33 組（`gold-chip`, `orichalcum`, `house-edge`）** へ縮小し、受け子要項 7 件（`R-VOL-1`〜`R-WIZ-1`）もすべて実装済です（[`tests/pwa-holdback-baseline.json`](tests/pwa-holdback-baseline.json)）。
 
-PWA 側への未実装受け子要望は [`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md)、先行する配色レビュー経緯は [trk291 レビュー対応メモ](docs/2026-11-06-trk291-review-followup.md) および [差し戻し・受け入れ方針へのレビュー案](docs/2026-11-06-trk291-avatar-review-response.md) を参照してください。
+PWA 側との受け子仕様と照合結果は [`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md)、先行する配色レビュー経緯は [trk291 レビュー対応メモ](docs/2026-11-06-trk291-review-followup.md) および [差し戻し・受け入れ方針へのレビュー案](docs/2026-11-06-trk291-avatar-review-response.md) を参照してください。
 
 ## 巻ごとにスキンを探す・統合ライブラリで横断検索する
 
 - **[統合ライブラリUIを開く](library.html)**：スキン全 291 種・書体パック 29 本（＋見本 1 本）・書体組み合わせ 14 組・`trk-re-modern`・PWA 受け渡し検査を 1 画面で横断検索でき、どのスキンも現行 `trk-PWA` のカスタムスキン（`skin.shadow-taiko` v1）へその場で変換書き出しできます。
 - **[巻別スキン一覧を開く](skin-volumes/index.html)**：vol.1〜10・glitch・wizard・その他から、巻ごと／1枚ずつ**元データ JSON**を取得できます（合計 291 種）。巻別見本と ID は `skin-volumes/volumes.json` で管理し、`node tools/export-skin-volumes.mjs` で再生成、`--check` で正本との差を検査します。
 
-**trk-PWA 開発用の取り込み道具はこの巻 JSON を受け取れますが、画面からの巻一括インポート受け口は現在要項 `R-VOL-1` として提案中です**（[受け子要項仕様書](docs/2026-11-27-pwa-receiver-requirements.md)／[先行相談文書](docs/2026-11-03-trk-pwa-スキン巻別受け入れの相談.md)）。`gallery/skins-wizard.html` は現在の wizard カテゴリ全 62 種の見本です。
+**`trk-PWA`（`trk326`〜`trk328`）では、開発用の取り込み道具に加えて画面からの巻別・単体スキン JSON 取り込み（`📚 取り込んだ巻`、要項 `R-VOL-1`）も利用可能です**（[受け子要項仕様書](docs/2026-11-27-pwa-receiver-requirements.md)／[先行相談文書](docs/2026-11-03-trk-pwa-スキン巻別受け入れの相談.md)）。`gallery/skins-wizard.html` は現在の wizard カテゴリ全 62 種の見本です。
 
 ### Pages 公開の準備
 
@@ -489,7 +489,7 @@ PWA 側への未実装受け子要望は [`docs/2026-11-27-pwa-receiver-requirem
 | スキン総数 | 291 種（13 巻） |
 | wizard カテゴリ | 62 種 |
 | CLI 対応 wizard スキン | 50 種 |
-| TRK_PWA_REF | `e30eb2ce98490c94b7768dd2ddf768fab7fe726d`（trk325・40 桁） |
+| TRK_PWA_REF | `d5de0656278e66e7ed7adb9be0147b2323e628ee`（trk328・40 桁） |
 
 ### 魔導書テーマスキンシリーズ
 

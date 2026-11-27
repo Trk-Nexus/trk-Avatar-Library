@@ -1,7 +1,7 @@
 {
   "sourceCatalogSha256": "8f1e9fa713c1b2c62567fba074f1c3cf245eac4e02d94f6aa515c74b683727e7",
-  "pwaRef": "e30eb2ce98490c94b7768dd2ddf768fab7fe726d",
-  "description": "trk325: 既知の差し戻し3種・33組（gold-chip / orichalcum はコントラスト保留、house-edge は意図的な低可読）。同じ組数なら表示比の悪化を見張る。警告は合格ではない。",
+  "pwaRef": "d5de0656278e66e7ed7adb9be0147b2323e628ee",
+  "description": "trk328: 既知の差し戻し3種・33組（gold-chip / orichalcum はコントラスト保留、house-edge は意図的な低可読。trk328 M1 で出力ファイル内 ID 限定へ修正済）。同じ組数なら表示比の悪化を見張る。警告は合格ではない。",
   "holdback": {
     "gold-chip": {
       "本文／パネル": [
