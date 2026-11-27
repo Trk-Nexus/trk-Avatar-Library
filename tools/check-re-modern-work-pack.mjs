@@ -8,7 +8,7 @@ import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {openZip} from './lib/zip.mjs';
 
-export const PWA_REF='8531b4e206dd79adffcad3782fce3e7dd3521d7f';
+export const PWA_REF='e30eb2ce98490c94b7768dd2ddf768fab7fe726d'; // trk325 (pinned files unchanged since trk320: 8531b4e206dd79adffcad3782fce3e7dd3521d7f)
 const PINS={
  'remodern-regions.js':'40a57a0d33b3ff9721c03df77ef1d2449c02bd505af680e565da41e7ed592df0',
  'remodern-work.js':'6db59bcb17b39bd6de1c84145ee2862ff69b17c77f560ae56172357435f4d86d',
@@ -18,9 +18,9 @@ const PINS={
 const CAP=256*1024;
 const digest=x=>crypto.createHash('sha256').update(x).digest('hex');
 function loadRules(pwa){
- if(!pwa)throw Error('TRK_PWA_320 must identify a trusted PWA checkout');
+ if(!pwa)throw Error('TRK_PWA or TRK_PWA_320 must identify a trusted PWA checkout');
  const sources={};
- for(const [name,sha] of Object.entries(PINS)){const bytes=fs.readFileSync(path.join(pwa,'js',name));if(digest(bytes)!==sha)throw Error(`PWA source mismatch: ${name}; expected trk320 ${PWA_REF}`);sources[name]=bytes.toString('utf8');}
+ for(const [name,sha] of Object.entries(PINS)){const bytes=fs.readFileSync(path.join(pwa,'js',name));if(digest(bytes)!==sha)throw Error(`PWA source mismatch: ${name}; expected pinned SHA-256 (${PWA_REF})`);sources[name]=bytes.toString('utf8');}
  // Run only code from the trusted checkout after the fixed-source hash check.
  const ctx={};vm.createContext(ctx);for(const name of ['remodern-regions.js','remodern-work.js'])vm.runInContext(sources[name],ctx,{filename:name});return ctx.TrkReModernWork;
 }
@@ -43,6 +43,6 @@ export async function inspectWorkBytes(bytes,pwa){
 }
 function readBounded(file){const fd=fs.openSync(file,'r');try{const s=fs.fstatSync(fd);if(!s.isFile())throw Error('input must be a regular file');if(s.size>CAP)return Buffer.alloc(CAP+1);const b=Buffer.alloc(CAP+1);let n=0;while(n<b.length){const r=fs.readSync(fd,b,n,b.length-n,null);if(!r)break;n+=r;}return b.subarray(0,n);}finally{fs.closeSync(fd);}}
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
- try{if(process.argv.length!==3)throw Error('Usage: TRK_PWA_320=/path/to/trusted-pwa node tools/check-re-modern-work-pack.mjs /path/to/work.stpack');const r=await inspectWorkBytes(readBounded(process.argv[2]),process.env.TRK_PWA_320);console.log(JSON.stringify(r,null,2));if(!r.ok)process.exitCode=1;}
+ try{const pwaDir=process.env.TRK_PWA_320||process.env.TRK_PWA;if(process.argv.length!==3)throw Error('Usage: TRK_PWA=/path/to/trusted-pwa node tools/check-re-modern-work-pack.mjs /path/to/work.stpack');const r=await inspectWorkBytes(readBounded(process.argv[2]),pwaDir);console.log(JSON.stringify(r,null,2));if(!r.ok)process.exitCode=1;}
  catch(e){console.error(`preflight error: ${e.message}`);process.exitCode=2;}
 }

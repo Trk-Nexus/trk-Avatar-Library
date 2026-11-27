@@ -30,6 +30,10 @@
 
 | 場所 | 中身 |
 | --- | --- |
+| `library.html` | **統合ライブラリUI ＆ trk-PWA 受け渡しハブ**（PWA対応・外部参照 0・オフライン動作）。全 291 スキン（13巻）・30 パック（書体 29 本・42 ウェイト）・書体の組み合わせ 14 組・`trk-re-modern` 状況・`trk-PWA` 受け渡し契約とブラウザ内 JSON 事前検査、および現行 `trk-PWA` 向けカスタムスキン（`skin.shadow-taiko` v1）変換書き出しを 1 画面で横断操作できます |
+| `index.html` | **Terminal & Wizard Skin 画面**（PWA対応）。Wizard CLI コマンド操作・辞書登録・Advance Wizard 10 項目設定を備え、ヘッダーから統合ライブラリや巻別スキン一覧へ移動できます |
+| `catalog/library-manifest.json` | **統合マニフェスト**（`trk-avatar-library-manifest` v1）。各正本目録・セット記録の件数と SHA-256、連携基準 `trk-PWA` 版、未登録制作案の分離一覧、および将来の拡張予約枠（3Dアバター `futureSlots.mascot`：要望が出るまで未実装・予約のみ）を決定論的に束ねた索引 |
+| `js/pwa-bridge.js` | **trk-PWA 受け渡し基盤モジュール**。ブラウザ UI と Node 検証 CLI の双方で共有する純粋モジュール（マニフェスト検証・巻データ検証・291種カスタムスキン変換・題字退避封筒検証・JSON 自動判別インスペクタ） |
 | `gallery/all-skins.html` | **全スキン見本**（trk! の見た目のスキン **53 種**）。1ファイルで、ダブルクリックだけで開けます。外部からは何も読みません（オフラインOK） |
 | `gallery/fonts.html` | **書体の一覧と検索**（29 パック・42 ウェイト）。対応字数・大きさ・太さ・ライセンス・ひとこと・雰囲気タグを並べ、**50 音順／大きさ順／字数順**に並べ替え、**雰囲気・ライセンス・太さ・大きさで絞り込み**、言葉で横断検索。1ファイル・外部参照 0。**行ごとに 1 本だけ落とせる**リンクつき（L13・L14） |
 | `gallery/packs.html` | **パックの一覧**（30 パック・書体 42 本）。パックごとに、中に入っている書体（family・太さ・ひとこと・タグ・対応字数・大きさ）・ライセンス・sha256 を並べ、**言葉で横断検索**・**雰囲気タグで絞り込み**・**パック名／大きさ／書体の数で並べ替え**。1ファイル・外部参照 0。**パックごとに「⬇ .stpack」**（「どのパックにどの書体が入っているか」をパックの側から見る） |
@@ -46,8 +50,10 @@
 | `tools/` | 見本の書き出し・パックの組み立て／検査・目録の作成・**目録がアプリの読み取り規則を通るかの検査**・パックの見本作り（Node だけ） |
 | `sets/` | **セットの定義**。`first-set.json`（はじめてセット・**r10**：見本 4 枚＋目録＋6 パック＋組み合わせの束と縮刷版）と `font-set.json`（書体セット・**r10**：29 本＋同じ 2 つ）。作るのは `tools/build-set.mjs`（下の §2-5） |
 | `release/` | 配ったセットの記録（ファイル名・大きさ・sha256）。いまの記録は **r10 の 2 つ**（`first-set.json` 8,118,128 B・`font-set.json` 64,197,328 B）と、過去の記録（`first-set-2026-11-01-r6.json`／`-r7.json`／`-r8.json`／`-2026-11-02-r9.json`・`font-set-2026-11-01-r6.json`／`-r7.json`／`-r8.json`／`-2026-11-02-r9.json`・r1 の `first-set-2026-11-01.json`。r2〜r5 の経緯は `release/README.md`） |
-| `docs/` | 受け渡しメモ（2026-10-31）。開発の引き継ぎは [`HANDOFF.md`](HANDOFF.md) |
+| `docs/` | **PWA向け受け子要項仕様書**（[`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md)）、`trk-re-modern` 規定文書群、および各回の受け渡し・レビュー対応記録。開発の引き継ぎは [`HANDOFF.md`](HANDOFF.md) |
 | `LICENSE` / `NOTICE.md` | GPL-3.0-or-later と、権利のまとめ |
+
+> **スコープ方針（3Dアバター VRM / MMD について）**：3Dアバター関連の要素は「利用者の要望が求められてから着手判断を行う」方針とし、現マイルストーンでは実装対象外としています（スキン・書体・組版・`trk-re-modern`・Wizard CLI・統合ライブラリUI・`trk-PWA` 受け渡し基盤に資源を集中し、`catalog/library-manifest.json` には将来の予約枠 `futureSlots.mascot` のみ確保しています）。
 
 ## 2. 使い方（はじめての3手順の、くわしい版）
 
@@ -277,17 +283,16 @@ trk! は**実行時に外部から何も読みません**（CDN・外部APIな�
 
 ### 4-1. いま置いてあるもの
 
-**書体パックは 15 個**あります（14 種の日本語書体＋「丸ゴのお茶目」）。どれも
-**woff2＋`fonts/OFL.txt`（ライセンス全文）＋スキン（色とノーツの色）** の組で、入れて「使う」と本文の書体が変わります。
+**書体パックは 29 個**あります（28 種の日本語書体＋「丸ゴのお茶目」）。どれも
+**woff2＋ライセンス全文（`fonts/OFL.txt` または `fonts/LICENSE.txt`）＋スキン（色とノーツの色）** の組で、入れて「使う」と本文の書体が変わります。
 
 | 種類 | 中身 |
 | --- | --- |
-| `font-packs/<slug>.stpack` | 配るパック（`pack.json`・woff2・`OFL.txt`・`NOTICE.md` の 4〜5 ファイル） |
-| `font-packs/<slug>/` | 上の**もと**（`pack.json`・`SOURCE.json`・`NOTICE.md`・`fonts/OFL.txt`）。woff2 は `--fetch` で取ります |
+| `font-packs/<slug>.stpack` | 配るパック（`pack.json`・woff2・ライセンス全文・`NOTICE.md`） |
+| `font-packs/<slug>/` | 上の**もと**（`pack.json`・`SOURCE.json`・`NOTICE.md`・`fonts/OFL.txt` 等）。woff2 は `--fetch` で取ります |
 
-一覧（大きさ・書体・ライセンス）は §2-2 の表です。合計 **29.3 MB**・20 ウェイト。
-**パックは trk-PWA 側から届いたものをそのまま置いています**（`pack.json` を書き換えないので、向こうで作った `.stpack` と
-バイト単位で同じものになります）。ひとこと（`note`）だけは、パックの外の `catalog/font-notes.json` に書きます。
+一覧（大きさ・書体・ライセンス）は §2-2 の表です。合計 **63.10 MB**（63,103,675 B）・**42 ウェイト**。
+ひとこと（`note`）と検索タグ（`tags`）は `catalog/font-notes.json`・`catalog/font-tags.json`（または各 `pack.json`）で管理しています。
 
 `pack.json` はこうなっています（抜粋）。
 
@@ -338,27 +343,23 @@ node tools/check-fonts.mjs                             # woff2 の中身（表�
 - 1書体 16 MB・1パック 8書体まで。**この倉庫の検査（`verify-pack`）を通ったパックは、そのままアプリでも通ります**
 - `release` と目録の `version` が違うと、一覧に **「更新あり（1.0.0 → 1.1.0）」** が出ます
 
-trk233 で、`licenseFile`（ライセンス全文）をアプリが読むようになりました。パック一覧の「🔤 同梱の書体」の中の
-**「📄 ライセンス全文を読む」** を押すと、パックの中の `fonts/OFL.txt` の全文が読めます（押したときだけ読みます）。
-目録の `fonts[].note`／`cmap`（雰囲気の一行・対応する字数）は、まだアプリは読みません（次の段で使う予定）。
+trk233 で `licenseFile`（ライセンス全文）が読めるようになり、さらに **trk236 以降では目録の `fonts[].note`・`cmap`・`weight`・`tags` もアプリ側でそのまま表示・検索に使われます**。また **trk246 / trk254 / trk255** で `catalog/typography.json` の 14 組と `trkUse`（曲・スキン相性）も本体へ同期されています。
 
 書体スキン（`js/data.js` の `SKINS[].font` に端末の書体名を書く形・9 種）は、これまでどおりそのまま使えます。
 
-## 5. これから（検討中）
+## 5. trk-PWA 受け渡し状況と「受け子」要項まとめ（trk325 照合）
 
-| 案 | 中身 | 状態 |
-| --- | --- | --- |
-| 書体パックの読み込み（trk! 側） | `pack.json` の `fonts` を `FontFace` で登録し、`--font` に足す。パックを外したら登録も外す | **trk! trk232（2026-11-01）で実装済み**。この倉庫の書体パックがそのまま効きます（§4-3） |
-| 目録からの取り込み | `catalog/index.json` を**ファイルとして選ぶ**と、一覧（名前・サイズ・書体・ライセンス）を出し、選んだ `.stpack` を入れる。**URL を自動で取りに行かない**（オフライン優先の方針を守る） | **trk! trk230 で実装済み**（2026-10-31）。この倉庫は目録の形をそれに合わせ、`tools/check-contract.mjs` で毎回確かめています |
-| はじめてセット（ZIP 1つ） | 見本＋目録＋書体パックを1つに。アプリの「📥 まとめて入れる」でそのまま選べる | **できました**（[Release `first-set-2026-11-01-r2`](https://github.com/Trk-Nexus/trk-Avatar-Library/releases/tag/first-set-2026-11-01-r2)・2,996,422 B・書体パック release 1.1.0） |
-| ライセンス全文をアプリで見る | 目録の `fonts[].licenseFile` を読み、アプリ内で全文を表示する | **trk! trk233 で実装済み**（パック一覧の「📄 ライセンス全文を読む」）。倉庫は 15 パックすべてで宣言済み |
-| 書体のひとこと・対応する字数 | 目録の `fonts[].note`（雰囲気の一行）と `fonts[].cmap`（字数）を、アプリの 🔎 中身に出す | **倉庫側は用意済み**（L10・L11）。アプリは次の段で読む予定 |
-| `.stlib`（セットを1ファイルに） | セットを **1 ファイル**で配る（中身は ZIP と同じ） | **できました**。r4 から `.zip` と `.stlib` を同じバイト列で配り、**trk235 が「📦 セットを選ぶ」でそのまま読める**ことを相手側が確認（16 本とも照合一致・`tools/verify-set.mjs` でこちらも同じ手順を検査）。返事は `docs/2026-11-01-trk235への返事.md` |
-| 書体の一覧と検索（`gallery/fonts.html`） | 配る前に「どの書体にするか」を選べるようにする（名前・対応字数・大きさ・太さ・雰囲気タグ・ひとこと・1 本だけ落とす） | **できました**（L13・L14）。並べ替え 4 種・絞り込み 4 種・横断検索。1 ファイル・外部参照 0 |
-| 書体パックの受け入れ検査（L16） | 書体を増やしても壊れないように、OFL-1.1・`Trk` で始まる family・family＋太さの重複なし・1 本 4 MiB 以下・cmap 1,000 字以上を機械で見る | **できました**（`build-catalog` が目録を作る前に止まります） |
-| 全スキン入りビルド | 「全部入れて、見比べたい」人向けに、53 種＋書体パックを入れた trk! をこの倉庫の Release に置く | 未着手（見本 HTML で代替中） |
-| GitHub Pages で見本を開く | `gallery/all-skins.html` を Pages で開けるようにすると導線は最も楽。ただし**アプリのオリジンが増える**ので、CSP・Service Worker・共有の扱いをアプリ側と一緒に確認してから | 相談中（2026-11-01 の相手側からのお願い L6） |
-| 大きいファイルの置き場 | Git の1ファイル 100 MB 制限を避けるため、**1 パック 50 MB までを Git、それ以上は Release／Drive** | 方針だけ |
+最新の `trk-PWA`（`trk325`：`e30eb2ce98490c94b7768dd2ddf768fab7fe726d`）との間で**すでに稼働している 7 系統の契約**と、**今後 PWA 側への実装を要望する 7 項目の「受け子（受け口）」仕様**を [`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md) に整理しています。当倉庫側には先行して契約テスト（[`tests/pwa-bridge-and-receivers.test.mjs`](tests/pwa-bridge-and-receivers.test.mjs)）と自動プローブ CLI（`npm run check:pwa-receivers`）を実装済みです。
+
+| 要項ID | 優先度 | PWA側に要望する受け子（概要） | 当倉庫側の先行整備 |
+| --- | --- | --- | --- |
+| `R-VOL-1` | 高 | 巻別・単体スキン JSON（`trk-avatar-library-skins` v1）の画面インポート受け子（`📚 取り込んだ巻`） | 全13巻・291種の検証関数と、現行PWAで今すぐ試せる `skin.shadow-taiko` v1 変換書き出しを実装済み |
+| `R-REM-1` | 高 | `trk-re-modern` 作品ごとの題字書体 UI と表示接続（`trkTitleFontWorks` の実接続） | 優先順位規則（全体設定 ＞ 作品連携オン）のモデル試験と候補3種の SHA-256 照合を整備済み |
+| `R-REM-2` | 中 | 題字書体・作品指定の退避封筒（`trk-title-font-works-backup` v1）の復元（取り込み）受け子 | `state: "ok"` / `"invalid"` 分離・プロトタイプ汚染防止つきの封筒検証を先行実装済み |
+| `R-REM-3` | 中 | 領域別スキン適用（書斎 `study`・基地 `base`）の独立オプトイン受け子 | 既存読書テーマ等を無断上書きしない安全境界仕様を定義済み |
+| `R-TYP-1` | 中 | 書体の組み合わせ単体 JSON（`trk-typography-pairing` v1）受け渡しと不足 `.stpack` 具体名案内 | 全14組の単体 JSON 書き出し・検証関数を統合ライブラリUIに実装済み |
+| `R-SKIN-1` | 中 | 保留2種（`gold-chip` / `orichalcum`）・重複19種の旧配色切替（`legacy`）と保留定義の単一化 | 改訂案データの分離保持と `trk325` 差し戻しベースライン（3種・33組）の回帰監視を稼働中 |
+| `R-WIZ-1` | 低 | Advance Wizard 設定受け渡し・統合マニフェスト（`trk-avatar-library-manifest` v1）参照受け子 | 禁止文字拒否つき設定検証と統合マニフェスト生成・検査 CLI を実装済み |
 
 ## 6. 容量の方針
 
@@ -434,55 +435,61 @@ trk233 で、`licenseFile`（ライセンス全文）をアプリが読むよう
 | 書体が実際に画面に効くか | **未確認**（ブラウザが無い）。woff2 の中身（表・cmap）までは `check-fonts` で見ていますが、`FontFace` の読み込みと見た目は実機で見てください（§4-3） |
 | ライセンス全文の表示 | アプリ（trk233）が `licenseFile` を読むようになりました。**実画面での表示は未確認**（ブラウザが無い）。パックには `fonts/OFL.txt` が入っています |
 
-## 9. 自動検査（GitHub Actions）
+## 9. 自動検査（GitHub Actions とローカル検証コマンド）
 
 `.github/workflows/check.yml` が、push と Pull Request のたびに次を走らせます（trk-PWA をとなりのフォルダに取ってきます）。
 
 ```sh
-node tools/selftest.mjs              # 22 / 22
-node tools/build-catalog.mjs --check # 目録が最新か（release と version の一致も）
+npm ci
+npm run check                        # CLIスキン・リポジトリ構造・re-modern・統合マニフェスト・PWA受け渡し契約
+npm test                             # 単体・契約・回帰テスト一式 ＋ Headless Chromium 実ブラウザ E2E（2スイート）
+node tools/selftest.mjs              # 40 / 40（不正入力を正しく拒否するか）
+node tools/build-catalog.mjs --check # 目録が最新か（30 パック・release と version の一致も）
 node tools/check-contract.mjs        # 目録がアプリの読み取り規則を通るか（相手側の版も表示）
-node tools/check-fonts.mjs           # 書体（woff2）が本当に読める形か・見本の字が入っているか
+node tools/check-pwa-receivers.mjs --trk=… # 稼働契約 7 系統の照合と要望受け子 7 項目のプローブ
+node tools/check-fonts.mjs           # 書体（woff2 42 本）が本当に読める形か・見本の字が入っているか
 node tools/export-skin-gallery.mjs --trk=… --check  # 全スキン見本が今の中身と一致するか
-node tools/build-pack.mjs font-packs/* --check --fetch        # 書体パック 15 個がフォルダと一致するか
-node tools/build-set.mjs sets/first-set.json --check          # はじめてセットが記録と一致するか（--release で記録）
-node tools/build-set.mjs sets/font-set.json --check            # 書体セットも同じ（r10 で記録を作ります）
-node tools/check-docs.mjs            # README の表・リンク・セットの記録
+npm run check:pwa-skins              # 巻別・Wizard スキンの PWA 取り込みと差し戻し回帰（既知 3 種・33 組）
+node tools/build-pack.mjs font-packs/* --check --fetch # 書体パック 29 個がフォルダと一致するか
+node tools/build-set.mjs sets/first-set.json --check   # はじめてセット（r10）が記録と一致するか
+node tools/build-set.mjs sets/font-set.json --check    # 書体セット（r10）が記録と一致するか
+node tools/check-docs.mjs            # README の表・リンク・見出しアンカー・セットの記録
 ```
 
-- 相手側（trk-PWA）は **`TRK_PWA_REF` で版を固定**して取ってきます（いまは trk-PWA の `b5e4a88`＝trk291）。
-  上げるときは `.github/workflows/check.yml` の `env` の1行を変えます
+- 相手側（trk-PWA）は **`TRK_PWA_REF` で版を固定**して取ってきます（いまは trk-PWA の `e30eb2ce98490c94b7768dd2ddf768fab7fe726d`＝trk325）。
+  上げるときは `.github/workflows/check.yml` と `.github/workflows/release-set.yml` の `env` を変えます
 - 週に1回（日曜 21:00 UTC）、**固定しない `main`** でも同じ契約検査を回します（`upstream-main`）。
   相手側が先に進んでも、こちらが静かに壊れないようにするためです
 
-## trk-PWA trk291 の照合
+## trk-PWA trk325 の照合とレビュー履歴
 
-最新のレビュー対応・PWA連携待ちの内容は [trk291 レビュー対応メモ](docs/2026-11-06-trk291-review-followup.md) を参照してください。
+現在の固定基準は **`trk325`（`e30eb2ce98490c94b7768dd2ddf768fab7fe726d`）** です。`trk293` 以降のコントラスト改善と `readability: "intentional-low"` 保持により、既知の差し戻しは 11 種（102 組）から **3 種・33 組（`gold-chip`, `orichalcum`, `house-edge`）** へ縮小しています（[`tests/pwa-holdback-baseline.json`](tests/pwa-holdback-baseline.json)）。
 
-[差し戻し・受け入れ方針へのレビュー案](docs/2026-11-06-trk291-avatar-review-response.md)。PWA の固定 checkout を `TRK_PWA` に指定して `npm run check:pwa-skins` で生成・色検査を再現できます。既知の差し戻しは未解決として報告します。
+PWA 側への未実装受け子要望は [`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md)、先行する配色レビュー経緯は [trk291 レビュー対応メモ](docs/2026-11-06-trk291-review-followup.md) および [差し戻し・受け入れ方針へのレビュー案](docs/2026-11-06-trk291-avatar-review-response.md) を参照してください。
 
-## 巻ごとにスキンを探す
+## 巻ごとにスキンを探す・統合ライブラリで横断検索する
 
-[巻別スキン一覧を開く](skin-volumes/index.html)と、vol.1〜10・glitch・wizard・その他から、巻ごと／1枚ずつ**元データ JSON**を取得できます（合計 291 種）。データは `catalog/skins.json` の抜粋で、書体ファイルは含みません。巻別見本と ID は `skin-volumes/volumes.json` で管理し、`node tools/export-skin-volumes.mjs` で再生成、`--check` で正本との差を検査します。
+- **[統合ライブラリUIを開く](library.html)**：スキン全 291 種・書体パック 29 本（＋見本 1 本）・書体組み合わせ 14 組・`trk-re-modern`・PWA 受け渡し検査を 1 画面で横断検索でき、どのスキンも現行 `trk-PWA` のカスタムスキン（`skin.shadow-taiko` v1）へその場で変換書き出しできます。
+- **[巻別スキン一覧を開く](skin-volumes/index.html)**：vol.1〜10・glitch・wizard・その他から、巻ごと／1枚ずつ**元データ JSON**を取得できます（合計 291 種）。巻別見本と ID は `skin-volumes/volumes.json` で管理し、`node tools/export-skin-volumes.mjs` で再生成、`--check` で正本との差を検査します。
 
-**trk-PWA 開発用の取り込み道具はこの JSON を受け取れますが、画面からの巻一括インポート機能やパックではありません。** 取り込み口の相談案は [trk-PWA への文書](docs/2026-11-03-trk-pwa-スキン巻別受け入れの相談.md) にあります。`gallery/skins-wizard.html` は現在の wizard カテゴリ全 62 種の見本です（アプリ本体のスキン選択画面とは別）。
+**trk-PWA 開発用の取り込み道具はこの巻 JSON を受け取れますが、画面からの巻一括インポート受け口は現在要項 `R-VOL-1` として提案中です**（[受け子要項仕様書](docs/2026-11-27-pwa-receiver-requirements.md)／[先行相談文書](docs/2026-11-03-trk-pwa-スキン巻別受け入れの相談.md)）。`gallery/skins-wizard.html` は現在の wizard カテゴリ全 62 種の見本です。
 
 ### Pages 公開の準備
 
-`node tools/prepare-pages.mjs` は公開候補を `dist/pages` に作ります（ターミナル画面・巻別データ・巻別見本のみ。書体パックや開発メモは含みません）。`.github/workflows/pages.yml` は **main からの手動実行専用**です。公開する場合は変更を確認・main に反映し、GitHub の Settings → Pages で Source を GitHub Actions にしてから、Actions の「Pages（手動公開）」を main で実行してください。これは公開準備であり、現在 Pages は有効化・公開されていません。公開前に配布対象・ライセンス・実機の操作を再確認してください。
+`node tools/prepare-pages.mjs` は公開候補を `dist/pages` に作ります（`index.html`・`library.html`・巻別データ・見本ページ・正本目録 JSON のみ。大容量の書体パック `.stpack` や内部の開発メモ `docs/` は含みません）。`.github/workflows/pages.yml` は **main からの手動実行専用**です。公開する場合は変更を確認・main に反映し、GitHub の Settings → Pages で Source を GitHub Actions にしてから、Actions の「Pages（手動公開）」を main で実行してください。これは公開準備であり、現在 Pages は有効化・公開されていません。公開前に配布対象・ライセンス・実機の操作を再確認してください。
 
 ## 10. トーク269 ターミナルの定番とWizardスキンシリーズ
 
 トーク269「ターミナルの定番とWizardスキン」は、trk-PWA の見た目をカスタマイズする **Wizardスキン（魔導書テーマ）** のシリーズです。モダンUX Phase 1〜9j まで完了し、Popover API 移行・トースト通知・ショートカットヘルプ・魔導書テーマスキンシリーズを実装しています。
 
-### スキン構成（2026-11-03 現在）
+### スキン構成（2026-11-27 現在）
 
 | 項目 | 数 |
 |------|------|
-| スキン総数 | 291 種 |
+| スキン総数 | 291 種（13 巻） |
 | wizard カテゴリ | 62 種 |
 | CLI 対応 wizard スキン | 50 種 |
-| TRK_PWA_REF | `b5e4a885163678933129cfbf4c158d37a2e84d59`（trk291・40 桁） |
+| TRK_PWA_REF | `e30eb2ce98490c94b7768dd2ddf768fab7fe726d`（trk325・40 桁） |
 
 ### 魔導書テーマスキンシリーズ
 
@@ -535,5 +542,5 @@ OS の `prefers-reduced-motion` は常に尊重します。手動で減らす場
 
 ### 検証
 
-- `npm ci && npm test`：CLI・skin-contrast・Modern UX と Chromium の操作テスト。ブラウザテストは Linux x64 の同梱 Chromium を使います（別の Chromium を使う場合は `CHROMIUM_PATH` を指定）。実行には NSS 等のシステムライブラリが必要です。[Linux x86_64 の隔離環境の準備と確認](docs/browser-test-environment-2026-11-07.md)も参照。
-- `npm run check`：291 種のうち CLI / Wizard 対象 62 種を検査（229 種は対象外）。この検査だけではすべての色の組み合わせを保証しません。trk-PWA v3 での確認と残課題は [レビュー対応メモ](docs/2026-11-03-issue35-review-response.md) を参照。
+- `npm ci && npm test`：CLI・skin-contrast・Modern UX・PWA 受け渡し契約（[`tests/pwa-bridge-and-receivers.test.mjs`](tests/pwa-bridge-and-receivers.test.mjs)）および実 Chromium 操作テスト 2 スイート（[`tests/advance-browser.test.mjs`](tests/advance-browser.test.mjs)・[`tests/library-hub-browser.test.mjs`](tests/library-hub-browser.test.mjs)）。ブラウザテストは Linux x64 の同梱 Chromium を使います（別の Chromium を使う場合は `CHROMIUM_PATH` を指定）。実行には NSS 等のシステムライブラリが必要です。[Linux x86_64 の隔離環境の準備と確認](docs/browser-test-environment-2026-11-07.md)も参照（なお自動ヘッドレス検証はスマートフォン等の物理実機や人の視覚レビューを代替しません）。
+- `npm run check`：CLI / Wizard 対象 62 種のスキン検査・リポジトリ構造・`trk-re-modern` 台帳ゲート・統合マニフェスト（`catalog/library-manifest.json`）・PWA 受け渡し契約を一括確認します。`TRK_PWA=/path/to/trk-PWA` を付けると相手側実ソースとの 7 契約照合と 7 受け子プローブも同時に走ります。

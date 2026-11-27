@@ -1,0 +1,188 @@
+{
+  "format": "trk-avatar-library-manifest",
+  "version": 1,
+  "pwaBaseline": {
+    "repo": "Trk-Nexus/trk-PWA",
+    "build": "trk325",
+    "commit": "e30eb2ce98490c94b7768dd2ddf768fab7fe726d",
+    "verifiedDate": "2026-11-27"
+  },
+  "summary": {
+    "skinsTotal": 291,
+    "skinVolumesTotal": 13,
+    "wizardSkinsTotal": 62,
+    "cliCapableSkinsTotal": 50,
+    "packsTotal": 30,
+    "fontPacksTotal": 29,
+    "fontWeightsTotal": 42,
+    "typographyPairingsTotal": 14,
+    "reModernRegisteredTotal": 0,
+    "reModernDraftsTotal": 1,
+    "setsTotal": 2,
+    "activePwaContractsTotal": 7,
+    "requestedPwaReceiversTotal": 7
+  },
+  "indices": {
+    "packCatalog": {
+      "path": "catalog/index.json",
+      "format": "trk-avatar-library",
+      "version": 1,
+      "bytes": 48061,
+      "sha256": "a1dad24534687b21c52f84fdfe93b11e9ee17fe3d0003026569590b46e9bfab9",
+      "count": 30
+    },
+    "skinsCatalog": {
+      "path": "catalog/skins.json",
+      "format": "trk-avatar-library-skins",
+      "version": 1,
+      "bytes": 431682,
+      "sha256": "8f1e9fa713c1b2c62567fba074f1c3cf245eac4e02d94f6aa515c74b683727e7",
+      "count": 291
+    },
+    "skinVolumes": {
+      "path": "skin-volumes/volumes.json",
+      "format": null,
+      "version": 1,
+      "bytes": 5671,
+      "sha256": "d59ddbe56d4ebd6befebe29c3e708466fbc9002a791897d21173b171770d9233",
+      "count": 13
+    },
+    "fontsCatalog": {
+      "path": "catalog/fonts.json",
+      "format": "trk-avatar-library-fonts",
+      "version": 1,
+      "bytes": 33987,
+      "sha256": "36aa1216b3ce390b0ced02ee55d787eb92ee673fd13d8d44876e82834992cb5f",
+      "count": 29
+    },
+    "typographyCatalog": {
+      "path": "catalog/typography.json",
+      "format": null,
+      "version": 1,
+      "bytes": 34194,
+      "sha256": "4301ac045bc02b2f576f79448a54b770908d1e781948beb92aeabe40f5fedfed",
+      "count": 14
+    },
+    "typographyPreview": {
+      "path": "catalog/typography-preview.json",
+      "format": null,
+      "version": 1,
+      "bytes": 171405,
+      "sha256": "8f97f6e835dcfe265de787ea0265da9566072cb7186799f25b19c0eeb427808b",
+      "count": 5
+    },
+    "reModernRegistry": {
+      "path": "catalog/re-modern/index.json",
+      "format": "trk-re-modern-registry",
+      "version": 1,
+      "bytes": 70,
+      "sha256": "808feb8151e471be141bb5f60bfb7c18b6ed457fb722231f77abb2d7e9c6d803",
+      "count": 0
+    },
+    "firstSet": {
+      "path": "release/first-set.json",
+      "format": null,
+      "version": 1,
+      "bytes": 3435,
+      "sha256": "ae1849424873a70b1b4dd0509dcd1341d63b0184cd800228ee2cb3e83208990b",
+      "count": 13,
+      "tag": "first-set-2026-11-02-r10",
+      "title": "trk! はじめてセット",
+      "archiveBytes": 8118128,
+      "archiveSha256": "1c1cae353a192d608b3118f16e973ed1386b42c5def62190e28095b4ad68e3b5",
+      "filesOut": [
+        {
+          "name": "trk-first-set-2026-11-02-r10.zip",
+          "bytes": 8118128,
+          "sha256": "1c1cae353a192d608b3118f16e973ed1386b42c5def62190e28095b4ad68e3b5"
+        },
+        {
+          "name": "trk-first-set-2026-11-02-r10.stlib",
+          "bytes": 8118128,
+          "sha256": "1c1cae353a192d608b3118f16e973ed1386b42c5def62190e28095b4ad68e3b5"
+        }
+      ]
+    },
+    "fontSet": {
+      "path": "release/font-set.json",
+      "format": null,
+      "version": 1,
+      "bytes": 7258,
+      "sha256": "9243b99956cc5b928484432a2e18b1847637ca735c70f6b9a01d9e661cda43d7",
+      "count": 37,
+      "tag": "font-set-2026-11-02-r10",
+      "title": "trk! 書体セット（全部）",
+      "archiveBytes": 64197328,
+      "archiveSha256": "e1e2d6c480ad90ece9aeba59a25a830098e7fff8c5338e6f05e324c72f6ac0d2",
+      "filesOut": [
+        {
+          "name": "trk-font-set-2026-11-02-r10.zip",
+          "bytes": 64197328,
+          "sha256": "e1e2d6c480ad90ece9aeba59a25a830098e7fff8c5338e6f05e324c72f6ac0d2"
+        },
+        {
+          "name": "trk-font-set-2026-11-02-r10.stlib",
+          "bytes": 64197328,
+          "sha256": "e1e2d6c480ad90ece9aeba59a25a830098e7fff8c5338e6f05e324c72f6ac0d2"
+        }
+      ]
+    }
+  },
+  "reModernStatus": {
+    "registeredIds": [],
+    "unregisteredDrafts": [
+      {
+        "id": "trk-re-modern-pixel-console",
+        "status": "unregistered-draft",
+        "draftPath": "drafts/re-modern/pixel-console/skin.json",
+        "sha256": "6039293db9c1a8f8974fce3e1f661ce68a206e9f0b485dea9827a2912a810419",
+        "label": {
+          "ja": "ピクセル・コンソール",
+          "en": "Pixel Console",
+          "zh": "像素控制台",
+          "ko": "픽셀 콘솔"
+        },
+        "desc": {
+          "ja": "ドットの秩序と、読むための静かな余白",
+          "en": "Pixel order and quiet space for reading",
+          "zh": "像素秩序与安静的阅读空间",
+          "ko": "픽셀의 질서와 조용한 읽기 공간"
+        },
+        "colors": {
+          "stage": "#10151a",
+          "ink": "#ecf6ee",
+          "don": "#ff8069",
+          "ka": "#69b8ff",
+          "text": "#ecf6ee",
+          "muted": "#b8c9bd",
+          "bg": "#10151a",
+          "panel": "#172229",
+          "field": "#101b20",
+          "button": "#293c3d",
+          "accent": "#56d994",
+          "onAccent": "#092016",
+          "gold": "#f7d680",
+          "border": "#8ea4aa"
+        },
+        "shapes": [
+          "square",
+          "diamond"
+        ],
+        "font": "system-ui, sans-serif",
+        "noteJa": "正式登録前の制作案です。人間による実機・視覚レビュー完了まで正本（catalog/skins.json・catalog/re-modern/index.json）には含めません。"
+      }
+    ]
+  },
+  "futureSlots": {
+    "mascot": {
+      "status": "deferred-until-requested",
+      "formats": [
+        "vrm",
+        "vrma",
+        "mmd"
+      ],
+      "count": 0,
+      "note": "利用者の要望が求められてから着手判断を行う方針のため、現マイルストーンでは3Dアバター要素を実装せず拡張予約枠のみ保持。"
+    }
+  }
+}

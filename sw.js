@@ -1,12 +1,17 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Cache only this application's assets; never delete a sibling application's caches.
 const CACHE_PREFIX = "trk-avatar-library-";
-const CACHE_NAME = `${CACHE_PREFIX}2026-11-06-trk291-review-followup`;
+const CACHE_NAME = `${CACHE_PREFIX}2026-11-27-trk325-library-hub`;
 const BASE = self.registration.scope;
 const STATIC_ASSETS = [
-  "./", "./index.html", "./css/style.css", "./js/core.js", "./js/data.js",
-  "./js/cli.js", "./js/i18n.js", "./js/skins-wizard.js", "./manifest.json",
-  "./icon-192.png", "./icon-512.png",
+  "./", "./index.html", "./library.html",
+  "./css/style.css", "./css/library-hub.css",
+  "./js/core.js", "./js/data.js", "./js/cli.js", "./js/i18n.js",
+  "./js/skins-wizard.js", "./js/pwa-bridge.js", "./js/library-hub.js",
+  "./catalog/library-manifest.json", "./catalog/skins.json",
+  "./skin-volumes/volumes.json", "./catalog/index.json",
+  "./catalog/fonts.json", "./catalog/typography.json",
+  "./manifest.json", "./icon-192.png", "./icon-512.png",
 ];
 const STATIC_URLS = new Set(STATIC_ASSETS.map((path) => new URL(path, BASE).href));
 const OFFLINE_URL = new URL("./index.html", BASE).href;
