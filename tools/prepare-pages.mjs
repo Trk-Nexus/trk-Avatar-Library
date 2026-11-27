@@ -12,8 +12,24 @@ execFileSync(process.execPath, [path.join(root, 'tools/export-skin-volumes.mjs')
 fs.rmSync(dest, {recursive:true, force:true});
 fs.mkdirSync(dest, {recursive:true});
 const copies = ['index.html', 'manifest.json', 'sw.js', 'icon-192.png', 'icon-512.png', 'css', 'js', 'skin-volumes', 'catalog/skins.json'];
+const optionalPublic = [
+  'library.html',
+  'catalog/library-manifest.json',
+  'catalog/index.json',
+  'catalog/fonts.json',
+  'catalog/typography.json',
+  'gallery/all-skins.html',
+  'gallery/fonts.html',
+  'gallery/pairings.html',
+  'gallery/packs.html',
+];
+for (const opt of optionalPublic) {
+  if (fs.existsSync(path.join(root, opt))) copies.push(opt);
+}
 const groups = JSON.parse(fs.readFileSync(path.join(root, 'skin-volumes/volumes.json'), 'utf8')).groups;
-copies.push(...groups.filter(g => g.preview).map(g => g.preview));
+for (const p of groups.filter(g => g.preview).map(g => g.preview)) {
+  if (!copies.includes(p)) copies.push(p);
+}
 const modern = JSON.parse(fs.readFileSync(path.join(root, 'catalog/re-modern/index.json'), 'utf8'));
 // Publish the human-reviewed index and only registered explanations; records remain internal.
 if (modern.ids.length) copies.push('gallery/re-modern/index.html');

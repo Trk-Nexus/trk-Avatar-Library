@@ -27,6 +27,7 @@
 
 | 日付 | 中身（1行） |
 | --- | --- |
+| 2026-11-27 | **PWA実装整備・統合ライブラリUI・trk-PWA（trk325）受け渡し基盤の確立**：`TRK_PWA_REF` を **trk325（`e30eb2ce98490c94b7768dd2ddf768fab7fe726d`）** に更新（差し戻しは 11種→既知3種 `gold-chip`/`orichalcum`/`house-edge`・33組へ縮小）・統合ライブラリUI [`library.html`](library.html)（291スキン・30パック・14書体組・re-modern・PWA受け渡し＆ブラウザ内JSON検査、外部通信ゼロ・オフライン動作）を新設・共通契約/変換モジュール [`js/pwa-bridge.js`](js/pwa-bridge.js) と統合マニフェスト [`catalog/library-manifest.json`](catalog/library-manifest.json)・検証CLI [`tools/check-pwa-receivers.mjs`](tools/check-pwa-receivers.mjs)・PWA側への受け子要項仕様書 [`docs/2026-11-27-pwa-receiver-requirements.md`](docs/2026-11-27-pwa-receiver-requirements.md) を整備（3Dアバター要素は要望が出るまで着手留保・予約枠のみ） |
 | 2026-11-02 | **r10：旧 org の URL を全廃**（引っ越しの宿題）。`font-packs/<名前>/pack.json` 29 本の `url` を `Trk-Nexus` に・`release` を **1.0.0→1.0.1**（`maru-go` は 1.1.0→1.1.1）・`.stpack` 29 本を `build-pack --fetch` で**素材から作り直し**（1 本 −25 B・合計 63,103,675 B・**書体とライセンス全文は同じ**）・目録・`gallery` 2 枚・`build-set` の `README-はじめに.txt` の出どころ・**新検査 `tools/check-urls.mjs`**（追跡ファイルと `.stpack` の中を見る・CI に追加）・**`TRK_PWA_REF` を trk258（`722409a`）**に・**r10 の 2 セット**（はじめて 8,118,128 B／書体 64,197,328 B）。r9 を入れている人には 29 本とも「更新あり」が出る（同じ名前・同じ作者なので**棚に重複はできない**） |
 | 2026-11-02 | **返事16（trk254 への返事）**：相手は**写しの手書きをやめて目録から機械生成**に（`sync-typography-catalog.mjs`・fixture の固定版は `7d7e5ae`・`--check` で照合）。聞かれていた 2 点に実物で返した——**縮刷版は r9 の 2 セットに入っている**（1400×2416 px・486,510 B・sha256 `74ca7054…`。`release/*.json` の `files[]` と `sets/*.json` の `files[]` の両方）・**`sha256` は各組には入れない**（top-level の 1 本＝`catalog/typography.json` の 34,194 B・`4301ac04…` で足りる）。決めごとに「**目録を変えたら返事に `sha256` を書いて先に知らせる**」を追加（`docs/2026-11-01-書体の組み合わせとエディター設定.md` §10）。r9 は**タグ push で流せた**ので B-8 の 403 は配布を止めない（Run workflow は所有者の確認用）。目録・パック・セットは不変 |
 | 2026-11-02 | **レビュー（Trk-Nexus・`trk-Nexus-review-2026-11-02.zip`）を受けて直した**：`trkUse`（trk! ではどんな曲・どのスキンに合うか）を 14 組に足して**検査つき**・「雑誌の飾り」の見出しを**説明どおりひな明朝**に（データと説明の食い違い）・「電子ゲーム」の注記を角ゴに見本文をゲームの文に・「余白の書体」を**見た目の言葉**に・縮刷版に**見出しと数字/差し色の書体名**を出す（6 役すべて）・言い換え検索（丸ゴシック→丸ゴ）・README の**数字を MB に統一**して**3 手順を今のアプリ**に・`check-typography --json` に **`sha256`**（相手の写しが古くないか照合できる）・**引っ越し文書の「転送されます」を訂正**（実測：旧 URL は空リポジトリ・転送は切れている）・**`TRK_PWA_REF` を `d93d98b`**（trk252 まで）に。**r9 の 2 セット**（8,118,400 B・15 ファイル／64,198,800 B・39 ファイル）を出した（タグ push → CI が添付。`check` もタグで緑）・返事15（`docs/2026-11-02-レビューへの返事.md`）を Drive にも置いた（`1SYPA42ynizk_xSy2cSWhifCkIjxkfGxm`） |
@@ -68,7 +69,7 @@
   node tools/check-docs.mjs            # README の表・内部リンク・セットの記録が今の中身と合っているか
   ```
 
-- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `b5e4a885163678933129cfbf4c158d37a2e84d59`**＝trk291（2026-11-06 参照））。
+- **相手側（trk-PWA）の版は固定**しています：CI の `TRK_PWA_REF`（`.github/workflows/check.yml` と `release-set.yml` の `env`。いまは **trk-PWA `e30eb2ce98490c94b7768dd2ddf768fab7fe726d`**＝trk325（2026-11-27 照合））。
   trk-PWA の版が上がったら、**この1行と §7 の記録を一緒に**変えます。固定した版と `main` の両方を見るため、
   週に1回（日曜 21:00 UTC）`upstream-main` ジョブが `main` でも契約を確かめます（失敗しても全体は赤にしません）。
 

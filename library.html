@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0e1319">
+<title>統合ライブラリ &amp; trk-PWA 受け渡しハブ | trk-Avatar-Library</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="stylesheet" href="./css/library-hub.css">
+<link rel="icon" href="./icon-192.png">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('trk-theme') || 'dark';
+      var resolved = saved === 'light' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', resolved);
+      document.documentElement.style.colorScheme = resolved;
+    } catch (_) {}
+  })();
+</script>
+</head>
+<body class="hub-body" data-page="library-hub">
+<a class="hub-skip-link" href="#hub-main">本文へスキップ</a>
+
+<header class="hub-header">
+  <div class="hub-brand">
+    <h1>trk-Avatar-Library 統合ライブラリ</h1>
+    <span class="hub-brand-sub">スキン・書体・組版・trk-re-modern 横断探索 ＆ trk-PWA 受け渡し基盤</span>
+  </div>
+  <nav class="hub-nav" aria-label="ページ移動">
+    <a id="nav-terminal" class="hub-nav-link" href="./index.html">⌨ ターミナル (Wizard CLI)</a>
+    <a id="nav-volumes" class="hub-nav-link" href="./skin-volumes/index.html">📚 巻別スキン一覧</a>
+    <button type="button" id="hub-theme-toggle" class="hub-btn" aria-label="表示テーマを切替">🌓 テーマ切替</button>
+  </nav>
+</header>
+
+<main id="hub-main" class="hub-main">
+  <div id="hub-status-live" role="status" aria-live="polite" hidden></div>
+
+  <section class="hub-hero" aria-label="収録概要と横断検索">
+    <div id="hub-stats-grid" class="hub-stats-grid">
+      <div class="hub-stat-card">
+        <span class="hub-stat-label">スキン / 巻</span>
+        <span id="stat-skins" class="hub-stat-value">読込中…</span>
+      </div>
+      <div class="hub-stat-card">
+        <span class="hub-stat-label">配布パック / 書体</span>
+        <span id="stat-packs" class="hub-stat-value">読込中…</span>
+      </div>
+      <div class="hub-stat-card">
+        <span class="hub-stat-label">書体の組み合わせ</span>
+        <span id="stat-pairings" class="hub-stat-value">読込中…</span>
+      </div>
+      <div class="hub-stat-card">
+        <span class="hub-stat-label">trk-re-modern</span>
+        <span id="stat-remodern" class="hub-stat-value">読込中…</span>
+      </div>
+      <div class="hub-stat-card">
+        <span class="hub-stat-label">連携基準 trk-PWA</span>
+        <span id="stat-pwa-ref" class="hub-stat-value">読込中…</span>
+      </div>
+    </div>
+
+    <div class="hub-search-row">
+      <input
+        id="hub-search"
+        class="hub-search-input"
+        type="search"
+        placeholder="全カテゴリ横断検索（例: 提灯横丁 / house-edge / 丸ゴ / 電子ゲーム / R-VOL-1）"
+        aria-label="全カテゴリ横断検索"
+        autocomplete="off"
+      >
+      <label for="hub-locale">表示言語:</label>
+      <select id="hub-locale" class="hub-select" aria-label="スキン名・説明の表示言語">
+        <option value="ja">日本語 (ja)</option>
+        <option value="en">English (en)</option>
+        <option value="zh">简体中文 (zh)</option>
+        <option value="ko">한국어 (ko)</option>
+      </select>
+      <button type="button" id="hub-search-clear" class="hub-btn">検索クリア</button>
+    </div>
+  </section>
+
+  <div class="hub-tablist" role="tablist" aria-label="ライブラリ分類タブ">
+    <button type="button" role="tab" id="tab-skins" class="hub-tab" aria-selected="true" aria-controls="panel-skins">
+      🎨 スキン <span id="count-skins" class="hub-tab-count">0</span>
+    </button>
+    <button type="button" role="tab" id="tab-packs" class="hub-tab" aria-selected="false" aria-controls="panel-packs" tabindex="-1">
+      📦 書体＆パック <span id="count-packs" class="hub-tab-count">0</span>
+    </button>
+    <button type="button" role="tab" id="tab-typography" class="hub-tab" aria-selected="false" aria-controls="panel-typography" tabindex="-1">
+      🔤 書体の組み合わせ <span id="count-typography" class="hub-tab-count">0</span>
+    </button>
+    <button type="button" role="tab" id="tab-remodern" class="hub-tab" aria-selected="false" aria-controls="panel-remodern" tabindex="-1">
+      🖼 trk-re-modern <span id="count-remodern" class="hub-tab-count">0</span>
+    </button>
+    <button type="button" role="tab" id="tab-pwa" class="hub-tab" aria-selected="false" aria-controls="panel-pwa" tabindex="-1">
+      🔌 trk-PWA 受け渡し＆検査 <span id="count-pwa" class="hub-tab-count">0</span>
+    </button>
+  </div>
+
+  <!-- Tab 1: スキン -->
+  <section id="panel-skins" class="hub-tabpanel" role="tabpanel" aria-labelledby="tab-skins">
+    <div class="hub-toolbar">
+      <label for="filter-skin-volume">巻:</label>
+      <select id="filter-skin-volume" class="hub-select">
+        <option value="all">すべての巻 (13巻)</option>
+      </select>
+      <label for="filter-skin-cat">カテゴリ:</label>
+      <select id="filter-skin-cat" class="hub-select">
+        <option value="all">すべて</option>
+      </select>
+      <label for="filter-skin-compat">状態・特性:</label>
+      <select id="filter-skin-compat" class="hub-select">
+        <option value="all">すべて表示</option>
+        <option value="pwa-ready">コントラスト基準適合 (288種)</option>
+        <option value="holdback">既知の保留・低可読明示 (3種)</option>
+        <option value="cli">CLI 見た目対応 (50種)</option>
+        <option value="wizard">Wizard カテゴリ (62種)</option>
+      </select>
+      <span id="skins-showing-note" class="hub-card-id"></span>
+    </div>
+    <div id="skins-grid" class="hub-grid"></div>
+    <div style="margin-top: 1rem; text-align: center;">
+      <button type="button" id="skins-show-more" class="hub-btn hub-btn--primary" hidden>残りのスキンをすべて表示</button>
+    </div>
+  </section>
+
+  <!-- Tab 2: 書体＆パック -->
+  <section id="panel-packs" class="hub-tabpanel" role="tabpanel" aria-labelledby="tab-packs" hidden>
+    <div id="packs-sets-banner" class="hub-callout"></div>
+    <div class="hub-toolbar">
+      <label for="filter-pack-license">ライセンス:</label>
+      <select id="filter-pack-license" class="hub-select">
+        <option value="all">すべて</option>
+        <option value="OFL-1.1">SIL OFL-1.1</option>
+        <option value="Apache-2.0">Apache-2.0</option>
+        <option value="sample">見本パック (GPL-3.0-or-later)</option>
+      </select>
+      <label for="sort-packs">並び順:</label>
+      <select id="sort-packs" class="hub-select">
+        <option value="default">目録順</option>
+        <option value="size-asc">容量が小さい順</option>
+        <option value="size-desc">容量が大きい順</option>
+        <option value="cmap-desc">収録字数が多い順</option>
+      </select>
+      <div id="pack-tag-chips" class="hub-chip-list" role="group" aria-label="書体タグ絞り込み"></div>
+    </div>
+    <div id="packs-grid" class="hub-grid"></div>
+  </section>
+
+  <!-- Tab 3: 書体の組み合わせ -->
+  <section id="panel-typography" class="hub-tabpanel" role="tabpanel" aria-labelledby="tab-typography" hidden>
+    <div class="hub-callout">
+      <strong>6役の組み合わせ（全14組）：</strong>
+      題字・見出し・本文・注記・数字・差し色の6役ごとに書体と太さ・字間・行間を設計した組み合わせです。
+      <code>trk-PWA</code>（<code>trk255+</code>）では曲・スキン相性（<code>trkUse</code>）まで表示されます。単体 JSON 書き出しにも対応しています。
+    </div>
+    <div id="typography-grid" class="hub-grid"></div>
+  </section>
+
+  <!-- Tab 4: trk-re-modern -->
+  <section id="panel-remodern" class="hub-tabpanel" role="tabpanel" aria-labelledby="tab-remodern" hidden>
+    <div id="remodern-canonical-box" class="hub-callout"></div>
+    <h2>制作案（未登録・検証中）</h2>
+    <p class="hub-card-desc" style="margin-bottom: 0.75rem;">
+      以下は制作途中の候補であり、人間による実機・視覚レビュー完了前のため正本（<code>catalog/skins.json</code>・<code>catalog/re-modern/index.json</code>）には含めていません。
+    </p>
+    <div id="remodern-drafts-grid" class="hub-grid"></div>
+
+    <h2 style="margin-top: 1.75rem;">PWA 題字書体候補（SHA-256 固定・利用者手元導入方式）</h2>
+    <p class="hub-card-desc" style="margin-bottom: 0.75rem;">
+      <code>trk-PWA</code>（<code>trk315</code>〜<code>trk325</code>）の <code>js/title-font.js</code> で SHA-256 が固定されている題字用書体候補です。自動通信や同梱は行わず、利用者が配布元から取得した WOFF2 を選んで導入します。
+    </p>
+    <div id="remodern-title-fonts-grid" class="hub-grid"></div>
+  </section>
+
+  <!-- Tab 5: trk-PWA 受け渡し＆JSON検査 -->
+  <section id="panel-pwa" class="hub-tabpanel" role="tabpanel" aria-labelledby="tab-pwa" hidden>
+    <div id="pwa-deferred-scope" class="hub-callout hub-callout--warn"></div>
+
+    <h2>現行 trk-PWA（trk325）で稼働中の受け渡し契約（7系統）</h2>
+    <div id="pwa-active-contracts" class="hub-grid"></div>
+
+    <h2 style="margin-top: 1.75rem;">trk-PWA 側へ要望する未実装「受け子」要項一覧（7項目）</h2>
+    <p class="hub-card-desc" style="margin-bottom: 0.75rem;">
+      詳細仕様はリポジトリ内 <code>docs/2026-11-27-pwa-receiver-requirements.md</code> に整理し、先行契約テストおよび検証CLI（<code>tools/check-pwa-receivers.mjs</code>）を実装済みです。
+    </p>
+    <div id="pwa-requested-receivers" class="hub-grid"></div>
+
+    <div id="json-inspector" class="inspector-box">
+      <h2 style="margin-top: 0;">ブラウザ内 JSON 事前検査（オフライン完結・外部送信ゼロ）</h2>
+      <p class="hub-card-desc">
+        目録・巻別スキン・単体スキン・<code>skin.shadow-taiko</code> カスタムスキン・題字退避封筒・書体組 JSON などを貼り付けるかファイル選択すると、構造と <code>trk-PWA</code> 対応状況をその場で検査します。
+      </p>
+      <div class="hub-card-actions" style="margin-top: 0.65rem;">
+        <button type="button" id="sample-pack-catalog" class="hub-btn">見本読込: パック目録 (index.json)</button>
+        <button type="button" id="sample-skin-vol" class="hub-btn">見本読込: 第7巻スキン (intentional-low 含む)</button>
+        <button type="button" id="sample-custom-skin" class="hub-btn">見本読込: 変換カスタムスキン (skin.shadow-taiko)</button>
+        <button type="button" id="sample-title-backup" class="hub-btn">見本読込: 題字退避封筒 (trk-title-font-works-backup)</button>
+        <label class="hub-btn" for="inspector-file">📂 ローカル JSON を選ぶ</label>
+        <input type="file" id="inspector-file" accept=".json,application/json" hidden>
+      </div>
+      <textarea
+        id="inspector-input"
+        class="inspector-textarea"
+        placeholder='ここに検査したい JSON を貼り付けるか、上のボタンで見本を読み込んでください'
+        aria-label="検査対象 JSON テキスト"
+      ></textarea>
+      <div class="hub-card-actions">
+        <button type="button" id="inspector-run" class="hub-btn hub-btn--primary">🔍 JSON 構造を検査する</button>
+      </div>
+      <div id="inspector-result" style="margin-top: 0.85rem;" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <footer class="hub-footer">
+    <p>
+      <strong>trk-Avatar-Library</strong> — <code>trk-PWA</code> 向けスキン・書体・組版・作品倉庫（外部通信なし・GPL-3.0-or-later）。
+      単体見本ページ:
+      <a href="./gallery/all-skins.html">全スキン見本</a> ・
+      <a href="./gallery/fonts.html">書体見本</a> ・
+      <a href="./gallery/pairings.html">書体の組み合わせ見本</a> ・
+      <a href="./gallery/packs.html">パック一覧見本</a>
+    </p>
+  </footer>
+</main>
+
+<dialog id="skin-detail-dialog" class="hub-dialog" aria-labelledby="dialog-skin-title">
+  <div class="hub-dialog-header">
+    <div>
+      <h2 id="dialog-skin-title" class="hub-card-title">スキン詳細</h2>
+      <span id="dialog-skin-id" class="hub-card-id"></span>
+    </div>
+    <button type="button" id="dialog-close-btn" class="hub-btn" aria-label="詳細を閉じる">✕ 閉じる</button>
+  </div>
+  <div id="dialog-skin-body"></div>
+</dialog>
+
+<script type="module" src="./js/library-hub.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(function () {});
+    });
+  }
+</script>
+</body>
+</html>

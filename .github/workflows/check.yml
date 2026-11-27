@@ -13,10 +13,10 @@ permissions:
 
 env:
   # 相手側の版（commit）。上げるときは、この1行と HANDOFF §2.5・§7 の記録を一緒に変える
-  # trk291 の main を固定（2026-11-06 照合）。
+  # trk325 の main を固定（2026-11-27 照合）。
   # （trk240 = 7344111。アプリ側の受け入れ道具 tools/check-set.mjs に --json が入り、
   #   呼び方・終了コード・--json の項目・--have の形が「契約」として書面に固定された版）
-  TRK_PWA_REF: b5e4a885163678933129cfbf4c158d37a2e84d59
+  TRK_PWA_REF: e30eb2ce98490c94b7768dd2ddf768fab7fe726d
 
 jobs:
   check:
@@ -61,11 +61,21 @@ jobs:
           path: trk-Avatar-Library/.cache/font-packs
           key: fontsource-${{ hashFiles('trk-Avatar-Library/font-packs/*/SOURCE.json') }}
 
-      - name: 設定パネルのブラウザ回帰テストを含むテスト
+      - name: 設定パネルと統合ライブラリUIのブラウザ回帰・受け渡し契約を含むテスト
         working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
         run: |
           npm ci
           npm test
+
+      - name: 統合マニフェストと PWA 受け渡し・受け子プローブの検査
+        working-directory: trk-Avatar-Library
+        env:
+          TRK_PWA: ${{ github.workspace }}/trk-PWA
+        run: |
+          node tools/build-library-manifest.mjs --check
+          node tools/check-pwa-receivers.mjs --trk="$TRK_PWA"
 
       - name: 道具の自己検査（selftest）
         working-directory: trk-Avatar-Library

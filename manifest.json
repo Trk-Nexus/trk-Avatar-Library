@@ -9,7 +9,27 @@
   "scope": "./",
   "lang": "ja",
   "dir": "auto",
-  "description": "trk! のスキンと書体を探せるアバターライブラリ",
+  "description": "trk! のスキン・書体・組版・re-modernを横断探索し受け渡せる統合アバターライブラリ",
+  "shortcuts": [
+    {
+      "name": "統合ライブラリ",
+      "short_name": "ライブラリ",
+      "description": "スキン・書体・組版・PWA受け渡しを横断探索",
+      "url": "./library.html"
+    },
+    {
+      "name": "巻別スキン一覧",
+      "short_name": "巻別スキン",
+      "description": "全13巻・291種のスキン元データを巻ごとに取得",
+      "url": "./skin-volumes/index.html"
+    },
+    {
+      "name": "Terminal & Wizard",
+      "short_name": "Wizard CLI",
+      "description": "Wizard CLI ターミナルと設定",
+      "url": "./index.html"
+    }
+  ],
   "icons": [
     {
       "src": "./icon-192.png",
